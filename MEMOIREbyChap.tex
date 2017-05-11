@@ -1,0 +1,763 @@
+\documentclass[11pt,a4paper,openany ]{book}
+\makeatletter
+\title{MEMOIRE}
+\makeatletter
+\newcommand{\crossout}[1]{%
+\begingroup
+\settowidth{\dimen@}{#1}%
+\setlength{\unitlength}{0.05\dimen@}%
+\settoheight{\dimen@}{#1}%
+\count@=\dimen@
+\divide\count@ by \unitlength
+\count0=20 \count4=\count@\\
+\loop
+\count2=\count0 % keep a copy
+\divide\count2\count4 \multiply\count2\count4
+\ifnum\count2<\count0
+\advance\count0 -\count2 % the remainder
+\count2=\count0
+\count0=\count4
+\count4=\count2
+\repeat
+\count0=20 \divide\count0\count4
+\count2=\count@ \divide\count2\count4
+\begin{picture}(0,0)
+\put(0,0){\line(\count0,\count2){20}}
+\put(0,\count@){\line(\count0,-\count2){20}}
+\end{picture}%
+#1%
+\endgroup
+}
+\makeatother
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+\makeatletter % No page counter for \part
+\renewcommand\part{%
+	\if@openright
+	\cleardoublepage
+	\else
+	\clearpage
+	\fi
+	\thispagestyle{empty}%   % Original »plain« replaced by »emptyx
+	\if@twocolumn
+	\onecolumn
+	\@tempswatrue
+	\else
+	\@tempswafalse
+	\fi
+	\null\vfil
+	\secdef\@part\@spart}
+\makeatother
+
+\usepackage{newclude} % delete \newpage with \include*{}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+%\usepackage[sc]{
+\usepackage{lmodern}
+%\usepackage[nomath]{kpfonts} % coment to return to lpmodern complet
+\usepackage{libertine}%  serif and sans 
+%\usepackage[scaled=0.85]{beramono}%% mono
+\usepackage{setspace}
+\linespread{1.05}
+
+\usepackage[english]{babel}
+\usepackage[a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage[font=small]{caption}
+\usepackage{csquotes}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage[flushleft]{threeparttable}
+\usepackage{multirow}
+\usepackage{footnote}
+\makesavenoteenv{array}
+\usepackage[bottom]{footmisc}
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{listings}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{longtable}
+
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}
+%\titlespacing*{\chapter}{0pt}{-1.5cm}{20pt}
+\usepackage{sidecap}
+\usepackage{pdflscape}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{babel,blindtext}
+\usepackage{lipsum}
+%\usepackage{slashbox}
+\usepackage{dashrule}
+\usepackage{hhline}
+\usepackage{color}
+%\usepackage{subfig}
+\usepackage{graphicx}
+
+
+\usepackage{amsmath} % Les math
+\makeatletter
+\let\reftagform@=\tagform@
+\def\tagform@#1{\maketag@@@{(\ignorespaces\textcolor{blue}{#1}\unskip\@@italiccorr)}}
+\renewcommand{\eqref}[1]{\textup{\reftagform@{\ref{#1}}}}
+\makeatother
+\usepackage{amssymb} % Symboles math
+\usepackage{esvect} % Vecteurs
+\usepackage[amssymb]{SIunits}
+\usepackage{eurosym}
+\usepackage{mathrsfs}
+\usepackage{dcolumn}
+\usepackage{pifont}
+\usepackage{amsthm}
+
+\usepackage[breaklinks,colorlinks]{hyperref}
+\hypersetup{
+colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hypertexnames=false,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	citecolor=ForestGreen,
+}
+\usepackage{etoolbox}
+
+
+
+\newtheorem{exe}{Theorem}
+\setcounter{exe}{-1}
+
+
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{mathtools}
+
+\newcommand{\expect}{\operatorname{E}\expectarg}
+\DeclarePairedDelimiterX{\expectarg}[1]{[}{]}{%
+	\ifnum\currentgrouptype=16 \else\begingroup\fi
+	\activatebar#1
+	\ifnum\currentgrouptype=16 \else\endgroup\fi
+}
+
+\newcommand{\innermid}{\nonscript\;\delimsize\vert\nonscript\;}
+\newcommand{\activatebar}{%
+	\begingroup\lccode`\~=`\|
+	\lowercase{\endgroup\let~}\innermid 
+	\mathcode`|=\string"8000
+}
+
+
+\newlength{\mylen}  % change size of items
+\setbox1=\hbox{$\bullet$}\setbox5=\hbox{\normalsize$\bullet$}
+\setlength{\mylen}{\dimexpr0.5\ht1-0.5\ht2}
+
+
+\makeatletter
+
+% Patch case where name and year are separated by aysep
+\patchcmd{\NAT@cite}
+{\@cite\NAT@hyper@{%
+		\NAT@nmfmt{\NAT@nm}%
+		\hyper@natlinkbreak{\NAT@aysep\NAT@spacechar}{\@citeb\@extra@b@citeb}%
+		\NAT@date}}
+{\@cite\NAT@nmfmt{\NAT@nm}%
+	\NAT@aysep\NAT@spacechar\NAT@hyper@{\NAT@date}}{}{}
+
+% Patch case where name and year are separated by opening bracket
+\patchcmd{\NAT@cite}
+{\@cite\NAT@hyper@{%
+		\NAT@nmfmt{\NAT@nm}%
+		\hyper@natlinkbreak{\NAT@spacechar\NAT@@open\if#1\else#1\NAT@spacechar\fi}%
+		{\@citeb\@extra@b@citeb}%
+		\NAT@date}}
+{\@cite\NAT@nmfmt{\NAT@nm}%
+	\NAT@spacechar\NAT@@open\if#1\else#1\NAT@spacechar\fi\NAT@hyper@{\NAT@date}}
+{}{}
+
+\makeatother
+
+\usepackage{datetime} 
+\usepackage{bm}
+\usepackage{scalerel,stackengine}
+\usepackage{pbox}
+\usepackage{vmargin}            
+\setmarginsrb{2,5cm}{2,7cm}{2,5cm}{2,5cm}{0cm}{1cm}{0cm}{1cm}
+\rmfamily
+%\DeclareFontShape{T1}{lmr}{b}{sc}{<->ssub*cmr/bx/sc}{}
+%\DeclareFontShape{T1}{lmr}{bx}{sc}{<->ssub*cmr/bx/sc}{}
+
+\DeclareMathOperator*{\argminA}{arg\,max} % Jan Hlavacek
+\DeclareMathOperator*{\argminB}{argmax}   % Jan Hlavacek
+\DeclareMathOperator*{\argminC}{\arg\max}   % rbp
+
+\newcommand{\argmaxD}{\arg\!\max} % AlfC
+
+\newcommand{\argminE}{\mathop{\mathrm{argmin}}}          % ASdeL
+\newcommand{\argminF}{\mathop{\mathrm{argmin}}\limits} 
+
+\usepackage{fancyhdr}
+\usepackage{afterpage}
+
+\fancypagestyle{plain}{\fancyhf{}}
+\pagestyle{fancy}
+\fancyfoot{}
+\cfoot{\thepage}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\renewcommand{\headrulewidth}{.6pt}
+
+\iffalse
+\copypagestyle{memoirStylePages}{headings}
+\makerunningwidth{memoirStylePages}{\textwidth}
+\makeheadrule{memoirStylePages}{\textwidth}{\normalrulethickness}
+\pagestyle{memoirStylePages}
+\fi
+
+
+\pagenumbering{roman}
+\newcommand{\bib}{\par\noindent\hangindent=0.5 true cm \hangafter=1}
+
+\makeatletter  % rm pg number in bottom
+\let\@oddfoot\@empty
+\let\@evenfoot\@empty
+\makeatother
+\usepackage{appendix}
+%\usepackage[style=apa,backref=true,backend=biber,natbib=true,hyperref=true]{biblatex} 
+
+
+%\addbibresource{zotero.bib.bib}
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(},close={)}}
+
+%\setcitestyle{square}
+%\setcitestyle{authoryear, open={[},close={)]}}
+%\usepackage{apacite}
+%\usepackage{cite}
+%\usepackage[backend=biber]{biblatex}
+\usepackage{bbm}
+\usepackage{enumitem}
+\usepackage{minitoc}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+%\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+%\renewcommand*{\proofname}{\boxed{Proof}}
+\usepackage{thmtools}
+
+\newcommand*{\QEDB}{\hfill\ensuremath{\triangle}}%
+\newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}%
+
+\AtEndEnvironment{theorem}{\null\hfill\qedsymbol}%
+\AtEndEnvironment{definition}{\null\hfill\QEDB}%
+%\declaretheorem[style=definition,qed=$\triangle$,sibling=definition]{definition}
+%\declaretheorem[style=definition,qed=$\triangle$,sibling=definition]{theorem}
+
+
+\usepackage{tcolorbox}
+\usepackage{adjustbox}
+\usepackage{dashbox}
+
+
+\newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \dotfill}}
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}
+
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
+%\defbeamertemplate{itemize item}{tikzarrow}{\tikz{\node[single
+%		arrow,scale=0.2,inner sep=2ex,fill] at (0,0) {};}}
+
+\tikzset{myarrow/.style={
+		draw,
+		fill=Emerald,
+		single arrow,
+		minimum height=5.5ex,
+		single arrow head extend=1ex
+	}
+}
+\newcommand{\arrowright}{%
+	\tikz [baseline=-1ex]{\node [myarrow,rotate=0] {};}
+}
+\setlength{\parskip}{.3em}
+
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+\setcounter{minitocdepth}{4}
+
+% Chapter head 
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1ex \hfill \kern \z@}
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright
+    \reset@font
+    \hrule
+    \vspace*{10\p@}%
+    \par
+    \Large \scshape \@chapapp{} \Huge\bfseries \thechapter
+    \par\nobreak
+    \vspace*{10\p@}%
+    \hrule
+    \par
+    \vspace*{1\p@}%
+    \hrule
+    %\vskip 40\p@
+    \vspace*{20\p@}
+    \Huge \bfseries #1\par\nobreak
+    \vskip 70\p@
+  }}
+
+\begin{document}
+\thispagestyle{empty}
+
+
+\begin{center}
+	{\LARGE    UNIVERSITE CATHOLIQUE DE LOUVAIN} \\
+	\vspace{0.2cm}
+	{\large FACULTE DES SCIENCES} \\
+	\vspace{0.2cm}
+	{\Large ECOLE DE STATISTIQUE, BIOSTATISTIQUE \\
+		\vspace{0.1cm}
+		ET SCIENCES ACTUARIELLES }\\
+\end{center}
+\vfill
+
+%\begin{figure}[H]
+\begin{center}  \hspace*{-10mm} 
+	\includegraphics[height = 3.5cm]{lsba.jpg}
+\end{center}
+%\end{figure}
+
+\thispagestyle{empty}
+
+\vfill
+
+
+\begin{center}
+	{\Large \textsc{Temporal analysis of the evolution of extreme values using climatological data}}
+	
+\end{center}
+
+
+\vfill
+
+\begin{center}[]
+	\begin{minipage}[c]{.45\linewidth}
+		\begin{tabular}{ll}
+			\vspace{0.2cm}
+			Promoteur : & Johan \textsc{Segers} \\
+			\vspace{0.2cm}
+			Lecteurs : & Anna \textsc{Kiriliouk}\\
+			\vspace{0.2cm}
+			& Michel \textsc{Crucifix}
+		\end{tabular}
+	\end{minipage} \hfill
+	\begin{minipage}[c]{.45\linewidth}
+		\begin{tabularx}{\linewidth}{p{\textwidth}}
+			Mémoire présenté en vue de \hbox{l'obtention} du \\   \vspace{0.1cm} Master en statistiques, orientation générale \\   \vspace{0.1cm} par :
+			\textbf{Antoine \textsc{Pissoort}}
+		\end{tabularx}
+	\end{minipage}
+\end{center}
+
+\vspace{1,5cm}
+
+
+
+\begin{center}
+	{\large Juin 2017}
+\end{center}
+\thispagestyle{empty}
+\newpage
+
+
+%\centering
+\topskip0pt
+\vspace*{\fill}
+%\addcontentsline{toc}{chapter}{Abstract}%
+\section*{\centering Abstract}
+\begin{tcolorbox}%[colback=SeaGreen!75!white]
+This thesis aims to analyse extreme temperatures from Uccle and assess their nonstationarity. trend in the location parameter of the temperatures assessing the climate warming.   
+After having proven it by hand of splines's deriatives that a correction for simultaneous intervals led to non-significant changes , we will do it by hand of the Extreme Value Theory (EVT)  that there is indeed an upward trend in the location parameter of the temperatures assessing the climate warming. First of all, we will do introductory analysis of the trend... and we will discover that..  The analysis will focus on yearly maxima and hence we will go through with EVT by defining and presenting the usual methods such as GEV. 
+
+Regarding the computations, we took advantage of a high-level language (c++) to make our analysis efficient and also made use of parallel computing to decrease computation time for time consuming...
+\thispagestyle{empty}
+\end{tcolorbox}
+
+\vspace{.3cm}
+
+\paragraph*{Keywords} $\bullet$ Extreme Value Theory   $\bullet$ block-maxima model  $\bullet$ peaks-over-threshold method $\bullet$ trend analysis $\bullet$ Bayesian inference   $\bullet$ Generalized Additive Models with splines smoothing  $\bullet$ Neural Networks  $\bullet$ nonstationary models $\bullet$ Markov Chain Monte Carlo $\bullet$ Hamiltonian Monte Carlo $\bullet$ Parallel computing $\bullet$ R package $\bullet$ Shiny application
+\vspace*{\fill}
+
+\newpage
+
+
+%\afterpage{\cfoot{\thepage}}
+
+
+\newenvironment{acknowledgements}%
+{\thispagestyle{empty}\null\vfill\begin{center}%
+\bfseries Acknowledgements\end{center}}%
+{\vfill\null}
+%\addcontentsline{toc}{chapter}{Acknowledgements}%
+\begin{acknowledgements}
+	\textit{I would first like to thank my thesis supervisor Johan Segers for all his help and his guidance during this whole year. The repeated appointments we have had   }
+	\newline
+	
+	\textit{I also would like to thank the "Institut Royal de Météorologie" (IRM) of Belgium for his help and his guidance but also for his provided quality datasets.}
+	\newline
+	
+	\textit{Finally, I want to thank my family and my friends, but also Bernadette for her support and all the time I have spent  writing in her room for my thesis but also during my whole academic studies.}
+	\thispagestyle{empty}
+\end{acknowledgements}
+
+
+\afterpage{\blankpage}
+
+
+\thispagestyle{empty}
+\dominitoc
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+\listoffigures
+\thispagestyle{empty}
+
+\newpage
+
+
+\chapter*{List of Abbreviations}
+%\addcontentsline{toc}{chapter}{List of Abbreviations}
+\thispagestyle{empty}
+For convenience, we place a list of all the abbreviations we will use in the text. However, these will always be defined in their first occurrence into the text.\\
+
+\begin{center}
+\begin{abbreviations}
+	\item [df]\label{df}  distribution function
+	\item[EVI] Extreme Value Index ($\xi$)
+	\item[EVT] Extreme Value Theory
+	\item[GEV] Generalized Extreme Value
+	\item[GPD] Generalized Pareto Distribution (function)
+	\item[MCMC] Marko Chain Monte Carlo
+	\item[MH] Metropolis-Hastings (algorithm)
+    \item[R.V.] Random Variable
+	\item[TN] Temperature miNimum
+	\item[TX] Temperature maXimum
+	
+\end{abbreviations}
+\end{center}
+
+
+\renewcommand\labelitemi{\normalsize$\bullet$}
+
+
+
+\afterpage{\blankpage}
+
+
+\addcontentsline{toc}{chapter}{Introduction}
+\chapter*{Introduction}
+	%Presentation of the Analysis }
+\pagenumbering{arabic}
+\thispagestyle{empty}
+
+
+
+Unlike his counterparts ( see for example credit risk analysis, financial applications,...), the Extreme Value Theory (EVT) applied on the broad environemental area like here for the meteorological data, has strong impacts on the people lives 
+
+An important question is still whether climate changes caused by anthropogenic activities will change the intensity and frequency of extreme events \cite{milly_climate_2008}.
+
+The problem we are here facing in climate change evidence is that of le lack of past data to compare with her
+
+Also, for such an analysis, the number of parameters to take into account is considerable (and tend to infinity)  
+
+Can make a parallelism with Chaos Theory and the well-known butterfly effect which have strong applications in weather models\newline
+
+We highly expect the climate change to affect the extreme weather  \newline
+
+[extremes in climate change p.347]
+
+
+It has been proven that winter become warmer in context of RC. (see naveau,...)
+
+
+\cite{kharin_changes_2006}
+
+
+"The first myth about climate extremes, which has been purported by
+researchers in climatology or hydrology, among them prominent names, is that
+“extremes are defined as rare events” or similar. This myth is debunked by a simple
+bimodal PDF (Fig. 6.12a). The events sitting in the tails of that distribution are not
+rare" \cite[pp.257]{mudelsee_climate_2014}
+\newline
+
+Until now, studies on climate extremes that consider Europe have usually had a strong national signature
+%(e.g. Herzog and Muller-Westermeier, 1997; Brunetti ¨ et al., 2001)
+, or have had to make use of either a
+dataset with daily series from a very sparse network of meteorological stations (e.g. eight stations in Moberg
+et al. (2000)) or standardized data analysis performed by different researchers in different countries along the
+lines of agreed methodologies (e.g. Brazdil et al., 1996; Heino et al., 1999) \cite{klein_tank_daily_2002}
+
+
+Extrapolation !!!! See p154 [statistical analysis of extreme book]
+
+
+
+Voir effet de l'ilot de chaleur --> urbanisation sur les tempés !
+
+---> artificial warming on cities stations which were not(less) urbanized 100 years ago.
+
+[In this thesis, efforts have been made to use power of (hyper)references into the 
+text. While this not (yet ?...) usable in printed versions, the reader may feel more 
+comfortable in a numeric version to more easily handle the vast amount of sections, 
+equations, references, etc... and the links that are made between them.]
+
+
+We can summarize the research question of this thesis as the following : 
+
+\begin{itemize}
+\item 
+\end{itemize}
+
+
+In this part, we will make use of some general methods to assess if there is indeed a trend in the maximum temperatures
+
+There are two main approaches in EVT, the block-maxima  and the peaks-over-threshold approach (see 
+\hyperref[sec::2]{section \textbf{2}}) yielding to different extreme value distribution. 
+The former aims at while the latter models the (...)
+
+
+In \hyperref[sec::1]{chapter \textbf{1}} we will present the method of block-maxima and derive the Generalized Extreme Value (GEV) distributions. In \hyperref[sec::2]{chapter \textbf{2}} we will .
+In \hyperref[sec::3]{chapter \textbf{3}}
+In \hyperref[sec::4]{chapter \textbf{4}} we will ..
+
+Finally, we notice that this thesis will more concentrate on the block-maxima (GEV) methods (see \hyperref[sec::1]{chapter \textbf{1}}), i.e. to data relating to maxima over a period of 1 year. For example here in the introduction, or for the Bayesian analysis in \hyperref[sec::bayesian]{chapter \textbf{5}}.
+\thispagestyle{empty}
+
+
+
+\begin{center}
+\part{Theoretical Framework : Extreme Value Theory}
+\end{center}
+%\pagestyle{fancy}
+
+
+\setcounter{mtc}{1}
+\chapter{Method of Block-Maxima} \label{sec::1}
+\vspace{-1cm}
+\minitoc \thispagestyle{empty}
+%\newpage
+ \vspace{1.5cm}
+
+In this chapter, we will present the basics of EVT and we will consider a 
+\textit{block-maxima approach}. After defining some useful concepts in 
+\hyperref[sec::1.1]{section \textbf{1.1}}, we will
+
+For this chapter, we will be mostly based on \citet[chapter 3]{coles_introduction_2001}, \citet[chapter 2]{beirlant_statistics_2006} and \citet{reiss_statistical_2007}.
+
+\newpage
+\include*{chap1}
+
+
+
+\chapter{Peaks-Over-Threshold Methods}\label{sec::2}
+\vspace{-1cm}
+\minitoc \thispagestyle{empty}
+%\newpage
+ \vspace{1.5cm}
+
+Seuils meteo : 0C (gel permanent), 25C et 30C pour les Tx
+0C (gel) et 20C pour les Tn
+
+---> Use this for thresholds ?
+
+In this chapter we will focus on the other kind of EV models, modelling excess over a 
+threshold. This...
+In \hyperref[sec::2.1]{section \textbf{2.1}}, we briefly introduce the concepts to be able 
+to more precisely characterize
+ the distributions in section \textbf{2.2}. In section 2.3, we introduce the Poisson 
+ models, 
+
+\newpage
+\include*{chap2}
+
+
+
+\chapter{Relaxing The Independence Assumption}\label{sec::3}
+\vspace{-1cm}
+\minitoc\thispagestyle{empty}
+
+In environmental applications, the independence assumption is questionable. It is rarely fulfilled \cite{}, and never completely. From hydrological process (see \citet{milly_stationarity_2008} for stationarity) to temperature analysis (see ref) or even the broader area of meteorological applications (see ref), theoretical assumptions that have been made for the models are not sustainable. This sounds also obvious in extreme values analysis of temperature data, since we expect the temperature .... Whereas it was not really problematic for block-maxima, it was much more painful for POT as we have seen  both in section 2. 
+However, here we can see in our case that it does not really happens...(verif.. and why??)
+
+See \cite[pp.375]{beirlant_statistics_2006}
+
+....
+\newpage
+\include*{chap3}
+
+
+\chapter{Neural Network (and others) }
+\vspace{-1cm}
+\minitoc\thispagestyle{empty}
+
+In the era of Artificial Intelligence (AI) and Machine Learning, or more precisely of Artificial Neural Networks (ANN) or the trendy term `deep learning´, it is interesting to study how this complex mechanism works and how it can be efficiently applied to deal with the issue of nonstationarity in EVT that we confront.
+
+\newpage
+\include*{chap4}
+
+
+
+\chapter{Bayesian Methods}\label{sec::bayesian}
+\vspace{-1cm}
+\minitoc\thispagestyle{empty}
+
+see evdbayes pdf package r
+
+Attention : $\pi$ ou $f$ ?????? 
+
+We let useful relevant tools regarding bayesian inference in \hyperref[bayesapp]{appendix \textbf{\ref{appB}}}
+\newpage
+\include*{chap5}
+
+
+
+
+
+\part{Experimental Framework : Nonstationary Extreme Value Analysis of Maximum Temperatures}
+\thispagestyle{empty}
+
+In this part, we will focus on the application of the methods seen during the theoretical part. 
+
+\chapter{Introduction to the Analysis}\label{chap:introana}
+\vspace{-1cm}
+\minitoc \thispagestyle{empty}
+
+After Presenting an introduciton of the Analysis in ..
+
+\newpage
+\include*{chap6}
+
+
+
+\chapter{First Analysis by GEV }\label{sec:anagev}
+\minitoc \thispagestyle{empty}
+
+\newpage
+\include*{chap7}
+
+
+
+
+\chapter{Stationary and Nonstationary GEV Analysis}\label{sec:ananonsta}
+\minitoc \thispagestyle{empty}
+
+\newpage
+\include*{chap8}
+
+
+
+\chapter{Bayesian Analysis}
+\minitoc \thispagestyle{empty}
+
+
+\newpage
+\include*{chap9}
+
+
+
+
+\addcontentsline{toc}{chapter}{Conclusion}
+\chapter*{Conclusion}
+\thispagestyle{empty}
+
+During this thesis, we have statistically assessed the presence of a trend in the extreme temperatures in Uccle. We first detected that the trend is significative by the method of linear regression. We also discovered that the best fitted GEV model is the one with a linear trend in the location parameter.
+
+"A key issue in applications is that inferences
+may be required well beyond the observed tail of
+the data, and so an assumption of stability is required:" \cite{davison_statistical_2012}
+
+"Another approach would be to use something other than time as the covariate 
+in the model. For instance, one could imagine linking temperature data directly to
+CO2 level rather than time. However, linking to a climatological covariate makes
+extrapolation into the future more difficult, as one would need to extrapolate the 
+covariate as well. No obvious climatological covariate comes to mind for the Red
+River application. " %[extremes in climate change p.111]
+
+
+Timescale-uncertainty effects on extreme value analyses seem not to have been
+studied yet. For stationary models (Sect. 6.2), we anticipate sizable effects on block
+extremes–GEV estimates only when the uncertainties distort strongly the blocking
+procedure. For nonstationary models (Sect. 6.3), one may augment confidence band
+construction by inserting a timescale simulation step (after Step 4 in Algorithm 6.1) \citet[pp.262]{mudelsee_climate_2014}
+
+!!!!! not put too much references in the text !!!!!
+
+Managing references : 
+
+\textbf{(!!!!! delete unuseful equation numbering ?!!!!)}
+
+finalize hyperref in the text. BE CAREFULL of the numbering written and the real ("hyperrefed" numbering section)
++finalize also for def, thm, ... (?)
+
+Replace "distribution functions" by "cdf",....  + all other abbrevations (et, gev,...) --> put it then in the list of abbr.
+
+Careful with notation with X or Z in the (c)pdf, likelihood, RV,...
+
+ecrire correctement les referencesz a la fin (unsrt85.bst, ...) enlever trop de noms, champs inutiles,..
+
+voir notation vectors (en gras ou avec bar en bas?)
+
+attention aux notation homogenes (ex : partie stationnary,...) --> pour dénoter les 
+maximums,....
+
+notations for sequences !! attention aux "iid", "n random variables",... 
+
+Delete page counter for part pages,...
+
+be prudent that all "methods" are listed (numbered) in (each) ToC
+
+add square brackets [] for cite ? 
+
+Careful for boldsymbols, especiallyin bayesian
+
+PissoortThesis:: Behind our functions 
+
+[ MOTS DEXPLICATIONS SUR TTES LES FORMULES (domain atraction condition, etc...]
+
+Finish (Bayesian) documentation in the package.
+
+
+
+\addcontentsline{toc}{part}{Appendix}
+\part*{Appendix}
+\appendix
+
+\include*{appendix}
+
+
+
+
+\bibliographystyle{ieeetr}
+\setlength{\parindent}{5em}
+\setlength{\parskip}{2em}
+\renewcommand{\baselinestretch}{4.0}
+
+\bibliography{zotero1}
+
+\end{document}

@@ -1,0 +1,278 @@
+\section{Stationary Extremes}\label{sec:statio}
+
+From now, we considered $X_{(n)}=\max_{1\leq i\leq n}X_i$  where we assumed 
+$X_1,\dots,X_n$  are independent random variables. For sake of simplicity, we abandon this 
+notation. In the sequel, this will be denoted by $\tilde{X}_{(n)}=\max_{1\leq i\leq 
+n}\tilde{X}_i$ where $\tilde{X}_1,\dots,\tilde{X}_n$ will typically denote a sequence of 
+independent random variables, so that the maximum $\tilde{X}_{(n)}$ is composed of independent random variables only.
+
+ We are now interested by modelling 
+$X_{(n)}=\max_{1\leq i\leq n}X_i$ where $\{X_i\}$ will now denote a \emph{stationary} 
+sequence of $n$ random variables sharing the same marginal distribution as the sequence $\{\tilde{X}_i\}$ of independent random variables, 
+$F$.
+
+\begin{definition}[Stationarity] We say that the sequence $\{X_i\}$ of n random variables is \emph{\textbf{stationary}} if 
+	
+	More generally, for $h\geq 0$ and $n\geq 1$, the distribution of the lagged random vector $(X_{1+h},\dots,X_{n+h})$ does not depend on h when the sequence is said to be (strongly) stationary.
+\end{definition}
+Note that we will only focus on weak(?) stationarity. \\
+
+
+
+For now, we denote $F_{i_1,\dots,i_p}(u_1,\dots,u_p):=\text{Pr}\{X_{i_1}\leq 
+u_1,\dots,X_{i_p}\leq u_p\}$ as the joint distribution function of 
+$(X_{i_1},\dots,X_{i_p})$ for any arbitrary positie integers $(i_1,\dots,i_p)$.
+
+\begin{definition}[$D(u_n)$ dependence condition] From \cite{leadbetter_extreme_1974}  and following \cite[pp.373-374, pp.93]{beirlant_statistics_2006,coles_introduction_2001}
+	Let $\{u_n\}$ be a sequence of real numbers. The \emph{ \boldsymbol {$D(u_n)$} \textbf{condition}} holds if for any set of integers $i_1<\dots<i_p$ and $j_1<\dots<j_q$ such that $j_1-i_p>\ell$, we have that 
+	
+	\begin{equation}
+	|F_{i_1,\dots,i_p,j_1,\dots,j_q}(u_n,\dots,u_n;u_n,\dots u_n)-F_{i_1,\dots,i_p}(u_n,\dots,u_n)F_{j_1,\dots,j_q}(u_n,\dots u_n)|\leq \beta_{n,\ell}\ ,
+	\end{equation}
+	where $\beta_{n,\ell}$ is nondecreasing and  $\displaystyle{\lim_{n \to \infty}}\beta_{n,\ell_n}=0$, for some sequence $\ell_n=o(n)$, as $n\rightarrow\infty$.
+\end{definition}
+
+This condition ensures that, when the sets of variables are separated by a relatively short distance, typically $s_n=o(n)$, the long-range dependence between such events is limited, in a sense that is sufficiently close to zero to have no effect on the limit extremal laws.
+
+From this result, we can retrieve the \emph{extreme-value theorem}
+
+Result is remarkable in the sense that, provided a series has limited long-range dependence at extreme levels $\big(D(u_n)\big)$ condition makes precise), maxima of stationary series follow the same distributional limit laws as those of independent series. [S.Coles 2001 p.94] 
+
+For specific sequence of theresholds $u_n$ that increase with $n$.
+
+\begin{theorem}[Limit distribution of maxima under $D({u_n})$ ]
+	From \cite{leadbetter_extreme_1974}. 
+	Let $\{X_i\}$ be a stationary sequence of n iid random variables with $X_{(n)}=\max (X_1,\dots, X_n)$. If there exists sequences $\{a_n>0\}$ and $\{b_n\}$ such that $D(u_n)$ condition holds, then 
+	
+	\begin{equation}
+	\text{Pr}\{X_{(n)}\leq u_n\}\longrightarrow H(x), \ \ \ \ \ \ \ \, \ \ n\rightarrow\infty,
+	\end{equation}
+	where $H$ is non-degenerate as defined... and $D(u_n)$ is satisfied with $u_n=a_nx+b_n$ for every real $x$. 
+	
+\end{theorem}
+
+[bootstrap and other....]
+
+
+\begin{theorem}[Leadbetter 1983]
+	From \cite[pp.]{coles_introduction_2001} 
+	Let $\{X^*_i\}$ be a stationary sequence and let $\{X_i\}$ be a sequence of iid random variables. By defining  $X^*_{(n)}=\max  \{X^*_n\}$ and $X_{(n)}=\max \{X_n\}$, we have under regularity conditions, 
+	
+	\begin{equation*}
+	\text{\emph{Pr}}\big\{a_n^{-1}(X_{(n)}-b_n)\leq x\big\}\longrightarrow G(x), \ \ \ \ \ \ \ \ \ \ \ n\rightarrow \infty
+	\end{equation*}
+	for normalizing sequences $\{a_n>0\}$ and $\{b_n\}$, where $G$ is non-degenrate, if and only if 
+	
+	\begin{equation*}\label{extremindex}
+	\text{\emph{Pr}}\big\{a_n^{-1}(X^*_{(n)}-b_n\leq x \big\}\longrightarrow G^*(x), \ \ \ \ \ \ \ \ \ \ \  n\rightarrow\infty.
+	\end{equation*}
+	$G^*$ is the limit distribution coming from a stationary process, defined by
+	
+	\begin{equation}\label{extindex}
+	G^*(x)=G^{\theta}(x),
+	\end{equation}
+	for some constant $\theta\in (0,1]$ which is called the \emph{\textbf{extremal index}}.
+	
+\end{theorem}
+
+\subsection{The extremal index}
+The \emph{extremal index} is an important indicator quantifying the extent of extremal dependence, or equivalently the degree at which the assumption of independence is violated. From eq.(\ref{extindex}), it is clear that if  $\theta=1$, then the process is independent, but the converse does not hold while the case $\theta= 0$ will not be considered as it is too "far" from independence (check with data?) and brings problems, see for example \citet[pp.379-380]{beirlant_statistics_2006}. Moreover, the results of Theorem 4.2. would not hold true.
+
+.. However, the maximum has a tendency to decrease as .... \cite[pp.96]{coles_introduction_2001}
+
+Formally, it can be defined as the 
+
+\begin{equation}\label{exc}
+\theta=\displaystyle{\lim_{n \to \infty}}\text{Pr}\big\{\max(X_2,\dots,X_{p_n})\leq u_n\ | \ X_1\geq u_n\big\},
+\end{equation}
+where $p_n=o(n)$ and the sequence $u_n$ is such that Pr$\big\{X_{(n)} \leq u_n\big\}$ converges. \cite{coles_introduction_2001}[slides]
+
+Hence, $\theta$ can be thought as the probability that an exceedance over a high threshold is the final element in a \emph{cluster }of exceedances.
+
+\addcontentsline{toc}{subsubsection}{Clusters of exceedances}
+\subsubsection*{Clusters of exceedances} From eq.(\ref{exc}), we can now state that extremes have the tendency to occur in cluster, whose \emph{mean cluster size} is $\theta^{-1}$ at the limit. Equivalently(?), $\theta^{-1}$ is the factor with which the mean distance between cluster is increased.
+
+\underline{Identifying clusters and declustering} as the distribution of a cluster maximum is the same as the marginal distribution of an
+exceedance.
++ slide 82-83(?)
+
+However, [pp.178 Coles], information in discarded when one considers \emph{declustering}. And this information could be substantially important in meteorological applications, for instance to determine heat or cold waves.
+
+
+
+\addcontentsline{toc}{subsubsection}{New parameters}
+\subsubsection*{New parameters} When $\theta>0$, we have from Theorem 4.2 that $G^*$ is an EV distribution but with different scale and location parameters than $G$. If we note by ($\mu^*,\sigma^*,\xi^*$) the parameters pertaining to $G^*$ and those from $G$ kept in the usual way, we have the following relationships when $\xi\neq 0$
+
+\begin{equation}
+\mu^* = \mu-\sigma\xi^{-1}(1-\theta^{\xi}), \ \ \ \ \ \ \ \ \ \ \sigma^*=\sigma\theta^{\xi}.
+\end{equation}
+
+In the Gumbel case ($\xi=0$), we have $\sigma^*=\sigma$ and $\mu^*=\mu+\log\theta$.
+The fact that $\xi^*=\xi$ is 
+
+\addcontentsline{toc}{subsubsection}{Return levels}
+\subsubsection*{Return levels}
+
+From that (see clusters), one can see that the proba ility of an exceedance is variable (see coles, pp.103 or slide 82) (...)
+
+\begin{equation}
+r_m = u + \sigma\xi^{-1}\Big[(m\zeta_u\theta)^{\xi}-1\Big]
+\end{equation}
+
+It is important to take that into account as ignorance of this "dependence" can lead to overestimation of the return level.
+
+\subsection{Tail dependence}
+From \cite[section 2.6]{reiss_statistical_2007}, \cite[section 8.4]{coles_introduction_2001} or \cite[section 9.4.1,10.3.4]{beirlant_practical_1996} + see tail dependence function \texttt{atdf()} in \texttt{R}.
+
+Problem with traditional tools used in standard time series analysis such as (partial-) autocorrelation functions is that heavy-tailed distributions do not have moments, whereas correlation focus on dependence in the center of the distribution and not the tails. \citet[pp.134]{wada_extreme_2016} Whence it is important to focus on a \textit{tail dependence measure}.
+
+The auto-tail dependence function using $\chi(u)$ and/or $\bar{\chi}(u)$ employs $X$ against itself at different lags.
+
+
+a possible estimator (this used by \texttt{atdf()}) can come from the sample version 
+
+\begin{equation}\label{autotailsample}
+\rho_n(u,h)=\frac{1}{n(1-u)}\sum_{i\leq n}\mathbf{ 1}(\min (x_i,x_{i+h})>x_{[nu]:n})
+\end{equation}
+(compare with beirlant notations!!!!)$x_{[nu]:n}$
+
+
+\subsection{Modelling : Threshold Models}
+
+\paragraph*{Block-Maxima}
+The modelling with the techniques provided by the GEV distributions (see 
+\hyperref[sec::1]{chapter \textbf{1}}) can be used in 
+the similar way as we have seen from (\ref{extindex}) or in section 3.1 that the shape 
+parameter remains invariant. The difference is that the effective number of maxima 
+$n=n\theta$ 
+will be reduced and hence the convergence will slower. 
+
+A still unsolved problem \cite{coles_introduction_2001}[pp.98] is related to the 
+approximations in the limit.
+Indeed, as the effective number of observations is reduced from $n$ to $n\theta$, the approximation is expected to be poorer, and this "problem" will be exacerbated
+with increased levels of dependence in the series.
+
+\paragraph*{Thresholds models}
+Practically speaking, one might expect a threshold based analysis to result in estimates of return levels with much reduced standard errors as "all" the extremes are included in the analysis, i.e. those who excess a threshold $u$. The example in section .... illustrated this
+
+However, the fact that this method deals with "all" the extremes brings also some problems, 
+and especially the issue of \textit{temporal dependence} (see plot of acf or pacf wrt $u$) 
+which is illustrated by the fact that the extremes have a tendency to \emph{cluster}. 
+Inferences based on the likelihood found in eq.(\ref{likk}) which relies on the 
+independence assumption are now invalid.
+
+Several methods can be used : 
+
+\begin{itemize}
+	\item \textbf{Filtering out} an (approximate) independent sequence of threshold exceedances.
+	\item \textbf{Declustering}. We compute the maximum value in each cluster and then we model these clusters maximums as independent GP random variable. In this approach, we remove \textbf{temporal dependence} but we do not estimate it.
+	
+\end{itemize}
+
+
+However, \cite{fawcett_estimating_2012} emphasized the fact that use of the information from \textit{all} extremes rather than just from cluster maxima (?)can be pressed into use to estimate return levels, regardless of the how strong the extremal dependence is. Hence, declustering has no interest. ( see book risk p.135)
+This method accounts for dependence in standard error estimates of the parameters.
+
+
+\subsection{Applications}
+
+\section{Non-Stationary Extremes}\label{nstatio}
+
+Whereas we have considered and relaxed during the previous section the first "i" of the "iid" assumption made during the whole chapter \textbf{2}, we will now tackle the last part "\textbf{id}", i.e. the strong (?) assumption that the observations are \textbf{i}dentically \textbf{d}istributed.
+
+The stationarity assumption is very poor to hold for climatologic data \cite{milly_climate_2008}. It is also the case for temperature data.
+
+OUR AIM HERE IS TO MODEL THE \textbf{\textit{\underline{EVOLUTION}}} OF 
+As we are dealing with time varying sequences, we can
+
+\begin{itemize}
+	\item Positive trend
+	\item Seasonality
+\end{itemize}
+
+The aim of our modelling will more focus on a different parametrization for the mean, thus in allowing the location parameter to vary through time/seasons.
+
+\begin{itemize}
+	\item Variation in time through t accounting for the season : $\mu (t)=\beta_0+\mathbbm{1}_i(t)$ where i=1,2,3,4 represent the seasons.
+\end{itemize}
+
+
+
+\subsection{Block-Maxima}
+
+As we continue to consider modelling as yearly blocks, we do only face nonstationary concerns for the trend which is (probably) imputed to the Global Warming. 
+The evidence of seasonality arising when we decrease the length of the blocks is not an issue for yearly modelling. However, we loose information, or comparatively, we do not use all the information as at least one half 
+
+
+\subsection{Diagnostics}
+Gumbel plot (slide 94) coles
+
+
+\section{Model Comparisons}
+
+\subsection{Statistical Tools}
+
+In order to compare our models, that is for example to check whether a trend (or seasonality) is statistically significant, or if the nonstationnary models provide an improvement over the simpler (stationary) model, we will make use of the \textbf{deviance statistic} defined as 
+\begin{equation}
+D = 2\big\{\ell_1(\mathcal{M}_1)-\ell_0(\mathcal{M}_0)\big\},
+\end{equation}
+
+for two nested models $\mathcal{M}_0\subset \mathcal{M}_1$, where $\ell_1(\mathcal{M}_1)$ and $\ell_0(\mathcal{M}_0)$ are the maximized log-likelihoods under models $\mathcal{M}_1$ and $\mathcal{M}_0$ respectively as defined in .
+
+Asymptotically, the distribution of $D$ is $\chi_k$ with $k$ (df) representing the difference of parameters between model $\mathcal{M}_1$ and $\mathcal{M}_0$. Thus, comparisons of $D$ with the critical values from $\chi_k$ will guide our decision.
+
+
+\section{Return Levels}\label{sec:returnlvlnstatio}
+
+
+\paragraph*{ Stationarity} Under an assumption of a
+stationary sequence, the return level is the same for all years, and this gives rise to the notion
+of the return period (or $m$-year event). Hence, the return period of a particular event is the
+inverse of the probability that the event will be exceeded in any given year. The m-year return level is associated with a return period of m years. However, there are two main interpretations in this context for return periods.
+
+\cite[pp.100]{aghakouchak_extremes_2013-1}
+
+Denoting $X_{(n),y}$ the annual maximum for year y. Omitting the notational dependence on block size n, we assume $\{X_{(n),y}\}\stackrel{iid}{\sim}F$. 
+
+\begin{enumerate}
+	\item The first interpretation of the m-year event is \textbf{the expected waiting time until an exceedance occurs}. To see that, letting T be the year of the first exceedance, we we can write
+	
+	\begin{equation}
+	\begin{aligned}
+	\text{Pr}\{T=t\}=\  & \text{Pr}\{X_{(n),1}\leq r_m,\dots,X_{(n),t-1}\leq r_m,X_{(n),t}>r_m\} \\
+	=\ & \text{Pr}\{X_{(n),1}\leq r_m\}\dots\text{Pr}\{X_{(n),t-1}\leq r_m\}\text{Pr}\{X_{(n),t}>r_m\}& & \big[ \textnormal{iid assumption}\big]\\
+	= \ & \text{Pr}\{X_{(n),1}\leq r_m\}^{t-1}\ \text{Pr}\{X_{(n),1}>r_m\} &  \big[ \text{ stationarity}\big]\\
+	=\ & F^{t-1}(r_m)(1-F(r_m))\\
+	=\ & (1-1/m)^{t-1}(1/m).
+	\end{aligned}
+	\end{equation}
+	
+	
+	We easily recognize that T has geometric density with parameter $1/m$. From simple properties of geometric distributions, we found its expected values is $1/(1/m)$, that is the expected waiting time for an $m$-year event is $m$ years.
+	
+	\item The second interpretation of the $m$-year event is that \textbf{the expected number of events in a period of \boldsymbol{$m$} years is exactly 1}. To see that, we define  
+	
+	\begin{equation*}N=\sum_{y=1}^m I(X_{(n),y}>r_m),
+	\end{equation*}
+	as the random variable representing the number of exceedances in $m$ years (where $I$ is indicator function). We can view each year as a "trial", and from the fact that we have assumed \big\{$X_{(n),y}$\big\} are iid, we can compute the probability that the number of exceedances in $m$-years is k
+	\begin{equation*}
+	\text{Pr}\{N=k\}=\binom{m}{k}(1/m)^k(1-1/m)^{m-k},
+	\end{equation*}
+	from which we recognize a well-know distribution, that is $N\sim \ \text{Bin}(m,1/m)$. Again from properties of this distribution, we easily find that N has an expected value of 1.
+	
+\end{enumerate}
+
+
+\paragraph*{Non-stationarity}
+
+From the definition on non-stationary process, the modelling of return period will change over time.
+Hence, we introduce the notation of the distribution function $F_y$ of a particular $X_{(n),y}$. We must study 
+
+$p(y)=\text{Pr}(X_{(n),y}>r)=1-F_y(r)$. If we estimate $F_y$, we can retrieve easily p(y).
+$F_y(r_p(y))=1-p$ with the exceedance level $r_p(y)$ changing with year. It shows the changing nature of "risk".
+
+\paragraph*{Return period as expected waiting time}
+
+\paragraph*{Return period as expected number of events}
+
+\section{Inference}
