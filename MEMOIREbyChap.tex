@@ -139,22 +139,16 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 	\activatebar#1
 	\ifnum\currentgrouptype=16 \else\endgroup\fi
 }
-
 \newcommand{\innermid}{\nonscript\;\delimsize\vert\nonscript\;}
 \newcommand{\activatebar}{%
 	\begingroup\lccode`\~=`\|
 	\lowercase{\endgroup\let~}\innermid 
 	\mathcode`|=\string"8000
 }
-
-
 \newlength{\mylen}  % change size of items
 \setbox1=\hbox{$\bullet$}\setbox5=\hbox{\normalsize$\bullet$}
 \setlength{\mylen}{\dimexpr0.5\ht1-0.5\ht2}
-
-
 \makeatletter
-
 % Patch case where name and year are separated by aysep
 \patchcmd{\NAT@cite}
 {\@cite\NAT@hyper@{%
@@ -448,14 +442,13 @@ For convenience, we place a list of all the abbreviations we will use in the tex
 
 \begin{center}
 \begin{abbreviations}
-	\item [df]\label{df}  distribution function
+	\item [df]\label{df}  (cumulative) distribution function
 	\item[EVI] Extreme Value Index ($\xi$)
 	\item[EVT] Extreme Value Theory
 	\item[GEV] Generalized Extreme Value
 	\item[GPD] Generalized Pareto Distribution (function)
 	\item[MCMC] Marko Chain Monte Carlo
 	\item[MH] Metropolis-Hastings (algorithm)
-    \item[R.V.] Random Variable
 	\item[TN] Temperature miNimum
 	\item[TX] Temperature maXimum
 	
@@ -558,7 +551,7 @@ Finally, we notice that this thesis will more concentrate on the block-maxima (G
 
 
 \setcounter{mtc}{1}
-\chapter{Method of Block-Maxima} \label{sec::1}
+\chapter{Method of Block Maxima} \label{sec::1}
 \vspace{-1cm}
 \minitoc \thispagestyle{empty}
 %\newpage
@@ -568,7 +561,7 @@ In this chapter, we will present the basics of EVT and we will consider a
 \textit{block-maxima approach}. After defining some useful concepts in 
 \hyperref[sec::1.1]{section \textbf{1.1}}, we will
 
-For this chapter, we will be mostly based on \citet[chapter 3]{coles_introduction_2001}, \citet[chapter 2]{beirlant_statistics_2006} and \citet{reiss_statistical_2007}.
+This chapter is mostly based on \citet[chapter 3]{coles_introduction_2001}, \citet[chapter 2]{beirlant_statistics_2006} and \citet{reiss_statistical_2007}.
 
 \newpage
 \include*{chap1}
@@ -623,7 +616,7 @@ In the era of Artificial Intelligence (AI) and Machine Learning, or more precise
 
 
 
-\chapter{Bayesian Methods}\label{sec::bayesian}
+\chapter{Bayesian Extreme Value Theory}\label{sec::bayesian}
 \vspace{-1cm}
 \minitoc\thispagestyle{empty}
 
@@ -650,7 +643,6 @@ In this part, we will focus on the application of the methods seen during the th
 
 After Presenting an introduciton of the Analysis in ..
 
-\newpage
 \include*{chap6}
 
 
@@ -658,7 +650,7 @@ After Presenting an introduciton of the Analysis in ..
 \chapter{First Analysis by GEV }\label{sec:anagev}
 \minitoc \thispagestyle{empty}
 
-\newpage
+
 \include*{chap7}
 
 
@@ -667,16 +659,16 @@ After Presenting an introduciton of the Analysis in ..
 \chapter{Stationary and Nonstationary GEV Analysis}\label{sec:ananonsta}
 \minitoc \thispagestyle{empty}
 
-\newpage
+
 \include*{chap8}
 
 
 
-\chapter{Bayesian Analysis}
+\chapter{Bayesian Extreme Value Analysis}
 \minitoc \thispagestyle{empty}
 
 
-\newpage
+
 \include*{chap9}
 
 
@@ -714,6 +706,8 @@ Managing references :
 
 finalize hyperref in the text. BE CAREFULL of the numbering written and the real ("hyperrefed" numbering section)
 +finalize also for def, thm, ... (?)
+
+"In English, it is customary to use capitals: Section 2, Chapter 5, Theorem 3, Definition 1, Figure 6, Appendix A, ..." (\textbf{segers})
 
 Replace "distribution functions" by "cdf",....  + all other abbrevations (et, gev,...) --> put it then in the list of abbr.
 

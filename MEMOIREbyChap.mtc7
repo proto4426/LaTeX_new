@@ -1,13 +1,13 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode Repository for the code : R Package}{\reset@font\mtcSfont 62}{section*.71}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Visualization Tool : Shiny Application}{\reset@font\mtcSSfont 62}{section*.72}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode Repository for the code : R Package}{\reset@font\mtcSfont 61}{section*.71}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Visualization Tool : Shiny Application}{\reset@font\mtcSSfont 61}{section*.72}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.1}Presentation of the Analysis : Temperatures from Uccle}{\reset@font\mtcSfont 62}{section.6.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {6.1.1}Open shelter vs Closed shelter}{\reset@font\mtcSSfont 62}{subsection.6.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {6.1.2}Comparisons with freely available data}{\reset@font\mtcSSfont 63}{subsection.6.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {6.1.2}Comparisons with freely available data}{\reset@font\mtcSSfont 62}{subsection.6.1.2}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.2}First Analysis : Block-Maxima}{\reset@font\mtcSfont 63}{section.6.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {6.2.1}Descriptive Analysis}{\reset@font\mtcSSfont 63}{subsection.6.2.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {6.2.2}First visualization with simple models}{\reset@font\mtcSSfont 63}{subsection.6.2.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {6.2.3}Deeper Trend Analysis : Splines derivatives in GAM}{\reset@font\mtcSSfont 64}{subsection.6.2.3}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Pointwise vs Simultaneous intervals}{\reset@font\mtcSSSfont 64}{section*.75}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Methodology}{\reset@font\mtcSSSfont 64}{section*.76}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Methodology}{\reset@font\mtcSSSfont 64}{equation.6.2.2}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Final Results}{\reset@font\mtcSSSfont 66}{lstnumber.-2.1}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.3}Comments and Structure of the Analysis }{\reset@font\mtcSfont 67}{section.6.3}}

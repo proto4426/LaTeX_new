@@ -1,4 +1,4 @@
-\begin{thebibliography}{75}
+\begin{thebibliography}{74}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -106,6 +106,13 @@ A.~C. Davison, S.~A. Padoan, and M.~Ribatet.
 \newblock \emph{Statistical Science}, 27\penalty0 (2):\penalty0 161--186, 2012.
 \newblock ISSN 0883-4237.
 \newblock URL \url{http://www.jstor.org/stable/41714789}.
+
+\bibitem[de~Haan(1970)]{de_haan_regular_1970}
+L.~de~Haan.
+\newblock \emph{On regular variation and its application to the weak
+  convergence of sample extremes}.
+\newblock Mathematisch Centrum, 1970.
+\newblock Google-Books-ID: sQ3vAAAAMAAJ.
 
 \bibitem[Dekkers and Haan(1989)]{dekkers_estimation_1989}
 A.~L.~M. Dekkers and L.~D. Haan.
@@ -239,13 +246,6 @@ S.~D. Grimshaw.
 \newblock \doi{10.2307/1269663}.
 \newblock URL \url{http://www.jstor.org/stable/1269663?origin=crossref}.
 
-\bibitem[Haan(1970{\natexlab{a}})]{haan_regular_1970}
-L.~d. Haan.
-\newblock \emph{On regular variation and its application to the weak
-  convergence of sample extremes}.
-\newblock Mathematisch Centrum, 1970{\natexlab{a}}.
-\newblock Google-Books-ID: sQ3vAAAAMAAJ.
-
 \bibitem[Haan and Ferreira(2006)]{haan_extreme_2006}
 L.~d. Haan and A.~Ferreira.
 \newblock \emph{Extreme value theory: an introduction}.
@@ -253,13 +253,6 @@ L.~d. Haan and A.~Ferreira.
   2006.
 \newblock ISBN 978-0-387-23946-0.
 \newblock OCLC: ocm70173287.
-
-\bibitem[Haan(1970{\natexlab{b}})]{haan_regular_1970-1}
-L.~F. M.~D. Haan.
-\newblock \emph{On regular variation and its application to the weak
-  convergence of sample extremes}.
-\newblock Mathematisch Centrum, 1970{\natexlab{b}}.
-\newblock Google-Books-ID: SOkSAQAAIAAJ.
 
 \bibitem[Hartmann and Ehlers(2016)]{hartmann_bayesian_2016}
 M.~Hartmann and R.~Ehlers.

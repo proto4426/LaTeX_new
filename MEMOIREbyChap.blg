@@ -1,16 +1,17 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: MEMOIREbyChap.aux
 The style file: abbrvnat.bst
 Case mismatch error between cite keys Hartmann_bayesian_2016 and hartmann_bayesian_2016
----line 1395 of file MEMOIREbyChap.aux
+---line 1402 of file MEMOIREbyChap.aux
  : \citation{Hartmann_bayesian_2016
  :                                 }
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 1549 of file MEMOIREbyChap.aux
+Illegal, another \bibstyle command---line 1485 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
 Database file #1: zotero1.bib
 Warning--I didn't find a database entry for "kharin_changes_2006"
+Warning--I didn't find a database entry for "haan_regular_1970-1"
 Warning--I didn't find a database entry for "northrop_cross_2016"
 Warning--I didn't find a database entry for "charras_extreme_2013"
 Warning--I didn't find a database entry for "embrechts_modelling_1997"

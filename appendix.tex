@@ -71,11 +71,11 @@ Hence, it means that the probability of the differnece between $X_n$ and $X$ goe
 
 An example of application of this convergence is the \emph{Weak Law of Large Numbers}. 
 
-\begin{theorem}[Weak Law of Large Numbers]
+\begin{theorem}\label{wlln}[Weak Law of Large Numbers]
 Let a sequence of R.V. $\{X_i\}_{\text{iid}}$ be defined of the same probability space with mean $\mu$ and variance $\sigma^2<\infty$. Then, we know that the difference between $\bar{X}_n$  and $\mu$ will go to 0 in probability, i.e. $\bar{X}_n\stackrel{p}{\to}\mu$.
 \end{theorem}
 
-But this law actually makes a stronger convergence, following \citet{kolmogorov_foundations_1956}
+But this law actually makes a stronger convergence, following \citet{kolmogorov_foundations_1956}, that is an \emph{almost sure convergence}
 
 \subsection*{Almost Sure Convergence} 
 
@@ -321,7 +321,7 @@ marie est la best : $Moyenne=\frac{1}{n}\sum_{i=1}^{n}X_i$
 			\item[(b)] Set $(\theta_I,\boldsymbol{p}_I)=(\theta_{i-1},\boldsymbol{p_*})$ and $\mathcal{H}_0=\mathcal{H}(\theta_I,\boldsymbol{p}_I)$,
 			\item[(c)] \textbf{repeat} $L$ times 
 			\begin{itemize}
-				\item[$\vartriangleright$] $ \boldsymbol{p}_*=\boldsymbol{p}_*+\frac{\epsilon}{2}\nabla_{\theta}\mathcal{L}(\theta_{i-1} $
+				\item[$\vartriangleright$] $ \boldsymbol{p}_*=\boldsymbol{p}_*+\frac{\epsilon}{2}\nabla_{\theta}\mathcal{L}(\theta_{i-1}) $
 				\item[$\vartriangleright$] $\theta_{i-1}=\theta_{i-1}+\epsilon\cdot\boldsymbol{p}_*$
 				\item[$\vartriangleright$] $ \boldsymbol{p}_*=\boldsymbol{p}_*+\frac{\epsilon}{2}\nabla_{\theta}\mathcal{L}(\theta_{i-1})$,
 			\end{itemize}
@@ -357,7 +357,7 @@ Chains are expected to reach stationarity faster as it proposes moves to regions
 
 \chapter{Other Figures and Tables}\label{app:fig}
 
-\section{GEV : Influence of the Parameters on the shape of the distribution}
+\section{GEV : Influence of the Parameters on the Shape of the Distribution}
 
 Regarding our future application, that is maximum temperatures, it is relevant to consider values of the location parameter $\mu$ around 30 degrees. 
 

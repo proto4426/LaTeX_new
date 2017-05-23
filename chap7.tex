@@ -8,26 +8,26 @@ This analysis relies on \texttt{1inter\_stationary.R} code from the \textbf{/Scr
 
 
 
-The block-length selection an important issue of the analysis. It is important to choose a block-length which is large enough for the limiting arguments supporting the GEV approximation (see (\ref{exttheom})) to be valid, either a large bias in the estimates could occur. For example, if this is too short, the maxima may be too close of each other to assume independence. But a large block-length implies less data to work with, and thus a large variance of the estimates. A compromise must be found between bias and variance and as pointed out in the previous section, yearly blocks seem justifiable for both this reason but also for their interpretability.
+The block-length selection an important issue of the analysis. It is important to choose a block-length which is large enough for the limiting arguments supporting the GEV approximation (see (\ref{exttheom})) to be valid, either a large bias in the estimates could occur. For example, if this is too short, the maxima may be too close of each other to assume independence. But a large block-length implies less data to work with, and thus a large variance of the estimates. A compromise must be found between bias and variance and as pointed out in \hyperref[sec::1]{chapter \textbf{\ref{sec::1}}}, yearly blocks seem justifiable not only for this reason (difficult to study?) but especially for their interpretability and ease of use.
 
 \addcontentsline{toc}{subsection}{R packages for EVT}
 \subsubsection*{R packages in EVT}
 
-A plenty of packages exist for modelling extreme values in R. We have explored some of them and we used some of them. For "basic" EVT analysis, we must name the following : 
+A plenty of packages exist for modelling extreme values in R. We have explored most of them and we used some to do the following analysis. We made comparisons and the results are the same for similar methods. Regarding the classic EVT analysis, we must name the following : 
 \vspace*{-.2cm}
 \begin{itemize}
 \item[$\blacktriangleright$] \textbf{\texttt{ismev, evd, extRemes}} (good for a wide nonstationary analysis with POT and nice tutorials, see e.g. \citet{gilleland_extremes_2016})  \texttt{, \textbf{POT}} (see \citet{ribatet_users_2006})\texttt{, \textbf{evir},} \texttt{\textbf{fExtremes}}, $\dots$
 \end{itemize}
 
-Whereas lots of the package are doing the same analysis but with different tools, we relied mostly on \texttt{ismev} as it is the package used in the book of \citet{coles_introduction_2001}.
+Whereas lots of the package are doing the same analysis but with different tools, we decided to rely mostly on \texttt{ismev} as it is the package used in the book of \citet{coles_introduction_2001}.
 
 \section{Estimation of the Model}
 
-Whereas the whole content of chapter \hyperref[sec::1]{\textbf{\ref{sec::1}}} is important to understand the concepts used in this section, we will now be based on inferential methods discussed in \hyperref[sec::gevinfernce]{section\textbf{ \ref{sec::gevinfernce}}}
+Whereas the whole content of chapter \hyperref[sec::1]{\textbf{\ref{sec::1}}} is important to understand the concepts used in this section, we will now be mostly based on inferential methods discussed in \hyperref[sec::gevinfernce]{section\textbf{ \ref{sec::gevinfernce}}}
 
 \subsection{Maximum Likelihood}\label{sec:mlepratic}
 
-Relying on the packages named above but also by checking it manually, i.e. by numerically solving the optimization problem, that is minimizing the negative log-likelihood, with the \texttt{nlm} routine using a Newton-Raphson algorithm (originated from \citet{dennis_numerical_1987}). This is based on approximating the log-likelihood by a quadratic function, the second order Taylor series approximation of the log-likelihood for a given point.  The results are shown in table \ref{tab:estlik} :
+Relying on the R packages cited above ,but also by checking it manually, i.e. by numerically solving the optimization problem, that is minimizing the negative log-likelihood, with the \texttt{nlm} routine using a Newton-Raphson algorithm (originated from \citet{dennis_numerical_1987}). This is based on approximating the log-likelihood by a quadratic function, the second order Taylor series approximation of the log-likelihood for a given point.  The results are shown in table \ref{tab:estlik} :
 \vspace{-.3cm}
 \begin{table}[!htbp] \centering 
   \caption{shows the maximum likelihood estimation of the three GEV parameters} 

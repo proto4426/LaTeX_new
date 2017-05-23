@@ -1,6 +1,6 @@
 \BOOKMARK [0][-]{chapter*.5}{Introduction}{}% 1
 \BOOKMARK [-1][-]{part.1}{I Theoretical Framework : Extreme Value Theory}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Method of Block-Maxima}{part.1}% 3
+\BOOKMARK [0][-]{chapter.1}{Method of Block Maxima}{part.1}% 3
 \BOOKMARK [1][-]{section.1.1}{Preliminaries}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.2}{Extremal Types Theorem}{chapter.1}% 5
 \BOOKMARK [1][-]{section.1.3}{Characterization of the GEV distributions : 3 Types}{chapter.1}% 6
@@ -60,7 +60,7 @@
 \BOOKMARK [1][-]{section.4.4}{Bootstrap Methods in EVT}{chapter.4}% 60
 \BOOKMARK [2][-]{subsection.4.4.1}{Moving Block Bootstrap}{section.4.4}% 61
 \BOOKMARK [1][-]{section.4.5}{Markov models}{chapter.4}% 62
-\BOOKMARK [0][-]{chapter.5}{Bayesian Methods}{part.1}% 63
+\BOOKMARK [0][-]{chapter.5}{Bayesian Extreme Value Theory}{part.1}% 63
 \BOOKMARK [1][-]{section.5.1}{Prior Elicitation}{chapter.5}% 64
 \BOOKMARK [2][-]{subsection.5.1.1}{Non-informative Priors}{section.5.1}% 65
 \BOOKMARK [2][-]{subsection.5.1.2}{Informative Priors}{section.5.1}% 66
@@ -90,7 +90,7 @@
 \BOOKMARK [2][-]{subsection.6.2.2}{First visualization with simple models}{section.6.2}% 90
 \BOOKMARK [2][-]{subsection.6.2.3}{Deeper Trend Analysis : Splines derivatives in GAM}{section.6.2}% 91
 \BOOKMARK [3][-]{section*.75}{Pointwise vs Simultaneous intervals}{subsection.6.2.3}% 92
-\BOOKMARK [3][-]{section*.76}{Methodology}{subsection.6.2.3}% 93
+\BOOKMARK [3][-]{equation.6.2.2}{Methodology}{subsection.6.2.3}% 93
 \BOOKMARK [3][-]{lstnumber.-2.1}{Final Results}{subsection.6.2.3}% 94
 \BOOKMARK [1][-]{section.6.3}{Comments and Structure of the Analysis }{chapter.6}% 95
 \BOOKMARK [0][-]{chapter.7}{First Analysis by GEV }{part.2}% 96
@@ -106,27 +106,28 @@
 \BOOKMARK [1][-]{section.8.1}{Stationary Analysis}{chapter.8}% 106
 \BOOKMARK [1][-]{section.8.2}{Nonstationary Analysis}{chapter.8}% 107
 \BOOKMARK [1][-]{section.8.3}{Improvements with Neural Networks}{chapter.8}% 108
-\BOOKMARK [0][-]{chapter.9}{Bayesian Analysis}{part.2}% 109
+\BOOKMARK [0][-]{chapter.9}{Bayesian Extreme Value Analysis}{part.2}% 109
 \BOOKMARK [1][-]{section.9.1}{From evdbayes R package : MH algorithm}{chapter.9}% 110
 \BOOKMARK [1][-]{section.9.2}{From Our Functions \(R package\)}{chapter.9}% 111
 \BOOKMARK [1][-]{section.9.3}{From HMC algorithm using STAN language}{chapter.9}% 112
-\BOOKMARK [1][-]{section.9.4}{Comparisons}{chapter.9}% 113
-\BOOKMARK [2][-]{subsection.9.4.1}{STAN}{section.9.4}% 114
-\BOOKMARK [1][-]{section.9.5}{Comparison with frequentists results}{chapter.9}% 115
-\BOOKMARK [0][-]{section.9.5}{Conclusion}{part.2}% 116
-\BOOKMARK [-1][-]{chapter*.88}{Appendix}{}% 117
-\BOOKMARK [0][-]{appendix.A}{Statistical tools for Extreme Value Theory}{chapter*.88}% 118
-\BOOKMARK [1][-]{section.A.1}{Tails of the distributions}{appendix.A}% 119
-\BOOKMARK [1][-]{section.A.2}{Convergence concepts}{appendix.A}% 120
-\BOOKMARK [1][-]{section.A.3}{Varying functions}{appendix.A}% 121
-\BOOKMARK [1][-]{section.A.4}{Diagnostic Plots : Quantile and Probability Plots}{appendix.A}% 122
-\BOOKMARK [0][-]{appendix.B}{Bayesian Methods}{chapter*.88}% 123
-\BOOKMARK [1][-]{section.B.1}{Algorithms}{appendix.B}% 124
-\BOOKMARK [2][-]{subsection.B.1.1}{Metropolis\205Hastings Algorithm}{section.B.1}% 125
-\BOOKMARK [2][-]{subsection.B.1.2}{Gibbs Sampler}{section.B.1}% 126
-\BOOKMARK [2][-]{subsection.B.1.3}{Hamiltonian Monte Carlo}{section.B.1}% 127
-\BOOKMARK [0][-]{appendix.C}{Other Figures and Tables}{chapter*.88}% 128
-\BOOKMARK [1][-]{section.C.1}{GEV : Influence of the Parameters on the shape of the distribution}{appendix.C}% 129
-\BOOKMARK [1][-]{section.C.2}{Introduction of the Practical Analysis \(section 6\)}{appendix.C}% 130
-\BOOKMARK [1][-]{section.C.3}{Analysis by GEV}{appendix.C}% 131
-\BOOKMARK [0][-]{appendix.D}{Github Repository Structure}{chapter*.88}% 132
+\BOOKMARK [1][-]{section.9.4}{Ratio of Uniform : revdbayes package}{chapter.9}% 113
+\BOOKMARK [1][-]{section.9.5}{Comparisons}{chapter.9}% 114
+\BOOKMARK [2][-]{subsection.9.5.1}{STAN}{section.9.5}% 115
+\BOOKMARK [1][-]{section.9.6}{Comparison with frequentists results}{chapter.9}% 116
+\BOOKMARK [0][-]{section.9.6}{Conclusion}{part.2}% 117
+\BOOKMARK [-1][-]{chapter*.88}{Appendix}{}% 118
+\BOOKMARK [0][-]{appendix.A}{Statistical tools for Extreme Value Theory}{chapter*.88}% 119
+\BOOKMARK [1][-]{section.A.1}{Tails of the distributions}{appendix.A}% 120
+\BOOKMARK [1][-]{section.A.2}{Convergence concepts}{appendix.A}% 121
+\BOOKMARK [1][-]{section.A.3}{Varying functions}{appendix.A}% 122
+\BOOKMARK [1][-]{section.A.4}{Diagnostic Plots : Quantile and Probability Plots}{appendix.A}% 123
+\BOOKMARK [0][-]{appendix.B}{Bayesian Methods}{chapter*.88}% 124
+\BOOKMARK [1][-]{section.B.1}{Algorithms}{appendix.B}% 125
+\BOOKMARK [2][-]{subsection.B.1.1}{Metropolis\205Hastings Algorithm}{section.B.1}% 126
+\BOOKMARK [2][-]{subsection.B.1.2}{Gibbs Sampler}{section.B.1}% 127
+\BOOKMARK [2][-]{subsection.B.1.3}{Hamiltonian Monte Carlo}{section.B.1}% 128
+\BOOKMARK [0][-]{appendix.C}{Other Figures and Tables}{chapter*.88}% 129
+\BOOKMARK [1][-]{section.C.1}{GEV : Influence of the Parameters on the Shape of the Distribution}{appendix.C}% 130
+\BOOKMARK [1][-]{section.C.2}{Introduction of the Practical Analysis \(section 6\)}{appendix.C}% 131
+\BOOKMARK [1][-]{section.C.3}{Analysis by GEV}{appendix.C}% 132
+\BOOKMARK [0][-]{appendix.D}{Github Repository Structure}{chapter*.88}% 133

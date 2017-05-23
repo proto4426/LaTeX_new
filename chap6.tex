@@ -68,7 +68,8 @@ We present our series of yearly maxima in figure \ref{first_fig} where we introd
 
 
 \begin{figure}[!htb]
-	\centering\includegraphics[width=.8\linewidth]{gg12.pdf}\caption{representing the \textbf{yearly} \textbf{maxima} together with three first models trying to represent the trend. Note that shaded grey line representing the standard errors (and not a confidence interval) of the linear trend.}\label{first_fig}
+	\centering\includegraphics[width=.8\linewidth]{gg12.pdf}\caption{representing the \textbf{yearly} \textbf{maxima} together with three first models trying to represent the trend. Note that shaded grey area around the linear trend represent its $95\%$ pointwise confidence interval on the fitted values. }%i.e. there is $95\%$ confidence that the "true" (population) regression line lies within the shaded region.}
+\label{first_fig}
 \end{figure}
 
 
@@ -85,19 +86,33 @@ The code which provide all the tools to retrieve the presented results are left 
 
 \subsection{Deeper Trend Analysis : Splines derivatives in GAM}\label{sec:splines}
 
-Apart from the significant increasing linear trend, we did not find formal results. Moreover, we see from the series that a linear trend to the entire series makes little sense. Regarding the broken-linear trend for example, we would like to assess if there is indeed a difference in the slope of trend over time. 
+Apart from the significant increasing linear trend, we did not find concrete results. Moreover, we see from the series that a linear trend to the entire series makes little sense. Regarding the broken-linear trend for example, we would like to assess if there is indeed a difference in the slope of the trend over some time periods. 
 
-We assume the reader is at ease(?) with\emph{ Generalized Additive Models} (GAM) which have been developed by \citet{hastie_generalized_1986}. We also assume he knows about penalized \emph{splines} and splines smoothing, where a good introduction is found in \citet[section 3]{ruppert_semiparametric_2003}. This section uses the code \textbf{/Scripts-R/1intro\_trends(splines).R}.
+We assume the reader is at ease(?) with\emph{ Generalized Additive Models} (GAM) which have been developed by \citet{hastie_generalized_1986}. We also assume the reader knows about penalized \emph{splines} and splines smoothing. A vast theoretical explanation of the concepts used can be found in \citet[chapter 3, 6 and 11]{ruppert_semiparametric_2003}. When replacing the covariates by smooth function of the covariates such as the smoothing splines here, then the resulting model will be nonparametric and will thus allow for much more flexibility.
+ This section uses the code \textbf{/Scripts-R/1intro\_trends(splines).R}.
 
 
 \addcontentsline{toc}{subsubsection}{Pointwise vs Simultaneous intervals}
 \subsubsection*{Pointwise vs Simultaneous intervals}
 
-\textbf{Simultaneous} confidence intervals :  Following \citet[section 3, section 4.9, section 6.5]{ruppert_semiparametric_2003} which uses a simulation-based approach to generate a simultaneous interval
+\textbf{Simultaneous} confidence intervals :  Following \citet[section 4.9, section 6.5]{ruppert_semiparametric_2003} which uses a simulation-based approach to generate a simultaneous interval
 \citet{marra_coverage_2012}
+
+\citet[p.135]{ruppert_semiparametric_2003} : what should be improved for pointwise ci (also called "variability bands")
+
+Let $\mathcal{X}$ denote the set of $x$ values of interest, i.e. $\mathcal{X}=[1901,2016]$ in our case. $f$ is the model of interest, e.g. the linear regression, or the GAM model that we will fit. Hence, mathematically, a \textbf{pointwise} $100(1-\alpha)\%$ confidence interval $\Big\{\big[L(x),U(x)\big] \ : \ x\in \mathcal{X}\Big\}$ approximately satisfy 
+\begin{equation}
+\text{Pr}\Big\{L(x)\leq f(x)\leq U(x)\Big\}\geq 1-\alpha, \qquad \forall x\in\mathcal{X}.
+\end{equation}
+In contrast, a \textbf{simultaneous} $100(1-\alpha)\%$ confidence interval must satisfy 
+
+\begin{equation}
+\text{Pr}\Big\{L(x)\leq f(x)\leq U(x), \ \forall x\in\mathcal{X}\Big\}\geq 1-\alpha.
+\end{equation}
 
 From the pointwise confidence intervals we can say that (example) $f(1980)$ has $95\%$ chance to lie within (-1,0) (say) and $f(2000)$ has also $95\%$ to lie within (0.2,1.2) BUT it is a fallacy to say simultaneously that both are contained in these intervals at the same time with $95\%$ confidence. \citet[section 6.5]{ruppert_semiparametric_2003}
 
+Theoretical details on how to mathematically derive the simultaneous intervals are available in \citet[pp.142-144]{ruppert_semiparametric_2003} but will not be displayed here.
 
 \addcontentsline{toc}{subsubsection}{Methodology}
 \subsubsection*{Methodology}
@@ -105,7 +120,7 @@ From the pointwise confidence intervals we can say that (example) $f(1980)$ has 
 \begin{itemize}
 \item We fitted a simple GAM model relying on the \texttt{mgcv} package from \citet{maindonald_data_2006}. Then, after looking at the correlation structure the normalized residuals (ACF and PACF, see figure \ref{fig:acfresgam1} in \hyperref[app:fig]{appendix \ref{app:fig}}), we detected very slight patterns.
 
-\item As the selection from figure \ref{fig:acfresgam1} is not trivial, we fitted several time series models for the residuals. It is not necessary to consider too complex models so we stopped at 2 additional degrees of freedom. The results are represented in table \ref{table:gamresid} in \hyperref[app:fig]{appendix \ref{app:fig}} where we see that the BIC, which is more penalizing complex models, will prefer the independent model for the residuals but the AIC will not. Hence, we conducted likelihood ratio tests which confirmed. The diagnostics of the model in figure \ref{fig:diagnogam} are good. As we took a Gaussian (identity) link, our model can be written as
+\item As the selection from figure \ref{fig:acfresgam1} is not trivial, we fitted several time series models for the residuals. It is not necessary to consider too complex models so we stopped at 2 additional degrees of freedom. The results are represented in table \ref{table:gamresid} in \hyperref[app:fig]{appendix \ref{app:fig}} where we see that the BIC, which is more penalizing complex models, will prefer the independent model for the residuals but the AIC will not. Hence, we conducted likelihood ratio tests which confirmed. The diagnostics of the model in figure \ref{fig:diagnogam} are good. As we took a Gaussian (identity) link\footnote{Note that it makes our model being only additive, and not generalized...}, our model can be written as
 
 \begin{equation}\label{eq:gam}
 Y_{\text{GAM}}(\text{year}) = \alpha + f_{\text{(k)}}(\text{year})+\epsilon , \qquad\quad \epsilon\sim\text{WN}.
@@ -114,13 +129,13 @@ Y_{\text{GAM}}(\text{year}) = \alpha + f_{\text{(k)}}(\text{year})+\epsilon , \q
 (!! WN or MA(1° for the residuals ? Depend on the analysis !!! Graph below is WN)
 
 
-where $f$ is modelled by smoothing splines. $Y$ models the TX here. It is not important in our case to perform cross-validation to choose the dimension of the basis $k$ and we set it to 20 to ensure a reasonable degree of smoothness.
+where $f$ is modelled by smoothing splines. $Y$ models the TX here. It is not important in our case to perform cross-validation to choose the dimension of the basis $k$ for the spline, so we set it to 20 to ensure a reasonable degree of smoothness as there is modest amount of non-linearity in the series.
 
 \begin{figure}[!htb]
 \centering	\includegraphics[width=.75\linewidth]{post_draws.pdf}\caption{displays draws from the posterior distribution of the model. Notice the large uncertainty associated to the posterior draws (grey lines).  The coverages are calculated for $M=10^5$ simulations. }\label{fig:post_draws}
 \end{figure}
 
-\item  To account for uncertainty, we decide to simulate $M = 10^5$ draws (it is quite fast) from the posterior of the GAM model in (\ref{eq:gam}). Hence, the confidence intervals (or bands) that we will compute will be of the form of  Bayesian credible intervals that we have discussed in \hyperref[bayes_cred_int]{section \textbf{\ref{bayes_cred_int}}}.
+\item  To account for uncertainty, we decide to simulate $M = 10^5$ draws (it is quite fast) from the posterior of the GAM model in (\ref{eq:gam}). Hence, the confidence intervals (or bands) that we compute will be of the form of Bayesian credible intervals that we have discussed in \hyperref[bayes_cred_int]{section \textbf{\ref{bayes_cred_int}}}. This is highlighted by \citet{marra_coverage_2012}.
 We display 50 of the posterior draws in figure \ref{fig:post_draws} %let in \hyperref[app:fig]{appendix \ref{app:fig}}
  displaying both pointwise (in yellow) and simultaneous (in red) intervals. We can already point out that pointwise intervals seem too narrow.
 
@@ -147,7 +162,7 @@ We would like to formalize the inadequacy of the pointwise intervals. Hence, we 
 We clearly see that this indeed converges to $95\%$ for the simultaneous interval while it converges rather to $\approx 60\%$ for the pointwise interval.
 
 We have build a Shiny application from this graph to better visualize the impact of the number simulations on the confidence intervals and how their coverage vary, both visually and quantitatively. You can load it from the package with \begin{lstlisting}[language=R]
-runExample('splines_draws')\end{lstlisting} from which you can check the results of the table (using the default seed=99)
+runExample('splines_draws')\end{lstlisting} from which you can check and obtain the same results as in the table (using the default seed=99)
 
 Note that the results are similar if we do the experiment on the first derivatives $f^{'}(\cdot)$ of the splines rather than on the splines itself
 
@@ -163,9 +178,9 @@ Some remarks from the two plots in figure \ref{fig:derivsplines} :
 \end{figure}
 
 \begin{itemize}
-\item Looking together with the series in \ref{first_fig}, we can make the link between the trend behaviour of the series and the splines derivative which models accurately the slope behaviour of the trend. 
+\item Looking together with the series in figure \ref{first_fig}, we can make the link between the trend behaviour of the series and the splines derivative which models accurately the slope behaviour of the trend. 
 \item Whence we can notice the increasing trend but with decreasing slope until $\approx 1945$ where it becomes is decreasing. Then the slope increase and the trend starts to re-increase around 1962. This upward trend that the series of annual maxima is facing for this last period brings light to the climate warming we are all talking about. However, 
-\item  Whereas the pointwise confidence interval include significant regions (i.e. when 0 is not included in the interval), the simultaneous interval which accounting for the increase in uncertainty, have no more significant regions. We can concluce that the 
+\item  Whereas the pointwise confidence interval include significant regions (i.e. when 0 is not included in the interval), the simultaneous interval which is accounting for the increase in uncertainty, have no more significant regions. We can then conclude that the 
 
 \end{itemize}
 
