@@ -1,11 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: MEMOIREbyChap.aux
 The style file: abbrvnat.bst
 Case mismatch error between cite keys Hartmann_bayesian_2016 and hartmann_bayesian_2016
----line 1402 of file MEMOIREbyChap.aux
+---line 1405 of file MEMOIREbyChap.aux
  : \citation{Hartmann_bayesian_2016
  :                                 }
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 1485 of file MEMOIREbyChap.aux
+Illegal, another \bibstyle command---line 1488 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command

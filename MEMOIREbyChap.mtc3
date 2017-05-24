@@ -1,20 +1,20 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Preliminaries: Intuitions}{\reset@font\mtcSfont 25}{section.2.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Characterization of the Generalized Pareto Distribution}{\reset@font\mtcSfont 26}{section.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Outline proof of the GPD and justification from GEV}{\reset@font\mtcSSfont 27}{subsection.2.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Dependence of the scale parameter $\sigma $}{\reset@font\mtcSSfont 28}{subsection.2.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.3}Three different types of GPD and duality with GEV}{\reset@font\mtcSSfont 28}{subsection.2.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.4}Examples of the GPD as limiting distribution for exceedances }{\reset@font\mtcSSfont 29}{subsection.2.2.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Return Levels}{\reset@font\mtcSfont 29}{section.2.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Point Process Approach}{\reset@font\mtcSfont 30}{section.2.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.1}Non-homogeneous Poisson Process}{\reset@font\mtcSSfont 30}{subsection.2.4.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.5}Inference}{\reset@font\mtcSfont 30}{section.2.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.1}Likelihood-based Methods}{\reset@font\mtcSSfont 31}{subsection.2.5.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.2}Profile Likelihood}{\reset@font\mtcSSfont 31}{subsection.2.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.3}Other Methods}{\reset@font\mtcSSfont 31}{subsection.2.5.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.4}Estimators Based on Extreme Order Statistics for EVI}{\reset@font\mtcSSfont 31}{subsection.2.5.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.5}The Probability-Weighted-Moment Estimator}{\reset@font\mtcSSfont 32}{subsection.2.5.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.6}Estimators based on Generalized Quantile }{\reset@font\mtcSSfont 33}{subsection.2.5.6}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.6}Threshold Selection (Methods) }{\reset@font\mtcSfont 33}{section.2.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.6.1}Standard Threshold choice for the excess models}{\reset@font\mtcSSfont 33}{subsection.2.6.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.6.2}"Varying" Threshold : Mixture Models}{\reset@font\mtcSSfont 36}{subsection.2.6.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.6.2.1}Nonstationary extremes}{\reset@font\mtcSSSfont 36}{subsubsection.2.6.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.1}Preliminaries: Intuitions}{\reset@font\mtcSfont 26}{section.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.2}Characterization of the Generalized Pareto Distribution}{\reset@font\mtcSfont 27}{section.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.1}Outline proof of the GPD and justification from GEV}{\reset@font\mtcSSfont 28}{subsection.2.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.2}Dependence of the scale parameter $\sigma $}{\reset@font\mtcSSfont 29}{subsection.2.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.3}Three different types of GPD and duality with GEV}{\reset@font\mtcSSfont 29}{subsection.2.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.2.4}Examples of the GPD as limiting distribution for exceedances }{\reset@font\mtcSSfont 30}{subsection.2.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.3}Return Levels}{\reset@font\mtcSfont 30}{section.2.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.4}Point Process Approach}{\reset@font\mtcSfont 31}{section.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.4.1}Non-homogeneous Poisson Process}{\reset@font\mtcSSfont 31}{subsection.2.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.5}Inference}{\reset@font\mtcSfont 31}{section.2.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.1}Likelihood-based Methods}{\reset@font\mtcSSfont 32}{subsection.2.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.2}Profile Likelihood}{\reset@font\mtcSSfont 32}{subsection.2.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.3}Other Methods}{\reset@font\mtcSSfont 32}{subsection.2.5.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.4}Estimators Based on Extreme Order Statistics for EVI}{\reset@font\mtcSSfont 32}{subsection.2.5.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.5}The Probability-Weighted-Moment Estimator}{\reset@font\mtcSSfont 33}{subsection.2.5.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.5.6}Estimators based on Generalized Quantile }{\reset@font\mtcSSfont 34}{subsection.2.5.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {2.6}Threshold Selection (Methods) }{\reset@font\mtcSfont 34}{section.2.6}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.6.1}Standard Threshold choice for the excess models}{\reset@font\mtcSSfont 34}{subsection.2.6.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {2.6.2}"Varying" Threshold : Mixture Models}{\reset@font\mtcSSfont 37}{subsection.2.6.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {2.6.2.1}Nonstationary extremes}{\reset@font\mtcSSSfont 37}{subsubsection.2.6.2.1}}
