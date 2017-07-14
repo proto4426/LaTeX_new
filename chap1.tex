@@ -110,7 +110,7 @@ which is also a degenerate distribution.
 Whereas the CLT dealt with the sample mean, EVT also aims to find a non-degenerate distribution in the limit of the maximum $X_{(n)}$ by means of normalization. We will see how it works in details in the following section.
 
 
-\section{Extremal Types Theorem}\label{sec:extrtypethm}
+\section{Extremal Types Theorem : Extreme Value distributions}\label{sec:extrtypethm}
 
 
 Introduced by \cite{fisher_limiting_1928}, later revised by \cite{gnedenko_sur_1943} and finally streamlined by \cite{de_haan_regular_1970}, the \emph{extremal types theorem} is very important for its applications in EVT. Let $\{X_i\}$ be a sequence of iid random variables with df $F$. It states the following :  
@@ -143,40 +143,37 @@ then $G$ has the same type as one of the following distributions :
 \  1, \ \ \ \ \ \ \qquad \quad \quad \ \ \ \ \ \ \ \ \  \ \ \ \quad z\geq 0,
 \end{cases}
 \end{equation}
-for some parameter $\alpha>0$ in the second and third case.
+for some parameter $\alpha>0$ in case II and III.
 \end{theorem}
 
-%The fact that $G$ has the same type as the 3 distributions implies that you 
-%One can notice that we explicitly retrieve the general definition in \ref{gevgen} for type II and type III, that is when $\xi\neq 0$.
-These represent the \emph{standard extreme value distribution functions}. We remark that each real parameter $\alpha$ actually determines the distribution. 
+These are termed the \emph{standard extreme value distribution functions} and are differentiated by three types. We already remark that each real parameter $\alpha$ actually determines the type. \textbf{Type} $\boxed{\textbf{\text{I}}}$ is commonly known as the \emph{Gumbel} family while the \textbf{type} $\boxed{\textbf{\text{II}}}$  and \textbf{type} $\boxed{\textbf{\text{III}}}$ are known as the \emph{Fréchet} and the \emph{Weibull} families respectively. From the fact that $G$ is of the \emph{same type} as one of the three distribution, we can rescale these distributions by some normalizing parameters $a>0$ (scale) and $b$ (location), that is by $G_{i,\alpha, a,b}(z)=G_{i,\alpha}\Big(\frac{z-b}{a}\Big)$ for $i=2,3$, and similarly for $G_1$ to obtain the \emph{full} EV distributions. %Note that $b$ will become the left endpoint of $G_{2,\alpha}$ and the right endpoint of $G_{3,\alpha}$.
 
 
-%where we added explicitly the location and scale parameters $\mu$ and $\sigma$ in order to obtain the three \emph{extreme value distributions}, see for example \cite[pp.16]{reiss_statistical_2007} among others. The parameters are such that $ \sigma>0$ and $-\infty<\mu,\xi<\infty$.This statement will hold for the rest of this thesis
 
+This theorem considers an iid random sample, but note that it holds true even if the original scheme being no longer independent. We will present the stationary case in 
+\hyperref[sec:statio]{Section \textbf{\ref{sec:statio}}}. Furthermore, we will see in \hyperref[sec:mda]{Section \textbf{\ref{sec:mda}}} that it actually means that $F$ is in the \emph{domain of attraction} of $G$. Now, let's find out if there exist a more convenient characterization of $G$.  %However, even the stationary assumption is often poor in practical applications (see for our applications in our case, the temperature....)\cite{gomes_bootstrap_2015} (see application...) but we will handle that in \hyperref[nstatio]{section \textbf{3.2}}. 
 
-Hence, all these three classes of extreme distributions can be expressed in the same functional form as special cases of this single three-parameter distribution (see eq 1.9 ??!!). That is, when $\xi\rightarrow 0$ we retrieve the \textbf{type} $\boxed{\textbf{\text{I}}}$ or \emph{Gumbel} family (\ref{gumb}) while $\xi >0$ and $\xi <0$ leads to the \textbf{type} $\boxed{\textbf{\text{II}}}$  or \emph{Fréchet} family and to the \textbf{type} $\boxed{\textbf{\text{III}}}$ or \emph{Weibull} family, (\ref{frech}) and (\ref{weib}) respectively. 
+\subsection{Generalized Extreme Value Distribution}\label{sec:gevdistri}
 
+\citet{von_mises_distribution_1936} showed that another representation is possible by taking the reparametrization $\xi=\alpha^{-1}$ of the extreme values dfs to obtain a continuous, unified model.
 
-This theorem considers an iid random sample, but note that it holds true even if the original scheme 
-being no longer independent (we will present the stationary case in 
-\hyperref[sec:statio]{Section \textbf{\ref{sec:statio}}}). %However, even the stationary assumption is often poor in practical applications (see for our applications in our case, the temperature....)\cite{gomes_bootstrap_2015} (see application...) but we will handle that in \hyperref[nstatio]{section \textbf{3.2}}. 
-Furthermore, we will see in \hyperref[sec:mda]{Section \textbf{\ref{sec:mda}}} that it actually means that $F$ is in the \textbf{domain of attraction} of $G$ where
-$G$ is called the \textit{Generalized Extreme Value} (GEV) distribution, defined by
-
-\begin{equation} 
-G(z)=\ \text{exp}\ \Bigg\{-\bigg[1+\xi\bigg(\frac{z-\mu}{\sigma}\bigg)\bigg]_+^{-\xi^{-1}}\Bigg\}:=G_{\xi,\mu,\sigma}(z),
+Hence, all these three classes of extreme distributions can be expressed in the same functional form as special cases of the single three-parameter \textit{Generalized Extreme Value} (GEV) distribution 
+\begin{equation} \label{gevgen}
+G(z):=G_{\xi,\mu,\sigma}(z)\ =\text{exp}\ \Bigg\{-\bigg[1+\xi\bigg(\frac{z-\mu}{\sigma}\bigg)\bigg]_+^{-\xi^{-1}}\Bigg\}, \quad \ \ \xi\neq 0.
 \end{equation}
-where $-\infty<\mu,\xi<\infty$ and $\sigma>0$ with 
-$(\mu,\sigma,\xi)$ being the three parameters of the model characterizing location, 
-scale and shape respectively. The notation $y_+=\text{max}(y,0)$ denotes in the above that 
-$\big\{z:1+\xi\sigma^{-1}(z-\mu)>0\big\}$ to ensure the term in the exponential is negative, and hence the 
-distribution function converges to 1. We will keep this notation in the following so it is important to remind that this yields a vital condition for the GEV. In particular, this will define the endpoints from the three different characterizations of this distribution from the values of the shape 
-parameter. This will be detailed in the \hyperref[sec:gevdistri]{next 
-Section}.
+where $-\infty<\mu,\xi<\infty$ and $\sigma>0$ with $(\mu,\sigma,\xi)$ being the three parameters of the model characterizing location, scale and shape respectively. We introduce the notation $y_+=\text{max}(y,0)$ to denote that (\ref{gevgen}) is defined on $\big\{z:1+\xi\sigma^{-1}(z-\mu)>0\big\}$. It ensures the term in the exponential function is negative, and hence the df converges to 1. We will keep this notation in the following so it is important to remind that this yields a vital condition for the GEV as it will define the endpoints from the three different characterizations of this distribution from the values of the shape 
+parameter. %This will be detailed in the \hyperref[sec:gevdistri]{next Section}.
 
+The GEV corresponds to the \emph{Fréchet} family (\ref{frech}) whenever $\xi>0$ and to the \emph{Weibull} family (\ref{weib}) as $\xi<0$.
+When $\xi=0$, i.e. for the \emph{Gumbel} family (\ref{gumb}), the situation in (\ref{gevgen}) is not defined but is taken as the limit as $\xi\to 0$, leading to 
 
+\begin{equation}\label{gevgen0}
+G(z):=G_{\mu,\sigma}(z)=\ \exp \Bigg\{-\exp\bigg(\frac{z-\mu}{\sigma}\bigg)\Bigg\}, \qquad\qquad\qquad \ \ \xi=0.
+\end{equation}
 
-From \cite{coles_introduction_2001}, we introduce an important theorem in Extreme Value Theory and that has many implications. This theorem states the following :
+The shape parameter $\xi\in\mathbb{R}$ is called the \emph{extreme value index} (EVI) and is hence at the center of the analysis in EVT. It determines, in some degree of accuracy, the type of the underlying distribution. %Often, another parametrization based on $\alpha=\xi^{-1}$ is used in the literature to emphasize the fact that ... Hence, from this general definition of the GEV distribution (\ref{gevgen})-(\ref{gevgen0}), we can directly retrieve the \textbf{three principal types of EV distributions} from the value $\xi$ :
+
+Following \cite{coles_introduction_2001}, we introduce an important theorem in Extreme Value Theory and that has many implications. This theorem states the following :
 
 \begin{theorem}\label{max-gev} For any distribution function $F$,
 	
@@ -184,10 +181,10 @@ From \cite{coles_introduction_2001}, we introduce an important theorem in Extrem
 	F \ \emph{\text{is \emph{max-stable}}}\ \Longleftrightarrow \ F \emph{\text{ is GEV}}.
 	\end{equation}
 \end{theorem}
-Hence, any distribution functions that are \emph{max-stables} (see \hyperref[maxstab]{ Definition \textbf{\ref{maxstab}}}) are also GEV which is defined in \ref{extthm}, and vice-versa.
-To gain interesting insights of the implications of this theorem, we think it is useful to give proof but only for the "$\Leftarrow$" as the converse requires too much mathematical backgrounds.
+Hence, any distribution functions that are \emph{max-stables} (see \hyperref[maxstab]{ Definition \textbf{\ref{maxstab}}}) are also GEV (\ref{gevgen})-(\ref{gevgen0}), and vice-versa. To gain interesting insights of the implications of this theorem, we think it is useful to give an informal proof but only for the "$\Leftarrow$" as the converse requires too much mathematical backgrounds. By using max-stability (\hyperref[maxstab]{Definition \textbf{\ref{maxstab}}}) and \hyperref[max-gev]{Theorem \textbf{\ref{max-gev}}}, this "proof" also gives intuition for \hyperref[extthm]{Theorem \textbf{\ref{extthm}}}. 
 
-\begin{proof}[\boxed{\emph{\textbf{Proof}}}\nopunct ] of \hyperref[label]{Theorem }
+\begin{proof}[\boxed{\emph{\textbf{Outline Proof}}}\nopunct ] of \textbf{Extremal Types} \hyperref[extthm]{Theorem \textbf{\ref{extthm}}} ()and \hyperref[max-gev]{Theorem \textbf{\ref{max-gev}}}) :
+	
 \ \ \	\begin{itemize}
     \item	If $a_n^{-1}(X_{(n)}-b_n)$ has the GEV as limit distribution for large $n$ as defined in (\ref{exttheom}), then
 	
@@ -204,50 +201,26 @@ To gain interesting insights of the implications of this theorem, we think it is
 	\begin{equation} \label{bigup1}
 	\text{Pr}\Big\{ a_{nk}^{-1}(X_{(n)k}-b_{nk})\leq z\Big\}=\Big[\text{Pr}\big\{ a_{nk}^{-1}(X_{(n)}-b_{nk})\leq z\big\}\Big]^k,
 	\end{equation}
-	giving two expressions for the distribution of $M_n$, by (\ref{bigup}) and (\ref{bigup1}) :
+	giving two expressions for the distribution of $X_{(n)}$, by (\ref{bigup}) and (\ref{bigup1}) :
 	
 	\begin{equation*}\label{gevproofl}
 	\text{Pr}\{X_{(n)}\leq z\}\approx G\Big(a_n^{-1}(z-b_n)\Big) \ \ \ \ \text{and} \ \ \ \ \text{Pr}\{X_{(n)}\leq z\} \approx G^{1/k}\Big(a_{nk}^{-1}(z-b_{nk})\Big).
 	\end{equation*}
 	\item It follows that $G$ and $G^{1/k}$ are identical apart from location and scale coefficients. 
-	Hence, $G$ is \emph{max-stable} and therefore GEV. This gives proof of the \textbf{extremal 
-	types theorem}, \ref{extthm}.
+	Hence, $G$ is \emph{max-stable} and therefore GEV. This gives intuition of the \textbf{extremal 
+	types} \hyperref[extthm]{Theorem \ref{extthm}}.
   \end{itemize}
 \vspace{-.3cm}
 \end{proof}
 
-In words, it means that taking power of $G$ results only in a change of location and scale, and hence by recalling the expression of the distribution of a maximum (\ref{maxdist}), it is possible to find the non-degenerate GEV in the limit for this maximum $X_{(n)}$.
-
-\section{Generalized Extreme Value Distribution}\label{sec:gevdistri}
-
-The shape parameter $\xi\in\mathbb{R}$ is called the \emph{extreme value index} (EVI) and is at the center of the analysis in EVT. It determines, in some degree of accuracy, the type of the underlying distribution. Often, another parametrization based on $\alpha=\xi^{-1}$ is used in the literature to emphasize the fact that .
-Hence, from this general definition of the GEV distribution in (\ref{gevgen}), 
-we can directly retrieve the \textbf{three principal types of EV distributions} from the value $\xi$ :
-
-\citet{von_mises_distribution_1936} showed that another representation is possible by taking the reparametrization $\xi=\alpha^{-1}$ of the extreme values dfs to obtain a continuous, unified model.
-
-Hence, all these three classes of extreme distributions can be expressed in the same functional form as special cases of this single three-parameter distribution (see eq 1.9 ??!!). That is, when $\xi\rightarrow 0$ we retrieve the \textbf{type} $\boxed{\textbf{\text{I}}}$ or \emph{Gumbel} family (\ref{gumb}) while $\xi >0$ and $\xi <0$ leads to the \textbf{type} $\boxed{\textbf{\text{II}}}$  or \emph{Fréchet} family and to the \textbf{type} $\boxed{\textbf{\text{III}}}$ or \emph{Weibull} family, (\ref{frech}) and (\ref{weib}) respectively. 
-
-
-
-then $G$ is the \textit{Generalized Extreme Value} (GEV) distribution defined by
-\begin{equation} \label{gevgen}
-G(z)=\ \text{exp}\ \Bigg\{-\bigg[1+\xi\bigg(\frac{z-\mu}{\sigma}\bigg)\bigg]_+^{-\xi^{-1}}\Bigg\}:=G_{\xi,\mu,\sigma}(z),
-\end{equation}
-
-The situation where $\xi=0$ is not defined in (\ref{gevgen}), but is taken as the limit as $\xi\to 0$, i.e.
-
-\begin{equation}\label{gevgen0}
-G_{0,\mu,\sigma}(z)=\ \exp \Bigg\{-\exp\bigg(\frac{z-\mu}{\sigma}\bigg)\Bigg\},
-\end{equation}
-
+More technical details can be found in \citet{leadbetter_extremes_1983}. In words, it means that taking power of $G$ results only in a change of location and scale, and hence by recalling the expression of the distribution of $X_{(n)}$(\ref{maxdist}), it is possible to find the non-degenerate GEV in the limit for $X_{(n)}$.
 
 %\vspace{-.5cm}
 \subsubsection*{Density} 
 The density of the GEV distribution (\ref{gevgen}), $g(z)=\frac{d G(z)}{dz}$ (since we have absolute continuity) can be expressed in two forms, as depicted in Table \ref{tab:gevdens}.
 
 \begin{table}[!htb]
-\centering\caption{The two cases for the \emph{density distribution} of the GEV}\label{tab:gevdens}
+\centering\caption{Two cases for the \emph{density distribution} of the GEV}\label{tab:gevdens}
 \begin{tabular}{|c|c}
 \hline \\
 $\xi\neq 0$ &  $g(z)=\sigma^{-1}\bigg[1+\xi\bigg(\frac{z-\mu}{\sigma}\bigg)\bigg]_+^{-\frac{1}{\xi}-1}\exp\Bigg\{-\bigg[1+\xi\bigg(\frac{z-\mu}{\sigma}\bigg)\bigg]_+^{-\xi^{-1}}\Bigg\}$; \\
@@ -265,14 +238,14 @@ We can now try to visually represent these three families. The following Figure 
 
  We think it is important to point out that the location parameter $\mu$ does not represent
 the mean as in the classic statistical view but does represent the “center” of the distribution, and the scale parameter
-$\sigma$ is not the standard deviation but does govern the “size” of the deviations around $\mu$. This can be visualized on the Figure \ref{fig:gevdif} in \hyperref[app:fig]{Appendix \ref{app:fig}} where we show the variation of the GEV distribution when we vary these parameters. Also, a Shiny application has been build through the R package to visualize in the best way the influence of the parameters on this distribution (see beginning of \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} for an explanation on the use). We clearly notice that the location parameter only implies a horizontal shift of the distribution, without changing its shape, while we clearly see the influence of the scale parameter on the spread of the distribution around $\mu$. For example if $\sigma \nearrow$, then the density will appear more flat.  
+$\sigma$ is not the standard deviation but does govern the “size” of the deviations around $\mu$. This can be visualized on the Figure \ref{fig:gevdif} in \hyperref[app:fig]{Appendix \ref{app:fig}} where we show the variation of the GEV distribution when we vary these parameters\footnote{Moreover, a Shiny application has been build through the R package to visualize in the best way the influence of the parameters on this distribution. See intro of \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} for an explanation on its use.}. We clearly notice that the location parameter only implies a horizontal shift of the distribution, without changing its shape, while we clearly see the influence of the scale parameter on the spread of the distribution around $\mu$. For example if $\sigma \nearrow$, then the density will appear more flat.  
 
 In the following, let's define the \emph{left} and the \emph{right} \emph{endpoint} of a particular df $F$, respectively $_*x$ and $x_*$, by :
 \begin{equation}\label{eq:endpoints}
 _*x=\inf\{x\in\mathbb{R}:F(x)>0\}, \ \ \ \ \ \ \text{and} \ \ \ \ \  x_*=\sup\{x\in\mathbb{R}:F(x)<1\}.
 \end{equation}
-A fundamental remark that we must notice is that the Gumbel distribution is unbounded. The Fréchet distribution has a finite left endpoint in $_*x=\mu-\sigma\cdot\xi^{-1}$ (the blue circle in Figure \ref{gevdens}), and its upper endpoint is $+\infty$ while the Weibull distribution has a finite right endpoint in $x_*=\mu-\sigma\cdot\xi^{-1}$ (the red circle in Figure \ref{gevdens}) and is unbounded in the left. Obviously, this has serious impact on modelling. For example, when dealing with maximum temperatures it is intuitive to consider it is more probably bounded to the right than to left, meaning that a maximum temperature of 70°c is impossible, and hence a Weibull distribution will appear more frequently. 
-
+A fundamental remark that we must notice is that the Gumbel distribution is unbounded. The Fréchet distribution has a finite left endpoint in $_*x=\mu-\sigma\cdot\xi^{-1}$ (blue circle in Figure \ref{gevdens}), and its upper endpoint is $+\infty$ while the Weibull distribution has a finite right endpoint in $x_*=\mu-\sigma\cdot\xi^{-1}$ (red circle in Figure \ref{gevdens}) and is unbounded in the left. Obviously, this has serious impact on modelling. Since these endpoints are function of the parameter values, will see later in \hyperref[likgevintro]{Section \textbf{\ref{likgevintro}}} that it can make the likelihood computation unstable. We will particularly face this in the Bayesian \hyperref[sec::bayesian]{Chapter\textbf{ \ref{sec::bayesian}}}.
+% For example, when dealing with maximum temperatures it is intuitive to consider it is more probably bounded to the right than to left, meaning that a maximum temperature of 70°c is impossible, and hence a Weibull distribution will appear more frequently. 
 
 \vspace{.3cm}
 Sometimes, it is useful for people to think not only about the
@@ -281,15 +254,13 @@ reason why we think it can be useful to detail some examples of how we can const
 sequences $a_n$ and $b_n$ to retrieve the pertaining distribution family.
 %\newline
 
-
-
 \section{Applications : Examples of Convergence to GEV}\label{sec::appconcrete}
 
 In real applications, it is not easy to find the appropriate sequences. But it is a good exercise to profoundly understand the concept of convergence to GEV by looking at some theoretical examples.
 
 
 \subsection*{Convergence to Gumbel distribution}
-The \textbf{Type}  $\boxed{\textbf{\text{I}}}$ or \textbf{Gumbel} distribution $G_1$ can be retrieved by considering, for example,  a iid exponential distributed sequence $\{X_j\}$ of $n$ random variables, that is $X_j\stackrel{iid}{\sim}Exp(\lambda)$ and taking the largest of these values, $X_{(n)}$, as defined earlier. By definition,if the $X_j$ have distribution $F$, then $F(x)=1-e^{-\lambda x}$. Hence, our goal is to find non-random sequences $\{b_n\}$, $\{a_n>0\}$ such that 
+The \textbf{Type}  $\boxed{\textbf{\text{I}}}$ or \textbf{Gumbel} distribution $G_1$ can be retrieved by considering, for example,  an iid exponential distributed sequence $\{X_j\}$ of $n$ random variables, that is $X_j\stackrel{iid}{\sim}Exp(\lambda)$ and taking the largest of these values, $X_{(n)}$, as defined earlier. By definition, if the $X_j$ have df $F$, then $F(x)=1-e^{-\lambda x}$ for $x>0$. Hence, our goal is to find non-random sequences $\{b_n\}$, $\{a_n>0\}$ such that 
 \begin{equation}
 \displaystyle{\lim_{n \to \infty}}\text{Pr}\Big\{ a_n^{-1}(X_{(n)}-b_n)\leq z\Big\}=G_1(z).
 \end{equation}
@@ -302,24 +273,24 @@ Hence, we can easily find that
 \end{aligned}
 \end{equation*}
 from the iid assumption of the random variables and their exponential distribution.
-Hence, by choosing  the sequences $a_n=\lambda^{-1}\log n$ and $b_n=\lambda^{-1}$ and reminding that% $\displaystyle{\lim_{n \to \infty}}(1+\frac{x}{n})^n=\exp(x)$,
+Hence, by choosing  the sequences $a_n=\lambda^{-1}$ and $b_n=\lambda^{-1}\log n$ and reminding that% $\displaystyle{\lim_{n \to \infty}}(1+\frac{x}{n})^n=\exp(x)$,
 
 
 \begin{equation*}
 \begin{aligned}
 \Big[1-\exp\big\{-\lambda(b_n+a_nz)\big\}\Big]^n 
-& = \Big[1-\frac{1}{n}e^{-z}\Big]^n \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \scriptsize\text{\underline{Recall:}} \ \ %\begin{adjustbox}{minipage=0.2\textwidth,precode=\dbox} \scriptsize\displaystyle{\lim_{n \to \infty}}\Big(1+\frac{x}{n}\Big)^n=\exp(x)
+& = \Big[1-\frac{1}{n}e^{-z}\Big]^n %\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ %\scriptsize\text{\underline{Recall:}} \ \ %\begin{adjustbox}{minipage=0.2\textwidth,precode=\dbox} \scriptsize\displaystyle{\lim_{n \to \infty}}\Big(1+\frac{x}{n}\Big)^n=\exp(x)
 %\end{adjustbox}
-\boxed{\scriptsize\displaystyle{\lim_{n \to \infty}}\Big(1+\frac{x}{n}\Big)^n=\exp(x)} \\
-& \stackrel{n\to\infty}{\longrightarrow} \exp(-e^{-z}):=G_1(z).
+%\boxed{\scriptsize\displaystyle{\lim_{n \to \infty}}\Big(1+\frac{x}{n}\Big)^n=\exp(x)} \\
+& \stackrel{n\to\infty}{\longrightarrow} \exp(-e^{-z}):=G_1(z),
 \end{aligned}
 \end{equation*}
-Hence, we found the so-called standard \emph{Gumbel} distribution in the limit. 
+we find the so-called standard \emph{Gumbel} distribution in the limit. 
 Note that the same can be retrieved with $X_j\stackrel{iid}{\sim}N(0,1)$ and with sequences $a_n=-\Phi^{-1}(1/n)$ and $b_n=1/a_n$. 
 
 \vspace{.2cm}
 Typically unbounded distributions, for example the Exponential and Normal, whose tails fall off exponentially or faster, will have the Gumbel limiting distribution for the maxima. They will have, in particular, medians (and other quantiles) that grow as $n\rightarrow\infty$ at the rate
-of 'some power of' $\log n$. This is typical example of light-tailed distribution (i.e., whose tails decay exponentially, as defined in \hyperref[app:tails]{Appendix \ref{app:tails}}).
+of 'some power of' $\log n$. This is a typical example of light-tailed distribution (i.e., whose tails decay exponentially, as defined in \hyperref[app:tails]{Appendix \ref{app:tails}}).
 
 \vspace{-.3cm}
 \subsection*{Convergence to Fréchet distribution}

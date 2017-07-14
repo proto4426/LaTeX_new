@@ -325,8 +325,8 @@ marie est la best : $Moyenne=\frac{1}{n}\sum_{i=1}^{n}X_i$
 				\item[$\vartriangleright$] $\theta_{i-1}=\theta_{i-1}+\epsilon\cdot\boldsymbol{p}_*$
 				\item[$\vartriangleright$] $ \boldsymbol{p}_*=\boldsymbol{p}_*+\frac{\epsilon}{2}\nabla_{\theta}\mathcal{L}(\theta_{i-1})$,
 			\end{itemize}
-			\item[(d)] Set $(\theta_L,\boldsymbol{p}_L=(\theta_{i-1},\boldsymbol{p}_*$ and $\mathcal{H}^{(1)}=\mathcal{H}(\theta_L,\boldsymbol{p}_L),$
-			\item[(e)] Compute $\alpha\Big[(\theta_I,\boldsymbol{p}_I,(\theta_L,\boldsymbol{p}_L)\Big]=\min\Big[\exp\{H^{(0)}-H^{(1)},\ 1\Big]$,
+			\item[(d)] Set $(\theta_L,\boldsymbol{p}_L)=(\theta_{i-1},\boldsymbol{p}_*)$ and $\mathcal{H}^{(1)}=\mathcal{H}(\theta_L,\boldsymbol{p}_L),$
+			\item[(e)] Compute $\alpha\Big[(\theta_I,\boldsymbol{p}_I,(\theta_L,\boldsymbol{p}_L)\Big]=\min\Big[\exp\big\{H^{(0)}-H^{(1)}\big\},\ 1\Big]$,
 			\item[(f)] \textbf{If}  $\alpha\Big[(\theta_I,\boldsymbol{p}_I),(\theta_L,\boldsymbol{p}_L)\Big]>u$  \textbf{then}  	set $\theta_i=\theta_L$ 
 			\begin{itemize}
 				\item[] \textbf{else}   set $\theta_i=\theta_I$,

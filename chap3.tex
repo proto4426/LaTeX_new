@@ -208,19 +208,6 @@ The evidence of seasonality arising when we decrease the length of the blocks is
 Gumbel plot (slide 94) coles
 
 
-\section{Model Comparisons}
-
-\subsection{Statistical Tools}
-
-In order to compare our models, that is for example to check whether a trend (or seasonality) is statistically significant, or if the nonstationnary models provide an improvement over the simpler (stationary) model, we will make use of the \textbf{deviance statistic} defined as 
-\begin{equation}
-D = 2\big\{\ell_1(\mathcal{M}_1)-\ell_0(\mathcal{M}_0)\big\},
-\end{equation}
-
-for two nested models $\mathcal{M}_0\subset \mathcal{M}_1$, where $\ell_1(\mathcal{M}_1)$ and $\ell_0(\mathcal{M}_0)$ are the maximized log-likelihoods under models $\mathcal{M}_1$ and $\mathcal{M}_0$ respectively as defined in .
-
-Asymptotically, the distribution of $D$ is $\chi_k$ with $k$ (df) representing the difference of parameters between model $\mathcal{M}_1$ and $\mathcal{M}_0$. Thus, comparisons of $D$ with the critical values from $\chi_k$ will guide our decision.
-
 
 \section{Return Levels}\label{sec:returnlvlnstatio}
 
@@ -276,3 +263,5 @@ $F_y(r_p(y))=1-p$ with the exceedance level $r_p(y)$ changing with year. It show
 \paragraph*{Return period as expected number of events}
 
 \section{Inference}
+
+We will see the application on our data in chapter x , toghether with the neural net...

@@ -1,14 +1,14 @@
 
 \section{Improvements For Modelling Non-stationary Sequences}\label{improvinf}
+
+In practice, the assumption of linearity (or the basic functions we  tested) we have hold may not be appropriate enough, in the sense that it could not take the complex temporal relationship of the whole maximum temperature process. \citet{kharin_estimating_2005-1} allowed for nonlinear trends in temperature extremes in another fashion : they made simulations over a 110-year transient global climate to estimate linear trends in the three GEV parameters based on a series of overlapping 51-year time windows.
+
+While this modelling allows for much more flexibility, we keep in mind that it will also be detrimental for the understanding of the "structure" of this relationship
+
 \subsection{Generalized Likelihood Methods}
 introduced by \citet{martin_generalized_2000}
-As we have seen in \hyperref[likintro]{section \textbf{4.1}}, 
-" The ML method may diverge
-when sample size is small. To resolve the problems of
-divergence occurring in the numerical techniques used for
-ML, Martins and Stedinger [2000] suggest the use of a prior
-distribution for the shape parameter of the GEV model such
-that the most probable values of the parameter are included"
+In \hyperref[likgevintro]{Section \textbf{\ref{likgevintro}}} we introduced the concept of penalized likelihood (see \citet{coles_likelihood-based_1999}). The idea is that The MLE's may diverge, especially when sample size is small. To resolve this problem, suggest the use of a prior distribution for the shape parameter of the GEV model such
+that the most probable values of the parameter are included.
 
 When dealing with nonstationnary processes, it is interesting to consider Generalized Maximum Likelihood (GML) estimators. In this case, \cite{Adlouni_generalized_2007} have proven that GML is likely to outperform the usual ML inference.
 
@@ -94,13 +94,13 @@ The GML estimator corresponds to the mode of the empirical posterior distributio
 		}
 	}
 	\vspace{-2.5mm}
-	\caption{\emph{ Neural Network applied to GEV. Figure made with \texttt{tikzpicture} and based on  \textcolor{JungleGreen}{\cite{cannon_flexible_2010}}} }
+	\caption{\emph{ Neural Network applied to GEV. Figure made with \texttt{tikzpicture} and based on  \textcolor{JungleGreen}{\cite{cannon_flexible_2010}}} }. Here $x_i(t)=t \ \forall i \in \{1,\ldots,I\}$ 
 	\end{center}
 \end{figure}
 
 \paragraph*{Parametric or nonparametric ?}
 It is always a difficult task to state whether Neural Networks (NN) are parametric models or not. NN  are somewhere in the gray area between a \emph{parametric} and a \emph{nonparametric} model, in the sense that it assumes the GEV distribution from the output layer which are defined by the three parameters of interest, while it also allows for a fabulous flexibility coming from the hidden layers and which lead to think that these ae rather nonparametric.
-However, this terminological question is actually not relevant here and it is more important to focus on the model of NN that is employed here.
+However, this terminological question is actually not relevant here and it is more important to focus on the architecture of the NN employed here.
 
 have the power to manage several outputs in a 
 
@@ -154,13 +154,19 @@ in the context of CDN models by Carney et al. (2005)
 and is worth exploring for GEV-CDN models."
 
 
-\citet[pp.256-267]{Goodfellow-et-al-2016}  (deep learning html book)    The  individual  classifiers’  predictions  (having
-equal  weightage)  are  then  combined  by  taking  majority voting. This typically reduces the variance and then the (possible) overfitting
+\citet[pp.256-267]{Goodfellow-et-al-2016}  (deep learning html book)    The  individual  classifiers’  predictions  (having equal  weightage)  are  then  combined  by  taking  majority voting. This typically reduces the variance and then the (possible) overfitting
 
 
 
+\subsection{xxx}
 
-
+"weight penalty regularization (MacKay, 1992) is
+available as a means of limiting the effective number of model
+parameters in a GEVcdn model. The amount of weight penalty is
+controlled via a user-specified Gaussian prior on the magnitude of
+the input-hidden layer weights. The optimum value for the
+variance of the Gaussian prior must be set by the user with the
+aid of some form of split-sample or cross-validation scheme." (cannon gevcdn vignette pdf)
 
 \section{Bootstrap Methods in EVT}
 
