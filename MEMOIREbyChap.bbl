@@ -1,13 +1,12 @@
-\begin{thebibliography}{74}
+\begin{thebibliography}{76}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[AghaKouchak et~al.(2013)AghaKouchak, Easterling, Hsu, Schubert, and
-  Sorooshian]{AghaKouchak_extremes_2013}
-A.~AghaKouchak, D.~Easterling, K.~Hsu, S.~Schubert, and S.~Sorooshian, editors.
+\bibitem[Amir~AghaKouchak(2013)]{ag_extremes_2013}
+K.~H. S. S. S.~S. Amir~AghaKouchak, David~Easterling.
 \newblock \emph{Extremes in a {Changing} {Climate}}, volume~65 of \emph{Water
   {Science} and {Technology} {Library}}.
 \newblock Springer Netherlands, Dordrecht, 2013.
@@ -62,8 +61,6 @@ M.~Betancourt and M.~Girolami.
 \newblock Hamiltonian {Monte} {Carlo} for hierarchical models.
 \newblock \emph{Current trends in Bayesian methodology with applications},
   79:\penalty0 30, 2015.
-\newblock URL
-  \url{https://books.google.com/books?hl=en&lr=&id=gi6sCQAAQBAJ&oi=fnd&pg=PA79&dq=%22interactions+between+the+levels+in+the+hierarchy%22+%22those+pathologies+either+make+the+algorithms%22+%22the+pathologies+typical+of+hierarchical+models.%22+%22the+dramatic+variations+in+curvature+in+order%22+&ots=RKLEjsNycE&sig=HvrVDWcWWdoOP_JIdjz1a0On1iM}.
 
 \bibitem[Bolívar et~al.(2010)Bolívar, Díaz-Francés, Ortega, and
   Vilchis]{bolivar_profile_2010}
@@ -83,6 +80,13 @@ A.~J. Cannon.
 \newblock \doi{10.1002/hyp.7506}.
 \newblock URL \url{http://doi.wiley.com/10.1002/hyp.7506}.
 
+\bibitem[Charras-Garrido and Lezaud(2013)]{charras_extreme_2013}
+M.~Charras-Garrido and P.~Lezaud.
+\newblock {Extreme Value Analysis : an Introduction}.
+\newblock \emph{{Journal de la Societe Fran{\c c}aise de Statistique}},
+  154\penalty0 (2):\penalty0 pp 66--97, 2013.
+\newblock URL \url{https://hal-enac.archives-ouvertes.fr/hal-00917995}.
+
 \bibitem[Coles(2001)]{coles_introduction_2001}
 S.~Coles.
 \newblock \emph{An {Introduction} to {Statistical} {Modeling} of {Extreme}
@@ -99,6 +103,14 @@ S.~G. Coles and M.~J. Dixon.
 \newblock \doi{10.1023/A:1009905222644}.
 \newblock URL \url{http://link.springer.com/article/10.1023/A:1009905222644}.
 
+\bibitem[Cunnane(1979)]{cunnane_note_1979}
+C.~Cunnane.
+\newblock A note on the {Poisson} assumption in partial duration series models
+  - {Cunnane} - 1979 - {Water} {Resources} {Research} - {Wiley} {Online}
+  {Library}, 1979.
+\newblock URL
+  \url{http://onlinelibrary.wiley.com/doi/10.1029/WR015i002p00489/abstract}.
+
 \bibitem[Davison et~al.(2012)Davison, Padoan, and
   Ribatet]{davison_statistical_2012}
 A.~C. Davison, S.~A. Padoan, and M.~Ribatet.
@@ -113,6 +125,14 @@ L.~de~Haan.
   convergence of sample extremes}.
 \newblock Mathematisch Centrum, 1970.
 \newblock Google-Books-ID: sQ3vAAAAMAAJ.
+
+\bibitem[de~Haan and Resnick(1998)]{dehaan_asymp_1998}
+L.~de~Haan and S.~Resnick.
+\newblock On asymptotic normality of the hill estimator.
+\newblock \emph{Communications in Statistics. Stochastic Models}, 14\penalty0
+  (4):\penalty0 849--866, 1998.
+\newblock \doi{10.1080/15326349808807504}.
+\newblock URL \url{http://dx.doi.org/10.1080/15326349808807504}.
 
 \bibitem[Dekkers and Haan(1989)]{dekkers_estimation_1989}
 A.~L.~M. Dekkers and L.~D. Haan.
@@ -150,13 +170,12 @@ D.~K. Dey and J.~Yan.
 \newblock ISBN 978-1-4987-0131-0.
 \newblock Google-Books-ID: PYhUCwAAQBAJ.
 
-\bibitem[Embrechts et~al.(2011)Embrechts, Klüppelberg, and
+\bibitem[Embrechts et~al.(1997)Embrechts, Klüppelberg, and
   Mikosch]{embrechts_modelling_2011}
 P.~Embrechts, C.~Klüppelberg, and T.~Mikosch.
 \newblock \emph{Modelling {Extremal} {Events}: for {Insurance} and {Finance}}.
-\newblock Springer Berlin Heidelberg, Feb. 2011.
+\newblock Springer Berlin Heidelberg, Feb. 1997.
 \newblock ISBN 978-3-642-08242-9.
-\newblock Google-Books-ID: dfZecgAACAAJ.
 
 \bibitem[Falk and Marohn(1993)]{falk_von_1993}
 M.~Falk and F.~Marohn.
@@ -167,15 +186,6 @@ M.~Falk and F.~Marohn.
 \newblock \doi{10.1214/aop/1176989120}.
 \newblock URL \url{http://projecteuclid.org/euclid.aop/1176989120}.
 
-\bibitem[Fawcett and Walshaw(2012)]{fawcett_estimating_2012}
-L.~Fawcett and D.~Walshaw.
-\newblock Estimating return levels from serially dependent extremes:
-  {ESTIMATING} {RETURN} {LEVELS} {FROM} {SERIALLY} {DEPENDENT} {EXTREMES}.
-\newblock \emph{Environmetrics}, 23\penalty0 (3):\penalty0 272--283, May 2012.
-\newblock ISSN 11804009.
-\newblock \doi{10.1002/env.2133}.
-\newblock URL \url{http://doi.wiley.com/10.1002/env.2133}.
-
 \bibitem[Fisher and Tippett(1928)]{fisher_limiting_1928}
 R.~A. Fisher and L.~H.~C. Tippett.
 \newblock Limiting {Forms} of the {Frequency} {Distribution} of the {Largest}
@@ -183,8 +193,6 @@ R.~A. Fisher and L.~H.~C. Tippett.
 \newblock \emph{ResearchGate}, 24\penalty0 (02):\penalty0 180--190, Jan. 1928.
 \newblock ISSN 1469-8064.
 \newblock \doi{10.1017/S0305004100015681}.
-\newblock URL
-  \url{https://www.researchgate.net/publication/230663919_Limiting_Forms_of_the_Frequency_Distribution_of_the_Largest_or_Smallest_Member_of_a_Sample}.
 
 \bibitem[Gelman et~al.(2013)Gelman, Carlin, Stern, Dunson, Vehtari, and
   Rubin]{gelman_bayesian_2013}
@@ -246,6 +254,13 @@ S.~D. Grimshaw.
 \newblock \doi{10.2307/1269663}.
 \newblock URL \url{http://www.jstor.org/stable/1269663?origin=crossref}.
 
+\bibitem[Haan(1970)]{haan_regular_1970}
+L.~d. Haan.
+\newblock \emph{On regular variation and its application to the weak
+  convergence of sample extremes}.
+\newblock Mathematisch Centrum, 1970.
+\newblock Google-Books-ID: sQ3vAAAAMAAJ.
+
 \bibitem[Haan and Ferreira(2006)]{haan_extreme_2006}
 L.~d. Haan and A.~Ferreira.
 \newblock \emph{Extreme value theory: an introduction}.
@@ -297,30 +312,8 @@ J.~R. M. J. R.~M. Hosking and J.~R. Wallis.
 \newblock Cambridge ; New York : Cambridge University Press, 1997.
 \newblock ISBN 0521430453 (hardbound).
 
-\bibitem[Iii(1975)]{iii_statistical_1975-1}
-J.~P. Iii.
-\newblock Statistical {Inference} {Using} {Extreme} {Order} {Statistics}.
-\newblock \emph{The Annals of Statistics}, 3\penalty0 (1):\penalty0 119--131,
-  Jan. 1975.
-\newblock ISSN 0090-5364, 2168-8966.
-\newblock \doi{10.1214/aos/1176343003}.
-\newblock URL \url{http://projecteuclid.org/euclid.aos/1176343003}.
-
-\bibitem[Klein~Tank et~al.(2002)Klein~Tank, Wijngaard, Können, Böhm,
-  Demarée, Gocheva, Mileta, Pashiardis, Hejkrlik, Kern-Hansen, Heino,
-  Bessemoulin, Müller-Westermeier, Tzanakou, Szalai, Pálsdóttir, Fitzgerald,
-  Rubin, Capaldo, Maugeri, Leitass, Bukantis, Aberfeld, van Engelen, Forland,
-  Mietus, Coelho, Mares, Razuvaev, Nieplova, Cegnar, Antonio~López,
-  Dahlström, Moberg, Kirchhofer, Ceylan, Pachaliuk, Alexander, and
-  Petrovic]{klein_tank_daily_2002}
-A.~M.~G. Klein~Tank, J.~B. Wijngaard, G.~P. Können, R.~Böhm, G.~Demarée,
-  A.~Gocheva, M.~Mileta, S.~Pashiardis, L.~Hejkrlik, C.~Kern-Hansen, R.~Heino,
-  P.~Bessemoulin, G.~Müller-Westermeier, M.~Tzanakou, S.~Szalai,
-  T.~Pálsdóttir, D.~Fitzgerald, S.~Rubin, M.~Capaldo, M.~Maugeri, A.~Leitass,
-  A.~Bukantis, R.~Aberfeld, A.~F.~V. van Engelen, E.~Forland, M.~Mietus,
-  F.~Coelho, C.~Mares, V.~Razuvaev, E.~Nieplova, T.~Cegnar, J.~Antonio~López,
-  B.~Dahlström, A.~Moberg, W.~Kirchhofer, A.~Ceylan, O.~Pachaliuk, L.~V.
-  Alexander, and P.~Petrovic.
+\bibitem[Klein~Tank and Wijngaard(2002)]{klein_tank_daily_2002}
+A.~M.~G. Klein~Tank and Wijngaard.
 \newblock Daily dataset of 20th-century surface air temperature and
   precipitation series for the {European} {Climate} {Assessment}.
 \newblock \emph{International Journal of Climatology}, 22\penalty0
@@ -386,8 +379,6 @@ J.~Maindonald and J.~Braun.
 \newblock \emph{Data analysis and graphics using {R}: an example-based
   approach}, volume~10.
 \newblock Cambridge University Press, 2006.
-\newblock URL
-  \url{https://books.google.com/books?hl=en&lr=&id=d7OeVD6SKBsC&oi=fnd&pg=PA5&dq=%22methods,+stats,+graphics,%22+%22.+.+.+.%22+%22.+.+.+.+.%22+%22.+.+.+.+.+.%22+%22.+.+.+.%22+%22.+.+.+.+.+.+.%22+&ots=2mOJGySmmE&sig=MLMmYfuz4lg9QmCsb2c6DnE6ShE}.
 
 \bibitem[Marra and Wood(2012)]{marra_coverage_2012}
 G.~Marra and S.~N. Wood.
@@ -432,8 +423,6 @@ R.~M. Neal and {others}.
 \newblock {MCMC} using {Hamiltonian} dynamics.
 \newblock \emph{Handbook of Markov Chain Monte Carlo}, 2:\penalty0 113--162,
   2011.
-\newblock URL
-  \url{https://books.google.com/books?hl=en&lr=&id=qfRsAIKZ4rIC&oi=fnd&pg=PA113&dq=%22in+the+following+decades+(see+Frenkel+and+Smit,%22+%22implementation.+The+%E2%80%9Cleapfrog%E2%80%9D+scheme+that+is+typically+used+is+quite%22+%22implemented+with+the+leapfrog+method.+A+state+proposed+in+this+way+can%22+&ots=RbAabV3a4S&sig=WFFHl6fmkouIgzGmizb8pnxBPVM}.
 
 \bibitem[Ni and Sun(2003)]{ni_noninformative_2003}
 S.~Ni and D.~Sun.
@@ -462,6 +451,15 @@ M.~C. Peel, Q.~J. Wang, R.~M. Vogel, and T.~A. McMAHON.
   147--155, 2001.
 \newblock URL
   \url{http://www.tandfonline.com/doi/abs/10.1080/02626660109492806}.
+
+\bibitem[Pickands(1975)]{iii_statistical_1975-1}
+J.~Pickands.
+\newblock Statistical {Inference} {Using} {Extreme} {Order} {Statistics}.
+\newblock \emph{The Annals of Statistics}, 3\penalty0 (1):\penalty0 119--131,
+  Jan. 1975.
+\newblock ISSN 0090-5364, 2168-8966.
+\newblock \doi{10.1214/aos/1176343003}.
+\newblock URL \url{http://projecteuclid.org/euclid.aos/1176343003}.
 
 \bibitem[Pinheiro and Ferrari(2015)]{pinheiro_comparative_2015}
 E.~C. Pinheiro and S.~L.~P. Ferrari.
@@ -501,8 +499,6 @@ M.~Ribatet, C.~Dombry, and M.~Oesting.
 \newblock Spatial {Extremes} and {Max}-{Stable} {Processes}.
 \newblock In \emph{Extreme {Value} {Modeling} and {Risk} {Analysis}: {Methods}
   and {Applications}}, pages 179--194. Chapman and Hall/CRC, 2015.
-\newblock URL
-  \url{https://books.google.com/books?hl=en&lr=&id=PYhUCwAAQBAJ&oi=fnd&pg=PA179&dq=%22rainfall+amount+in+this+catchment,+i.e.,+evaluating+probabilities%22+%22Extremes+and+max-stable%22+%22as+far+as+spatial+extremes+are+of+concern.+Similarly+to+the+univariate%22+%22To+be+consistent+with+the+univariate+extreme+value+theory,+Theorem%22+&ots=phZY14rcy5&sig=-_n3q707dYkioxyG-2QpsYB62jk}.
 
 \bibitem[Ribereau et~al.(2016)Ribereau, Masiello, and
   Naveau]{ribereau_skew_2016}
@@ -539,6 +535,14 @@ D.~Ruppert, M.~P. Wand, and R.~J. Carroll.
 \newblock Cambridge {Books}, Cambridge University Press, 2003.
 \newblock URL
   \url{http://econpapers.repec.org/bookchap/cupcbooks/9780521785167.htm}.
+
+\bibitem[Scarrott and MacDonald(2012)]{scarrott_review_2012}
+C.~Scarrott and A.~MacDonald.
+\newblock A review of extreme value threshold es-timation and uncertainty
+  quantification.
+\newblock \emph{REVSTAT–Statistical Journal}, 10\penalty0 (1):\penalty0
+  33--60, 2012.
+\newblock URL \url{https://www.ine.pt/revstat/pdf/rs120102.pdf}.
 
 \bibitem[Segers(2001)]{segers_generalized_2001}
 J.~Segers.
@@ -625,13 +629,6 @@ R.~Von~Mises.
 \newblock \emph{Rev., Math, Union Interbalcanique,}, 1:\penalty0 pp.141--160,
   1936.
 
-\bibitem[Wada et~al.(2016)Wada, Waseda, and Jonathan]{wada_extreme_2016}
-R.~Wada, T.~Waseda, and P.~Jonathan.
-\newblock Extreme value estimation using the likelihood-weighted method.
-\newblock \emph{Ocean Engineering}, 124:\penalty0 241--251, 2016.
-\newblock ISSN 0029-8018.
-\newblock \doi{10.1016/j.oceaneng.2016.07.063}.
-
 \bibitem[Wadsworth(2016)]{Wadsworth_exploiting_2016}
 J.~L. Wadsworth.
 \newblock Exploiting {Structure} of {Maximum} {Likelihood} {Estimators} for
@@ -640,16 +637,6 @@ J.~L. Wadsworth.
 \newblock ISSN 0040-1706.
 \newblock \doi{10.1080/00401706.2014.998345}.
 \newblock URL \url{http://dx.doi.org/10.1080/00401706.2014.998345}.
-
-\bibitem[Wang(1997)]{wang_lh_1997}
-Q.~J. Wang.
-\newblock {LH} moments for statistical analysis of extreme events.
-\newblock \emph{Water Resources Research}, 33\penalty0 (12):\penalty0
-  2841--2848, Dec. 1997.
-\newblock ISSN 1944-7973.
-\newblock \doi{10.1029/97WR02134}.
-\newblock URL
-  \url{http://onlinelibrary.wiley.com/doi/10.1029/97WR02134/abstract}.
 
 \bibitem[Watanabe(2010)]{Watanabe_asymptotic_2010}
 S.~Watanabe.

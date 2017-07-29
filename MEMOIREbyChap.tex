@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,openany ]{book}
+\documentclass[11pt,a4paper,openany, twosided]{book}
 \makeatletter
 \title{MEMOIRE}
 \makeatletter
@@ -83,9 +83,6 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \usepackage{longtable}
 
-%\usepackage{titlesec}
-%\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{}
-%\titlespacing*{\chapter}{0pt}{-1.5cm}{20pt}
 \usepackage{sidecap}
 \usepackage{pdflscape}
 \usepackage{wrapfig}
@@ -123,11 +120,6 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 	citecolor=ForestGreen,
 }
 \usepackage{etoolbox}
-
-
-
-\newtheorem{exe}{Theorem}
-\setcounter{exe}{-1}
 
 
 \usepackage[ruled,vlined]{algorithm2e}
@@ -219,12 +211,14 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 \makeatother
 \usepackage{appendix}
 %\usepackage[style=apa,backref=true,backend=biber,natbib=true,hyperref=true]{biblatex} 
+\let\origappendix\appendix % save the existing appendix command
+\renewcommand\appendix{\clearpage\pagenumbering{Roman}\origappendix}
 
 
 %\addbibresource{zotero.bib.bib}
 \usepackage{natbib}
 \bibliographystyle{abbrvnat}
-\setcitestyle{authoryear,open={(},close={)}}
+\setcitestyle{authoryear, open = {[}, close={]} }
 
 %\setcitestyle{square}
 %\setcitestyle{authoryear, open={[},close={)]}}
@@ -250,6 +244,8 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 \AtEndEnvironment{definition}{\null\hfill\QEDB}%
 %\declaretheorem[style=definition,qed=$\triangle$,sibling=definition]{definition}
 %\declaretheorem[style=definition,qed=$\triangle$,sibling=definition]{theorem}
+\newtheorem{exe}{Theorem}
+\setcounter{exe}{-1}
 
 
 \usepackage{tcolorbox}
@@ -431,6 +427,8 @@ Regarding the computations, we took advantage of a high-level language (c++) to 
 \thispagestyle{empty}
 \listoffigures
 \thispagestyle{empty}
+\listoftables
+\thispagestyle{empty}
 
 \newpage
 
@@ -442,13 +440,16 @@ For convenience, we place a list of all the abbreviations we will use in the tex
 
 \begin{center}
 \begin{abbreviations}
-	\item [df]\label{df}  (cumulative) distribution function
+	\item[DA] Domain of Attraction
+	\item[df]\label{df}  (cumulative) distribution function
 	\item[EVI] Extreme Value Index ($\xi$)
 	\item[EVT] Extreme Value Theory
 	\item[GEV] Generalized Extreme Value
-	\item[GPD] Generalized Pareto Distribution (function)
+	\item[GPD] Generalized Pareto Distribution %(function)
 	\item[MCMC] Marko Chain Monte Carlo
 	\item[MH] Metropolis-Hastings (algorithm)
+	\item[ML] Maximum Likelihood 
+	\item[MLE] Maximum Likelihood Estimator
 	\item[TN] Temperature miNimum
 	\item[TX] Temperature maXimum
 	
@@ -531,15 +532,15 @@ We can summarize the research question of this thesis as the following :
 In this part, we will make use of some general methods to assess if there is indeed a trend in the maximum temperatures
 
 There are two main approaches in EVT, the block-maxima  and the peaks-over-threshold approach (see 
-\hyperref[sec::2]{section \textbf{2}}) yielding to different extreme value distribution. 
+\hyperref[sec::2]{Section \textbf{2}}) yielding to different extreme value distribution. 
 The former aims at while the latter models the (...)
 
 
-In \hyperref[sec::1]{chapter \textbf{1}} we will present the method of block-maxima and derive the Generalized Extreme Value (GEV) distributions. In \hyperref[sec::2]{chapter \textbf{2}} we will .
-In \hyperref[sec::3]{chapter \textbf{3}}
-In \hyperref[sec::4]{chapter \textbf{4}} we will ..
+In \hyperref[sec::1]{Chapter \textbf{1}} we will present the method of block-maxima and derive the Generalized Extreme Value (GEV) distributions. In \hyperref[sec::2]{Chapter \textbf{2}} we will .
+In \hyperref[sec::3]{Chapter \textbf{3}}
+In \hyperref[sec::4]{Chapter \textbf{4}} we will ..
 
-Finally, we notice that this thesis will more concentrate on the block-maxima (GEV) methods (see \hyperref[sec::1]{chapter \textbf{1}}), i.e. to data relating to maxima over a period of 1 year. For example here in the introduction, or for the Bayesian analysis in \hyperref[sec::bayesian]{chapter \textbf{5}}.
+Finally, we notice that this thesis will more concentrate on the block-maxima (GEV) methods (see \hyperref[sec::1]{Chapter \textbf{1}}), i.e. to data relating to maxima over a period of 1 year. For example here in the introduction, or for the Bayesian analysis in \hyperref[sec::bayesian]{Chapter \textbf{5}}.
 \thispagestyle{empty}
 
 
@@ -554,37 +555,33 @@ Finally, we notice that this thesis will more concentrate on the block-maxima (G
 \chapter{Method of Block Maxima} \label{sec::1}
 \vspace{-1cm}
 \minitoc \thispagestyle{empty}
-%\newpage
- \vspace{1.5cm}
+ \vspace{1cm}
 
-In this chapter, we will present the basics of EVT and we will consider a 
-\textit{block-maxima approach}. After defining some useful concepts in 
-\hyperref[sec::1.1]{section \textbf{1.1}}, we will
+This chapter introduce the basics of EVT by considering the \textit{block-maxima} approach. After defining useful concepts in 
+\hyperref[sec::1.1]{Section \textbf{1.1}} to introduce the emergence of this theory, we will get into the leading theorem of EVT in \hyperref[sec:extrtypethm]{Section \textbf{\ref{sec:extrtypethm}}}. After that, we will present some mathematical applications (\hyperref[sec::appconcrete]{Section \textbf{\ref{sec::appconcrete}}}) and conditions (\hyperref[sec:mda]{Section \textbf{\ref{sec:mda}}}) of this theorem in order to visualize the implications of the extremal theorem and the characterizations of the underlying distributions. Then, \hyperref[rlgev]{Section \textbf{\ref{rlgev}}} will introduce key concepts that help for inference in EVT which will be presented in a general (and frequentist) way in  \hyperref[sec::gevinfernce]{Section \textbf{\ref{sec::gevinfernce}}}. Finally, \hyperref[sec:diag]{Section \textbf{\ref{sec:diag}}} is devoted to list some tools to assess the accuracy of the fitted model.
 
-This chapter is mostly based on \citet[chapter 3]{coles_introduction_2001}, \citet[chapter 2]{beirlant_statistics_2006} and \citet{reiss_statistical_2007}.
+This chapter is mostly based on \citet[chap.3]{coles_introduction_2001}, \citet[chap.2]{beirlant_statistics_2006} and \citet[chap.1-4]{reiss_statistical_2007}, together with relevant articles.
 
 \newpage
 \include*{chap1}
 
 
 
-\chapter{Peaks-Over-Threshold Methods}\label{sec::2}
+\chapter{Peaks-Over-Threshold Method}\label{sec::2}
 \vspace{-1cm}
 \minitoc \thispagestyle{empty}
-%\newpage
- \vspace{1.5cm}
+ \vspace{1cm}
 
-Seuils meteo : 0C (gel permanent), 25C et 30C pour les Tx
-0C (gel) et 20C pour les Tn
+This chapter will focus on another major approach of EV models by modeling only the excess over certain a threshold. This approach is very popular in practice as it handles extremes with more flexibility and hence lots of methods have emerged. 	
 
----> Use this for thresholds ?
+In \hyperref[sec::2.1]{Section \textbf{\ref{sec::2.1}}}, we will intuitively introduce the approach which will help us 
+to formally characterize the resulting distribution of interest in \hyperref[sec:charac_gpd]{Section \textbf{\ref{sec:charac_gpd}}}. Then, \hyperref[sec:rl_gpd]{Section \textbf{\ref{sec:rl_gpd}}} will present the concept of return levels applied in this of context. Whereas meteorologists usually suggest thresholds of $25^{\circ} c$ or $30^{\circ} c$ for maximum temperatures, we will assess the threshold choice in a statistical sense in \hyperref[sec:thresh_selec]{Section \textbf{\ref{sec:thresh_selec}}} by reviewing available methods, but before that we will briefly discuss the parameter estimation in \hyperref[sec::potinference]{Section \textbf{\ref{sec::potinfernce}}}, especially for the EVI. 
 
-In this chapter we will focus on the other kind of EV models, modelling excess over a 
-threshold. This...
-In \hyperref[sec::2.1]{section \textbf{2.1}}, we briefly introduce the concepts to be able 
-to more precisely characterize
- the distributions in section \textbf{2.2}. In section 2.3, we introduce the Poisson 
- models, 
+Unfortunately, the resulting analysis of this chapter will not be present in \hyperref[part:xp]{Part \textbf{\ref{part:xp}}} because it would have made the text become too voluminous. But empirical results (code and html reports) will remain available in the \href{https://github.com/proto4426/PissoortThesis/}{repository}\footnote{\url{https://github.com/proto4426/PissoortThesis/}} which structure is explained in \hyperref[appgit]{Appendix \textbf{\ref{appgit}}}. Moreover, \emph{point process} will not be covered for the same reason but we remind that this is a powerful and flexible method that summarizes the two techniques considered in the two first chapters, and it should then not be missed. 
+
+This chapter is mainly based on \citet[chap.4 and 7]{coles_introduction_2001}, \citet[chap.4]{beirlant_statistics_2006}, \citet[chap.5]{reiss_statistical_2007} and 
+\citet[chap.5]{embrechts_modelling_2011},
+ together with relevant articles.
 
 \newpage
 \include*{chap2}
@@ -594,82 +591,83 @@ to more precisely characterize
 \chapter{Relaxing The Independence Assumption}\label{sec::3}
 \vspace{-1cm}
 \minitoc\thispagestyle{empty}
-
+ \vspace{1cm}
+ 
 In environmental applications, the independence assumption is questionable. It is rarely fulfilled \cite{}, and never completely. From hydrological process (see \citet{milly_stationarity_2008} for stationarity) to temperature analysis (see ref) or even the broader area of meteorological applications (see ref), theoretical assumptions that have been made for the models are not sustainable. This sounds also obvious in extreme values analysis of temperature data, since we expect the temperature .... Whereas it was not really problematic for block-maxima, it was much more painful for POT as we have seen  both in section 2. 
 However, here we can see in our case that it does not really happens...(verif.. and why??)
 
 See \cite[pp.375]{beirlant_statistics_2006}
 
 ....
+
+This chapter is mostly based on \citet[chap.5-6]{coles_introduction_2001}, \citet[chap.10]{beirlant_statistics_2006} and \citet[chap.7]{reiss_statistical_2007}, together with relevant articles.
+
 \newpage
 \include*{chap3}
 
-
-\chapter{Neural Network (and others) }
-\vspace{-1cm}
-\minitoc\thispagestyle{empty}
-
-In the era of Artificial Intelligence (AI) and Machine Learning, or more precisely of Artificial Neural Networks (ANN) or the trendy term "Deep Learning", it is interesting to study how this complex mechanism works and how it can be efficiently applied to deal with the issue of nonstationarity in EVT that we confront.
-
-\newpage
-\include*{chap4}
 
 
 
 \chapter{Bayesian Extreme Value Theory}\label{sec::bayesian}
 \vspace{-1cm}
 \minitoc\thispagestyle{empty}
-
+ \vspace{1cm}
+ 
 see evdbayes pdf package r
 
 Attention : $\pi$ ou $f$ ?????? 
 
 We let useful relevant tools regarding bayesian inference in \hyperref[bayesapp]{appendix \textbf{\ref{appB}}}
+
+This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001}, \citet[chap.11]{beirlant_statistics_2006} and \citet[chap.1-4]{reiss_statistical_2007}, together with relevant articles.
+
 \newpage
-\include*{chap5}
+\include*{chap4}
 
 
 
 
 
-\part{Experimental Framework : Nonstationary Extreme Value Analysis of Maximum Temperatures}
+\part{Experimental Framework : Extreme Value Analysis of Maximum Temperatures}\label{part:xp}
 \thispagestyle{empty}
 
-In this part, we will focus on the application of the methods seen during the theoretical part. 
+%In this part, we will focus on the application of the methods seen during the theoretical part. 
 
 \chapter{Introduction to the Analysis}\label{chap:introana}
 \vspace{-1cm}
 \minitoc \thispagestyle{empty}
+ \vspace{1cm}
+ 
+After having theoretically defined some useful concepts in Extreme Value Theory, we will now 
+We already showed the distribution of these data in Figure \ref{fig:pot_plot} to introduce the POT approach. 
 
-After Presenting an introduciton of the Analysis in ..
+\include*{chap5}
+
+
+
+\chapter{Analysis in Block Maxima}\label{sec:anagev}
+\minitoc \thispagestyle{empty}
+ \vspace{1cm}
 
 \include*{chap6}
 
 
-
-\chapter{First Analysis by GEV }\label{sec:anagev}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\iffalse
+\chapter{Stationary and Nonstationary GEV Analysis}\label{sec:ananonsta}
 \minitoc \thispagestyle{empty}
+ \vspace{1cm}
+\include*{chap8}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Bayesian Analysis in Block Maxima}\label{sec:anabayes}
+\minitoc \thispagestyle{empty}
+ \vspace{1cm}
 
 
 \include*{chap7}
-
-
-
-
-\chapter{Stationary and Nonstationary GEV Analysis}\label{sec:ananonsta}
-\minitoc \thispagestyle{empty}
-
-
-\include*{chap8}
-
-
-
-\chapter{Bayesian Extreme Value Analysis}
-\minitoc \thispagestyle{empty}
-
-
-
-\include*{chap9}
 
 
 
@@ -698,31 +696,10 @@ extremes–GEV estimates only when the uncertainties distort strongly the blocki
 procedure. For nonstationary models (Sect. 6.3), one may augment confidence band
 construction by inserting a timescale simulation step (after Step 4 in Algorithm 6.1) \citet[pp.262]{mudelsee_climate_2014}
 
+
 !!!!! not put too much references in the text !!!!!
 
-Managing references : 
-
-\textbf{(!!!!! delete unuseful equation numbering ?!!!!)}
-
-finalize hyperref in the text. BE CAREFULL of the numbering written and the real ("hyperrefed" numbering section)
-+finalize also for def, thm, ... (?)
-
-"In English, it is customary to use capitals: Section 2, Chapter 5, Theorem 3, Definition 1, Figure 6, Appendix A, \textbf{Table},..." (\textbf{segers})
-
-Replace "distribution functions" by "cdf",....  + all other abbrevations (et, gev,...) --> put it then in the list of abbr.
-
-Careful with notation with X or Z in the (c)pdf, likelihood, RV,...
-
-ecrire correctement les referencesz a la fin (unsrt85.bst, ...) enlever trop de noms, champs inutiles,..
-
-voir notation vectors (en gras ou avec bar en bas?)
-
-attention aux notation homogenes (ex : partie stationnary,...) --> pour dénoter les 
-maximums,....
-
-notations for sequences !! attention aux "iid", "n random variables",... 
-
-Delete page counter for part pages,...
+A project to give analysis in time live could be implemented, with values being stocked each days/year !
 
 be prudent that all "methods" are listed (numbered) in (each) ToC
 
@@ -734,12 +711,16 @@ PissoortThesis:: Behind our functions
 
 [ MOTS DEXPLICATIONS SUR TTES LES FORMULES (domain atraction condition, etc...]
 
+\thispagestyle{empty}
+
 Finish (Bayesian) documentation in the package.
 
 See new graphs for stats desc. (in appendix), from workshop exam.
 
 Create Gif animations for the github readme
 
+
+%\clearpage
 \addcontentsline{toc}{part}{Appendix}
 \part*{Appendix}
 \appendix

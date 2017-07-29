@@ -1,27 +1,31 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: MEMOIREbyChap.aux
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: MEMOIREbyChap.aux
 The style file: abbrvnat.bst
 Case mismatch error between cite keys Hartmann_bayesian_2016 and hartmann_bayesian_2016
----line 1404 of file MEMOIREbyChap.aux
+---line 1279 of file MEMOIREbyChap.aux
  : \citation{Hartmann_bayesian_2016
  :                                 }
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 1487 of file MEMOIREbyChap.aux
+Illegal, another \bibstyle command---line 1366 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
 Database file #1: zotero1.bib
+I was expecting a `,' or a `}'---line 2120 of file zotero1.bib
+ :  
+ :  title = {evmix: {An} {R} package for extreme value mixture modelling, threshold estimation and boundary corrected kernel density estimation},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 2783 of file zotero1.bib
+ :  
+ :  note = {Google-Books-ID: dfZecgAACAAJ},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "kharin_changes_2006"
-Warning--I didn't find a database entry for "haan_regular_1970-1"
-Warning--I didn't find a database entry for "northrop_cross_2016"
-Warning--I didn't find a database entry for "charras_extreme_2013"
-Warning--I didn't find a database entry for "embrechts_modelling_1997"
-Warning--I didn't find a database entry for "pickands_statistical_1975"
+Warning--I didn't find a database entry for "AghaKouchak_extremes_2013"
 Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "mason_"
-Warning--I didn't find a database entry for "guess_mean_1988"
-Warning--I didn't find a database entry for "cunnane_note_1979"
-Warning--I didn't find a database entry for "hu_evmix:_2014"
-Warning--I didn't find a database entry for "aghakouchak_extremes_2013-1"
+Warning--I didn't find a database entry for "kharin_estimating_2005-1"
 Warning--I didn't find a database entry for "martin_generalized_2000"
 Warning--I didn't find a database entry for "Adlouni_generalized_2007"
 Warning--I didn't find a database entry for "carreau_hybrid_2009"
@@ -31,7 +35,65 @@ Warning--I didn't find a database entry for "Bédard_optimal_2008"
 Warning--I didn't find a database entry for "geyer__1992"
 Warning--I didn't find a database entry for "lafaye_understanding_2009"
 Warning--I didn't find a database entry for "leimkulher_..._2004"
+Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
+while executing---line 1347 of file abbrvnat.bst
+Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
+while executing---line 1429 of file abbrvnat.bst
+Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
+while executing---line 1429 of file abbrvnat.bst
+Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
+while executing---line 1429 of file abbrvnat.bst
+Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
+while executing---line 1429 of file abbrvnat.bst
+Warning--can't use both author and editor fields in ag_extremes_2013
 Warning--empty journal in leisch_creating_2008
 Warning--can't use both author and editor fields in resnick_extreme_1987
 Warning--empty journal in segers_generalized_2001
-(There were 2 error messages)
+You've used 76 entries,
+            2773 wiz_defined-function locations,
+            1179 strings with 22647 characters,
+and the built_in function-call counts, 34768 in all, are:
+= -- 3342
+> -- 1757
+< -- 56
++ -- 602
+- -- 525
+* -- 2924
+:= -- 5522
+add.period$ -- 385
+call.type$ -- 76
+change.case$ -- 386
+chr.to.int$ -- 75
+cite$ -- 156
+duplicate$ -- 1545
+empty$ -- 2798
+format.name$ -- 657
+if$ -- 7234
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 93
+newline$ -- 540
+num.names$ -- 304
+pop$ -- 628
+preamble$ -- 1
+purify$ -- 327
+quote$ -- 0
+skip$ -- 1103
+stack$ -- 0
+substring$ -- 1243
+swap$ -- 134
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 741
+warning$ -- 4
+while$ -- 315
+width$ -- 0
+write$ -- 1287
+(There were 12 error messages)

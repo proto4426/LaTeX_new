@@ -2,40 +2,39 @@
 \contentsline {xpart}{Theoretical Framework : Extreme Value Theory}{4}{part.1}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Method of Block Maxima}{4}{chapter.1}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces GEV distribution with the normal as benchmark (dotted lines) and a zoom on the parts of interest to better visualize the behaviour in the tails. In green, we retrieve the Gumbel distribution ($\xi =0$). In red, we retrieve the Weibull-type ($\xi <0$) while in blue, we get the Fr\IeC {\'e}chet-type ($\xi >0$). The endpoints for the Weibull and the Fr\IeC {\'e}chet are denoted by the red and blue filled circles respectively. \relax }}{10}{figure.caption.12}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces GEV distribution with the normal as benchmark (dotted lines) and a zoom on the parts of interest to better visualize the behaviour in the tails. In green, we retrieve the Gumbel distribution ($\xi =0$). In red, we retrieve the Weibull-type ($\xi <0$) while in blue, we get the Fr\IeC {\'e}chet-type ($\xi >0$). The endpoints for the Weibull and the Fr\IeC {\'e}chet are denoted by the red and blue filled circles respectively. \relax }}{10}{figure.caption.13}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Peaks-Over-Threshold Methods}{24}{chapter.2}
+\contentsline {xchapter}{Peaks-Over-Threshold Method}{23}{chapter.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Kernel density estimates for the whole series (grey) and for the series of excess over the threshold of $u=30^{\circ } c$ (red). More information on the data will be given in \hyperref [part:xp]{Part \textbf {\ref {part:xp}}}.\relax }}{24}{figure.caption.28}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Relaxing The Independence Assumption}{38}{chapter.3}
+\contentsline {xchapter}{Relaxing The Independence Assumption}{32}{chapter.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \emph { Neural Network applied to GEV. Figure made with \texttt {tikzpicture} and based on \leavevmode {\color {JungleGreen}\cite {cannon_flexible_2010}}} \relax }}{38}{figure.caption.41}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Neural Network (and others) }{45}{chapter.4}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \emph { Neural Network applied to GEV. Figure made with \texttt {tikzpicture} and based on \leavevmode {\color {JungleGreen}\cite {cannon_flexible_2010}}} \relax }}{46}{figure.caption.56}
+\contentsline {xchapter}{Bayesian Extreme Value Theory}{41}{chapter.4}
+\contentsline {xpart}{Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{52}{part.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bayesian Extreme Value Theory}{50}{chapter.5}
-\contentsline {xpart}{Experimental Framework : Nonstationary Extreme Value Analysis of Maximum Temperatures}{61}{part.2}
+\contentsline {xchapter}{Introduction to the Analysis}{52}{chapter.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces representing the \textbf {yearly} \textbf {maxima} together with three first models trying to represent the trend. Note that shaded grey area around the linear trend represent its $95\%$ pointwise confidence interval on the fitted values. \relax }}{54}{figure.caption.62}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces displays draws from the posterior distribution of the model. Notice the large uncertainty associated to the posterior draws (grey lines). The coverages are calculated for $M=10^5$ simulations. \relax }}{57}{figure.caption.66}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Plots of the first derivative $f^{'}(\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em})$ of the estimated splines on the retained GAM model. Grey area represents the $95\%$ confidence interval. Sections of the spline where the confidence interval does not include zero are indicated by thicker sections. \relax }}{58}{figure.caption.70}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduction to the Analysis}{62}{chapter.6}
-\contentsline {figure}{\numberline {6.1}{\ignorespaces representing the \textbf {yearly} \textbf {maxima} together with three first models trying to represent the trend. Note that shaded grey area around the linear trend represent its $95\%$ pointwise confidence interval on the fitted values. \relax }}{64}{figure.caption.75}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces displays draws from the posterior distribution of the model. Notice the large uncertainty associated to the posterior draws (grey lines). The coverages are calculated for $M=10^5$ simulations. \relax }}{66}{figure.caption.79}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Plots of the first derivative $f^{'}(\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em})$ of the estimated splines on the retained GAM model. Grey area represents the $95\%$ confidence interval. Sections of the spline where the confidence interval does not include zero are indicated by thicker sections. \relax }}{68}{figure.caption.83}
+\contentsline {xchapter}{Analysis in Block Maxima}{59}{chapter.6}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Quantile (left) and probability (right) plot for the stationary GEV model fitted by MLE.\relax }}{62}{figure.caption.79}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces (Left) Return level plot with red lines representing normal confidence intervals and blue points are individual profile likelihood intervals for return levels, and horizontal dotted line represent the right endpoint of the fitted model. (Right) kernel density in blue compared with density plot of the fitted model in red, with left and right vertical dotted lines represent respectively the minimum and maximum value of the yearly maxima series.\relax }}{63}{figure.caption.80}
 \addvspace {10\p@ }
-\contentsline {xchapter}{First Analysis by GEV }{69}{chapter.7}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces \relax }}{71}{figure.caption.87}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces The left and right vertical dotted lines represent respectively the minimum and the maximum value of the yearly maxima series.\relax }}{71}{figure.caption.88}
+\contentsline {xchapter}{Bayesian Analysis in Block Maxima}{65}{chapter.7}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Stationary and Nonstationary GEV Analysis}{72}{chapter.8}
+\contentsline {xchapter}{Statistical tools for Extreme Value Theory}{II}{appendix.A}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bayesian Extreme Value Analysis}{74}{chapter.9}
+\contentsline {xchapter}{Bayesian Methods}{VII}{appendix.B}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Statistical tools for Extreme Value Theory}{79}{appendix.A}
+\contentsline {xchapter}{Other Figures and Tables}{XII}{appendix.C}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces GEV distribution for different values of the three parameters \relax }}{XIII}{figure.caption.95}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Violin-plot and density plot for each seasons. (Right) vertical dotted lines represent the mean of each distribution.\relax }}{XIII}{figure.caption.96}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces ACF and PACF for the residuals of the fitted GAM model with assumed independent errors \relax }}{XIV}{figure.caption.97}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Diagnostics of the chosen GAM model with MA(1) errors, based on the residuals. \relax }}{XIV}{figure.caption.99}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Series of annual maxima together with the fitted GAM model (in green). Thicker lines indicate that the increase is significant for \relax $\@@underline {\hbox {pointwise}}\mathsurround \z@ $\relax confidence interval. Shaded area represent the "$95\%$" interval which looks quite narrow. \relax }}{XV}{figure.caption.100}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Profile likelihood intervals for the three GEV parameters. The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals when we take the intersection on the horizontal axis. Output makes use of the \texttt {ismev} package.\relax }}{XV}{figure.caption.101}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces $95\%$ Profile likelihood intervals for three return levels. We kept the same $x$-scale for the three plots but not the $y$-scales. We used the \texttt {ismev} package but we modified the function to allow for more flexibility because the default y-scale in produced ugly visualizations for high return levels. Green lines represent the intervals from Table \ref {tab:rlprof} computed with another package from E.Gilleland, \texttt {extRemes}. \relax }}{XVI}{figure.caption.102}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bayesian Methods}{83}{appendix.B}
-\addvspace {10\p@ }
-\contentsline {xchapter}{Other Figures and Tables}{88}{appendix.C}
-\contentsline {figure}{\numberline {C.1}{\ignorespaces GEV distribution for different values of the three parameters \relax }}{89}{figure.caption.98}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces ACF and PACF for the residuals of the fitted GAM model with assumed independent errors \relax }}{89}{figure.caption.99}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Diagnostics of the chosen GAM model with MA(1) errors, based on the residuals. \relax }}{90}{figure.caption.101}
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Series of annual maxima together with the fitted GAM model (in green). Thicker lines indicate that the increase is significant for \relax $\@@underline {\hbox {pointwise}}\mathsurround \z@ $\relax confidence interval. Shaded area represent the "$95\%$" interval which looks quite narrow. \relax }}{90}{figure.caption.102}
-\contentsline {figure}{\numberline {C.5}{\ignorespaces The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals when we take the intersection on the horizontal axis. \relax }}{91}{figure.caption.103}
-\addvspace {10\p@ }
-\contentsline {xchapter}{Github Repository Structure}{92}{appendix.D}
+\contentsline {xchapter}{Github Repository Structure}{XVII}{appendix.D}

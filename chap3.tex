@@ -1,180 +1,124 @@
 \section{Stationary Extremes}\label{sec:statio}
 
-From now, we considered $X_{(n)}=\max_{1\leq i\leq n}X_i$  where we assumed 
-$X_1,\dots,X_n$  are independent random variables. For sake of simplicity, we abandon this 
-notation. In the sequel, this will be denoted by $\tilde{X}_{(n)}=\max_{1\leq i\leq 
-n}\tilde{X}_i$ where $\tilde{X}_1,\dots,\tilde{X}_n$ will typically denote a sequence of 
-independent random variables, so that the maximum $\tilde{X}_{(n)}$ is composed of independent random variables only.
+From now, we considered the maximum $X_{(n)}=\max_{1\leq i\leq n}X_i$ composed of independent random variables only. 
+ Now, we are interested by modeling 
+$X^*_{(n)}=\max_{1\leq i\leq n}X^*_i$ where $\{X^*_i\}$ will now denote a \emph{stationary} 
+sequence of $n$ random variables sharing the same marginal df as the sequence $\{X_i\}$ of independent random variables, $F$.
 
- We are now interested by modelling 
-$X_{(n)}=\max_{1\leq i\leq n}X_i$ where $\{X_i\}$ will now denote a \emph{stationary} 
-sequence of $n$ random variables sharing the same marginal distribution as the sequence $\{\tilde{X}_i\}$ of independent random variables, 
-$F$.
-
-\begin{definition}[Stationarity] We say that the sequence $\{X_i\}$ of n random variables is \emph{\textbf{stationary}} if 
-	
-	More generally, for $h\geq 0$ and $n\geq 1$, the distribution of the lagged random vector $(X_{1+h},\dots,X_{n+h})$ does not depend on h when the sequence is said to be (strongly) stationary.
+\begin{definition}[Stationary process] We say that the sequence $\{X_i\}$ of n random variables is (strongly) \emph{\textbf{stationary}} if, for $h\geq 0$ and $n\geq 1$, the distribution of the lagged random vector $(X_{1+h},\dots,X_{n+h})$ does not depend on h.
 \end{definition}
-Note that we will only focus on weak(?) stationarity. \\
+It corresponds to physical processes whose stochastic properties are homogeneous but which may be dependent. This dependence can take many forms and hence we need to relax the independence condition.
+Let's denote $F_{i_1,\dots,i_p}(u_1,\dots,u_p):=\text{Pr}\{X_{i_1}\leq 
+u_1,\dots,X_{i_p}\leq u_p\}$ the joint df of 
+$X_{i_1},\dots,X_{i_p}$ for any arbitrary positive integers $(i_1,\dots,i_p)$.
 
-
-
-For now, we denote $F_{i_1,\dots,i_p}(u_1,\dots,u_p):=\text{Pr}\{X_{i_1}\leq 
-u_1,\dots,X_{i_p}\leq u_p\}$ as the joint distribution function of 
-$(X_{i_1},\dots,X_{i_p})$ for any arbitrary positie integers $(i_1,\dots,i_p)$.
-
-\begin{definition}[$D(u_n)$ dependence condition] From \cite{leadbetter_extreme_1974}  and following \cite[pp.373-374, pp.93]{beirlant_statistics_2006,coles_introduction_2001}
-	Let $\{u_n\}$ be a sequence of real numbers. The \emph{ \boldsymbol {$D(u_n)$} \textbf{condition}} holds if for any set of integers $i_1<\dots<i_p$ and $j_1<\dots<j_q$ such that $j_1-i_p>\ell$, we have that 
+\begin{definition}[$D(u_n)$ dependence condition from \cite{leadbetter_extreme_1974}] 
+	Let $\{u_n\}$ be a sequence of real numbers. We say that the \emph{ \boldsymbol {$D(u_n)$} \textbf{condition}} holds if for any set of integers $i_1<\dots<i_p$ and $j_1<\dots<j_q$ such that $j_1-i_p>\ell$, we have that 
 	
 	\begin{equation}
-	|F_{i_1,\dots,i_p,j_1,\dots,j_q}(u_n,\dots,u_n;u_n,\dots u_n)-F_{i_1,\dots,i_p}(u_n,\dots,u_n)F_{j_1,\dots,j_q}(u_n,\dots u_n)|\leq \beta_{n,\ell}\ ,
+	|F_{i_1,\dots,i_p,j_1,\dots,j_q}(u_n,\dots,u_n;u_n,\dots u_n)-F_{i_1,\dots,i_p}(u_n,\dots,u_n)\cdot F_{j_1,\dots,j_q}(u_n,\dots u_n)|\leq \beta_{n,\ell}\ ,
 	\end{equation}
-	where $\beta_{n,\ell}$ is nondecreasing and  $\displaystyle{\lim_{n \to \infty}}\beta_{n,\ell_n}=0$, for some sequence $\ell_n=o(n)$, as $n\rightarrow\infty$.
+	where $\beta_{n,\ell}$ is nondecreasing and  $\displaystyle{\lim_{n \to \infty}}\beta_{n,\ell_n}=0$ for some sequence $\ell_n=o(n)$.
 \end{definition}
+This condition ensures that, when the sets of variables are separated by a relatively short distance, typically $s_n=o(n)$, the long-range dependence between such events is limited in a sense that is sufficiently close to zero to have no effect on the limit extremal laws.
+This result is remarkable in the sense that, provided a series has limited long-range dependence at extreme levels (i.e., where $D(u_n)$ condition holds), maxima of stationary series follow the same distributional limit laws as those of independent series. The two following theorems will show the main implications.
 
-This condition ensures that, when the sets of variables are separated by a relatively short distance, typically $s_n=o(n)$, the long-range dependence between such events is limited, in a sense that is sufficiently close to zero to have no effect on the limit extremal laws.
 
-From this result, we can retrieve the \emph{extreme-value theorem}
-
-Result is remarkable in the sense that, provided a series has limited long-range dependence at extreme levels $\big(D(u_n)\big)$ condition makes precise), maxima of stationary series follow the same distributional limit laws as those of independent series. [S.Coles 2001 p.94] 
-
-For specific sequence of theresholds $u_n$ that increase with $n$.
-
-\begin{theorem}[Limit distribution of maxima under $D({u_n})$ ]
-	From \cite{leadbetter_extreme_1974}. 
-	Let $\{X_i\}$ be a stationary sequence of n iid random variables with $X_{(n)}=\max (X_1,\dots, X_n)$. If there exists sequences $\{a_n>0\}$ and $\{b_n\}$ such that $D(u_n)$ condition holds, then 
-	
+\begin{theorem}[Limit distribution of maxima under $D({u_n})$, \cite{leadbetter_extreme_1974}]
+	Let $\{X^*_i\}$ be a stationary sequence of $n$ iid random variables. If there exists sequences of constants $\{a_n>0\}$ and $\{b_n\}$ such that $D(u_n)$ condition is satisfied with $u_n=a_nx+b_n$ for every real $x$, and	
 	\begin{equation}
-	\text{Pr}\{X_{(n)}\leq u_n\}\longrightarrow H(x), \ \ \ \ \ \ \ \, \ \ n\rightarrow\infty,
+	\text{Pr}\{X^*_{(n)}\leq u_n\}\longrightarrow G^*(x), \ \ \ \ \ \ \ \, \ \ n\rightarrow\infty,
 	\end{equation}
-	where $H$ is non-degenerate as defined... and $D(u_n)$ is satisfied with $u_n=a_nx+b_n$ for every real $x$. 
+	where $G$ is a non-degenerate df, then $G^*$ is a member of the GEV family as presented in \hyperref[extthm]{Theorem \textbf{\ref{extthm}}}.
 	
 \end{theorem}
 
-[bootstrap and other....]
 
-
-\begin{theorem}[Leadbetter 1983]
-	From \cite[pp.]{coles_introduction_2001} 
-	Let $\{X^*_i\}$ be a stationary sequence and let $\{X_i\}$ be a sequence of iid random variables. By defining  $X^*_{(n)}=\max  \{X^*_n\}$ and $X_{(n)}=\max \{X_n\}$, we have under regularity conditions, 
-	
+\begin{theorem}[\citet{leadbetter_extremes_1983}]\label{thm:statio2}
+	Let $\{X^*_i\}$ be a stationary sequence and let $\{X_i\}$ be a sequence of iid random variables. We have under regularity conditions, 
 	\begin{equation*}
-	\text{\emph{Pr}}\big\{a_n^{-1}(X_{(n)}-b_n)\leq x\big\}\longrightarrow G(x), \ \ \ \ \ \ \ \ \ \ \ n\rightarrow \infty
+	\text{\emph{Pr}}\big\{a_n^{-1}(X_{(n)}-b_n)\leq x\big\}\longrightarrow G(x), \ \ \ \ \ \ \ \ \ \ \ n\rightarrow \infty,
 	\end{equation*}
 	for normalizing sequences $\{a_n>0\}$ and $\{b_n\}$, where $G$ is non-degenrate, if and only if 
 	
 	\begin{equation*}\label{extremindex}
-	\text{\emph{Pr}}\big\{a_n^{-1}(X^*_{(n)}-b_n\leq x \big\}\longrightarrow G^*(x), \ \ \ \ \ \ \ \ \ \ \  n\rightarrow\infty.
+	\text{\emph{Pr}}\big\{a_n^{-1}(X^*_{(n)}-b_n)\leq x \big\}\longrightarrow G^*(x), \ \ \ \ \ \ \ \ \ \ \  n\rightarrow\infty,
 	\end{equation*}
-	$G^*$ is the limit distribution coming from a stationary process, defined by
+	where $G^*$ is the limit df coming from a stationary process, defined by
 	
 	\begin{equation}\label{extindex}
 	G^*(x)=G^{\theta}(x),
 	\end{equation}
-	for some constant $\theta\in (0,1]$ which is called the \emph{\textbf{extremal index}}.
+	for some constant $\theta\in (0,1]$ called the \emph{\textbf{extremal index}}.
 	
 \end{theorem}
+It is evident from (\ref{extindex}) that the maximum of a stationary series will have a tendency to decrease.
 
 \subsection{The extremal index}
-The \emph{extremal index} is an important indicator quantifying the extent of extremal dependence, or equivalently the degree at which the assumption of independence is violated. From eq.(\ref{extindex}), it is clear that if  $\theta=1$, then the process is independent, but the converse does not hold while the case $\theta= 0$ will not be considered as it is too "far" from independence (check with data?) and brings problems, see for example \citet[pp.379-380]{beirlant_statistics_2006}. Moreover, the results of Theorem 4.2. would not hold true.
+The \emph{extremal index} is an important indicator quantifying the extent of extremal dependence, that is the degree at which the assumption of independence is violated. From (\ref{extindex}), it is clear that $\theta=1$ lead to an independent process, but the converse does not hold. The case $\theta= 0$ will not be considered as it is too "far" from independence and brings problems. Moreover, the results of \hyperref[thm:statio2]{Theorem \textbf{\ref{thm:statio2}}} would not hold.
 
-.. However, the maximum has a tendency to decrease as .... \cite[pp.96]{coles_introduction_2001}
-
-Formally, it can be defined as the 
+Formally, it can be defined as
 
 \begin{equation}\label{exc}
 \theta=\displaystyle{\lim_{n \to \infty}}\text{Pr}\big\{\max(X_2,\dots,X_{p_n})\leq u_n\ | \ X_1\geq u_n\big\},
 \end{equation}
-where $p_n=o(n)$ and the sequence $u_n$ is such that Pr$\big\{X_{(n)} \leq u_n\big\}$ converges. \cite{coles_introduction_2001}[slides]
-
-Hence, $\theta$ can be thought as the probability that an exceedance over a high threshold is the final element in a \emph{cluster }of exceedances.
-
-\addcontentsline{toc}{subsubsection}{Clusters of exceedances}
-\subsubsection*{Clusters of exceedances} From eq.(\ref{exc}), we can now state that extremes have the tendency to occur in cluster, whose \emph{mean cluster size} is $\theta^{-1}$ at the limit. Equivalently(?), $\theta^{-1}$ is the factor with which the mean distance between cluster is increased.
-
-\underline{Identifying clusters and declustering} as the distribution of a cluster maximum is the same as the marginal distribution of an
-exceedance.
-+ slide 82-83(?)
-
-However, [pp.178 Coles], information in discarded when one considers \emph{declustering}. And this information could be substantially important in meteorological applications, for instance to determine heat or cold waves.
+in the POT approach, where $p_n=o(n)$ and the sequence $u_n$ is such that Pr$\big\{X_{(n)} \leq u_n\big\}$ converges.
+Hence, $\theta$ can be thought for example as the probability that an exceedance over a high threshold is the final element in a \textit{cluster} of exceedances (defined in the following subsection).
 
 
 
 \addcontentsline{toc}{subsubsection}{New parameters}
-\subsubsection*{New parameters} When $\theta>0$, we have from Theorem 4.2 that $G^*$ is an EV distribution but with different scale and location parameters than $G$. If we note by ($\mu^*,\sigma^*,\xi^*$) the parameters pertaining to $G^*$ and those from $G$ kept in the usual way, we have the following relationships when $\xi\neq 0$
+\subsubsection*{New parameters}
+ When $0<\theta\leq 1$, we have from \hyperref[thm:statio2]{Theorem \textbf{\ref{thm:statio2}}} that $G^*$ is an EV distribution but with different scale and location parameters than $G$. If we note by ($\mu^*,\sigma^*,\xi^*$) the parameters pertaining to $G^*$ and those from $G$ kept in the usual way, we have the following relationships, when $\xi\neq 0$
 
 \begin{equation}
-\mu^* = \mu-\sigma\xi^{-1}(1-\theta^{\xi}), \ \ \ \ \ \ \ \ \ \ \sigma^*=\sigma\theta^{\xi}.
+\mu^* = \mu-\sigma\xi^{-1}(1-\theta^{\xi}), \ \ \ \   \ \text{and} \ \quad \sigma^*=\sigma\theta^{\xi}.
 \end{equation}
+In the Gumbel case ($\xi=0$), we simply have $\sigma^*=\sigma$ and $\mu^*=\mu+\log\theta$.
+The fact that $\xi^*=\xi$ induce that the two distributions $G^*$ and $G$ will have the same form, following \hyperref[thm:statio2]{Theorem \textbf{\ref{thm:statio2}}}.
 
-In the Gumbel case ($\xi=0$), we have $\sigma^*=\sigma$ and $\mu^*=\mu+\log\theta$.
-The fact that $\xi^*=\xi$ is 
+
+
+\addcontentsline{toc}{subsubsection}{Clusters of exceedances}
+\subsubsection*{Clusters of exceedances}
+
+ From (\ref{exc}) and in a POT context, extremes have the tendency to occur in cluster whose \emph{mean cluster size} is $\theta^{-1}$ at the limit. Equivalently, $\theta^{-1}$ can be viewed as the factor with which the mean distance between cluster is increased.
+This problem of temporal dependence make inference based on the likelihood invalid.
+We name two methods that can be used to circumvent this issue : 
+
+\begin{itemize}
+	\item \textbf{Filtering out} an (approximate) independent sequence of threshold exceedances.
+	\item \textbf{Declustering} : compute the maximum value in each cluster and then we model these clusters maximums as independent GP random variable. In this approach, we remove temporal dependence but we do not estimate it.
+	However, information is discarded and this could be a substantial loss in meteorological applications, for instance to determine heat or cold waves.
+\end{itemize}
+
+
 
 \addcontentsline{toc}{subsubsection}{Return levels}
 \subsubsection*{Return levels}
 
-From that (see clusters), one can see that the proba ility of an exceedance is variable (see coles, pp.103 or slide 82) (...)
+Because of clustering, notion of return level is more complex and the dependence appear in the definition of return levels for excess models :
 
 \begin{equation}
-r_m = u + \sigma\xi^{-1}\Big[(m\zeta_u\theta)^{\xi}-1\Big]
+r_m = u + \sigma\xi^{-1}\Big[(m\zeta_u\theta)^{\xi}-1\Big].
 \end{equation}
-
-It is important to take that into account as ignorance of this "dependence" can lead to overestimation of the return level.
-
-\subsection{Tail dependence}
-From \cite[section 2.6]{reiss_statistical_2007}, \cite[section 8.4]{coles_introduction_2001} or \cite[section 9.4.1,10.3.4]{beirlant_practical_1996} + see tail dependence function \texttt{atdf()} in \texttt{R}.
-
-Problem with traditional tools used in standard time series analysis such as (partial-) autocorrelation functions is that heavy-tailed distributions do not have moments, whereas correlation focus on dependence in the center of the distribution and not the tails. \citet[pp.134]{wada_extreme_2016} Whence it is important to focus on a \textit{tail dependence measure}.
-
-The auto-tail dependence function using $\chi(u)$ and/or $\bar{\chi}(u)$ employs $X$ against itself at different lags.
-
-
-a possible estimator (this used by \texttt{atdf()}) can come from the sample version 
-
-\begin{equation}\label{autotailsample}
-\rho_n(u,h)=\frac{1}{n(1-u)}\sum_{i\leq n}\mathbf{ 1}(\min (x_i,x_{i+h})>x_{[nu]:n})
-\end{equation}
-(compare with beirlant notations!!!!)$x_{[nu]:n}$
-
-
-\subsection{Modelling : Threshold Models}
-
-\paragraph*{Block-Maxima}
-The modelling with the techniques provided by the GEV distributions (see 
-\hyperref[sec::1]{chapter \textbf{1}}) can be used in 
-the similar way as we have seen from (\ref{extindex}) or in section 3.1 that the shape 
-parameter remains invariant. The difference is that the effective number of maxima 
-$n=n\theta$ 
-will be reduced and hence the convergence will slower. 
-
-A still unsolved problem \cite{coles_introduction_2001}[pp.98] is related to the 
-approximations in the limit.
-Indeed, as the effective number of observations is reduced from $n$ to $n\theta$, the approximation is expected to be poorer, and this "problem" will be exacerbated
-with increased levels of dependence in the series.
-
-\paragraph*{Thresholds models}
-Practically speaking, one might expect a threshold based analysis to result in estimates of return levels with much reduced standard errors as "all" the extremes are included in the analysis, i.e. those who excess a threshold $u$. The example in section .... illustrated this
-
-However, the fact that this method deals with "all" the extremes brings also some problems, 
-and especially the issue of \textit{temporal dependence} (see plot of acf or pacf wrt $u$) 
-which is illustrated by the fact that the extremes have a tendency to \emph{cluster}. 
-Inferences based on the likelihood found in eq.(\ref{likk}) which relies on the 
-independence assumption are now invalid.
-
-Several methods can be used : 
+For example, we have that :
 
 \begin{itemize}
-	\item \textbf{Filtering out} an (approximate) independent sequence of threshold exceedances.
-	\item \textbf{Declustering}. We compute the maximum value in each cluster and then we model these clusters maximums as independent GP random variable. In this approach, we remove \textbf{temporal dependence} but we do not estimate it.
-	
+	\item If $\theta=1$, then the \textit{100-year-event} has probability 0.368 of not appearing in the next 100 years.
+	\item If $\theta=0.1$, the event has probability of 0.904 of not appearing in the next 100 years.
 \end{itemize}
+Ignoring dependence will lead to an overestimation of return levels.
 
 
-However, \cite{fawcett_estimating_2012} emphasized the fact that use of the information from \textit{all} extremes rather than just from cluster maxima (?)can be pressed into use to estimate return levels, regardless of the how strong the extremal dependence is. Hence, declustering has no interest. ( see book risk p.135)
-This method accounts for dependence in standard error estimates of the parameters.
+\subsection{Modelling in Block Maxima}
 
+With dependent series, modeling by means of GEV as in 
+\hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} can be used in 
+a similar way from the fact that the shape parameter $\xi^*$ will remain invariant. The difference is that the effective number of block maxima $n^*=n\theta$ will be reduced and hence convergence in \hyperref[extthm]{extremal Theorem \textbf{\ref{extthm}}} will be slower. 
+Indeed, effective number of observations will be reduced from $n$ to $n\theta$, approximation is expected to be poorer and this will be exacerbated with increased levels of dependence in the series.
+Efforts must be made to either try to increase $n$ for example by reducing the blog length, or make sure the model fit is convincing with tools presented in \hyperref[sec:diag]{Section \textbf{\ref{sec:diag}}}.
 
-\subsection{Applications}
 
 \section{Non-Stationary Extremes}\label{nstatio}
 
@@ -208,60 +152,258 @@ The evidence of seasonality arising when we decrease the length of the blocks is
 Gumbel plot (slide 94) coles
 
 
+\section{Return Levels : New Definitions}\label{sec:returnlvlnstatio}
 
-\section{Return Levels}\label{sec:returnlvlnstatio}
+Whereas we already defined return levels in \hyperref[rlgev]{Section  \textbf{\ref{rlgev}}} for independent sequences, we will now give a more general definition for return periods. 
 
-
-\paragraph*{ Stationarity} Under an assumption of a
-stationary sequence, the return level is the same for all years, and this gives rise to the notion
-of the return period (or $m$-year event). Hence, the return period of a particular event is the
-inverse of the probability that the event will be exceeded in any given year. The m-year return level is associated with a return period of m years. However, there are two main interpretations in this context for return periods.
-
-\cite[pp.100]{aghakouchak_extremes_2013-1}
-
-Denoting $X_{(n),y}$ the annual maximum for year y. Omitting the notational dependence on block size n, we assume $\{X_{(n),y}\}\stackrel{iid}{\sim}F$. 
+\subsubsection*{ Stationarity} 
+Under assumption of a
+stationary sequence, the return level is the same for all years. The $m$-year return level $r_m$ is associated with a return period of $m$ years. Let $X_{(n),y}$ denote the annual maximum for a particular year $y$. Assuming $\{X_{(n),y}\}\stackrel{iid}{\sim}F$, there are two main interpretations for return periods in this context, following \citet[chap.4]{ag_extremes_2013} :
 
 \begin{enumerate}
-	\item The first interpretation of the m-year event is \textbf{the expected waiting time until an exceedance occurs}. To see that, letting T be the year of the first exceedance, we we can write
+	\item \textbf{Expected waiting time until an exceedance occurs}. Let $T$ be the year of the first exceedance. Recalling $F(r_m) = \text{Pr} \big\{X_{(n),y}\leq r_m\big\}=1-1/m$, we write
 	
-	\begin{equation}
+	\begin{equation*}
 	\begin{aligned}
 	\text{Pr}\{T=t\}=\  & \text{Pr}\{X_{(n),1}\leq r_m,\dots,X_{(n),t-1}\leq r_m,X_{(n),t}>r_m\} \\
-	=\ & \text{Pr}\{X_{(n),1}\leq r_m\}\dots\text{Pr}\{X_{(n),t-1}\leq r_m\}\text{Pr}\{X_{(n),t}>r_m\}& & \big[ \textnormal{iid assumption}\big]\\
-	= \ & \text{Pr}\{X_{(n),1}\leq r_m\}^{t-1}\ \text{Pr}\{X_{(n),1}>r_m\} &  \big[ \text{ stationarity}\big]\\
+	=\ & \text{Pr}\{X_{(n),1}\leq r_m\}\dots\text{Pr}\{X_{(n),t-1}\leq r_m\}\text{Pr}\{X_{(n),t}>r_m\}&  \quad  \boxed{\textnormal{iid assumption}}\\
+	= \ & \text{Pr}\{X_{(n),1}\leq r_m\}^{t-1}\ \text{Pr}\{X_{(n),1}>r_m\} &  \quad \boxed{\text{ stationarity}}\\
 	=\ & F^{t-1}(r_m)(1-F(r_m))\\
 	=\ & (1-1/m)^{t-1}(1/m).
 	\end{aligned}
-	\end{equation}
-	
-	
-	We easily recognize that T has geometric density with parameter $1/m$. From simple properties of geometric distributions, we found its expected values is $1/(1/m)$, that is the expected waiting time for an $m$-year event is $m$ years.
-	
-	\item The second interpretation of the $m$-year event is that \textbf{the expected number of events in a period of \boldsymbol{$m$} years is exactly 1}. To see that, we define  
-	
-	\begin{equation*}N=\sum_{y=1}^m I(X_{(n),y}>r_m),
 	\end{equation*}
-	as the random variable representing the number of exceedances in $m$ years (where $I$ is indicator function). We can view each year as a "trial", and from the fact that we have assumed \big\{$X_{(n),y}$\big\} are iid, we can compute the probability that the number of exceedances in $m$-years is k
+	We easily recognize that $T$ has a geometric distribution with parameter $1/m$. Hence, its expected value is $1/m^{-1}$, showing that the expected waiting time for an $m$-year event is $m$ years.
+	
+	\item \textbf{Expected number of events in a period of \boldsymbol{$m$} years is exactly 1}. To see that, we define  
+	
+	\begin{equation*}N=\sum_{y=1}^m \mathbb{I}(X_{(n),y}>r_m),
+	\end{equation*}
+	as the random variable representing the number of exceedances in $m$ years, with $\mathbb{I}$ the indicator function. Hence, each year is a "trial", and from the fact that \big\{$X_{(n),y}$\big\} are iid, we can compute the probability that the number of exceedances in $m$-years is $k$
 	\begin{equation*}
 	\text{Pr}\{N=k\}=\binom{m}{k}(1/m)^k(1-1/m)^{m-k},
 	\end{equation*}
-	from which we recognize a well-know distribution, that is $N\sim \ \text{Bin}(m,1/m)$. Again from properties of this distribution, we easily find that N has an expected value of 1.
+	where we retrieve $N\sim \ \text{Bin}(m,1/m)$ and hence $N$ has an expected value of $m\cdot m^{-1}=1$.
 	
 \end{enumerate}
 
 
-\paragraph*{Non-stationarity}
+\subsubsection*{Non-stationarity}
 
-From the definition on non-stationary process, the modelling of return period will change over time.
-Hence, we introduce the notation of the distribution function $F_y$ of a particular $X_{(n),y}$. We must study 
+As demonstrated in \citet[Section 4.2]{ag_extremes_2013}, we can retrieve the same two interpretations of return period as for a stationary process. However, mathematical derivations go beyond the scope of this thesis. Moreover, from definition of non-stationary process, as parameter(s) will be function of time, return levels will also change over time. This will have big impacts on modeling, since an inappropriate model will lead to inappropriate return levels, see for example Figure ??? . 
+Hence, we will now try more complex models in order to improve this fit. 
 
-$p(y)=\text{Pr}(X_{(n),y}>r)=1-F_y(r)$. If we estimate $F_y$, we can retrieve easily p(y).
-$F_y(r_p(y))=1-p$ with the exceedance level $r_p(y)$ changing with year. It shows the changing nature of "risk".
 
-\paragraph*{Return period as expected waiting time}
+\section{Neural Networks to Model Nonstationary Series}
 
-\paragraph*{Return period as expected number of events}
+In the era of Artificial Intelligence (AI) and Machine Learning, or more precisely of Artificial Neural Networks (ANN) or the trendy term \textit{Deep Learning}, it is interesting to study how this complex mechanism works and how it can be efficiently applied to deal with the issue of nonstationarity in EVT that we confront.
 
-\section{Inference}
 
-We will see the application on our data in chapter x , toghether with the neural net...
+In practice, the assumption of linearity (or the basic functions we  tested) we have hold may not be appropriate enough, in the sense that it could not take the complex temporal relationship of the whole maximum temperature process. \citet{kharin_estimating_2005-1} allowed for nonlinear trends in temperature extremes in another fashion : they made simulations over a 110-year transient global climate to estimate linear trends in the three GEV parameters based on a series of overlapping 51-year time windows.
+
+While this modelling allows for much more flexibility, we keep in mind that it will also be detrimental for the understanding of the "structure" of this relationship
+
+\subsection{Generalized Likelihood Methods}
+introduced by \citet{martin_generalized_2000}
+In \hyperref[likgevintro]{Section \textbf{\ref{likgevintro}}} we introduced the concept of penalized likelihood (see \citet{coles_likelihood-based_1999}). The idea is that The MLE's may diverge, especially when sample size is small. To resolve this problem, suggest the use of a prior distribution for the shape parameter of the GEV model such
+that the most probable values of the parameter are included.
+
+When dealing with nonstationnary processes, it is interesting to consider Generalized Maximum Likelihood (GML) estimators. In this case, \cite{Adlouni_generalized_2007} have proven that GML is likely to outperform the usual ML inference.
+
+The GML estimator corresponds to the mode of the empirical posterior distribution...
+
+\paragraph*{Properties of the GML estimator} see pp740. \citet{martin_generalized_2000}
+
+\subsection{Neural-Network Based Inference}
+
+\tikzset{%
+	neuron missing/.style={
+		draw=none, 
+		scale=2,
+		text height=0.2cm,
+		execute at begin node=\color{black}$\vdots$
+	},
+}
+\begin{figure}[!htb]
+	\begin{center}
+		\resizebox{12cm}{5cm}{ \fbox{
+				\begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+				\tikzstyle{annot} = [text width=4em, text centered]
+				
+				\foreach \m [count=\y] in {1}
+				\node [circle,fill=green!50,minimum size=.7cm ] (input-\m) at (0,1) {};
+				
+				\foreach \m [count=\y] in {2}
+				\node [circle,fill=green!50,minimum size=.7cm ] (input-\m) at (0,0.35) {};
+				
+				\foreach \m [count=\y] in {3}
+				\node [circle,fill=green!50,minimum size=.7cm ] (input-\m) at (0,-0.75) {};
+				
+				\node [neuron missing]  at (0,-0.25) {};
+				
+				\foreach \m [count=\y] in {1}
+				\node [circle,fill=red!50,minimum size=.7cm ] (hidden-\m) at (2,0.75) {};
+				
+				\foreach \m [count=\y] in {2}
+				\node [circle,fill=red!50,minimum size=.7cm ] (hidden-\m) at (2,-0.38) {};
+				
+				\node [neuron missing]  at (2,0.1) {};
+				
+				\foreach \m [count=\y] in {1}
+				\node [circle,fill=blue!50,minimum size=.7cm ] (output-\m) at (4,1.8-\y) {};
+				
+				\foreach \m [count=\y] in {2}
+				\node [circle,fill=blue!50,minimum size=.7cm ] (output-\m) at (4,1.05-\y) {};
+				
+				\foreach \m [count=\y] in {3}
+				\node [circle,fill=blue!50,minimum size=.7cm ] (output-\m) at (4,0.35-\y) {};
+				
+				\draw [<-] (input-1) -- ++(-1,0)
+				node [above, midway] {$\boldsymbol{x_1(t)}$};
+				\draw [<-] (input-2) -- ++(-1,0)
+				node [above, midway] {$x_2(t)$};
+				\draw [<-] (input-3) -- ++(-1,0)
+				node [above, midway] {$x_I(t)$};
+				
+				\node [below] at (hidden-1.north) {$h_1$};
+				\node [below] at (hidden-2.north) {$h_J$};
+				
+				\draw [->] (output-1) -- ++(2.4,0)
+				node [above, midway] {$\boldsymbol{\mu_t=o_1(t)}$};
+				\draw [->] (output-2) -- ++(2.4,0)
+				node [above, midway] {$\sigma_t=\exp(o_2(t))$};
+				\draw [->] (output-3) -- ++(2.4,0)
+				node [above, midway] {$\xi_t=\xi^*\tanh(o_3(t))$};
+				
+				\foreach \i in {1,...,3}
+				\foreach \j in {1,...,2}
+				\draw [->] (input-\i) -- (hidden-\j);
+				
+				\foreach \i in {1,...,2}
+				\foreach \j in {1,...,3}
+				\draw [->] (hidden-\i) -- (output-\j);
+				
+				\node[annot,above of=hidden-1, node distance=1cm] (hl) {hidden layer};
+				\node[annot,above of=input-1] (il) {input layer};
+				\node[annot,above of=output-1] {output layer};
+				\node[annot, above =2.2cm, right=0.7cm, node distance=1cm]{\textcolor{red}{\textbf{(1)}}};
+				\node[annot, above =1.2cm, right=3.7cm]{\textcolor{blue}{\textbf{(2)}}};
+				\end{tikzpicture}
+			}
+		}
+		\vspace{-2.5mm}
+		\caption{\emph{ Neural Network applied to GEV. Figure made with \texttt{tikzpicture} and based on  \textcolor{JungleGreen}{\cite{cannon_flexible_2010}}} }. Here $x_i(t)=t,  \ \forall i \in \{1,\ldots,I\}$ 
+	\end{center}
+\end{figure}
+
+\paragraph*{Parametric or nonparametric ?}
+It is always a difficult task to state whether Neural Networks (NN) are parametric models or not. NN  are somewhere in the gray area between a \emph{parametric} and a \emph{nonparametric} model, in the sense that it assumes the GEV distribution from the output layer which are defined by the three parameters of interest, while it also allows for a fabulous flexibility coming from the hidden layers and which lead to think that these ae rather nonparametric. 
+
+The transformations applied through the ntwork are in general parametric (and nonlinear).
+
+However, this terminological question is actually not relevant here and it is more important to focus on the architecture of the NN employed here.
+
+have the power to manage several outputs in a 
+
+"Model parameters are estimated via the GML approach using the
+quasi-Newton BFGS optimization algorithm, and the appropriate GEV-CDN model architecture for
+each location is selected by fitting increasingly complicated models and choosing the one that
+minimizes appropriate cost-complexity model selection criteria. For each location examined, different
+formulations are tested with combinational cases of stationary and nonstationary parameters of the
+GEV distribution, linear and nonlinear architecture of the CDN and combinations of the input covariates "
+
+
+\cite{carreau_hybrid_2009} enlightens the following : Provided enough data, hidden units and an appropriate optimization, the NN can capture any smooth dependencies (relationships) of the parameters on the input, i.e., given the input, it can theoretically capture any conditional continuous density, be it asymmetric, \textbf{multimodal}, or heavy-tailed.
+
+(see \citet{cannon_flexible_2010} just before conclusion) 
+One could for example expect to have particular relationships between the covariate (time or) and the parameters of interest. Only considering a linear or quadratic trends in the location parameter $\mu$ (ore more ? see section. see for other parameters) could thus be seen as a weak modelling procedure, especially when we assumed no reliable prior knowledge on the subject (see bayesian section - hyperref it).
+NN models have this facility of being capable of modelling any relationships without explicitly specify it \emph{a priori}. To model correctly, one should be able to explicitly discover particular patterns (e.g., which nonlinear or linear relationship between time and TN). This is avoided here because this is done automatically through the NN process.
+
+Physical process such as temperature or even other meteorological data (rainfall as demonstrated by \citet{cannon_flexible_2010},...) have this tendance of demonstrating nonlinearities ( see ref?) and so are NN's interesting.
+
+As we mentioned, the NN is meant to approximate any functions with good accuracy. It comprise thus all the models considered so far, such as linear tren din $\mu$, quadratic, etc...
+
+\citet{cannon_flexible_2010} recommended to use between 1 and 3 (4) hidden layers due to the relatively small sample of annual extremes (here 117).
+
+
+From this, we must pay attention to the high danger of \emph{overfitting} (see ) which occurs for this sort of models. The other pitfall is its lack of interpretation of the retrieved relationships.
+
+"It bears noting that sensitivity analysis methods,
+for example, the one used by Cannon and McKendry
+(2002), are applicable to CDN models and could be used
+to identify the form of nonlinear relationships between
+covariates and GEV distribution parameters or quantiles."
+
+... Intro to deep learning.. ?
+
+\subsection{Bagging} 
+
+Nowadays, bagging is used in 
+many state-of-the-art algorithms such as Random Forests (see .. for comparisons of such techniques) and is one of the \emph{ensemble methods} which are praised in Machine Learning for their performance.  
+
+In a "pure" climatological point of view, \emph{ensemble models} are of major utility, especially to make weather forecasting, see for example \citet{suh_development_2012} or, .... among others
+
+For our purpose, we present another kind of ensemble modelling which is \emph{bagging}.
+
+" Bagging (stands for Bootstrap Aggregation) is the way decrease the variance of your prediction by generating additional data for training from your original dataset using combinations with repetitions to produce multisets of the same cardinality/size as your original data. By increasing the size of your training set you can't improve the model predictive force, but just decrease the variance, narrowly tuning the prediction to expected outcome "
+
+
+"model averaging, which involves taking a weighted average of
+multiple models, has been recommended as a means of
+improving estimation performance Burnham and Anderson, 2004. This approach has been applied successfully
+in the context of CDN models by Carney et al. (2005)
+and is worth exploring for GEV-CDN models."
+
+
+\citet[pp.256-267]{Goodfellow-et-al-2016}  (deep learning html book)    The  individual  classifiers’  predictions  (having equal  weightage)  are  then  combined  by  taking  majority voting. This typically reduces the variance and then the (possible) overfitting
+
+
+
+\subsubsection*{xxx}
+
+"weight penalty regularization (MacKay, 1992) is
+available as a means of limiting the effective number of model
+parameters in a GEVcdn model. The amount of weight penalty is
+controlled via a user-specified Gaussian prior on the magnitude of
+the input-hidden layer weights. The optimum value for the
+variance of the Gaussian prior must be set by the user with the
+aid of some form of split-sample or cross-validation scheme." (cannon gevcdn vignette pdf)
+
+\subsection{Bootstrap Methods in EVT}
+
+" like
+the estimated parameters themselves, the SE may not be
+reliable for small samples. One way to tackle this problem and improve the accuracy of SE is through the bootstrap technique (Efron, 1979). The scheme for using this technique for EV dfs is described in detail by Katz et al. (2002), including for nonstationary cases,
+in which the bootstrap samples are manufactured through
+Monte  Carlo  resampling  of  residuals  (Equation (8))  to attend  to  the  underlying  assumption  that  original  sam-
+ple  consist  of  iid  data.  Following  this procedure,  the bootstrap  procedure  was  designed  for  generating  1000
+samples  from  each  original  sample,  considering  whole year  as  a  bloc"
+
+
+In \citet{cannon_flexible_2010}, "he parametric bootstrap outperformed the residual bootstrap"
+Moreover, " It is possible that alternative bootstrap approaches, for example, the bias-adjusted percentile estimators evaluated by Kysely
+(2008), might yield better calibrated confidence intervals, although improvements were modest for stationary GEV models. "
+
+
+For confidence intervals : see \citet[pp.681]{cannon_flexible_2010} 
+following these steps
+
+\begin{enumerate}
+	\item Fit a nonstationary model to the data
+	\item Transform the residuals from the fitted model so that they are identically distributed :
+	\begin{equation}
+	\varepsilon_t=\bigg[1+\xi_t\sigma^{-1}_t(y_t-\mu_t)\bigg]^{-\xi^{-1}}
+	\end{equation}
+	\item etc..
+\end{enumerate}
+
+Monte-Carlo based methods, same as Bayesian.
+
+Study and comparisons on the performance (coverage,..) of the methods used for the CI (boot, bayesian, likelihood, asymptotics,...)
+
+\subsubsection*{Moving Block Bootstrap}
+
+[Bootstrap and other resampling in .... pp.13]
+
+
+\subsection{Markov models}
+book risk pp.136, \cite{shaby_markov-switching_2016} + code

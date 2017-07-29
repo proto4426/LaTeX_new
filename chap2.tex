@@ -1,54 +1,63 @@
 
-\section{Preliminaries: Intuitions}\label{sec::2.1}
+\section{Preliminaries}\label{sec::2.1}
 
-The threshold models relying on the \emph{Peaks-Over-Threshold} (POT) method are useful to propose a better (?) alternative than the blocking method in \textbf{2.1}. With this new method, we consider a more natural way of determining whether an observation is extreme or not, by focusing only on all observations that are greater than a pre-specified \emph{threshold}. As we saw, estimates of the GEV parameters are sensitive to the size of block chosen to identify extremes (see ) while we will investigate that the estimates of the \emph{Generalized Pareto Distribution} (GPD)\footnote{Notice that, as an abuse of language and for smoother readability, we will use the abbreviations "GPD" to denote both the Distribution and the Distribution \emph{function} } parameters are more stable in this sense. Henceforth POT avoids the problem that can arise by considering the maximum of blocks only (), but this method also brings its own problems (). Be aware that this method brings lots of problems with the independence condition... And, especially for temperature data, where for example during heat or cold waves...
-\newline
+Threshold models relying on the \emph{Peaks-Over-Threshold} (POT) method propose an alternative to the blocking method seen in the \hyperref[sec::1]{previous Chapter}. This method consider a natural way of determining whether an observation is extreme or not, by focusing only on all observations that are greater than a pre-specified \emph{threshold}. 
+Whereas POT brings problem for the independence (cold days are more likely to be followed by cold days, etc ; more details will be given in \hyperref[sec::3]{Chapter \textbf{\ref{sec::3}}}) and ask the difficult task of choosing the threshold, it avoids the problem of choosing only one observation per block of data which can be a wasteful approach if other "extremes" occur at the same period. The notion of "extremes" is now intrinsically different.
 
-Let's consider a sequence $\{X_j\}$ of $n$ iid random variables having marginal distribution function $F$. We are then regarding for observations that exceed a well-chosen (see) threshold $u$, which must obviously be smaller than the right endpoint $x_*=\sup\{x:F(x)<1\}$ of $F$. The aim here is to find a "child" probability distribution function (fig.? -video youtube), say $H$, from the underlying (parent) distribution $F$, that will allow us to model the exceedance $Y=X-u$, and  with $H$ then expressed as $\boxed{H(y)=\text{Pr}\{X-u\leq y \ | \ X>u\}}$. Typically, threshold models can therefore be regarded as the conditional survival function of the exceedances $Y$, knowing that the threshold $u$ is exceeded \cite[pp.147]{beirlant_statistics_2006} :
+\begin{wrapfigure}{R}{0.4\textwidth}
+	\centering
+	\includegraphics[width=0.4\textwidth]{pot_plot.pdf} % 6.64x5.17 inches
+	\caption{Kernel density estimates for the whole series (grey) and for the series of excess over the threshold of $u=30^{\circ} c$ (red). More information on the data will be given in \hyperref[part:xp]{Part \textbf{\ref{part:xp}}}.}
+	\label{fig:pot_plot}
+\end{wrapfigure}
+
+Let's consider a sequence $\{X_j\}$ of $n$ iid random variables having marginal df $F$. We illustrate this with Figure \ref{fig:pot_plot} that represent the data used in our application. We are then looking for observations that exceed a threshold $u$ (blue), which must obviously be smaller than the right endpoint (\ref{eq:endpoints}) of $F$. The aim here is to find the child distribution which is depicted in red, say $H$, from the parent distribution $F$ depicted in grey. It will allow us to model the exceedances $Y=X-u$  with $H$ expressed as $\boxed{H(y)=\text{Pr}\{X-u\leq y \ | \ X>u\}}$.
+%The kernel density of $H$ is depicted in red in the right plot. 
+Throughout this chapter we will aim to model this empirical distribution.
+
+Threshold models can be regarded as the conditional survival function of the exceedances $Y$, knowing that the threshold is exceeded, following  \citet[pp.147]{beirlant_statistics_2006} :
 
 \begin{equation}\label{survpar}
 \text{Pr}\big\{Y>y\ |\ Y>0\big\}=\text{Pr}\big\{X-u>y\ |\ X>u\big\}=\frac{\bar{F}(u+y)}{\bar{F}(u)}.
 \end{equation}
-or in terms of the exceedance distribution function $F^{[u]}(x)=\text{Pr}\{X\leq u+x|X>u\}$
-\cite[pp.12]{reiss_statistical_2007}, \cite{charras_extreme_2013} and \cite{rosso_extreme_2015} :
-
+Or similarly, in terms of the exceedance df $F^{[u]}(x)=\text{Pr}\{X\leq u+x \ | \ X>u\}$, see \citet[pp.25-29]{reiss_statistical_2007}
+\iffalse
 \begin{equation}\label{exceef}
 F^{[u]}(x)=\frac{\text{Pr}\{X-u\leq 
 x,X>u\}}{\text{Pr}\{X>u\}}=\frac{F(x+u)-F(u)}{\bar{F}(u)},
 \end{equation}
-making use of the well-known conditional probability law. One can remark that (\ref{survpar}) is actually the survivor of the exceedance distribution function, that is $\bar{F}^{[u]}$.
+\fi
+or following \citet{charras_extreme_2013} and \citet{rosso_extreme_2015}, making use of the conditional probability law. %Note that (\ref{survpar}) is just the survivor of the exceedance df, namely $\bar{F}^{[u]}$.
 
-These intuitive characterizations we have given above about the modelling of the threshold exceedances in term of probability distribution function can be useful to understand the following. 
+If the parent distribution $F$ were known, it would be possible to compute the distribution of the threshold exceedances (\ref{survpar}). But, as in the method of block maxima, $F$ is not known in practice. Hence, as usual in statistics, we will still rely on approximations\footnote{We quote here the well-known "\textit{All models are wrong, but some are useful}" from George Box \& Draper (1987), \textit{Empirical model-building and response surfaces}, Wiley, p.424}. Whereas \hyperref[extthm]{Theorem \textbf{\ref{extthm}}} were used to find an approximate distribution for block maxima, here the goal is similar and we will try to approximate the distribution of the exceedances $H(y)$.
 
-However, if the parent distribution F were known, we would be able to compute the distribution of the threshold exceedances in (\ref{survpar}). \cite[pp.74]{coles_introduction_2001} But as for the GEV in the method of block-maxima \hyperref[](section \textbf{2.1}), the distribution $F$ is not known in practice, as we will see also in (..). Hence, and as usual in statistics\footnote{?}%{We would like to quote here the well-known phrase in statistics "\textit{All models are wrong, but some are useful}" from George Box \& Draper (1987), \textit{Empirical model-building and response surfaces}, Wiley, p.424}
-, we must again rely on approximations. This time, we will try to approximate (\ref{exceef})
 
-\section{Characterization of the Generalized Pareto Distribution}
 
-Anageously to the \emph{Fisher-Tippett} theorem in section \textbf{2.1} which applies for the block maxima, we have now to define a new theorem which applies for values above a predefined threshold. From this result \ref{gevgen}(?), these two theorems form together the basis of Extreme Value Theory.
+\section{Characterization of the Generalized Pareto Distribution}\label{sec:charac_gpd}
 
-\begin{theorem}[POT-stability]\emph{\citet[pp.25]{reiss_statistical_2007}} The max-stability theorem in \ref{maax} can be applied and are formulated here by the fact that the GP distribution functions $H$ are the only continuous one such that, for certain choice of constants $a_u$ and $b_u$, 
-	
+As for block maxima where we found the GEV (\ref{gevgen}) in the limit, we aim now to find a limit distribution for the excess over a threshold.
+Similarly as for max-stability in \hyperref[maxstab]{Definition \textbf{\ref{maxstab}}}, another formulation can be given for POT models which will help to derive the next theorem.
+
+\begin{definition}[POT-stability]%\emph{\citet[pp.25]{reiss_statistical_2007}} 
+The dfs $H$ are the only continuous one such that, for certain choice of constants $a_u$ and $b_u$, 
 	\begin{equation*}
 	F^{[u]}(a_ux+b_u)=F(x).
 	\end{equation*}
-\end{theorem}
-This will be useful for modelling the exceedances in the following theorem (?). And for the examples (see ex. p.25)
+\end{definition}
+We can now state the key theorem discovered by \citet{balkema_residual_1974} and \citet{iii_statistical_1975-1}.
 
-\begin{theorem}[Pickands–Balkema–de Haan]
-	discovered by \emph{\cite{balkema_residual_1974}} and\emph{\cite{iii_statistical_1975-1}}
-	which showed that the distribution of a threshold $u$ of normalized excesses $F^{[u]}(x)(b_u+a_ux)$, as the threshold approaches the right endpoint $x_*$ of $F$, is the Generalized Pareto Distribution (\textbf{GPD}) $H_{\xi,\sigma_u}(y)$. That is, if $X$ is a random variable for which (\ref{exttheom}) holds, and for the approximating GP distribution function possessing the same left endpoint $u$ as the exceedance distribution function $F^{[u]}$, we have \emph{\citet[pp.27]{reiss_statistical_2007}}: 
-	
+\begin{theorem}[Pickands–Balkema–de Haan]\label{thm:gpd}
+Let $\{X_j\}$ be the sequence of $n$ iid random variables having marginal df $F$ for which \hyperref[extthm]{Theorem \textbf{\ref{extthm}}} holds. Then,
+	\iffalse
 	\begin{equation*}
-	|F^{[u]}(x)-H_{\xi,\sigma_u}(x)|\longrightarrow 0, \ \ \ \ \ \ \ \ \ u\to x_*.
+	|F^{[u]}(x)-H_{\xi,\sigma_u}(x)|\longrightarrow 0, \ \ \ \ \ \ \ \qquad \qquad u\to x_*.
 	\end{equation*}
-\end{theorem}
-Or, in an other, maybe more intuitive formulation (the same : delete) \cite{coles_introduction_2001} :
+Similarly, 
+\fi
 \begin{equation} \label{gpdconv}
-\text{Pr}\big\{X(-u)\leq y\ |\ X>u\big\}\longrightarrow H_{\xi,\sigma_u}(y), \ \ \ \ \ \ \ \ \ \ u\to x_*,
+\text{Pr}\big\{X-u\leq y\ |\ X>u\big\}\longrightarrow H_{\xi,\sigma_u}(y), \ \ \ \ \ \ \ \ \ \ u\to x_*.
 \end{equation}
-where the \textbf{GPD} is defined as :
-
+It means that for large enough $u$, the df of  $Y=X-u>0$, conditional on $X>u$, is approximately $H_{\xi,\sigma_u}(y)$ where $H_{\xi,\sigma_u}(y)$ is the \emph{Generalized Pareto Distribution} (\emph{GPD}) :
 
 \begin{equation}\label{gpdeq}
 H_{\xi,\sigma_u}(y)=
@@ -60,180 +69,155 @@ H_{\xi,\sigma_u}(y)=
 \end{array}\right.\kern-\nulldelimiterspace
 \end{equation}
 
+\end{theorem}
+%$H_{\xi,\sigma_u}(y)$ is commonly known as the Generalized Pareto Distribution (GPD) 
+%and for the approximating GP distribution function possessing the same left endpoint $u$ as the exceedance distribution function $F^{[u]}$
+%It means that as the threshold approaches the right endpoint $x_*$ of $F$, is the Generalized Pareto Distribution (\textbf{GPD}) $H_{\xi,\sigma_u}(y)$.
+The scale parameter is denoted $\sigma_u$ to emphasize its dependency with the specified threshold $u$ :
 
-We recall again that $y = x-u >0$, and where the scale parameter is denoted $\sigma_u$ to emphasize its dependency with the chosen threshold $u$ :
-
-\begin{equation}
+\begin{equation}\label{sig1}
 \sigma_{u}=\sigma+\xi (u-\mu),
 \end{equation}
-where one can also remark that the location parameter $\mu$ does not appear anymore in (\ref{gpd}) as it does appear in \ref{mem}. 
+where one can remark that the location parameter $\mu$ is not present in (\ref{gpdeq}) as it appears in (\ref{sig1}). 
 
-\subsection{Outline proof of the GPD and justification from GEV} As we did for block-maxima approach in section \textbf{2.1.1} (\ref{gevproof1}-\ref{gevproofl}), we think it is interesting to have a formal and comprehensive, and still not too technical, intuitive view of where are the GPD from. We remind that we aim here at retrieving the GPD $H_{\xi,\sigma_u}(y)$ (\ref{gpdconv}-\ref{gpd}) from probability distributions as expressed in (\ref{survpar}-\ref{exceef}).
+\subsection{Outline proof of the GPD and justification from GEV}
+ As we also did for block maxima, we think interesting to have a formal and comprehensive, still not too technical, intuitive view of how we retrieved the GPD. %We remind that we aim here at retrieving the GPD $H_{\xi,\sigma_u}(y)$ (\ref{gpdconv}-\ref{gpd}) from probability distributions as expressed in (\ref{survpar}-\ref{exceef}).
 
-\begin{proof}[\boxed{\emph{Proof :}}\nopunct ] 
+\begin{proof}[\boxed{\emph{\textbf{Outline Proof}}}\nopunct ] of \hyperref[extthm]{Theorem \textbf{\ref{thm:gpd}} :} 
 \ \ \ \begin{itemize}
 	 %\item \fontsize{11pt}{18pt}\selectfont
-	 \item We start with $X$ having distribution function $F$. From the GEV theorem in section %\par
-	%\linespread{1.9}
-	 \textbf{2.1.} (see \ref{exttheom}-\ref{gevgen}), we have for the largest order statistic, for large enough $n$,  
+	 \item From \hyperref[extthm]{Theorem \textbf{\ref{extthm}}}, we have for the distribution of the maximum, for large enough $n$,  
 	
 	\begin{equation}
 	F_{X_{(n)}}(z)=F^n(z)\approx \exp\Bigg\{ -\bigg[1+\xi\bigg(\frac{z-\mu}{\sigma}\bigg)\bigg]^{-\xi^{-1}}\Bigg\},
 	\end{equation} 
-	with $\mu,\sigma>0$ and $\xi$ the GEV parameters. hence, by simply taking logarithm on both sides, we have
+	with $\mu,\sigma>0$ and $\xi$ the GEV parameters. Hence, by taking logarithm on both sides, we get
 	
 	\begin{equation} \label{logF}
 	n \ln F(z)\approx -\Bigg[1+\xi\bigg(\frac{z-\mu}{\sigma}\bigg)\Bigg]^{-\xi^{-1}}.
 	\end{equation}
 		\item We also have that, from Taylor expansion,
 		$\ln F(z)\approx -\big[1-F(z)\big]$
-		as both sides go to zero when $z\rightarrow\infty$. Therefore, substituting into (\ref{logF}), we get the following for large $u$ :
+		as both sides go to zero as $z\rightarrow\infty$. Therefore, substituting into (\ref{logF}), we get the following for large $u$ :
 		
 		\begin{equation*}
 		1-F(u\boldsymbol{+y})\approx n^{-1}\bigg[1+\xi\bigg(\frac{u\boldsymbol{+y}-\mu}{\sigma}\bigg)\bigg]^{-\xi^{-1}}.
 		\end{equation*}
-		where we specially added the therm $\boldsymbol{y}>0$ for our purpose of retrieving something in the form of 
-		(\ref{survpar})-(\ref{exceef}). 
+		where we added the therm $\boldsymbol{y}>0$ to retrieve something in the form of 
+		(\ref{survpar}). 
 		
-		\item Finally, we get for (\ref{survpar}), with some mathematical manipulations, as 
+		\item Finally, with some mathematical manipulations, as 
 		$u\rightarrow x_*$ :
 		
 		
-		\begin{equation*}
+		\begin{equation}\label{eq:gpdproof2}
 		\begin{aligned}
 		\text{Pr}\{X>u+y\ | \ X>u\}
 		= \frac{\bar{F}(u+y)}{\bar{F}(u)} 
 		& \approx\frac{n^{-1}\big[1+\xi\sigma^{-1}(u+y-\mu)\big]^{-\xi^{-1}}}{n^{-1}\big[1+\xi\sigma^{-1}(u-\mu)\big]^{-\xi^{-1}}} \\  
 		& = \bigg[1+\frac{\xi\sigma^{-1}(u+y-\mu)}{1+\xi\sigma^{-1}(u-\mu)}\bigg]^{-\xi^{-1}} \\
-		& = \bigg[1+\frac{\xi y}{\sigma_u}\bigg]^{-\xi^{-1}},
+		& = \bigg[1+\frac{\xi y}{\sigma_u}\bigg]_+^{-\xi^{-1}},
 		\end{aligned}
-		\end{equation*}
-		
-		where $\sigma_u$ is still linear in the threshold $u$ (you will see in (\ref{mem}), that is $\sigma_u=\sigma+\xi(u-\mu)$. By simply reverting the probability  as in (\ref{exceef}), we have then 
+		\end{equation}
+        By simply taking the survivor of (\ref{eq:gpdproof2}), we retrieve 
 		
 		\begin{equation}
 		\begin{aligned}
 		\text{Pr}\{X-u\leq y\ | \ X>u\} & =1-\text{Pr}\{X>u+y\ | \ X>u\} \\
-		& = 1-\bigg(1+\frac{\xi y}{\sigma_u}\bigg)^{-\xi^{-1}},
+		& = 1-\bigg(1+\frac{\xi y}{\sigma_u}\bigg)_+^{-\xi^{-1}},
 		\end{aligned}
 		\end{equation}
-		which is $GPD(\xi,\sigma_u)$ as required and $\sigma_u$ is as defined in 
-		(\ref{mem}).
+		which is $GPD(\xi,\sigma_u)$ as required.
 	\end{itemize}
 \end{proof}
-More comprehension can come from \cite[pp.27-28]{reiss_statistical_2007} or if one wants to 
-analyse rates of convergence.
+More insights come from \citet[pp.27-28]{reiss_statistical_2007} with analysis of rates of convergence. Examples of how to retrieve the GPD from specific distributions are available in \citet[pp.77]{coles_introduction_2001}.
 
 
-\subsection{Dependence of the scale parameter $\sigma$} We chose to express the scale parameter as $\sigma_u$ to emphasize its dependency with the threshold $u$. If we increase the threshold, say to $u'>u$, then the scale parameter will be adjusted following :
+\subsection{Dependence of the scale parameter } We chose to express the scale parameter as $\sigma_u$ to emphasize its dependency with the threshold $u$. If we increase the threshold, say to $u'>u$, then the scale parameter will be adjusted :
 
 \begin{equation} \label{mem}
 \sigma_{u'}=\sigma_u+\xi (u'-u),
 \end{equation}
 and in particular, this adjusted parameter $\sigma_{u'}$ will increase if $\xi>0$ and decrease if $\xi<0$.
-If $\xi =0$, there would be no change in the scale parameter\footnote{This is consistent with the \emph{memoryless property} of the exponential distribution $H_{0,\sigma_u}$ (\ref{exppar}), for which we give more details in}. 
-We think important to point out the fact that, similarly as mentioned for the GEV models in (\ref{gevgen}), the scale parameter $\sigma_u$ for GPD models
-is not the usual standard deviation, but does govern the “size” of the excesses. \cite[pp.20]{AghaKouchak_extremes_2013}
+If $\xi =0$, there would be no change in the scale parameter\footnote{Consistent with the well-known \emph{memoryless property} of the exponential distribution $H_{0,\sigma_u}$}. 
+We think important to point out the fact that, similarly as for the GEV, the scale parameter $\sigma_u$ for GPD models
+is not the usual standard deviation, but does govern the “size” of the excess, as mentioned in \citet[pp.20]{AghaKouchak_extremes_2013}.
+The issue of threshold selection will be discussed in \hyperref[sec:thresh_selec]{Section \textbf{\ref{sec:thresh_selec}}}.
 
-We will later discuss the threshold choice in section \textbf{3.}
 
+\subsection{Three different types of GPD : Comparison with GEV} 
+One should remark the similarity with the GEV distributions. Indeed, parameters of the GPD of the threshold excesses are uniquely determined by the corresponding GEV parameters of block maxima. Hence, the shape parameter $\xi$ of the GPD is equal to that of the corresponding GEV and, most of all, it is invariant.
+ In block maxima, the GEV parameters  would shift if we take a different block length, while in POT, the GPD  parameters are not affected by the choice of the threshold due to the self-compensation arising in (\ref{mem}).% \cite[pp.76]{coles_introduction_2001}
 
-\subsection{Three different types of GPD and duality with GEV} One will remark the similarity with the GEV distributions as the parameters of the GPD of the threshold excesses are uniquely determined by the corresponding GEV distribution parameters of block-maxima (see outline proof in the above to convince yourself). Hence, the shape parameter $\xi$ of the GPD is equal to that of the corresponding GEV and, most of all, it is invariant\footnote{For instance, choosing different block size in the GEV modelling would shift its (estimated) parameters while GPD  (estimated) parameters are \emph{stable}. } while the computation of $\sigma_u$ will not be affected by changes of the corresponding $\mu$ or $\sigma$ in the GEV, from the self-compensation arising in (\ref{mem}). \cite[pp.76]{coles_introduction_2001}
-
-Hence, as for the block-maxima approach, there are also three possible families of the GPD depending on the value of the shape parameter $\xi$ which determines the qualitative behaviour of the GPD. \cite{hosking_parameter_1987}, \cite{singh_parameter_1995}
+Hence, as for the block-maxima approach, there are also three possible families of the GPD depending on the value of the shape parameter $\xi$ which determines the qualitative behaviour of the corresponding GPD. \cite{hosking_parameter_1987}, \cite{singh_parameter_1995}
 
 \begin{itemize}
-	\item The \textbf{first} type, call it $H_{0,\sigma_u}(y)$, comes by letting the shape parameter $\xi\rightarrow 0$ in \ref{gpd}, giving :
+	\item \textbf{First} type $H_{0,\sigma_u}(y)$ comes by letting the shape parameter $\xi\rightarrow 0$ in (\ref{gpdeq}), giving :
 	
 	\begin{equation}\label{gpd0}
-	H_{0,\sigma}(y)=1-\exp
-	\Big(-\frac{y}{\sigma}\Big), \ \ \ \ \ \ \ \ \ \ \ y>0.
+	H_{0,\sigma_u}(y)=1-\exp
+	\Big(-\frac{y}{\sigma_u}\Big), \ \ \ \ \ \ \ \ \ \ \ y>0.
 	\end{equation}
-	One can easily notice that it corresponds to an \textbf{exponential} distribution 
-	function, and hence light-tailed, with parameter $1/ \sigma_u$, namely 
+	One can easily notice that it corresponds to an \textbf{exponential} df and hence light-tailed with parameter $1/ \sigma_u$, namely 
 	$Y\sim\exp(\sigma_u^{-1})$.
 	
-	\item The \textbf{second} and the \textbf{third} types, that is when $\xi<0$ and $\xi>0$ (resp.), differ only by their support : 
+	\item \textbf{Second} and \textbf{third} types, i.e. when $\xi<0$ and $\xi>0$ (resp.), differ only by their support : 
 	
 	\begin{equation}\label{gpdm}
 	H_{\xi,\sigma_u}(y)=1-\bigg(1+\frac{\xi y}{\sigma_u}\bigg)^{-\xi^{-1}}, \ \ \ \ \  \ \ \text{for} \ \ \ \begin{cases}
-	\ y>0,  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \xi>0; \\
+	\ y>0,  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \qquad \ \xi>0; \\
 	\  0<y<\sigma_u\cdot|\xi|^{-1}, \ \ \ \  \  \  \xi<0.
 	\end{cases}
 	\end{equation}
-	Therefore, if $\xi>0$ the corresponding GPD is of \textbf{Pareto}-type, hence is heavy-tailed, and has no upper limit while if $\xi<0$, the associated GPD has an upper bound $y_*=u+\sigma_u/|\xi|$ and is then \textbf{Beta}-type distribution. A special case arise when $\xi=-1$ where the pertaining distribution becomes Uniform$(0,\sigma)$. \cite[pp.186]{grimshaw_computing_1993}
+	Therefore, if $\xi>0$ the corresponding GPD is of \textbf{Pareto}-type, hence is heavy-tailed, and has no upper limit while if $\xi<0$, the associated GPD has an upper bound $y_*=u+\sigma_u/|\xi|$ and is then of \textbf{Beta}-type. Special case arise when $\xi=-1$ where the pertaining distribution becomes Uniform$(0,\sigma_u)$, result coming from \citet[pp.186]{grimshaw_computing_1993}.
 	
 	
 \end{itemize}
-Some plots ? 
+The \textbf{density} of the GPD is written here as
 
+\begin{equation}\label{densgpd}
+h_{\xi,\sigma_u}(y)=\begin{cases}
+\frac{1}{\sigma_u}\bigg(1+\xi\frac{y}{\sigma_u}\bigg)^{-\xi^{-1}-1}, \qquad\quad \xi\neq 0; \\
+\sigma_u^{-1}\cdot e^{-y},\qquad\qquad\qquad\qquad \xi= 0.
+\end{cases}
+\end{equation}
+
+
+In the example of Figure \ref{fig:pot_plot}, we can see the red density seem to have an upper bound around $36.5^{\circ}c$. Hence, we can conclude that this distribution should be of Beta-type. \hyperref[part:xp]{Part \textbf{\ref{part:xp}}} will confirm  that $\xi<0$.
 
 After looking at the behaviour of the density of these functions, we will procure a more comprehensive view by defining some examples of how to retrieve these different types of Generalized Pareto Distributions.
 
-\paragraph*{Density functions of the GPD  }
 
+\section{Return Levels}\label{sec:rl_gpd}
 
-\begin{equation}\label{densgpd}
-h_{\xi,\sigma_u}(y)=\frac{\xi}{\sigma_u}\bigg(1+\xi\frac{y}{\sigma_u}\bigg)^{-\xi^{-1}-1}
-\end{equation}
-
-
-
-\subsection{Examples of the GPD as limiting distribution for exceedances }
-We have seen in the previous paragraph that if we can have an approximate distribution $G$ for block-maxima, then threshold excess will have a corresponding distribution given by a member of the Generalized Pareto family. Whence the shape parameter $\xi$, as for GEV distributions, is determinant for controlling the behaviour of the
-GPD, and thus leads to the three different types in (\ref{gpd0})-(\ref{gpdm}). 
-
-\begin{enumerate}
-	\item The first type 
-	
-\end{enumerate}
-
-
-
-The choice of a threshold will be discussed in section \textbf{3.5.1}.
-
-From \cite[p.147-]{beirlant_statistics_2006},
-
-
-\section{Return Levels}
-
-In a similar way as for method of block-maxima (see \hyperref[rlgev]{section \textbf{1.6}}).
-From (\ref{gpdeq}), we obtain the quantiles of the GPD simply by setting this equation equal to $1-1/m$ and inverting.
-
-However, differently as for \emph{block}-maxima, the quantiles of the GPD cannot be as readily interpreted as return levels because the observations no longer derive from predetermined \emph{blocks} of equal length. Instead, it is now required to estimate the \emph{probability of exceeding the threshold}, $\zeta_u$.
-
-We can now retrieve the return level $r_m$, i.e. the\textbf{ value that is exceeded on average once every $m$ observations}. 
-This value is given by 
+Presented in \hyperref[rlgev]{Section \textbf{1.6}} for block maxima, return levels are also useful in POT to bring valuable information. 
+%From (\ref{gpdeq}), we obtain the quantiles of the GPD simply by setting this equation equal to $1-1/m$ and inverting.
+However, differently as for block maxima, the quantiles of the GPD cannot be as readily interpreted as return levels because the observations no longer derive from predetermined \emph{blocks} of equal length. Instead, it is now required to estimate the \emph{probability of exceeding the threshold} $\zeta_u=\text{Pr}\big\{X>u\big\}$, from which a natural estimator is $\hat{\zeta}_u=k/n$ with $k$ the number of points exceeding $u$.
+We can now retrieve the return level $r_m$, i.e. the\emph{ value that is exceeded on average once every $m$ observations}. 
+This is given by 
 
 \begin{equation}\label{rlpot}
 r_m=\begin{cases}
-\ u+\sigma_u\ \xi^{-1}\Big[(m\zeta_u)^{\xi}-1\Big], \ \ \ \ \ \ \ \  \ \xi\neq 0;\\
-\ u +\sigma_u \log(m\zeta_u), \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \quad \ \xi =0.
+\ u+\sigma_u\ \xi^{-1}\Big[(m\zeta_u)^{\xi}-1\Big], \ \ \ \ \ \ \ \ \  \ \xi\neq 0;\\
+\ u +\sigma_u \log(m\zeta_u), \ \quad \ \ \ \ \ \ \  \ \ \ \ \ \ \quad \ \xi =0.
 \end{cases}
 \end{equation}
 provided $m$ is sufficiently large.
+Computations are very similar as for the GEV in \hyperref[rlplot]{Section \textbf{\ref{rlplot}}}. 
 
 \subsubsection*{Interpretation}
 
-Whereas the interpretation of the plot in function shape parameter value is the same as for the block-maxima method  (see the end of \hyperref[rlplot]{section \textbf{1.8}}, it is more convenient to replace the value of $m$ by $N\cdot n_y$ in (\ref{rlpot}), where $n_y$ is the number of observations per year, to give return levels on an annual scale. This method allows us to obtain the\emph{ N-year return level} which is now commonly defined as the level expected to be exceeded once every $N$ years.
+Whereas the interpretation of the plot in function shape parameter value is the same as for the block-maxima method  (see \hyperref[rlplot]{Section \textbf{1.8}}), it is more convenient to replace the value of $m$ by $N\cdot n_y$ in (\ref{rlpot}), where $n_y$ is the number of observations per year, to give return levels on an annual scale. This method allows us to obtain the\emph{ N-year return level} which is now commonly defined as the level expected to be exceeded once every $N$ years.
 
-
+\iffalse
 \section{Point Process Approach}\label{poissonproc}
-Following mainly \cite{coles_introduction_2001}, with some further concepts taken from \cite{embrechts_modelling_1997} , 
-
-As for the two preceding methods, the point process approach aims at modelling some sequences which are initially assumed to be independent (??)
-
-[coles, pp.124] Here, Point Process could be seen as a kind of summary of the two previous methods (respectively in \hyperref[sec::1]{chapter \textbf{1}} and in rest of \hyperref[sec::2]{this chapter}), leading to nothing new. However, this approach if often preferred : %for his "flexibility" 
+[coles, pp.124] Here, Point Process could be seen as a kind of summary of the two previous methods (respectively in \hyperref[sec::1]{Chapter \textbf{1}} and in rest of \hyperref[sec::2]{this Chapter}), leading to nothing new. However, this approach if often preferred as : %for his "flexibility" 
 \begin{enumerate}
 	\item Its interpretation \textbf{unifies} the \textbf{models} considered so far.
 	\item Its likelihood enables a more natural formulation of non-stationarity in excess models from the Generalized Pareto model, see section \textbf{2.2}.
 \end{enumerate}
-
 Furthermore, we will see that the parametrization of the point process model is invariant to threshold choice %[p.136] 
 so that this variation would only affect the well-known (already mentioned) bias-variance trade-off in the inference. Interesting if seasonal modelling.
-
-
-
 
 Hence, we recall that if $Y$ is Poisson distributed with parameter $\lambda$, then 
 
@@ -241,13 +225,11 @@ Hence, we recall that if $Y$ is Poisson distributed with parameter $\lambda$, th
 \text{Pr}\big[Y=k\big]= e^{-\lambda}\frac{\lambda^k}{k!}, \qquad\quad k\in\mathbb{N.}
 \end{equation}
 
-
 \subsection{Non-homogeneous Poisson Process} 
 
 \begin{equation}
 N(A)\sim \text{Poi}(\Lambda(A)), \ \ \ \ \ \ \ \,\ \ \ \ \Lambda (A) = \int_A \lambda (x)dx.
 \end{equation}
-
 
  "If a process is stationary and satisfies an asymptotic
 lack of “clustering” condition for values that exceed a high threshold, then its limiting form is
@@ -256,21 +238,17 @@ non-homogeneous Poisson with intensity measure" $\Lambda$, on a set of the form 
 \begin{equation}
 \Lambda(A) = (t_2-t_1)\cdot\bigg[1+\xi\bigg(\frac{x-\mu}{\sigma}\bigg)\bigg]^{-\xi^{-1}}_+
 \end{equation}
+\fi 
+
+\section{Inference : Parameter Estimation}\label{sec::potinfernce} 
+
+We will not develop likelihood techniques here as this is quite similar as for GEV in \hyperref[sec::gevinfernce]{Section \textbf{\ref{sec::gevinfernce}}}. This again requires numerical techniques. 
 
 
-
-
-
-\section{Inference}\label{sec::potinfernce} 
+The two approaches we have encountered so far, i.e. block-maxima and POT share commonly the same parameter $\xi$. Hence, it is not necessary to differentiate between these methods for the sole estimate of the shape parameter. We give in \hyperref[sec:infevi]{Appendix \textbf{\ref{sec:infevi}}} some of the most used methods to estimate the EVI.
 
 
 \iffalse
-We decide to present in this section the two mains methods of inference for GEV distributions. First, the likelihood-based methods for their wide applicability, and easy interpretability. Then, we will broadly present the bayesian methods for their increasing supports in this domain, and easy adjustability. Finally, we will present some other well-known methods that are also widely used to estimate GEV parameters like the Hill or the moment estimator.
-
-As we already discussed in section \textbf{2.1.1.} (see (\ref{convseq1})-(\ref{convseq2})), a great advantage for the modelling is that we do not have to find the normalizing sequences
-\fi
-
-We present here some methods that are based on likelihood and other kind methods. We will then more on the Bayesian methods in \hyperref[sec:bayesian]{chapter x }
 \subsection{Likelihood-based Methods}\label{likintro_pot}
 
 
@@ -285,136 +263,41 @@ From (\ref{densgpd}), we can write the \emph{log-likelihood }of the GPD :
 \end{equation}
 
 
-
 \subsection{Profile Likelihood}
 
 \subsection{Other Methods}
 
-\section*{Distinct inference for EVI $\xi$ and global inference (see "others"}
-\citet[pp.140]{beirlant_statistics_2006}
+\fi
 
 
-As we have seen, the two approaches we have encountered, that is \emph{block-maxima} and POT, share commonly the same parameter $\xi$. Hence, it is not necessary to differentiate between these methods for the sole estimate the shape parameter. 
-
-\subsection{Estimators Based on Extreme Order Statistics for EVI}\label{sec:infevi}
-
-These estimators allow to estimate the EVI $\xi$. 
-
-\subsection*{Pickands estimator}
-
-
-Firstly introduced by \cite{pickands_statistical_1975}, this method can be applied $\forall\xi\in\mathbb{R}$
-
-\begin{equation}
-\hat{\xi}^P_{k}= \frac{1}{\ln 2}\ln \Bigg(\frac{X_{n-\lceil k/4\rceil +1,n}-X_{n-\lceil k/2\rceil+1,n}}{X_{n-\lceil k/2\rceil +1,n}-X_{n-k+1,n}}\Bigg),
-\end{equation}
-
-where we used the definition of \citet{beirlant_statistics_2006}
-We recall that $\lceil x\rceil$ denotes the integer (ceil) part of $x$.
-
-A condition for the consistency of this estimator is that $k$ must be chosen such that $k/n\rightarrow 0$ as $n\rightarrow \infty$. This condition will hold for the rest rest of the estimators based on (...) in the following 
-
-A problem with this intuitive estimator is that its asymptotic variance is very large (see e.g. \cite{dekkers_estimation_1989}) and depends highly on the value of $k$. To improve this, we can quote the estimator of \cite{segers_generalized_2001} which is globally more efficient, depending on the value of an extra-"parameter"(?) and a function to choose.
-
-
-\subsection*{Methods for heavy-tailed distributions ($\xi>0$)}
-
-Typically, EV analysis of temperature data do not show heavy-tailedness §see \citet{}). For this reason, some tools commonly used for inference on \textbf{Pareto-type} distributions are not relevant. Because of their wide use and application, we will name them for completeness
-
-
-\subsection*{The Hill estimator ($\xi>0$)}
-
-
-This is probably the most simple EVI estimator thanks to the intuition behind its construction. There exists plenty of interpretations to construct it (see e.g. \citet[pp.101-104]{beirlant_statistics_2006}). Unfortunately, it only holds for heavy-tailed distributions ($\xi>0$). 
-
-
-%The probability-view \citet[pp.103]{beirlant_statistics_2006} which is the simplest and most intuitive considering the peaks-over-threshold case.
-
-
-It is defined as 
-
-\begin{equation}
-\xi^H_{k}=k^{-1}\sum_{i=1}^k\ln X_{n-i+1,n}-\ln X_{n-k,n}, \qquad\qquad k\in\{1,\dots,n-1\}.
-\end{equation}
+Finally, methods dedicated to POT exist to estimate the parameters of the GPD. For example, these methods include the probability-weighted-moment (PWM) which is formulated differently as for GEV in \hyperref[sec:gevother]{Section \textbf{\ref{sec:gevother}}}, see e.g. 
+\citet{ribereau_skew_2016}. The $L$-moment estimator is also important, especially for rainfall application, where \cite{hosking_regional_1997} emphasized that $L$-moment method came historically as a modification of the PWM estimator.
 
 
 
-Following \cite{mason_}, this estimator is consistent. Besides that, this estimator has several problems : 
+\section{Inference : Threshold Selection }\label{sec:thresh_selec}
+
+Threshold selection is crucial in a POT context.
+It involves a \emph{bias-variance trade-off}. In words,
 
 \begin{itemize}
-	\item instability with respect to the choise of $k$.
-	\item Severe bias due to the heavy-tails of the distribution and thus the slowly varying component which influences negatively.
-	\item Inadequacy with shifted data
-\end{itemize}
-
-
-Problem : see [pp.105]
-
-
-\subsection*{The Moment estimator}
-
-%\subsection*{Moment estimator}
-Introduced by \cite{dekkers_moment_1989}, this estimator is a direct generalization of the Hill estimator presented in the previous section. 
-
-\begin{equation}
-\hat{\xi}^M_k=\hat{\xi}_k^H+1-\frac{1}{2}\Bigg(1-\frac{(\hat{\xi}_k^H)^2}{\hat{\xi}^{H^{(2)}}_k }\Bigg)^{-1},
-\end{equation}
-where we define 
-
-\begin{equation*}
-\hat{\xi}^{H^{(2)}}_k=k^{-1}\sum_{i=1}^k\big(\ln X_{n-i+1,n}-\ln X_{n-k,n}\big)^2.
-\end{equation*}
-
-
-This estimator is also consistent but  
-
-
-\subsection*{Estimator based on generalized quantile plot}
-
-To overcome the lack of graphical interpretation of the usual moment estimator, 
-
-
-
-
-\subsection{The Probability-Weighted-Moment Estimator}
-
-\emph{Probability-Weighted-Moment} (PWM)
-...
-
-different formulations for POT or block maxima. Look also to "other" directory
-\cite{ribereau_skew_2016}
-
-
-\subsubsection*{The $L$-Moment Estimator}
-\cite{wang_lh_1997}
-
-\cite{hosking_regional_1997} emphasized the fact that $L$-moment method came historically as a modification of the PWM method. 
-
-\subsection{Estimators based on Generalized Quantile }
-
-
-
-
-\section{Threshold Selection (Methods) }\label{stdthr}
-
-\subsection{Standard Threshold choice for the excess models}
-
-Single threshold selection involves a \textbf{bias-variance trade-off}. That is, (raccourcir)
-
-\begin{itemize}
-	\item \textbf{Lower threshold} will induce\textbf{ higher bias} due to model misspecification. In other words, the threshold must be sufficiently high to ensure that the asymptotics underlying the GPD approximation are reliable.
+	\item \emph{Lower threshold} will induce\emph{ higher bias} due to model misspecification. In other words, the threshold must be sufficiently high to ensure that the asymptotics underlying the GPD approximation are reliable.
 	
-	\item \textbf{Higher threshold} will induce higher estimation uncertainty, i.e. \textbf{higher variance} of the parameter estimate as the sample size is reduced for high threshold. 
+	\item \emph{Higher threshold} will induce higher estimation uncertainty, i.e. \emph{higher variance} of the parameter estimate as the sample size is reduced for high threshold. 
 	
 \end{itemize}
-(
-Following \cite{leadbetter_extremes_1983}, this is practically equivalent to estimation of the $k^{\text{th}}$ upper order statistic $X_{(n-k+1)}$
-called the "tail fraction" below. To ensure tail convergence, as $n\to\infty$, $k\to\infty$ but at a reduced rate such that $k/n\to 0$, i.e. the quantile level of the threshold increases at a faster rate as the sample size $n$ grows. 
 
-)
 
-\subsubsection*{Based on Mean Residual Life} function or \emph{mean excess function} 
-, following again \cite[pp.14-19]{beirlant_statistics_2006}, \cite[pp.78-80]{coles_introduction_2001},
+
+\subsection{Standard Threshold Selection Methods}
+
+%(Following \cite{leadbetter_extremes_1983}, this is practically equivalent to estimation of the $k^{\text{th}}$ upper order statistic $X_{(n-k+1)}$called the "tail fraction" below. To ensure tail convergence, as $n\to\infty$, $k\to\infty$ but at a reduced rate such that $k/n\to 0$, i.e. the quantile level of the threshold increases at a faster rate as the sample size $n$ grows. )
+
+Applications of all the subsequent methods can be viewed in Section 3.1 of the \textbf{Summary1\_intro.Rmd} in the \textbf{/vignettes} folder of the \href{https://github.com/proto4426/PissoortThesis/tree/master/vignettes}{repository}. %\footnote{See \hyperref[appgit]{Appendix \textbf{\ref{appgit}}} or you can go directly to \url{https://github.com/proto4426/PissoortThesis/tree/master/vignettes}. More details will come in \hyperref[part:xp]{Part \textbf{\ref{part:xp}}}. }. 
+ Vignette can be downloaded in html from the compressed file in the same folder. Recall that all empirical results of this chapter will not be included in this thesis.
+
+\subsubsection*{Based on Mean Residual Life}
+ The \emph{mean residual life} function or \emph{mean excess} function is defined as
 
 \begin{equation}
 %\begin{aligned}
@@ -423,17 +306,18 @@ mrl(u_0)
 \ = \frac{\int_{u_0}^{x_*} \bar{F}(u)du}{\bar{F}(u_0)},
 %\end{aligned}
 \end{equation}
-for $X$ having survival function $\bar{F}(u_0)$ computed at $u_0$, with $x_*=\sup\{ x:F(x)<1\}$ denoting the right endpoint of the support of F. 
-It denotes, in an actuarial context, the expected remaining quantity or amount to be paid out when a level $u_0$ has been chosen. However, even if it is mainly applied in an actuarial context or in survival analysis in the literature ( see \cite{guess_mean_1988} for a well-known example), there are also interesting and reliable applications in our more environmental purposes as we will see in the following.
-Moreover, this function has interesting properties about the tail of the underlying distribution of $X$ \cite[pp.16]{beirlant_statistics_2006}. In fact, we expect the following :
+for $X$ having survival function $\bar{F}(u_0)$ computed at $u_0$.
+It denotes in an actuarial context
+the expected remaining quantity or amount to be paid out when a level $u_0$ has been chosen. However, there are also interesting and reliable applications in an environmental context.
+Moreover, this function has interesting properties about the tail of the underlying distribution of $X$. In fact, we expect that :
 
 \begin{itemize}
-	\item If $mrl(u_0)$ is constant, then $X$ has exponential distribution.
+	\item If $mrl(u_0)$ is constant, then $X$ has an exponential distribution.
 	\item If $mrl(u_0)$ ultimately increases, then $X$ has a heavier tail than the exponential distribution.
-	\item If $mrl(u_0)$ ultimately decreases, then $X$ has a lighter tail than the exponential one.
-\end{itemize} (and vice-ersa, goes it in the two sens??)
-
-This can be particularly interesting for our purpose when considering threshold models. For this case, we can suppose the excesses of a threshold generated by the sequence $\{X_i\}$ follow a generalized Pareto distribution (see 2.2). Knowing the theoretical mean of this distribution, we retrieve, provided the shape parameter $\xi<1$ and denoting $\sigma_u$ the scale parameter corresponding to excess of a threshold $u>u_0$,
+	\item If $mrl(u_0)$ ultimately decreases, then $X$ has a lighter tail than the exponential distribution.
+\end{itemize}
+% (and vice-ersa, goes it in the two sens??)
+This can be particularly interesting for our purpose when considering threshold models. For this case, we have the excesses $\{Y_i\}$ over a threshold, generated by the sequence $\{X_i\}$, follow a GPD (\ref{gpdeq}). From the theoretical mean of this distribution, we retrieve provided $\xi<1$,
 
 \begin{equation} \label{mrl}
 \begin{aligned}
@@ -442,131 +326,98 @@ mrl(u):=E(X-u\ |\ X>u)
 & = \frac{\sigma_{u_0}+\xi u}{1-\xi},
 \end{aligned}
 \end{equation}
-
-from the threshold $u$ dependence with the scale parameter $\sigma$ (see \ref{mem}). Hence, we remark that $mrl(u)$ is linearly increasing in $u$, with gradient $\xi(1-\xi)^{-1}$ and intercept $\sigma_{u_0}(1-\xi)^{-1}$. Furthermore, we can estimate empirically this function intuitively by 
+from dependence of the scale parameter $\sigma$ with the threshold $u$, see (\ref{mem}). Hence, we remark that $mrl(u)$ is linearly increasing in $u$, with gradient $\xi\cdot(1-\xi)^{-1}$ and intercept $\sigma_{u_0}\cdot (1-\xi)^{-1}$. Furthermore, we can estimate empirically this function by 
 
 \begin{equation}\label{mrle}
 \widehat{mrl}(u)=\frac{1}{n_u}\sum_{i=1}^{n_u}(x_{[i]}-u),
 \end{equation}
-where we let the $x_{[i]}$ denoting the (i-th out of the ) $n_u$ observations that exceed $u$.
+where the $x_{[i]}$ denote the i-th observations out of the $n_u$ that exceed $u$.
 
-\paragraph*{Mean residual life plot} This leads to an interesting tool for our purpose, the \emph{mean residual life plot}. It comes from combining the linearity detected between $mrl(u)$ and $u$ in (\ref{mrl}) with (\ref{mrle}). Therefore, a reliable information can be retrieved from the point of the points 
+\paragraph*{Mean residual life plot} 
+The \emph{mean residual life plot} comes from combining the linearity detected between $mrl(u)$ and $u$ in (\ref{mrl}) with (\ref{mrle}). Therefore, interesting information can be retrieved from the locus of the points 
 
 \begin{equation}
 \Bigg\{\bigg(u,\frac{1}{n_u}\sum_{i=1}^{n_u}(x_{[i]}-u)\bigg):u<x_{max}\Bigg\}.
 \end{equation}
 
-Even if its interpretation is not easy, this graphical procedure will give insights for the choice of a suitable threshold $u_0$ to model extremes via general Pareto distribution, that is the threshold $u_0$ above which we can detect linearity in the plot. Relying on this well-chosen threshold $u_0$, the generalized Pareto distribution should be a good approximation.
-Remind however that its interpretation is often subjective. Furthermore, information in the far right-hand-side of this plot is unreliable. Variability is high due to the limited amount of data (exceedances) above very high thresholds. This can be seen for example on larger confidence intervals.
-
-From \cite[pp.83-84]{coles_introduction_2001} 
+Even if its interpretation is not easy, this graphical procedure will give insights for the choice of a suitable threshold $u_0$ to model extremes via a GPD, that is the threshold $u_0$ above which we can detect linearity in the plot. Relying on this well-chosen threshold $u_0$, the GPD approximation should be fine.
+However, note that its interpretation is subjective. Furthermore, information in the far right-hand-side of this plot is unreliable. Variability is high due to the limited amount of data above high thresholds. %This can be seen for example on larger confidence intervals.
 
 
-"Substantial subjectivity in interpreting these
-diagnostic plots, and the resulting uncertainty. Similar challenges are seen with
-the River Nidd data, shown in Tancredi et al. (2006), and many other exam-
-ples in the literature. These examples suggests that a more ‘objective’ thresh-
-old estimation approach is needed and that uncertainty must be accounted for."
-
-see mixture pdf]
-
-
+%Substantial subjectivity in interpreting thesediagnostic plots, and the resulting uncertainty. Similar challenges are seen withthe River Nidd data, shown in Tancredi et al. (2006), and many other exam-ples in the literature. These examples suggests that a more ‘objective’ thresh-old estimation approach is needed and that uncertainty must be accounted for."   see mixture pdf]
 
 \subsection*{Based on the stability of the parameter's estimates}
-see section 4.3.4 of coles.
+%see section 4.3.4 of coles.
 
-montrer pr varying threshold si les estimateurs changent bcp ?  Stability plots avec IC grisé qui sajuste complement ds cette region.
+%montrer pr varying threshold si les estimateurs changent bcp ?  Stability plots avec IC grisé qui sajuste complement ds cette region.
 
-The aim is to plot MLE's of the parameters gainst the threshold. These MLE's are supposed to be independent of the threshold choice. 
+Regarding its simplicity,  \textit{stability plots of the parameter's estimates} form one of the preferred tools for practitioners.
+The aim is to plot MLE's of the parameters against different values for the threshold. In theory, MLE's are independent of the threshold choice, and hence the threshold is chosen at the lowest value for which the MLE's remain near-constant. 
 
-From its simplicity, it forms one of the main tools for the practitioners (as said by e.g. \citet{} ).
+But this method is also criticized, especially for its lack of interpretability, and the pointwise confidence interval strongly dependent across the range of thresholds.
+Other techniques have thus been proposed, see e.g. \citet{Wadsworth_exploiting_2016} which propose complementary plots with greater interpretability, with a likelihood-based procedure allowing for automated and a more formal threshold selection.
+In two words, this new method relies on the independent-increments
+structure of MLE and makes use of likelihood ratio tests to identify the threshold that significantly provides the best fit to the data. Thresholds are then compared iteratively, and significance is assessed by simulations.
 
-But this method is also highly criticized, especially for its lack of interpretability, and the pointwise confidence intervals which are strongly dependent across the range of thresholds (here e.g. we took only....).
+%"To identify a treshold that provides the best fit to the likelihood (8)", we maximize the profile likelihood $L_p(j)=L(\hat{\beta}_j,\hat{\gamma}_j,j)$, with $(\hat{\beta}_j,\hat{\gamma}_j)$ the MLE's for a fixed j. After computing $j^*=\argmaxD_j L_p(j)$, the question is whether $L(\hat{«\beta}_{j^*},\hat{\gamma}_j,j^*$ provides a significantly better fit to $\xi*$ than $L(0,1,0)=\prod_{i=1}^{k-1}\phi(\xi_i^*;0,1)$. This can be answered by a likelihood ratio test, with test statistic \begin{equation} T=\frac{L(\hat{\beta}_{j^*},\hat{\gamma}_{j^*},j^*)}{L(0,1,0)}. \end{equation}
+%If this is significant at level $\alpha$, there is evidence against a hypothesis of white noise and then we select the threshold $u^*=u_{j^*+1}$ which provides the best fit.
 
-Other techniques have thus been proposed, see e.g. \citet{Wadsworth_exploiting_2016} which propose complementary plots with greater interpretability, with a "simple" likelihood-based procedure allowing for automated (more formal ?) threshold selection.
+%"The lowest threshold that one entertains, u1, may also have an impact upon the selected threshold, and might thus be regarded as a tuning parameter. "
 
-In two words, this method ....
-"To identify a treshold that provides the best fit to the likelihood (8)", we maximize the profile likelihood $L_p(j)=L(\hat{\beta}_j,\hat{\gamma}_j,j)$, with $(\hat{\beta}_j,\hat{\gamma}_j)$ the MLE's for a fixed j. After computing $j^*=\argmaxD_j L_p(j)$, the question is whether $L(\hat{«\beta}_{j^*},\hat{\gamma}_j,j^*$ provides a significantly better fit to $\xi*$ than $L(0,1,0)=\prod_{i=1}^{k-1}\phi(\xi_i^*;0,1)$. This can be answered by a likelihood ratio test, with test statistic 
-
-\begin{equation}
-T=\frac{L(\hat{\beta}_{j^*},\hat{\gamma}_{j^*},j^*)}{L(0,1,0)}.
-\end{equation}
-
-If this is significant at level $\alpha$, there is evidence against a hypothesis of white noise and then we select the threshold $u^*=u_{j^*+1}$ which provides the best fit.
-
-"The lowest threshold that one entertains, u1, may also
-have an impact upon the selected threshold, and might thus be
-regarded as a tuning parameter. "
-
-"how many thresholds k one
-should choose. There should be some link to the sample size of
-the data: if k is too large compared to the sample size n, then the
-asymptotic theory will not provide a good approximation to the
-distribution."
+%"how many thresholds k one should choose. There should be some link to the sample size of the data: if k is too large compared to the sample size n, then the asymptotic theory will not provide a good approximation to the distribution."
 
 
 
 \subsection*{Based on the Dispersion Index Plot}
 
-As we have seen, the methods considered above lead to a huge amount of subjectivity.
-Following \citet{ribatet_users_2006}, this method is particularly useful for time series. In \hyperref[poissonproc]{section \textbf{2.4}} we have proven that occurrences of the excesses are represented by a Poisson process, see \ref{poissdist}. Hence, $\mathbb{E}[X]=\text{Var}[X]$ and the \emph{Dispersion Index} statistic introduced by \cite{cunnane_note_1979} is 
-defined by $DI=s^2\cdot\lambda{-1}$, where $s^2$ is the intensity of the Poisson process and $\lambda$ can be interpreted as the mean number of events in a block.
+As mentioned, methods considered above lead to a huge amount of subjectivity.
+Following \citet{ribatet_users_2006}, the \emph{Dispersion Index} (DI) plot is particularly useful for time series. Point process that we have not developed here, can be used to characterize the excess over a threshold as a Poisson process. Hence, $\mathbb{E}[X]=\text{Var}[X]$.  The DI statistic introduced by \cite{cunnane_note_1979} is 
+defined by $DI=s^2\cdot\lambda{-1}$, where $s^2$ is the intensity of the Poisson process and $\lambda$ is the mean number of events in a block.
 
-A confidence interval can also be computed :
 
-\subsection*{Based on \emph{L-Moments} plot}
+\subsection*{Based on \emph{L}-Moments plot}
 
-They are linear combinations of the ordered data values. 
-From the GPD, we have 
+\emph{L-Moments} are linear combinations of the ordered data values. 
+From the GPD, we have that
 
 \begin{equation}
 \tau_4=\tau_3\cdot \frac{1+5\tau_3}{5+\tau_3},
 \end{equation}
 where $\tau_4$ is the \emph{L-Kurtosis} and $\tau_3$ is the \emph{L-Skewness}. See e.g. \citet{hosking_regional_1997} for more details on L-moments or \citet{peel_utility_2001} for a known application of this method in hydrology.
 
-We can then construct the \emph{L-Moment plot} :
+We can then construct the \emph{L-Moment plot} which consist of the points :
 
 \begin{equation}
 \Big\{(\hat{\tau}_{3,u},\hat{\tau}_{4,u}) : u\leq x_{\text{max}}\Big\}
 \end{equation}
-
-where $\hat{\tau}_{3,u}$ and $\hat{\tau}_{4,u}$ are estimations of L-kurtosisand L-skewness based on u and $x_{\text{max}}$ is the maximum observation.
-
+where $\hat{\tau}_{3,u}$ and $\hat{\tau}_{4,u}$ are estimations of L-kurtosis and L-skewness based on $u$ and $x_{\text{max}}$ is the maximum observation. Note that interpretation of this plot is often tedious.
 
 
 
 
 
-\subsection{"Varying" Threshold : Mixture Models}
-\citet{dey_extreme_2016}
 
-see application with pdf small thesis !!! --> unconclusive.
+\subsection{Varying Threshold : Mixture Models}
 
-The threshold is either implicitly or explicitly
-defined as a parameter to be automatically estimated, and in most cases the un-
-certainty associated with the threshold choice can be accounted for naturally in
-the inferences.
+The so-called "fixed threshold" approaches (as renamed in 
+\citet{scarrott_review_2012}, among others) considered so far have been criticized since it leads to a fixed and subjective threshold, sometimes also seen as an arbitrary choice which uncertainty cannot be accounted for. 
 
-The so-called "\emph{fixed threshold approach}" (named in 
-\citet{hu_evmix:_2014}, among others) which include thus the 
-diagnostics discussed in \hyperref[stdthr]{section \textbf{}}
+%The so-called "fixed threshold" approaches (as renamed in \citet{scarrott_review_2012}, among others) loosely defined such that the population tail can be well approximated by the GPD, obtaining a balance between the bias due to the asymptotic tail approximation and parameter estimation uncertainty due to the inherent sparsity of threshold excess data.
 
 
-There is a wide literature on the subject. The model can be presented in a general way : 
+Hence, recent models have emerged that allow a dynamic view of the threshold. In \textit{mixture models}, the threshold is either implicitly or explicitly defined as a parameter to be estimated, and in most cases the uncertainty associated with the threshold choice can be naturally accounted for in the inferences. The model can be presented in a general way : 
 
 \begin{equation}
-f(x)=(1-\phi_u)\cdot b_t(x)+\phi_u\cdot g(x),
+f(x)=(1-\zeta_u)\cdot b_t(x)+\zeta_u\cdot g(x),
 \end{equation}
+where $\zeta_u=\text{Pr}\big\{X>u\big\}$ is now called the \emph{tail fraction} and is a new parameter of the model, $b_t(x)$ is the density of the \textit{bulk model} (i.e., the data that do not exceed the threshold) and $g(x)$ is the \emph{tail model}, e.g. the GPD density. We ignored parameter dependence for clarity. There is a wide literature on the subject and lots of models have emerged, not necessarily parametric, see e.g. \citet[chap.3]{dey_extreme_2016} for the univariate case.
+The guiding principle in choosing EV mixture models is to combine a flexible bulk model with a reliable tail fit which is robust to the bulk data. These two components are not independent as they share common information about the threshold.
 
-with $b_t(x)$ the density of the bulk model, and where we ignored the parameter dependence for clarity.
+Serious issues arise in these models, for example regarding the discontinuity which often occur in the density function at the junction between the bulk and the tail model. Alternative models have emerged to force continuity on the density but still, mixture models are often regarded as over-complex with respect to the benefits these models can offer in practice. Well, research is in progress $\ldots$
 
-"A guiding principle in developing, or choosing, extreme value mixture models is to
-combine a suitable bulk model, or at least a flexible bulk model, with the tail model. If
-this is successfully achieved then these models and inference schemes can provide an
-automated and objective approach to threshold and tail estimation, including uncer-
-tainty quantification." book risk pp.62
 
-\textbf{Problem} is the discontinuity which (can) occur in the pdf (not the case for the cdf). this can present bias and uncertainty when the quantity of interest considered is close to the threshold.
+\iffalse
+A Problem involves the discontinuity which often occur in the density function. this can present bias and uncertainty when the quantity of interest considered is close to the threshold.
 "Nonstationary extensions of such models can be particularly problematic
 with the extent of discontinuity varying along the threshold function."
 
@@ -578,11 +429,13 @@ preferred. However, in more usual situation of unknown
 population distribution, the nonparametric mixture models
 perform consistently well for low and high quantiles." evmix package thesis.
 
+Nonstationary extremes see thesis2012 p.155
 
-\subsubsection{Nonstationary extremes} see thesis2012 p.155
+A huge debate and more information can be found in \citet[chap.3-5]{dey_extreme_2016}.
 
 \paragraph*{Cross-validation}
-\cite{northrop_cross_2016} 
+\cite{northrop_cross-validatory_2017} 
 Besides all these methods that are very subjective,...
+%or see gelman bayesian book pp.169
 
-or see gelman bayesian book pp.169
+\fi

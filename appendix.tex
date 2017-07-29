@@ -1,3 +1,4 @@
+\thispagestyle{empty}
 
 \chapter{Statistical tools for Extreme Value Theory}\label{appA}
 
@@ -135,10 +136,10 @@ $\tilde{F}$ is an estimate of the true distribution $F$ and hence, by comparing 
 \begin{equation}
 \Bigg\{\bigg(\hat{F}^{\leftarrow}\Big(\frac{i}{n+1}\Big)\ ,\ x_{(i)}\bigg) \ : \ i=1,\dots,n\Bigg\}.
 \end{equation}
-This graphic compares the ordered quantiles $\hat{F}^{\leftarrow}\Big(\frac{i}{n+1}\Big)$ of the fitted model $\hat{F}$ against the ordered observed quantiles, i.e. the ordered sample from (\ref{ordersamp}).
+This graph compares the ordered quantiles $\hat{F}^{\leftarrow}\Big(\frac{i}{n+1}\Big)$ of the fitted model $\hat{F}$ against the ordered observed quantiles, i.e. the ordered sample from (\ref{ordersamp}).
 We used the continuity correction $\frac{i}{n+1}$ to prevent problems at the borders.
 Note that a disadvantage of Q–Q plots is that the shape of the selected
-parametric distribution is no longer visible \cite{beirlant_statistics_2006}[pp.63]
+parametric distribution is no longer visible \citet[pp.63]{beirlant_statistics_2006}
 
 \subsubsection*{Probability plot} Given the same sample in (\ref{ordersamp}), a \emph{probability plot} consists of the locus of points 
 
@@ -150,6 +151,68 @@ This graph compares the estimated probability of the ordered values $x_{(i)}$, t
 From these two graphical diagnostic tools, the interpretation is the same and we will consider that $\hat{F}$ fits well the data if the plot looks linear, i.e. the points of the plots lie close to the unit diagonal.
 
 Besides the fact that the probability and the quantile plots contain the same information, they are expressed in a different scale. That is, after changing the scale to probabilities or quantiles (with probability or quantile transforms), one can gain a better perception and both visualizations can sometimes lead contradictory conclusions, especially in the graphical inspection. Using both is thus preferable to make our model's diagnostic more robust.
+
+\section{Estimators Based on Extreme Order Statistics for EVI}\label{sec:infevi}
+The following estimators allow to estimate the EVI $\xi$. 
+
+\subsection*{Pickands estimator}
+
+
+First introduced by \cite{iii_statistical_1975-1}, this method can be applied $\forall\xi\in\mathbb{R}$ to give
+
+\begin{equation}
+\hat{\xi}^P_{k}= \frac{1}{\ln 2}\ln \Bigg(\frac{X_{n-\lceil k/4\rceil +1,n}-X_{n-\lceil k/2\rceil+1,n}}{X_{n-\lceil k/2\rceil +1,n}-X_{n-k+1,n}}\Bigg),
+\end{equation}
+where we recall that $\lceil x\rceil$ denotes the integer (ceil) part of $x$.
+
+A condition for the consistency of this estimator is that $k$ must be chosen such that $k/n\rightarrow 0$ as $n\rightarrow \infty$. This condition will hold for the following estimators based on order statistics.
+
+A problem with this intuitive estimator is that its asymptotic variance is very large (see e.g. \cite{dekkers_estimation_1989}) and depends highly on the value of $k$. To improve this, we can quote the estimator of \cite{segers_generalized_2001} which is globally more efficient.%, depending on the value of an extra "parameter".
+
+
+
+The following estimators are only valid for $\xi>0$. In general in EVT, this condition should hold (rainfall data, finance, risk analysis,...) but in our application we know that $\xi$ is likely to be negative and hence, the following estimators cannot be used.
+
+
+\subsection*{Hill estimator}
+
+
+This is probably the most simple EVI estimator thanks to the intuition behind its construction. There exists plenty of interpretations to construct it (see e.g. \citet[pp.101-104]{beirlant_statistics_2006}). 
+%The probability-view \citet[pp.103]{beirlant_statistics_2006} which is the simplest and most intuitive considering the peaks-over-threshold case.
+It is defined as 
+\begin{equation}
+\xi^H_{k}=k^{-1}\sum_{i=1}^k\ln X_{n-i+1,n}-\ln X_{n-k,n}, \qquad\qquad k\in\{1,\dots,n-1\}.
+\end{equation}
+
+
+
+Following e.g. \cite{dehaan_asymp_1998}, this estimator is consistent under certain conditions. Besides that, this estimator has several problems : 
+
+\begin{itemize}
+	\item instability with respect to the choise of $k$.
+	\item Severe bias due to the heavy-tails of the distribution and thus the slowly varying component which influences negatively.
+	\item Inadequacy with shifted data.
+\end{itemize}
+Hence, this estimator should be carefully used.
+
+
+\subsection*{Moment estimator}
+
+Introduced by \cite{dekkers_moment_1989}, this estimator is a direct generalization of the Hill estimator presented above. It is defined as
+
+\begin{equation}
+\hat{\xi}^M_k=\hat{\xi}_k^H+1-\frac{1}{2}\Bigg(1-\frac{(\hat{\xi}_k^H)^2}{\hat{\xi}^{H^{(2)}}_k }\Bigg)^{-1},
+\end{equation}
+where
+\begin{equation*}
+\hat{\xi}^{H^{(2)}}_k=k^{-1}\sum_{i=1}^k\big(\ln X_{n-i+1,n}-\ln X_{n-k,n}\big)^2.
+\end{equation*}
+This estimator is also consistent.  
+
+
+%\subsection*{Estimator based on generalized quantile plot}To overcome the lack of graphical interpretation of the usual moment estimator, 
+
+
 
 \chapter{Bayesian Methods}\label{appB}
 
@@ -369,6 +432,11 @@ Regarding our future application, that is maximum temperatures, it is relevant t
 
 \section{Introduction of the Practical Analysis (section 6)}
 
+
+\begin{figure}[!htb]
+	\includegraphics[width=1\linewidth]{violin_density.pdf}\caption{ Violin-plot and density plot for each seasons. (Right) vertical dotted lines represent the mean of each distribution.}\label{fig:violin_density}
+\end{figure}
+
 \begin{figure}[!htb]
 	\includegraphics[width=\linewidth]{acfresgam.pdf}\caption{ACF and PACF for the residuals of the fitted GAM model with assumed independent errors }\label{fig:acfresgam1}
 \end{figure}
@@ -408,9 +476,14 @@ MA(2)  & $6$ & $494.698$ & $511.219$ \\
 
 
 \begin{figure}[!htb]
-\centering	\includegraphics[width=.85\linewidth]{proflikpar.pdf}\caption{ The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals when we take the intersection on the horizontal axis. }\label{fig:proflikpar}
+\centering	\includegraphics[width=.85\linewidth]{proflikpar.pdf}\caption{ Profile likelihood intervals for the three GEV parameters. The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals when we take the intersection on the horizontal axis. Output makes use of the \texttt{ismev} package.}\label{fig:proflikpar}
 \end{figure}
 
+
+
+\begin{figure}[!htb]
+	\centering	\includegraphics[width=.85\linewidth]{proflikrl.pdf}\caption{ $95\%$ Profile likelihood intervals for three return levels. We kept the same $x$-scale for the three plots but not the $y$-scales. We used the \texttt{ismev} package but we modified the function to allow for more flexibility because the default y-scale in produced ugly visualizations for high return levels. Green lines represent the intervals from Table \ref{tab:rlprof} computed with another package from E.Gilleland, \texttt{extRemes}. }\label{fig:proflikrl}
+\end{figure}
 
 
 \iffalse
