@@ -8,24 +8,26 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Relaxing The Independence Assumption}{32}{chapter.3}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bayesian Extreme Value Theory}{41}{chapter.4}
-\contentsline {xpart}{Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{52}{part.2}
+\contentsline {xchapter}{Bayesian Extreme Value Theory}{43}{chapter.4}
+\contentsline {xpart}{Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{54}{part.2}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Introduction to the Analysis}{52}{chapter.5}
-\contentsline {table}{\numberline {5.1}{\ignorespaces Proportion of the $M$ posterior simulations which are covered by the confidence intervals\relax }}{57}{table.caption.68}
+\contentsline {xchapter}{Introduction to the Analysis}{54}{chapter.5}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Proportion of the $M$ posterior simulations which are covered by the confidence intervals\relax }}{59}{table.caption.70}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Analysis in Block Maxima}{59}{chapter.6}
-\contentsline {table}{\numberline {6.1}{\ignorespaces Maximum likelihood estimation of the three GEV parameters\relax }}{60}{table.caption.74}
-\contentsline {table}{\numberline {6.2}{\ignorespaces GEV parameters estimated by PWM\relax }}{61}{table.caption.77}
-\contentsline {table}{\numberline {6.3}{\ignorespaces m-year return level estimates and $95\%$ intervals. Last line computes the difference between the length of the normal interval with the length of the profile likelihood interval\relax }}{61}{table.caption.78}
+\contentsline {xchapter}{Analysis in Block Maxima}{61}{chapter.6}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Maximum likelihood estimation of the three GEV parameters\relax }}{62}{table.caption.76}
+\contentsline {table}{\numberline {6.2}{\ignorespaces GEV parameters estimated by PWM\relax }}{63}{table.caption.79}
+\contentsline {table}{\numberline {6.3}{\ignorespaces m-year return level estimates and $95\%$ intervals. Last line computes the difference between the length of the normal interval with the length of the profile likelihood interval\relax }}{63}{table.caption.80}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Comparisons of proposed (nested) models for the trend (only for $\mu $ ?). Significant p-values at $5\%$ are in bold. \relax }}{66}{table.caption.86}
+\contentsline {table}{\numberline {6.5}{\ignorespaces In\relax }}{67}{table.caption.88}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bayesian Analysis in Block Maxima}{65}{chapter.7}
+\contentsline {xchapter}{Bayesian Analysis in Block Maxima}{68}{chapter.7}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Statistical tools for Extreme Value Theory}{II}{appendix.A}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Bayesian Methods}{VII}{appendix.B}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Other Figures and Tables}{XII}{appendix.C}
-\contentsline {table}{\numberline {C.1}{\ignorespaces compares models for the residuals of the GAM model based on AIC and BIC criterion. These criterion take into account the quality of fit (based on likelihood) but also a penalty term to penalize more complex models. \relax }}{XII}{table.caption.98}
+\contentsline {table}{\numberline {C.1}{\ignorespaces compares models for the residuals of the GAM model based on AIC and BIC criterion. These criterion take into account the quality of fit (based on likelihood) but also a penalty term to penalize more complex models. \relax }}{XII}{table.caption.104}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Github Repository Structure}{XVII}{appendix.D}

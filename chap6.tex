@@ -21,12 +21,12 @@ The block-length selection an important issue of the analysis. It is important t
 A plenty of packages exist for modelling extreme values in R. We have explored most of them and we used some to do the following analysis. We made comparisons and the results are the same for similar methods. Regarding the classic EVT analysis, we must name the following : 
 \vspace*{-.2cm}
 \begin{itemize}
-	\item[$\blacktriangleright$] \texttt{ismev}, \texttt{evd}, \texttt{extRemes} (good for a wide nonstationary analysis with POT and nice tutorials, see e.g. \citet{gilleland_extremes_2016}), \texttt{ POT} (see \citet{ribatet_users_2006})\texttt{evir} \texttt{fExtremes}, $\dots$
+	\item[$\vartriangleright$] \texttt{ismev}, \texttt{evd}, \texttt{extRemes} (good for a wide nonstationary analysis with POT and nice tutorials, see e.g. \citet{gilleland_extremes_2016}), \texttt{ POT} (see \citet{ribatet_users_2006}), \texttt{evir}, \texttt{fExtremes}, $\dots$
 \end{itemize}
 
 Whereas lots of the package are doing the same analysis but with different tools, we decided to rely mostly on \texttt{ismev} as it is the package used in the book of \citet{coles_introduction_2001}.
 
-\section{First Estimation of the Model}
+\section{First Inferences of the Model}
 
 Whereas the whole content of \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} is important to understand the concepts used in this section, we will now be mostly based on inferential methods discussed in \hyperref[sec::gevinfernce]{Section\textbf{ \ref{sec::gevinfernce}}}
 
@@ -164,32 +164,112 @@ from Table \ref{tab:rl1}, represented by the green lines. These were computed re
 package \texttt{extRemes}. Results are slightly different for the $2$-year return level.
 
 
-\section{Stationary Analysis}
+\subsection{Stationary Analysis}
 
 In \hyperref[sec:statio]{Section \textbf{\ref{sec:statio}}} we have proven that when a sequence is not independent we can still have the GEV
 distribution in the limit of the normalized sequence. This will only induce different location and scale
-parameters compared to an independent sequence. Actually, the estimates shown in Table \ref{tab:estlik} already take this "possible" dependence into account.
+parameters compared to an independent sequence.
+We can visualize the dependence in the series for example by hand of (partial) autocorrelation functions. Corresponding plots are shown in Figure \ref{fig:acf_gev} let in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} where we see that temporal dependence is light but well present. 
+Actually, the estimates shown in Table \ref{tab:estlik} already take this dependence into account. 
+
+\addcontentsline{toc}{subsection}{POT}
+\subsubsection*{POT}
+
+ Dependence is hence not really a concern for GEV while it is more problematic for POT. Indeed, by analyzing only data that are above a threshold (say $30^{\circ}c$), serial dependence in the data can be strong and points will have the tendency to occur in clusters. We wanted to illustrate this with Figure \ref{fig:abo} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} which highlights this dependence with red lines corresponding to most heavy heat waves in the history of Uccle in summers 1911 and 1976. Indeed, observations lying on the red lines have a dependence since they occurred during a same period of extreme heat. "\emph{Hot days are more likely to be followed by hot days}".
+ 
+Moreover, we estimated the extremal index $\theta$ by the method of \citet{ferro_inference_2003} to have an idea on the extent of this extremal dependence. We obtained $\hat{\theta}\approx 0.42$ and hence, one interpretation is that the extremes are expected to cluster by groups of mean size $0.42^{-1}\approx 2.4$. We can visualize from Figure \ref{fig:abo} that the points have indeed some tendency to form groups of size 2.  
+
 
 
 \section{Nonstationary Analysis}
 
 
-\subsection{Statistical Tools : Model Comparisons}
+As depicted in Figure \ref{first_fig}, even the assumption of a stationarity is likely to be poor for the sequence of annual maxima. 
+Whereas the oscillatory behavior caught by the LOESS model is probably due to noise rather than a true characteristic of the process, the increasing trend is more alarming. Indeed, the trend analysis made in \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} confirmed that the trend is not significant when we control for simultaneous tests
 
-In order to compare our models, that is for example to check whether a trend is statistically significant, or if the nonstationnary models provide an improvement over the simpler (stationary) model, we will make use of the \textbf{deviance statistic} defined as 
-\begin{equation}
-D = 2\big\{\ell_1(\mathcal{M}_1)-\ell_0(\mathcal{M}_0)\big\},
-\end{equation}
-
-for two nested models $\mathcal{M}_0\subset \mathcal{M}_1$, where $\ell_1(\mathcal{M}_1)$ and $\ell_0(\mathcal{M}_0)$ are the maximized log-likelihoods under models $\mathcal{M}_1$ and $\mathcal{M}_0$ respectively as defined in .
-Asymptotically, the distribution of $D$ is $\chi_k$ with $k$ (df) representing the difference of parameters between model $\mathcal{M}_1$ and $\mathcal{M}_0$. Thus, comparisons of $D$ with the critical values from $\chi_k$ will guide our decision.
+Our particularly flexible modeling of the trend confirmed that the trend is statistically significant when doing pointwise comparisons but this method is inadequate since we proved that the coverage did not match with the assumed confidence level. If we control for simultaneous tests, significance of the trend completely disappear. However, one could argue that these intervals are very large (look back at Figures \ref{fig:post_draws} or \ref{fig:derivsplines}) and thus they are not very precise. The next step (not displayed here) would be to decluster this series.
 
 
 
-\section{Improvements with Neural Networks}
+\subsection{Comparing Different Models}\label{sec:comp0}
+
+
+The first approach we will conduct is by hand of the deviance statistic comparing sequentially nested models. The number of degrees of freedom (df) represent the number of parameters of the model (i.e., its complexity). The parametric models we will consider here are 
+
+
+\begin{itemize}
+	\item 
+\end{itemize}
+
+
+In the \hyperref[sec:nnxp]{next Section} we will allow for more flexibility in the models
+
+\begin{table}[!htbp] 
+	\centering \caption{ Comparisons of proposed (nested) models for the trend (only for $\mu$ ?). Significant p-values at $5\%$ are in bold. } 
+	\vspace{-.1cm}
+	\label{tab:comp_mod0} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+	\\[-1.8ex]\hline 
+	\hline  \\[-1.8ex]
+		\textbf{Model} & $\ell$ & df & p-value \\
+		\hline
+		Gumbel & $-256.84$  & $2$ & \\
+		stationary & $-251.8$ & $3$  & \boldsymbol{$0.14\%$} \\
+		\textbf{linear in} \boldsymbol{$\mu$} & $\boldsymbol{-241.8}$ & $\boldsymbol{4} $& \boldsymbol{$10^{-3}\%$}  \\
+		quadratic in $\mu$ & $-241.5$ & $5$ & $42\%$ \\
+		\hline \\[-1.8ex]
+\end{tabular}
+ 	\vspace{-.3cm}
+ \end{table} 
+ 
+
+The system is computationally singular for cubic and more complex models. 
+
+\begin{itemize}
+ 	\item Variation in time through t accounting for the season : $\mu (t)=\beta_0+\mathbbm{1}_i(t)$ where i=1,2,3,4 represent each
+ 	 seasons.
+\end{itemize}
+This is more appropriate in threshold exceedance models.
+
+ 
+We made the same kind of analysis for the scale parameter which we modeled by $\sigma(t)= \exp(\beta_0+\beta_1\cdot t)$ where the use of the inverse link $b(\cdot)=\exp(\cdot)$ is to ensure positivity of $\sigma$ $\forall t$. As explained in \hyperref[nstatio]{Section \textbf{\ref{nstatio}}}, it is unrealistic to try modeling $\xi$ as a smooth function of time.
+
+
+\section{Improvements with Neural Networks}\label{sec:nnxp}
 
 
 
+\subsection*{Final Results}
+
+Note that we allowed the shape parameter $\xi$ to vary with time to consider most possible models while this was not advised for EV models. Anyway, we showed all the results and that does not change the final result. 
+
+\begin{table}[!htbp] 
+	\centering \caption{In} 
+	\vspace{-.1cm}
+	\label{tab:comp_mod} 
+	\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+		\\[-1.8ex]\hline 
+		\hline  \\[-1.8ex] 
+ 			\textbf{model} & $\text{AIC}_{\text{c}}$ & BIC & hidden & df \\
+ 			\hline
+ 			stationary & -19.6 & -11.5 & \textcolor{red}{0} & 3 \\
+ 			$\boldsymbol{\mu_t}$ & -$\boldsymbol{37.4}$ & -$\boldsymbol{26.7}$ & $\boldsymbol{\textcolor{red}{0}}$ & $\boldsymbol{4}$  \\
+ 			$\mu_t$, $\sigma_t$ & -35.4 & -22.2 & \textcolor{red}{0} & 5 \\
+ 			$\mu_t$, $\sigma_t$, $\xi_t$ & -34.2 & -18.4 & \textcolor{red}{0} & 6 \\
+ 			$\mu_t$ & -35.4 & -19.6 & \textcolor{red}{1} & 6 \\
+ 			$\mu_t$, $\sigma_t$ &  -36.2  & -17.9 & \textcolor{red}{1} & 7 \\ 
+ 			$\mu_t$, $\sigma_t$, $\xi_t$ & -34 & -13.3 & \textcolor{red}{1} & 8 \\
+ 			$\mu_t$ & -37.4 & -14.3 & \textcolor{red}{2} & 9 \\
+ 			$\mu_t$, $\sigma_t$ & -32.5 & -4.7 & \textcolor{red}{2} & 11 \\
+ 			$\mu_t$, $\sigma_t$, $\xi_t$ & -38.4 & 3.9 & \textcolor{red}{2} & 13 \\
+ 			\hline \\[-1.8ex] 
+ \end{tabular}
+ 	\vspace{-.3cm}
+\end{table} 
+
+This Table actually confirms the finding of Table 
+
+ 	
 \section{Comments and Comparisons with POT}
 
 In practical analysis of extreme values such data, there are plenty of ways to analyze and we considered

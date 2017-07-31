@@ -1,7 +1,7 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.1}From \texttt {evdbayes} R package : MH algorithm}{\reset@font\mtcSfont 65}{section.7.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.2}From Our Functions (R package)}{\reset@font\mtcSfont 66}{section.7.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.3}From HMC algorithm using STAN language}{\reset@font\mtcSfont 66}{section.7.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.4}Ratio of Uniform : \texttt {revdbayes} package}{\reset@font\mtcSfont 66}{section.7.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.5}Comparisons}{\reset@font\mtcSfont 66}{section.7.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.5.1}STAN}{\reset@font\mtcSSfont 66}{subsection.7.5.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.6}Comparison with frequentists results}{\reset@font\mtcSfont 66}{section.7.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.1}From \texttt {evdbayes} R package : MH algorithm}{\reset@font\mtcSfont 68}{section.7.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.2}From Our Functions (R package)}{\reset@font\mtcSfont 69}{section.7.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.3}From HMC algorithm using STAN language}{\reset@font\mtcSfont 69}{section.7.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.4}Ratio of Uniform : \texttt {revdbayes} package}{\reset@font\mtcSfont 69}{section.7.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.5}Comparisons}{\reset@font\mtcSfont 69}{section.7.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.5.1}STAN}{\reset@font\mtcSSfont 69}{subsection.7.5.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.6}Comparison with frequentists results}{\reset@font\mtcSfont 69}{section.7.6}}

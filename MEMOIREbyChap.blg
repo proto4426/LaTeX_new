@@ -3,11 +3,11 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MEMOIREbyChap.aux
 The style file: abbrvnat.bst
 Case mismatch error between cite keys Hartmann_bayesian_2016 and hartmann_bayesian_2016
----line 1279 of file MEMOIREbyChap.aux
+---line 1227 of file MEMOIREbyChap.aux
  : \citation{Hartmann_bayesian_2016
  :                                 }
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 1366 of file MEMOIREbyChap.aux
+Illegal, another \bibstyle command---line 1326 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
@@ -55,45 +55,45 @@ Warning--can't use both author and editor fields in ag_extremes_2013
 Warning--empty journal in leisch_creating_2008
 Warning--can't use both author and editor fields in resnick_extreme_1987
 Warning--empty journal in segers_generalized_2001
-You've used 76 entries,
+You've used 77 entries,
             2773 wiz_defined-function locations,
-            1179 strings with 22647 characters,
-and the built_in function-call counts, 34768 in all, are:
-= -- 3342
-> -- 1757
-< -- 56
-+ -- 602
-- -- 525
-* -- 2924
-:= -- 5522
-add.period$ -- 385
-call.type$ -- 76
-change.case$ -- 386
-chr.to.int$ -- 75
-cite$ -- 156
-duplicate$ -- 1545
-empty$ -- 2798
-format.name$ -- 657
-if$ -- 7234
+            1186 strings with 22883 characters,
+and the built_in function-call counts, 35251 in all, are:
+= -- 3392
+> -- 1778
+< -- 57
++ -- 609
+- -- 531
+* -- 2964
+:= -- 5596
+add.period$ -- 390
+call.type$ -- 77
+change.case$ -- 391
+chr.to.int$ -- 76
+cite$ -- 158
+duplicate$ -- 1565
+empty$ -- 2838
+format.name$ -- 666
+if$ -- 7336
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 93
-newline$ -- 540
-num.names$ -- 304
-pop$ -- 628
+missing$ -- 94
+newline$ -- 547
+num.names$ -- 308
+pop$ -- 634
 preamble$ -- 1
-purify$ -- 327
+purify$ -- 331
 quote$ -- 0
-skip$ -- 1103
+skip$ -- 1119
 stack$ -- 0
-substring$ -- 1243
-swap$ -- 134
+substring$ -- 1270
+swap$ -- 135
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 741
+type$ -- 752
 warning$ -- 4
-while$ -- 315
+while$ -- 320
 width$ -- 0
-write$ -- 1287
+write$ -- 1304
 (There were 12 error messages)

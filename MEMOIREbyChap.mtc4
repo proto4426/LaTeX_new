@@ -6,11 +6,11 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.2}Modelling in Block Maxima}{\reset@font\mtcSSfont 35}{subsection.3.1.2}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Non-Stationary Extremes}{\reset@font\mtcSfont 35}{section.3.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Block-Maxima}{\reset@font\mtcSSfont 36}{subsection.3.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Diagnostics}{\reset@font\mtcSSfont 36}{subsection.3.2.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Return Levels : New Definitions}{\reset@font\mtcSfont 36}{section.3.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Neural Networks to Model Nonstationary Series}{\reset@font\mtcSfont 37}{section.3.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}Generalized Likelihood Methods}{\reset@font\mtcSSfont 37}{subsection.3.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.2}Neural-Network Based Inference}{\reset@font\mtcSSfont 38}{subsection.3.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.3}Bagging}{\reset@font\mtcSSfont 39}{subsection.3.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.4}Bootstrap Methods in EVT}{\reset@font\mtcSSfont 40}{subsection.3.4.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.5}Markov models}{\reset@font\mtcSSfont 40}{subsection.3.4.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Model Comparisons}{\reset@font\mtcSSfont 37}{subsection.3.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Return Levels : New Definitions}{\reset@font\mtcSfont 37}{section.3.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Neural Networks to Model Nonstationary Series}{\reset@font\mtcSfont 38}{section.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}Generalized Likelihood Methods}{\reset@font\mtcSSfont 39}{subsection.3.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.2}Neural-Network Based Inference}{\reset@font\mtcSSfont 39}{subsection.3.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.3}Bagging}{\reset@font\mtcSSfont 40}{subsection.3.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.4}Bootstrap Methods in EVT}{\reset@font\mtcSSfont 41}{subsection.3.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.5}Markov models}{\reset@font\mtcSSfont 42}{subsection.3.4.5}}

@@ -63,7 +63,7 @@ is dealing with open shelter temperatures data.
 
 Taking yearly blocks leaves us with $n=116$ data which seem justifiable for further GEV analysis and the conditions to hold (see)
 
-There are plenty of very interesting descriptive analysis we could make, but most of them are not useful. The code (xxx and) provide most of the descriptive analysis. Trying to summarize most of the information, we plotted a violin-plot and a density plot in Figure \ref{fig:violin_density} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} where we divided data in each meteorological seasons to emphasize this difference. We see for example that the the "span" of this distribution is more broad for autumn and spring.
+There are plenty of very interesting descriptive analysis we could make, but most of them are not useful. The code (xxx and) provide most of the descriptive analysis. Trying to summarize most of the information, we plotted a violin-plot and a density plot in Figure \ref{fig:violin_density} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} where we divided data in each meteorological seasons to emphasize this difference. We see for example that the the spread is higher for autumn and spring.
 
 \subsection{First visualization with simple models}
 
@@ -103,7 +103,7 @@ We assume the reader is at ease(?) with\emph{ Generalized Additive Models} (GAM)
 
 \citet[p.135]{ruppert_semiparametric_2003} : what should be improved for pointwise ci (also called "variability bands")
 
-Let $\mathcal{X}$ denote the set of $x$ values of interest, i.e. $\mathcal{X}=[1901,2016]$ in our case. $f$ is the model of interest, e.g. the linear regression, or the GAM model that we will fit. Hence, mathematically, a \textbf{pointwise} $100(1-\alpha)\%$ confidence interval $\Big\{\big[L(x),U(x)\big] \ : \ x\in \mathcal{X}\Big\}$ approximately satisfy 
+Let $\mathcal{X}$ denote the set of $x$ values of interest, i.e. $\mathcal{X}=[1901,2016]$ in our case. $f(\cdot)$ is the model of interest, e.g. the linear regression, or the GAM model that we will fit. Hence, mathematically, a \textbf{pointwise} $100(1-\alpha)\%$ confidence interval $\Big\{\big[L(x),U(x)\big] \ : \ x\in \mathcal{X}\Big\}$ approximately satisfy 
 \begin{equation}
 \text{Pr}\Big\{L(x)\leq f(x)\leq U(x)\Big\}\geq 1-\alpha, \qquad \forall x\in\mathcal{X}.
 \end{equation}
@@ -177,7 +177,7 @@ Note that the results are similar if we do the experiment on the first derivativ
 Some remarks from the two plots in Figure \ref{fig:derivsplines} :
 
 \begin{figure}[!htb]
-	\includegraphics[width=.99\linewidth]{splines.pdf}\caption{Plots of the first derivative $f^{'}(\cdot)$ of the estimated splines on the retained GAM model. Grey area represents the $95\%$ confidence interval. Sections of the spline where the confidence interval does not include zero are indicated by thicker sections. }\label{fig:derivsplines}
+	\includegraphics[width=.99\linewidth]{splines.pdf}\caption{Plots of the first derivative $f^{'}(\cdot)$ of the estimated splines on the retained GAM model. Grey area represents the $95\%$ confidence interval. Sections of the spline where the confidence interval does not include zero are indicated by thicker lines. }\label{fig:derivsplines}
 \end{figure}
 
 \begin{itemize}

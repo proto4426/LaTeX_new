@@ -1,4 +1,4 @@
-\begin{thebibliography}{76}
+\begin{thebibliography}{77}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -185,6 +185,14 @@ M.~Falk and F.~Marohn.
 \newblock ISSN 0091-1798, 2168-894X.
 \newblock \doi{10.1214/aop/1176989120}.
 \newblock URL \url{http://projecteuclid.org/euclid.aop/1176989120}.
+
+\bibitem[Ferro and Segers(2003)]{ferro_inference_2003}
+C.~A.~T. Ferro and J.~Segers.
+\newblock Inference for {Clusters} of {Extreme} {Values}.
+\newblock \emph{Journal of the Royal Statistical Society. Series B (Statistical
+  Methodology)}, 65\penalty0 (2):\penalty0 545--556, 2003.
+\newblock ISSN 1369-7412.
+\newblock URL \url{http://www.jstor.org/stable/3647520}.
 
 \bibitem[Fisher and Tippett(1928)]{fisher_limiting_1928}
 R.~A. Fisher and L.~H.~C. Tippett.

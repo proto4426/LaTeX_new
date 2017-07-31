@@ -216,7 +216,8 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 
 
 %\addbibresource{zotero.bib.bib}
-\usepackage{natbib}
+\usepackage[sort, square, comma]{natbib}
+%\usepackage{natbib}
 \bibliographystyle{abbrvnat}
 \setcitestyle{authoryear, open = {[}, close={]} }
 
@@ -410,7 +411,10 @@ Regarding the computations, we took advantage of a high-level language (c++) to 
 	\textit{I also would like to thank the "Institut Royal de Météorologie" (IRM) of Belgium for his help and his guidance but also for his provided quality datasets.}
 	\newline
 	
+	\textit{A bit less usual, I would like to thank the open source community such as R or LaTeX can benefit. For me and for a number of student, it has been a nonnegligable source of ideas and the most efficient source of learning.  }
+			\newline
 	\textit{Finally, I want to thank my family and my friends, but also Bernadette for her support and all the time I have spent  writing in her room for my thesis but also during my whole academic studies.}
+	
 	\thispagestyle{empty}
 \end{acknowledgements}
 
@@ -572,7 +576,7 @@ This chapter is mostly based on \citet[chap.3]{coles_introduction_2001}, \citet[
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
 
-This chapter will focus on another major approach of EV models by modeling only the excess over certain a threshold. This approach is very popular in practice as it handles extremes with more flexibility and hence lots of methods have emerged. 	
+This chapter will focus on another major approach of EV models by modeling only the excess over certain a threshold. This approach is very popular in practice as it can handle all the extremes with more flexibility and not only the maximum of one block. From this fact, lots of techniques have emerged and we will quickly navigate the main ideas.
 
 In \hyperref[sec::2.1]{Section \textbf{\ref{sec::2.1}}}, we will intuitively introduce the approach which will help us 
 to formally characterize the resulting distribution of interest in \hyperref[sec:charac_gpd]{Section \textbf{\ref{sec:charac_gpd}}}. Then, \hyperref[sec:rl_gpd]{Section \textbf{\ref{sec:rl_gpd}}} will present the concept of return levels applied in this of context. Whereas meteorologists usually suggest thresholds of $25^{\circ} c$ or $30^{\circ} c$ for maximum temperatures, we will assess the threshold choice in a statistical sense in \hyperref[sec:thresh_selec]{Section \textbf{\ref{sec:thresh_selec}}} by reviewing available methods, but before that we will briefly discuss the parameter estimation in \hyperref[sec::potinference]{Section \textbf{\ref{sec::potinfernce}}}, especially for the EVI. 
