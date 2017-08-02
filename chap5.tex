@@ -1,39 +1,53 @@
 
 \addcontentsline{toc}{section}{Repository for the code : R Package}
-\subsection*{Repository for the code : R Package}
+\section*{Repository for the code : R Package}
 
-An \textbf{R package} has been created and can be easily downloaded from its \textbf{repository} :
+The created \textbf{R package} can be easily downloaded from its \textbf{repository} :
 \begin{center}\label{xxx}
  \url{https://github.com/proto4426/PissoortThesis}
 \end{center}
-by following the instructions in the README. It follows the standard structure of an usual R package (see e.g. \citet{leisch_creating_2008}) and make use of the \texttt{roxygen2} package for the documentation.
+by following instructions in the README. It follows the standard structure of an usual R package (see e.g. \citet{leisch_creating_2008}) and makes use of the \texttt{roxygen2} package for the documentation.
 
-For your (best?) convenience, an external folder has been created in this repository containing all the scripts created during this thesis. It allows to reproduce all the results, and sometimes with more details, tables or plots. It can be retrieved directly by going into the \textbf{/Scripts-R/} folder from the repository. We will notice in the beginning of each of the following chapter to which script(s) it corresponds. We also explain in more details the structure of the github repository in \hyperref[appgit]{Appendix \textbf{\ref{appgit}}} to give you a better idea of what each folder and each file is about.
+For your convenience, an external folder has been created in this repository containing all the scripts created during this thesis. It allows to reproduce all the results often with more details, tables or plots. It is located in the \textbf{/Scripts-R/} folder of the repository. We will notice in the beginning of each of the following chapter to which script(s) it corresponds. We give more details on the structure of the repository in \hyperref[appgit]{Appendix \textbf{\ref{appgit}}} to give you a better idea about each folders and files.
 
 \addcontentsline{toc}{subsection}{Visualization Tool : Shiny Application}
 \subsection*{Visualization Tool : Shiny Application}
 
-A small Shiny application has started to be developed and can be run directly from R after having the package loaded in your environment, by only typing 
+Shiny applications that have been developed can be run directly through R environment after having the package loaded in your environment, by executing 
 
 \begin{center}
 \begin{lstlisting}[language=R]
-runExample()  # in the R console. Then, choose the propositions displayed
+runExample()  # in the R console. 
 \end{lstlisting}
 \end{center}
-and write it in (). So far, it contains an application based on Figure \ref{gevdens} from which you can visualize the GEV distribution and the influence of the parameters ('GEV\_distributions'). There are also applications dedicated to the annual maxima that can you can smoothly visualize and an application for the simulations of the GAM model with splines and the coverage visualization (\hyperref[sec:firstana]{Section \textbf{\ref{sec:firstana}}}).  Actually, it summarizes the contents of Figure \ref{first_fig} It was difficult to do more because we could not publicly disclose the datasets provided by the IRM.
- 
- \vspace{-0.22cm}
-\paragraph*{All-in-one : Dashboard} For better convenience for the reader, we decided to gather all the applications made on a \emph{dahsboard}. This allows to smoothly gather the work done on these applications. Moreover, we put this on a server so that, if you do not care about installing the package or looking at the functions, you just have to go to the following URL\footnote{Note for future readers : it could have been removed as Rstudio sometimes removes old application from its server}
+Then, choose between the propositions displayed and write it inside (' ').
+So far, we phave
+
+\begin{itemize}
+	\item[-]('GEV\_distributions') :  application based on Figure \ref{gevdens} where you can smoothly visualize the GEV and the influence of its parameters.
+	
+	\item[-] ('trend\_models') :
+	application dedicated to annual maxima that can you can smoothly visualize with some preliminary methods (\hyperref[sec:firstvisu]{Section \textbf{\ref{sec:firstvisu}}}).
+	
+	\item[-] ('splines\_draws') : application for splines simulations of the GAM model that allow to visualize the coverages of the pointwise and simultaneous intervals for the significance of the trend. (\hyperref[sec:splines]{Section \textbf{\ref{sec:splines}}}).
+
+\end{itemize}
+A dynamic overview of the applications is available in the repository's \texttt{readme}.
+
+\paragraph*{All-in-one : Dashboard} For convenience of the reader, we decided to smoothly gather all applications made into a \emph{dahsboard}. Moreover, we put this on a server so that, if you do not care about installing the package or looking at the functions, you just have to go to the following URL\footnote{Note for future readers : it could have been removed as Rstudio sometimes removes old application from its server}
+\newline
+
+The following analysis relies on \texttt{1inter\_stationary.R} and \texttt{1intro\_trends(splines).R} codes from the \textbf{/Scripts-R/} folder of the  repository.
 
 
-The following analysis relies on \texttt{1inter\_stationary.R} and \texttt{1intro\_trends(splines).R} codes from the \textbf{/Scripts-R/} folder of the github repository.
+\section{Presentation of the Analysis : Temperatures from Uccle}\label{sec:presuccle}
 
-\section{Presentation of the Analysis : Temperatures from Uccle}
+Data used during this thesis come from the "Institut Royal de Météorologie" (IRM) located in Uccle. We were provided official meteorological data used for Belgium. We wanted to have data data that are reliable enough in order to be able to yield relevant results. 
 
-The data used during this thesis have been gathered directly from the "Institut Royal de Météorologie" (IRM). We were provided data...
+We were provided a set of databases 
 
 
-\subsection{Open shelter vs Closed shelter}
+\subsubsection*{Open shelter vs Closed shelter}
 
 For\textbf{ meteorological considerations}, it is better to consider temperature's analysis in \textbf{closed shelters}, following for example \citet{lindsey_use_1956}. Indeed, and thanks to grateful advices from mr Tricot working for the IRM : 
 \begin{itemize}
@@ -44,7 +58,7 @@ For\textbf{ meteorological considerations}, it is better to consider temperature
 
 \subsection{Comparisons with freely available data} 
 
-A similar dataset is freely available on the internet\footnote{\url{http://lstat.kuleuven.be/Wiley/Data/ecad00045TX.txt}}. It was a project initially performed by the KMNI and which was used for example in \citet{beirlant_statistics_2006}. However, we were reticent to simply analyze these data as we know that it is hard to trust internet's data, even if they come from well-known "authorities". After having made all these comparisons analysis (see start of code...), we remark effectively that there are differences
+A similar dataset is publicly available on the Internet\footnote{\url{http://lstat.kuleuven.be/Wiley/Data/ecad00045TX.txt}}. It was a project initially performed by the KMNI and which was used by \citet{beirlant_statistics_2006}. However, we were reticent to simply analyze these data as we know that it is hard to trust internet's data. After having made all these comparisons analysis (see start of code...), we remark effectively that there are differences
 in these two datasets, and hence large errors of measures can easily occur 
 in unofficial data. It confirms the fact that is important to get reliable data if one wants to make reliable analysis. 
 However, these differences tend to be much smaller when considering the "open shelter"
@@ -56,7 +70,7 @@ is dealing with open shelter temperatures data.
 
 
 
-\section{First Analysis : Block-Maxima}\label{sec:firstana}
+\section{First Analysis : Annual Maxima}\label{sec:firstana}
 
 
 \subsection{Descriptive Analysis}
@@ -65,7 +79,7 @@ Taking yearly blocks leaves us with $n=116$ data which seem justifiable for furt
 
 There are plenty of very interesting descriptive analysis we could make, but most of them are not useful. The code (xxx and) provide most of the descriptive analysis. Trying to summarize most of the information, we plotted a violin-plot and a density plot in Figure \ref{fig:violin_density} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} where we divided data in each meteorological seasons to emphasize this difference. We see for example that the the spread is higher for autumn and spring.
 
-\subsection{First visualization with simple models}
+\subsection{First visualization with simple models}\label{sec:firstvisu}
 
 We present our series of yearly maxima in Figure \ref{first_fig} where we introduce 3 \textbf{models for the trend} :
 
@@ -77,14 +91,14 @@ We present our series of yearly maxima in Figure \ref{first_fig} where we introd
 
 
 \begin{itemize}
-\item \emph{Linear regression } (in blue) which is a \textbf{parametric} fit. We remark that it is slightly but significantly increasing over time ($\text{p-value}\approx 10^{-5}$) . 
-\item \emph{Local Polynomial regression } or LOESS (in red) which is a \textbf{nonparametric} fit. It tells us that the yearly maxima process is rather "dispersed". For example, the drop in the series visible around years 1950 to 1975 is probably due to a 'random effect' rather than a real decrease or freezing of the maximum temperatures at this time. Moreover, it will disappear if we change the parameter controlling the degree of smoothing. We will assess that more formally in the \hyperref[sec:splines]{next Section}.
-\item \emph{Broken-linear regression} (in cyan) which is a \textbf{parametric} fit. We wanted to emphasize visually the difference in trend between the period [1901-1975] and [1976-2016]. The two periods have been chosen arbitrarily and we will study that more formally in the \hyperref[sec:splines]{next Section}.
+\item \emph{Linear regression} is a \textbf{parametric} fit. We remark that it is slightly but significantly increasing over time ($\text{p-value}\approx 10^{-5}$). From this model, one rough interpretation we can have is that each year we expect the annual maximum temperature to increase by $\hat{b}=0.025^{\circ}c$ ($\hat{\sigma}_{\hat{b}}=0.005)$.
+
+\item \emph{Local Polynomial regression } or LOESS is a \textbf{nonparametric} fit. It tells us that the yearly maxima process is rather "dispersed". For example, the drop in the series visible around years 1950 to 1975 is probably due to a 'random effect' rather than a real decrease or freezing of the maximum temperatures at this time. Moreover, it will disappear if we change the parameter controlling the degree of smoothing. We will assess that more formally in the \hyperref[sec:splines]{next Section}.
+
+\item \emph{Broken-linear regression} is a \textbf{parametric} fit. We wanted to emphasize visually the difference in trend between the period [1901-1975] and [1976-2016]. The two periods have been chosen arbitrarily and we will study that more formally in the \hyperref[sec:splines]{next Section}.
 \end{itemize}
 
-
-The code which provide all the tools to retrieve the presented results are left in appendix, but in the numeric version only be cause it is very heavy. this also enables you to get all insights (..)
-
+These different models already give us great insights on the process we will study throughout this part. We will not develop the results of each model as this is not the subject of this thesis. 
 
 
 \subsection{Deeper Trend Analysis : Splines derivatives in GAM}\label{sec:splines}

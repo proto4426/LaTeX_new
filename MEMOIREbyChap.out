@@ -29,88 +29,86 @@
 \BOOKMARK [0][-]{chapter.3}{Relaxing The Independence Assumption}{part.1}% 29
 \BOOKMARK [1][-]{section.3.1}{Stationary Extremes}{chapter.3}% 30
 \BOOKMARK [2][-]{subsection.3.1.1}{The extremal index}{section.3.1}% 31
-\BOOKMARK [3][-]{equation.3.1.4}{New parameters}{subsection.3.1.1}% 32
-\BOOKMARK [3][-]{equation.3.1.5}{Clusters of exceedances}{subsection.3.1.1}% 33
-\BOOKMARK [3][-]{section*.36}{Return levels}{subsection.3.1.1}% 34
+\BOOKMARK [3][-]{equation.3.1.4}{Clusters of exceedances}{subsection.3.1.1}% 32
+\BOOKMARK [3][-]{section*.35}{New parameters}{subsection.3.1.1}% 33
+\BOOKMARK [3][-]{equation.3.1.5}{Return levels}{subsection.3.1.1}% 34
 \BOOKMARK [2][-]{subsection.3.1.2}{Modelling in Block Maxima}{section.3.1}% 35
 \BOOKMARK [1][-]{section.3.2}{Non-Stationary Extremes}{chapter.3}% 36
 \BOOKMARK [2][-]{subsection.3.2.1}{Block-Maxima}{section.3.2}% 37
-\BOOKMARK [2][-]{subsection.3.2.2}{Model Comparisons}{section.3.2}% 38
-\BOOKMARK [1][-]{section.3.3}{Return Levels : New Definitions}{chapter.3}% 39
-\BOOKMARK [1][-]{section.3.4}{Neural Networks to Model Nonstationary Series}{chapter.3}% 40
-\BOOKMARK [2][-]{subsection.3.4.1}{Generalized Likelihood Methods}{section.3.4}% 41
-\BOOKMARK [2][-]{subsection.3.4.2}{Neural-Network Based Inference}{section.3.4}% 42
-\BOOKMARK [2][-]{subsection.3.4.3}{Bagging}{section.3.4}% 43
-\BOOKMARK [2][-]{subsection.3.4.4}{Bootstrap Methods in EVT}{section.3.4}% 44
-\BOOKMARK [2][-]{subsection.3.4.5}{Markov models}{section.3.4}% 45
-\BOOKMARK [0][-]{chapter.4}{Bayesian Extreme Value Theory}{part.1}% 46
-\BOOKMARK [1][-]{section.4.1}{Prior Elicitation}{chapter.4}% 47
-\BOOKMARK [2][-]{subsection.4.1.1}{Non-informative Priors}{section.4.1}% 48
-\BOOKMARK [2][-]{subsection.4.1.2}{Informative Priors}{section.4.1}% 49
-\BOOKMARK [1][-]{section.4.2}{Bayesian Computation : Markov Chains}{chapter.4}% 50
-\BOOKMARK [2][-]{subsection.4.2.1}{Algorithms}{section.4.2}% 51
-\BOOKMARK [2][-]{subsection.4.2.2}{Hamiltonian Monte Carlo}{section.4.2}% 52
-\BOOKMARK [2][-]{subsection.4.2.3}{Computational efficiency comparison}{section.4.2}% 53
-\BOOKMARK [1][-]{section.4.3}{Convergence Diagnostics}{chapter.4}% 54
-\BOOKMARK [2][-]{subsection.4.3.1}{Proposal Distribution}{section.4.3}% 55
-\BOOKMARK [2][-]{subsection.4.3.2}{The problem of auto and cross-correlations in the chains}{section.4.3}% 56
-\BOOKMARK [1][-]{section.4.4}{Posterior Predictive}{chapter.4}% 57
-\BOOKMARK [1][-]{section.4.5}{Bayesian Predictive Accuracy for Model Validation}{chapter.4}% 58
-\BOOKMARK [2][-]{subsection.4.5.1}{Cross-validation for predictive accuracy}{section.4.5}% 59
-\BOOKMARK [1][-]{section.4.6}{Bayesien Inference ?}{chapter.4}% 60
-\BOOKMARK [2][-]{subsection.4.6.1}{Bayesian Credible Intervals}{section.4.6}% 61
-\BOOKMARK [2][-]{subsection.4.6.2}{Distribution of Quantiles : Return Levels}{section.4.6}% 62
-\BOOKMARK [1][-]{section.4.7}{Bayesian Model Averaging}{chapter.4}% 63
-\BOOKMARK [1][-]{section.4.8}{Bayesian Neural Networks}{chapter.4}% 64
-\BOOKMARK [-1][-]{part.2}{II Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{}% 65
-\BOOKMARK [0][-]{chapter.5}{Introduction to the Analysis}{part.2}% 66
-\BOOKMARK [1][-]{section*.60}{Repository for the code : R Package}{chapter.5}% 67
-\BOOKMARK [2][-]{section*.61}{Visualization Tool : Shiny Application}{chapter.5}% 68
-\BOOKMARK [1][-]{section.5.1}{Presentation of the Analysis : Temperatures from Uccle}{chapter.5}% 69
-\BOOKMARK [2][-]{subsection.5.1.1}{Open shelter vs Closed shelter}{section.5.1}% 70
-\BOOKMARK [2][-]{subsection.5.1.2}{Comparisons with freely available data}{section.5.1}% 71
-\BOOKMARK [1][-]{section.5.2}{First Analysis : Block-Maxima}{chapter.5}% 72
-\BOOKMARK [2][-]{subsection.5.2.1}{Descriptive Analysis}{section.5.2}% 73
-\BOOKMARK [2][-]{subsection.5.2.2}{First visualization with simple models}{section.5.2}% 74
-\BOOKMARK [2][-]{subsection.5.2.3}{Deeper Trend Analysis : Splines derivatives in GAM}{section.5.2}% 75
-\BOOKMARK [3][-]{section*.65}{Pointwise vs Simultaneous intervals}{subsection.5.2.3}% 76
-\BOOKMARK [3][-]{equation.5.2.2}{Methodology}{subsection.5.2.3}% 77
-\BOOKMARK [3][-]{lstnumber.-2.1}{Final Results}{subsection.5.2.3}% 78
-\BOOKMARK [1][-]{section.5.3}{Comments and Structure of the Analysis }{chapter.5}% 79
-\BOOKMARK [0][-]{chapter.6}{Analysis in Block Maxima}{part.2}% 80
-\BOOKMARK [1][-]{section*.73}{R packages for EVT}{chapter.6}% 81
-\BOOKMARK [1][-]{section.6.1}{First Inferences of the Model}{chapter.6}% 82
-\BOOKMARK [2][-]{subsection.6.1.1}{Return Levels}{section.6.1}% 83
-\BOOKMARK [2][-]{subsection.6.1.2}{Diagnostics}{section.6.1}% 84
-\BOOKMARK [2][-]{subsection.6.1.3}{Stationary Analysis}{section.6.1}% 85
-\BOOKMARK [2][-]{subsection.6.1.3}{POT}{section.6.1}% 86
-\BOOKMARK [1][-]{section.6.2}{Nonstationary Analysis}{chapter.6}% 87
-\BOOKMARK [2][-]{subsection.6.2.1}{Comparing Different Models}{section.6.2}% 88
-\BOOKMARK [1][-]{section.6.3}{Improvements with Neural Networks}{chapter.6}% 89
-\BOOKMARK [1][-]{section.6.4}{Comments and Comparisons with POT}{chapter.6}% 90
-\BOOKMARK [0][-]{chapter.7}{Bayesian Analysis in Block Maxima}{part.2}% 91
-\BOOKMARK [1][-]{section.7.1}{From evdbayes R package : MH algorithm}{chapter.7}% 92
-\BOOKMARK [1][-]{section.7.2}{From Our Functions \(R package\)}{chapter.7}% 93
-\BOOKMARK [1][-]{section.7.3}{From HMC algorithm using STAN language}{chapter.7}% 94
-\BOOKMARK [1][-]{section.7.4}{Ratio of Uniform : revdbayes package}{chapter.7}% 95
-\BOOKMARK [1][-]{section.7.5}{Comparisons}{chapter.7}% 96
-\BOOKMARK [2][-]{subsection.7.5.1}{STAN}{section.7.5}% 97
-\BOOKMARK [1][-]{section.7.6}{Comparison with frequentists results}{chapter.7}% 98
-\BOOKMARK [0][-]{section.7.6}{Conclusion}{part.2}% 99
-\BOOKMARK [-1][-]{chapter*.89}{Appendix}{}% 100
-\BOOKMARK [0][-]{appendix.A}{Statistical tools for Extreme Value Theory}{chapter*.89}% 101
-\BOOKMARK [1][-]{section.A.1}{Tails of the distributions}{appendix.A}% 102
-\BOOKMARK [1][-]{section.A.2}{Convergence concepts}{appendix.A}% 103
-\BOOKMARK [1][-]{section.A.3}{Varying functions}{appendix.A}% 104
-\BOOKMARK [1][-]{section.A.4}{Diagnostic Plots : Quantile and Probability Plots}{appendix.A}% 105
-\BOOKMARK [1][-]{section.A.5}{Estimators Based on Extreme Order Statistics for EVI}{appendix.A}% 106
-\BOOKMARK [0][-]{appendix.B}{Bayesian Methods}{chapter*.89}% 107
-\BOOKMARK [1][-]{section.B.1}{Algorithms}{appendix.B}% 108
-\BOOKMARK [2][-]{subsection.B.1.1}{Metropolis\205Hastings Algorithm}{section.B.1}% 109
-\BOOKMARK [2][-]{subsection.B.1.2}{Gibbs Sampler}{section.B.1}% 110
-\BOOKMARK [2][-]{subsection.B.1.3}{Hamiltonian Monte Carlo}{section.B.1}% 111
-\BOOKMARK [0][-]{appendix.C}{Other Figures and Tables}{chapter*.89}% 112
-\BOOKMARK [1][-]{section.C.1}{GEV : Influence of the Parameters on the Shape of the Distribution}{appendix.C}% 113
-\BOOKMARK [1][-]{section.C.2}{Introduction of the Practical Analysis \(section 6\)}{appendix.C}% 114
-\BOOKMARK [1][-]{section.C.3}{Analysis by GEV}{appendix.C}% 115
-\BOOKMARK [0][-]{appendix.D}{Github Repository Structure}{chapter*.89}% 116
+\BOOKMARK [1][-]{section.3.3}{Return Levels : New Definitions}{chapter.3}% 38
+\BOOKMARK [1][-]{section.3.4}{Neural Networks for Nonstationary Series : GEV-CDN}{chapter.3}% 39
+\BOOKMARK [2][-]{subsection.3.4.1}{Generalized Maximum Likelihood}{section.3.4}% 40
+\BOOKMARK [2][-]{subsection.3.4.2}{Architecture of the GEV-CDN Network}{section.3.4}% 41
+\BOOKMARK [2][-]{subsection.3.4.3}{Prevent Overfitting : Bagging}{section.3.4}% 42
+\BOOKMARK [2][-]{subsection.3.4.4}{Confidence Intervals : Bootstrapping Methods}{section.3.4}% 43
+\BOOKMARK [0][-]{chapter.4}{Bayesian Extreme Value Theory}{part.1}% 44
+\BOOKMARK [1][-]{section.4.1}{Prior Elicitation}{chapter.4}% 45
+\BOOKMARK [2][-]{subsection.4.1.1}{Non-informative Priors}{section.4.1}% 46
+\BOOKMARK [2][-]{subsection.4.1.2}{Informative Priors}{section.4.1}% 47
+\BOOKMARK [1][-]{section.4.2}{Bayesian Computation : Markov Chains}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.2.1}{Algorithms}{section.4.2}% 49
+\BOOKMARK [2][-]{subsection.4.2.2}{Hamiltonian Monte Carlo}{section.4.2}% 50
+\BOOKMARK [2][-]{subsection.4.2.3}{Computational efficiency comparison}{section.4.2}% 51
+\BOOKMARK [1][-]{section.4.3}{Convergence Diagnostics}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.3.1}{Proposal Distribution}{section.4.3}% 53
+\BOOKMARK [2][-]{subsection.4.3.2}{The problem of auto and cross-correlations in the chains}{section.4.3}% 54
+\BOOKMARK [1][-]{section.4.4}{Posterior Predictive}{chapter.4}% 55
+\BOOKMARK [1][-]{section.4.5}{Bayesian Predictive Accuracy for Model Validation}{chapter.4}% 56
+\BOOKMARK [2][-]{subsection.4.5.1}{Cross-validation for predictive accuracy}{section.4.5}% 57
+\BOOKMARK [1][-]{section.4.6}{Bayesien Inference ?}{chapter.4}% 58
+\BOOKMARK [2][-]{subsection.4.6.1}{Bayesian Credible Intervals}{section.4.6}% 59
+\BOOKMARK [2][-]{subsection.4.6.2}{Distribution of Quantiles : Return Levels}{section.4.6}% 60
+\BOOKMARK [1][-]{section.4.7}{Bayesian Model Averaging}{chapter.4}% 61
+\BOOKMARK [1][-]{section.4.8}{Bayesian Neural Networks}{chapter.4}% 62
+\BOOKMARK [-1][-]{part.2}{II Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{}% 63
+\BOOKMARK [0][-]{chapter.5}{Introduction to the Analysis}{part.2}% 64
+\BOOKMARK [1][-]{section*.58}{Repository for the code : R Package}{chapter.5}% 65
+\BOOKMARK [2][-]{section*.59}{Visualization Tool : Shiny Application}{chapter.5}% 66
+\BOOKMARK [1][-]{section.5.1}{Presentation of the Analysis : Temperatures from Uccle}{chapter.5}% 67
+\BOOKMARK [2][-]{subsection.5.1.1}{Comparisons with freely available data}{section.5.1}% 68
+\BOOKMARK [1][-]{section.5.2}{First Analysis : Annual Maxima}{chapter.5}% 69
+\BOOKMARK [2][-]{subsection.5.2.1}{Descriptive Analysis}{section.5.2}% 70
+\BOOKMARK [2][-]{subsection.5.2.2}{First visualization with simple models}{section.5.2}% 71
+\BOOKMARK [2][-]{subsection.5.2.3}{Deeper Trend Analysis : Splines derivatives in GAM}{section.5.2}% 72
+\BOOKMARK [3][-]{section*.64}{Pointwise vs Simultaneous intervals}{subsection.5.2.3}% 73
+\BOOKMARK [3][-]{equation.5.2.2}{Methodology}{subsection.5.2.3}% 74
+\BOOKMARK [3][-]{lstnumber.-2.1}{Final Results}{subsection.5.2.3}% 75
+\BOOKMARK [1][-]{section.5.3}{Comments and Structure of the Analysis }{chapter.5}% 76
+\BOOKMARK [0][-]{chapter.6}{Analysis in Block Maxima}{part.2}% 77
+\BOOKMARK [1][-]{section*.72}{R packages for EVT}{chapter.6}% 78
+\BOOKMARK [1][-]{section.6.1}{First Inferences of the Model}{chapter.6}% 79
+\BOOKMARK [2][-]{subsection.6.1.1}{Return Levels}{section.6.1}% 80
+\BOOKMARK [2][-]{subsection.6.1.2}{Diagnostics}{section.6.1}% 81
+\BOOKMARK [2][-]{subsection.6.1.3}{Stationary Analysis}{section.6.1}% 82
+\BOOKMARK [3][-]{section*.84}{POT}{subsection.6.1.3}% 83
+\BOOKMARK [1][-]{section.6.2}{Parametric Nonstationary Analysis}{chapter.6}% 84
+\BOOKMARK [2][-]{subsection.6.2.1}{Comparing Different Models}{section.6.2}% 85
+\BOOKMARK [2][-]{subsection.6.2.2}{Diagnostics and Inference}{section.6.2}% 86
+\BOOKMARK [1][-]{section.6.3}{Improvements with Neural Networks}{chapter.6}% 87
+\BOOKMARK [1][-]{section.6.4}{Comments and Comparisons with POT}{chapter.6}% 88
+\BOOKMARK [0][-]{chapter.7}{Bayesian Analysis in Block Maxima}{part.2}% 89
+\BOOKMARK [1][-]{section.7.1}{From evdbayes R package : MH algorithm}{chapter.7}% 90
+\BOOKMARK [1][-]{section.7.2}{From Our Functions \(R package\)}{chapter.7}% 91
+\BOOKMARK [1][-]{section.7.3}{From HMC algorithm using STAN language}{chapter.7}% 92
+\BOOKMARK [1][-]{section.7.4}{Ratio of Uniform : revdbayes package}{chapter.7}% 93
+\BOOKMARK [1][-]{section.7.5}{Comparisons}{chapter.7}% 94
+\BOOKMARK [2][-]{subsection.7.5.1}{STAN}{section.7.5}% 95
+\BOOKMARK [1][-]{section.7.6}{Comparison with frequentists results}{chapter.7}% 96
+\BOOKMARK [0][-]{section.7.6}{Conclusion}{part.2}% 97
+\BOOKMARK [-1][-]{chapter*.92}{Appendix}{}% 98
+\BOOKMARK [0][-]{appendix.A}{Statistical tools for Extreme Value Theory}{chapter*.92}% 99
+\BOOKMARK [1][-]{section.A.1}{Tails of the distributions}{appendix.A}% 100
+\BOOKMARK [1][-]{section.A.2}{Convergence concepts}{appendix.A}% 101
+\BOOKMARK [1][-]{section.A.3}{Varying functions}{appendix.A}% 102
+\BOOKMARK [1][-]{section.A.4}{Diagnostic Plots : Quantile and Probability Plots}{appendix.A}% 103
+\BOOKMARK [1][-]{section.A.5}{Estimators Based on Extreme Order Statistics for EVI}{appendix.A}% 104
+\BOOKMARK [0][-]{appendix.B}{Bayesian Methods}{chapter*.92}% 105
+\BOOKMARK [1][-]{section.B.1}{Algorithms}{appendix.B}% 106
+\BOOKMARK [2][-]{subsection.B.1.1}{Metropolis\205Hastings Algorithm}{section.B.1}% 107
+\BOOKMARK [2][-]{subsection.B.1.2}{Gibbs Sampler}{section.B.1}% 108
+\BOOKMARK [2][-]{subsection.B.1.3}{Hamiltonian Monte Carlo}{section.B.1}% 109
+\BOOKMARK [0][-]{appendix.C}{Other Figures and Tables}{chapter*.92}% 110
+\BOOKMARK [1][-]{section.C.1}{GEV : Influence of the Parameters on the Shape of the Distribution}{appendix.C}% 111
+\BOOKMARK [1][-]{section.C.2}{Introduction of the Practical Analysis \(section 6\)}{appendix.C}% 112
+\BOOKMARK [1][-]{section.C.3}{Analysis by GEV}{appendix.C}% 113
+\BOOKMARK [0][-]{appendix.D}{Github Repository Structure}{chapter*.92}% 114

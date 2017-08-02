@@ -5,13 +5,13 @@
 \contentsline {chapter}{\numberline {1}Method of Block Maxima}{4}{chapter.1}
 \contentsline {section}{\numberline {1.1}Preliminaries}{5}{section.1.1}
 \contentsline {section}{\numberline {1.2}Extremal Types Theorem : Extreme Value distributions}{7}{section.1.2}
-\contentsline {subsection}{\numberline {1.2.1}Generalized Extreme Value Distribution}{8}{subsection.1.2.1}
-\contentsline {section}{\numberline {1.3}Applications : Examples of Convergence to GEV}{11}{section.1.3}
+\contentsline {subsection}{\numberline {1.2.1}Generalized Extreme Value Distribution}{7}{subsection.1.2.1}
+\contentsline {section}{\numberline {1.3}Applications : Examples of Convergence to GEV}{10}{section.1.3}
 \contentsline {section}{\numberline {1.4}Maximum Domain of Attraction}{13}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Domain of attraction for the 3 types of GEV}{14}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}Closeness under tail equivalence property}{16}{subsection.1.4.2}
 \contentsline {subsection}{\numberline {1.4.3}Domain of attraction of the GEV}{17}{subsection.1.4.3}
-\contentsline {section}{\numberline {1.5}Return Levels and Return Periods}{18}{section.1.5}
+\contentsline {section}{\numberline {1.5}Return Levels and Return Periods}{17}{section.1.5}
 \contentsline {section}{\numberline {1.6}Inference}{18}{section.1.6}
 \contentsline {subsection}{\numberline {1.6.1}Likelihood-based Methods}{19}{subsection.1.6.1}
 \contentsline {subsection}{\numberline {1.6.2}Other Estimator : Probability-Weighted-Moments}{20}{subsection.1.6.2}
@@ -22,85 +22,83 @@
 \contentsline {section}{\numberline {2.2}Characterization of the Generalized Pareto Distribution}{24}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Outline proof of the GPD and justification from GEV}{25}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Dependence of the scale parameter }{26}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Three different types of GPD : Comparison with GEV}{27}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}Three different types of GPD : Comparison with GEV}{26}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Return Levels}{27}{section.2.3}
 \contentsline {section}{\numberline {2.4}Inference : Parameter Estimation}{28}{section.2.4}
 \contentsline {section}{\numberline {2.5}Inference : Threshold Selection }{28}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Standard Threshold Selection Methods}{29}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Varying Threshold : Mixture Models}{31}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.1}Standard Threshold Selection Methods}{28}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Varying Threshold : Mixture Models}{30}{subsection.2.5.2}
 \contentsline {chapter}{\numberline {3}Relaxing The Independence Assumption}{32}{chapter.3}
 \contentsline {section}{\numberline {3.1}Stationary Extremes}{33}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}The extremal index}{34}{subsection.3.1.1}
-\contentsline {subsubsection}{New parameters}{34}{equation.3.1.4}
-\contentsline {subsubsection}{Clusters of exceedances}{34}{equation.3.1.5}
-\contentsline {subsubsection}{Return levels}{35}{section*.36}
+\contentsline {subsubsection}{Clusters of exceedances}{34}{equation.3.1.4}
+\contentsline {subsubsection}{New parameters}{34}{section*.35}
+\contentsline {subsubsection}{Return levels}{35}{equation.3.1.5}
 \contentsline {subsection}{\numberline {3.1.2}Modelling in Block Maxima}{35}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Non-Stationary Extremes}{35}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Block-Maxima}{36}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Model Comparisons}{37}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Return Levels : New Definitions}{37}{section.3.3}
-\contentsline {section}{\numberline {3.4}Neural Networks to Model Nonstationary Series}{38}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Generalized Likelihood Methods}{39}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Neural-Network Based Inference}{39}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Bagging}{40}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Bootstrap Methods in EVT}{41}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Markov models}{42}{subsection.3.4.5}
-\contentsline {chapter}{\numberline {4}Bayesian Extreme Value Theory}{43}{chapter.4}
-\contentsline {section}{\numberline {4.1}Prior Elicitation}{44}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Non-informative Priors}{45}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Informative Priors}{46}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Bayesian Computation : Markov Chains}{46}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Algorithms}{46}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Hamiltonian Monte Carlo}{47}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Computational efficiency comparison}{47}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Convergence Diagnostics}{47}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Proposal Distribution}{48}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}The problem of auto and cross-correlations in the chains}{49}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Posterior Predictive}{49}{section.4.4}
-\contentsline {section}{\numberline {4.5}Bayesian Predictive Accuracy for Model Validation}{50}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Cross-validation for predictive accuracy}{50}{subsection.4.5.1}
-\contentsline {section}{\numberline {4.6}Bayesien Inference ?}{51}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Bayesian Credible Intervals}{51}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Distribution of Quantiles : Return Levels}{52}{subsection.4.6.2}
-\contentsline {section}{\numberline {4.7}Bayesian Model Averaging}{52}{section.4.7}
-\contentsline {section}{\numberline {4.8}Bayesian Neural Networks}{52}{section.4.8}
-\contentsline {part}{II\hspace {1em}Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{53}{part.2}
-\contentsline {xpart}{Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{54}{part.2}
-\contentsline {chapter}{\numberline {5}Introduction to the Analysis}{54}{chapter.5}
-\contentsline {section}{Repository for the code : R Package}{54}{section*.60}
-\contentsline {subsection}{Visualization Tool : Shiny Application}{54}{section*.61}
-\contentsline {section}{\numberline {5.1}Presentation of the Analysis : Temperatures from Uccle}{55}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Open shelter vs Closed shelter}{55}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Comparisons with freely available data}{55}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}First Analysis : Block-Maxima}{56}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Descriptive Analysis}{56}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}First visualization with simple models}{56}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Deeper Trend Analysis : Splines derivatives in GAM}{57}{subsection.5.2.3}
-\contentsline {subsubsection}{Pointwise vs Simultaneous intervals}{57}{section*.65}
-\contentsline {subsubsection}{Methodology}{58}{equation.5.2.2}
-\contentsline {subsubsection}{Final Results}{59}{lstnumber.-2.1}
-\contentsline {section}{\numberline {5.3}Comments and Structure of the Analysis }{60}{section.5.3}
-\contentsline {chapter}{\numberline {6}Analysis in Block Maxima}{61}{chapter.6}
-\contentsline {subsection}{R packages for EVT}{61}{section*.73}
-\contentsline {section}{\numberline {6.1}First Inferences of the Model}{62}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Return Levels}{63}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Diagnostics}{64}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Stationary Analysis}{65}{subsection.6.1.3}
-\contentsline {subsection}{POT}{65}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}Nonstationary Analysis}{66}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Comparing Different Models}{66}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Improvements with Neural Networks}{67}{section.6.3}
-\contentsline {section}{\numberline {6.4}Comments and Comparisons with POT}{67}{section.6.4}
-\contentsline {chapter}{\numberline {7}Bayesian Analysis in Block Maxima}{68}{chapter.7}
-\contentsline {section}{\numberline {7.1}From \texttt {evdbayes} R package : MH algorithm}{68}{section.7.1}
-\contentsline {section}{\numberline {7.2}From Our Functions (R package)}{69}{section.7.2}
-\contentsline {section}{\numberline {7.3}From HMC algorithm using STAN language}{69}{section.7.3}
-\contentsline {section}{\numberline {7.4}Ratio of Uniform : \texttt {revdbayes} package}{69}{section.7.4}
-\contentsline {section}{\numberline {7.5}Comparisons}{69}{section.7.5}
-\contentsline {subsection}{\numberline {7.5.1}STAN}{69}{subsection.7.5.1}
-\contentsline {section}{\numberline {7.6}Comparison with frequentists results}{69}{section.7.6}
-\contentsline {chapter}{Conclusion}{69}{section.7.6}
-\contentsline {part}{Appendix}{70}{chapter*.89}
+\contentsline {section}{\numberline {3.3}Return Levels : New Definitions}{38}{section.3.3}
+\contentsline {section}{\numberline {3.4}Neural Networks for Nonstationary Series : GEV-CDN}{39}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Generalized Maximum Likelihood}{40}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Architecture of the GEV-CDN Network}{41}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Prevent Overfitting : Bagging}{42}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Confidence Intervals : Bootstrapping Methods}{42}{subsection.3.4.4}
+\contentsline {chapter}{\numberline {4}Bayesian Extreme Value Theory}{44}{chapter.4}
+\contentsline {section}{\numberline {4.1}Prior Elicitation}{45}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Non-informative Priors}{46}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Informative Priors}{47}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Bayesian Computation : Markov Chains}{47}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Algorithms}{47}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Hamiltonian Monte Carlo}{48}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Computational efficiency comparison}{48}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Convergence Diagnostics}{48}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Proposal Distribution}{49}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}The problem of auto and cross-correlations in the chains}{50}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Posterior Predictive}{50}{section.4.4}
+\contentsline {section}{\numberline {4.5}Bayesian Predictive Accuracy for Model Validation}{51}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Cross-validation for predictive accuracy}{51}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}Bayesien Inference ?}{52}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Bayesian Credible Intervals}{52}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Distribution of Quantiles : Return Levels}{53}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}Bayesian Model Averaging}{53}{section.4.7}
+\contentsline {section}{\numberline {4.8}Bayesian Neural Networks}{53}{section.4.8}
+\contentsline {part}{II\hspace {1em}Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{54}{part.2}
+\contentsline {xpart}{Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{55}{part.2}
+\contentsline {chapter}{\numberline {5}Introduction to the Analysis}{55}{chapter.5}
+\contentsline {section}{Repository for the code : R Package}{56}{section*.58}
+\contentsline {subsection}{Visualization Tool : Shiny Application}{56}{section*.59}
+\contentsline {section}{\numberline {5.1}Presentation of the Analysis : Temperatures from Uccle}{57}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Comparisons with freely available data}{57}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}First Analysis : Annual Maxima}{57}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Descriptive Analysis}{57}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}First visualization with simple models}{57}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Deeper Trend Analysis : Splines derivatives in GAM}{58}{subsection.5.2.3}
+\contentsline {subsubsection}{Pointwise vs Simultaneous intervals}{59}{section*.64}
+\contentsline {subsubsection}{Methodology}{59}{equation.5.2.2}
+\contentsline {subsubsection}{Final Results}{61}{lstnumber.-2.1}
+\contentsline {section}{\numberline {5.3}Comments and Structure of the Analysis }{62}{section.5.3}
+\contentsline {chapter}{\numberline {6}Analysis in Block Maxima}{63}{chapter.6}
+\contentsline {subsection}{R packages for EVT}{64}{section*.72}
+\contentsline {section}{\numberline {6.1}First Inferences of the Model}{64}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Return Levels}{65}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Diagnostics}{66}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Stationary Analysis}{67}{subsection.6.1.3}
+\contentsline {subsubsection}{POT}{68}{section*.84}
+\contentsline {section}{\numberline {6.2}Parametric Nonstationary Analysis}{68}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Comparing Different Models}{68}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Diagnostics and Inference}{69}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Improvements with Neural Networks}{69}{section.6.3}
+\contentsline {section}{\numberline {6.4}Comments and Comparisons with POT}{71}{section.6.4}
+\contentsline {chapter}{\numberline {7}Bayesian Analysis in Block Maxima}{72}{chapter.7}
+\contentsline {section}{\numberline {7.1}From \texttt {evdbayes} R package : MH algorithm}{72}{section.7.1}
+\contentsline {section}{\numberline {7.2}From Our Functions (R package)}{73}{section.7.2}
+\contentsline {section}{\numberline {7.3}From HMC algorithm using STAN language}{73}{section.7.3}
+\contentsline {section}{\numberline {7.4}Ratio of Uniform : \texttt {revdbayes} package}{73}{section.7.4}
+\contentsline {section}{\numberline {7.5}Comparisons}{73}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}STAN}{73}{subsection.7.5.1}
+\contentsline {section}{\numberline {7.6}Comparison with frequentists results}{73}{section.7.6}
+\contentsline {chapter}{Conclusion}{73}{section.7.6}
+\contentsline {part}{Appendix}{74}{chapter*.92}
 \partbegin 
 \contentsline {chapter}{\numberline {A}Statistical tools for Extreme Value Theory}{II}{appendix.A}
 \contentsline {section}{\numberline {A.1}Tails of the distributions}{II}{section.A.1}
@@ -117,4 +115,4 @@
 \contentsline {section}{\numberline {C.1}GEV : Influence of the Parameters on the Shape of the Distribution}{XII}{section.C.1}
 \contentsline {section}{\numberline {C.2}Introduction of the Practical Analysis (section 6)}{XII}{section.C.2}
 \contentsline {section}{\numberline {C.3}Analysis by GEV}{XII}{section.C.3}
-\contentsline {chapter}{\numberline {D}Github Repository Structure}{XVII}{appendix.D}
+\contentsline {chapter}{\numberline {D}Github Repository Structure}{XVIII}{appendix.D}

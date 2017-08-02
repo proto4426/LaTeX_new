@@ -252,7 +252,7 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 \usepackage{tcolorbox}
 \usepackage{adjustbox}
 \usepackage{dashbox}
-
+\usepackage{todonotes}
 
 \newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \dotfill}}
 \newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}
@@ -440,7 +440,7 @@ Regarding the computations, we took advantage of a high-level language (c++) to 
 \chapter*{List of Abbreviations}
 %\addcontentsline{toc}{chapter}{List of Abbreviations}
 \thispagestyle{empty}
-For convenience, we place a list of all the abbreviations we will use in the text. However, these will always be defined in their first occurrence into the text.\\
+For convenience, we place a list of all the abbreviations we will use in the text. However, these will always be defined in their first occurrence in the text.\\
 
 \begin{center}
 \begin{abbreviations}
@@ -449,11 +449,13 @@ For convenience, we place a list of all the abbreviations we will use in the tex
 	\item[EVI] Extreme Value Index ($\xi$)
 	\item[EVT] Extreme Value Theory
 	\item[GEV] Generalized Extreme Value
+	\item[GML] Generalized Maximum Likelihood
 	\item[GPD] Generalized Pareto Distribution %(function)
 	\item[MCMC] Marko Chain Monte Carlo
 	\item[MH] Metropolis-Hastings (algorithm)
 	\item[ML] Maximum Likelihood 
 	\item[MLE] Maximum Likelihood Estimator
+	\item[NN] Neural Network
 	\item[TN] Temperature miNimum
 	\item[TX] Temperature maXimum
 	
@@ -476,22 +478,22 @@ For convenience, we place a list of all the abbreviations we will use in the tex
 
 
 
-Unlike his counterparts ( see for example credit risk analysis, financial applications,...), the Extreme Value Theory (EVT) applied on the broad environemental area like here for the meteorological data, has strong impacts on the people lives 
+Unlike its counterparts ( see for example credit risk analysis, financial applications,...), the Extreme Value Theory (EVT) applied on broad environemental area such as meteorological data, has strong impacts on the people lives 
 
 An important question is still whether climate changes caused by anthropogenic activities will change the intensity and frequency of extreme events \cite{milly_climate_2008}.
 
-The problem we are here facing in climate change evidence is that of le lack of past data to compare with her
+The problem facing climate change evidence is the lack of past data to compare with her
 
-Also, for such an analysis, the number of parameters to take into account is considerable (and tend to infinity)  
+For such an analysis, the number of parameters to take into account is considerable (and tend to infinity)  
 
-Can make a parallelism with Chaos Theory and the well-known butterfly effect which have strong applications in weather models\newline
+To make a parallel with Chaos Theory and the well-known butterfly effect which have strong applications in weather models\newline
 
-We highly expect the climate change to affect the extreme weather  \newline
+We anticipate that climate change to affect the extreme weather  \newline
 
 [extremes in climate change p.347]
 
 
-It has been proven that winter become warmer in context of RC. (see naveau,...)
+It has been proven that winter is becoming warmer in context of RC. (see naveau,...)
 
 
 \cite{kharin_changes_2006}
@@ -504,7 +506,7 @@ bimodal PDF (Fig. 6.12a). The events sitting in the tails of that distribution a
 rare" \cite[pp.257]{mudelsee_climate_2014}
 \newline
 
-Until now, studies on climate extremes that consider Europe have usually had a strong national signature
+Until now, studies on climate extremes in Europe have usually had a strong national signature
 %(e.g. Herzog and Muller-Westermeier, 1997; Brunetti ¨ et al., 2001)
 , or have had to make use of either a
 dataset with daily series from a very sparse network of meteorological stations (e.g. eight stations in Moberg
@@ -533,7 +535,7 @@ We can summarize the research question of this thesis as the following :
 \end{itemize}
 
 
-In this part, we will make use of some general methods to assess if there is indeed a trend in the maximum temperatures
+In this part, we will make use of general methods to assess if there is indeed a trend in the maximum temperatures
 
 There are two main approaches in EVT, the block-maxima  and the peaks-over-threshold approach (see 
 \hyperref[sec::2]{Section \textbf{2}}) yielding to different extreme value distribution. 
@@ -544,7 +546,7 @@ In \hyperref[sec::1]{Chapter \textbf{1}} we will present the method of block-max
 In \hyperref[sec::3]{Chapter \textbf{3}}
 In \hyperref[sec::4]{Chapter \textbf{4}} we will ..
 
-Finally, we notice that this thesis will more concentrate on the block-maxima (GEV) methods (see \hyperref[sec::1]{Chapter \textbf{1}}), i.e. to data relating to maxima over a period of 1 year. For example here in the introduction, or for the Bayesian analysis in \hyperref[sec::bayesian]{Chapter \textbf{5}}.
+Finally, we notice that this thesis will concentrate on the block-maxima (GEV) methods (see \hyperref[sec::1]{Chapter \textbf{1}}), i.e. to data relating to maxima over a period of 1 year. For example here in the introduction, or for the Bayesian analysis in \hyperref[sec::bayesian]{Chapter \textbf{5}}.
 \thispagestyle{empty}
 
 
@@ -562,9 +564,9 @@ Finally, we notice that this thesis will more concentrate on the block-maxima (G
  \vspace{1cm}
 
 This chapter introduce the basics of EVT by considering the \textit{block-maxima} approach. After defining useful concepts in 
-\hyperref[sec::1.1]{Section \textbf{1.1}} to introduce the emergence of this theory, we will get into the leading theorem of EVT in \hyperref[sec:extrtypethm]{Section \textbf{\ref{sec:extrtypethm}}}. After that, we will present some mathematical applications (\hyperref[sec::appconcrete]{Section \textbf{\ref{sec::appconcrete}}}) and conditions (\hyperref[sec:mda]{Section \textbf{\ref{sec:mda}}}) of this theorem in order to visualize the implications of the extremal theorem and the characterizations of the underlying distributions. Then, \hyperref[rlgev]{Section \textbf{\ref{rlgev}}} will introduce key concepts that help for inference in EVT which will be presented in a general (and frequentist) way in  \hyperref[sec::gevinfernce]{Section \textbf{\ref{sec::gevinfernce}}}. Finally, \hyperref[sec:diag]{Section \textbf{\ref{sec:diag}}} is devoted to list some tools to assess the accuracy of the fitted model.
+\hyperref[sec::1.1]{Section \textbf{1.1}} to introduce the emergence of this theory, we will get into the leading theorem of EVT in \hyperref[sec:extrtypethm]{Section \textbf{\ref{sec:extrtypethm}}}. \hyperref[sec::appconcrete]{Section \textbf{\ref{sec::appconcrete}}} will present some mathematical applications and \hyperref[sec:mda]{Section \textbf{\ref{sec:mda}}} conditions  of this theorem in order to visualize the implications of the extremal theorem and the characterizations of the underlying distributions. \hyperref[rlgev]{Section \textbf{\ref{rlgev}}} will introduce key concepts of inference in EVT which will be presented in a general (and frequentist) way in  \hyperref[sec::gevinfernce]{Section \textbf{\ref{sec::gevinfernce}}}. Finally, \hyperref[sec:diag]{Section \textbf{\ref{sec:diag}}} provides some tools to assess the accuracy of the fitted model.
 
-This chapter is mostly based on \citet[chap.3]{coles_introduction_2001}, \citet[chap.2]{beirlant_statistics_2006} and \citet[chap.1-4]{reiss_statistical_2007}, together with relevant articles.
+This chapter is mostly based on \citet[chap.3]{coles_introduction_2001}, \citet[chap.2]{beirlant_statistics_2006} and \citet[chap.1-4]{reiss_statistical_2007}, and other relevant articles.
 
 \newpage
 \include*{chap1}
@@ -576,16 +578,16 @@ This chapter is mostly based on \citet[chap.3]{coles_introduction_2001}, \citet[
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
 
-This chapter will focus on another major approach of EV models by modeling only the excess over certain a threshold. This approach is very popular in practice as it can handle all the extremes with more flexibility and not only the maximum of one block. From this fact, lots of techniques have emerged and we will quickly navigate the main ideas.
+This new chapter will focus on another major approach of EV models by modeling only the excess over a certain threshold. This approach is very popular in practice as it can handle all the extremes with more flexibility and not only the maximum of one block. From this fact, numerous techniques have emerged and we will quickly navigate the main ideas.
 
-In \hyperref[sec::2.1]{Section \textbf{\ref{sec::2.1}}}, we will intuitively introduce the approach which will help us 
-to formally characterize the resulting distribution of interest in \hyperref[sec:charac_gpd]{Section \textbf{\ref{sec:charac_gpd}}}. Then, \hyperref[sec:rl_gpd]{Section \textbf{\ref{sec:rl_gpd}}} will present the concept of return levels applied in this of context. Whereas meteorologists usually suggest thresholds of $25^{\circ} c$ or $30^{\circ} c$ for maximum temperatures, we will assess the threshold choice in a statistical sense in \hyperref[sec:thresh_selec]{Section \textbf{\ref{sec:thresh_selec}}} by reviewing available methods, but before that we will briefly discuss the parameter estimation in \hyperref[sec::potinference]{Section \textbf{\ref{sec::potinfernce}}}, especially for the EVI. 
+In \hyperref[sec::2.1]{Section \textbf{\ref{sec::2.1}}}, we will intuitively introduce the approach that will help us 
+to formally characterize the resulting distribution of interest in \hyperref[sec:charac_gpd]{Section \textbf{\ref{sec:charac_gpd}}}. Then, \hyperref[sec:rl_gpd]{Section \textbf{\ref{sec:rl_gpd}}} will present the concept of return levels applied to this concept. Next, we will assess the maximum temperature threshold in a statistical sense in \hyperref[sec:thresh_selec]{Section \textbf{\ref{sec:thresh_selec}}} by reviewing available methods, regardless common suggested thresholds of $25^{\circ} c$ or $30^{\circ} c$ from meteorologists.
 
 Unfortunately, the resulting analysis of this chapter will not be present in \hyperref[part:xp]{Part \textbf{\ref{part:xp}}} because it would have made the text become too voluminous. But empirical results (code and html reports) will remain available in the \href{https://github.com/proto4426/PissoortThesis/}{repository}\footnote{\url{https://github.com/proto4426/PissoortThesis/}} which structure is explained in \hyperref[appgit]{Appendix \textbf{\ref{appgit}}}. Moreover, \emph{point process} will not be covered for the same reason but we remind that this is a powerful and flexible method that summarizes the two techniques considered in the two first chapters, and it should then not be missed. 
 
 This chapter is mainly based on \citet[chap.4 and 7]{coles_introduction_2001}, \citet[chap.4]{beirlant_statistics_2006}, \citet[chap.5]{reiss_statistical_2007} and 
 \citet[chap.5]{embrechts_modelling_2011},
- together with relevant articles.
+ and other relevant articles.
 
 \newpage
 \include*{chap2}
@@ -597,15 +599,12 @@ This chapter is mainly based on \citet[chap.4 and 7]{coles_introduction_2001}, \
 \minitoc\thispagestyle{empty}
  \vspace{1cm}
  
-In environmental applications, the independence assumption is questionable. It is rarely fulfilled \cite{}, and never completely. From hydrological process (see \citet{milly_stationarity_2008} for stationarity) to temperature analysis (see ref) or even the broader area of meteorological applications (see ref), theoretical assumptions that have been made for the models are not sustainable. This sounds also obvious in extreme values analysis of temperature data, since we expect the temperature .... Whereas it was not really problematic for block-maxima, it was much more painful for POT as we have seen  both in section 2. 
-However, here we can see in our case that it does not really happens...(verif.. and why??)
+In most environmental applications, the independence assumption made in the first chapters is questionable and never completely fulfilled. From hydrological process as stated in \citet{milly_climate_2008} to temperature data where climate warming is a famous issue, such theoretical assumptions that have been previously made are not sustainable in practice. First, 
+\hyperref[sec:statio]{Section \textbf{\ref{sec:statio}}} will provide tools that enable EV models to hold in presence of a limited long-range dependence.
+\hyperref[nstatio]{Section \textbf{\ref{nstatio}}} will allow EV modeling under nonstationary processes allowing us for instance to study the possible increasing behavior of the maximum temperatures. Whereas \hyperref[sec:returnlvlnstatio]{Section \textbf{\ref{sec:returnlvlnstatio}}} redefined return levels under those less restricted cases,   \hyperref[sec:gevcdn]{Section \textbf{\ref{sec:gevcdn}}} will introduce a new flexible way to model nonstationary extremes under a redefined Multi Layer Perceptron framework providing inference techniques that minimize chance of overfitting.
 
-See \cite[pp.375]{beirlant_statistics_2006}
 
-....
-
-This chapter is mostly based on \citet[chap.5-6]{coles_introduction_2001}, \citet[chap.10]{beirlant_statistics_2006} and \citet[chap.7]{reiss_statistical_2007}, together with relevant articles.
-
+This chapter is mostly based on \citet[chap.5-6]{coles_introduction_2001}, \citet[chap.10]{beirlant_statistics_2006} and \citet[chap.7]{reiss_statistical_2007}, and other relevant articles.
 \newpage
 \include*{chap3}
 
@@ -623,7 +622,7 @@ Attention : $\pi$ ou $f$ ??????
 
 We let useful relevant tools regarding bayesian inference in \hyperref[bayesapp]{appendix \textbf{\ref{appB}}}
 
-This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001}, \citet[chap.11]{beirlant_statistics_2006} and \citet[chap.1-4]{reiss_statistical_2007}, together with relevant articles.
+This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001}, \citet[chap.11]{beirlant_statistics_2006} and \citet[chap.1-4]{reiss_statistical_2007}, and other relevant articles.
 
 \newpage
 \include*{chap4}
@@ -642,9 +641,16 @@ This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001}, \cite
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
  
-After having theoretically defined some useful concepts in Extreme Value Theory, we will now 
-We already showed the distribution of these data in Figure \ref{fig:pot_plot} to introduce the POT approach. 
+After having theoretically defined useful concepts in EVT, we will now introduce the practical analysis of this thesis that consist of analyzing daily maximum temperatures in Uccle from 1901 to 2016.  
+We already showed the distribution of these data in Figure \ref{fig:pot_plot} to introduce the POT approach. This chapter will present an introductory analysis of the annual maxima of these data. We chose annual maxima in order to later provide a convenient GEV modeling. We will then first use several techniques to analyze these data before going further into the EV models in the following chapters. 
 
+After a brief presentation of the repository which contains the R package created for this thesis and the structure for the scripts that contains the code that created all the analysis, we will briefly present the shiny applications created to enhance visualizations. Then, \hyperref[sec:presuccle]{Section \textbf{\ref{sec:presuccle}}} will present data and their source(s). \hyperref[sec:firstana]{Section \textbf{\ref{sec:firstana}}} will first describe data and compare models to represent the data before going further on the trend analysis with splines derivatives in a Generalized Additive Model to assess significance of the trend with correction for simultaneous tests and provide first aspects in the issue of Climate Warming without using extreme models. 
+
+
+This chapter will then not explicitly use techniques presented in the previous chapters. It will be mostly based on \citet{ruppert_semiparametric_2003} for the model presented in \hyperref[sec:splines]{Section \textbf{\ref{sec:splines}}}. 
+  
+
+\newpage
 \include*{chap5}
 
 

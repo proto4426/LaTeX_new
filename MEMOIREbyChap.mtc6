@@ -1,13 +1,12 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode Repository for the code : R Package}{\reset@font\mtcSfont 54}{section*.60}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Visualization Tool : Shiny Application}{\reset@font\mtcSSfont 54}{section*.61}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Presentation of the Analysis : Temperatures from Uccle}{\reset@font\mtcSfont 55}{section.5.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Open shelter vs Closed shelter}{\reset@font\mtcSSfont 55}{subsection.5.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.2}Comparisons with freely available data}{\reset@font\mtcSSfont 55}{subsection.5.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}First Analysis : Block-Maxima}{\reset@font\mtcSfont 56}{section.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Descriptive Analysis}{\reset@font\mtcSSfont 56}{subsection.5.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}First visualization with simple models}{\reset@font\mtcSSfont 56}{subsection.5.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.3}Deeper Trend Analysis : Splines derivatives in GAM}{\reset@font\mtcSSfont 57}{subsection.5.2.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Pointwise vs Simultaneous intervals}{\reset@font\mtcSSSfont 57}{section*.65}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Methodology}{\reset@font\mtcSSSfont 58}{equation.5.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Final Results}{\reset@font\mtcSSSfont 59}{lstnumber.-2.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}Comments and Structure of the Analysis }{\reset@font\mtcSfont 60}{section.5.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode Repository for the code : R Package}{\reset@font\mtcSfont 56}{section*.58}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Visualization Tool : Shiny Application}{\reset@font\mtcSSfont 56}{section*.59}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Presentation of the Analysis : Temperatures from Uccle}{\reset@font\mtcSfont 57}{section.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Comparisons with freely available data}{\reset@font\mtcSSfont 57}{subsection.5.1.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}First Analysis : Annual Maxima}{\reset@font\mtcSfont 57}{section.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Descriptive Analysis}{\reset@font\mtcSSfont 57}{subsection.5.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}First visualization with simple models}{\reset@font\mtcSSfont 57}{subsection.5.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.3}Deeper Trend Analysis : Splines derivatives in GAM}{\reset@font\mtcSSfont 58}{subsection.5.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Pointwise vs Simultaneous intervals}{\reset@font\mtcSSSfont 59}{section*.64}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Methodology}{\reset@font\mtcSSSfont 59}{equation.5.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Final Results}{\reset@font\mtcSSSfont 61}{lstnumber.-2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}Comments and Structure of the Analysis }{\reset@font\mtcSfont 62}{section.5.3}}

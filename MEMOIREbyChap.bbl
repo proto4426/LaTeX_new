@@ -1,4 +1,4 @@
-\begin{thebibliography}{77}
+\begin{thebibliography}{86}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -70,6 +70,14 @@ A.~Bolívar, E.~Díaz-Francés, J.~Ortega, and E.~Vilchis.
 \newblock \emph{arXiv preprint arXiv:1005.3573}, 2010.
 \newblock URL \url{http://arxiv.org/abs/1005.3573}.
 
+\bibitem[Breiman(2001)]{Breiman_2001}
+L.~Breiman.
+\newblock Random forests.
+\newblock \emph{Mach. Learn.}, 45\penalty0 (1):\penalty0 5--32, Oct. 2001.
+\newblock ISSN 0885-6125.
+\newblock \doi{10.1023/A:1010933404324}.
+\newblock URL \url{http://dx.doi.org/10.1023/A:1010933404324}.
+
 \bibitem[Cannon(2010)]{cannon_flexible_2010}
 A.~J. Cannon.
 \newblock A flexible nonlinear modelling framework for nonstationary
@@ -79,6 +87,27 @@ A.~J. Cannon.
 \newblock ISSN 08856087.
 \newblock \doi{10.1002/hyp.7506}.
 \newblock URL \url{http://doi.wiley.com/10.1002/hyp.7506}.
+
+\bibitem[Cannon and McKendry(2002)]{cannon_graph_2002}
+A.~J. Cannon and I.~G. McKendry.
+\newblock A graphical sensitivity analysis for statistical climate models:
+  application to indian monsoon rainfall prediction by artificial neural
+  networks and multiple linear regression models.
+\newblock \emph{International Journal of Climatology}, 22\penalty0
+  (13):\penalty0 1687--1708, 2002.
+\newblock ISSN 1097-0088.
+\newblock \doi{10.1002/joc.811}.
+\newblock URL \url{http://dx.doi.org/10.1002/joc.811}.
+
+\bibitem[Carney et~al.(2005)Carney, Cunningham, Dowling, and Lee]{Carney_2005}
+M.~Carney, P.~Cunningham, J.~Dowling, and C.~Lee.
+\newblock Predicting probability distributions for surf height using an
+  ensemble of mixture density networks.
+\newblock In \emph{Proceedings of the 22Nd International Conference on Machine
+  Learning}, ICML '05, pages 113--120, New York, NY, USA, 2005. ACM.
+\newblock ISBN 1-59593-180-5.
+\newblock \doi{10.1145/1102351.1102366}.
+\newblock URL \url{http://doi.acm.org/10.1145/1102351.1102366}.
 
 \bibitem[Charras-Garrido and Lezaud(2013)]{charras_extreme_2013}
 M.~Charras-Garrido and P.~Lezaud.
@@ -169,6 +198,25 @@ D.~K. Dey and J.~Yan.
 \newblock CRC Press, Jan. 2016.
 \newblock ISBN 978-1-4987-0131-0.
 \newblock Google-Books-ID: PYhUCwAAQBAJ.
+
+\bibitem[Efron(1979)]{efron1979}
+B.~Efron.
+\newblock Bootstrap methods: Another look at the jackknife.
+\newblock \emph{Ann. Statist.}, 7\penalty0 (1):\penalty0 1--26, 01 1979.
+\newblock \doi{10.1214/aos/1176344552}.
+\newblock URL \url{http://dx.doi.org/10.1214/aos/1176344552}.
+
+\bibitem[El~Adlouni et~al.(2007)El~Adlouni, Ouarda, Zhang, Roy, and
+  Bobée]{el_adlouni_generalized_2007}
+S.~El~Adlouni, T.~B. M.~J. Ouarda, X.~Zhang, R.~Roy, and B.~Bobée.
+\newblock Generalized maximum likelihood estimators for the nonstationary
+  generalized extreme value model.
+\newblock \emph{Water Resources Research}, 43\penalty0 (3):\penalty0 W03410,
+  Mar. 2007.
+\newblock ISSN 1944-7973.
+\newblock \doi{10.1029/2005WR004545}.
+\newblock URL
+  \url{http://onlinelibrary.wiley.com/doi/10.1029/2005WR004545/abstract}.
 
 \bibitem[Embrechts et~al.(1997)Embrechts, Klüppelberg, and
   Mikosch]{embrechts_modelling_2011}
@@ -304,6 +352,14 @@ W.~K. Hastings.
 \newblock URL
   \url{https://academic.oup.com/biomet/article-abstract/57/1/97/2721936/Monte-Carlo-sampling-methods-using-Markov-chains}.
 
+\bibitem[Hornik et~al.(1989)Hornik, Stinchcombe, and White]{Hornik_1989}
+K.~Hornik, M.~Stinchcombe, and H.~White.
+\newblock Multilayer feedforward networks are universal approximators.
+\newblock \emph{Neural Netw.}, 2\penalty0 (5):\penalty0 359--366, July 1989.
+\newblock ISSN 0893-6080.
+\newblock \doi{10.1016/0893-6080(89)90020-8}.
+\newblock URL \url{http://dx.doi.org/10.1016/0893-6080(89)90020-8}.
+
 \bibitem[Hosking and Wallis(1987)]{hosking_parameter_1987}
 J.~R.~M. Hosking and J.~R. Wallis.
 \newblock Parameter and {Quantile} {Estimation} for the {Generalized} {Pareto}
@@ -319,6 +375,30 @@ J.~R. M. J. R.~M. Hosking and J.~R. Wallis.
   {L}-moments}.
 \newblock Cambridge ; New York : Cambridge University Press, 1997.
 \newblock ISBN 0521430453 (hardbound).
+
+\bibitem[Hsieh and Tang(1998)]{Hsieh_Tang_1998}
+W.~W. Hsieh and B.~Tang.
+\newblock Applying neural network models to prediction and data analysis in
+  meteorology and oceanography., Sep 1998.
+\newblock URL
+  \url{https://open.library.ubc.ca/cIRcle/collections/52383/items/1.0041821}.
+
+\bibitem[{Khaliq} et~al.(2006){Khaliq}, {Ouarda}, {Ondo}, {Gachon}, and
+  {Bob{\'e}e}]{2006JHyd..329..534K}
+M.~N. {Khaliq}, T.~B.~M.~J. {Ouarda}, J.-C. {Ondo}, P.~{Gachon}, and
+  B.~{Bob{\'e}e}.
+\newblock {Frequency analysis of a sequence of dependent and/or non-stationary
+  hydro-meteorological observations: A review}.
+\newblock \emph{Journal of Hydrology}, 329:\penalty0 534--552, Oct. 2006.
+\newblock \doi{10.1016/j.jhydrol.2006.03.004}.
+
+\bibitem[Kharin and Zwiers(2005)]{kharin_estimating_2005}
+V.~V. Kharin and F.~W. Zwiers.
+\newblock Estimating extremes in transient climate change simulations.
+\newblock \emph{Journal of Climate}, 18\penalty0 (8):\penalty0 1156--1173,
+  2005.
+\newblock \doi{10.1175/JCLI3320.1}.
+\newblock URL \url{https://doi.org/10.1175/JCLI3320.1}.
 
 \bibitem[Klein~Tank and Wijngaard(2002)]{klein_tank_daily_2002}
 A.~M.~G. Klein~Tank and Wijngaard.
@@ -382,6 +462,11 @@ Y.~Liu, A.~Gelman, and T.~Zheng.
 \newblock \doi{10.1007/s11222-015-9563-8}.
 \newblock URL \url{http://link.springer.com/10.1007/s11222-015-9563-8}.
 
+\bibitem[MacKay(1992)]{mackay92b}
+D.~J.~C. MacKay.
+\newblock A practical bayesian framework for backpropagation networks.
+\newblock \emph{Neural Computation}, 4\penalty0 (3):\penalty0 448--472, 1992.
+
 \bibitem[Maindonald and Braun(2006)]{maindonald_data_2006}
 J.~Maindonald and J.~Braun.
 \newblock \emph{Data analysis and graphics using {R}: an example-based
@@ -397,26 +482,26 @@ G.~Marra and S.~N. Wood.
 \newblock URL
   \url{http://onlinelibrary.wiley.com/doi/10.1111/j.1467-9469.2011.00760.x/full}.
 
-\bibitem[Milly et~al.(2008{\natexlab{a}})Milly, Betancourt, Falkenmark, Hirsch,
-  Kundzewicz, Lettenmaier, and Stouffer]{milly_climate_2008}
+\bibitem[Martins and Stedinger(2000)]{martins_generalized_2000}
+E.~S. Martins and J.~R. Stedinger.
+\newblock Generalized maximum-likelihood generalized extreme-value quantile
+  estimators for hydrologic data.
+\newblock \emph{Water Resources Research}, 36\penalty0 (3):\penalty0 737--744,
+  Mar. 2000.
+\newblock ISSN 1944-7973.
+\newblock \doi{10.1029/1999WR900330}.
+\newblock URL
+  \url{http://onlinelibrary.wiley.com/doi/10.1029/1999WR900330/abstract}.
+
+\bibitem[Milly et~al.(2008)Milly, Betancourt, Falkenmark, Hirsch, Kundzewicz,
+  Lettenmaier, and Stouffer]{milly_climate_2008}
 P.~C.~D. Milly, J.~Betancourt, M.~Falkenmark, R.~M. Hirsch, Z.~W. Kundzewicz,
   D.~P. Lettenmaier, and R.~J. Stouffer.
 \newblock Climate change. {Stationarity} is dead: whither water management?
 \newblock \emph{Science (New York, N.Y.)}, 319\penalty0 (5863):\penalty0
-  573--574, Feb. 2008{\natexlab{a}}.
+  573--574, Feb. 2008.
 \newblock ISSN 1095-9203.
 \newblock \doi{10.1126/science.1151915}.
-
-\bibitem[Milly et~al.(2008{\natexlab{b}})Milly, Betancourt, Falkenmark, Hirsch,
-  Kundzewicz, Lettenmaier, and Stouffer]{milly_stationarity_2008}
-P.~C.~D. Milly, J.~Betancourt, M.~Falkenmark, R.~M. Hirsch, Z.~W. Kundzewicz,
-  D.~P. Lettenmaier, and R.~J. Stouffer.
-\newblock Stationarity {Is} {Dead}: {Whither} {Water} {Management}?
-\newblock \emph{Science}, 319\penalty0 (5863):\penalty0 573--574, Feb.
-  2008{\natexlab{b}}.
-\newblock ISSN 0036-8075, 1095-9203.
-\newblock \doi{10.1126/science.1151915}.
-\newblock URL \url{http://science.sciencemag.org/content/319/5863/573}.
 
 \bibitem[Mudelsee(2014)]{mudelsee_climate_2014}
 M.~Mudelsee.
@@ -559,16 +644,6 @@ J.~Segers.
 \newblock 2001.
 \newblock URL
   \url{http://citeseerx.ist.psu.edu/viewdoc/citations;jsessionid=0C9C7CAE3938CA7A9B280DEA739EFDA9?doi=10.1.1.7.1713}.
-
-\bibitem[Shaby et~al.(2016)Shaby, Reich, Cooley, and
-  Kaufman]{shaby_markov-switching_2016}
-B.~A. Shaby, B.~J. Reich, D.~Cooley, and C.~G. Kaufman.
-\newblock A {Markov}-switching model for heat waves.
-\newblock \emph{The Annals of Applied Statistics}, 10\penalty0 (1):\penalty0
-  74--93, Mar. 2016.
-\newblock ISSN 1932-6157.
-\newblock \doi{10.1214/15-AOAS873}.
-\newblock URL \url{http://projecteuclid.org/euclid.aoas/1458909908}.
 
 \bibitem[Sherlock et~al.(2009)Sherlock, Roberts, and
   {others}]{Sherlock_optimal_2009}

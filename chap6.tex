@@ -3,7 +3,7 @@
 
 In this first analysis, we rely on 
 
-This analysis relies on \texttt{1inter\_stationary.R} code from the \textbf{/Scripts-R/} folder of the github repository.
+This analysis relies on \texttt{1intro\_stationary.R} code from the \textbf{/Scripts-R/} folder of the github repository.
 
 This analysis relies on 2Nonstationary.R and 2NeuralsNets.R code from the\textbf{ /Scripts-
 R/} folder of the github repository. A few results of nonstationary analysis in a POT approach are
@@ -14,6 +14,15 @@ TABLE with nested models (gumbel, GEV, + linear trend, etc etc)
 
 The block-length selection an important issue of the analysis. It is important to choose a block-length which is large enough for the limiting arguments supporting the GEV approximation (see (\ref{exttheom})) to be valid, either a large bias in the estimates could occur. For example, if this is too short, the maxima may be too close of each other to assume independence. But a large block-length implies less data to work with, and thus a large variance of the estimates. A compromise must be found between bias and variance and as pointed out in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}}, yearly blocks seem justifiable not only for this reason (difficult to study?) but especially for their interpretability and ease of use.
 \textbf{However, we will "relax" the independence assumption and present the stationary analysis in the next section. It will not change our analysis.}
+
+
+\subsubsection*{Block-length } 
+
+As already explained, we will use a block-length of one year for convenience. 
+But this will induce wastage of data since we will not use at all 6 month (from October to March) as they will never have an annual maximum. Hence,
+
+Another idea to prevent this wastage is to fit several GEV models 
+
 
 \addcontentsline{toc}{subsection}{R packages for EVT}
 \subsubsection*{R packages in EVT}
@@ -88,6 +97,7 @@ We directly see that these results are very close to the estimates of Table \ref
 model. For convenience, we will only keep the maximum likelihood estimates to work with in the following.
 
 
+
 \subsection{Return Levels}\label{sec:rlemp}
 
 First presented in \hyperref[rlgev]{Section \textbf{\ref{rlgev}}}, return levels are a very appreciate tool by the practitioners for inference in EVT in an environmental context.
@@ -129,7 +139,7 @@ model $\hat{F}$ fitted by MLE is accurate enough for the true model $F$ which is
 (\ref{eq:emprdist}). First, we present the quantile and the probability plots in Figure \ref{fig:ppqqplot}.
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=.7\linewidth]{pp_qqplot.pdf}\caption{Quantile (left) and probability (right) plot for the stationary GEV model fitted by MLE.}\label{fig:ppqqplot}
+	\centering	\includegraphics[width=.7\linewidth]{pp_qqplot.pdf}\caption{Quantile (left) and probability (right) plots for the stationary GEV model fitted by MLE.}\label{fig:ppqqplot}
 \end{figure}
 
 Both plots show points lying very close to the unit diagonal showing that the empirical distribution
@@ -172,7 +182,7 @@ parameters compared to an independent sequence.
 We can visualize the dependence in the series for example by hand of (partial) autocorrelation functions. Corresponding plots are shown in Figure \ref{fig:acf_gev} let in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} where we see that temporal dependence is light but well present. 
 Actually, the estimates shown in Table \ref{tab:estlik} already take this dependence into account. 
 
-\addcontentsline{toc}{subsection}{POT}
+\addcontentsline{toc}{subsubsection}{POT}
 \subsubsection*{POT}
 
  Dependence is hence not really a concern for GEV while it is more problematic for POT. Indeed, by analyzing only data that are above a threshold (say $30^{\circ}c$), serial dependence in the data can be strong and points will have the tendency to occur in clusters. We wanted to illustrate this with Figure \ref{fig:abo} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} which highlights this dependence with red lines corresponding to most heavy heat waves in the history of Uccle in summers 1911 and 1976. Indeed, observations lying on the red lines have a dependence since they occurred during a same period of extreme heat. "\emph{Hot days are more likely to be followed by hot days}".
@@ -181,7 +191,7 @@ Moreover, we estimated the extremal index $\theta$ by the method of \citet{ferro
 
 
 
-\section{Nonstationary Analysis}
+\section{Parametric Nonstationary Analysis}
 
 
 As depicted in Figure \ref{first_fig}, even the assumption of a stationarity is likely to be poor for the sequence of annual maxima. 
@@ -194,18 +204,23 @@ Our particularly flexible modeling of the trend confirmed that the trend is stat
 \subsection{Comparing Different Models}\label{sec:comp0}
 
 
-The first approach we will conduct is by hand of the deviance statistic comparing sequentially nested models. The number of degrees of freedom (df) represent the number of parameters of the model (i.e., its complexity). The parametric models we will consider here are 
+The first approach we will conduct is by hand of the deviance statistic comparing sequentially nested models. The number of degrees of freedom (df) represent the number of parameters of the model (i.e., its complexity). The parametric models we will first consider are :
+
+\begin{enumerate}
+	\item \emph{Gumbel} : most simple EV-model with only 2 parameters as $\xi=0$.
+	\item \emph{stationary} : EV-Weibull model fitted in Section by MLE.
+	\item\label{i:linear} \emph{linear in $\mu$} : the location parameter follow $\mu(t)=\beta_0+\beta_1\cdot t$.
+	\item \emph{quadratic in $\mu$} :  the location parameter follow $\mu(t)=\beta_0+\beta_1\cdot t+\beta_2\cdot t^2$.
+	\item \emph{linear in $\mu$ and $\sigma$} : Same as model \ref{i:linear} for the location but with $\sigma(t)=\exp(\beta_0+\beta_1\cdot t)$. The use of the inverse link $b(\cdot)=\exp(\cdot)$ is to ensure positivity of $\sigma$ $\forall t$.
+	\item \emph{cubic in $\mu$} : the location parameter follow $\mu(t)=\beta_0+\beta_1\cdot t+\beta_2\cdot t^2+\beta_3\cdot t^3$.
+\end{enumerate}
 
 
-\begin{itemize}
-	\item 
-\end{itemize}
-
-
-In the \hyperref[sec:nnxp]{next Section} we will allow for more flexibility in the models
+In the \hyperref[sec:nnxp]{next Section} we will allow for more flexibility in the parameters.
+Sequential pairwise comparisons will always be made with the best retained model
 
 \begin{table}[!htbp] 
-	\centering \caption{ Comparisons of proposed (nested) models for the trend (only for $\mu$ ?). Significant p-values at $5\%$ are in bold. } 
+	\centering \caption{ Comparisons of proposed (nested) models for the trend. Significant p-values at $5\%$ are in bold. } 
 	\vspace{-.1cm}
 	\label{tab:comp_mod0} 
 \begin{tabular}{@{\extracolsep{5pt}} ccccc} 
@@ -214,37 +229,86 @@ In the \hyperref[sec:nnxp]{next Section} we will allow for more flexibility in t
 		\textbf{Model} & $\ell$ & df & p-value \\
 		\hline
 		Gumbel & $-256.84$  & $2$ & \\
-		stationary & $-251.8$ & $3$  & \boldsymbol{$0.14\%$} \\
-		\textbf{linear in} \boldsymbol{$\mu$} & $\boldsymbol{-241.8}$ & $\boldsymbol{4} $& \boldsymbol{$10^{-3}\%$}  \\
-		quadratic in $\mu$ & $-241.5$ & $5$ & $42\%$ \\
+		stationary  & $-251.75$ & $3$  & \boldsymbol{$0.14\%$} \\
+		\textbf{linear in} \boldsymbol{$\mu$} & $\boldsymbol{-241.81}$ & $\boldsymbol{4} $& \boldsymbol{$10^{-3}\%$}  \\
+		quadratic in $\mu$ & $-241.48$ & $5$ & $42\%$ \\
+		linear in $\mu$ and in $\sigma$ & $-241.69$ & $5$ & $63\%$ \\
+		cubic in $\mu$ & $-241.37$ & $6$ & $65\%$ \\
 		\hline \\[-1.8ex]
 \end{tabular}
- 	\vspace{-.3cm}
+ 	\vspace{-.15cm}
  \end{table} 
- 
+Note that the system is computationally singular\footnote{  } for cubic and more complex models. The model that is chosen by this procedure is model \ref{i:linear} which allows a linear model for the location. The choice is clearly supported by likelihood ratios and hence we can put great confidence that this selection is straightforward.
 
-The system is computationally singular for cubic and more complex models. 
+% We made the same kind of analysis for the scale parameter which we modeled by $\sigma(t)= \exp(\beta_0+\beta_1\cdot t)$ where the use of the inverse link $b(\cdot)=\exp(\cdot)$ is to ensure positivity of $\sigma$ $\forall t$. As explained in \hyperref[nstatio]{Section \textbf{\ref{nstatio}}}, it is unrealistic to try modeling $\xi$ as a smooth function of time..
 
+\iffalse
 \begin{itemize}
- 	\item Variation in time through t accounting for the season : $\mu (t)=\beta_0+\mathbbm{1}_i(t)$ where i=1,2,3,4 represent each
- 	 seasons.
+	\item Variation in time through t accounting for the season : $\mu (t)=\beta_0+\mathbbm{1}_i(t)$ where i=1,2,3,4 represent each seasons.
 \end{itemize}
 This is more appropriate in threshold exceedance models.
+\fi
 
- 
-We made the same kind of analysis for the scale parameter which we modeled by $\sigma(t)= \exp(\beta_0+\beta_1\cdot t)$ where the use of the inverse link $b(\cdot)=\exp(\cdot)$ is to ensure positivity of $\sigma$ $\forall t$. As explained in \hyperref[nstatio]{Section \textbf{\ref{nstatio}}}, it is unrealistic to try modeling $\xi$ as a smooth function of time.
 
+
+\subsection{Diagnostics and Inference} 
+
+
+As explained in \hyperref[sec:gev_nonstatio]{Section \textbf{\ref{sec:gev_nonstatio}}}, diagnostic tools such as quantile and probability plots can still be used in the context of nonstationarity with some transformations. 
+
+
+Results are shown in Figure \ref{fig:ppqqplot2} let in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} for the selected model.
+We can appreciate that the fit seems accurate. Problems for large quantiles in the QQ-plot is not problematic. 
+
+
+\subsubsection*{Return Levels}
+
+
+We will still use the return levels as our tool to make inference in EVT. We will then plot these return levels against years by taking 
+
+\begin{wrapfigure}{R}{0.43\textwidth}
+	\centering
+	\includegraphics[width=0.43\textwidth]{rl_nsta.pdf} % 6.64x5.17 inches
+	\caption{}
+	\label{fig:rl_nsta}
+\end{wrapfigure}
+
+We clearly see the linear pattern...
+
+Quite surprinsignly(?), we see that the fitted return level after $n$ years where $n$ is the number of data is $36.4^{\circ}c$ which is actually very close to the maximum of the series $36.6^{\circ}c$. 
+
+Caution should be exercised in practice concerning whether or not it is believable
+for the upward linear trend in maximum temperatures to continue to be valid.
 
 \section{Improvements with Neural Networks}\label{sec:nnxp}
 
+
+
+Model parameters are estimated via GML using a quasi-Newton BFGS optimization algorithm, and an appropriate GEV-CDN architecture which is the one that minimizes the appropriate cost-complexity model selection criteria ($\text{AIC}_{\text{c}}$ or BIC). Different structures are tested with combinational cases of stationary and nonstationary parameters of the GEV distribution, linear and nonlinear architecture of the CDN and combinations of the input covariates 
 
 
 \subsection*{Final Results}
 
 Note that we allowed the shape parameter $\xi$ to vary with time to consider most possible models while this was not advised for EV models. Anyway, we showed all the results and that does not change the final result. 
 
+As we mentioned, the NN is meant to approximate any functions with good accuracy. It comprise thus all the models considered so far.
+
+weight penalty regularization (controlled via the gaussian prior controlled via sd.norm in gev.fit or also gev.bag must be controlled by cross validation. That means that we have to find the value of the variance for this prior that provide the best fit (aic or bic ? )
+
+
+
+Based on Figure \ref{NN} which represent the fully connected architecture, the hierarchy of models we will consider is, by ascending complexity
+
+\begin{itemize}
+	\item 
+\end{itemize}
+
+We choosed the value of $6$ and $9$ (?) for $c_1$ and $c_2$
+
+\citet{cannon_flexible_2010} recommended to use between 1 and 3 (4) hidden layers due to the relatively small sample of annual extremes (here 117).
+
 \begin{table}[!htbp] 
-	\centering \caption{In} 
+	\centering \caption{Put the function nonlinear sigmoid or identity ?)} 
 	\vspace{-.1cm}
 	\label{tab:comp_mod} 
 	\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
@@ -264,12 +328,25 @@ Note that we allowed the shape parameter $\xi$ to vary with time to consider mos
  			$\mu_t$, $\sigma_t$, $\xi_t$ & -38.4 & 3.9 & \textcolor{red}{2} & 13 \\
  			\hline \\[-1.8ex] 
  \end{tabular}
- 	\vspace{-.3cm}
+ 	\vspace{-.15cm}
 \end{table} 
 
 This Table actually confirms the finding of Table 
 
  	
+ 	
+ (mis aussi ds chap3) 
+ "Another pitfall is its lack of interpretation of the relationships retrieved by the model between inputs and outputs but it bears noting that sensitivity analysis methods as in \citet{cannon_graph_2002} could be used to identify the form of nonlinear relationships between covariates and GEV distribution parameters or quantiles."
+ 
+ 
+\subsection*{Inference : Confidence intervals by Bootstrap }
+ 
+Empirical Coverage analysis of the bootstrap procedures ? (MOnte Carlo)
+
+
+ 
+ 
+ 
 \section{Comments and Comparisons with POT}
 
 In practical analysis of extreme values such data, there are plenty of ways to analyze and we considered
