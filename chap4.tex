@@ -32,9 +32,6 @@ Unlike other chapters, we will directly write $\theta$ as a 3D vector, unless st
 	See \citet{liu_simulation-efficient_2015}....
 	
 \end{enumerate}
-
-
-
 As the dependence becomes stronger, the run length n must be larger in order
 to achieve the same precision. Dependence exists both within the output for a single parameter
 (autocorrelations) and across parameters (cross-correlations), we discuss this issue in section \hyperref[label]{text}.
@@ -191,7 +188,6 @@ When applying MCMC algorithms to estimate posterior distributions, it is vital t
 	A common technique that we will apply is to run different chains several times and then combine a proportion of each chain (typically $50\%$) to get the final chain. This procedure wants to ensure a proper mixing behaviour. 
 	The potential scale reduction factor (Gelman diagnostic) is also a popular tool, see .
 \end{enumerate}
-
 We must keep in mind that no convergence diagnostics can prove that convergence really happened and validate the "model".
 However, a combined use of several relevant diagnostics will be required to increase our confidence that convergence actually happened.
 
@@ -207,7 +203,6 @@ The main ideas are :
 	 ie the jumps through the chain are too large,
 	\item If the variance of the proposal distribution is too low, then most proposals will be accepted
 \end{itemize}
-
 Both are harmful for the objective of an efficient "visit" of the whole parameter space. 
 
 
@@ -221,7 +216,6 @@ Widely speaking, we consider 2 different  types of algorithms in which it is pre
 	
 	\item When the components are updated one at a time, an acceptance rate of around 0.40 is recommended. It holds for the\emph{ Gibbs sampler} algorithm. 
 \end{itemize}
-
 Let's  (see \citet{Bédard_optimal_2008} for example for the first case)
 
 
@@ -385,7 +379,7 @@ There exist mainly two kinds of credible interval in the Bayesian sphere :
 	For some posterior distribution which are not symmetric, this could be misleading, thus it is not the most recommended interval. (see ..)
 	However, these are often easily obtained when we have a random smaple of the posterior...(?)
 \end{itemize}
-
+xxxxx
 
 \subsection{Distribution of Quantiles : Return Levels}
 

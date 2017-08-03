@@ -1,48 +1,35 @@
-\textbf{PUT the examples right in the place where it is mentioned in the theory.!} 
-"As we have seen in section 2.1.1.... and in section 2.2.2......"
-
-In this first analysis, we rely on 
-
-This analysis relies on \texttt{1intro\_stationary.R} code from the \textbf{/Scripts-R/} folder of the github repository.
-
-This analysis relies on 2Nonstationary.R and 2NeuralsNets.R code from the\textbf{ /Scripts-
-R/} folder of the github repository. A few results of nonstationary analysis in a POT approach are
-presented in Section 4.1 of the \textbf{Summary1\_intro} files in the \textbf{/vignettes} folder of the repository. 
-
-TABLE with nested models (gumbel, GEV, + linear trend, etc etc)
-
-
-The block-length selection an important issue of the analysis. It is important to choose a block-length which is large enough for the limiting arguments supporting the GEV approximation (see (\ref{exttheom})) to be valid, either a large bias in the estimates could occur. For example, if this is too short, the maxima may be too close of each other to assume independence. But a large block-length implies less data to work with, and thus a large variance of the estimates. A compromise must be found between bias and variance and as pointed out in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}}, yearly blocks seem justifiable not only for this reason (difficult to study?) but especially for their interpretability and ease of use.
-\textbf{However, we will "relax" the independence assumption and present the stationary analysis in the next section. It will not change our analysis.}
-
 
 \subsubsection*{Block-length } 
 
-As already explained, we will use a block-length of one year for convenience. 
-But this will induce wastage of data since we will not use at all 6 month (from October to March) as they will never have an annual maximum. Hence,
+The block-length selection an important issue of the analysis. It is important to choose a block-length which is large enough for the limiting arguments supporting the GEV approximation (\ref{exttheom}) to be valid, a large bias in the estimates could occur. But a large block-length implies less data to work with, and thus a large variance of the estimates. A compromise must be found as pointed out in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}}. We chose yearly blocks that seem justifiable not only for this reason but especially for their interpretability and ease of use.
+This will induce wastage of data since we will not use 6 month (from October to March) as they will never have an annual maximum. 
+An idea to prevent this wastage is to fit several GEV models on some subsets of the dataset divided by seasonal criterion. 
 
-Another idea to prevent this wastage is to fit several GEV models 
 
 
 \addcontentsline{toc}{subsection}{R packages for EVT}
 \subsubsection*{R packages in EVT}
 
-A plenty of packages exist for modelling extreme values in R. We have explored most of them and we used some to do the following analysis. We made comparisons and the results are the same for similar methods. Regarding the classic EVT analysis, we must name the following : 
-\vspace*{-.2cm}
+A bunch of packages exist for modeling extreme values in R. We have explored and used most of them some to do the following analysis. We made some comparisons and the results are obviously the same for similar methods. Regarding classical EVT analysis, we must name the following : 
+
 \begin{itemize}
-	\item[$\vartriangleright$] \texttt{ismev}, \texttt{evd}, \texttt{extRemes} (good for a wide nonstationary analysis with POT and nice tutorials, see e.g. \citet{gilleland_extremes_2016}), \texttt{ POT} (see \citet{ribatet_users_2006}), \texttt{evir}, \texttt{fExtremes}, $\dots$
+	\item[$\vartriangleright$] \texttt{ismev}, \texttt{evd}, \texttt{extRemes} (good for a wide nonstationary analysis with POT and nice tutorials, see e.g. \citet{gilleland_extremes_2016}), \texttt{POT} (see \citet{ribatet_users_2006}), \texttt{evir}, \texttt{fExtremes}, $\dots$
 \end{itemize}
 
 Whereas lots of the package are doing the same analysis but with different tools, we decided to rely mostly on \texttt{ismev} as it is the package used in the book of \citet{coles_introduction_2001}.
 
+
 \section{First Inferences of the Model}
 
-Whereas the whole content of \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} is important to understand the concepts used in this section, we will now be mostly based on inferential methods discussed in \hyperref[sec::gevinfernce]{Section\textbf{ \ref{sec::gevinfernce}}}
+Whereas the whole content of \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} is important to understand the concepts used in this section, we will now be mostly based on inferential methods discussed in \hyperref[sec::gevinfernce]{Section\textbf{ \ref{sec::gevinfernce}}}, return levels in \hyperref[rlgev]{Section\textbf{ \ref{rlgev}}} and diagnostics in \hyperref[sec:diag]{Section\textbf{ \ref{sec:diag}}}.
 
 \subsection*{Maximum Likelihood}\label{sec:mlepratic}
 
-Relying on the R packages cited above ,but also by checking it manually, i.e. by numerically solving the optimization problem, that is minimizing the negative log-likelihood, with the \texttt{nlm} routine using a Newton-Raphson algorithm (originated from \citet{dennis_numerical_1987}). This is based on approximating the log-likelihood by a quadratic function, the second order Taylor series approximation of the log-likelihood for a given point.  The results are shown in Table \ref{tab:estlik} :
-\vspace{-.1cm}
+Relying on functions from the R packages cited above, but also by checking it manually, that is by numerically solving the optimization problem which is a minimization of the negative log-likelihood. This can be done with the \texttt{nlm} routine using a Newton-Raphson algorithm (\citet{dennis_numerical_1987}). This algorithm is based on an approximation of the log-likelihood by a quadratic function, the second order Taylor series approximation of the log-likelihood for a given point.
+
+Estimation results for the annual maxima series are shown in Table \ref{tab:estlik} :
+
+\vspace{-.05cm}
 \begin{table}[!htbp] \centering 
 	\caption{Maximum likelihood estimation of the three GEV parameters} 
 		\vspace{-.2cm}
@@ -57,25 +44,27 @@ Relying on the R packages cited above ,but also by checking it manually, i.e. by
 	\end{tabular} 
 \end{table} 
 \vspace{-.2cm}
+The important thing to note from Table \ref{tab:estlik} is the value of the \textbf{shape} parameter which is negative. It means that we are under a Weibull-type of the GEV family. From Figure \ref{gevdens} the corresponding density has the form of the red line, i.e. having a finite right endpoint.
+Moreover, we confirmed that by doing a likelihood ratio test comparing this with a Gumbel distribution. Results are let in Table \ref{tab:comp_mod0}.
 
-From this table \ref{tab:estlik}, an important thing to note is the value of the \textbf{shape} parameter which is negative which means that we are under a Weibull-type distribution  From figure \ref{gev3plot} this means that the density distribution has the form of the red line, i.e. having a .
-Moreover, we confirmed that by doing a likelihood ratio test comparing this distribution with a Gumbel distribution. We obtained a p-value of $10^{-3}$ leading to a rejection of the Gumbel hypothesis. This obviously implies rejection of the Fréchet distribution.
-
-The Weibull-type implies that the distribution have an estimated right endpoint given by $\hat{x}_*=\hat{\mu}-\hat{\sigma}\cdot\hat{\xi}^{-1}=38.77$. Comparing this value with the maximum value of the series (=36.6) tells us that the sample properties of this model take into account the uncertainty, from the fact that there are only 116 years of data. Hence, it allows to go beyond this maximum value, with very small probability. This is also highlighted in figure \ref{fig:rl_empdes} (right plot) where we remark that there are still probabiliy mass beyond the minimum and the maximum values of the series.
+The Weibull-type implies that the distribution have an estimated right endpoint given by $\hat{x}_*=\hat{\mu}-\hat{\sigma}\cdot\hat{\xi}^{-1}=38.77^{\circ}c$. Comparing this value with the maximum value of the series ($=36.6^{\circ}c$) tells us that properties of this model take into account the uncertainty from the fact that there are only $116$ years of data. Hence, it allows to go beyond this maximum value, with very small probability. This will be highlighted in Figure \ref{fig:rl_empdes} (right plot) where we remark that there are still probabiliy mass beyond the minimum and the maximum values of the series.
 
 \paragraph*{Profile log-likelihood intervals} 
-As discussed in \hyperref[sec:g]{Section \textbf{\ref{sec::gevinfernce}}}, \emph{profile likelihood intervals} are preferred for individual parameters to handle the poor normal approximation of the MLE. We let the results in Figure \ref{fig:proflikpar} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}}, provided by the \texttt{ismev} package.
-These intervals are constructed in the following way : Search for the horizontal line and then subtracting the maximum log-likelihood by half the corresponding upper quantile of the $\chi^2_{\text{df}}$ for the $\text{df}=1$ parameter of interest. We notice that :
+As discussed in \hyperref[sec::gevinfernce]{Section \textbf{\ref{sec::gevinfernce}}}, \emph{profile likelihood intervals} are often preferred for individual parameters to handle the poor normal approximation of the MLE. Results provided by the \texttt{ismev} package are in Figure \ref{fig:proflikpar} let in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}}.
+These intervals are constructed in the following way : search for the horizontal line and then subtract the maximum log-likelihood by half the corresponding upper quantile of the $\chi^2_{\text{df}}$ for $\text{df}=1$ parameter of interest. We notice that :
 \begin{itemize}
 	\item Even at $99\%$, the interval for $\hat{\xi}$ does not contain 0 supporting our statement that the distribution is left heavy-tailed and right bounded.
+	
+	\item $95\%$ intervals for the location and scale parameters are $[30,\ 31]$ and $[1.8, \ 2.4]$ respectively.
+	
 	\item The intervals do not present much asymetries. In fact, this will be more relevant for return levels as we will see in the \hyperref[sec:rlemp]{next Section}.
 \end{itemize}
 
 
 \subsection*{Probability-Weighted-Moments}
 
-It is always a good practice to check if different methods would lead to significantly different results.
-The second estimator we have seen is the \emph{probability-weighted-moments}. Results are shown in Table \ref{tab:estpwm}.
+It is always a good practice to check whether different methods lead to significantly different results.
+A second estimator we have seen is the \emph{probability-weighted-moments}. Results are shown in Table \ref{tab:estpwm} :
 
 \vspace{-.1cm}
 \begin{table}[!htbp] \centering 
@@ -92,17 +81,14 @@ The second estimator we have seen is the \emph{probability-weighted-moments}. Re
 	\end{tabular} 
 \end{table} 
 \vspace{-.2cm}
-
-We directly see that these results are very close to the estimates of Table \ref{tab:estlik}, in particular for the EVI. This is encouraging for further inference, and we have hence confidence to be under a Weibull-type
-model. For convenience, we will only keep the maximum likelihood estimates to work with in the following.
+We directly see that these results are very close to the MLE's of Table \ref{tab:estlik}, in particular for the EVI. This is encouraging for further inference, and we have hence confidence to be under a Weibull-type GEV model. For convenience, we will only keep the maximum likelihood estimates to work with in the following.
 
 
 
 \subsection{Return Levels}\label{sec:rlemp}
 
-First presented in \hyperref[rlgev]{Section \textbf{\ref{rlgev}}}, return levels are a very appreciate tool by the practitioners for inference in EVT in an environmental context.
-We saw that usual likelihood intervals relying on the normal approximation are often not reliable for
-return levels. Hence, we decided to compute the profile likelihood intervals and compare both values.
+First presented in \hyperref[rlgev]{Section \textbf{\ref{rlgev}}}, return levels are very appreciated by the practitioners for inference in EVT in an environmental context.
+Usual likelihood intervals relying on the normal approximation are not reliable for return levels. Hence, we decided to compute the profile likelihood intervals and compare both values.
 
 
 \vspace{-.1cm}
@@ -122,39 +108,37 @@ return levels. Hence, we decided to compute the profile likelihood intervals and
 		\hline \\[-1.8ex] 
 	\end{tabular} 
 \end{table} 
-\vspace{-.2cm}
 
-The interpretation we can make from Table \ref{tab:rl1} is that, for example, $36.23^{\circ} c$ is the temperature which will be exceeded on average once every 100 years. Note that very long term extrapolation should be tempered by caution since we only have 116 years of data and predicting far beyond this value will
+
+The interpretation we can make from Table \ref{tab:rl1} is that, for example, the estimated $100$-year return level is $36.23^{\circ} c$ and that is the temperature which will be exceeded on average once every $100$ years. Note that very long term extrapolation should be tempered by caution since we only have 116 years of data and predicting far beyond this value will
 be unreliable. We clearly see the shift of the profile likelihood confidence intervals compared with the
-normal intervals. This can also be seen on the return level plot of Figure \ref{fig:rl_empdes} where we clearly see blue points going higher than red lines for higher values of the return period. Moreover, we see that the profile likelihood intervals are more precise\footnote{In the sense of a narrower confidence interval. A Monte-Carlo study of accuracy could be made using observed data.} 1 for "small" return periods, that is approximatively until half the total number of annual data, and then profile likelihood intervals become larger. This shows how profile likelihood intervals takes more into account the uncertainty of predicting in a far future.
+normal intervals. This can also be seen on the return level plot in Figure \ref{fig:rl_empdes} where we clearly see blue points going higher than red lines for higher values of the return period. Moreover, we see that the profile likelihood intervals are more precise\footnote{In the sense of a narrower confidence interval. A Monte-Carlo study of accuracy could be made using observed data.} for "small" return periods, approximatively until half the total number of annual data, and then profile likelihood intervals become wider than normal intervals. This shows how profile likelihood intervals take into account the uncertainty of long-term predictions.
 Hence, in addition to arguments already provided, uncertainty but also climate warming lead us to
-have preference for profile likelihood intervals. A bit surprisingly, this method is not used by default in EV packages such as \texttt{ismev}.
-
+have a preference for profile likelihood intervals and, quite surprisingly, this method is not used by default in EV packages such as \texttt{ismev}.
 
 
 \subsection{Diagnostics}
 
 \hyperref[sec:diag]{Section \textbf{\ref{sec:diag}}} provided us tools to check the accuracy of the fitted model. The goal is to check that the
-model $\hat{F}$ fitted by MLE is accurate enough for the true model $F$ which is estimated by the empirical df
+model $\hat{F}$ fitted by MLE is accurate enough for the true distribution $F$ which is estimated by the empirical df
 (\ref{eq:emprdist}). First, we present the quantile and the probability plots in Figure \ref{fig:ppqqplot}.
 
 \begin{figure}[!htb]
 	\centering	\includegraphics[width=.7\linewidth]{pp_qqplot.pdf}\caption{Quantile (left) and probability (right) plots for the stationary GEV model fitted by MLE.}\label{fig:ppqqplot}
 \end{figure}
 
-Both plots show points lying very close to the unit diagonal showing that the empirical distribution
-is very close to the fitted model and hence putting confidence that our model fits our data accurately.
-Right plot of Figure \ref{fig:rl_empdes} has the same interpretation and leads to the same conclusion.
+Both plots show points lying very close to the unit diagonal, demonstrating the empirical df is very close to the fitted model and hence putting confidence that our model fits our data accurately.
+Right plot of Figure \ref{fig:rl_empdes} has a similar interpretation and leads to the same conclusion, although the fitted model has a higher peak.
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=.75\linewidth]{rl_empdes.pdf}\caption{(Left) Return level plot with red lines representing normal confidence intervals and blue points are individual profile likelihood intervals for return levels, and horizontal dotted line represent the right endpoint of the	fitted model. (Right) kernel density in blue compared with density plot of the fitted model in red, with left and right	vertical dotted lines represent respectively the minimum and maximum value of the yearly maxima series.}\label{fig:rl_empdes}
+	\centering	\includegraphics[width=.75\linewidth]{rl_empdes.pdf}\caption{(Left) Return level plot with red lines representing normal confidence intervals, blue points are individual profile likelihood intervals for return levels and horizontal dotted line just represent the right endpoint of the	fitted model. (Right) kernel density in black compared with the density of the fitted model in green, with dotted lines representing the \underline{endpoints} of the distributions, and hence empirical density should not continue outside these lines.}\label{fig:rl_empdes}
 \end{figure}
 
 
 \subsection*{Return Level Plot}
 
 Another tool is available in EVT to check the fit of a model is the return level plot. It allows to compare
-observations with the return levels coming from the EV Weibull model fitted by MLE. Left plot of
+observations with return levels coming from the EV Weibull model fitted by MLE. Left plot of
 Figure \ref{fig:rl_empdes} shows us a concave shape of the return levels with the return period wich asymptotes to the right endpoint $x_*$ of the fitted EV Weibull model. This comes from the fact that $\xi<0$. We remark
 that all points are very close the estimated return level and hence we put confidence that our model
 is suitable. Moreover, all these points are inside the normal confidence intervals (and recall that profile

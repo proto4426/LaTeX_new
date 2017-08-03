@@ -175,7 +175,7 @@ In order to compare our models, that is for example to check whether a trend is 
 	D = 2\big\{\ell_1(\mathcal{M}_1)-\ell_0(\mathcal{M}_0)\big\},
 	\end{equation}
 	for two nested models $\mathcal{M}_0\subset \mathcal{M}_1$, where $\ell_1(\mathcal{M}_1)$ and $\ell_0(\mathcal{M}_0)$ are the maximized log-likelihoods (\ref{eq:loglikgevnonstatio}) under models $\mathcal{M}_1$ and $\mathcal{M}_0$ respectively.
-	Asymptotically, the distribution of $D$ is $\chi^2_k$ with $k$ degrees of freedom (df) representing the difference of parameters between model $\mathcal{M}_1$ and $\mathcal{M}_0$. Comparisons of $D$ with the $\chi^2_k$ critical value will guide our decision.  
+	Asymptotically, the distribution of $D$ is $\chi^2_k$ with $k$ degrees of freedom representing the difference of parameters between model $\mathcal{M}_1$ and $\mathcal{M}_0$. Comparisons of $D$ with the $\chi^2_k$ critical value will guide our decision.  
 	
 	\item\label{aicbic} It is sometimes preferable to rely on other criterion, for example when the number of models to be compared is large or their construction is not straightforward. We will make use of the \emph{Bayesian Information Criterion} (BIC) and  the \emph{Akaike Information Criterion (corrected) } ($\text{AIC}_{\text{c}}$). For $n$ observations and $p$ parameters, 
 we define 
@@ -393,7 +393,6 @@ where $w_{kj}^{(2)}$ is the hidden-ouput layer weight and $b^{(2)}_k$ is the hid
 \item The GEV parameters are obtained by applying the output-layer activation functions $g_k(\cdot)$ denoted in Figure \ref{NN}. As usual, the function $g_2(\cdot)$ is to force $\sigma$ to take positive values and $g_3(\cdot)$ is to constraint $\xi$ to lie within $[-\xi^{*},\ \xi^{*}]$. Again, we notice that it is not recommended to allow $\xi$ to vary with time. 
 	
 \end{itemize}
-
 A hierarchy of models can be defined by varying the structure of the CDN (number of hidden layers, which activation function $m(\cdot)$ and weights connections)  and compared by the selection criterion such as the BIC or $\text{AIC}_{\text{c}}$ discussed in (\ref{aicbic}). 
 
 
@@ -438,6 +437,5 @@ There exist a large panel of different bootstrap procedures to construct confide
 	\item Repeat steps \ref{itboot} to \ref{it5:boot} a large number of times B.
 	
 \end{enumerate}
-
 \citet{cannon_flexible_2010} found that \emph{parametric} bootstrap outperformed the \emph{residual} bootstrap in the GEV-CDN framework, but he did not consider alternative bootstrap approaches such as the \emph{bias-adjusted percentile} which might yield better calibrated confidence intervals.
 Empirical Monte-Carlo comparisons of coverage from all available methods considered so far would be interesting. Furthermore, the incoming chapter will introduce other methods to construct intervals in a strictly Bayesian approach  relying also on Monte-Carlo sampling.

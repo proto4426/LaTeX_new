@@ -641,7 +641,7 @@ This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001}, \cite
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
  
-After having theoretically defined useful concepts in EVT, we will now introduce the practical analysis of this thesis that consist of analyzing daily maximum temperatures in Uccle from 1901 to 2016.  
+Since we have theoretically defined useful concepts in EVT, we will now introduce the practical analysis of this thesis that consist of analyzing daily maximum temperatures in Uccle from 1901 to 2016.  
 We already showed the distribution of these data in Figure \ref{fig:pot_plot} to introduce the POT approach. This chapter will present an introductory analysis of the annual maxima of these data. We chose annual maxima in order to later provide a convenient GEV modeling. We will then first use several techniques to analyze these data before going further into the EV models in the following chapters. 
 
 After a brief presentation of the repository which contains the R package created for this thesis and the structure for the scripts that contains the code that created all the analysis, we will briefly present the shiny applications created to enhance visualizations. Then, \hyperref[sec:presuccle]{Section \textbf{\ref{sec:presuccle}}} will present data and their source(s). \hyperref[sec:firstana]{Section \textbf{\ref{sec:firstana}}} will first describe data and compare models to represent the data before going further on the trend analysis with splines derivatives in a Generalized Additive Model to assess significance of the trend with correction for simultaneous tests and provide first aspects in the issue of Climate Warming without using extreme models. 
@@ -659,6 +659,16 @@ This chapter will then not explicitly use techniques presented in the previous c
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
 
+
+In this first analysis, we rely on 
+
+This analysis relies on \texttt{1intro\_stationary.R} code from the \textbf{/Scripts-R/} folder of the github repository.
+
+This analysis relies on \texttt{2Nonstationary.R} and \texttt{2NeuralsNets.R} codes from the\textbf{ /Scripts-
+	R/} folder of the \hyperref[https://github.com/proto4426/PissoortThesis]{github repository}. A few results of nonstationary analysis in a POT approach are
+presented in Section 4.1 of the \textbf{Summary1\_intro} files in the \textbf{/vignettes} folder of the repository. 
+
+\newpage
 \include*{chap6}
 
 

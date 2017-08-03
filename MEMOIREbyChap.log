@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.13)  2 AUG 2017 11:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.13)  3 AUG 2017 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2121,7 +2121,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 323.
 
-<lsba.jpg, id=464, 283.2984pt x 283.2984pt>
+<lsba.jpg, id=460, 283.2984pt x 283.2984pt>
 File: lsba.jpg Graphic file (type jpg)
  <use lsba.jpg>
 Package pdftex.def Info: lsba.jpg used on input line 331.
@@ -2234,14 +2234,14 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 
 [5]
 LaTeX Font Info:    Try loading font information for T1+LinuxLibertineMonoT-TLF
- on input line 93.
+ on input line 92.
 
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/T1LinuxLibertineMonoT-TLF.fd
 File: T1LinuxLibertineMonoT-TLF.fd 2012/12/06 (autoinst) Font definitions for T
 1/LinuxLibertineMonoT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineMonoT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 93.
+(Font)              scaled to size 10.95pt on input line 92.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2254,15 +2254,10 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 \openout8 = `MEMOIREbyChap.toc'.
 
  [7] (./MEMOIREbyChap.lof
-LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 19.
-
-(/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
-File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
-LinuxLibertineT-TLF.
-)
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 19.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 19.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 6.0pt on input line 19.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2382,11 +2377,6 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 ) [4
 
 ] (./chap1.tex
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 32.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 32.
-
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -2435,11 +2425,20 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/it' will be
 (Font)              scaled to size 10.0pt on input line 220.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 220.
- <gev3.pdf, id=945, 487.8225pt x 404.51125pt>
+ <gev3.pdf, id=940, 487.8225pt x 404.51125pt>
 File: gev3.pdf Graphic file (type pdf)
  <use gev3.pdf>
 Package pdftex.def Info: gev3.pdf used on input line 233.
 (pdftex.def)             Requested size: 364.70882pt x 302.42596pt.
+LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
+ input line 245.
+
+(/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
+File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
+LinuxLibertineT-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 245.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2578,7 +2577,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineMonoT-TLF/m/n' will be
  [23
 
 ] (./chap2.tex
-<pot_plot.pdf, id=1259, 510.90875pt x 373.395pt>
+<pot_plot.pdf, id=1255, 510.90875pt x 373.395pt>
 File: pot_plot.pdf Graphic file (type pdf)
  <use pot_plot.pdf>
 Package pdftex.def Info: pot_plot.pdf used on input line 11.
@@ -2631,7 +2630,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 
 [29]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/it' will be
-(Font)              scaled to size 12.0pt on input line 385.
+(Font)              scaled to size 12.0pt on input line 384.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2756,7 +2755,7 @@ LaTeX Warning: Hyper reference `likintro' on page 45 undefined on input line 24
 .
 
 
-LaTeX Warning: Hyper reference `label' on page 45 undefined on input line 40.
+LaTeX Warning: Hyper reference `label' on page 45 undefined on input line 37.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2781,7 +2780,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 [47]
 
 Package natbib Warning: Citation `stan_stan_2016' on page 48 undefined on input
- line 153.
+ line 150.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2792,7 +2791,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 [48]
 
 Package natbib Warning: Citation `Bédard_optimal_2008' on page 49 undefined on 
-input line 225.
+input line 219.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2815,9 +2814,6 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [51]
-Underfull \vbox (badness 1946) has occurred while \output is active []
-
-
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -2860,31 +2856,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--39
  []
 
 
-Overfull \hbox (23.07178pt too wide) in paragraph at lines 40--41
-[]\T1/LinuxLibertineT-TLF/m/n/10.95 The fol-low-ing anal-y-sis re-lies on \T1/L
-inuxLibertineMonoT-TLF/m/n/10.95 1in-ter_stationary.R \T1/LinuxLibertineT-TLF/m
-/n/10.95 and \T1/LinuxLibertineMonoT-TLF/m/n/10.95 1in-tro_trends(splines).R
- []
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
+[56]
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[56] <gg12.pdf, id=1915, 487.8225pt x 310.15875pt>
+[57] <gg12.pdf, id=1920, 487.8225pt x 310.15875pt>
 File: gg12.pdf Graphic file (type pdf)
  <use gg12.pdf>
-Package pdftex.def Info: gg12.pdf used on input line 88.
+Package pdftex.def Info: gg12.pdf used on input line 81.
 (pdftex.def)             Requested size: 364.70882pt x 231.88493pt.
 
-
-Package Fancyhdr Warning: \headheight is too small (0.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[57]
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -2894,7 +2883,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 [58 <./gg12.pdf>]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 112.
+(hyperref)                be the same. Added a new anchor on input line 103.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2905,7 +2894,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 [59] <post_draws.pdf, id=1976, 492.84125pt x 301.125pt>
 File: post_draws.pdf Graphic file (type pdf)
  <use post_draws.pdf>
-Package pdftex.def Info: post_draws.pdf used on input line 152.
+Package pdftex.def Info: post_draws.pdf used on input line 146.
 (pdftex.def)             Requested size: 341.91321pt x 208.91597pt.
 
 
@@ -2914,22 +2903,16 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[60 <./post_draws.pdf>] <splines.pdf, id=2005, 1032.85875pt x 310.15875pt>
+[60 <./post_draws.pdf>] <splines.pdf, id=2001, 1032.85875pt x 310.15875pt>
 File: splines.pdf Graphic file (type pdf)
 
 <use splines.pdf>
-Package pdftex.def Info: splines.pdf used on input line 194.
+Package pdftex.def Info: splines.pdf used on input line 181.
 (pdftex.def)             Requested size: 451.32794pt x 135.52847pt.
-LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 194.
-
-
-LaTeX Warning: Hyper reference `sec:ananonsta' on page 61 undefined on input li
-ne 211.
-
-
-LaTeX Warning: Reference `sec:ananonsta' on page 61 undefined on input line 211
-.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 7.0pt on input line 181.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 5.0pt on input line 181.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2950,15 +2933,17 @@ Chapter 6.
 
 \openout3 = `MEMOIREbyChap.mtc'.
 
-(./MEMOIREbyChap.mtc7) (./chap6.tex [63
+(./MEMOIREbyChap.mtc7)
 
-]
+LaTeX Warning: Hyper reference `https://github.com/proto4426/PissoortThesis' on
+ page 63 undefined on input line 668.
+
+[63
+
+] (./chap6.tex
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 27.
-
-
-LaTeX Warning: Reference `gev3plot' on page 64 undefined on input line 61.
+(hyperref)                than one, level fixed on input line 10.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2968,25 +2953,22 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 
 [64]
 
-LaTeX Warning: Hyper reference `sec:g' on page 65 undefined on input line 67.
-
-
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[65] <pp_qqplot.pdf, id=2098, 410.53375pt x 210.7875pt>
+[65] <pp_qqplot.pdf, id=2101, 410.53375pt x 210.7875pt>
 File: pp_qqplot.pdf Graphic file (type pdf)
  <use pp_qqplot.pdf>
-Package pdftex.def Info: pp_qqplot.pdf used on input line 142.
+Package pdftex.def Info: pp_qqplot.pdf used on input line 127.
 (pdftex.def)             Requested size: 319.1176pt x 163.8475pt.
 
-<rl_empdes.pdf, id=2100, 1003.75pt x 445.665pt>
+<rl_empdes.pdf, id=2103, 916.42375pt x 445.665pt>
 File: rl_empdes.pdf Graphic file (type pdf)
  <use rl_empdes.pdf>
-Package pdftex.def Info: rl_empdes.pdf used on input line 150.
-(pdftex.def)             Requested size: 341.91321pt x 151.80971pt.
+Package pdftex.def Info: rl_empdes.pdf used on input line 134.
+(pdftex.def)             Requested size: 341.91321pt x 166.27393pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -2995,6 +2977,9 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [66 <./pp_qqplot.pdf>]
+Underfull \vbox (badness 1824) has occurred while \output is active []
+
+
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
  Make it at least 13.59999pt.
@@ -3004,7 +2989,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 [67 <./rl_empdes.pdf>]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 185.
+(hyperref)                be the same. Added a new anchor on input line 169.
 
 
 Package Fancyhdr Warning: \headheight is too small (0.0pt): 
@@ -3015,7 +3000,7 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 [68] <rl_nsta.pdf, id=2168, 295.1025pt x 272.01625pt>
 File: rl_nsta.pdf Graphic file (type pdf)
  <use rl_nsta.pdf>
-Package pdftex.def Info: rl_nsta.pdf used on input line 271.
+Package pdftex.def Info: rl_nsta.pdf used on input line 255.
 (pdftex.def)             Requested size: 196.0269pt x 180.69345pt.
 
 
@@ -3199,37 +3184,37 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
 
 [11]
 Appendix C.
-<gevdif.pdf, id=2379, 652.4375pt x 529.98pt>
+<gevdif.pdf, id=2382, 652.4375pt x 529.98pt>
 File: gevdif.pdf Graphic file (type pdf)
  <use gevdif.pdf>
 Package pdftex.def Info: gevdif.pdf used on input line 429.
 (pdftex.def)             Requested size: 455.8843pt x 370.32841pt.
 
-<violin_density.pdf, id=2380, 1009.7725pt x 384.43625pt>
+<violin_density.pdf, id=2383, 1009.7725pt x 384.43625pt>
 File: violin_density.pdf Graphic file (type pdf)
 
 <use violin_density.pdf>
 Package pdftex.def Info: violin_density.pdf used on input line 437.
 (pdftex.def)             Requested size: 455.8843pt x 173.5637pt.
- <acfresgam.pdf, id=2381, 569.12625pt x 243.91125pt>
+ <acfresgam.pdf, id=2384, 569.12625pt x 243.91125pt>
 File: acfresgam.pdf Graphic file (type pdf)
 
 <use acfresgam.pdf>
 Package pdftex.def Info: acfresgam.pdf used on input line 441.
 (pdftex.def)             Requested size: 455.8843pt x 195.38606pt.
- <diagnogam.pdf, id=2382, 420.57124pt x 292.09125pt>
+ <diagnogam.pdf, id=2385, 420.57124pt x 292.09125pt>
 File: diagnogam.pdf Graphic file (type pdf)
 
 <use diagnogam.pdf>
 Package pdftex.def Info: diagnogam.pdf used on input line 464.
 (pdftex.def)             Requested size: 387.50443pt x 269.12831pt.
- <max_gam.pdf, id=2383, 435.6275pt x 278.03876pt>
+ <max_gam.pdf, id=2386, 435.6275pt x 278.03876pt>
 File: max_gam.pdf Graphic file (type pdf)
 
 <use max_gam.pdf>
 Package pdftex.def Info: max_gam.pdf used on input line 469.
 (pdftex.def)             Requested size: 319.1176pt x 203.6751pt.
- <proflikpar.pdf, id=2384, 581.17125pt x 220.825pt>
+ <proflikpar.pdf, id=2387, 581.17125pt x 220.825pt>
 File: proflikpar.pdf Graphic file (type pdf)
 
 <use proflikpar.pdf>
@@ -3237,7 +3222,7 @@ Package pdftex.def Info: proflikpar.pdf used on input line 479.
 (pdftex.def)             Requested size: 387.50443pt x 147.241pt.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineMonoT-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 479.
- <proflikrl.pdf, id=2385, 675.52374pt x 245.91875pt>
+ <proflikrl.pdf, id=2388, 675.52374pt x 245.91875pt>
 File: proflikrl.pdf Graphic file (type pdf)
 
 <use proflikrl.pdf>
@@ -3250,19 +3235,19 @@ LaTeX Warning: Reference `tab:rlprof' on page XII undefined on input line 485.
 
 LaTeX Warning: Reference `tab:rlprof' on page XII undefined on input line 485.
 
-<acf_gev.pdf, id=2386, 900.36375pt x 321.2pt>
+<acf_gev.pdf, id=2389, 900.36375pt x 321.2pt>
 File: acf_gev.pdf Graphic file (type pdf)
  <use acf_gev.pdf>
 Package pdftex.def Info: acf_gev.pdf used on input line 490.
 (pdftex.def)             Requested size: 433.08868pt x 154.50262pt.
 
-<abo.pdf, id=2387, 466.74374pt x 278.03876pt>
+<abo.pdf, id=2390, 466.74374pt x 278.03876pt>
 File: abo.pdf Graphic file (type pdf)
  <use abo.pdf>
 Package pdftex.def Info: abo.pdf used on input line 497.
 (pdftex.def)             Requested size: 319.1176pt x 190.1075pt.
 
-<ppqq_trans.pdf, id=2388, 596.2275pt x 272.01625pt>
+<ppqq_trans.pdf, id=2391, 596.2275pt x 272.01625pt>
 File: ppqq_trans.pdf Graphic file (type pdf)
  <use ppqq_trans.pdf>
 Package pdftex.def Info: ppqq_trans.pdf used on input line 502.
@@ -3515,13 +3500,13 @@ Package Fancyhdr Warning: \headheight is too small (0.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [27]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 750.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 750.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 760.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 760.
  (./MEMOIREbyChap.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 750.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 750.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 760.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 760.
 Package rerunfilecheck Info: File `MEMOIREbyChap.out' has not changed.
-(rerunfilecheck)             Checksum: 4391B75B739CCC10B371797CFB9EB383;8998.
+(rerunfilecheck)             Checksum: A941A08EB0AFFA1975761E7492B9A638;8907.
 
 
 LaTeX Warning: There were undefined references.
@@ -3531,20 +3516,20 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36007 strings out of 493029
- 639691 string characters out of 6136234
- 920046 words of memory out of 5000000
- 37757 multiletter control sequences out of 15000+600000
- 248890 words of font info for 186 fonts, out of 8000000 for 9000
+ 36000 strings out of 493029
+ 639629 string characters out of 6136234
+ 914830 words of memory out of 5000000
+ 37754 multiletter control sequences out of 15000+600000
+ 258040 words of font info for 186 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,18n,92p,1065b,1894s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_d6jdyt.enc}{/us
 r/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvip
 s/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/t
 exlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_u7qtuy.enc}{/usr/share/texlive
-/texmf-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{/usr/share/texmf/fonts/e
-nc/dvips/lm/lm-mathex.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libert
-ine/lbtn_naooyc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lb
+/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr/share/texlive/texmf
+-dist/fonts/enc/dvips/libertine/lbtn_ki75ao.enc}{/usr/share/texmf/fonts/enc/dvi
+ps/lm/lm-mathex.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lb
 tn_7grukw.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_tlu
 kpt.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.en
 c}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}{/us
@@ -3574,10 +3559,10 @@ hare/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb>
-Output written on MEMOIREbyChap.pdf (115 pages, 4098446 bytes).
+Output written on MEMOIREbyChap.pdf (115 pages, 4096220 bytes).
 PDF statistics:
- 2905 PDF objects out of 2984 (max. 8388607)
- 2685 compressed objects within 27 object streams
- 629 named destinations out of 1000 (max. 500000)
- 1020 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2908 PDF objects out of 2984 (max. 8388607)
+ 2688 compressed objects within 27 object streams
+ 626 named destinations out of 1000 (max. 500000)
+ 1012 words of extra memory for PDF output out of 10000 (max. 10000000)
 
