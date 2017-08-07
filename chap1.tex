@@ -261,7 +261,7 @@ The \textbf{Type}  $\boxed{\textbf{\text{I}}}$ or \textbf{Gumbel} distribution $
 \begin{equation}
 \displaystyle{\lim_{n \to \infty}}\text{Pr}\Big\{ a_n^{-1}(X_{(n)}-b_n)\leq z\Big\}=G_1(z).
 \end{equation}
-Hence, we can easily find that
+Hence, we find that
 \begin{equation*}
 \begin{aligned}
 \text{Pr}\Big\{ a_n^{-1}(X_{(n)}-b_n)\leq z\Big\}
@@ -286,8 +286,8 @@ we find the so-called standard \emph{Gumbel} distribution in the limit.
 Note that the same can be retrieved with $X_j\stackrel{iid}{\sim}N(0,1)$ and with sequences $a_n=-\Phi^{-1}(1/n)$ and $b_n=1/a_n$. 
 
 \vspace{.2cm}
-Typically unbounded distributions, for example the Exponential and Normal, whose tails fall off exponentially or faster, will have the Gumbel limiting distribution for the maxima. They will have, in particular, medians (and other quantiles) that grow as $n\rightarrow\infty$ at the rate
-of 'some power of' $\log n$. This is a typical example of light-tailed distribution (i.e., whose tails decay exponentially, as defined in \hyperref[app:tails]{Appendix \textbf{\ref{app:tails}}}).
+Typically unbounded distributions, for example the Exponential and Normal, whose tails fall off exponentially or faster, will have the Gumbel limiting distribution for the maxima. They will have medians (and other quantiles) that grow as $n\rightarrow\infty$ at the rate
+of some power of $\log n$. This is a typical example of light-tailed distribution (i.e., whose tails decay exponentially, as defined in \hyperref[app:tails]{Appendix \textbf{\ref{app:tails}}}).
 
 \vspace{-.3cm}
 \subsection*{Convergence to Fréchet distribution}
@@ -295,12 +295,12 @@ of 'some power of' $\log n$. This is a typical example of light-tailed distribut
 The \textbf{Type}  $\boxed{\textbf{\text{II}}}$ or \textbf{Fréchet type} (or \emph{Fréchet-Pareto}) distribution $G_2(x)$ has strong relations with the Pareto distribution and also the Generalized Pareto Distribution that will be presented in \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}}. These are distributions which are typically heavy- or fat-tailed (see \hyperref[app:tails]{Appendix \textbf{\ref{app:tails}}}).
 
 %[Practical analysis of extreme values p.51]
-Following \citet{beirlant_practical_1996}, when starting with a sequence $\{X_j\}$ of $n$ iid random variables following a \textit{basic} (or \textit{generalized} with scale parameter set to 1) Pareto distribution with shape parameter $\alpha\in (0,\infty)$, $X_j\sim Pa(\alpha$), we have that 
+Following \citet{beirlant_practical_1996}, when starting with a sequence $\{X_j\}$ of $n$ iid random variables following a \textit{basic} (or \textit{generalized} with scale parameter set to 1) Pareto distribution with shape parameter $\alpha\in (0,\infty)$, $X_j\sim Pa(\alpha$), we have 
 
 \begin{equation}
 F(x)=1-x^{-\alpha}, \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\in[1,\infty).
 \end{equation}
-Then, by setting appropriately $b_n=0$, we can write
+Then, by setting $b_n=0$, we can write
 
 \begin{equation*}
 \begin{aligned}
@@ -309,14 +309,14 @@ Then, by setting appropriately $b_n=0$, we can write
 & =\Big[F^{\leftarrow}(1-\frac{1}{n})\Big]^{\alpha}(a_n)^{-\alpha}(-z^{-\alpha}),
 \end{aligned}
 \end{equation*}
-where we define the quantity $F^{\leftarrow}(t)=\inf\{x\in\mathbb{R}:F(x)\geq t\}$ for $t<0<1$ as the \emph{generalized inverse\footnote{from which we can retrieve $x_t=F^{\leftarrow}(t)$, the $t$-quantile of $F$. Even if we deal in this text only with continuous and strictly increasing df, we prefer consider \emph{generalized inverse}, for sake of generalization.} of F}.
-Hence, it is easy to see that by setting $a_n=n^{1/\alpha}$ and keeping $b_n=0$, we have that 
+where we define the quantity $F^{\leftarrow}(t)=\inf\{x\in\mathbb{R}:F(x)\geq t\}$ for $t<0<1$ as the \emph{generalized inverse\footnote{We retrieve $x_t=F^{\leftarrow}(t)$, the $t$-quantile of $F$. Even if we will deal only with continuous and strictly increasing df, we prefer considering the \emph{generalized inverse}, for sake of generalization.} of F}.
+Hence, we see that by setting $a_n=n^{1/\alpha}$ and keeping $b_n=0$, we have  
 \begin{equation*}
 \text{Pr}\{a_n^{-1}X_{(n)}\leq z\}\rightarrow \exp (-z^{-\alpha}),
 \end{equation*}
-showing that for those particular values of the normalizing constants, we retrieve the Fréchet distribution in the limit of a basic Pareto distribution. The fact that $b_n$ is set to zero can be understood intuitively since for heavy-tailed distribution (see) such as the Pareto distribution, a correction for location is not necessary to obtain a non-degenerate limiting distribution, see \citet[pp.51]{beirlant_practical_1996}.
+showing that for those particular values of the normalizing constants, we retrieve the Fréchet distribution in the limit of a basic Pareto distribution. The fact that $b_n$ is set to zero can be understood intuitively for heavy-tailed distribution (see \hyperref[app:tails]{Appendix \textbf{\ref{app:tails}}}) such as the Pareto distribution, a correction for location is not necessary to obtain a non-degenerate limiting distribution, see \citet[pp.51]{beirlant_practical_1996}.
 %[see p.28 memoire other si ft autre exemple]
-More generally, we can state the more general following theorem :
+More generally, we can state the following theorem :
 \begin{theorem}[Pareto-type distributions] For the same choice of normalizing constants as above, i.e. $a_n=F^{\leftarrow}(1-n^{-1}))$ and $b_n=0$ and for any $x\in\mathbb{R}$, if
 	\begin{equation}
 	\begin{aligned}
@@ -326,21 +326,21 @@ More generally, we can state the more general following theorem :
 	then we say that "\emph{$\bar{F}$ is of Pareto-type}" or, more technically, "\emph{$\bar{F}$ is regularly varying with index -$\alpha$}".
 \end{theorem}
 
-This theorem is interesting to get an understanding of the shape of the tails of this kind of distributions. 
-We define the concepts of \emph{regularly varying functions}, together with \emph{slowly varying functions} in \hyperref[app:varying]{Appendix \textbf{\ref{app:varying}}}
+This theorem helps to understand the shape of the tails of this kind of distributions. 
+We define the concepts of \emph{regularly varying functions}, and \emph{slowly varying functions} in \hyperref[app:varying]{Appendix \textbf{\ref{app:varying}}}
 %\citet[pp.51-54]{beirlant_practical_1996} and supported by 
 %\citet[pp.49, 77-82]{beirlant_statistics_2006}.
 %\citet[pp.75]{beirlant_statistics_2006} !!!!
 
 \subsection*{Convergence to EV Weibull distribution}
 
-The \textbf{type}  $\boxed{\textbf{\text{III}}}$ or \textbf{Weibull} family (?) of distributions $G_3(x)$ arises, for example, in the limit of $n$ iid uniform random variables $X_j\sim U[L,R]$ where $L$ and $R>L$ are both in $\mathbb{R}$  and denote respectively the Left and the Right endpoint of the domain of definition. We have by definition
+The \textbf{type}  $\boxed{\textbf{\text{III}}}$ or \textbf{EV Weibull} family of distributions $G_3(x)$ arises in the limit of $n$ iid uniform random variables $X_j\sim U[L,R]$ where $L$ and $R>L$ are both in $\mathbb{R}$  and denote respectively the Left and the Right endpoint of the domain of definition. We have by definition
 
 \begin{equation*}
 F(x)=\frac{x-L}{R-L}, \ \ \ \ \ \ \ \  \ \ x\in [L,R].
 \end{equation*}
 It is $0$ for $x<L$ and $1$ for $x>R$.
-We assume we are in the general case, i.e. $[L,R]$ can be $\neq [0,1]$. When choosing $a_n=R$ and $b_n=(R-L)/n$, we find the unit Reversed Weibull distribution $We(1,1)$ in the limit 
+We assume we are in the general case, i.e. $[L,R]$ can $\neq [0,1]$. When choosing $a_n=R$ and $b_n=(R-L)/n$, we find the unit Reversed Weibull distribution $We(1,1)$ in the limit 
 
 \begin{equation*}
 \begin{aligned}
@@ -350,38 +350,37 @@ We assume we are in the general case, i.e. $[L,R]$ can be $\neq [0,1]$. When cho
 & = \Big(1+\frac{z}{n}\Big)^n\to e^z, \ \qquad \qquad\qquad  z\leq 0 \quad \text{and} \quad n>|z|.
 \end{aligned}
 \end{equation*}
- That is, the Weibull-type GEV with $\xi=-1$.
- This is a typical example of the maximal behavior for bounded random variables with
+ The Weibull-type GEV with $\xi=-1$, is a typical example of the maximal behavior for bounded random variables with
 continuous distributions.
 
 
 \subsection*{Conditions and Comments}
 
-Intuitively, it stands to reason that the df $F$ needs certain conditions for the limit to exist in \hyperref[extthm]{Theorem \textbf{\ref{extthm}}}. There exists a \emph{continuity condition} at the right endpoint $x_*$ of $F$ which actually rules out many important distributions. For example, it ensures that if $F$ has a jump at its finite $x_*$ (e.g. discrete distributions), then $F$ cannot have a non-degenerate limit distribution as in (\ref{exttheom}). Examples are well documented in \citet[section 3.1]{embrechts_modelling_2011} for the Poisson, Geometric and Negative Binomial distributions. We cannot find a nondegenerate distribution in the limit for these distributions even after normalization, which limit the scope for applications of the Extremal Types \hyperref[extthm]{Theorem \textbf{\ref{extthm}}}. 
+It stands to reason that the df $F$ needs certain conditions for the limit to exist in \hyperref[extthm]{Theorem \textbf{\ref{extthm}}}. There exists a \emph{continuity condition} at the right endpoint $x_*$ of $F$ which rules out many important distributions. For example, it ensures that if $F$ has a jump at its finite $x_*$ (e.g. discrete distributions), then $F$ cannot have a non-degenerate limit distribution as in (\ref{exttheom}). Examples are well documented in \citet[section 3.1]{embrechts_modelling_2011} for the Poisson, Geometric and Negative Binomial distributions. We cannot find a nondegenerate distribution in the limit for these distributions even after normalization, which limit the scope for applications of the Extremal Types \hyperref[extthm]{Theorem \textbf{\ref{extthm}}}. 
 
-Let's finish by noting that it is actually not mandatory to find the normalizing sequences for inferential purposes.
+It is not mandatory to find the normalizing sequences for inferential purposes.
 We can ignore the normalizing constants in practical applications and fit directly the GEV in our set of maxima.
-The estimated parameters $\mu$ and $\sigma$ will implicitly take the normalization into account, while the shape parameter $\xi$ is not affected. We will see more details about this at the beginning of \hyperref[sec::3]{Chapter \textbf{\ref{sec::3}}} for the stationary case, while methods to estimate $\big( \mu, \sigma,\xi\big)$ will be presented in \hyperref[sec::gevinfernce]{ Section \textbf{\ref{sec::gevinfernce}} } . Now let's characterize more precisely the distributions pertaining to the GEV.
+The parameters $(\mu,\sigma)$ will implicitly take the normalization into account, while the shape parameter $\xi$ is not affected. More details on this are in \hyperref[sec::3]{Chapter \textbf{\ref{sec::3}}} with methods to estimate $\big( \mu, \sigma,\xi\big)$ in \hyperref[sec::gevinfernce]{ Section \textbf{\ref{sec::gevinfernce}}}.
 
 \section{Maximum Domain of Attraction}\label{sec:mda}
 
-The preceding results can be more easily summarized and obtained when considering \emph{maximum domain of attraction} (MDA). The term "\emph{maximum}" is typically used to make the difference with \emph{sum-stable} distributions but as we only study maxima here, there is no possible confusion in our work. We will then only write "\emph{domain of attraction}" (DA) in the following for convenience, considering these two names as synonyms.
+The preceding results can be summarized and obtained when considering \emph{maximum domain of attraction} (MDA). The term "\emph{maximum}" is typically used to make the difference with \emph{sum-stable} distributions but as we only study maxima here, there is no possible confusion in our work. We will only write "\emph{domain of attraction}" (DA) in the following for convenience.
 
 \begin{definition}[Domain of attraction] We say that a distribution $F$ is in the \emph{\textbf{domain of attraction}} of an extreme value family $G$ in (\ref{gumb})-(\ref{weib}), denoted by $F\in D(G)$, if there exist $a_n>0$ and $b_n\in\mathbb{R}$ such that the distribution of $a_n^{-1}(X_{(n)}-b_n)$ converges in distribution to $G$, where $X_{(n)}$ is the maximum of an iid sequence $\{X_i\}$ with distribution $F$. %\null\hfill\QEDB
 \end{definition}
 Let $\xi_k$ denote the EVI pertaining to some EV distribution $G_k$ $(k=1,2,3)$. From \hyperref[extthm]{Theorem \textbf{\ref{extthm}}}, the domains of attraction are well defined in the sense that $F\in D(G_i)$ and $F\in D(G_j)$ implies $\xi_i=\xi_j$.
 
 
-We have all the necessary tools to  the pertaining DA now. But, before proceeding, we would like to point out that the fact that the characterization of the first DA (the Gumbel type) requires more technicalities going beyond the scope of this thesis. Although this class is important in theory, see e.g. \cite{pinheiro_comparative_2015}, it is less relevant for our purpose of modelling extremes in a practical case. It often requires other generalizations, for instance with additional parameters to surpass the issues of fitting empirical data. In the last subsection, we will present the unified framework, the domain of attraction pertaining to the GEV distributions, which is a kind of summary for the three first domains of attraction presented.
+At this point, we have all the necessary tools to the pertaining DA. But, before proceeding, it is necessary to point out that the characterization of the first DA (the Gumbel type) requires more technicalities going beyond the scope of this thesis. Although this class is important in theory, see e.g. \cite{pinheiro_comparative_2015}, it is less relevant for our purpose of modelling extremes in a practical case. It often requires other generalizations, for instance with additional parameters to surpass the issues of fitting empirical data. In the last subsection, we will present the unified framework, the domain of attraction pertaining to the GEV distributions, which is a summary for the three first domains of attraction presented.
 
 
-In each of the characterization of the DA, we will present some of their most useful, necessary (and sometimes sufficient) conditions. We will especially derive their \emph{von Mises conditions}, coming from \cite{von_mises_distribution_1936} but revisited in \cite{falk_von_1993}. These conditions are very important in practice and sometimes more intuitive because they make use of the \emph{hazard function} of a df $F$, defined in the following, for sufficiently smooth distributions :
+In each of the characterization of the DA, we will present some of their most useful, necessary (and sometimes sufficient) conditions. We will derive their \emph{von Mises conditions}, coming from \cite{von_mises_distribution_1936} but revisited in \cite{falk_von_1993}. These conditions are important in practice and intuitive because they make use of the \emph{hazard function} of a df $F$, defined in the following, for sufficiently smooth distributions :
 
 \begin{equation}\label{haz}
 r(x)=\frac{f(x)}{\bar{F}(x)}= \frac{f(x)}{1-F(x)}.
 \end{equation}
 It involves the density function $f(x)=\frac{dF(x)}{d(x)}$ in the numerator and it can be thought as a measure of risk. It can be interpreted as the probability of "failure" in an infinitesimally small time period between $x$ and $x$ + $\delta x$ given
-that the subject has "survived" up till time $x$.
+that the subject has "survived" up until time $x$.
 
 
 \subsection{Domain of attraction for the 3 types of GEV}
@@ -399,8 +398,7 @@ that the subject has "survived" up till time $x$.
 	\frac{b(x+v\cdot b(x))}{b(x)}\to 1 .
 	\end{equation*} 
 \end{theorem}
-
-A lot of more technical characterizations and conditions together with proofs can be found, for example in \citet[pp.20-33]{haan_extreme_2006} based on the pioneering thesis of \citet{haan_regular_1970}. 
+More technical characterizations and conditions together with proofs can be found in \citet[pp.20-33]{haan_extreme_2006} based on the pioneering thesis of \citet{haan_regular_1970}. 
 
 Let's now present his \emph{\textbf{von Mises criterion}} as in \cite[pp.73]{beirlant_statistics_2006}: 
 \begin{theorem}[von Mises] If $r(x)$ (\ref{haz})
@@ -411,15 +409,15 @@ is ultimately positive in the neighbourhood of $x_*$, is differentiable there an
 
 then $F\in D(G_1)$. %\big[{\footnotesize \underline{Reminder}: $\displaystyle{\lim_{t \uparrow y}}(\cdot)$ means that $t$ is approaching $y$ from below, i.e. from values smaller than $y$ in a increasing manner, and vice-versa for $\displaystyle{\lim_{t \downarrow y}}(\cdot)$}\big] 
 \end{theorem}
-In words, the slope of the hazard function with respect to $x$ is zero at the limit when $x$ approaches the (infinite) right-endpoint. This ensures a condition on the lightness of the tails of $F$.
+The slope of the hazard function with respect to $x$ is zero at the limit when $x$ approaches the (infinite) right-endpoint. This ensures a condition on the lightness of the tails of $F$.
 
-\paragraph*{Examples of distributions in $\boldsymbol{D(G_1)}$ :} distributions having tails which are exponentially decaying (light-tailed i.e. the exponential, Gamma, Weibull, logistic, $\dots$) but also distributions which are moderately heavy-tailed such as the lognormal.
-To see that, consider a Taylor expansion, we have that 
+\paragraph*{Examples of distributions in $\boldsymbol{D(G_1)}$ :} distributions with tails that are exponentially decaying (light-tailed i.e. the exponential, Gamma, Weibull, logistic, $\dots$) but also distributions that are moderately heavy-tailed such as the lognormal.
+To see this, consider a Taylor expansion :
 
 \begin{equation*}
 \bar{G}_1(x)=1-\exp(-e^{-x})\sim e^{-x}, \ \ \ \ \ \ \ \ x\to\infty,
 \end{equation*}
-where "$\sim$" refers to the asymptotic equivalence function. Hence, we directly see the exponential decay of the tails for the Gumbel distribution.
+where "$\sim$" refers to the asymptotic equivalence function. Hence, we see the exponential decay of the tails for the Gumbel distribution.
 
 \subsection*{Domain of attraction for Fréchet distribution ($\mathbf{G_{2}}$)}
 
@@ -452,11 +450,11 @@ with
 \begin{equation*}
 a_n:=F^{\leftarrow}\Big(1-\frac{1}{n}\Big)=\Big(\frac{1}{1-F}\Big)^{\leftarrow}(n).
 \end{equation*}
-This previous theorem informs us that all dfs $F\in D(G_{2,\alpha})$ necessarily have an infinite right endpoint, that is $x_*=\sup\{x:F(x)<1\}=\infty$. These distributions are all with regularly varying right-tail with index $-\alpha$ (see \hyperref[app:varying]{Appendix \textbf{\ref{app:varying}}}), that is $F\in D(G_{2,\alpha})\Longleftrightarrow \bar{F}\in R_{-\alpha}$.
+This theorem informs us that all dfs $F\in D(G_{2,\alpha})$ have an infinite right endpoint, that is $x_*=\sup\{x:F(x)<1\}=\infty$. These distributions are all with regularly varying right-tail with index $-\alpha$ (see \hyperref[app:varying]{Appendix \textbf{\ref{app:varying}}}), that is $F\in D(G_{2,\alpha})\Longleftrightarrow \bar{F}\in R_{-\alpha}$.
 
 
 
-Finally, let's now present the (revisited) \emph{\textbf{Von Mises condition}} for this DA which states the following in \cite{falk_von_1993}:
+\cite{falk_von_1993} present the revisited \emph{\textbf{Von Mises condition}} for this DA :
 
 \begin{theorem}[von Mises]
 If F is absolutely continuous with density f and $x_*=\infty$ such that 
@@ -472,22 +470,22 @@ We illustrate this with the standard Pareto distribution, that is
 \begin{equation*}
 F(x)=\bigg(1-\big(\frac{x_m}{x}\big)^{\alpha}\bigg)1_{x\geq x_m}, \ \ \ \ \ \ \ \alpha>0 \  \ \text{and} \ \ x_m>0.
 \end{equation*}
-Clearly, we can see that by setting $K=x_m^{\alpha}$, we obtain $\bar{F}(x)=Kx^{-\alpha}$.
-Therefore, we have that $a_n=(Kn)^{\alpha^{-1}}$ and $b_n=0$.
+By setting $K=x_m^{\alpha}$, we obtain $\bar{F}(x)=Kx^{-\alpha}$.
+Therefore, $a_n=(Kn)^{\alpha^{-1}}$ and $b_n=0$.
 
-\paragraph*{Examples of distributions in $\boldsymbol{D(G_{2})}$ :} distributions that are typically (very) fat-tailed (or heavy-tailed, see  \hyperref[app:tails]{Appendix \textbf{\ref{app:tails}}}) distributions, such that $E(X_+)^{\delta}=\infty$ for $\delta>\alpha$. This class of distributions is thus appropriate for phenomena with extremely large maxima, think for example of the rainfall process in some tropical zones. Common distributions include Pareto, Cauchy, Burr,$\dots$
-An example to get an idea of this is by looking (\ref{eq:powerlaw})
+\paragraph*{Examples of distributions in $\boldsymbol{D(G_{2})}$ :} distributions that are typically (very) fat-tailed (or heavy-tailed, see  \hyperref[app:tails]{Appendix \textbf{\ref{app:tails}}}) distributions, such that $E(X_+)^{\delta}=\infty$ for $\delta>\alpha$. This class of distributions is thus appropriate for phenomena with extremely large maxima, for example the rainfall process in some tropical zones. Common distributions include Pareto, Cauchy, Burr, etc.
+Another example is (\ref{eq:powerlaw})
 showing that $G_{2}$ tends to decrease as a \emph{power law}.
 
 
 \subsection*{Domain of attraction for the EV Weibull distribution ($\mathbf{G_{3}}$) }
 
-We start by recalling an important relation between the Fréchet and the EV Weibull distributions 
+We start by recalling the relation between the Fréchet and the EV Weibull distributions 
 
 \begin{equation*}
 G_3(-x^{-1})=G_2, \qquad\quad x>0.
 \end{equation*}
-We pointed out the certain symmetry that occurs for these two types (e.g. recall figure \ref{gevdens}). Hence, this will be useful to characterize $D(G_3)$ using what we know about the Fréchet case.
+A certain symmetry occurs for these two types (e.g. Figure \ref{gevdens}). Hence, this will be useful to characterize $D(G_3)$ using what we know about the Fréchet case.
 
 \begin{theorem}
 We say that $F\in G_{3}$ as in (\ref{weib}) with index $\alpha=\xi^{-1}>0$ if and only if there exists a finite right endpoint $x_*<\infty$ such that 
@@ -513,13 +511,14 @@ Finally, we present the \emph{\textbf{Von Mises condition}} related to the $G_{3
 \displaystyle{\lim_{ x  \uparrow  x_*}}(x_*-x)\cdot r(x)=\alpha >0.%, \ \ \ \ \ \ \ \ \ \     \ \ \int^{x_*}_{-\infty} \bar{F}(u)du<\infty,
 \end{equation}
 \end{theorem}
-Similarly to the Fréchet case, we remark that there is still a probability mass from the hazard rate when $x$ approaches its finite right endpoint, characterized by a non-null constant $\alpha$ which defines the left heavy tail and the right endpoint.
+Similarly to the Fréchet case, there is still a probability mass from the hazard rate when $x$ approaches its finite right endpoint, characterized by a non-null constant $\alpha$ which defines the left heavy tail and the right endpoint.
 
 \vspace{-0.1cm}
-\paragraph*{Examples of distributions in $\boldsymbol{D(G_{3})}$ :} dfs that are bounded to the right ($x_*<\infty$). Whereas the Fréchet type is often more preferable in an extreme analysis context because it allows for arbitrarily large values, most phenomena are typically bounded, hence we will think at the EV Weibull for the most attractive and flexible class for modelling extremes. For example, in our case of modelling a process of maximum temperatures, it seems to be the perfect candidate.
+\paragraph*{Examples of distributions in $\boldsymbol{D(G_{3})}$ :} dfs that are bounded to the right ($x_*<\infty$). Whereas the Fréchet type is preferable in an extreme analysis context as it allows for arbitrarily large values, most phenomena are typically bounded, hence we will use EV Weibull for the most attractive and flexible class for modelling extremes. For example, our case of modelling a process of maximum temperatures seems to be a perfect candidate.
 
 
-\subsection{Closeness under tail equivalence property} An interesting property of all the three types of DA $D(G_{k})_{k=1,2,3}$ we have derived, is that those are \emph{closed under tail-equivalence}. This is useful for characterizing tail's types of the distributions falling in the pertaining DA. In this sense,
+\subsection{Closeness under tail equivalence property} 
+An interesting property of all three types of DA $D(G_{k})_{k=1,2,3}$ we have derived, is that of those \emph{closed under tail-equivalence}. This is useful for characterizing tail's types of the distributions falling in the pertaining DA. In this sense,
 
 \begin{enumerate}
 	\item For the \textbf{Gumbel} DA,  let $F\in D(G_{1,\alpha})$. If $H$ is another df such that, for some $b>0$, 
@@ -551,7 +550,7 @@ Similarly to the Fréchet case, we remark that there is still a probability mass
 
 
 \subsection{Domain of attraction of the GEV}
-The conditions that have been stated for the three preceding DA can be restated under an "unified" framework for the GEV distribution defined in (\ref{gevgen}).
+The conditions that have been stated for the three preceding DA can be restated under a "unified" framework for the GEV distribution defined in (\ref{gevgen}).
 For a given df $F$ that is sufficiently smooth, by letting the sequences $b_n$, $a_n$, and the shape parameter such that
 \begin{equation*}
 b_n=F^{\leftarrow}(1-n^{-1})\text{, } \ \ \ \ \ \ \ \ a_n=r(b_n) \ \ \ \ \ \text{ and } \ \ \ \ \ \xi=\displaystyle{\lim_{n \to \infty}}r'(x),
@@ -567,7 +566,7 @@ b_n=F^{\leftarrow}(1-n^{-1})\text{, } \ \ \ \ \ \ \ \ a_n=r(b_n) \ \ \ \ \ \text
 	\end{cases}
 	\end{equation}
 \end{theorem}
-We will see in \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}} that it actually defines the "Peaks-Over-Threshold" model.
+We will see in \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}} that it defines the "Peaks-Over-Threshold" model.
 
 \section{Return Levels and Return Periods}\label{rlgev}
 
@@ -575,7 +574,7 @@ We will see in \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}} that it actually
 After having defined the theoretical properties of distributions pertaining to the GEV family precisely, we are now interested in finding a quantity that could significantly improve the interpretability of such models.
 \emph{Return levels} play a major role in environmental analysis. For such tasks, it is usually more convenient to interpret EV models in terms of insightful return levels rather than individual parameter estimates. 
 
-Assuming for this introductory example our time unit reference is in year -as usually assumed in meteorological analysis-, let us consider the \emph{m-year return level} $r_m$ which is defined as the high quantile for which the probability that the annual maximum exceeds this quantile is $(\lambda\cdot m)^{-1}$, where $\lambda$ is the mean number of events that occur in a year. For yearly blocks, we have $\lambda=1$ which will facilitate the interpretation. We call $m$ the \emph{return period} and define it to a reasonable degree of accuracy as the expected time between the occurrence of two so-defined high-quantiles. For example, under stationary assumption, if the 100-year return level is $37^{\circ} c$ for the sequence of annual maximum temperatures, then $37^{\circ} c$ is the temperature that is expected to be reached once in average within a period of 100 years. More precisely, you can see it such that $r_m$ is exceeded by the annual maximum in any particular year with probability $m^{-1}$.
+Assuming for this introductory example the block-length is one year -as usually assumed in meteorological analysis-, let consider the \emph{m-year return level} $r_m$ which is defined as the high quantile for which the probability that the annual maximum exceeds this quantile is $(\lambda\cdot m)^{-1}$, where $\lambda$ is the mean number of events that occur in a year. For yearly blocks, we have $\lambda=1$ which will facilitate the interpretation. We call $m$ the \emph{return period} and define it to a reasonable degree of accuracy as the expected time between the occurrence of two so-defined high-quantiles. For example, under stationary assumption, if the $100$-year return level is $37^{\circ} c$ for the sequence of annual maximum temperatures, then $37^{\circ} c$ is the temperature that is expected to be reached on average once within a period of $100$ years. More precisely, you can see it such that $r_m$ is exceeded by the annual maximum in any particular year with probability $m^{-1}$.
 
 Let $\{X_{(n),y}\}$ denote the iid sequence of $n$ random variables representing the annual maximum for a particular year $y$. From (\ref{gevgen}), we have
 \begin{align*}
@@ -589,36 +588,35 @@ r_m=\begin{cases}
 \ \mu +\sigma \log(y_m), \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \xi =0.
 \end{cases}
 \end{equation}
-Henceforth, after having estimated the model (that will be the subject of \hyperref[sec::gevinfernce]{Section \textbf{\ref{sec::gevinfernce}}}), we can replace the estimated parameters $\hat{\theta}=(\hat{\mu},\hat{\sigma},\hat{\xi})$ in (\ref{rleqgev}) to obtain an estimate of the $m$-year return level.
+Having estimated the model (that will be the subject of \hyperref[sec::gevinfernce]{Section \textbf{\ref{sec::gevinfernce}}}), we can replace the estimated parameters $\hat{\theta}=(\hat{\mu},\hat{\sigma},\hat{\xi})$ in (\ref{rleqgev}) to obtain an estimate of the $m$-year return level.
 
 However, we recall that the definition of return period is easily misinterpreted and the one given above is thus not universally accepted. %[extremes in climate change/climate p.98]
-To tackle this issue, it is important to distinguish stationary from nonstationary sequences.
-We investigate the return periods and return levels
-more precisely by relaxing the independence assumption (stationary) and then under a climate change environment (nonstationary) in \hyperref[sec:returnlvlnstatio]{Section \textbf{\ref{sec:returnlvlnstatio}}}.
-Regarding the diagnostic issues of the model, we present the \emph{return level plot} in \hyperref[rlplot]{Section \textbf{\ref{rlplot}}}.
+To address this issue, it is important to distinguish stationary from nonstationary sequences.
+\hyperref[sec:returnlvlnstatio]{Section \textbf{\ref{sec:returnlvlnstatio}}} investigates the return periods and return levels
+more precisely by relaxing the independence assumption (stationary) and then under a climate change environment (nonstationary).
+In order to check the accuracy of the fitted model, \hyperref[rlplot]{Section \textbf{\ref{rlplot}}} present the \emph{return level plot}.
 
 
 \section{Inference}\label{sec::gevinfernce} 
 
-As already stated, a great advantage for the modeling of GEV is that we actually do not have to find the normalizing sequences to estimate the parameters of the model. Hence, we will present in this section the main (frequentists) methods of inference for the GEV. These are mostly based on the likelihood (\hyperref[likgevintro]{Section\textbf{ \ref{likgevintro}}}) but we will also present a few other methods that are widely used to estimate GEV parameters like the (probability weighted) moment estimator (\hyperref[sec:gevother]{Section \textbf{\ref{sec:gevother}}}). Finally, note that there exist estimators for the EVI $\xi$ only, but we leave that for \hyperref[sec:infevi]{Section \textbf{\ref{sec:infevi}}}. After all, we will mostly rely on the Bayesian inference in \hyperref[sec::bayesian]{Chapter \textbf{\ref{sec::bayesian}}}.
+As already stated, a great advantage for the modeling of GEV is that we actually do not have to find the normalizing sequences to estimate the parameters of the model. Hence, this section presents the main (frequentists) methods of inference for the GEV. These are mostly based on the likelihood (\hyperref[likgevintro]{Section\textbf{ \ref{likgevintro}}}) but we will also present other methods that are widely used to estimate GEV parameters (probability weighted moment estimator in \hyperref[sec:gevother]{Section \textbf{\ref{sec:gevother}}}). There exist estimators for the EVI $\xi$ only, and these will be addressed in \hyperref[sec:infevi]{Section \textbf{\ref{sec:infevi}}}. After all, we will heavily rely on Bayesian inference in \hyperref[sec::bayesian]{Chapter \textbf{\ref{sec::bayesian}}}.
 
 
 \subsection{Likelihood-based Methods}\label{likgevintro}
 
-The most usual inference we will first consider is Maximum Likelihood (ML). It generally does a good job, it is intuitive to understand. Only its implementation could bring some problems.
-
-Depicted by \citet{smith_maximum_1985-1}, the potential difficulty with the use of likelihood methods for the GEV concerns the regularity conditions that are required for the usual asymptotic properties associated with the Maximum Likelihood Estimator (MLE) to be valid. Such conditions are not satisfied by the GEV
-model because the endpoints of the GEV distribution are functions of the parameter value\footnote{We already pointed this in the paragraph below (\ref{eq:endpoints}).}. Depending on the value of the EVI $\xi$, the special cases are :
+The most usual inference we will consider is Maximum Likelihood (ML). It is intuitive to understand though its implementation could bring some problems.
+Depicted by \citet{smith_maximum_1985-1}, the potential difficulty when using likelihood methods for GEV concerns the regularity conditions that are required for the usual asymptotic properties associated with the Maximum Likelihood Estimator (MLE) to be valid. Such conditions are not satisfied by the GEV
+model because the endpoints of the GEV distribution are functions of the parameter value\footnote{See paragraph below equation (\ref{eq:endpoints}).}. Depending on the value of the EVI $\xi$, the special cases are :
 
 \begin{enumerate}
 	\item\label{it1lik} \boldsymbol{$\boxed{\xi<-1}$} : MLE's are unlikely to be obtainable.% This is due to 
 	\item $\boxed{\boldsymbol{\xi\in(-1,-0.5]}}$ : MLE's are usually obtainable but standard asymptotic properties do not hold.
 	\item $\boxed{\boldsymbol{\xi>-0.5}}$ : MLE's are regular, in the sense of having the usual asymptotic properties.
 \end{enumerate}
-Fortunately in practice, problematic cases ($\xi\leq -0.5$) are rarely encountered in most environmental problems. This corresponds to distributions in the Weibull family with very short bounded upper tail, see for example the red density in Figure \ref{gevdens} or Figure \ref{fig:gevdif}, or directly in the Shiny application where we better see what defines the borders of the problematic case. The 'bell' of the curve becomes very narrow.
-In the problematic cases, Bayesian inference which does not depend on these regularity conditions may be preferable. We will see in \hyperref[part:xp]{Part \textbf{\ref{part:xp}}} that the distribution of the yearly maximum temperature is upper bounded which lead us to consider Bayesian inference in \hyperref[sec::bayesian]{Chapter \textbf{\ref{sec::bayesian}}}.
+In practice, problematic cases ($\xi\leq -0.5$) are rarely encountered in most environmental problems. This corresponds to distributions in the Weibull family with very short bounded upper tail, see for example the red density in Figure \ref{gevdens} or Figure \ref{fig:gevdif}, or directly in the Shiny application where we see what defines the borders of the problematic case. The 'bell' of the curve becomes very narrow.
+In the problematic cases, Bayesian inference that does not depend on these regularity conditions may be preferable. We will see in \hyperref[part:xp]{Part \textbf{\ref{part:xp}}} that the distribution of the yearly maximum temperature is upper bounded which lead us to consider Bayesian inference in \hyperref[sec::bayesian]{Chapter \textbf{\ref{sec::bayesian}}}.
 
-Other forms of likelihood-based methods have also emerged to remedy this problem of instability for low values of $\xi$. Close to a Bayesian formulation, \emph{ penalized ML} method has been proposed by \citet{coles_likelihood-based_1999} which adds a penalty term to the likelihood function to "force" the shape parameter to be $>-1$, values closer to -1 being more penalized. We will actually use this concept in \hyperref[improvinf]{Section \textbf{\ref{improvinf}}} trying to circumvent issues of these likelihood computations in nonstationary sequences, and to add more flexibility through the neural architecture.
+Other forms of likelihood-based methods have also emerged to remedy this problem of instability for low values of $\xi$. Close to a Bayesian formulation, \emph{ penalized ML} method has been proposed by \citet{coles_likelihood-based_1999} which adds a penalty term to the likelihood function to "force" the shape parameter to be $>-1$, values closer to -1 being more penalized. We will use this concept in \hyperref[improvinf]{Section \textbf{\ref{improvinf}}} to circumvent issues of these likelihood computations in nonstationary sequences, and to add more flexibility through a deep architecture.
 
 We are now considering a sequence $\{Z_i\}_{i=1}^n$ of independent random variables sharing 
 each the same GEV distribution. Let $\boldsymbol{z}=(z_1,\dots,z_n)$ denote the vector of 
@@ -645,7 +643,7 @@ From standard MLE theory, we know that the estimated parameter vector $\hat{\bol
 
 \subsection*{Profile Likelihood}
 
-In general, the normal approximation to the true sampling distribution of the respective estimator is rather poor. The \emph{profile likelihood} is often more convenient when a single parameter is of interest. Let's denote it $\theta_j$. Now let's consider the parameter vector $\boldsymbol{\theta}=(\theta_j,\boldsymbol{\theta_{-j}})= (\mu,\sigma,\xi)$ typically in EVT in a stationary context, where $\boldsymbol{\theta_{-j}}$ corresponds to all components of $\boldsymbol{\theta}$ except $\theta_j$. Hence, $\boldsymbol{\theta_{-j}}$ can be seen as a vector of nuisance parameters.
+In general, the normal approximation to the true sampling distribution of the respective estimator is poor. \emph{Profile likelihood} inference is often more convenient when a single parameter is of interest. Let's denote it $\theta_j$. Now let's consider the parameter vector $\boldsymbol{\theta}=(\theta_j,\boldsymbol{\theta_{-j}})= (\mu,\sigma,\xi)$ typically in EVT in a stationary context, where $\boldsymbol{\theta_{-j}}$ corresponds to all components of $\boldsymbol{\theta}$ except $\theta_j$. Hence, $\boldsymbol{\theta_{-j}}$ can be seen as a vector of nuisance parameters.
 The profile \underline{log}-likelihood for $\theta_j$ is defined by 
 
 \begin{equation}
@@ -653,8 +651,7 @@ The profile \underline{log}-likelihood for $\theta_j$ is defined by
 \end{equation}
 Henceforth for each value of $\theta_j$, the profile log-likelihood is the maximised 
 log-likelihood with respect to $\boldsymbol{\theta_{-j}}$, i.e. with respect to all other 
-components of $\boldsymbol{\theta}$ but not $\theta_j$.
-Generalization where $\boldsymbol{\theta_j}$ is of dimension higher than one (e.g. in a nonstationary context) is possible.
+components of $\boldsymbol{\theta}$ but not $\theta_j$. Note that $\boldsymbol{\theta_j}$ can be of dimension higher than one (e.g. in a nonstationary context).
 
 Another interpretation is related to the $\chi^2$ distribution and the equality with the hypothesis testing the Gumbel case. Details can be found in \citet[pp.138]{beirlant_statistics_2006}. Applications of likelihood inferences will be provided in \hyperref[sec:mlepratic]{Section \textbf{\ref{sec:mlepratic}}}.
 
@@ -677,18 +674,18 @@ for real $p,r$ and $s$. From (\ref{eq:pwm}), we can retrieve the PWM estimator f
 After having fitted a statistical model to data, it is important to assess its accuracy in order to infer reliable conclusions from this model.
 Ideally, we aim to check that our model fits well the whole population, e.g. the whole distribution of maximum temperatures, i.e. all the past and future temperature maxima... As this cannot be achieved in practice, it is common to assess a model with the data that were used to estimate this model. The aim here is to check that the fitted model is acceptable for the available data. 
 
-As these concepts are generally known for a statistician, we decide to let in \hyperref[app:qqpp]{Appendix \textbf{\ref{app:qqpp}}} a reminder of \emph{quantile} and \emph{probability} \emph{plots} applied in the world of extremes.
+As these concepts are generally known, we let in \hyperref[app:qqpp]{Appendix \textbf{\ref{app:qqpp}}} a reminder of \emph{quantile} and \emph{probability} \emph{plots} applied in the world of extremes.
 
 
 \subsection{Return Level Plot}\label{rlplot}
 
-\hyperref[rlgev]{Section \textbf{\ref{rlgev}}} introduced the concept of return levels and its intuitive interpretations. Now, we will use this quantity as a diagnostic tool for model checking.  
+\hyperref[rlgev]{Section \textbf{\ref{rlgev}}} introduced the concept of return levels and its intuitive interpretations. We will use this quantity as a diagnostic tool for model checking.  
 Approximate confidence intervals for the return levels can be obtained by the
 delta method which relies on the asymptotic normality of the MLE and hence produces symmetric confidence intervals.
 
 \subsubsection*{Standard errors of the estimates}
 %As usual, it is important to compute the standard errors to construct confidence intervals, and hence the return level plot.
- We naturally expect the standard errors to increase with the return period. Indeed, it is less accurate to estimate 100-year than a 2-year return level.
+ We expect the standard errors to increase with the return period. Indeed, it is less accurate to estimate 100-year than a 2-year return level.
 As $r_m$ is a function of the GEV parameters, we use the \emph{delta method} to approximate the variance of $\hat{r}_m$. Specifically,
 \begin{equation*}
 \text{Var}(\hat{r}_m)\approx\nabla{r^{'}_m}V\nabla{r_m},
@@ -704,12 +701,12 @@ with $V$ the variance-covariance matrix of the estimated parameters $(\hat{\mu},
 \end{equation}
 with $y_m=-\log (1-m^{-1})$ and the gradient being evaluated at the estimates $(\hat{\mu},\hat{\sigma},\hat{\xi})$.
 
-A problem arise for the so-computed standard errors when considering long-range return levels. They can increase so drastically with the return period that the confidence intervals of the \emph{return level plot} can become difficult to work with. To try to get rid of this issue and to allow for we will construct intervals on the basis of the \emph{profile} log-likelihood. Finally, note that this inference relies on the model adequacy and hence, more uncertainty should be given if the model fit is not perfect.
+A problem for the so-computed standard errors when considering long-range return levels is that they can increase so drastically with the return period such that the confidence intervals of the \emph{return level plot} can become difficult to work with. To address this issue we will construct intervals on the basis of the \emph{profile} log-likelihood. Finally, note that this inference relies on the model adequacy and hence, more uncertainty should be given if the model fit is not perfect.
 
 \subsubsection*{Profiled likelihood Return levels}
 
-Usual likelihood methods are not the most accurate for inference in EVT. The problem was that confidence intervals computed in the usual method, with standard 
-errors computed by the Delta method in (\ref{delta}), relying on the normal approximation, was not reliable for inference on return levels.
+Usual likelihood methods are not the most accurate for inference in EVT. The problem is that confidence intervals computed in the usual method, with standard 
+errors computed by the Delta method in (\ref{delta}), relying on the normal approximation, is not reliable for inference on return levels.
  This is due to severe asymmetries that are often observed in the likelihood surface for return levels, especially for large quantiles, see e.g. \cite{bolivar_profile_2010}.
 
 Profile likelihood method is hence more accurate for confidence intervals as it better captures the skewness generally associated with return level estimates.
@@ -743,8 +740,7 @@ Generally plotted against the return period on a logarithmic scale, the return l
      \item If \boldsymbol{$\xi<0$}, then return level plot will be \textbf{concave}.
      \item If \boldsymbol{$\xi>0$}, then return level plot will be \textbf{convex}.
 \end{itemize}
-This can be easily understood as we have seen that $\xi<0$ implies an upper endpoint and heavy left tail while $\xi>0$ implies the converse. Henceforth, the "increasing rate" of the return level will decrease as the return period increases for $\xi<0$ as it cannot go too far away beyong the upper endpoint, and the converse holds for $\xi>0$.
-You can already look at Figure \ref{fig:rl_empdes} to visualize shape of this plot in our application ($\xi<0$).
+This can be understood as we have seen that $\xi<0$ implies an upper endpoint and heavy left tail while $\xi>0$ implies the converse. Henceforth, the "increasing rate" of the return level will decrease as the return period increases for $\xi<0$ as it cannot go too far away beyong the upper endpoint, and the converse holds for $\xi>0$. Figure \ref{fig:rl_empdes} can already help to visualize shape of the plot in our case ($\xi<0$).
 
 \iffalse
 \subsubsection*{???[Overfitting problem] (Not to include : to check)} \cite{northrop_cross_2016}?

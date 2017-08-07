@@ -1,9 +1,11 @@
 \addcontentsline{toc}{subsection}{Note on the available R package : \texttt{evdbayes}}
 \subsection*{Note on the available R package : \texttt{evdbayes}}
 
-The \texttt{evdbayes} is the only package available on CRAN for (see \citet{ribatet_users_2006}) is a very old package which has not been updated since a while. We had problems to understand both its structure and the famous "black-box"
+The \texttt{evdbayes} is the only package available on CRAN for (see \citet{ribatet_users_2006}) which is a very old package. We had problems to understand both its structure and the famous "black-box"
 It only use the Metropolis Hastings algorithm.
 
+ Note that efforts should put to the new \texttt{revdbayes} R package which use the ratio-of-uniforms method is an other acceptance-rejection type of simulation algorithm. ( \hyperref[sec:bayes_ratio]{Section \textbf{\ref{sec:bayes_ratio}}}
+ 
 \section{From Our Functions (R package)}
 
 
@@ -14,9 +16,10 @@ The problem is maybe from \ref{likgevintro}. The parameter $\xi$ is relatively n
 
 
 
-\section{Ratio of Uniform : \texttt{revdbayes} package}
+\section{Ratio of Uniform : \texttt{revdbayes} package}\label{sec:bayes_ratio}
 
 \url{https://cran.r-project.org/web/packages/revdbayes/vignettes/revdbayes-vignette.html}
+
 
 
 From the \texttt{revdbayes}

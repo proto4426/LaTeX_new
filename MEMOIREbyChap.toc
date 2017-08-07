@@ -93,15 +93,15 @@
 \contentsline {subsection}{\numberline {6.3.3}Inference : Confidence intervals by Bootstrap }{74}{subsection.6.3.3}
 \contentsline {section}{\numberline {6.4}Comments and Comparisons with POT}{74}{section.6.4}
 \contentsline {chapter}{\numberline {7}Bayesian Analysis in Block Maxima}{76}{chapter.7}
-\contentsline {subsection}{Note on the available R package : \texttt {evdbayes}}{76}{section*.99}
+\contentsline {subsection}{Note on the available R package : \texttt {evdbayes}}{77}{section*.99}
 \contentsline {section}{\numberline {7.1}From Our Functions (R package)}{77}{section.7.1}
 \contentsline {section}{\numberline {7.2}From HMC algorithm using STAN language}{77}{section.7.2}
 \contentsline {section}{\numberline {7.3}Ratio of Uniform : \texttt {revdbayes} package}{77}{section.7.3}
 \contentsline {section}{\numberline {7.4}Comparisons}{77}{section.7.4}
 \contentsline {subsection}{\numberline {7.4.1}STAN}{77}{subsection.7.4.1}
-\contentsline {section}{\numberline {7.5}Comparison with frequentists results}{77}{section.7.5}
-\contentsline {chapter}{Conclusion}{77}{section.7.5}
-\contentsline {part}{Appendix}{78}{chapter*.101}
+\contentsline {section}{\numberline {7.5}Comparison with frequentists results}{78}{section.7.5}
+\contentsline {chapter}{Conclusion}{78}{section.7.5}
+\contentsline {part}{Appendix}{79}{chapter*.101}
 \partbegin 
 \contentsline {chapter}{\numberline {A}Statistical tools for Extreme Value Theory}{II}{appendix.A}
 \contentsline {section}{\numberline {A.1}Tails of the distributions}{II}{section.A.1}
