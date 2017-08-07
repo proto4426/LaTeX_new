@@ -51,6 +51,7 @@
 \makeatother
 
 \usepackage{newclude} % delete \newpage with \include*{}
+\usepackage{booktabs,multirow}% 
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage[utf8]{inputenc} 
@@ -248,7 +249,7 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 \newtheorem{exe}{Theorem}
 \setcounter{exe}{-1}
 
-
+\usepackage{multirow,bigdelim}
 \usepackage{tcolorbox}
 \usepackage{adjustbox}
 \usepackage{dashbox}
@@ -658,15 +659,14 @@ This chapter will then not explicitly use techniques presented in the previous c
 \chapter{Analysis in Block Maxima}\label{sec:anagev}
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
+ 
+ This chapter introduces the core subject of this thesis, the stationary and nonstationary GEV analysis for the annual maximum temperatures in Uccle. It will use concepts borrowed from \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} and \hyperref[sec::3]{Chapter \textbf{\ref{sec::3}}}. POT analysis of \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}} will be mentioned but all results are let in the code. 
 
+In \hyperref[sec:xpstatio]{Section \textbf{\ref{sec:xpstatio}}}, we will present first GEV inferences assuming stationarity. It relies on \texttt{1intro\_stationary.R} code from the \textbf{/Scripts-R/} folder of the \href{https://github.com/proto4426/PissoortThesis/}{repository}.
+\hyperref[sec:xpnp]{Section \textbf{\ref{sec:xpnp}}} will introduce the nonstationary analysis with parametric models and relies on \texttt{2Nonstationary.R} code while \hyperref[sec:nnxp]{Section \textbf{\ref{sec:nnxp}}} allows for more complex models from deep archtiectures and relying on \texttt{2NeuralsNets.R} code. 
 
-In this first analysis, we rely on 
-
-This analysis relies on \texttt{1intro\_stationary.R} code from the \textbf{/Scripts-R/} folder of the github repository.
-
-This analysis relies on \texttt{2Nonstationary.R} and \texttt{2NeuralsNets.R} codes from the\textbf{ /Scripts-
-	R/} folder of the \hyperref[https://github.com/proto4426/PissoortThesis]{github repository}. A few results of nonstationary analysis in a POT approach are
-presented in Section 4.1 of the \textbf{Summary1\_intro} files in the \textbf{/vignettes} folder of the repository. 
+Whereas some Bayesian concepts will be used in this section such as use of \emph{prior distributions} for the EVI to limit its domain when estimating it with a likelihood-based method, or to regularize weights of Neural Networks in \hyperref[sec:nnxp]{Section \textbf{\ref{sec:nnxp}}}, we will still call all these methods as "frequentists".
+A strict Bayesian analysis will be made in the \hyperref[sec:anabayes]{next Chapter \ref{sec:anabayes}} and comparisons will be provided.
 
 \newpage
 \include*{chap6}
@@ -685,6 +685,15 @@ presented in Section 4.1 of the \textbf{Summary1\_intro} files in the \textbf{/v
 \chapter{Bayesian Analysis in Block Maxima}\label{sec:anabayes}
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
+
+This analysis relies on all the codes which filenames start by "\texttt{Bayes}" from the \textbf{/Scripts-R/} folder of the \href{https://github.com/proto4426/PissoortThesis/}{repository}. All the functions created that are used and are also made available through the package are in /R/\texttt{BayesFunc.R}. Moreover,
+the \texttt{/vignettes/Summary\_Bayesian.html} file in the \href{https://github.com/proto4426/PissoortThesis/}{repository} present a big part of the analysis in details.
+
+"It is often the case that more than one model provides an adequate fit to the data. Sensitivity analysis determines by what extent posterior inferences change when alternative
+models are used"   book risk analysis other section pp.2.
+
+"The basic method of sensitivity analysis is to fit several models to
+the same problem. Posterior inferences from each model can then be compared."
 
 
 \include*{chap7}

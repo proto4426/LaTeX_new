@@ -420,7 +420,7 @@ Chains are expected to reach stationarity faster as it proposes moves to regions
 
 \chapter{Other Figures and Tables}\label{app:fig}
 
-\section{GEV : Influence of the Parameters on the Shape of the Distribution}
+%\section{GEV : Influence of the Parameters on the Shape of the Distribution}
 
 Regarding our future application, that is maximum temperatures, it is relevant to consider values of the location parameter $\mu$ around 30 degrees. 
 
@@ -430,7 +430,7 @@ Regarding our future application, that is maximum temperatures, it is relevant t
 \end{figure}
 
 
-\section{Introduction of the Practical Analysis (section 6)}
+%\section{Introduction of the Practical Analysis (section 6)}
 
 
 \begin{figure}[!htb]
@@ -442,7 +442,7 @@ Regarding our future application, that is maximum temperatures, it is relevant t
 \end{figure}
 
 \begin{table}[!htbp] \centering 
-  \caption{compares models for the residuals of the GAM model based on AIC and BIC criterion. These criterion take into account the quality of fit (based on likelihood) but also a penalty term to penalize more complex models. } 
+  \caption{Models' comparisons for the residuals of the GAM model based on AIC and BIC criterion. } 
   \label{table:gamresid} 
 \begin{tabular}{@{\extracolsep{5pt}} ccccc} 
 \\[-1.8ex]\hline 
@@ -472,22 +472,22 @@ MA(2)  & $6$ & $494.698$ & $511.219$ \\
 
 
 
-\section{Analysis by GEV}
+%\section{Analysis by GEV}
 
 
 \begin{figure}[!htb]
-\centering	\includegraphics[width=.85\linewidth]{proflikpar.pdf}\caption{ Profile likelihood intervals for the three GEV parameters. The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals when we take the intersection on the horizontal axis. Output makes use of the \texttt{ismev} package.}\label{fig:proflikpar}
+\centering	\includegraphics[width=.85\linewidth]{proflikpar.pdf}\caption{ Profile likelihood intervals for the stationary GEV parameters. The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals by taking the intersection with the horizontal axis.}\label{fig:proflikpar}
 \end{figure}
 
 
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=.95\linewidth]{proflikrl.pdf}\caption{ $95\%$ Profile likelihood intervals for three return levels. We kept the same $x$-scale for the three plots but not the $y$-scales. We used the \texttt{ismev} package but we modified the function to allow for more flexibility because the default y-scale in produced ugly visualizations for high return levels. Green lines represent the intervals from Table \ref{tab:rlprof} computed with another package from E.Gilleland, \texttt{extRemes}. }\label{fig:proflikrl}
+	\centering	\includegraphics[width=.95\linewidth]{proflikrl.pdf}\caption{ $95\%$ Profile likelihood intervals for return levels with return periods of $2$, $10$ and $100$. We kept the same $x$-scales for the three plots but not the $y$-scales. We used the \texttt{ismev} package but we modified the function to allow for more flexibility because the default y-scale in produced ugly visualizations for high return levels. Green lines represent the intervals from Table \ref{tab:rl1} computed with another package from E.Gilleland, \texttt{extRemes}. }\label{fig:proflikrl}
 \end{figure}
 
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=.95\linewidth]{acf_gev.pdf}\caption{ACF and PACF for the residuals of the fitted GAM model with assumed independent errors}\label{fig:acf_gev}
+	\centering	\includegraphics[width=.95\linewidth]{acf_gev.pdf}\caption{ACF and PACF for the series of annual maxima.}\label{fig:acf_gev}
 \end{figure}
 
 
@@ -497,10 +497,30 @@ MA(2)  & $6$ & $494.698$ & $511.219$ \\
 \centering\includegraphics[width=0.7\linewidth]{abo.pdf}
 \caption{Plot of all daily TX that exceeded $30^{\circ}c$ in the period [1901,2016] in Uccle. Red lines highlights two periods of heavy heat waves during summers 1911 and 1976.}\label{fig:abo}
 \end{figure}
-	
-\begin{figure}[!htb]
-	\centering	\includegraphics[width=.7\linewidth]{ppqq_trans.pdf}\caption{(left) Residual probability plot and probability. (right) Residual quantile plot on the Gumbel scale. Both for the nonstationary GEV model allowing for a linear trend in the location parameter and fitted by MLE.}\label{fig:ppqqplot2}
-\end{figure}
+
+
+ \begin{table}[!htbp]
+ 	\centering 
+ 	\caption{Estimation of the bootstrap aggregated GEV-CDN model with 2 hidden layers for $\sigma(t)$ and $\mu(t)$, and $M=500$ resamples. In red are denoted rough estimates of the nonstationary parameters as if the model were parametric for both parameters $\sigma(t)= \exp (\alpha_0+\alpha_1\cdot t)$ and $\mu(t)=\beta_0+\beta1\cdot t$. But this is actually not reliable since there are 2 hidden layers, and only the shape parameter can be reliably estimated.} 
+ 	\label{tab:estnnbag} 
+ 	\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
+ 		\toprule
+ 		& Location $\beta_0$ & Location $\beta_1$ & Scale $\alpha_0$ & Scale $\alpha_1$ &  Shape $\xi$ \\ 
+ 		\midrule
+ 		Estimates& $\textcolor{red}{29.19}$& $\textcolor{red}{0.0242}$ & $\textcolor{red}{0.686}$  &  $\textcolor{red}{-0.0012}$ & $-0.199$ \\ 
+ 		\bottomrule
+ 	\end{tabular} 
+ \end{table} 
+ 
+ 
+  \begin{figure}[!htb]
+  	\centering	\includegraphics[width=0.9\linewidth]{gev_comp_v1.pdf}\caption{This graph gathers the two plots of Figure \ref{fig:bag} which could yield to a better visualization.  }\label{fig:bagv1}
+  \end{figure}
+  
+
+  \begin{figure}[!htb]
+  	\centering	\includegraphics[width=1.01\linewidth]{g_boot_par.pdf}\caption{Left plots show the \textbf{parametric} bootstrap $95\%$ intervals computed with the GEV-CDN model allow a linear nonstationary location parameter only, and Right plots show these interval for the nonlinear nonstationary model in location and scale parameters with 2 hidden layes. }\label{fig:boot_par}
+  \end{figure}
 
 
 \iffalse

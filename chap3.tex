@@ -151,7 +151,7 @@ where each of $\mu(t),\sigma(t), \xi(t)$ are expressed as
 \begin{equation}\label{eq:linknsta}
 \theta(t)=b\big(X^{'}\beta\big),
 \end{equation}
-for a specified inverse link function $b(\cdot)$ where $\theta$ denotes either $\mu,\sigma$ or $\xi$ and where $\beta$ denote the complete vector of parameters. In our example, $Z_t$ will describe the annual maximum temperature of year $t$ for $m=116$ years.
+for a specified inverse link function $b(\cdot)$ where $\theta$ denotes either $\mu,\sigma$ or $\xi$, $\beta$ denote the complete vector of parameters, and $X$ is the design matrix. In our example, $Z_t$ will describe the annual maximum temperature of year $t$ for $m=116$ years.
 As already stated, it will not be recommended to allow $\xi$ to vary with time. Examples of parametric expressions from (\ref{eq:linknsta}) will be given in \hyperref[sec:comp0]{Section \textbf{\ref{sec:comp0}}}.
 
 If $g\big(z_t; \mu(t),\sigma(t),\xi(t)\big)$ denotes the GEV density (Table \ref{tab:gevdens}) with parameters $\mu(t),\sigma(t),\xi(t)$ evaluated at $z_t$, the log-likelihood of the model (\ref{eq:gevnsta}) is, provided $\xi(t)\neq0 \ \forall t$,
@@ -278,12 +278,12 @@ However, this terminological question is not very relevant and this will not imp
 In \hyperref[likgevintro]{Section \textbf{\ref{likgevintro}}} we introduced the concept of penalized likelihood. The idea is that the MLE's may diverge for some values of $\xi$, especially when sample size is small. To resolve this problem, \citet{martins_generalized_2000} suggest the use of a prior distribution for the shape parameter $\xi$ of the GEV model such
 that the most probable values of the parameter are included. This method extend the usual ML and is called the \emph{Generalized Maximum Likelihood} (GML). In this method, the penalty is in the form of a prior distribution on $\xi$ : 
 
-\begin{equation}
+\begin{equation}\label{eq:betaprior}
 \pi(\xi)\sim\text{Beta}(\xi+0.5 ; \ c_1,c_2),
 \end{equation}
 in which $\xi$ is limited to the range $-0.5\leq\xi\leq 0.5$ to limit the search space of $\xi$ during optimization to the support of the shifted beta prior. It is recommended by the authors to set $c_1$ and $c_2$ to 6 and 9 respectively, resulting in a Beta density function with a mode at $-0.1$ and $\approx 90\%$ of the probability concentrated between $-0.3$ and $0.1$. However, these two values can be tuned depending on the application or relying on results of preceding inferential methods, based on the characteristics of the Beta distribution. For a sequence $\boldsymbol{x}=x_1,\ldots,x_n$ of observations, the GML estimator corresponds to the mode of the empirical posterior distribution, i.e. the \emph{generalized-likelihood}
 
-\begin{equation}
+\begin{equation}\label{eq:gml}
 \text{GL}(\mu, \sigma,\xi|\boldsymbol{x})=L(\mu,\sigma,\xi|\boldsymbol{x})\cdot \pi(\xi),
 \end{equation}
 where $L(\cdot)$ can be the log-likelihood $\ell(\cdot)$ (\ref{eq:loglikgevnonstatio}).
@@ -396,7 +396,7 @@ where $w_{kj}^{(2)}$ is the hidden-ouput layer weight and $b^{(2)}_k$ is the hid
 A hierarchy of models can be defined by varying the structure of the CDN (number of hidden layers, which activation function $m(\cdot)$ and weights connections)  and compared by the selection criterion such as the BIC or $\text{AIC}_{\text{c}}$ discussed in (\ref{aicbic}). 
 
 
-\subsection{Prevent Overfitting : Bagging} 
+\subsection{Prevent Overfitting : Bagging}\label{sec:bagg} 
 
 
 \emph{B}ootstrap \emph{agg}regat\emph{ing} or \emph{bagging} is an ensemble method\footnote{For climatologists, \emph{ensemble models} are different but of major utility, especially to make weather forecasting, see for example \citet{suh_development_2012} among others.} used in many state-of-the-art machine learning algorithms such as Random Forests discovered by \citet{Breiman_2001}. This technique is praised in Machine Learning for its performance as it decreases variance of predictions (or estimates) and hence reduce the risk of overfitting. This method works by generating additional data with repetitions from the original dataset to produce multisets of the same size.
@@ -412,7 +412,7 @@ variance of the Gaussian prior must be set relying on some form of split-sample 
 
 
 
-\subsection{Confidence Intervals : Bootstrapping Methods}
+\subsection{Confidence Intervals : Bootstrapping Methods}\label{sec:nnboot}
 
 Like the estimated parameters themselves, the standard errors may not be reliable for small samples. One way to improve the accuracy of the standard errors is to use \emph{bootstrap}. Discovered by \citet{efron1979}, this can be used for EV dfs including nonstationarity. The bootstrap samples are manufactured through
 Monte Carlo resampling of residuals to attend to the underlying assumption  that original sample is iid.

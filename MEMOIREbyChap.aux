@@ -474,6 +474,8 @@
 \@auxtag{chap3}{%
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Generalized Maximum Likelihood}{40}{subsection.3.4.1}}
 }
+\newlabel{eq:betaprior}{{3.15}{40}{Generalized Maximum Likelihood}{equation.3.4.15}{}}
+\newlabel{eq:gml}{{3.16}{40}{Generalized Maximum Likelihood}{equation.3.4.16}{}}
 \citation{suh_development_2012}
 \citation{Breiman_2001}
 \@auxtag{chap3}{%
@@ -493,9 +495,11 @@
 \@auxtag{chap3}{%
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Prevent Overfitting : Bagging}{42}{subsection.3.4.3}}
 }
+\newlabel{sec:bagg}{{3.4.3}{42}{Prevent Overfitting : Bagging}{subsection.3.4.3}{}}
 \@auxtag{chap3}{%
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}Confidence Intervals : Bootstrapping Methods}{42}{subsection.3.4.4}}
 }
+\newlabel{sec:nnboot}{{3.4.4}{42}{Confidence Intervals : Bootstrapping Methods}{subsection.3.4.4}{}}
 \newlabel{itboot}{{1}{42}{Confidence Intervals : Bootstrapping Methods}{Item.13}{}}
 \newlabel{eq:boots}{{3.19}{42}{Confidence Intervals : Bootstrapping Methods}{equation.3.4.19}{}}
 \citation{cannon_flexible_2010}
@@ -768,18 +772,18 @@
 }
 \newlabel{sec:firstvisu}{{5.2.2}{58}{First visualization with simple models}{subsection.5.2.2}{}}
 \@auxtag{chap5}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Yearly maxima together with three first models that represent the trend. Note that shaded grey area around the linear trend represent its $95\%$ pointwise confidence interval on the fitted values. \relax }}{58}{figure.caption.63}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Yearly maxima together with three first models that represent the trend. Note that shaded grey area around the linear regression fit represent its $95\%$ pointwise confidence interval on the fitted values (i.e., $\pm 1.96\times \sigma _{pred}(\text  {year})$ while blue dotted lines are prediction intervals taking also into account the prediction uncertainty.\relax }}{58}{figure.caption.63}}
 }
-\newlabel{first_fig}{{5.1}{58}{Yearly maxima together with three first models that represent the trend. Note that shaded grey area around the linear trend represent its $95\%$ pointwise confidence interval on the fitted values. \relax }{figure.caption.63}{}}
+\newlabel{first_fig}{{5.1}{58}{Yearly maxima together with three first models that represent the trend. Note that shaded grey area around the linear regression fit represent its $95\%$ pointwise confidence interval on the fitted values (i.e., $\pm 1.96\times \sigma _{pred}(\text {year})$ while blue dotted lines are prediction intervals taking also into account the prediction uncertainty.\relax }{figure.caption.63}{}}
+\@auxtag{chap5}{%
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Deeper Trend Analysis : Splines derivatives in GAM}{58}{subsection.5.2.3}}
+}
+\newlabel{sec:splines}{{5.2.3}{58}{Deeper Trend Analysis : Splines derivatives in GAM}{subsection.5.2.3}{}}
 \citation{hastie_generalized_1986}
 \citation{ruppert_semiparametric_2003}
 \citation{marra_coverage_2012}
 \citation{ruppert_semiparametric_2003}
 \citation{maindonald_data_2006}
-\@auxtag{chap5}{%
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Deeper Trend Analysis : Splines derivatives in GAM}{59}{subsection.5.2.3}}
-}
-\newlabel{sec:splines}{{5.2.3}{59}{Deeper Trend Analysis : Splines derivatives in GAM}{subsection.5.2.3}{}}
 \@auxtag{chap5}{%
 \@writefile{toc}{\contentsline {subsubsection}{Pointwise vs Simultaneous intervals}{59}{section*.64}}
 }
@@ -789,9 +793,9 @@
 \citation{marra_coverage_2012}
 \newlabel{eq:gam}{{5.3}{60}{Methodology}{equation.5.2.3}{}}
 \@auxtag{chap5}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces displays draws from the posterior distribution of the model. Notice the large uncertainty associated to the posterior draws (grey lines). The coverages are calculated for $M=10^4$ simulations. \relax }}{60}{figure.caption.67}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Draws from the posterior distribution of the model. Notice the large uncertainty associated to the posterior draws (grey lines). The coverages are calculated for $M=10^4$ simulations. \relax }}{60}{figure.caption.67}}
 }
-\newlabel{fig:post_draws}{{5.2}{60}{displays draws from the posterior distribution of the model. Notice the large uncertainty associated to the posterior draws (grey lines). The coverages are calculated for $M=10^4$ simulations. \relax }{figure.caption.67}{}}
+\newlabel{fig:post_draws}{{5.2}{60}{Draws from the posterior distribution of the model. Notice the large uncertainty associated to the posterior draws (grey lines). The coverages are calculated for $M=10^4$ simulations. \relax }{figure.caption.67}{}}
 \@auxtag{chap5}{%
 \@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Proportion of the $M$ posterior simulations which are covered by the confidence intervals\relax }}{61}{table.caption.69}}
 }
@@ -890,82 +894,123 @@
 \citation{coles_introduction_2001}
 \citation{dennis_numerical_1987}
 \@auxtag{chap6}{%
-\@writefile{toc}{\contentsline {subsection}{R packages for EVT}{64}{section*.73}}
+\@writefile{toc}{\contentsline {subsection}{Block-length}{64}{section*.73}}
 }
 \@auxtag{chap6}{%
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}First Inferences of the Model}{64}{section.6.1}}
+\@writefile{toc}{\contentsline {subsection}{R packages for EVT}{64}{section*.74}}
 }
-\newlabel{sec:mlepratic}{{6.1}{64}{Maximum Likelihood}{section*.75}{}}
 \@auxtag{chap6}{%
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Maximum likelihood estimation of the three GEV parameters\relax }}{64}{table.caption.76}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Inference of the Stationary Model}{64}{section.6.1}}
 }
-\newlabel{tab:estlik}{{6.1}{64}{Maximum likelihood estimation of the three GEV parameters\relax }{table.caption.76}{}}
+\newlabel{sec:xpstatio}{{6.1}{64}{Inference of the Stationary Model}{section.6.1}{}}
+\newlabel{sec:mlepratic}{{6.1}{64}{Maximum Likelihood}{section*.76}{}}
 \@auxtag{chap6}{%
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces GEV parameters estimated by PWM\relax }}{65}{table.caption.79}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces MLE's of the three GEV parameters assuming a independent (stationary) context.\relax }}{64}{table.caption.77}}
 }
-\newlabel{tab:estpwm}{{6.2}{65}{GEV parameters estimated by PWM\relax }{table.caption.79}{}}
+\newlabel{tab:estlik}{{6.1}{64}{MLE's of the three GEV parameters assuming a independent (stationary) context.\relax }{table.caption.77}{}}
+\@auxtag{chap6}{%
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Stationary GEV parameters estimated by PWM.\relax }}{65}{table.caption.80}}
+}
+\newlabel{tab:estpwm}{{6.2}{65}{Stationary GEV parameters estimated by PWM.\relax }{table.caption.80}{}}
 \@auxtag{chap6}{%
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Return Levels}{65}{subsection.6.1.1}}
 }
 \newlabel{sec:rlemp}{{6.1.1}{65}{Return Levels}{subsection.6.1.1}{}}
 \@auxtag{chap6}{%
-\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces m-year return level estimates and $95\%$ intervals. Last line computes the difference between the length of the normal interval with the length of the profile likelihood interval\relax }}{66}{table.caption.80}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces The $m$-year return level estimates and $95\%$ intervals. Last line computes the length's differences between the normal and the profile likelihood intervals.\relax }}{66}{table.caption.81}}
 }
-\newlabel{tab:rl1}{{6.3}{66}{m-year return level estimates and $95\%$ intervals. Last line computes the difference between the length of the normal interval with the length of the profile likelihood interval\relax }{table.caption.80}{}}
+\newlabel{tab:rl1}{{6.3}{66}{The $m$-year return level estimates and $95\%$ intervals. Last line computes the length's differences between the normal and the profile likelihood intervals.\relax }{table.caption.81}{}}
 \@auxtag{chap6}{%
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Diagnostics}{66}{subsection.6.1.2}}
 }
 \@auxtag{chap6}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Quantile (left) and probability (right) plots for the stationary GEV model fitted by MLE.\relax }}{66}{figure.caption.81}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Quantile (left) and probability (right) plots for the stationary GEV model fitted by MLE.\relax }}{66}{figure.caption.82}}
 }
-\newlabel{fig:ppqqplot}{{6.1}{66}{Quantile (left) and probability (right) plots for the stationary GEV model fitted by MLE.\relax }{figure.caption.81}{}}
+\newlabel{fig:ppqqplot}{{6.1}{66}{Quantile (left) and probability (right) plots for the stationary GEV model fitted by MLE.\relax }{figure.caption.82}{}}
 \@auxtag{chap6}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces (Left) Return level plot with red lines representing normal confidence intervals, blue points are individual profile likelihood intervals for return levels and horizontal dotted line just represent the right endpoint of the fitted model. (Right) kernel density in black compared with the density of the fitted model in green, with dotted lines representing the \relax $\@@underline {\hbox {endpoints}}\mathsurround \z@ $\relax  of the distributions, and hence empirical density should not continue outside these lines.\relax }}{67}{figure.caption.82}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces (Left) Return level plot with red lines representing normal confidence intervals, and blue points the individual profile likelihood intervals for return levels. Horizontal dotted line represent the right endpoint of the fitted model in green and the maximum of the series in black. (Right) kernel density in black compared with the density of the fitted model in green, with dotted lines representing the \textbf  {endpoints} of the empirical distribution, and green doted lines still represent the same right endpoint of the fitted EV-Weibull.\relax }}{67}{figure.caption.83}}
 }
-\newlabel{fig:rl_empdes}{{6.2}{67}{(Left) Return level plot with red lines representing normal confidence intervals, blue points are individual profile likelihood intervals for return levels and horizontal dotted line just represent the right endpoint of the fitted model. (Right) kernel density in black compared with the density of the fitted model in green, with dotted lines representing the \underline {endpoints} of the distributions, and hence empirical density should not continue outside these lines.\relax }{figure.caption.82}{}}
+\newlabel{fig:rl_empdes}{{6.2}{67}{(Left) Return level plot with red lines representing normal confidence intervals, and blue points the individual profile likelihood intervals for return levels. Horizontal dotted line represent the right endpoint of the fitted model in green and the maximum of the series in black. (Right) kernel density in black compared with the density of the fitted model in green, with dotted lines representing the \textbf {endpoints} of the empirical distribution, and green doted lines still represent the same right endpoint of the fitted EV-Weibull.\relax }{figure.caption.83}{}}
+\@auxtag{chap6}{%
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Stationary Analysis}{67}{subsection.6.1.3}}
+}
 \citation{ferro_inference_2003}
 \@auxtag{chap6}{%
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Stationary Analysis}{68}{subsection.6.1.3}}
-}
-\@auxtag{chap6}{%
-\@writefile{toc}{\contentsline {subsubsection}{POT}{68}{section*.85}}
+\@writefile{toc}{\contentsline {subsubsection}{POT}{68}{section*.86}}
 }
 \@auxtag{chap6}{%
 \@writefile{toc}{\contentsline {section}{\numberline {6.2}Parametric Nonstationary Analysis}{68}{section.6.2}}
 }
+\newlabel{sec:xpnp}{{6.2}{68}{Parametric Nonstationary Analysis}{section.6.2}{}}
 \@auxtag{chap6}{%
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Comparing Different Models}{68}{subsection.6.2.1}}
 }
 \newlabel{sec:comp0}{{6.2.1}{68}{Comparing Different Models}{subsection.6.2.1}{}}
-\newlabel{i:linear}{{3}{69}{Comparing Different Models}{Item.31}{}}
+\newlabel{i:linear}{{3}{68}{Comparing Different Models}{Item.31}{}}
 \@auxtag{chap6}{%
-\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces  Comparisons of proposed (nested) models for the trend. Significant p-values at $5\%$ are in bold. \relax }}{69}{table.caption.87}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces  Comparisons of nested GEV models with nonstationary parameters. Significant p-values at level $5\%$ are shown in bold.\relax }}{69}{table.caption.88}}
 }
-\newlabel{tab:comp_mod0}{{6.4}{69}{Comparisons of proposed (nested) models for the trend. Significant p-values at $5\%$ are in bold. \relax }{table.caption.87}{}}
+\newlabel{tab:comp_mod0}{{6.4}{69}{Comparisons of nested GEV models with nonstationary parameters. Significant p-values at level $5\%$ are shown in bold.\relax }{table.caption.88}{}}
 \@auxtag{chap6}{%
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Diagnostics and Inference}{69}{subsection.6.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Selected Model, Diagnostics and Inference}{69}{subsection.6.2.2}}
 }
+\@auxtag{chap6}{%
+\@writefile{lot}{\contentsline {table}{\numberline {6.5}{\ignorespaces MLE's of the nonstationary GEV parameters of Model \ref  {i:linear} with a linear trend on $\mu (t)=\beta _0+\beta _1\tmspace  +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace  +\thinmuskip {.1667em}t$.\relax }}{69}{table.caption.90}}
+}
+\newlabel{tab:estliknsta}{{6.5}{69}{MLE's of the nonstationary GEV parameters of Model \ref {i:linear} with a linear trend on $\mu (t)=\beta _0+\beta _1\cdot t$.\relax }{table.caption.90}{}}
+\@auxtag{chap6}{%
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces (left) Residual probability plot and (right) residual quantile plot on the Gumbel scale for the nonstationary GEV model allowing for a linear trend in the location parameter fitted by MLE.\relax }}{70}{figure.caption.92}}
+}
+\newlabel{fig:ppqqplot2}{{6.3}{70}{(left) Residual probability plot and (right) residual quantile plot on the Gumbel scale for the nonstationary GEV model allowing for a linear trend in the location parameter fitted by MLE.\relax }{figure.caption.92}{}}
+\@auxtag{chap6}{%
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Return levels (in blue) of the nonstationary GEV model allowing linear trend on $\mu (t)$. Dotted red line represent horizon after $n=116$ years and black lines represent the series $[1980-2016]$. \relax }}{70}{figure.caption.94}}
+}
+\newlabel{fig:rl_nsta}{{6.4}{70}{Return levels (in blue) of the nonstationary GEV model allowing linear trend on $\mu (t)$. Dotted red line represent horizon after $n=116$ years and black lines represent the series $[1980-2016]$. \relax }{figure.caption.94}{}}
 \citation{cannon_flexible_2010}
+\@auxtag{chap6}{%
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Improvements with Neural Networks}{71}{section.6.3}}
+}
+\newlabel{sec:nnxp}{{6.3}{71}{Improvements with Neural Networks}{section.6.3}{}}
+\@auxtag{chap6}{%
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Models and Results}{71}{subsection.6.3.1}}
+}
+\newlabel{mod111}{{1}{71}{Models and Results}{Item.35}{}}
+\newlabel{mod222}{{2}{71}{Models and Results}{Item.36}{}}
+\newlabel{mod444}{{4}{71}{Models and Results}{Item.38}{}}
+\newlabel{i:nonlin}{{4}{71}{Models and Results}{Item.38}{}}
+\citation{cannon_flexible_2010}
+\@auxtag{chap6}{%
+\@writefile{lot}{\contentsline {table}{\numberline {6.6}{\ignorespaces Comparisons of nonstationary GEV-CDN models fitted by GML. Linear models have the identity activation function and the nonlinear models have the logistic sigmoid activation function. \relax }}{72}{table.caption.95}}
+}
+\newlabel{tab:comp_mod}{{6.6}{72}{Comparisons of nonstationary GEV-CDN models fitted by GML. Linear models have the identity activation function and the nonlinear models have the logistic sigmoid activation function. \relax }{table.caption.95}{}}
+\@auxtag{chap6}{%
+\@writefile{lot}{\contentsline {table}{\numberline {6.7}{\ignorespaces Estimation by GML of the nonstationary parameters from the GEV-CDN Model \ref  {mod222} allowing a linear trend on the location $\mu (t)=\beta _0+\beta _1\tmspace  +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace  +\thinmuskip {.1667em}t$.\relax }}{72}{table.caption.96}}
+}
+\newlabel{tab:estnn}{{6.7}{72}{Estimation by GML of the nonstationary parameters from the GEV-CDN Model \ref {mod222} allowing a linear trend on the location $\mu (t)=\beta _0+\beta _1\cdot t$.\relax }{table.caption.96}{}}
 \citation{cannon_graph_2002}
+\citation{cannon_flexible_2010}
 \@auxtag{chap6}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces \relax }}{70}{figure.caption.89}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Bagging}{73}{subsection.6.3.2}}
 }
-\newlabel{fig:rl_nsta}{{6.3}{70}{\relax }{figure.caption.89}{}}
 \@auxtag{chap6}{%
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Improvements with Neural Networks}{70}{section.6.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces (Left) observations with quantiles from Model \ref  {mod222} estimated in Table \ref  {tab:estliknsta}. (Right) observations with same quantiles coming from the nonstationary and nonlinear bootstrap aggregated model with $M=1000$ resamples. Note that in a stationary context, the $50\%$, $90\%$ and $95\%$ quantiles represent return levels with return periods of $2$, $10$ and $20$ years respectively.\relax }}{73}{figure.caption.97}}
 }
-\newlabel{sec:nnxp}{{6.3}{70}{Improvements with Neural Networks}{section.6.3}{}}
+\newlabel{fig:bag}{{6.5}{73}{(Left) observations with quantiles from Model \ref {mod222} estimated in Table \ref {tab:estliknsta}. (Right) observations with same quantiles coming from the nonstationary and nonlinear bootstrap aggregated model with $M=1000$ resamples. Note that in a stationary context, the $50\%$, $90\%$ and $95\%$ quantiles represent return levels with return periods of $2$, $10$ and $20$ years respectively.\relax }{figure.caption.97}{}}
+\citation{kharin_estimating_2005}
 \@auxtag{chap6}{%
-\@writefile{lot}{\contentsline {table}{\numberline {6.5}{\ignorespaces Put the function nonlinear sigmoid or identity ?)\relax }}{71}{table.caption.91}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Inference : Confidence intervals by Bootstrap }{74}{subsection.6.3.3}}
 }
-\newlabel{tab:comp_mod}{{6.5}{71}{Put the function nonlinear sigmoid or identity ?)\relax }{table.caption.91}{}}
 \@auxtag{chap6}{%
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Comments and Comparisons with POT}{71}{section.6.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Comments and Comparisons with POT}{74}{section.6.4}}
 }
+\@auxtag{chap6}{%
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces \textbf  {Residual} bootstrap $95\%$ intervals computed with the GEV-CDN model allow a linear nonstationary location parameter only (left), and for the nonlinear nonstationary model in location and scale parameters only with 2 hidden layers (right). \relax }}{75}{figure.caption.98}}
+}
+\newlabel{fig:boot_res}{{6.6}{75}{\textbf {Residual} bootstrap $95\%$ intervals computed with the GEV-CDN model allow a linear nonstationary location parameter only (left), and for the nonlinear nonstationary model in location and scale parameters only with 2 hidden layers (right). \relax }{figure.caption.98}{}}
 \@setckpt{chap6}{%
-\setcounter{page}{71}
+\setcounter{page}{75}
 \setcounter{equation}{0}
-\setcounter{enumi}{6}
+\setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -978,8 +1023,8 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{3}
-\setcounter{table}{5}
+\setcounter{figure}{6}
+\setcounter{table}{7}
 \setcounter{IncludeDepth}{0}
 \setcounter{ContinuedFloat}{0}
 \setcounter{subfigure}{0}
@@ -1005,9 +1050,9 @@
 \setcounter{lips@count}{0}
 \setcounter{hdr@segments}{0}
 \setcounter{parentequation}{0}
-\setcounter{Item}{34}
+\setcounter{Item}{38}
 \setcounter{Hfootnote}{13}
-\setcounter{bookmark@seq@number}{87}
+\setcounter{bookmark@seq@number}{91}
 \setcounter{AlgoLine}{0}
 \setcounter{algocfline}{0}
 \setcounter{algocfproc}{0}
@@ -1035,40 +1080,40 @@
 \setcounter{section@level}{1}
 }
 \citation{ribatet_users_2006}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Bayesian Analysis in Block Maxima}{72}{chapter.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Bayesian Analysis in Block Maxima}{76}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Bayesian Analysis in Block Maxima}{72}{chapter.7}}
-\@writefile{lot}{\contentsline {xchapter}{Bayesian Analysis in Block Maxima}{72}{chapter.7}}
-\newlabel{sec:anabayes}{{7}{72}{Bayesian Analysis in Block Maxima}{chapter.7}{}}
+\@writefile{lof}{\contentsline {xchapter}{Bayesian Analysis in Block Maxima}{76}{chapter.7}}
+\@writefile{lot}{\contentsline {xchapter}{Bayesian Analysis in Block Maxima}{76}{chapter.7}}
+\newlabel{sec:anabayes}{{7}{76}{Bayesian Analysis in Block Maxima}{chapter.7}{}}
 \@auxtag{chap7}{%
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}From \texttt  {evdbayes} R package : MH algorithm}{72}{section.7.1}}
+\@writefile{toc}{\contentsline {subsection}{Note on the available R package : \texttt  {evdbayes}}{76}{section*.99}}
 }
 \citation{hartmann_bayesian_2016}
 \citation{geyer__1992}
 \@auxtag{chap7}{%
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}From Our Functions (R package)}{73}{section.7.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}From Our Functions (R package)}{77}{section.7.1}}
 }
 \@auxtag{chap7}{%
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}From HMC algorithm using STAN language}{73}{section.7.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}From HMC algorithm using STAN language}{77}{section.7.2}}
 }
 \@auxtag{chap7}{%
-\@writefile{toc}{\contentsline {section}{\numberline {7.4}Ratio of Uniform : \texttt  {revdbayes} package}{73}{section.7.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Ratio of Uniform : \texttt  {revdbayes} package}{77}{section.7.3}}
 }
 \@auxtag{chap7}{%
-\@writefile{toc}{\contentsline {section}{\numberline {7.5}Comparisons}{73}{section.7.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Comparisons}{77}{section.7.4}}
 }
 \@auxtag{chap7}{%
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.5.1}STAN}{73}{subsection.7.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.1}STAN}{77}{subsection.7.4.1}}
 }
 \@auxtag{chap7}{%
-\@writefile{toc}{\contentsline {section}{\numberline {7.6}Comparison with frequentists results}{73}{section.7.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.5}Comparison with frequentists results}{77}{section.7.5}}
 }
 \@setckpt{chap7}{%
-\setcounter{page}{73}
+\setcounter{page}{77}
 \setcounter{equation}{1}
-\setcounter{enumi}{6}
+\setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -1076,7 +1121,7 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{2}
 \setcounter{chapter}{7}
-\setcounter{section}{6}
+\setcounter{section}{5}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
@@ -1108,9 +1153,9 @@
 \setcounter{lips@count}{0}
 \setcounter{hdr@segments}{0}
 \setcounter{parentequation}{0}
-\setcounter{Item}{34}
+\setcounter{Item}{38}
 \setcounter{Hfootnote}{13}
-\setcounter{bookmark@seq@number}{96}
+\setcounter{bookmark@seq@number}{100}
 \setcounter{AlgoLine}{0}
 \setcounter{algocfline}{0}
 \setcounter{algocfproc}{0}
@@ -1137,11 +1182,11 @@
 \setcounter{lstlisting}{0}
 \setcounter{section@level}{1}
 }
-\@writefile{toc}{\contentsline {chapter}{Conclusion}{73}{section.7.6}}
+\@writefile{toc}{\contentsline {chapter}{Conclusion}{77}{section.7.5}}
 \citation{davison_statistical_2012}
 \citation{mudelsee_climate_2014}
 \@writefile{@@@}{\chapterbegin }
-\@writefile{toc}{\contentsline {part}{Appendix}{74}{chapter*.93}}
+\@writefile{toc}{\contentsline {part}{Appendix}{78}{chapter*.101}}
 \@writefile{toc}{\partbegin }
 \@auxtag{appendix}{%
 \@writefile{toc}{\contentsline {chapter}{\numberline {A}Statistical tools for Extreme Value Theory}{II}{appendix.A}}
@@ -1240,7 +1285,7 @@
 }
 \citation{leimkulher_..._2004}
 \newlabel{algo_hmc}{{3}{X}{Hamiltonian Monte Carlo}{algocfline.3}{}}
-\newlabel{item1hmc}{{2}{X}{Hamiltonian Monte Carlo}{Item.40}{}}
+\newlabel{item1hmc}{{2}{X}{Hamiltonian Monte Carlo}{Item.44}{}}
 \@auxtag{appendix}{%
 \@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces The Hamiltonian Monte Carlo algorithm\relax }}{X}{algocf.3}}
 }
@@ -1264,58 +1309,57 @@
 }
 \newlabel{app:fig}{{C}{XII}{Other Figures and Tables}{appendix.C}{}}
 \@auxtag{appendix}{%
-\@writefile{toc}{\contentsline {section}{\numberline {C.1}GEV : Influence of the Parameters on the Shape of the Distribution}{XII}{section.C.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.1}{\ignorespaces GEV distribution for different values of the three parameters \relax }}{XII}{figure.caption.113}}
 }
+\newlabel{fig:gevdif}{{C.1}{XII}{GEV distribution for different values of the three parameters \relax }{figure.caption.113}{}}
 \@auxtag{appendix}{%
-\@writefile{toc}{\contentsline {section}{\numberline {C.2}Introduction of the Practical Analysis (section 6)}{XII}{section.C.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.2}{\ignorespaces  Violin-plot and density plot for each seasons. (Right) vertical dotted lines represent the mean of each distribution.\relax }}{XIII}{figure.caption.114}}
 }
+\newlabel{fig:violin_density}{{C.2}{XIII}{Violin-plot and density plot for each seasons. (Right) vertical dotted lines represent the mean of each distribution.\relax }{figure.caption.114}{}}
 \@auxtag{appendix}{%
-\@writefile{lot}{\contentsline {table}{\numberline {C.1}{\ignorespaces compares models for the residuals of the GAM model based on AIC and BIC criterion. These criterion take into account the quality of fit (based on likelihood) but also a penalty term to penalize more complex models. \relax }}{XII}{table.caption.108}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.3}{\ignorespaces ACF and PACF for the residuals of the fitted GAM model with assumed independent errors \relax }}{XIII}{figure.caption.115}}
 }
-\newlabel{table:gamresid}{{C.1}{XII}{compares models for the residuals of the GAM model based on AIC and BIC criterion. These criterion take into account the quality of fit (based on likelihood) but also a penalty term to penalize more complex models. \relax }{table.caption.108}{}}
+\newlabel{fig:acfresgam1}{{C.3}{XIII}{ACF and PACF for the residuals of the fitted GAM model with assumed independent errors \relax }{figure.caption.115}{}}
 \@auxtag{appendix}{%
-\@writefile{toc}{\contentsline {section}{\numberline {C.3}Analysis by GEV}{XII}{section.C.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.1}{\ignorespaces Models' comparisons for the residuals of the GAM model based on AIC and BIC criterion. \relax }}{XIII}{table.caption.116}}
 }
+\newlabel{table:gamresid}{{C.1}{XIII}{Models' comparisons for the residuals of the GAM model based on AIC and BIC criterion. \relax }{table.caption.116}{}}
 \@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.1}{\ignorespaces GEV distribution for different values of the three parameters \relax }}{XIII}{figure.caption.105}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.4}{\ignorespaces Diagnostics of the chosen GAM model with Whinte Noise process on the errors, based on the residuals. \relax }}{XIV}{figure.caption.117}}
 }
-\newlabel{fig:gevdif}{{C.1}{XIII}{GEV distribution for different values of the three parameters \relax }{figure.caption.105}{}}
+\newlabel{fig:diagnogam}{{C.4}{XIV}{Diagnostics of the chosen GAM model with Whinte Noise process on the errors, based on the residuals. \relax }{figure.caption.117}{}}
 \@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.2}{\ignorespaces  Violin-plot and density plot for each seasons. (Right) vertical dotted lines represent the mean of each distribution.\relax }}{XIII}{figure.caption.106}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.5}{\ignorespaces Series of annual maxima together with the fitted GAM model (in green) \textbf  {with MA(1) model on the residuals}. Thicker lines indicate that the increase is significant for \relax $\@@underline {\hbox {pointwise}}\mathsurround \z@ $\relax  confidence interval. Shaded area represent a "$95\%$" interval for the predicted values which looks quite narrow. \relax }}{XIV}{figure.caption.118}}
 }
-\newlabel{fig:violin_density}{{C.2}{XIII}{Violin-plot and density plot for each seasons. (Right) vertical dotted lines represent the mean of each distribution.\relax }{figure.caption.106}{}}
+\newlabel{fig:center_gam}{{C.5}{XIV}{Series of annual maxima together with the fitted GAM model (in green) \textbf {with MA(1) model on the residuals}. Thicker lines indicate that the increase is significant for \underline {pointwise} confidence interval. Shaded area represent a "$95\%$" interval for the predicted values which looks quite narrow. \relax }{figure.caption.118}{}}
 \@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.3}{\ignorespaces ACF and PACF for the residuals of the fitted GAM model with assumed independent errors \relax }}{XIV}{figure.caption.107}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.6}{\ignorespaces  Profile likelihood intervals for the stationary GEV parameters. The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals by taking the intersection with the horizontal axis.\relax }}{XV}{figure.caption.119}}
 }
-\newlabel{fig:acfresgam1}{{C.3}{XIV}{ACF and PACF for the residuals of the fitted GAM model with assumed independent errors \relax }{figure.caption.107}{}}
+\newlabel{fig:proflikpar}{{C.6}{XV}{Profile likelihood intervals for the stationary GEV parameters. The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals by taking the intersection with the horizontal axis.\relax }{figure.caption.119}{}}
 \@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.4}{\ignorespaces Diagnostics of the chosen GAM model with Whinte Noise process on the errors, based on the residuals. \relax }}{XIV}{figure.caption.109}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.7}{\ignorespaces  $95\%$ Profile likelihood intervals for return levels with return periods of $2$, $10$ and $100$. We kept the same $x$-scales for the three plots but not the $y$-scales. We used the \texttt  {ismev} package but we modified the function to allow for more flexibility because the default y-scale in produced ugly visualizations for high return levels. Green lines represent the intervals from Table \ref  {tab:rl1} computed with another package from E.Gilleland, \texttt  {extRemes}. \relax }}{XV}{figure.caption.120}}
 }
-\newlabel{fig:diagnogam}{{C.4}{XIV}{Diagnostics of the chosen GAM model with Whinte Noise process on the errors, based on the residuals. \relax }{figure.caption.109}{}}
+\newlabel{fig:proflikrl}{{C.7}{XV}{$95\%$ Profile likelihood intervals for return levels with return periods of $2$, $10$ and $100$. We kept the same $x$-scales for the three plots but not the $y$-scales. We used the \texttt {ismev} package but we modified the function to allow for more flexibility because the default y-scale in produced ugly visualizations for high return levels. Green lines represent the intervals from Table \ref {tab:rl1} computed with another package from E.Gilleland, \texttt {extRemes}. \relax }{figure.caption.120}{}}
 \@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.5}{\ignorespaces Series of annual maxima together with the fitted GAM model (in green) \textbf  {with MA(1) model on the residuals}. Thicker lines indicate that the increase is significant for \relax $\@@underline {\hbox {pointwise}}\mathsurround \z@ $\relax  confidence interval. Shaded area represent a "$95\%$" interval for the predicted values which looks quite narrow. \relax }}{XV}{figure.caption.110}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.8}{\ignorespaces ACF and PACF for the series of annual maxima.\relax }}{XV}{figure.caption.121}}
 }
-\newlabel{fig:center_gam}{{C.5}{XV}{Series of annual maxima together with the fitted GAM model (in green) \textbf {with MA(1) model on the residuals}. Thicker lines indicate that the increase is significant for \underline {pointwise} confidence interval. Shaded area represent a "$95\%$" interval for the predicted values which looks quite narrow. \relax }{figure.caption.110}{}}
+\newlabel{fig:acf_gev}{{C.8}{XV}{ACF and PACF for the series of annual maxima.\relax }{figure.caption.121}{}}
 \@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.6}{\ignorespaces  Profile likelihood intervals for the three GEV parameters. The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals when we take the intersection on the horizontal axis. Output makes use of the \texttt  {ismev} package.\relax }}{XV}{figure.caption.111}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.9}{\ignorespaces Plot of all daily TX that exceeded $30^{\circ }c$ in the period [1901,2016] in Uccle. Red lines highlights two periods of heavy heat waves during summers 1911 and 1976.\relax }}{XVI}{figure.caption.122}}
 }
-\newlabel{fig:proflikpar}{{C.6}{XV}{Profile likelihood intervals for the three GEV parameters. The two horizontal dotted lines represent the 95$\%$ (above) and $99\%$ (below) confidence intervals when we take the intersection on the horizontal axis. Output makes use of the \texttt {ismev} package.\relax }{figure.caption.111}{}}
+\newlabel{fig:abo}{{C.9}{XVI}{Plot of all daily TX that exceeded $30^{\circ }c$ in the period [1901,2016] in Uccle. Red lines highlights two periods of heavy heat waves during summers 1911 and 1976.\relax }{figure.caption.122}{}}
 \@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.7}{\ignorespaces  $95\%$ Profile likelihood intervals for three return levels. We kept the same $x$-scale for the three plots but not the $y$-scales. We used the \texttt  {ismev} package but we modified the function to allow for more flexibility because the default y-scale in produced ugly visualizations for high return levels. Green lines represent the intervals from Table \ref  {tab:rlprof} computed with another package from E.Gilleland, \texttt  {extRemes}. \relax }}{XVI}{figure.caption.112}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.2}{\ignorespaces Estimation of the bootstrap aggregated GEV-CDN model with 2 hidden layers for $\sigma (t)$ and $\mu (t)$, and $M=500$ resamples. In red are denoted rough estimates of the nonstationary parameters as if the model were parametric for both parameters $\sigma (t)= \qopname  \relax o{exp}(\alpha _0+\alpha _1\tmspace  +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace  +\thinmuskip {.1667em}t)$ and $\mu (t)=\beta _0+\beta 1\tmspace  +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace  +\thinmuskip {.1667em}t$. But this is actually not reliable since there are 2 hidden layers, and only the shape parameter can be reliably estimated.\relax }}{XVI}{table.caption.123}}
 }
-\newlabel{fig:proflikrl}{{C.7}{XVI}{$95\%$ Profile likelihood intervals for three return levels. We kept the same $x$-scale for the three plots but not the $y$-scales. We used the \texttt {ismev} package but we modified the function to allow for more flexibility because the default y-scale in produced ugly visualizations for high return levels. Green lines represent the intervals from Table \ref {tab:rlprof} computed with another package from E.Gilleland, \texttt {extRemes}. \relax }{figure.caption.112}{}}
+\newlabel{tab:estnnbag}{{C.2}{XVI}{Estimation of the bootstrap aggregated GEV-CDN model with 2 hidden layers for $\sigma (t)$ and $\mu (t)$, and $M=500$ resamples. In red are denoted rough estimates of the nonstationary parameters as if the model were parametric for both parameters $\sigma (t)= \exp (\alpha _0+\alpha _1\cdot t)$ and $\mu (t)=\beta _0+\beta 1\cdot t$. But this is actually not reliable since there are 2 hidden layers, and only the shape parameter can be reliably estimated.\relax }{table.caption.123}{}}
 \@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.8}{\ignorespaces ACF and PACF for the residuals of the fitted GAM model with assumed independent errors\relax }}{XVI}{figure.caption.113}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.10}{\ignorespaces This graph gathers the two plots of Figure \ref  {fig:bag} which could yield to a better visualization. \relax }}{XVI}{figure.caption.124}}
 }
-\newlabel{fig:acf_gev}{{C.8}{XVI}{ACF and PACF for the residuals of the fitted GAM model with assumed independent errors\relax }{figure.caption.113}{}}
+\newlabel{fig:bagv1}{{C.10}{XVI}{This graph gathers the two plots of Figure \ref {fig:bag} which could yield to a better visualization. \relax }{figure.caption.124}{}}
 \@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.9}{\ignorespaces Plot of all daily TX that exceeded $30^{\circ }c$ in the period [1901,2016] in Uccle. Red lines highlights two periods of heavy heat waves during summers 1911 and 1976.\relax }}{XVI}{figure.caption.114}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.11}{\ignorespaces Left plots show the \textbf  {parametric} bootstrap $95\%$ intervals computed with the GEV-CDN model allow a linear nonstationary location parameter only, and Right plots show these interval for the nonlinear nonstationary model in location and scale parameters with 2 hidden layes. \relax }}{XVII}{figure.caption.125}}
 }
-\newlabel{fig:abo}{{C.9}{XVI}{Plot of all daily TX that exceeded $30^{\circ }c$ in the period [1901,2016] in Uccle. Red lines highlights two periods of heavy heat waves during summers 1911 and 1976.\relax }{figure.caption.114}{}}
-\@auxtag{appendix}{%
-\@writefile{lof}{\contentsline {figure}{\numberline {C.10}{\ignorespaces (left) Residual probability plot and probability. (right) Residual quantile plot on the Gumbel scale. Both for the nonstationary GEV model allowing for a linear trend in the location parameter and fitted by MLE.\relax }}{XVII}{figure.caption.115}}
-}
-\newlabel{fig:ppqqplot2}{{C.10}{XVII}{(left) Residual probability plot and probability. (right) Residual quantile plot on the Gumbel scale. Both for the nonstationary GEV model allowing for a linear trend in the location parameter and fitted by MLE.\relax }{figure.caption.115}{}}
+\newlabel{fig:boot_par}{{C.11}{XVII}{Left plots show the \textbf {parametric} bootstrap $95\%$ intervals computed with the GEV-CDN model allow a linear nonstationary location parameter only, and Right plots show these interval for the nonlinear nonstationary model in location and scale parameters with 2 hidden layes. \relax }{figure.caption.125}{}}
 \citation{cannon_flexible_2010}
 \@auxtag{appendix}{%
 \@writefile{toc}{\contentsline {chapter}{\numberline {D}Github Repository Structure}{XVIII}{appendix.D}}
@@ -1381,9 +1425,9 @@
 \setcounter{lips@count}{0}
 \setcounter{hdr@segments}{0}
 \setcounter{parentequation}{0}
-\setcounter{Item}{40}
+\setcounter{Item}{44}
 \setcounter{Hfootnote}{13}
-\setcounter{bookmark@seq@number}{113}
+\setcounter{bookmark@seq@number}{114}
 \setcounter{AlgoLine}{0}
 \setcounter{algocfline}{3}
 \setcounter{algocfproc}{3}
@@ -1408,7 +1452,7 @@
 \setcounter{l@yercount}{0}
 \setcounter{@todonotes@numberoftodonotes}{0}
 \setcounter{lstlisting}{0}
-\setcounter{section@level}{1}
+\setcounter{section@level}{2}
 }
 \bibcite{ag_extremes_2013}{{1}{2013}{{Amir~AghaKouchak}}{{}}}
 \bibcite{angelino_patterns_2016}{{2}{2016}{{Angelino et~al.}}{{Angelino, Johnson, and Adams}}}

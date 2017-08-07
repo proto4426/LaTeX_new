@@ -15,19 +15,22 @@
 \contentsline {table}{\numberline {5.1}{\ignorespaces Proportion of the $M$ posterior simulations which are covered by the confidence intervals\relax }}{61}{table.caption.69}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Analysis in Block Maxima}{63}{chapter.6}
-\contentsline {table}{\numberline {6.1}{\ignorespaces Maximum likelihood estimation of the three GEV parameters\relax }}{64}{table.caption.76}
-\contentsline {table}{\numberline {6.2}{\ignorespaces GEV parameters estimated by PWM\relax }}{65}{table.caption.79}
-\contentsline {table}{\numberline {6.3}{\ignorespaces m-year return level estimates and $95\%$ intervals. Last line computes the difference between the length of the normal interval with the length of the profile likelihood interval\relax }}{66}{table.caption.80}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Comparisons of proposed (nested) models for the trend. Significant p-values at $5\%$ are in bold. \relax }}{69}{table.caption.87}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Put the function nonlinear sigmoid or identity ?)\relax }}{71}{table.caption.91}
+\contentsline {table}{\numberline {6.1}{\ignorespaces MLE's of the three GEV parameters assuming a independent (stationary) context.\relax }}{64}{table.caption.77}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Stationary GEV parameters estimated by PWM.\relax }}{65}{table.caption.80}
+\contentsline {table}{\numberline {6.3}{\ignorespaces The $m$-year return level estimates and $95\%$ intervals. Last line computes the length's differences between the normal and the profile likelihood intervals.\relax }}{66}{table.caption.81}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Comparisons of nested GEV models with nonstationary parameters. Significant p-values at level $5\%$ are shown in bold.\relax }}{69}{table.caption.88}
+\contentsline {table}{\numberline {6.5}{\ignorespaces MLE's of the nonstationary GEV parameters of Model \ref {i:linear} with a linear trend on $\mu (t)=\beta _0+\beta _1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t$.\relax }}{69}{table.caption.90}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Comparisons of nonstationary GEV-CDN models fitted by GML. Linear models have the identity activation function and the nonlinear models have the logistic sigmoid activation function. \relax }}{72}{table.caption.95}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Estimation by GML of the nonstationary parameters from the GEV-CDN Model \ref {mod222} allowing a linear trend on the location $\mu (t)=\beta _0+\beta _1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t$.\relax }}{72}{table.caption.96}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Bayesian Analysis in Block Maxima}{72}{chapter.7}
+\contentsline {xchapter}{Bayesian Analysis in Block Maxima}{76}{chapter.7}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Statistical tools for Extreme Value Theory}{II}{appendix.A}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Bayesian Methods}{VII}{appendix.B}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Other Figures and Tables}{XII}{appendix.C}
-\contentsline {table}{\numberline {C.1}{\ignorespaces compares models for the residuals of the GAM model based on AIC and BIC criterion. These criterion take into account the quality of fit (based on likelihood) but also a penalty term to penalize more complex models. \relax }}{XII}{table.caption.108}
+\contentsline {table}{\numberline {C.1}{\ignorespaces Models' comparisons for the residuals of the GAM model based on AIC and BIC criterion. \relax }}{XIII}{table.caption.116}
+\contentsline {table}{\numberline {C.2}{\ignorespaces Estimation of the bootstrap aggregated GEV-CDN model with 2 hidden layers for $\sigma (t)$ and $\mu (t)$, and $M=500$ resamples. In red are denoted rough estimates of the nonstationary parameters as if the model were parametric for both parameters $\sigma (t)= \qopname \relax o{exp}(\alpha _0+\alpha _1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t)$ and $\mu (t)=\beta _0+\beta 1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t$. But this is actually not reliable since there are 2 hidden layers, and only the shape parameter can be reliably estimated.\relax }}{XVI}{table.caption.123}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Github Repository Structure}{XVIII}{appendix.D}
