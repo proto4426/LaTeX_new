@@ -1,4 +1,4 @@
-\begin{thebibliography}{86}
+\begin{thebibliography}{90}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -70,6 +70,15 @@ A.~Bolívar, E.~Díaz-Francés, J.~Ortega, and E.~Vilchis.
 \newblock \emph{arXiv preprint arXiv:1005.3573}, 2010.
 \newblock URL \url{http://arxiv.org/abs/1005.3573}.
 
+\bibitem[Bos(2002)]{Bos2002}
+C.~S. Bos.
+\newblock \emph{A Comparison of Marginal Likelihood Computation Methods}, pages
+  111--116.
+\newblock Physica-Verlag HD, Heidelberg, 2002.
+\newblock ISBN 978-3-642-57489-4.
+\newblock \doi{10.1007/978-3-642-57489-4_11}.
+\newblock URL \url{https://doi.org/10.1007/978-3-642-57489-4_11}.
+
 \bibitem[Breiman(2001)]{Breiman_2001}
 L.~Breiman.
 \newblock Random forests.
@@ -131,6 +140,15 @@ S.~G. Coles and M.~J. Dixon.
 \newblock ISSN 1386-1999, 1572-915X.
 \newblock \doi{10.1023/A:1009905222644}.
 \newblock URL \url{http://link.springer.com/article/10.1023/A:1009905222644}.
+
+\bibitem[Coles and Powell(1996)]{coles_1996_bay}
+S.~G. Coles and E.~A. Powell.
+\newblock Bayesian methods in extreme value modelling: A review and new
+  developments.
+\newblock \emph{Extremes}, Vol. 64, No. 1 (Apr., 1996)\penalty0 (1):\penalty0
+  119--136, 1996.
+\newblock URL
+  \url{http://www.jstor.org/stable/1403426?origin=crossref&seq=1#fndtn-page_thumbnails_tab_contents}.
 
 \bibitem[Cunnane(1979)]{cunnane_note_1979}
 C.~Cunnane.
@@ -382,6 +400,20 @@ W.~W. Hsieh and B.~Tang.
   meteorology and oceanography., Sep 1998.
 \newblock URL
   \url{https://open.library.ubc.ca/cIRcle/collections/52383/items/1.0041821}.
+
+\bibitem[Jeffreys(1961)]{Jeffreys61a}
+H.~Jeffreys.
+\newblock \emph{Theory of probability}.
+\newblock Oxford University Press, Oxford, England, third edition, 1961.
+
+\bibitem[Kass and Raftery(1995)]{robert_1995}
+R.~E. Kass and A.~E. Raftery.
+\newblock Bayes factors.
+\newblock \emph{Journal of the American Statistical Association}, 90\penalty0
+  (430):\penalty0 773--795, 1995.
+\newblock \doi{10.1080/01621459.1995.10476572}.
+\newblock URL
+  \url{http://amstat.tandfonline.com/doi/abs/10.1080/01621459.1995.10476572}.
 
 \bibitem[{Khaliq} et~al.(2006){Khaliq}, {Ouarda}, {Ondo}, {Gachon}, and
   {Bob{\'e}e}]{2006JHyd..329..534K}

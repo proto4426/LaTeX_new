@@ -275,7 +275,7 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 \newcommand{\arrowright}{%
 	\tikz [baseline=-1ex]{\node [myarrow,rotate=0] {};}
 }
-\setlength{\parskip}{.3em}
+\setlength{\parskip}{.2em}
 
 \usepackage{afterpage}
 
@@ -445,6 +445,7 @@ For convenience, we place a list of all the abbreviations we will use in the tex
 
 \begin{center}
 \begin{abbreviations}
+	\item[BMA] Bayesian Model Averaging
 	\item[DA] Domain of Attraction
 	\item[df]\label{df}  (cumulative) distribution function
 	\item[EVI] Extreme Value Index ($\xi$)
@@ -619,11 +620,17 @@ This chapter is mostly based on \citet[chap.5-6]{coles_introduction_2001}, \cite
  
 see evdbayes pdf package r
 
-Attention : $\pi$ ou $f$ ?????? 
 
-We let useful relevant tools regarding bayesian inference in \hyperref[bayesapp]{Appendix \textbf{\ref{bayesapp}}}
+Bayesian theory is 
 
-This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001}, \citet[chap.11]{beirlant_statistics_2006} and \citet[chap.1-4]{reiss_statistical_2007}, and other relevant articles.
+
+This chapter will focus only on GEV analysis on annual maxima. Extension to POT or Point Processes is straightforward with tools provided in both text and code.
+
+In \hyperref[sec:returnlvlnstatio]{Section \textbf{\ref{sec:returnlvlnstatio}}} we will, 7
+Useful tools regarding Bayesian inference are let in \hyperref[appB]{Appendix \textbf{\ref{appB}}}.
+
+
+This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001}, \citet[chap.11]{beirlant_statistics_2006} and \cite[chap.13]{dey_extreme_2016}, and other relevant articles.
 
 \newpage
 \include*{chap4}
@@ -744,10 +751,6 @@ PissoortThesis:: Behind our functions
 \thispagestyle{empty}
 
 Finish (Bayesian) documentation in the package.
-
-See new graphs for stats desc. (in appendix), from workshop exam.
-
-Create Gif animations for the github readme
 
 
 %\clearpage

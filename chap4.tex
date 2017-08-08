@@ -1,115 +1,136 @@
+\section{Preliminaries : Motivations}\label{sec:bayprelim}
+
+
+In the following, we will be interested by the multidimensional set of parameters $\theta$ of a GEV model, i.e. $\theta'=(\mu,\sigma,\xi)$ in a stationary context, where $\nu=\log \sigma$ is often used instead of $\sigma$ to get rid of its positivity constraint.
+ Unless stated differently, we will write $\theta$ as this $3$D vector to facilitate readability.
+ 
+We already argued that likelihood-based methods have desirable properties for inference, and hence we have adopted in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} and \textbf{\ref{sec::3}} the methods of (generalized or penalized) maximum likelihood to compute our estimators. Bayesian inference introduces a flexible alternative that also relies on the likelihood. We present the most fundamental result for Bayesian inference which is a direct interpretation of the Bayes' Theorem.
+
 \begin{definition}[Posterior distribution]
-	Let $\boldsymbol{x}=(x_1,\dots,x_m)$
-	denote the observed data of a random variable $X$ distributed according to a distribution with density	
+	Let $\boldsymbol{x}=(x_1,\dots,x_n)$
+	denote the vector of $n$ independent observations of a random variable $X$ with density $f(x|\theta)$, and let $\pi(\theta)$ denote the density of the prior distribution for $\theta$. According to Bayes' theorem, the \textbf{posterior distribution} of $\theta$ is 
 	\begin{equation}\label{bayeseq}
 	\pi (\theta|\boldsymbol{x})=\frac{\pi(\theta)\cdot L(\theta|\boldsymbol{x})}{\int_{\Theta} 
 		\pi(\theta)\cdot L(\theta|\boldsymbol{x}) \cdot d\theta}\propto \pi(\theta)\cdot 
-	L(\theta|\boldsymbol{x})
+	L(\theta|\boldsymbol{x}),
 	\end{equation}
-	where $L(\cdot)$ denotes the likelihood function, as in \ref{} but there it was the \underline{log}-likelhiood !!!
-	and $\theta$ usually denotes the multidimensional set of parameters in EVT, $\theta=(\mu,\sigma,\xi)$, at least in a univariate stationary context.
+	where $L(\theta|\boldsymbol{x})=\prod_i f(x_i|\theta)$ is the likelihood since the $x_i$'s are independent.
 \end{definition}
-
-Unlike other chapters, we will directly write $\theta$ as a 3D vector, unless stated differently. This allows not to overload the equations and to facilitate readability.
-\begin{enumerate}
+This result (\ref{bayeseq}) provides the probabilistic framework to convert an initial set of beliefs about $\theta$, represented by the prior $\pi(\theta)$, into a posterior distribution that will be convenient to use for inference.
+Relying on the posterior distribution to compute an estimate $\hat{\theta}$ of $\theta$ provides interesting characteristics :
+\begin{itemize}
+	\item Whenever possible, it allows to introduce an other source of knowledge coming from the domain, by the elicitation of a prior (see \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}}). However, it also introduces subjectiveness and antagonists contend that, since different analysts would specify
+	different priors, all conclusions become meaninglessly subjective.
 	
-	\item Whenever it is possible, it allows to introduce to introduce other source of knowledge coming from the domain at-hand, by the elicitation of a prior.  The counter-argument of this advantage is that it also introduces (improper ?) subjectiveness.
-	\item\label{it2bayes} "account-
-	ing for parameter and threshold uncertainty is perhaps handled most easily in the
-	Bayesian paradigm" \cite[pp.106]{dey_extreme_2016}
-	
-	As such, It permits an elegant way of making future predictions  which is one of the most(?) important issue in EVT.
+	\item\label{it2bayes} Accounting for  uncertainty is handled most easily in the
+	Bayesian paradigm relying on distribution's properties of $\pi(\theta|\boldsymbol{x})$, for example its variance. %\cite[pp.106]{dey_extreme_2016}
+	 It permits an elegant way of making future predictions, which is the most important issue in EVT.
 	
 	\item Bayesian framework can overcome the regularity conditions of the likelihood inference
-	(see \hyperref[likintro]{section \textbf{4.1}}).
-	Thus it usually provides a viable alternative in cases when MLE (for example) breaks down. And actually, we are not so fo far from the problematic situations depicted in section \textbf{3.1}. 
-	Moreover, the Highest Posterior Probability (HPD) region is constructed so that... and there is no more need to fall to asymptotic theory as in conventional methods.
-	
-	
-	\item For an asymmetric distribution,
-	the HPD interval can be a more reasonable summary than the central probability
-	interval ( see illustration ...). For symmetric densities, HPD and central interals are the same while HPD is shorter for asymmetric densities.
-	See \citet{liu_simulation-efficient_2015}....
-	
-\end{enumerate}
-As the dependence becomes stronger, the run length n must be larger in order
-to achieve the same precision. Dependence exists both within the output for a single parameter
-(autocorrelations) and across parameters (cross-correlations), we discuss this issue in section \hyperref[label]{text}.
+	(see \hyperref[likgevintro]{Section \textbf{\ref{likgevintro}}}) by providing a viable alternative in cases when ML breaks down. Actually, we will see that the annual maximum temperatures we will consider are not far from the problematic cases ($\xi<-0.5$). 
+	Moreover, Bayesian confidence intervals (i.e. \emph{credible} intervals, see \hyperref[bayes_cred_int]{Section \textbf{\ref{bayes_cred_int}}}) require no more need to fall to asymptotic theory.
+\end{itemize}
+In EVT, Bayesian inference is a wide expanding domain that has nearly infinite possibilities 
+With strong probabilistic foundations, this method now mostly relies on computational capabilities, this 
+
+
+\section{Prior Elicitation}\label{sec:prior}
+
+
+Sometimes viewed as its greatest strength of Bayesian inference from the amount of information that can be retrieved, and sometimes viewed as its main pitfall due to the unquantifiable subjectivity that is introduced, the construction of the prior is at the center of Bayesian analysis.
+Priors are necessary in the Bayesian paradigm to compute the posterior in  (\ref{bayeseq}). It requires the legitimate statement of a domain's expert, to make this viewed the less subjective as possible.
+
+Priors may not be of great importance if the number $n$ of observations is large. From (\ref{bayeseq}) we see that the amount of information contained in the data through $L(\theta|\boldsymbol{x})$ will be prominent compared to this contained in the prior $\pi(\theta)$.
+However, this configuration is rare in EVT where we are dealing with small constructed datasets. For this reason, incorporating external information through the prior should be (rigorously) studied. This type of prior is thus called \emph{informative priors}, while those who give most weights to data are called \emph{non-informative} (or \emph{objective}) \emph{priors}. We will focus on priors that are widely applied in EVT.
 
 
 
 
-\section{Prior Elicitation}
+\subsection{Trivariate Normal Distribution}\label{sec:trivnorm}
 
-Sometimes viewed as advantage from the amount of information that can be retrieved, and sometimes viewed as an drawback due to the (rather unquantifiable) subjectivity that introduced, the construction of the prior is a key step in Bayesian analysis.
+The trivariate normal prior distribution on $\theta'=(\mu, \nu,\xi)$ leads to the following prior density 
+
+\begin{equation}
+\pi(\theta) \propto \sigma^{-1}\cdot \exp\bigg\{-\frac{1}{2}(\theta'-\boldsymbol{m})'\Sigma^{-1}(\theta'-\boldsymbol{m})\bigg\},
+\end{equation}
+where the mean vector $\boldsymbol{m}$ and the symmetric positive definite $[3\times 3]$ covariance matrix $\Sigma$ must be specified. This approach was used by \citet{coles_1996_bay} but other parametrizations exist. For example, changing $\mu$ to $\log \mu$ can be useful if a physical lower bound for this parameter must be specified.
 
 
-Priors are necessary in the Bayesian paradigm to be able to compute the posterior in  (\ref{bayeseq}).But, priors require the legitimate statement of domain's expert, to make this viewed the less subjective as possible
+\subsection{Gamma Distributions for Quantile Differences}
 
-Prior may not be of great importance if the size ($m$) of the dataset is large. It can be seen from (\ref{bayeseq}) where the amount of information contained in the data through $L(\theta|\boldsymbol{x})$ will be prominent compared to this contained in the prior through $\pi(\theta)$. Prior will have limited influence.
+This method constructs priors on the quantile space, for fixed probabilities. Let $\text{Pr}(X>q_p)=p$, where $X$ has a GEV distribution (\ref{gevgen}). Then,
 
-One is aware that this is not often the case in EVT cases. By design, we are dealing with rather small so-constructed datasets. And mostly for this reason, it could be important to incorporate additional information in this limited dataset through the prior distribution.
+\begin{equation}
+q_p=\mu + \sigma\cdot\xi^{-1}\cdot\big(x_p^{-\xi}-1\big),
+\end{equation}
+where $x_p=-\log (1-p)$. Indeed, we notice that it is a $m$-return level (\ref{rleqgev}) with $p=m^{-1}$. The prior distribution is constructed in terms of the quantiles $(q_{p_1},q_{p_2}, q_{p_3})$ for specified probabilities $p_1>p_2>p_3$. It is easier to work with the differences $(\tilde{q}_{p_1},\tilde{q}_{p_2}, \tilde{q}_{p_3})$, with $\tilde{q}_{p_i}-\tilde{q}_{p_{i-1}}$, $i=1,2,3$, where $q_{p0}$ is the physical lower endpoint of the process variable. We can take priors on the quantile differences to be independent with 
+
+\begin{equation}
+q
+\end{equation}
+
+
+\subsection{Beta Distributions for Probability Ratios}
+
+
+
+
+
+
+Moreover, it can be a huge help with computation to have less diffuse priors, even
+if they're not informative enough to have a noticeable impact on the posterior.
+
 
 \subsection{Non-informative Priors}
 
-Receive a correct and accepted advice from an expert is often difficult
-So, in many cases, we cannot inject information through the prior. 
-We must then construct a prior which represent this lack of knowledge so that  they do not influence posterior inferences. 
+Receive a correct and accepted advice from an expert is often difficult.
+So, in many cases, it is not possible to inject information through the prior. 
+Hence, priors must be constructed to represent this lack of knowledge and not influence posterior inferences. 
 
-There exists a vast amount of uninformative priors in the literature (see e.g. \cite{yang_catalog_1996}, \cite{ni_noninformative_2003})
-This family of priors can be \emph{improper}, i.e. priors for which the integral of $\pi(\theta)$ over the parameter space is not finite. It is valid to use improper priors only if the posterior target is proper. 
+Parameters of the prior distribution are often called \emph{tuning parameters} or \emph{hyperparameters} to emphasize that we can tune the amount of information provided through the prior. In practical applications with  Markov Chains (see \hyperref[sec:baymcmc]{Section \textbf{\ref{sec:baymcmc}}}), these values are often tuned to who maximize the convergence of the posterior to its stationary target distribution. However, adjustments of these priors must always be thought in practical applications since objectives can be multiple. For example, if we take $\pi(\theta)\sim\mathcal{N}(\mu,\sigma^2)$,  the hyperparameter $\sigma^2$ will be tuned to represent the amount of knowledge we want to incorporate. It will tend to infinity to be non-informative (vague prior).
 
-Adjustments of these priors must always be thought in practical applications
+
+There exists a vast amount of uninformative priors in the literature (see e.g. \cite{yang_catalog_1996}, \cite{ni_noninformative_2003}, etc).
+This family of priors can be \emph{improper}, i.e. priors for which the integral of $\pi(\theta)$ over the parameter space is not finite\footnote{It is valid to use improper priors only if the posterior target distribution is proper.}. 
+
+
 \subsubsection*{Jeffrey's prior} 
-is specified as 
+Discovered by \citet{Jeffreys61a}, this prior is specified as 
 
 \begin{equation}
-\pi(\theta)\propto \sqrt{\det I(\theta)}, \qquad \text{where }\quad\quad I_{ij}(\theta)=\mathbb{E}_{\theta}\Bigg[-\frac{\partial^2\log f(\boldsymbol{x}|\theta)}{\partial\theta_i\partial\theta_j}\Bigg], \ \ i,j= 1,\dots,d.
+\pi(\theta)\propto \sqrt{\det I(\theta)}, \qquad \text{where }\quad I_{ij}(\theta)=\mathbb{E}_{\theta}\Bigg[-\frac{\partial^2\log f(X|\theta)}{\partial\theta_i\partial\theta_j}\Bigg]; \ \ i,j= 1,\dots,d.
 \end{equation}
-where $f(\boldsymbol{x}|\theta)$ is the density function of X.
-This prior is invariant to reparametrization, but has complex form for EV models, and it exists only when $\xi>-0.5$ in GEV models, where it is function of $\xi$ and $\sigma$ only.
+%where $f(\boldsymbol{x}|\theta)$ is the density function of X.
+This prior is a standard starting rule for an objective analysis.
+This prior is invariant to reparametrization, but has a complex form for GEV models, and it exists only when $\xi>-0.5$ in GEV models, where it is function of $\xi$ and $\sigma$ only.
 
 
-\subsubsection*{MDI prior}
-Maximal Data Information priors
+\subsubsection*{Maximal Data Information  prior}
+Maximal Data Information (MDI) priors are defined to provide maximal average data information on $\theta$. These are not invariant under reparametrization but are easy to implement. It is generally defined as 
 
-
+\begin{equation*}
+\pi(\theta)\propto \exp\Big\{ \mathbb{E}\big[\log f(X|\theta
+)\big]\Big\}.
+\end{equation*}
 However, it has been showed by \cite{northrop_posterior_2016} that 
-both Jeffrey and MDI priors give improper posterior when there are no truncation of the shape parameter, i.e. we must restrict the fact that $\pi(\theta)\rightarrow\infty$ as $\xi\rightarrow(-)\infty$ for Jeffreys (MDI), in order to obtain a proper posterior.
+both Jeffrey and MDI priors give improper posterior when there are no truncation of the shape parameter, and hence we must restrict the fact that $\pi(\theta)\rightarrow\infty$ as $\xi\rightarrow(-)\infty$ for Jeffreys (MDI), in order to obtain a proper posterior.
 
 \subsubsection*{Vague priors}
-The last and often preferred alternative to construct uninformative priors is to use proper priors which are near flat, e.g. which are uniform or with exhibits large variance for the normal distribution.
-
-In GEV we will take independent normal-distributed priors each with a large (tuned) variance. When these variances increase, we get at the limit
+The preferred alternative is often to construct uninformative priors by using proper priors which are near flat, e.g. which are uniform or which exhibits very large variance.
+In GEV, we will often take independent normally distributed priors each with a large (tuned) variance. When these variances increase, we get at the limit
 
 \begin{equation}
 \pi(\theta)=\pi(\mu,\nu,\xi)\stackrel{(\independent)}{=}\pi(\mu)\cdot\pi(\nu)\cdot\pi(\xi)\ \propto 1,
 \end{equation}
-
 where $\nu= \log\sigma$.
 
-Taking multivariate normal distribution as prior has also been proposed (see ) is often difficult as it involves 9 (hyper)parameters in total and this can be difficult 
-
-
-\subsection{Informative Priors}
-
-STAN : "It can
-also be a huge help with computation to have less diffuse priors, even
-if they're not informative enough to have a noticeable impact on the posterior. "
-
-\paragraph*{Gamma Distributions for Quantile Differences}
-
-
-\paragraph*{Beta Distributions for Probability Ratios}
-
-
-
-\subsubsection*{The Bayes Factor}
+Taking multivariate normal distribution as prior has also been proposed (see \hyperref[sec:trivnorm]{Section \textbf{\ref{sec:trivnorm}}} ) is often difficult as it involves 9 hyperparameters in total ($7$ in $\Sigma$, $\mu$ and $\xi$) and  and this can be difficult to address
 
 
 
 
-\section{Bayesian Computation : Markov Chains}
+
+\section{Bayesian Computation : Markov Chains}\label{sec:baymcmc}
 
 
 Methods have been developed for sampling from arbitrary posterior distributions $\pi(\theta|\boldsymbol{x})$. Simulations of $N$ values $\theta_1,\theta_2,\dots,\theta_N$ that are iid from $\pi(\theta|\boldsymbol{x})$ can be used to estimate features of interest.
@@ -245,6 +266,9 @@ There exists exists 2 problems of correlations in the output delivered by a MC.
 	\item \textbf{Cross-correlation}
 \end{itemize}
 
+As the dependence becomes stronger, the run length n must be larger in order
+to achieve the same precision. Dependence exists both within the output for a single parameter
+(autocorrelations) and across parameters (cross-correlations), we discuss this issue in section \hyperref[label]{text}.
 
 \section{Posterior Predictive}
 notation for posterior ? pi or f
@@ -253,46 +277,84 @@ notation for posterior ? pi or f
 As discussed in \hyperref[it2bayes]{item \textbf{2}} above, prediction is of important interest in EVT, and this is "facilitated" in the Bayesian paradigm. This also permits a more straightforward quantification of the inferential uncertainty associated.
 
 \begin{definition}[Posterior Predictive density]
-	Let $X_{m+1}$ denotes a (one-step-ahead) future observation with density $f(x_{m+1}|\boldsymbol{\theta})$. Then we define the Posterior Predictive density of a future observation $X_{m+1}$ given $\boldsymbol{x}$ as 
+	Let $\tilde{X}$ denotes a future observation (e.g. $n+1$) with density $f(\tilde{x}|\boldsymbol{\theta})$. We define the \textbf{posterior predictive density} of $\tilde{X}$ given $\boldsymbol{x}$ as 
 	
-	\begin{equation}
+	\begin{equation}\label{eq:ppd}
 	\begin{aligned}
-	f(x_{m+1}|\boldsymbol{x})
-	= & \int_{\Theta}f(x_{m+1},\theta | \boldsymbol{x})\cdot d\theta=\int_{\Theta} f(x_{m+1}|\theta)\cdot \pi (\theta|\boldsymbol{x})\cdot d\theta
-	\\ := & \ \ \mathbb{E}_{\theta|\boldsymbol{x}}\big[f(x_{m+1}|\theta)\big]
+	f(\tilde{x}|\boldsymbol{x})
+	= & \int_{\Theta}f(\tilde{x},\theta | \boldsymbol{x})\cdot d\theta=\int_{\Theta} f(\tilde{x}|\theta)\cdot \pi (\theta|\boldsymbol{x})\cdot d\theta
+	\\ := & \ \ \mathbb{E}_{\theta|\boldsymbol{x}}\big[f(\tilde{x}|\theta)\big]
 	\end{aligned}
 	\end{equation}
-	where the last line emphasizes that we can evaluate $f(x_{m+1}|\boldsymbol{x})$ by averaging over the different possible parameter values.
-	
+	where $\boldsymbol{x}$ is the vector of recorded annual maxima over $n$ years.	
 \end{definition}
-
-The uncertainty in the model is reflected here through $\pi(\theta|\boldsymbol{x})$ while the uncertainty due to variability in future observations is also reflected through $f(x_{m+1}|\theta)$.
+The second line of (\ref{eq:ppd}) emphasizes that we can evaluate $f(\tilde{x}|\boldsymbol{x})$ by averaging over all possible parameter values.
+Uncertainty is reflected through $\pi(\theta|\boldsymbol{x})$ and the uncertainty due to variability in future observations through $f(\tilde{x}|\theta)$.
 
 \begin{definition}[Posterior Predictive probability]
-	The posterior predictive probability of $X_{m+1}$ exceeding some threshold $x$ is accordingly given by
+	The \textbf{posterior predictive probability} of $\tilde{X}$ exceeding some threshold $x$ is given by
 	\begin{equation}
 	\begin{aligned}
-	\text{\emph{Pr}}\{X_{m+1}>x\ | \ \boldsymbol{x}\}= &\int_{\Theta}\text{\emph{Pr}}\{X_{m+1}>x \ | \ \theta \} \cdot \pi(\theta|\boldsymbol{x})\cdot d\theta \\ 
-	= & \ \mathbb{E}_{\theta|\boldsymbol{x}}\big[\text{\emph{Pr}}(X_{m+1}>x \ | \ \theta)\big]
+	\text{\emph{Pr}}\{\tilde{X}>x\ | \ \boldsymbol{x}\}= &\int_{\Theta}\text{\emph{Pr}}\{\tilde{X}>x \ | \ \theta \} \cdot \pi(\theta|\boldsymbol{x})\cdot d\theta \\ 
+	= & \ \mathbb{E}_{\theta|\boldsymbol{x}}\big[\text{\emph{Pr}}(\tilde{X}>x \ | \ \theta)\big]
 	\end{aligned}
 	\end{equation}
 \end{definition}
-
 This quantity is often of interest in EVT as we are rather concerned with the probability of future unknown observable exceeding some threshold.
 
 However, this quantity is difficult to obtain analytically. Hence, we will more rely on simulated approximations. Given a sample $\theta_1,\dots,\theta_r$ from the posterior $\pi(\theta|\boldsymbol{x})$, we use 
 
 \begin{equation}
-\text{Pr}\{X_{m+1}>x\ | \ \boldsymbol{x}\}\approx r^{-1}\sum_{i=1}^r\text{Pr}\{X_{m+1}>x \ | \ \theta_i\},
+\text{Pr}\{\tilde{X}>x\ | \ \boldsymbol{x}\}\approx r^{-1}\sum_{i=1}^r\text{Pr}\{\tilde{X}>x \ | \ \theta_i\},
 \end{equation}
-
-where $\text{Pr}\{X_{m+1}>x \ | \ \theta_i\}$ follows directly from $f(x|\theta)$. 
+where $\text{Pr}\{\tilde{X}>x \ | \ \theta_i\}$ follows directly from $f(x|\theta)$. 
 
 We will now analyse more in-depth the numerical computations in the Bayesian paradigm or how we can get numerically a sample of the posterior distribution.
 
 
+\subsection{Model Comparison}\label{sec:modcompbay}
+
+pp.54 extremes in a climate change 
+
+In a nonstationary GEV context, we would like to compare models as done in the frequentist setting in \hyperref[sec:gev_nonstatio]{Chapter \textbf{\ref{sec:gev_nonstatio}}} with the deviance statistic, the BIC, etc.
+There may exist different nonstationary models for the location or for the scale, and we would like to assess which model is the most relevant to describe the data. We will only focus on parametric models such as those studied with tools in \hyperref[sec:gev_nonstatio]{Chapter \textbf{\ref{sec:gev_nonstatio}}}. 
+
+Le assume that $\big\{M_1,\ldots,M_q\big\}$ is a set of $q$ candidate models for describing the data $\boldsymbol{x}$. Each $M_i$ uses a parameter vector $\theta^{M_j}$ whose dimension may differ across models. Let $\text{Pr}(M_1),\ldots,p(M_q)$ denote prior probabilities assigned to each model such that $\sum_{i=1}^q \text{Pr}(M_i)=1$.
+It is then possible to compute models' posterior probabilities given $\boldsymbol{x}$ from the Bayes' Theorem applied in its discrete form : 
+
+\begin{equation}\label{eq:modpost}
+\text{Pr}(M_i|\boldsymbol{x})=\frac{\text{Pr}(\boldsymbol{x}|M_i)\cdot \text{Pr}(M_i)}{\sum_{j=1}^q \text{Pr}(\boldsymbol{x}|M_j)\cdot \text{Pr}(M_j)},
+\end{equation}
+where $\text{Pr}(\boldsymbol{x}|M_i)$ is the marginal likelihood of observations an can be computed as follows : 
+
+\begin{equation*}
+\text{Pr}(\boldsymbol{x}|M_i)=\int \text{Pr}(\boldsymbol{x}|\theta^{M_i},M_i)\cdot \text{Pr}(\theta^{M_i}|M_i)\cdot d\theta^{M_i}.
+\end{equation*}
+However, computing the marginal likelihood is difficult and suffers from the curse of dimensionality. \citet{Bos2002} provides various methods to compute the marginal likelihood when the size of the parameter vector is moderate.
+
+Model posterior probabilities (\ref{eq:modpost}) can be used for model comparisons and predictions.
+
+\subsubsection*{The Bayes Factor}
+
+One approach is to use the \emph{Bayes factor}
+to compare models. IT provides a measurement of the relevance of one model compared to anaother. For two models $M_i$ and $M_j$, it is defined as follows : 
+
+\begin{equation}
+B_{i,j}=\frac{\text{Pr}(M_i|\boldsymbol{x})}{\text{Pr}(M_j|\boldsymbol{x})}\cdot \Bigg(\frac{\text{Pr}(M_i)}{\text{Pr}(M_j)}\Bigg)^{-1}= \frac{\text{Pr}(\boldsymbol{x}|M_i)}{\text{Pr}(\boldsymbol{x}|M_j)}
+\end{equation}
+High values of $B_{i,j}$ gives stronger confidence in model $M_i$. Formal guidelines have been developed (see e.g. \citet{robert_1995}). It is also possible to compare several models (e.g. stationary) with other several models (e.g. nonstationary) via a composite Bayes factor.
+
+
+\subsubsection*{Bayesian Model Averaging}
+
+It is also possible to perform multi-model predictions by computing a weighted average of individual model predictions weighted by the posterior model probabilities. 
+\emph{Bayesian model averaging} (BMA) accounts for model uncertainty. Interesting similarities with bagging, method discussed in \hyperref[sec:bagg]{Chapter \textbf{\ref{sec:bagg}}} which makes an average of bootstrapped models to improve the prediction accuracy, can be found. Both relies on the same data but BMA will use different models, and hence correlations between the predictions of the different models will be important. It is particularly useful when distinct models provide an acceptable description of the data, but yield different predictions.
+
+
 
 \section{Bayesian Predictive Accuracy for Model Validation}
+
+
 
 \subsection{Cross-validation for predictive accuracy}
 
@@ -379,7 +441,10 @@ There exist mainly two kinds of credible interval in the Bayesian sphere :
 	For some posterior distribution which are not symmetric, this could be misleading, thus it is not the most recommended interval. (see ..)
 	However, these are often easily obtained when we have a random smaple of the posterior...(?)
 \end{itemize}
-xxxxx
+For an asymmetric distribution,
+the HPD interval can be a more reasonable summary than the central probability
+interval ( see illustration ...). For symmetric densities, HPD and central interals are the same while HPD is shorter for asymmetric densities.
+See \citet{liu_simulation-efficient_2015}....
 
 \subsection{Distribution of Quantiles : Return Levels}
 
@@ -393,10 +458,8 @@ We can use the values of the samples generated by the posterior to estimate feat
  
  
 
-\section{Bayesian Model Averaging}
+%\section{Bayesian Model Averaging}
 
 
-
-
-\section{Bayesian Neural Networks}
+%\section{Bayesian Neural Networks}
 

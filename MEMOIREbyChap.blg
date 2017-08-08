@@ -3,21 +3,21 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MEMOIREbyChap.aux
 The style file: abbrvnat.bst
 Case mismatch error between cite keys Hartmann_bayesian_2016 and hartmann_bayesian_2016
----line 1236 of file MEMOIREbyChap.aux
+---line 1310 of file MEMOIREbyChap.aux
  : \citation{Hartmann_bayesian_2016
  :                                 }
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 1339 of file MEMOIREbyChap.aux
+Illegal, another \bibstyle command---line 1412 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
 Database file #1: zotero1.bib
-I was expecting a `,' or a `}'---line 2173 of file zotero1.bib
+I was expecting a `,' or a `}'---line 2231 of file zotero1.bib
  :  
  :  title = {evmix: {An} {R} package for extreme value mixture modelling, threshold estimation and boundary corrected kernel density estimation},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 2935 of file zotero1.bib
+I was expecting a `,' or a `}'---line 3010 of file zotero1.bib
  :  
  :  note = {Google-Books-ID: dfZecgAACAAJ},
 (Error may have been on previous line)
@@ -46,48 +46,49 @@ while executing---line 1429 of file abbrvnat.bst
 Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
 while executing---line 1429 of file abbrvnat.bst
 Warning--can't use both author and editor fields in ag_extremes_2013
+Warning--can't use both author and editor fields in Bos2002
 Warning--empty journal in leisch_creating_2008
 Warning--can't use both author and editor fields in resnick_extreme_1987
 Warning--empty journal in segers_generalized_2001
-You've used 86 entries,
+You've used 90 entries,
             2773 wiz_defined-function locations,
-            1262 strings with 25104 characters,
-and the built_in function-call counts, 39482 in all, are:
-= -- 3818
-> -- 1952
-< -- 65
-+ -- 668
-- -- 582
-* -- 3310
-:= -- 6242
-add.period$ -- 435
-call.type$ -- 86
-change.case$ -- 435
-chr.to.int$ -- 86
-cite$ -- 176
-duplicate$ -- 1754
-empty$ -- 3201
-format.name$ -- 734
-if$ -- 8244
+            1297 strings with 25970 characters,
+and the built_in function-call counts, 41260 in all, are:
+= -- 3993
+> -- 2014
+< -- 70
++ -- 690
+- -- 600
+* -- 3442
+:= -- 6511
+add.period$ -- 453
+call.type$ -- 90
+change.case$ -- 452
+chr.to.int$ -- 90
+cite$ -- 185
+duplicate$ -- 1844
+empty$ -- 3361
+format.name$ -- 760
+if$ -- 8630
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 102
-newline$ -- 609
-num.names$ -- 344
-pop$ -- 697
+missing$ -- 108
+newline$ -- 635
+num.names$ -- 360
+pop$ -- 730
 preamble$ -- 1
-purify$ -- 366
+purify$ -- 380
 quote$ -- 0
-skip$ -- 1263
+skip$ -- 1329
 stack$ -- 0
-substring$ -- 1476
-swap$ -- 156
-text.length$ -- 6
+substring$ -- 1562
+swap$ -- 170
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 851
-warning$ -- 4
-while$ -- 360
+type$ -- 885
+warning$ -- 5
+while$ -- 378
 width$ -- 0
-write$ -- 1457
+write$ -- 1523
 (There were 12 error messages)

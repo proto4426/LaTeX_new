@@ -1,30 +1,81 @@
-\addcontentsline{toc}{subsection}{Note on the available R package : \texttt{evdbayes}}
-\subsection*{Note on the available R package : \texttt{evdbayes}}
+%\addcontentsline{toc}{subsection}{Note on the available R package : \texttt{evdbayes}}
+\section{Available Methods : \texttt{evdbayes}}
 
-The \texttt{evdbayes} is the only package available on CRAN for (see \citet{ribatet_users_2006}) which is a very old package. We had problems to understand both its structure and the famous "black-box"
-It only use the Metropolis Hastings algorithm.
+The \texttt{evdbayes} package is the only available on CRAN to do Bayesian inference in EVT with MCMC techniques to sample from the posterior (see \citet{ribatet_users_2006}), which is a very old package. We have passed a long time trying to understand and compute relevant analysis with the \texttt{evdbayes} framework. We had problems to understand both its structure and the famous "black-box".
+ Since we faced important problems, e.g. it was impossible to reach the stationary posterior distribution of our of the parameter $\mu_1$ in a nonstationary GEV analysis with linear trend on $\mu(t)$, we decided to develop our own methods. Moreover, following \citet{hartmann_bayesian_2016}, it only uses the Metropolis Hastings (MH) Algorithm \ref{algo:mh} (\hyperref[app:algo]{Appendix \textbf{\ref{app:algo}}}) which is quite restrictive. We then decided to develop not only the MH but also the Gibbs sampler, and later the Hamiltonian Monte Carlo through the STAN interface. 
 
- Note that efforts should put to the new \texttt{revdbayes} R package which use the ratio-of-uniforms method is an other acceptance-rejection type of simulation algorithm. ( \hyperref[sec:bayes_ratio]{Section \textbf{\ref{sec:bayes_ratio}}}
+The different methods to compute the prior $\pi(\theta)$ discussed in \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}} are available in the \texttt{evdbayes} package. Since 
+
+
+ Note that efforts should put to the new \texttt{revdbayes} R package which use the generalised ratio-of-uniforms method instead of the popular MCMC techniques, which is an other acceptance-rejection type of simulation algorithm. ( \hyperref[sec:bayes_ratio]{Section \textbf{\ref{sec:bayes_ratio}}}) ? )
  
-\section{From Our Functions (R package)}
+ 
+ 
+ We have considered several methods : 
+ 
+ \begin{itemize}
+ 	\item evdbayes package
+ 	\item From Our Functions (R package)
+ 	\item Ratio of Uniform : \texttt{revdbayes} package :
+ 	
+ 	\url{https://cran.r-project.org/web/packages/revdbayes/vignettes/revdbayes-vignette.html}
+ 	
+ 	Helped with \texttt{rust}
+ 	
+ 	\item From HMC algorithm using STAN language :
+ 	
+ 	The problem is maybe from \ref{likgevintro}. The parameter $\xi$ is relatively near the region that could be problematic, causing convergence issues. 
+ 	
+ \end{itemize}
+%\section{From Our Functions (R package)}
+
+\section{Stationary GEV}
+
+Note that the results for the stationary model are very similar to those obtained with \texttt{evdbayes}. We empirically verify that the latter rather uses the MH algorithm.
+
+\subsection*{Comparison Metropolis-Hastings and Gibbs Sampler}
+
+
+\section{Nonstationary GEV}
 
 
 
-\section{From HMC algorithm using STAN language}
 
-The problem is maybe from \ref{likgevintro}. The parameter $\xi$ is relatively near the region that could be problematic, causing convergence issues. 
+\subsection{Model Comparisons}
 
+We willl compare the same parametric models as in \hyperref[sec:xpnp]{Section \textbf{\ref{sec:xpnp}}} but with Bayesian techniques coming from \hyperref[sec:modcompbay]{Section \textbf{\ref{sec:modcompbay}}}. It will be interesting to see whether there are differences in the selected model between the frequentist and the Bayesian frameworks.
 
-
-\section{Ratio of Uniform : \texttt{revdbayes} package}\label{sec:bayes_ratio}
-
-\url{https://cran.r-project.org/web/packages/revdbayes/vignettes/revdbayes-vignette.html}
+ 
 
 
 
-From the \texttt{revdbayes}
+\subsection{Posterior Predictive Distribution} 
 
-Helped with \texttt{rust}
+ \begin{figure}[!htb]
+  	\centering	\includegraphics[width=0.8\linewidth]{predpred.pdf}\caption{ }\label{fig:post_pred}
+ \end{figure}
+  
+  
+  We remark from this graph the increasing variance of the predictive posterior as far as we predict in the future. It can also be seen from the $5\%$ and $95\%$ quantiles which deviate from the median. 
+  
+%\section{From HMC algorithm using STAN language}
+%\section{Ratio of Uniform : \texttt{revdbayes} package}\label{sec:bayes_ratio}
+
+
+\subsection{Diagnostics}
+
+\subsubsection*{Sensistivity Analysis}
+
+\textbf{section 7.4} evdbayes pdf 
+
+
+The basic method of sensitivity analysis is to fit several models to the same problem.
+ Posterior inferences from each model can then be compared. Posterior inferences
+will typically include marginal posterior distributions of the 3 parameters posterior distributions of GEV quantiles and posterior predictive distributions.
+The sensitivity of the marginal posterior density of the shape parameter $\xi$ is often of particular interest.
+
+
+
 \section{Comparisons}
 
 \citet{hartmann_bayesian_2016}
@@ -54,6 +105,15 @@ Drawbacks :
 
 
 
+"for time critical operations it may be nec-
+essary to use a compiled language either in preference to R or as a subroutine that
+is called from R. In our experience this typically results in a two-fold or three-fold
+speed increase over optimized R code for iterative simulation algorithms of the type
+used in Markov chain Monte Carlo simulation."
+
 \section{Comparison with frequentists results}
 
 In this first analysis, we rely on 
+
+
+By using objective priors (i.e. priors with very large variance), we should obtain the same results in the frequentist or in the Bayesian setting, which will be a prove of robustness of obtained results  

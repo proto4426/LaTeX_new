@@ -9,6 +9,6 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Return Levels : New Definitions}{\reset@font\mtcSfont 38}{section.3.3}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Neural Networks for Nonstationary Series : GEV-CDN}{\reset@font\mtcSfont 39}{section.3.4}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}Generalized Maximum Likelihood}{\reset@font\mtcSSfont 40}{subsection.3.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.2}Architecture of the GEV-CDN Network}{\reset@font\mtcSSfont 41}{subsection.3.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.2}Architecture of the GEV-CDN Network}{\reset@font\mtcSSfont 40}{subsection.3.4.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.3}Prevent Overfitting : Bagging}{\reset@font\mtcSSfont 42}{subsection.3.4.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.4}Confidence Intervals : Bootstrapping Methods}{\reset@font\mtcSSfont 42}{subsection.3.4.4}}

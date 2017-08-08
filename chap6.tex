@@ -377,7 +377,7 @@ Since the linear model is not complex enough to require bagging, and the support
  Results of the generated quantiles are shown on the right plot of Figure \ref{fig:bag}. We also made available in Figure \ref{fig:bagv1} in  \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} a graph which gathers results that could help to better visualize differences in quantiles. 
  
  \begin{figure}[!htb]
- 	\centering	\includegraphics[width=1.01\linewidth]{gev_compv0.pdf}\caption{(Left) observations with quantiles from Model \ref{mod222} estimated in Table \ref{tab:estliknsta}. (Right) observations with same quantiles coming from the nonstationary and nonlinear bootstrap aggregated model with $M=1000$ resamples.
+ 	\centering	\includegraphics[width=1\linewidth]{gev_compv0.pdf}\caption{(Left) observations with quantiles from Model \ref{mod222} estimated in Table \ref{tab:estliknsta}. (Right) observations with same quantiles coming from the nonstationary and nonlinear bootstrap aggregated model with $M=1000$ resamples.
  	Note that in a stationary context, the $50\%$, $90\%$ and $95\%$ quantiles represent return levels with return periods of $2$, $10$ and $20$ years respectively.}\label{fig:bag}
  \end{figure}
  
@@ -394,21 +394,24 @@ Note that the displayed values of the quantiles that are different for each year
  
 \subsection{Inference : Confidence intervals by Bootstrap }
  
+ 
+ 
+ \begin{figure}[!htb]
+   	\centering	\includegraphics[width=1.01\linewidth]{g_boot_res.pdf}\caption{\textbf{Residual} bootstrap $95\%$ intervals computed with the GEV-CDN model allow a linear nonstationary location parameter only (left), and for the nonlinear nonstationary model in location and scale parameters only with 2 hidden layers (right). }\label{fig:boot_res}
+ \end{figure}
+   
  Bootstrap is an effective technique to compute quantile-based confidence intervals when we cannot rely on approximations.
 As for bagging, we did the computations in parallel. 
 We took $B= 1000$ resamples in only 74 seconds for the residual bootstrap method.
 We used the residual bootstrap as presented  \hyperref[sec:nnboot]{Section \textbf{\ref{sec:nnboot}}} 
-since it is the method recommended by \citet{kharin_estimating_2005}. The results are shown in Figure \ref{fig:boot_res} for all three GEV parameters. Left plots come from the $2.5\%$ and $97.5\%$ quantiles of Model \ref{mod222} (Table \ref{tab:estnn}) and right plots are for the bagged nonlinear GEV-CDN model considered in the previous section (Table \ref{tab:estnnbag}). 
+since it is the method recommended by \citet{kharin_estimating_2005}. The results are shown in Figure \ref{fig:boot_res} for all three GEV parameters, where left plots come from the $2.5\%$ and $97.5\%$ quantiles of Model \ref{mod222} (Table \ref{tab:estnn}) and right plots are for the nonlinear GEV-CDN model considered in the previous section (Table \ref{tab:estnnbag}) but with no bagging since it is not relevant to combine two bootstrap methods. 
  
-  \begin{figure}[!htb]
-  	\centering	\includegraphics[width=1.01\linewidth]{g_boot_res.pdf}\caption{\textbf{Residual} bootstrap $95\%$ intervals computed with the GEV-CDN model allow a linear nonstationary location parameter only (left), and for the nonlinear nonstationary model in location and scale parameters only with 2 hidden layers (right). }\label{fig:boot_res}
-  \end{figure}
  These models have been chosen from previous sections. 
 We did not extrapolate beyond the range of data.
  We compared results with the parametric bootstrap from Figure \ref{fig:boot_par} let in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} but we remark no significant differences. Graphs of the differences between two methods (i.e. residuals) does not yield additional concerns and are thus left at the end of \texttt{2NeuralsNets.R}. We think a coverage analysis is thus not relevant.
  
  We clearly remark the flexibility introduced in the location and scale parameters intervals with the incorporated hidden layers. Stationary parameters have constant confidence lines as expected.
- Regarding the shape parameter $\xi$, we see that the value of $0$ is near to be outside the EV-Weibull type for the complex model. Moreover, we remark this interval is quite wider with this model, but it is also the case for other parameters. We also note the decreasing behavior of the intervals for the scale parameters. This explains, to a certain extent, the decreasing quantiles intervals widths at the end of the series of right plot of Figure \ref{fig:bag}.
+ Regarding the shape parameter $\xi$, we see that the value of $0$ is near to be outside the EV-Weibull type for the complex model. Moreover, we remark this interval is quite wider for the complex model, but also regarding the location and scale parameters. To a certain extent, this loss of accuracy is due to overfitting, emphasized by the fact that we did not use bagging. We also note the decreasing behavior of the intervals for the scale parameters. This explains, to a certain extent, the decreasing quantiles intervals widths at the end of the series of right plot of Figure \ref{fig:bag}.
 
 %Remark that we did not use bagging here  and that explains why the results are not as smooth as in the previous section 
   
