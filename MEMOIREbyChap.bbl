@@ -1,9 +1,17 @@
-\begin{thebibliography}{90}
+\begin{thebibliography}{100}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[AghaKouchak et~al.(2012)AghaKouchak, Easterling, Hsu, Schubert, and
+  Sorooshian]{aghakouchak_extremes_2012}
+A.~AghaKouchak, D.~Easterling, K.~Hsu, S.~Schubert, and S.~Sorooshian.
+\newblock \emph{Extremes in a {Changing} {Climate}: {Detection}, {Analysis} and
+  {Uncertainty}}.
+\newblock Springer Science \& Business Media, Oct. 2012.
+\newblock ISBN 978-94-007-4478-3.
 
 \bibitem[Amir~AghaKouchak(2013)]{ag_extremes_2013}
 K.~H. S. S. S.~S. Amir~AghaKouchak, David~Easterling.
@@ -32,6 +40,13 @@ A.~A. Balkema and L.~d. Haan.
 \newblock \doi{10.1214/aop/1176996548}.
 \newblock URL \url{http://projecteuclid.org/euclid.aop/1176996548}.
 
+\bibitem[Beaumont et~al.(2002)Beaumont, Zhang, and Balding]{Beaumont2025}
+M.~A. Beaumont, W.~Zhang, and D.~J. Balding.
+\newblock Approximate bayesian computation in population genetics.
+\newblock \emph{Genetics}, 162\penalty0 (4):\penalty0 2025--2035, 2002.
+\newblock ISSN 0016-6731.
+\newblock URL \url{http://www.genetics.org/content/162/4/2025}.
+
 \bibitem[Beirlant et~al.(1996)Beirlant, Teugels, and
   Vynckier]{beirlant_practical_1996}
 J.~Beirlant, J.~L. Teugels, and P.~Vynckier.
@@ -56,11 +71,10 @@ M.~Betancourt.
 \newblock URL \url{http://arxiv.org/abs/1604.00695}.
 \newblock arXiv: 1604.00695.
 
-\bibitem[Betancourt and Girolami(2015)]{betancourt_hamiltonian_2015}
-M.~Betancourt and M.~Girolami.
-\newblock Hamiltonian {Monte} {Carlo} for hierarchical models.
-\newblock \emph{Current trends in Bayesian methodology with applications},
-  79:\penalty0 30, 2015.
+\bibitem[{Betancourt}(2017)]{betancourt_2017_con}
+M.~{Betancourt}.
+\newblock {A Conceptual Introduction to Hamiltonian Monte Carlo}.
+\newblock \emph{ArXiv e-prints}, Jan. 2017.
 
 \bibitem[Bolívar et~al.(2010)Bolívar, Díaz-Francés, Ortega, and
   Vilchis]{bolivar_profile_2010}
@@ -86,6 +100,17 @@ L.~Breiman.
 \newblock ISSN 0885-6125.
 \newblock \doi{10.1023/A:1010933404324}.
 \newblock URL \url{http://dx.doi.org/10.1023/A:1010933404324}.
+
+\bibitem[Bédard(2008)]{BEDARD20082198}
+M.~Bédard.
+\newblock Optimal acceptance rates for metropolis algorithms: Moving beyond
+  0.234.
+\newblock \emph{Stochastic Processes and their Applications}, 118\penalty0
+  (12):\penalty0 2198 -- 2222, 2008.
+\newblock ISSN 0304-4149.
+\newblock \doi{http://dx.doi.org/10.1016/j.spa.2007.12.005}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S0304414907002177}.
 
 \bibitem[Cannon(2010)]{cannon_flexible_2010}
 A.~J. Cannon.
@@ -149,6 +174,21 @@ S.~G. Coles and E.~A. Powell.
   119--136, 1996.
 \newblock URL
   \url{http://www.jstor.org/stable/1403426?origin=crossref&seq=1#fndtn-page_thumbnails_tab_contents}.
+
+\bibitem[Coles and Tawn(1996)]{coles_tawn_1996}
+S.~G. Coles and J.~A. Tawn.
+\newblock A bayesian analysis of extreme rainfall data.
+\newblock pages 153--178, 1996.
+
+\bibitem[Crowder(1992)]{Crowder1992}
+M.~Crowder.
+\newblock Bayesian priors based on a parameter transformation using the
+  distribution function.
+\newblock \emph{Annals of the Institute of Statistical Mathematics},
+  44\penalty0 (3):\penalty0 405--416, Sep 1992.
+\newblock ISSN 1572-9052.
+\newblock \doi{10.1007/BF00050695}.
+\newblock URL \url{https://doi.org/10.1007/BF00050695}.
 
 \bibitem[Cunnane(1979)]{cunnane_note_1979}
 C.~Cunnane.
@@ -268,6 +308,19 @@ R.~A. Fisher and L.~H.~C. Tippett.
 \newblock ISSN 1469-8064.
 \newblock \doi{10.1017/S0305004100015681}.
 
+\bibitem[Gelman and Rubin(1992)]{gelman1992}
+A.~Gelman and D.~B. Rubin.
+\newblock Inference from iterative simulation using multiple sequences.
+\newblock \emph{Statist. Sci.}, 7\penalty0 (4):\penalty0 457--472, 11 1992.
+\newblock \doi{10.1214/ss/1177011136}.
+\newblock URL \url{http://dx.doi.org/10.1214/ss/1177011136}.
+
+\bibitem[Gelman et~al.(1995)Gelman, Robert, Chopin, and
+  Rousseau]{Gelman95bayesiandata}
+A.~Gelman, C.~Robert, N.~Chopin, and J.~Rousseau.
+\newblock \emph{Bayesian Data Analysis}.
+\newblock 1995.
+
 \bibitem[Gelman et~al.(2013)Gelman, Carlin, Stern, Dunson, Vehtari, and
   Rubin]{gelman_bayesian_2013}
 A.~Gelman, J.~B. Carlin, H.~S. Stern, D.~B. Dunson, A.~Vehtari, and D.~B.
@@ -287,6 +340,22 @@ A.~Gelman, J.~Hwang, and A.~Vehtari.
 \newblock ISSN 0960-3174.
 \newblock \doi{10.1007/s11222-013-9416-2}.
 \newblock URL \url{http://dx.doi.org/10.1007/s11222-013-9416-2}.
+
+\bibitem[Geman and Geman(1984)]{Geman_1984}
+S.~Geman and D.~Geman.
+\newblock Stochastic relaxation, gibbs distributions, and the bayesian
+  restoration of images.
+\newblock \emph{IEEE Trans. Pattern Anal. Mach. Intell.}, 6\penalty0
+  (6):\penalty0 721--741, Nov. 1984.
+\newblock ISSN 0162-8828.
+\newblock \doi{10.1109/TPAMI.1984.4767596}.
+\newblock URL \url{http://dx.doi.org/10.1109/TPAMI.1984.4767596}.
+
+\bibitem[Geweke(1992)]{Geweke92}
+J.~Geweke.
+\newblock Evaluating the accuracy of sampling-based approaches to the
+  calculation of posterior moments.
+\newblock pages 169--193, 1992.
 
 \bibitem[Gilleland and Katz(2016)]{gilleland_extremes_2016}
 E.~Gilleland and R.~W. Katz.
@@ -485,6 +554,15 @@ A.~A. Lindsey and J.~E. Newman.
 \newblock URL
   \url{http://onlinelibrary.wiley.com/doi/10.2307/1933072/abstract}.
 
+\bibitem[Link and Eaton(2012)]{bay_thin_2012}
+W.~A. Link and M.~J. Eaton.
+\newblock On thinning of chains in mcmc.
+\newblock \emph{Methods in Ecology and Evolution}, 3\penalty0 (1):\penalty0
+  112--115, 2012.
+\newblock ISSN 2041-210X.
+\newblock \doi{10.1111/j.2041-210X.2011.00131.x}.
+\newblock URL \url{http://dx.doi.org/10.1111/j.2041-210X.2011.00131.x}.
+
 \bibitem[Liu et~al.(2015)Liu, Gelman, and Zheng]{liu_simulation-efficient_2015}
 Y.~Liu, A.~Gelman, and T.~Zheng.
 \newblock Simulation-efficient shortest probability intervals.
@@ -525,6 +603,15 @@ E.~S. Martins and J.~R. Stedinger.
 \newblock URL
   \url{http://onlinelibrary.wiley.com/doi/10.1029/1999WR900330/abstract}.
 
+\bibitem[Metropolis et~al.(1953)Metropolis, Rosenbluth, Rosenbluth, Teller, and
+  Teller]{metropolis_1953}
+N.~Metropolis, A.~W. Rosenbluth, M.~N. Rosenbluth, A.~H. Teller, and E.~Teller.
+\newblock Equation of state calculations by fast computing machines.
+\newblock \emph{The Journal of Chemical Physics}, 21\penalty0 (6):\penalty0
+  1087--1092, 1953.
+\newblock \doi{10.1063/1.1699114}.
+\newblock URL \url{http://dx.doi.org/10.1063/1.1699114}.
+
 \bibitem[Milly et~al.(2008)Milly, Betancourt, Falkenmark, Hirsch, Kundzewicz,
   Lettenmaier, and Stouffer]{milly_climate_2008}
 P.~C.~D. Milly, J.~Betancourt, M.~Falkenmark, R.~M. Hirsch, Z.~W. Kundzewicz,
@@ -542,12 +629,6 @@ M.~Mudelsee.
 \newblock Springer International Publishing, Cham, 2014.
 \newblock ISBN 978-3-319-04449-1 978-3-319-04450-7.
 \newblock URL \url{http://link.springer.com/10.1007/978-3-319-04450-7}.
-
-\bibitem[Neal and {others}(2011)]{neal_mcmc_2011}
-R.~M. Neal and {others}.
-\newblock {MCMC} using {Hamiltonian} dynamics.
-\newblock \emph{Handbook of Markov Chain Monte Carlo}, 2:\penalty0 113--162,
-  2011.
 
 \bibitem[Ni and Sun(2003)]{ni_noninformative_2003}
 S.~Ni and D.~Sun.
@@ -594,6 +675,14 @@ E.~C. Pinheiro and S.~L.~P. Ferrari.
 \newblock URL \url{http://arxiv.org/abs/1502.02708}.
 \newblock arXiv: 1502.02708.
 
+\bibitem[Raftery and Lewis(1992)]{raftery1992}
+A.~E. Raftery and S.~M. Lewis.
+\newblock [practical markov chain monte carlo]: Comment: One long run with
+  diagnostics: Implementation strategies for markov chain monte carlo.
+\newblock \emph{Statist. Sci.}, 7\penalty0 (4):\penalty0 493--497, 11 1992.
+\newblock \doi{10.1214/ss/1177011143}.
+\newblock URL \url{http://dx.doi.org/10.1214/ss/1177011143}.
+
 \bibitem[Reiss and Thomas(2007)]{reiss_statistical_2007}
 R.-D. Reiss and M.~Thomas.
 \newblock \emph{Statistical analysis of extreme values: with applications to
@@ -636,16 +725,6 @@ P.~Ribereau, E.~Masiello, and P.~Naveau.
 \newblock \doi{10.1080/03610926.2014.935434}.
 \newblock URL \url{http://dx.doi.org/10.1080/03610926.2014.935434}.
 
-\bibitem[Roberts et~al.(1997)Roberts, Gelman, and Gilks]{Roberts_weak_1997}
-G.~O. Roberts, A.~Gelman, and W.~R. Gilks.
-\newblock Weak convergence and optimal scaling of random walk {Metropolis}
-  algorithms.
-\newblock \emph{The Annals of Applied Probability}, 7\penalty0 (1):\penalty0
-  110--120, Feb. 1997.
-\newblock ISSN 1050-5164, 2168-8737.
-\newblock \doi{10.1214/aoap/1034625254}.
-\newblock URL \url{http://projecteuclid.org/euclid.aoap/1034625254}.
-
 \bibitem[Rosso(2015)]{rosso_extreme_2015}
 G.~Rosso.
 \newblock Extreme {Value} {Theory} for {Time} {Series} using
@@ -677,14 +756,6 @@ J.~Segers.
 \newblock URL
   \url{http://citeseerx.ist.psu.edu/viewdoc/citations;jsessionid=0C9C7CAE3938CA7A9B280DEA739EFDA9?doi=10.1.1.7.1713}.
 
-\bibitem[Sherlock et~al.(2009)Sherlock, Roberts, and
-  {others}]{Sherlock_optimal_2009}
-C.~Sherlock, G.~Roberts, and {others}.
-\newblock Optimal scaling of the random walk {Metropolis} on elliptically
-  symmetric unimodal targets.
-\newblock \emph{Bernoulli}, 15\penalty0 (3):\penalty0 774--798, 2009.
-\newblock URL \url{http://projecteuclid.org/euclid.bj/1251463281}.
-
 \bibitem[Singh and Guo(1995)]{singh_parameter_1995}
 V.~P. Singh and H.~Guo.
 \newblock Parameter estimation for 3-parameter generalized pareto distribution
@@ -713,6 +784,13 @@ D.~J. Spiegelhalter, N.~G. Best, B.~P. Carlin, and A.~Van Der~Linde.
   Methodology)}, 64\penalty0 (4):\penalty0 583--639, 2002.
 \newblock URL
   \url{http://onlinelibrary.wiley.com/doi/10.1111/1467-9868.00353/full}.
+
+\bibitem[{Stan Development Team}(2012)]{stan_development_team_stan_2012}
+{Stan Development Team}.
+\newblock \emph{Stan {Modeling} {Language} {User}'s {Guide} and {Reference}
+  {Manual}, {Version} 1.0}.
+\newblock 2012.
+\newblock URL \url{http://mc-stan.org/}.
 
 \bibitem[Suh et~al.(2012)Suh, Oh, Lee, Cha, Choi, Jin, and
   Hong]{suh_development_2012}

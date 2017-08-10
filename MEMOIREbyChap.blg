@@ -2,33 +2,24 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MEMOIREbyChap.aux
 The style file: abbrvnat.bst
-Case mismatch error between cite keys Hartmann_bayesian_2016 and hartmann_bayesian_2016
----line 1310 of file MEMOIREbyChap.aux
- : \citation{Hartmann_bayesian_2016
- :                                 }
-I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 1412 of file MEMOIREbyChap.aux
+Illegal, another \bibstyle command---line 1429 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
 Database file #1: zotero1.bib
-I was expecting a `,' or a `}'---line 2231 of file zotero1.bib
+I was expecting a `,' or a `}'---line 2410 of file zotero1.bib
  :  
  :  title = {evmix: {An} {R} package for extreme value mixture modelling, threshold estimation and boundary corrected kernel density estimation},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3010 of file zotero1.bib
+I was expecting a `,' or a `}'---line 3206 of file zotero1.bib
  :  
  :  note = {Google-Books-ID: dfZecgAACAAJ},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "kharin_changes_2006"
-Warning--I didn't find a database entry for "AghaKouchak_extremes_2013"
-Warning--I didn't find a database entry for "stan_stan_2016"
-Warning--I didn't find a database entry for "Bédard_optimal_2008"
 Warning--I didn't find a database entry for "geyer__1992"
 Warning--I didn't find a database entry for "lafaye_understanding_2009"
-Warning--I didn't find a database entry for "leimkulher_..._2004"
 Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
 while executing---line 1347 of file abbrvnat.bst
 Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
@@ -47,48 +38,52 @@ Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Si
 while executing---line 1429 of file abbrvnat.bst
 Warning--can't use both author and editor fields in ag_extremes_2013
 Warning--can't use both author and editor fields in Bos2002
+Warning--empty journal in coles_tawn_1996
+Warning--empty publisher in Gelman95bayesiandata
+Warning--empty journal in Geweke92
 Warning--empty journal in leisch_creating_2008
 Warning--can't use both author and editor fields in resnick_extreme_1987
 Warning--empty journal in segers_generalized_2001
-You've used 90 entries,
+Warning--empty publisher in stan_development_team_stan_2012
+You've used 100 entries,
             2773 wiz_defined-function locations,
-            1297 strings with 25970 characters,
-and the built_in function-call counts, 41260 in all, are:
-= -- 3993
-> -- 2014
-< -- 70
-+ -- 690
-- -- 600
-* -- 3442
-:= -- 6511
-add.period$ -- 453
-call.type$ -- 90
-change.case$ -- 452
-chr.to.int$ -- 90
-cite$ -- 185
-duplicate$ -- 1844
-empty$ -- 3361
-format.name$ -- 760
-if$ -- 8630
+            1360 strings with 27817 characters,
+and the built_in function-call counts, 46004 in all, are:
+= -- 4444
+> -- 2232
+< -- 80
++ -- 766
+- -- 666
+* -- 3824
+:= -- 7239
+add.period$ -- 501
+call.type$ -- 100
+change.case$ -- 501
+chr.to.int$ -- 100
+cite$ -- 209
+duplicate$ -- 2063
+empty$ -- 3754
+format.name$ -- 842
+if$ -- 9636
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 108
-newline$ -- 635
-num.names$ -- 360
-pop$ -- 730
+missing$ -- 121
+newline$ -- 703
+num.names$ -- 400
+pop$ -- 828
 preamble$ -- 1
-purify$ -- 380
+purify$ -- 422
 quote$ -- 0
-skip$ -- 1329
+skip$ -- 1493
 stack$ -- 0
-substring$ -- 1562
-swap$ -- 170
-text.length$ -- 7
+substring$ -- 1777
+swap$ -- 201
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 885
-warning$ -- 5
-while$ -- 378
+type$ -- 980
+warning$ -- 9
+while$ -- 420
 width$ -- 0
-write$ -- 1523
-(There were 12 error messages)
+write$ -- 1681
+(There were 11 error messages)

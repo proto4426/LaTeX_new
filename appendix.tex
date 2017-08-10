@@ -218,9 +218,9 @@ This estimator is also consistent.
 
 \section{Algorithms}\label{app:algo}
 
-\subsection{Metropolis–Hastings Algorithm}
+\subsection{Metropolis–Hastings}\label{app:mh}
 
-The \emph{Metropolis–Hastings} algorithm is one of the first and of the pioneering algorithm discovered by \cite{hastings_monte_1970} to compute  MCMC for Bayesian analysis.
+This algorithm remains valid when $\pi$ is only proportional to a target density function and thus it can be used to approximate \ref{bayeseq}. 
 
 \begin{algorithm}[H]
 	\SetAlgoLined
@@ -243,26 +243,21 @@ The \emph{Metropolis–Hastings} algorithm is one of the first and of the pionee
 	\end{enumerate}
 	\caption{The Metropolis–Hastings Algorithm}\label{algo:mh}
 \end{algorithm}
+The complex integral in the denominator of (\ref{bayeseq}) cancels in $r$ and we are just left with the unnormalized density.
+Note that the proposal density is often chosen to be symmetric, so that we will sample under a "simple MH" algorithm where $r$ is simply the ratio of the posterior densities, i.e. 
+
+\begin{equation} r=\frac{\pi(\theta_*|\boldsymbol{x}) }{\pi(\theta_{t-1}|\boldsymbol{x})}.
+\end{equation}
 
 
-This algorithm remains valid when $\pi$ is only proportional to a target density function and thus it can be used to approximate \ref{bayeseq} . 
+\subsection{Gibbs Sampler}\label{app:gibbs}
 
-Note that the proposal density is often chosen to be symmetric so that we will just sample under a "simple Metropolis" algorithm where $r$ is thus simplified to be only the ratio of the posterior densities, $r=\frac{\pi(\theta_*|\boldsymbol{x})\cdot }{\pi(\theta_{t-1}|\boldsymbol{x})}$.
+We defined the remaining subvectors at their current values $t-1$ when subvector $j$ is sampled 
 
-We can shortly summarize the \emph{pros} and \emph{cons} this algorithm :
-
-\begin{itemize}
-	\item \emph{PROS} : Very easy to program and works even for relatively complex densities.
-	\item \emph{CONS} : Can be very inefficient, in the sense that it will require lots of iterations before the stationary target distribution will be reached. This requires some tuning to the algorithm through 
-\end{itemize}
-
-
-\subsection{Gibbs Sampler}
-
-The \emph{Gibbs Sampler} can be seen as a special case of the Metropolis-Hastings algorithm.
-Suppose our parameter vector $\theta$ can be divided into $d$ subvectors $(\theta_1,\dots,\theta_d)$, and let's say in our case that each of these "subvectors" represent a single parameter, thus typically one of the three $(\mu,\sigma,\xi)$, for the simplest case so that $d=3$ in this model.
-At each $t=1,\dots,N$, the Gibbs sampler samples the subvectors $\theta_t^{(j)}$ conditional on both the data $\boldsymbol{x}$ and the remaining subvectors $\theta_{t-1}^{(-j)}$ at their current values.
-Therefore, we have $\theta_{t-1}^{(-j)}=\Big(\theta_t^{(1)},\dots,\theta_t^{(j-1)},\theta_{t-1}^{(j+1)},\dots,\theta_{t-1}^{(d)}\Big)$ and each $\theta_t^{(j)}$ is sampled from $\pi\Big(\theta^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)$. \\
+\begin{equation*}
+\theta_{t-1}^{(-j)}=\Big(\theta_t^{(1)},\dots,\theta_t^{(j-1)},\theta_{t-1}^{(j+1)},\dots,\theta_{t-1}^{(d)}\Big),
+\end{equation*} 
+and each $\theta_t^{(j)}$ is sampled from $\pi\Big(\theta^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)$. 
 
 \begin{algorithm}[H]
 	\SetAlgoLined
@@ -273,12 +268,12 @@ Therefore, we have $\theta_{t-1}^{(-j)}=\Big(\theta_t^{(1)},\dots,\theta_t^{(j-1
 		\begin{itemize}
 			\item[(a)] Sample proposal $\theta_*$ from a proposal density $p_{t,j}(\theta^{(j)}_*|\theta^{(j)}_{t-1})$,
 			\item[(b)] Compute the ratio
-			\begin{equation*}
+			\begin{equation}\label{eq:gibalgo}
 			\begin{aligned}
 				r = & \frac{\pi\Big(\theta^{(j)}_*|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)\cdot p_{t,j}\Big(\theta^{(j)}_{t-1}|\theta^{(j)}_*\Big)}{\pi\Big(\theta_{t-1}^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)\cdot p_{t,j}\Big(\theta^{(j)}_*|\theta_{t-1}\Big)} \\
 				= & \frac{\pi\Big(\theta_t^{(1)},\dots,\theta_t^{(j-1)},\theta^{(j)}_*, \theta_{t-1}^{(j+1)},\dots,\theta_{t-1}^{(d)} \ | \ \boldsymbol{x}\Big)\cdot  p_{t,j}\Big(\theta_{t-1}^{(j)}|\theta_*^{(j)}\Big)}{\pi\Big(\theta_t^{(1)},\dots,\theta_t^{(j-1)},\theta^{(j)}_{t-1}, \theta_{t-1}^{(j+1)},\dots,\theta_{t-1}^{(d)}\ |\ \boldsymbol{x}\Big)\cdot  p_{t,j}\Big(\theta_{*}^{(j)}|\theta_{t-1}\Big)},
 		\end{aligned}
-			\end{equation*}
+			\end{equation}
 			\item[(c)] Set 
 			\begin{equation*}
 			\theta_t^{(j)}= 			\begin{cases} \ \theta_*^{(j)} \qquad \text{with probability} \ \  \alpha=\min (r,1); \\
@@ -289,90 +284,49 @@ Therefore, we have $\theta_{t-1}^{(-j)}=\Big(\theta_t^{(1)},\dots,\theta_t^{(j-1
 	\end{enumerate}
 	\caption{The Gibbs Sampler}\label{algo:gib}
 \end{algorithm}
-(better signs for conditional bar "|" !!!!!!!
+
+This algorithm depends on being able to simulate from $\pi\Big(\theta^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)$ which is often impossible. However, we can apply the Metropolis-Hastings to $\pi\Big(\theta^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)$,
+giving the above.
+A special case arise if one can simulate directly so that $r=1$, by taking
+\begin{equation*} p_{t,j}\big(\theta_*^{(j)}|\theta_{t-1}^{(j)}\big)=\pi\big(\theta_*^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\big).
+\end{equation*}
+The proposal $p_{t,j}(\cdot)$ is also often symmetric, i.e.
+
+\begin{equation*}
+p_{t,j}\big(\theta_*^{(j)}|\theta_{t-1}^{(j)}\big)= p_{t,j}\big(\theta_{t-1}^{(j)}|\theta_*^{(j)}\big),
+\end{equation*}
+but it cannot simplify (\ref{eq:gibalgo}). It is usually taken to be the univariate normal distribution with mean $\theta_{t-1}^{(j)}$.
 
 
-This algorithm depends on being able to simulate from $\pi\Big(\theta^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)$ which is often impossible. However, one can use Metropolis-Hastings to $\pi\Big(\theta^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)$, giving the above.
-
-A special case arise if one can simulate directly so that $r=1$, i.e. we take $p_{t,j}\big(\theta_*^{(j)}|\theta_{t-1}^{(j)}\big)=\pi\big(\theta_*^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\big)$.
-(The proposal $p_{t,j}(\cdot)$ is also often symmetric, i.e.
-$p_{t,j}\big(\theta_*^{(j)}|\theta_{t-1}^{(j)}\big)= p_{t,j}\big(\theta_{t-1}^{(j)}|\theta_*^{(j)}\big)$. But it cannot be simplified in the equation. )
-
-It is important for our tasks to tune the average probability of acceptance to be roughly between 0.4 and 0.5 (see e.g. \citet[chapter 11]{gelman_bayesian_2013} ) so that the so-generated markov-chain has desirable properties. This is doneby setting the standard deviation $\sigma{(j)}$ of the univariate normal distribution taken for $p_{t,j}\big(\theta_*^{(j)}|\theta_{t-1}^{(j)}\big)$. Whereas our $\theta{(j)}$ are (often?) univariate, it is difficult to set each $\sigma^{(j)}$ to achieve average acceptance probabilities for all parameters. We will then use a trial-and-error approach.
-
-Note also the increase of complexity with this sampler compared to the Metropolis-Hastings, where the nested loop implies that there are $d$ iterations with each simulation.
-
-
-\emph{pros} and \emph{cons} : 
-
-\begin{itemize}
-	\item \emph{PROS} : Easy to program and, for some problems, it can also be very efficient. It is a pleasant way to split multidimensional problems into simpler (typically univariate) densities.
-	\item \emph{CONS} : Sometimes hard to compute analytically the conditional distributions. Not all densities can be split into pleasant conditionals equations.
-\end{itemize}
+%\subsubsection*{Metropolis-within-Gibbs?}
 
 
 
-\subsubsection*{Metropolis-within-Gibbs?}
+\subsection{Hamiltonian Monte Carlo}\label{app:hmc}
 
-
-
-\subsection{Hamiltonian Monte Carlo}
-
-\url{http://deeplearning.net/tutorial/hmc.html#hmc} \\
-
-A difficulty we have faced and that we would like to point out for GEV models is (see p.316-317 STAN manual) t
-
-
-
-
-"Most of the computation [in Stan] is done using Hamiltonian Monte Carlo. HMC requires some tuning, so Matt Hoffman up and wrote a new algorithm, Nuts (the “No-U-Turn Sampler”) which optimizes HMC adaptively. In many settings, Nuts is actually more computationally efficient than the optimal static HMC! "
-
-The \emph{Hamiltonian Monte Carlo} (HMC)
-
-"The Hamiltonian Monte Carlo algorithm starts at a specified initial set of parameters
-theta; in Stan, this value is either user-specified or generated randomly. Then, for a given
-number of iterations, a new momentum vector is sampled and the current value of
-the parameter $\theta$ is updated using the leapfrog integrator with discretization time 
-and number of steps L according to the Hamiltonian dynamics. Then a Metropolis
-acceptance step is applied, and a decision is made whether to update to the new state
-(theta*; rho*) or keep the existing state" \cite{stan_stan_2016}
-
-
-
-\cite{Hartmann_bayesian_2016} have demonstrated in similar application that HMC  (and Riemann manifold HMC) are much more computationally efficient than traditional MCMC algorithms such as MH. 
+%\url{http://deeplearning.net/tutorial/hmc.html#hmc} \\
 
 \begin{definition}[Total energy of a closed system : Hamiltonian function]
 	For a certain particle; Let $\pi(\theta)$ be the posterior distribution and let $\boldsymbol{p}\in\mathbb{R}^d$ denote a vector of auxiliary parameters independent of $\theta$ and distributed as $\boldsymbol{p}\sim N(\boldsymbol{0},\boldsymbol{M})$. We can interpet $\theta$ as the position of the particle and $-\log\pi(\theta|\boldsymbol{x})$ describes its potential energy while $\boldsymbol{p}$ is the momentum with kinetic energy $\boldsymbol{p^{'}M^{-1}p}\cdot2^{-1}$. Then the total energy of a closed system is the Hamiltonian function 
-	
 	\begin{equation}
 	\mathcal{H}(\theta,\boldsymbol{p})=-\mathcal{L}(\theta)+\boldsymbol{p'M^{-1}p}\cdot 2^{-1}, \qquad\text{\emph{where}}\qquad \mathcal{L}(\theta)=\log\pi(\theta).
 	\end{equation}
 \end{definition}
-
- We define $\mathcal{X} = (\theta, \boldsymbol{p})$ as \emph{the combined state} of the particle.
- 
-The unormalized joint density of $(\theta,\boldsymbol{p})$ is 
+We define $\mathcal{X} = (\theta, \boldsymbol{p})$ as \emph{the combined state} of the particle.
+The unnormalized joint density of $(\theta,\boldsymbol{p})$ is 
 \begin{equation}
 f(\theta,\boldsymbol{p})\propto \pi(\theta)\cdot\exp\{-\boldsymbol{p'M^{-1}p}\cdot 2^{-1}\}\propto\exp\big\{-\mathcal{H}(\theta,\boldsymbol{p})\big\}.
 \end{equation}
+Following \cite{hartmann_bayesian_2016}, the idea is to use the Hamiltonian dynamics equations (not shown here) to model the evolution of a particle that keep the total energy constant.
+Introducing the auxiliary variables $\boldsymbol{p}$ and using gradients will lead to a more efficient exploration of the parameter space.
 
-
-Following \cite{hartmann_bayesian_2016}, the idea is to use the Hamiltonian dynamics equations (not shown here for..) to model the evolution of a particle that keep the total energy constant.
-Introducing the auxiliary variables $\boldsymbol{p}$ and using the gradients (..) will lead to a more efficient exploration of the parameter space 
-
-
-
-These differential equations cannot be solved so numerical integrators are required, for instance the "Störmer-Verlet" from \cite{leimkulher_..._2004} which will introduce discretization. A MH step is then required to correct the error and ensure convergence.  The new proposal $\mathcal{X}_*=(\theta_*,\boldsymbol{p}_*)$ will be accepted with probability 
+These differential equations cannot be solved so numerical integrators are required, for instance the \emph{Störmer-Verlet} which will introduce discretization. A MH step is then required to correct the error and ensure convergence.  The new proposal $\mathcal{X}_*=(\theta_*,\boldsymbol{p}_*)$ will be accepted with probability 
 
 \begin{equation}
 \alpha\big(\mathcal{X},\mathcal{X}_*\big)=\min\Bigg[\frac{f(\theta_*,\boldsymbol{p}_*)}{f(\theta,\boldsymbol{p})},1\Bigg]=\min\Big[\exp\big\{\mathcal{H}(\theta,\boldsymbol{p})-\mathcal{H}(\theta_*,\boldsymbol{p}_*)\big\}\ ,\ 1\Big].
 \end{equation}
-
 As $\boldsymbol{M}$ is symmetric positie definite, $\boldsymbol{M}=m\boldsymbol{I}_d$. 
-Then we can summarize the \hyperref[algo_hmc]{HMC algorithm} in the following, in its 'simplest' form :
-
-marie est la best : $Moyenne=\frac{1}{n}\sum_{i=1}^{n}X_i$
-
+Then we can summarize the \hyperref[algo_hmc]{HMC algorithm} in its 'simplest' form :
 
 \begin{algorithm}[H]\label{algo_hmc}
 	\SetAlgoLined
@@ -400,22 +354,80 @@ marie est la best : $Moyenne=\frac{1}{n}\sum_{i=1}^{n}X_i$
 	\caption{The Hamiltonian Monte Carlo algorithm}
 \end{algorithm}
 
-
-As you can see, it is not trivial.
 The basic idea to keep in mind is that jumping rules are much more efficient than for traditional algorithms because they
  learn from the gradient of the log posterior density, so they know better
-where to jump to. As a result, it can be MUCH more efficient.
-
-
+where to jump to.
 Chains are expected to reach stationarity faster as it proposes moves to regions of higher probabilities.
 
 
-\emph{pros} and \emph{cons} : 
+\section{Convergence Diagnostics}\label{app:convdiag}
+
+
+\subsubsection*{Gelman-Rubin diagnostic : the $\hat{R}$ statistic}
+
+Discussed in item \ref{convdiag4} in \hyperref[sec:convbay]{Section \textbf{\ref{sec:convbay}}}, it is important that the chains mix well. Having $J$ chains $\theta_{i,j}$ of same size $I$ each with different starting values, the goal is to estimate the Between and Within-sequences posterior variances
+
+\begin{equation*}
+B= \frac{I}{J-1}\sum_{j=1}^J\big(\bar{\theta}_{\cdot j} - \bar{\theta}_{\cdot \cdot}\big)^2 \quad \text{and}\quad W=\frac{1}{J}\sum_{j=1}^Js^2_j \quad \text{where} \ s^2_j=\frac{1}{I-1}\sum_{i=1}^I\big(\theta_{ij}-\bar{\theta}_{\cdot j}\big)^2.
+\end{equation*}
+If all the have converged to the stationary distribution, they will share the same limiting posterior variance, with $W$ and $B$ being unbiased estimates of the variance. An unbiased estimate of the overall variance is given by 
+
+\begin{equation}
+\hat{V}(\theta|\boldsymbol{x})=\frac{I-1}{I}\cdot W+ \frac{1}{I}\cdot B.
+\end{equation}
+Hence, \citet{gelman1992} suggested to compute 
+
+\begin{equation}
+\hat{R}=\frac{\hat{V}(\theta|\boldsymbol{x})}{W},
+\end{equation}
+which is the factor by which one can expect to reduce $\hat{V}(\theta|\boldsymbol{x})$ if it were computed after convergence. 
+
+It is recommended to continue sampling until values below $\approx 1.1$ are obtained. Having a $\hat{R}$ close to $1$ is a necessary but not sufficient condition for convergence. The choice of the starting values for each chains is critical, and should be scattered over the parameter space. Informal plots displaying each chains can also be used to assess the mixing of the chains.
+
+
+\subsubsection*{Geweke diagnostic}
+Proposed by \citet{Geweke92}, this test compares the mean of the first portion (e.g. $10\%$) of a generated chain with the mean computed from the second half of the chain. The large buffer is taken between the two blocks with the hope that they can be assumed independent. Classical frequentist z-score test based on the effective sample sizes is used. 
+The rejection of the hypothesis can be due for example to a too short chain, or a too short burnin.
+
+Practically, the procedure starts with the first half of the chain partitioned in $K$ consecutive blocks of iterations. The testing procedure is then applied repeatedly on the chain progressively truncated from its first $k= 0,\ldots,K$ blocks. The minimum number of iterations required to plead convergence corresponds to the value at which the hypothesis of mean equality starts not to be rejected.
+
+
+
+
+
+\subsubsection*{The problem of auto- and cross-correlations in the chains}
+
+The \emph{within} or \emph{between} dependence influences the accuracy of the posterior estimates. As dependence becomes stronger, we must increase the run-length $N$ to achieve the same precision. 
+There exists exists 2 problems of correlations in the output delivered by a MC. 
 
 \begin{itemize}
-	\item \emph{PROS} : Easy to program as we just have to write down the model. Very efficient in general, and works for all types of problems.
-	\item \emph{CONS} : Need to learn how to use STAN, less control over the sampler bu maybe it is for the best?
+	\item \textbf{Autocorrelation} calculates the serial correlation within a single chain being monitored. High autocorrelations within chains indicate slow mixing and slow convergence, and perhaps a need for reparametrization.
+	
+	\item \textbf{Cross-correlation} is the correlation between the monitored variables for each chain. High correlation among parameters also slower convergence and may indicate a need for reparametrization. 
 \end{itemize}
+The dependence structure within a single chain can be approximated by an AR$(1)$, i.e. 
+
+\begin{equation*}
+\theta_t=\mu + \rho\cdot (\theta_{t-1}-\mu)+\epsilon, \qquad \ \epsilon\sim \mathcal{N}(0,\sigma^2).
+\end{equation*}
+At stationarity, i.e. when $\rho\in(0,1)$, the mean $\bar{\theta}$ of $n$ elements of the corresponding chain has variance
+
+\begin{equation*} V(\bar{\theta})=\sigma^2\cdot \bigg(N\cdot \frac{1-\rho}{1+\rho}\bigg)^{-1},
+\end{equation*}
+and hence, the \emph{effective sample size} is 
+
+\begin{equation}\label{eq:neff}
+N_{eff} = N\cdot \bigg( \frac{1-r}{1+r}\bigg),
+\end{equation}
+where $r$ is the observed 1st order autocorrelation.
+
+\paragraph*{Raftery and Lewis’s Diagnostics}
+The diagnostic of \citet{raftery1992}  is a run length control diagnostic based on a criterion of accuracy of estimation of a certain quantile, in order to inform whether the number of iterations is too small. The criterion is based on the autocorrelation inside the generated samples, and informs us about the minimum sample size required for a chain with no correlation between consecutive samples.
+
+
+\paragraph*{Thinning} It is a method that aims at reducing the autocorrelation of a chain by only storing iteration $k$ only if $k\mod t_h$ is zero (and if $k$ greater than or equal to the burn-in B), where $t_h$ is called the thinning interval.
+The iterations that have been stored are assumed to be sampled from the target distribution of the original chain, but with reduced dependence within the chain.
+Following \citet{bay_thin_2012}, thinning will typically reduces the precision of posterior estimates since it reduces the number of kept samples, but it may still represent a necessary computational saving.
 
 
 \chapter{Other Figures and Tables}\label{app:fig}
@@ -550,7 +562,7 @@ MA(2)  & $6$ & $494.698$ & $511.219$ \\
 
 \chapter{Github Repository Structure}\label{appgit}
 
-The Github repository build for this thesis can be found on this address :
+The Github \href{https://github.com/proto4426/PissoortThesis/}{repository} build for this thesis can be found on this address :
 
 \begin{center}
 \url{https://github.com/proto4426/PissoortThesis}
@@ -568,7 +580,8 @@ where the R package \textbf{\texttt{PissoortThesis}} is located. It has the foll
 \item \textbf{runExample.R} : contains the function allowing to run the Shiny applications directly through the package (put the name of the application in ' ' in the function to load the application). 
 \end{itemize} 
 
-The documentation of the functions are directly made through the package, by typing \texttt{?Function\_Name}.
+The documentation of the functions are directly made through the package, by typing \texttt{?Function\_Name}. 
+\textbf{For time issues, we were not able to finish all the documentations (e.g. for Bayesian functions), and some functions have been left in the scripts.}
 \item \textbf{/Scripts-R/}
 
 \begin{itemize}
@@ -590,5 +603,5 @@ The documentation of the functions are directly made through the package, by typ
 \item \textbf{/inst/}
 \item \textbf{/man/}
 \item \textbf{/stan/}
-\item \textbf{/vignettes/}
+\item \textbf{/vignettes/}  It can be downloaded in html from the compressed file in the same folder.
 \end{itemize}

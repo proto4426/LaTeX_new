@@ -2,19 +2,16 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Prior Elicitation}{\reset@font\mtcSfont 45}{section.4.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Trivariate Normal Distribution}{\reset@font\mtcSSfont 46}{subsection.4.2.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}Gamma Distributions for Quantile Differences}{\reset@font\mtcSSfont 46}{subsection.4.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Beta Distributions for Probability Ratios}{\reset@font\mtcSSfont 46}{subsection.4.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.4}Non-informative Priors}{\reset@font\mtcSSfont 46}{subsection.4.2.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Bayesian Computation : Markov Chains}{\reset@font\mtcSfont 48}{section.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Algorithms}{\reset@font\mtcSSfont 48}{subsection.4.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Hamiltonian Monte Carlo}{\reset@font\mtcSSfont 49}{subsection.4.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Computational efficiency comparison}{\reset@font\mtcSSfont 49}{subsection.4.3.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Convergence Diagnostics}{\reset@font\mtcSfont 49}{section.4.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Proposal Distribution}{\reset@font\mtcSSfont 49}{subsection.4.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}The problem of auto and cross-correlations in the chains}{\reset@font\mtcSSfont 50}{subsection.4.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Posterior Predictive}{\reset@font\mtcSfont 50}{section.4.5}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.1}Model Comparison}{\reset@font\mtcSSfont 51}{subsection.4.5.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.6}Bayesian Predictive Accuracy for Model Validation}{\reset@font\mtcSfont 52}{section.4.6}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.6.1}Cross-validation for predictive accuracy}{\reset@font\mtcSSfont 52}{subsection.4.6.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.7}Bayesien Inference ?}{\reset@font\mtcSfont 54}{section.4.7}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.7.1}Bayesian Credible Intervals}{\reset@font\mtcSSfont 54}{subsection.4.7.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.7.2}Distribution of Quantiles : Return Levels}{\reset@font\mtcSSfont 54}{subsection.4.7.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.3}Beta Distributions for Probability Ratios}{\reset@font\mtcSSfont 47}{subsection.4.2.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.4}Non-informative Priors}{\reset@font\mtcSSfont 47}{subsection.4.2.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Bayesian Computation : Markov Chains}{\reset@font\mtcSfont 49}{section.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Metropolis\IeC {\textendash }Hastings}{\reset@font\mtcSSfont 49}{subsection.4.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Gibbs Sampler}{\reset@font\mtcSSfont 50}{subsection.4.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Hamiltonian Monte Carlo}{\reset@font\mtcSSfont 50}{subsection.4.3.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Convergence Diagnostics}{\reset@font\mtcSfont 51}{section.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Bayesian Inference}{\reset@font\mtcSfont 52}{section.4.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.1}Distribution of Quantiles : Return Levels}{\reset@font\mtcSSfont 52}{subsection.4.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.5.2}Bayesian Credible Intervals}{\reset@font\mtcSSfont 52}{subsection.4.5.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.6}Posterior Predictive Distribution}{\reset@font\mtcSfont 53}{section.4.6}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.7}Model Comparison}{\reset@font\mtcSfont 53}{section.4.7}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.8}Bayesian Predictive Accuracy for Model Checking}{\reset@font\mtcSfont 54}{section.4.8}}

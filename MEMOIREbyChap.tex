@@ -249,6 +249,11 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 \newtheorem{exe}{Theorem}
 \setcounter{exe}{-1}
 
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
 \usepackage{multirow,bigdelim}
 \usepackage{tcolorbox}
 \usepackage{adjustbox}
@@ -454,7 +459,7 @@ For convenience, we place a list of all the abbreviations we will use in the tex
 	\item[GML] Generalized Maximum Likelihood
 	\item[GPD] Generalized Pareto Distribution %(function)
 	\item[MCMC] Marko Chain Monte Carlo
-	\item[MH] Metropolis-Hastings (algorithm)
+	\item[MH] Metropolis-Hastings 
 	\item[ML] Maximum Likelihood 
 	\item[MLE] Maximum Likelihood Estimator
 	\item[NN] Neural Network
@@ -580,14 +585,14 @@ This chapter is mostly based on \citet[chap.3]{coles_introduction_2001}, \citet[
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
 
-This new chapter will focus on another major approach of EV models by modeling only the excess over a certain threshold. This approach is very popular in practice as it can handle all the extremes with more flexibility and not only the maximum of one block. From this fact, numerous techniques have emerged and we will quickly navigate the main ideas.
+This chapter will focus on a major approach of EV models by modeling only the excess over a certain threshold. This approach is very popular in practice as it can handle all the extremes with more flexibility and not only the maximum of one block. From this, numerous techniques have emerged and we will navigate the main ideas.
 
-In \hyperref[sec::2.1]{Section \textbf{\ref{sec::2.1}}}, we will intuitively introduce the approach that will help us 
-to formally characterize the resulting distribution of interest in \hyperref[sec:charac_gpd]{Section \textbf{\ref{sec:charac_gpd}}}. Then, \hyperref[sec:rl_gpd]{Section \textbf{\ref{sec:rl_gpd}}} will present the concept of return levels applied to this concept. Next, we will assess the maximum temperature threshold in a statistical sense in \hyperref[sec:thresh_selec]{Section \textbf{\ref{sec:thresh_selec}}} by reviewing available methods, regardless common suggested thresholds of $25^{\circ} c$ or $30^{\circ} c$ from meteorologists.
+In \hyperref[sec::2.1]{Section \textbf{\ref{sec::2.1}}}, we will introduce the approach that will help us 
+to formally characterize the resulting distribution of interest in \hyperref[sec:charac_gpd]{Section \textbf{\ref{sec:charac_gpd}}}. \hyperref[sec:rl_gpd]{Section \textbf{\ref{sec:rl_gpd}}} will present the concept of return levels applied to this concept. We will then assess the maximum temperature threshold in a statistical sense in \hyperref[sec:thresh_selec]{Section \textbf{\ref{sec:thresh_selec}}} by reviewing available methods, with common suggested thresholds of $25^{\circ} c$ or $30^{\circ} c$ from meteorologists.
 
-Unfortunately, the resulting analysis of this chapter will not be present in \hyperref[part:xp]{Part \textbf{\ref{part:xp}}} because it would have made the text become too voluminous. But empirical results (code and html reports) will remain available in the \href{https://github.com/proto4426/PissoortThesis/}{repository}\footnote{\url{https://github.com/proto4426/PissoortThesis/}} which structure is explained in \hyperref[appgit]{Appendix \textbf{\ref{appgit}}}. Moreover, \emph{point process} will not be covered for the same reason but we remind that this is a powerful and flexible method that summarizes the two techniques considered in the two first chapters, and it should then not be missed. 
+Unfortunately, the resulting analysis of this chapter will not be presented in \hyperref[part:xp]{Part \textbf{\ref{part:xp}}} because it would have made the text too voluminous. Empirical results (code and html reports) will remain available in the \href{https://github.com/proto4426/PissoortThesis/}{repository}\footnote{\url{https://github.com/proto4426/PissoortThesis/}}(see \hyperref[appgit]{Appendix \textbf{\ref{appgit}}}). Moreover, \emph{point process} will not be covered for the same reason but we remind that this is a powerful and flexible method that summarizes the two techniques considered in the two first chapters, and it should then not be missed. 
 
-This chapter is mainly based on \citet[chap.4 and 7]{coles_introduction_2001}, \citet[chap.4]{beirlant_statistics_2006}, \citet[chap.5]{reiss_statistical_2007} and 
+This chapter is mostly based on \citet[chap.4 and 7]{coles_introduction_2001}, \citet[chap.4]{beirlant_statistics_2006}, \citet[chap.5]{reiss_statistical_2007} and 
 \citet[chap.5]{embrechts_modelling_2011},
  and other relevant articles.
 
@@ -601,9 +606,8 @@ This chapter is mainly based on \citet[chap.4 and 7]{coles_introduction_2001}, \
 \minitoc\thispagestyle{empty}
  \vspace{1cm}
  
-In most environmental applications, the independence assumption made in the first chapters is questionable and never completely fulfilled. From hydrological process as stated in \citet{milly_climate_2008} to temperature data where climate warming is a famous issue, such theoretical assumptions that have been previously made are not sustainable in practice. First, 
-\hyperref[sec:statio]{Section \textbf{\ref{sec:statio}}} will provide tools that enable EV models to hold in presence of a limited long-range dependence.
-\hyperref[nstatio]{Section \textbf{\ref{nstatio}}} will allow EV modeling under nonstationary processes allowing us for instance to study the possible increasing behavior of the maximum temperatures. Whereas \hyperref[sec:returnlvlnstatio]{Section \textbf{\ref{sec:returnlvlnstatio}}} redefined return levels under those less restricted cases,   \hyperref[sec:gevcdn]{Section \textbf{\ref{sec:gevcdn}}} will introduce a new flexible way to model nonstationary extremes under a redefined Multi Layer Perceptron framework providing inference techniques that minimize chance of overfitting.
+In most environmental applications, the independence assumption made in the first chapters is questionable and never completely fulfilled. From hydrological processes as stated in \citet{milly_climate_2008} to temperature data to demonstrate climate warming, such theoretical assumptions that have been previously made are not sustainable in practice. \hyperref[sec:statio]{Section \textbf{\ref{sec:statio}}} will provide tools that enable EV models to hold in presence of a limited long-range dependence.
+\hyperref[nstatio]{Section \textbf{\ref{nstatio}}} will allow EV modeling under nonstationary processes allowing us to study for instance the possible increasing behavior of the maximum temperatures. \hyperref[sec:returnlvlnstatio]{Section \textbf{\ref{sec:returnlvlnstatio}}} redefined return levels under those less restricted cases, and finally  \hyperref[sec:gevcdn]{Section \textbf{\ref{sec:gevcdn}}} will introduce a new flexible way to model nonstationary extremes under a redefined Multi Layer Perceptron framework with inferential techniques minimizing the risk of overfitting.
 
 
 This chapter is mostly based on \citet[chap.5-6]{coles_introduction_2001}, \citet[chap.10]{beirlant_statistics_2006} and \citet[chap.7]{reiss_statistical_2007}, and other relevant articles.
@@ -614,23 +618,24 @@ This chapter is mostly based on \citet[chap.5-6]{coles_introduction_2001}, \cite
 
 
 \chapter{Bayesian Extreme Value Theory}\label{sec::bayesian}
-\vspace{-1cm}
+\vspace{-1.5cm}
 \minitoc\thispagestyle{empty}
- \vspace{1cm}
- 
-see evdbayes pdf package r
+ \vspace{0.1cm}
 
 
-Bayesian theory is 
+Sometimes criticized by the community from the possible introduction of some subjectivity, the Bayesian paradigm is increasingly adopted by the practitioners for its benefits. In our case, it provides interesting tools when carrying out an EV analysis. We will then vastly explore this framework. This chapter only focuses on GEV analysis on annual maxima, but extension to POT or Point Processes is straightforward with tools provided in the text or in the code.
+ %to provide the big picture to the reader  
+
+In \hyperref[sec:bayprelim]{Section \textbf{\ref{sec:bayprelim}}} we introduce the Bayesian paradigm and present its characteristics. \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}} presents an essential component of the Bayesian sphere, the priors that we will describe for GEV applications.
+\hyperref[sec:baymcmc]{Section \textbf{\ref{sec:baymcmc}}} discusses several Monte Carlo algorithms that can be used to obtain a sample from the posterior. Then, \hyperref[sec:convbay]{Section \textbf{\ref{sec:convbay}}} presents diagnostics to assess that convergence of the algorithms occurred, in order to check if the posterior's sample is reliable. If this is positive,
+\hyperref[sec:bayinf]{Section \textbf{\ref{sec:bayinf}}} presents the Bayesian inferential techniques that can be applied.
+\hyperref[sec:ppd]{Section \textbf{\ref{sec:ppd}}} presents the posterior predictive distribution thats allows to handle predictions. Then, 
+\hyperref[sec:modcompbay]{Section \textbf{\ref{sec:modcompbay}}} discusses tools for model's selection in a Bayesian setting. Finally,
+\hyperref[sec:predacur]{Section \textbf{\ref{sec:predacur}}} introduces tools to validate models through information criteria.
+Useful tools regarding basic Bayesian inference are left in \hyperref[appB]{Appendix \textbf{\ref{appB}}}.
 
 
-This chapter will focus only on GEV analysis on annual maxima. Extension to POT or Point Processes is straightforward with tools provided in both text and code.
-
-In \hyperref[sec:returnlvlnstatio]{Section \textbf{\ref{sec:returnlvlnstatio}}} we will, 7
-Useful tools regarding Bayesian inference are let in \hyperref[appB]{Appendix \textbf{\ref{appB}}}.
-
-
-This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001}, \citet[chap.11]{beirlant_statistics_2006} and \cite[chap.13]{dey_extreme_2016}, and other relevant articles.
+This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001},  \citet[chap.11]{beirlant_statistics_2006}, \cite[chap.13]{dey_extreme_2016} and \citet[chap.3]{ag_extremes_2013},  and other relevant articles.
 
 \newpage
 \include*{chap4}
@@ -650,12 +655,12 @@ This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001}, \cite
  \vspace{1cm}
  
 Since we have theoretically defined useful concepts in EVT, we will now introduce the practical analysis of this thesis that consist of analyzing daily maximum temperatures in Uccle from 1901 to 2016.  
-We already showed the distribution of these data in Figure \ref{fig:pot_plot} to introduce the POT approach. This chapter will present an introductory analysis of the annual maxima of these data. We chose annual maxima in order to later provide a convenient GEV modeling. We will then first use several techniques to analyze these data before going further into the EV models in the following chapters. 
+We have already showed the distribution of this data in Figure \ref{fig:pot_plot} to introduce the POT approach. This chapter will present an introductory analysis of the \emph{annual} maxima of these data, which will provide a convenient GEV modeling. We will then use several techniques to analyze the data before going further into the EV models in the following chapters. 
 
-After a brief presentation of the repository which contains the R package created for this thesis and the structure for the scripts that contains the code that created all the analysis, we will briefly present the shiny applications created to enhance visualizations. Then, \hyperref[sec:presuccle]{Section \textbf{\ref{sec:presuccle}}} will present data and their source(s). \hyperref[sec:firstana]{Section \textbf{\ref{sec:firstana}}} will first describe data and compare models to represent the data before going further on the trend analysis with splines derivatives in a Generalized Additive Model to assess significance of the trend with correction for simultaneous tests and provide first aspects in the issue of Climate Warming without using extreme models. 
+After a brief presentation of the repository which contains the R package created for this thesis and the structure for the scripts that contains the code that created all the analysis, this chapter briefly present the shiny applications created to enhance visualizations. \hyperref[sec:presuccle]{Section \textbf{\ref{sec:presuccle}}} will present data and its source. \hyperref[sec:firstana]{Section \textbf{\ref{sec:firstana}}} will first describe data and compare models to represent the data before going further on the trend analysis with splines derivatives in a Generalized Additive Model to assess the significance of the trend with correction for simultaneous tests and provide the first aspects in the issue of Climate Warming without using extreme models. 
 
 
-This chapter will then not explicitly use techniques presented in the previous chapters. It will be mostly based on \citet{ruppert_semiparametric_2003} for the model presented in \hyperref[sec:splines]{Section \textbf{\ref{sec:splines}}}. 
+This chapter will not explicitly use techniques presented in the previous chapters. It will be mostly based on \citet{ruppert_semiparametric_2003} for the model presented in \hyperref[sec:splines]{Section \textbf{\ref{sec:splines}}}. 
   
 
 \newpage
@@ -667,13 +672,13 @@ This chapter will then not explicitly use techniques presented in the previous c
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
  
- This chapter introduces the core subject of this thesis, the stationary and nonstationary GEV analysis for the annual maximum temperatures in Uccle. It will use concepts borrowed from \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} and \hyperref[sec::3]{Chapter \textbf{\ref{sec::3}}}. POT analysis of \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}} will be mentioned but all results are let in the code. 
+ This chapter introduces the core subject of this thesis, the stationary and nonstationary GEV analysis for the annual maximum temperatures in Uccle. Concepts borrowed from \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} and \hyperref[sec::3]{Chapter \textbf{\ref{sec::3}}} will be used. POT analysis of \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}} will be mentioned but all results are kept in the code. 
 
-In \hyperref[sec:xpstatio]{Section \textbf{\ref{sec:xpstatio}}}, we will present first GEV inferences assuming stationarity. It relies on \texttt{1intro\_stationary.R} code from the \textbf{/Scripts-R/} folder of the \href{https://github.com/proto4426/PissoortThesis/}{repository}.
-\hyperref[sec:xpnp]{Section \textbf{\ref{sec:xpnp}}} will introduce the nonstationary analysis with parametric models and relies on \texttt{2Nonstationary.R} code while \hyperref[sec:nnxp]{Section \textbf{\ref{sec:nnxp}}} allows for more complex models from deep archtiectures and relying on \texttt{2NeuralsNets.R} code. 
+In \hyperref[sec:xpstatio]{Section \textbf{\ref{sec:xpstatio}}}, we will present GEV inferences assuming stationarity which relies on \\ \texttt{1intro\_stationary.R} code from the \textbf{/Scripts-R/} folder of the \href{https://github.com/proto4426/PissoortThesis/}{repository}.
+\hyperref[sec:xpnp]{Section \textbf{\ref{sec:xpnp}}} will introduce the nonstationary analysis with parametric models and relies on \texttt{2Nonstationary.R} code, while \hyperref[sec:nnxp]{Section \textbf{\ref{sec:nnxp}}} allows for more complex models from deep architectures and relies on \texttt{2NeuralsNets.R} code. 
 
-Whereas some Bayesian concepts will be used in this section such as use of \emph{prior distributions} for the EVI to limit its domain when estimating it with a likelihood-based method, or to regularize weights of Neural Networks in \hyperref[sec:nnxp]{Section \textbf{\ref{sec:nnxp}}}, we will still call all these methods as "frequentists".
-A strict Bayesian analysis will be made in the \hyperref[sec:anabayes]{next Chapter \ref{sec:anabayes}} and comparisons will be provided.
+Although some Bayesian concepts will be used in this section such as use of \emph{prior distributions} for the EVI to limit its domain when estimating it with a likelihood-based method, or to regularize weights of Neural Networks in \hyperref[sec:nnxp]{Section \textbf{\ref{sec:nnxp}}}, we will still call all these methods as "frequentists".
+A strict Bayesian analysis will be made in \hyperref[sec:anabayes]{next Chapter \textbf{\ref{sec:anabayes}}} and comparisons will be provided.
 
 \newpage
 \include*{chap6}
@@ -692,6 +697,8 @@ A strict Bayesian analysis will be made in the \hyperref[sec:anabayes]{next Chap
 \chapter{Bayesian Analysis in Block Maxima}\label{sec:anabayes}
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
+ 
+Bayesian analysis is more and more sused everywhere. For example,  \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} used a simulation-based Bayesian approach to compare coverage properties of pointwise and simultaneous confidence intervals, while \hyperref[sec:nnxp]{next Chapter \textbf{\ref{sec:nnxp}}} used priors to constraint the domain of the shape parameter or to penalize weights in a neural architecture.
 
 This analysis relies on all the codes which filenames start by "\texttt{Bayes}" from the \textbf{/Scripts-R/} folder of the \href{https://github.com/proto4426/PissoortThesis/}{repository}. All the functions created that are used and are also made available through the package are in /R/\texttt{BayesFunc.R}. Moreover,
 the \texttt{/vignettes/Summary\_Bayesian.html} file in the \href{https://github.com/proto4426/PissoortThesis/}{repository} present a big part of the analysis in details.

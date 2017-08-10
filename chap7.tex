@@ -4,7 +4,7 @@
 The \texttt{evdbayes} package is the only available on CRAN to do Bayesian inference in EVT with MCMC techniques to sample from the posterior (see \citet{ribatet_users_2006}), which is a very old package. We have passed a long time trying to understand and compute relevant analysis with the \texttt{evdbayes} framework. We had problems to understand both its structure and the famous "black-box".
  Since we faced important problems, e.g. it was impossible to reach the stationary posterior distribution of our of the parameter $\mu_1$ in a nonstationary GEV analysis with linear trend on $\mu(t)$, we decided to develop our own methods. Moreover, following \citet{hartmann_bayesian_2016}, it only uses the Metropolis Hastings (MH) Algorithm \ref{algo:mh} (\hyperref[app:algo]{Appendix \textbf{\ref{app:algo}}}) which is quite restrictive. We then decided to develop not only the MH but also the Gibbs sampler, and later the Hamiltonian Monte Carlo through the STAN interface. 
 
-The different methods to compute the prior $\pi(\theta)$ discussed in \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}} are available in the \texttt{evdbayes} package. Since 
+The different methods to compute the prior $\pi(\theta)$ discussed in \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}} are available in the \texttt{evdbayes} package. Since we mostly rely on our functions and we have no experts' advices, we will rather use vague priors (see \hyperref[sec:noninfoprior]{Section \textbf{\ref{sec:noninfoprior}}}. 
 
 
  Note that efforts should put to the new \texttt{revdbayes} R package which use the generalised ratio-of-uniforms method instead of the popular MCMC techniques, which is an other acceptance-rejection type of simulation algorithm. ( \hyperref[sec:bayes_ratio]{Section \textbf{\ref{sec:bayes_ratio}}}) ? )
@@ -29,6 +29,8 @@ The different methods to compute the prior $\pi(\theta)$ discussed in \hyperref[
  \end{itemize}
 %\section{From Our Functions (R package)}
 
+The methods we have computed for the MH algorithm and the Gibbs sampler are based on Algorithm \ref{algo:mh} and Algorithm \ref{algo:gib}.
+
 \section{Stationary GEV}
 
 Note that the results for the stationary model are very similar to those obtained with \texttt{evdbayes}. We empirically verify that the latter rather uses the MH algorithm.
@@ -36,12 +38,23 @@ Note that the results for the stationary model are very similar to those obtaine
 \subsection*{Comparison Metropolis-Hastings and Gibbs Sampler}
 
 
+
+\paragraph{Gibbs Sampler}
+
+This is done by tuning the standard deviation $\sigma^{(j)}$ of the proposal $p_{t,j}\big(\theta_*^{(j)}|\theta_{t-1}^{(j)}\big)$. Although the $\theta^{(j)}$ are taken to be univariate in our case, it is difficult to tune each $\sigma^{(j)}$ to achieve average acceptance probabilities for all parameters. We will then use a \emph{trial-and-error} approach.
+
+
 \section{Nonstationary GEV}
 
 
+To limit the influence of the (randomly) selected starting values, we take a burn-in period of length $B=N/....$ 
+This is probably too conservative, but it is relatively fast in our example (?) and therefore it is not much important.
 
 
 \subsection{Model Comparisons}
+
+
+
 
 We willl compare the same parametric models as in \hyperref[sec:xpnp]{Section \textbf{\ref{sec:xpnp}}} but with Bayesian techniques coming from \hyperref[sec:modcompbay]{Section \textbf{\ref{sec:modcompbay}}}. It will be interesting to see whether there are differences in the selected model between the frequentist and the Bayesian frameworks.
 
@@ -62,11 +75,24 @@ We willl compare the same parametric models as in \hyperref[sec:xpnp]{Section \t
 %\section{Ratio of Uniform : \texttt{revdbayes} package}\label{sec:bayes_ratio}
 
 
+\subsubsection*{Predictive Information Criteria}
+
+For each generated chains with dispersed starting values, we evaluate separately the information criteria. The discrepancies between the chains are small (?), which is a good sign. 
+
+
 \subsection{Diagnostics}
 
-\subsubsection*{Sensistivity Analysis}
 
-\textbf{section 7.4} evdbayes pdf 
+From the autocorrelation, we calculate the effective sample size () The effective sample size $N_{eff}$ (\ref{eq:neff}) is 
+
+\subsubsection*{Sensitivity Analysis}
+
+\textbf{section 7.4} evdbayes pdf + suppplément risk book 
+
+The basic sensitivity analysis works by fitting several models to
+the same problem. Posterior inferences can then be compared.
+The sensitivity of the
+marginal posterior density of the shape parameter $\xi$ is often of particular interest.
 
 
 The basic method of sensitivity analysis is to fit several models to the same problem.

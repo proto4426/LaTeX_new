@@ -1,13 +1,13 @@
 \section{Stationary Extremes}\label{sec:statio}
 
-So far, we considered the maximum $X_{(n)}=\max_{1\leq i\leq n}X_i$ being composed of independent random variables only. 
+So far, we considered the maximum $X_{(n)}=\max_{1\leq i\leq n}X_i$ composed of independent random variables only. 
  Now, we are interested by modeling 
-$X^*_{(n)}=\max_{1\leq i\leq n}X^*_i$ where $\{X^*_i\}$ will now denote a \emph{stationary} 
+$X^*_{(n)}=\max_{1\leq i\leq n}X^*_i$ where $\{X^*_i\}$ will denote a \emph{stationary} 
 sequence of $n$ random variables sharing the same marginal df $F$ as the sequence $\{X_i\}$ of independent random variables.
 
 \begin{definition}[Stationary process] We say that the sequence $\{X_i\}$ of n random variables is (strongly) \emph{\textbf{stationary}} if, for $h\geq 0$ and $n\geq 1$, the distribution of the lagged random vector $(X_{1+h},\dots,X_{n+h})$ does not depend on h.
 \end{definition}
-It corresponds to physical processes whose stochastic properties are homogeneous but which may be dependent. There exist other formulations of \emph{stationarity} but we stick to this general definition.  
+It corresponds to physical processes whose stochastic properties are homogeneous but which may be dependent. Other formulations of \emph{stationarity} exist but we will use this general definition.  
 
 This dependence can take many forms and hence we need to relax the independence condition.
 Let $F_{i_1,\dots,i_p}(u_1,\dots,u_p):=\text{Pr}\{X_{i_1}\leq 
@@ -22,7 +22,7 @@ $X_{i_1},\dots,X_{i_p}$ for any arbitrary positive integers $(i_1,\dots,i_p)$.
 	\end{equation}
 	where $\beta_{n,\ell}$ is nondecreasing and  $\displaystyle{\lim_{n \to \infty}}\beta_{n,\ell_n}=0$ for some sequence $\ell_n=o(n)$.
 \end{definition}
-This condition ensures that, when the sets of variables are separated by a relatively short distance, typically $s_n=o(n)$, the long-range dependence between such events is limited in a sense that is sufficiently close to zero to have no effect on the limit extremal laws.
+This condition ensures that, when the sets of variables are separated by a relatively short distance, typically $s_n=o(n)$, the long-range dependence between such events is limited in a sense that it is sufficiently close to zero to have no effect on the limit extremal laws.
 This result is remarkable in the sense that, provided a series has limited long-range dependence at extreme levels (i.e., where $D(u_n)$ condition holds), maxima of stationary series follow the same distributional limit laws as those of independent series.% The two following theorems will show the main implications.
 
 
@@ -57,27 +57,27 @@ This result is remarkable in the sense that, provided a series has limited long-
 It is evident from (\ref{extindex}) that the maximum of a stationary series will have a tendency to decrease.
 
 \subsection{The extremal index}
-The \emph{extremal index} is an important indicator quantifying the extent of extremal dependence, that is the degree at which the assumption of independence is violated. From (\ref{extindex}), it is clear that $\theta=1$ lead to an independent process, but the converse does not hold. The case $\theta= 0$ will not be considered as it is too "far" from independence and brings problems. Moreover, results of \hyperref[thm:statio2]{Theorem \textbf{\ref{thm:statio2}}} would not hold.
+The \emph{extremal index} is an important indicator quantifying the extent of extremal dependence, that is the degree at which the assumption of independence is violated. From (\ref{extindex}), it is clear that $\theta=1$ leads to an independent process, but the converse does not hold. The case $\theta= 0$ will not be considered as it is too "far" from independence and results of \hyperref[thm:statio2]{Theorem \textbf{\ref{thm:statio2}}} would not hold.
 
-Formally, it can be defined as
+Formally, it can be defined in the POT approach as
 
 \begin{equation}\label{exc}
 \theta=\displaystyle{\lim_{n \to \infty}}\text{Pr}\Big\{\max(X_2,\dots,X_{p_n})\leq u_n\ | \ X_1\geq u_n\Big\},
 \end{equation}
-in the POT approach, where $p_n=o(n)$ and the sequence $u_n$ is such that Pr$\big\{X_{(n)} \leq u_n\big\}$ converges.
+where $p_n=o(n)$ and the sequence $u_n$ is such that Pr$\big\{X_{(n)} \leq u_n\big\}$ converges.
 Hence, $\theta$ can be thought for example as the probability that an exceedance over a high threshold is the final element in a \textit{cluster of exceedances}.%, concept that we will define defined in the following subsection.
 
 
 \addcontentsline{toc}{subsubsection}{Clusters of exceedances}
 \subsubsection*{Clusters of exceedances}
 
-From (\ref{exc}) and in a POT context, extremes have the tendency to occur in clusters whose \emph{mean cluster size} is $\theta^{-1}$ at the limit. Equivalently, $\theta^{-1}$ can be viewed as the factor with which the mean distance between cluster is increased.
-This problem of temporal dependence make inference based on the likelihood invalid.
-We name two methods that can be used to circumvent this issue : 
+From (\ref{exc}) and in a POT context, extremes have the tendency to occur in clusters whose \emph{mean cluster size} is $\theta^{-1}$ at the limit. Equivalently, $\theta^{-1}$ can be viewed as the factor with which the mean distance between clusters is increased.
+This problem of temporal dependence makes inference based on the likelihood invalid.
+Two methods can be used to circumvent this issue : 
 
 \begin{itemize}
 	\item \textbf{Filtering out} an (approximate) independent sequence of threshold exceedances.
-	\item \textbf{Declustering} : compute the maximum value in each cluster and then we model these clusters maximums as independent GP random variable. In this approach, we remove temporal dependence but we do not estimate it.
+	\item \textbf{Declustering} : compute the maximum value in each cluster and model these clusters maximums as independent GP random variable. In this approach, we remove temporal dependence but we do not estimate it.
 	However, information is discarded and this could be a substantial loss in meteorological applications, for instance to determine heat or cold waves.
 \end{itemize}
 
@@ -115,29 +115,28 @@ Return levels will be redefined in \hyperref[sec:returnlvlnstatio]{Section \text
 
 With dependent series, modeling by means of GEV as in 
 \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} can be used in 
-a similar way since the shape parameter $\xi^*$ will remain invariant. The difference is that the effective number of block maxima $n^*=n\theta$ will be reduced and hence convergence in \hyperref[extthm]{extremal Theorem \textbf{\ref{extthm}}} will be slower. 
+a similar way since the shape parameter $\xi^*$ remains invariant. The difference is that the effective number of block maxima $n^*=n\theta$ will be reduced and hence convergence in \hyperref[extthm]{extremal Theorem \textbf{\ref{extthm}}} will be slower. 
 Indeed, approximation is expected to be poorer and this will be exacerbated with increased levels of dependence in the series.
-Efforts must be made to either try to increase $n$ for example by reducing the blog length, or make sure the model fit is convincing with diagnostic tools presented in \hyperref[sec:diag]{Section \textbf{\ref{sec:diag}}}.
+Efforts must be made to either try to increase $n$ for example by reducing the blog length, or by making sure the model fit is convincing with the diagnostic tools presented in \hyperref[sec:diag]{Section \textbf{\ref{sec:diag}}}.
 
 
 \section{Non-Stationary Extremes}\label{nstatio}
 
-Whereas \hyperref[sec:statio]{previous Section} relaxed the first "i" of the "iid" assumption made during  \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} and \textbf{\ref{sec::2}} by allowing temporal dependence under stationary process, this section will now tackle the "\textbf{id}" part, i.e. assumption that the observations are \textbf{i}dentically \textbf{d}istributed. 
-The stationarity assumption is not likely to hold for climatological data such as temperatures. For instance, the most obvious departure from stationarity is the presence seasonal patterns as seen in Figure \ref{fig:violin_density} with higher spread in spring or in autumn for example. Seasonal concerns should disappear for very high thresholds in excess models but this is not a valid argument since the number of data would become very small. For a sufficiently large block size in block maxima, meteorological seasons should not be an issue. 
+Whereas the \hyperref[sec:statio]{previous Section} relaxed the first "i" of the "iid" assumption made during  \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} and \textbf{\ref{sec::2}} by allowing temporal dependence under stationary process, this section will now tackle the "\textbf{id}" part, i.e. the assumption that the observations are \textbf{i}dentically \textbf{d}istributed. 
+The stationarity assumption is not likely to hold for climatological data such as temperatures. For instance, the most obvious departure from stationarity is the presence of seasonal patterns as seen in Figure \ref{fig:violin_density} with higher spread in spring or in autumn for example. Seasonal concerns should disappear for very high thresholds in excess models but this is not a valid argument since the number of data would become very small. For a sufficiently large block size in block maxima, seasons should not be an issue. 
 
-Furthermore, the aim of this thesis will focus on the modeling of the possible trend in order to assess the climate warming. 
-Our modeling will hence more focus on the analysis of different parametrizations for the mean by allowing the location parameter $\mu$ to vary with time. Even if it seems less interesting, we will also allow the scale parameter to vary in order to check if the annual maxima have varying spread over time. We will avoid to vary $\xi$ with time in order to stay in the same EV family of distributions.
+Furthermore, the aim of this thesis will focus on the modeling of the possible trend in order to assess climate warming. 
+Our modeling will hence focus more on the analysis of different parametrizations for the mean by allowing the location parameter $\mu$ to vary with time. Even if it seems less interesting, we will also allow the scale parameter to vary in order to check if the annual maxima have varying spread over time. We will avoid to vary $\xi$ with time in order to stay in the same EV family of distributions.
 
-
-There are no new general theory a for nonstationary processes in previous section  and we will then use a pragmatic approach of combining standard EV models with statistical modeling.
-We will only discuss the approach in block maxima but the extrapolation to POT is straightforward for inference, model comparison and diagnostics.
+There are no new general theories a for nonstationary processes and so we will now use a pragmatic approach of combining standard EV models with statistical modeling.
+We will only discuss the approach in block maxima; extrapolation to POT is straightforward for inference, model comparison and diagnostics.
 
 
 \subsection{Block-Maxima}\label{sec:gev_nonstatio}
 
-As we continue to consider yearly blocks, we do only face nonstationary concerns for the trend which could probably be imputed to the Global Warming. 
-The evidence of seasonality arising when we decrease the block lengths is an issue in block maxima. For example if one consider daily maximum temperatures, seasonality will be present.
- However, we loose information by taking yearly blocks only as we do not use all the information since at least one half of the daily temperatures from October to March will not be used. To overcome this issue, dataset could be divided and different models can be applied on sub-blocks of the data, for example on the month July and August and fitting a GEV model with block length of 62 days and do similar analysis with other months. This will provide us a set of GEV models that will  describe different aspects of the process. In fact, this method would lead to some kind of a "manual" nonstationary GEV modeling.
+By considering yearly blocks, we face nonstationary concerns for the trend which could probably be imputed to Global Warming. 
+The evidence of seasonality arising when we decrease the block lengths is an issue in block maxima. For example if one considers daily maximum temperatures, seasonality will be present.
+ On the other hand, we lose information by taking yearly blocks only as we do not use all the information. Indeed, at least one half of the daily temperatures from October to March will not be used since they will never include days that will be an annual maximum. To overcome this issue, the dataset could be divided and different models can be applied on sub-blocks of the data, for example on July and August and fitting a GEV model with block length of 62 days and do similar analysis with other months. This will provide us with a set of GEV models that will  describe different aspects of the process. In fact, this method would lead to some kind of a "manual" nonstationary GEV modeling.
 
 
 \subsubsection*{Inference for GEV}
@@ -152,7 +151,7 @@ where each of $\mu(t),\sigma(t), \xi(t)$ are expressed as
 \theta(t)=b\big(X^{'}\beta\big),
 \end{equation}
 for a specified inverse link function $b(\cdot)$ where $\theta$ denotes either $\mu,\sigma$ or $\xi$, $\beta$ denote the complete vector of parameters, and $X$ is the design matrix. In our example, $Z_t$ will describe the annual maximum temperature of year $t$ for $m=116$ years.
-As already stated, it will not be recommended to allow $\xi$ to vary with time. Examples of parametric expressions from (\ref{eq:linknsta}) will be given in \hyperref[sec:comp0]{Section \textbf{\ref{sec:comp0}}}.
+As already stated, it is not recommended to allow $\xi$ to vary with time. Examples of parametric expressions from (\ref{eq:linknsta}) will be given in \hyperref[sec:comp0]{Section \textbf{\ref{sec:comp0}}}.
 
 If $g\big(z_t; \mu(t),\sigma(t),\xi(t)\big)$ denotes the GEV density (Table \ref{tab:gevdens}) with parameters $\mu(t),\sigma(t),\xi(t)$ evaluated at $z_t$, the log-likelihood of the model (\ref{eq:gevnsta}) is, provided $\xi(t)\neq0 \ \forall t$,
 \begin{equation}\label{eq:loglikgevnonstatio}
@@ -160,7 +159,7 @@ If $g\big(z_t; \mu(t),\sigma(t),\xi(t)\big)$ denotes the GEV density (Table \ref
 \ell(\beta)& = \sum_t^m\log g\big(z_t; \mu(t),\sigma(t),\xi(t)\big)\\ & = -\sum_t^m\Bigg\{ \log\sigma(t)+\big[1+\xi^{-1}(t)\big]\log\bigg[1+\xi(t)\cdot\sigma^{-1}(t)\cdot\Big(z_t-\mu(t)\Big)\bigg]_+ \\ & \qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad +  \bigg[1+\xi(t)\cdot\sigma^{-1}(t)\cdot\Big(z_t-\mu(t)\Big)\bigg]_+^{-\xi^{-1}(t)} \Bigg\},
 \end{aligned}
 \end{equation}
-where the notation  $y_+(t)=\text{max}\big\{y(t),0\big\}$ holds for all $t$. The parameters $\mu(t),\sigma(t),\xi(t)$ are replaced by their respective expressions from (\ref{eq:linknsta}). If $\xi(t)=0$ for any $t$, we replace the likelihood by using the limit $\xi(t)\to0$ in (\ref{eq:loglikgevnonstatio}) as in Table \ref{gevdens}. 
+where the notation  $y_+(t)=\text{max}\big\{y(t),0\big\}$ holds for all $t$. The parameters $\mu(t),\sigma(t)$ and $\xi(t)$ are replaced by their respective expressions from (\ref{eq:linknsta}). If $\xi(t)=0$ for any $t$, we replace the likelihood by using the limit $\xi(t)\to0$ in (\ref{eq:loglikgevnonstatio}) as in Table \ref{gevdens}. 
 Numerical techniques are then used to maximize (\ref{eq:loglikgevnonstatio}) in order to yield the MLE of $\beta$ and evaluate standard errors.  
 
 
@@ -177,23 +176,23 @@ In order to compare our models, that is for example to check whether a trend is 
 	for two nested models $\mathcal{M}_0\subset \mathcal{M}_1$, where $\ell_1(\mathcal{M}_1)$ and $\ell_0(\mathcal{M}_0)$ are the maximized log-likelihoods (\ref{eq:loglikgevnonstatio}) under models $\mathcal{M}_1$ and $\mathcal{M}_0$ respectively.
 	Asymptotically, the distribution of $D$ is $\chi^2_k$ with $k$ degrees of freedom representing the difference of parameters between model $\mathcal{M}_1$ and $\mathcal{M}_0$. Comparisons of $D$ with the $\chi^2_k$ critical value will guide our decision.  
 	
-	\item\label{aicbic} It is sometimes preferable to rely on other criterion, for example when the number of models to be compared is large or their construction is not straightforward. We will make use of the \emph{Bayesian Information Criterion} (BIC) and  the \emph{Akaike Information Criterion (corrected) } ($\text{AIC}_{\text{c}}$). For $n$ observations and $p$ parameters, 
+	\item\label{i:aicbic} It is sometimes preferable to rely on other criterion, for example when the number of models to be compared is large or their construction is not straightforward. We will make use of the \emph{Bayesian Information Criterion} (BIC) and  the \emph{Akaike Information Criterion (corrected) } ($\text{AIC}_{\text{c}}$). For $n$ observations and $p$ parameters, 
 we define 
 	\begin{equation}\label{aicbic}
 \text{BIC} = -2\ell+ p\log(n), \qquad\quad \text{AIC}_{\text{c}}=-2\ell+2p+\frac{2p(p+1)}{n-p-1}.
 	\end{equation}
 	 Used by \citet{cannon_flexible_2010}, these two criterion both have a likelihood term which represent the quality of fit of the model and a term which penalizes the complexity of the model represented by its number of parameters to be estimated. These two criterion are advised for small samples and to prevent overfitting (i.e., fitting to noise instead of the true underlying process). BIC will penalize more heavily models that are more complex.
 \end{enumerate}
-The basic principle of parsimony holds for both methods. In the first method, it is incorporated in the statistical test since the critical value $\chi^2_k$ will increase with $k$, the difference of complexity of two models. In the second method, it is directly included in the criterion since the partial derivative with $p$ is positive for both criterion(\ref{aicbic}) and these are to be minimized. %econd approach could lead to more subjectivity. 
+The basic principle of parsimony holds for both methods. In the first method, it is incorporated in the statistical test since the critical value $\chi^2_k$ will increase with $k$, which is the difference of complexity of two models. In the second method, it is directly included in the criterion since the partial derivative with $p$ is positive for both criterion(\ref{aicbic}) and these are to be minimized. %econd approach could lead to more subjectivity. 
 
-We will use the first technique in \hyperref[sec:comp0]{Section \textbf{\ref{sec:comp0}}} to make successive comparisons of parametric models that we propose for the location parameter. We will then summarize all the results in Table \ref{tab:comp_mod} in the \hyperref[sec:nnxp]{following Section} by means of BIC and $\text{AIC}_{\text{c}}$, taking all relevant models into account.
+We will use the first technique in \hyperref[sec:comp0]{Section \textbf{\ref{sec:comp0}}} to make successive comparisons of parametric models that we propose for the location parameter. We will then summarize all the relevant models in Table \ref{tab:comp_mod} in the \hyperref[sec:nnxp]{following Section} by means of BIC and $\text{AIC}_{\text{c}}$.
 
 
 \subsubsection*{Model Diagnostics}
 
 
-When the "best" model is selected following the method, it is still necessary to assess that the model fits well enough the data at hand that we can infer conclusions about some aspect of the population. 
-We will use tools seen in the independent (or stationary) case, the quantile and the probability plots presented in \hyperref[app:qqpp]{Appendix \textbf{\ref{app:qqpp}}}. From the inhomogeneous distribution across years, it is needed to standardize the data. For example, when model (\ref{eq:gevnsta}) is estimated, the \emph{standardized variables} $\tilde{Z}_t$ are 
+When the "best" model is selected, it is still necessary to assess that the model fits well the data so we can infer conclusions about some aspect of the population. 
+We will use tools seen in the independent (or stationary) case, i.e. the quantile and the probability plots presented in \hyperref[app:qqpp]{Appendix \textbf{\ref{app:qqpp}}}. From the inhomogeneous distribution across years, the data needs to be standardized. For instance, when model (\ref{eq:gevnsta}) is estimated, the \emph{standardized variables} $\tilde{Z}_t$ are 
 
 \begin{equation}
 \tilde{Z}_t=\hat{\xi}^{-1}(t)\cdot\log \bigg\{1+\hat{\xi}(t)\cdot \hat{\sigma}^{-1}(t)\cdot\Big(Z_t-\hat{\mu}(t)\Big)\bigg\},
@@ -213,7 +212,7 @@ Figure \ref{fig:ppqqplot2} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}
 
 \section{Return Levels : New Definitions}\label{sec:returnlvlnstatio}
 
-Whereas we already defined return levels in \hyperref[rlgev]{Section  \textbf{\ref{rlgev}}} for independent sequences, we will now give a more general definition for return levels. 
+\hyperref[rlgev]{Section  \textbf{\ref{rlgev}}} defined return levels for independent sequences, and so now we will give a more general definition for return levels. 
 
 \subsubsection*{Stationarity} 
 Under assumption of a
@@ -248,18 +247,18 @@ stationary sequence, the return level is the same for all years. The $m$-year re
 
 \subsubsection*{Non-stationarity}
 
-As demonstrated in \citet[Section 4.2]{ag_extremes_2013}, we can retrieve the same two interpretations of return period as for a stationary process. However, mathematical derivations go beyond the scope of this thesis. Moreover, from definition of non-stationary process, as parameter(s) will be function of time, return levels will also change over time. This will have big impacts on modeling, since an inappropriate model will lead to inappropriate return levels, as we will see to a certain extent in Figure \ref{fig:rl_nsta}. 
+Mathematical derivations go beyond the scope of this thesis, however, as demonstrated in \citet[Section 4.2]{ag_extremes_2013}, we can retrieve the same two interpretations of return period as for a stationary process. Moreover, from the definition of non-stationary processes, as parameter(s) are a function of time, return levels will also change over time. This will have a big impact on modeling, since an inappropriate model will lead to inappropriate return levels, as we will see in Figure \ref{fig:rl_nsta}. 
 We will now try more complex models in order to improve this fit. 
 
 
 \section{Neural Networks for Nonstationary Series : GEV-CDN}\label{sec:gevcdn}
 
 In the era of Artificial Intelligence and Machine Learning or even the trendy term "Deep Learning", it is interesting to see how artificial Neural Networks (NN) can effectively deal with nonstationarity in EVT for the block-maxima approach. 
-In practice, assumptions made by models (\ref{eq:linknsta}) may not be accurate enough, in the sense that it could not take the complex temporal relationship with GEV parameters. One could for example expect to have particular relationships between the covariates\footnote{Here we will still consider the time itself only but we could have other time-varying covariates.} and the GEV parameters. Only considering parametric models in location or scale could thus be seen as too restrictive. For example, \citet{kharin_estimating_2005} allowed for nonlinear trends in temperature extremes by making simulations over a 110-year transient global climate to estimate linear trends in the three GEV parameters based on a series of overlapping 51-year time windows. 
+In practice, assumptions made by models (\ref{eq:linknsta}) may not be accurate enough, as they cannot address the complex temporal relationship with GEV parameters. One could for example expect to have particular relationships between the covariates\footnote{Here we will still consider the time itself only but we could have other time-varying covariates.} and the GEV parameters. Only considering parametric models in location or scale could thus be seen as too restrictive. For example, \citet{kharin_estimating_2005} allowed for nonlinear trends in temperature extremes by making simulations over a 110-year transient global climate to estimate linear trends in the three GEV parameters based on a series of overlapping 51-year time windows. 
 
-Here, we follow an automated approach allowing to take into account all possible relationships through a flexible modeling approach.
+Here, we follow an automated approach allowing us to take into account all possible relationships through a flexible modeling approach.
 The well-known result from \cite{Hornik_1989} says that provided enough data, hidden units and an appropriate optimization, NN's can capture any smooth dependencies of the parameters given the input, and hence, it can theoretically capture any conditional continuous density, be it asymmetric, multimodal, or heavy-tailed. This can be particularly interesting as we do not have particular prior knowledge on the form of the underlying process of annual maximum temperatures. 
-NN's have this facility of being capable of automatically modeling any nonstationary relationships without explicitly specify it a priori, including interactions between covariates.  As demonstrated by the reference article of \citet{cannon_flexible_2010}, physical process such as rainfall or other meteorological data have a tendency to show nonlinearities and so NN's become interesting. However from its flexibility, attention must be given to the danger of overfitting the data.  Another pitfall is its lack of interpretation of the relationships retrieved by the model between inputs and outputs but it bears noting that sensitivity analysis methods as in \citet{cannon_graph_2002} could be used to identify the form of nonlinear relationships between covariates and GEV distribution parameters or quantiles.
+NN's have this facility of being capable of automatically modeling any nonstationary relationships without explicitly specify it a priori, including interactions between covariates. As demonstrated by the reference article of \citet{cannon_flexible_2010}, physical processes such as rainfall or other meteorological data have a tendency to show nonlinearities and so NN's become interesting. However from its flexibility, attention must be given to not overfit the data.  Another pitfall is the lack of interpretation of the relationships retrieved by the model between inputs and outputs but it bears noting that sensitivity analysis methods as in \citet{cannon_graph_2002} could be used to identify the form of nonlinear relationships between covariates and GEV distribution parameters or quantiles.
 
 
 We will use a \emph{conditional density estimation network} (CDN), which is a probabilistic variant of the \emph{multilayer perceptron} (MLP). 
@@ -267,16 +266,16 @@ An extensive review of the MLP can be found for example in \citet{Hsieh_Tang_199
 
 
 
-\paragraph*{Parametric or nonparametric ?}
-It is always a difficult task to state whether Neural Networks (NN) are parametric models or not. NN  are somewhere in the gray area between a \emph{parametric} and a \emph{nonparametric} model, in the sense that it assumes a GEV distribution from the output layer defined by the three parameters of interest, while it also allows for a fabulous flexibility coming from the hidden layers which lead to think that these aree rather nonparametric. 
+\subsubsection*{Parametric or nonparametric ?}
+It is always a difficult task to state whether Neural Networks (NN) are parametric models or not. NN sit in the gray area between a \emph{parametric} and a \emph{nonparametric} model, in the sense that they assume a GEV distribution from the output layer defined by the three parameters of interest (see Figure \ref{NN} below), while it allows for great flexibility coming from the hidden layers which lead to think that these are rather nonparametric. 
 Note that all transformations applied inside the network are in general parametric and nonlinear.
-However, this terminological question is not very relevant and this will not impact the particular modeling.
+However, this terminological question is not very relevant and this will not impact the modeling.
 
 \subsection{Generalized Maximum Likelihood}
 
 
-In \hyperref[likgevintro]{Section \textbf{\ref{likgevintro}}} we introduced the concept of penalized likelihood. The idea is that the MLE's may diverge for some values of $\xi$, especially when sample size is small. To resolve this problem, \citet{martins_generalized_2000} suggest the use of a prior distribution for the shape parameter $\xi$ of the GEV model such
-that the most probable values of the parameter are included. This method extend the usual ML and is called the \emph{Generalized Maximum Likelihood} (GML). In this method, the penalty is in the form of a prior distribution on $\xi$ : 
+In \hyperref[likgevintro]{Section \textbf{\ref{likgevintro}}} we introduced the concept of penalized likelihood. The issue is that the MLE's may diverge for some values of $\xi$, especially when sample size is small. To resolve this problem, \citet{martins_generalized_2000} suggest the use of a prior distribution for the shape parameter $\xi$ of the GEV model such
+that the most probable values of the parameter are included. This method extends the usual ML and is called the \emph{Generalized Maximum Likelihood} (GML). In this method, the penalty is in the form of a prior distribution on $\xi$ : 
 
 \begin{equation}\label{eq:betaprior}
 \pi(\xi)\sim\text{Beta}(\xi+0.5 ; \ c_1,c_2),
@@ -382,7 +381,7 @@ The MLP architecture of the general GEV-CDN framework is pictured in Figure \ref
 \begin{equation}\label{eq:nnlay1}
 h_j(t)=m\Big(\sum_{i=1}^{I}x_i(t)\cdot  w_{ji}^{\textbf{\textcolor{red}{(1)}}}+b_j^{\textbf{\textcolor{red}{(1)}}}\Big),
 \end{equation}
-with $m(\cdot)$ the hidden layer activation function, $w_{ji}^{(1)}$ and $b_j^{(1)}$ are the input-hidden layer weight and bias. The function $m(\cdot)$ is often sigmoidal to allow the GEV-CDN mapping to be nonlinear but it can be the identity function for a strictly linear mapping.
+with $m(\cdot)$ the hidden layer activation function, $w_{ji}^{(1)}$ and $b_j^{(1)}$ are the input-hidden layer weight and bias. The function $m(\cdot)$ is often sigmoidal to allow the GEV-CDN mapping to be nonlinear but it can be the identity function (i.e., $m(x)=x$) for a strictly linear mapping.
 
 \item The value of the $k$-th output is given by 
 \begin{equation}\label{eq:nnlay2}
@@ -399,12 +398,12 @@ A hierarchy of models can be defined by varying the structure of the CDN (number
 \subsection{Prevent Overfitting : Bagging}\label{sec:bagg} 
 
 
-\emph{B}ootstrap \emph{agg}regat\emph{ing} or \emph{bagging} is an ensemble method\footnote{For climatologists, \emph{ensemble models} are different but of major utility, especially to make weather forecasting, see for example \citet{suh_development_2012} among others.} used in many state-of-the-art machine learning algorithms such as Random Forests discovered by \citet{Breiman_2001}. This technique is praised in Machine Learning for its performance as it decreases variance of predictions (or estimates) and hence reduce the risk of overfitting. This method works by generating additional data with repetitions from the original dataset to produce multisets of the same size.
+\emph{B}ootstrap \emph{agg}regat\emph{ing} or \emph{bagging} is an ensemble method\footnote{For climatologists, \emph{ensemble models} are different but of major utility, especially to make weather forecasting, see for example \citet{suh_development_2012} among others.} used in many state-of-the-art machine learning algorithms such as Random Forests discovered by \citet{Breiman_2001}. This technique is praised in Machine Learning for its performance as it decreases variance of predictions (or estimates) and hence reduces the risk of overfitting. This method works by generating additional data with repetitions from the original dataset to produce multisets of the same size.
 The  individual  multisets’  outputs  having equal  weights  are  then  combined  by  averaging the ensemble members. This process is also known as \emph{model averaging}.
-Indeed, by increasing the size of original data you cannot improve the model predictive force, but just decrease its variance.
+Indeed, increasing the size of original data cannot improve the model predictive force, but can decrease its variance.
 
  
-\citet{Carney_2005} have successfully applied this averaging method in the context of CDN and \citet{cannon_flexible_2010} says it is worth exploring for GEV-CDN models. He implemented it soon after in its R package \texttt{GEVcdn}. \emph{Early stopping} stopping can be added as a computationally intensive means of controlling overfitting as it stops training prior to convergence of the optimization algorithm and hence allow to reduce the complexity of the model.
+\citet{Carney_2005} have successfully applied this averaging method in the context of CDN and \citet{cannon_flexible_2010} says it is worth exploring for GEV-CDN models. He implemented it soon after in its R package \texttt{GEVcdn}. \emph{Early stopping} stopping can be added as a computationally intensive means of controlling overfitting as it stops training prior to convergence of the optimization algorithm and hence allows a reduction in the complexity of the model.
 
 Other techniques are available to prevent overfitting. First used by \citet{mackay92b}, \emph{weight penalty regularization} is popular and available in the GEV-CDN framework as a means of limiting the effective number of parameters. The amount of weight penalty is
 controlled via a Gaussian prior on the magnitude of the input-hidden layer weights. Optimal value for the
@@ -416,7 +415,7 @@ variance of the Gaussian prior must be set relying on some form of split-sample 
 
 Like the estimated parameters themselves, the standard errors may not be reliable for small samples. One way to improve the accuracy of the standard errors is to use \emph{bootstrap}. Discovered by \citet{efron1979}, this can be used for EV dfs including nonstationarity. The bootstrap samples are manufactured through
 Monte Carlo resampling of residuals to attend to the underlying assumption  that original sample is iid.
-There exist a large panel of different bootstrap procedures to construct confidence intervals.  For example, \citet{2006JHyd..329..534K} follows these steps for the residual bootstrap : 
+There exists a large panel of different bootstrap procedures to construct confidence intervals.  For example, we will follow the steps of \citet{2006JHyd..329..534K} for the residual bootstrap : 
  
 \begin{enumerate}
 	\item\label{itboot} Fit a nonstationary GEV model to the data.
@@ -437,5 +436,5 @@ There exist a large panel of different bootstrap procedures to construct confide
 	\item Repeat steps \ref{itboot} to \ref{it5:boot} a large number of times B.
 	
 \end{enumerate}
-\citet{cannon_flexible_2010} found that \emph{parametric} bootstrap outperformed the \emph{residual} bootstrap in the GEV-CDN framework, but he did not consider alternative bootstrap approaches such as the \emph{bias-adjusted percentile} which might yield better calibrated confidence intervals.
-Empirical Monte-Carlo comparisons of coverage from all available methods considered so far would be interesting. Furthermore, the incoming chapter will introduce other methods to construct intervals in a strictly Bayesian approach  relying also on Monte-Carlo sampling.
+\citet{cannon_flexible_2010} found that \emph{residual} bootstrap outperformed the \emph{parametric} bootstrap in the GEV-CDN framework (and we also will verify it in , but he did not consider alternative bootstrap approaches such as the \emph{bias-adjusted percentile} which might yield better calibrated confidence intervals.
+Empirical Monte-Carlo comparisons of coverage from all available methods considered so far would be interesting. Furthermore, the upcoming chapter will introduce other methods to construct intervals in a strictly Bayesian approach  relying also on Monte-Carlo sampling.

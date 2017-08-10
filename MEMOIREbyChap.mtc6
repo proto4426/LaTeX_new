@@ -1,11 +1,11 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode Repository for the code : R Package}{\reset@font\mtcSfont 57}{section*.57}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Visualization Tool : Shiny Application}{\reset@font\mtcSSfont 57}{section*.58}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Presentation of the Analysis : Temperatures from Uccle}{\reset@font\mtcSfont 58}{section.5.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}First Analysis : Annual Maxima}{\reset@font\mtcSfont 58}{section.5.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Descriptive Analysis}{\reset@font\mtcSSfont 58}{subsection.5.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode Repository for the code : R Package}{\reset@font\mtcSfont 58}{section*.52}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode Visualization Tool : Shiny Application}{\reset@font\mtcSSfont 58}{section*.53}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Presentation of the Analysis : Temperatures from Uccle}{\reset@font\mtcSfont 59}{section.5.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}First Analysis : Annual Maxima}{\reset@font\mtcSfont 59}{section.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Descriptive Analysis}{\reset@font\mtcSSfont 59}{subsection.5.2.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}First visualization with simple models}{\reset@font\mtcSSfont 59}{subsection.5.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.3}Deeper Trend Analysis : Splines derivatives in GAM}{\reset@font\mtcSSfont 59}{subsection.5.2.3}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Pointwise vs Simultaneous intervals}{\reset@font\mtcSSSfont 60}{section*.63}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Methodology}{\reset@font\mtcSSSfont 60}{equation.5.2.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Final Results}{\reset@font\mtcSSSfont 62}{table.caption.68}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.3}Deeper Trend Analysis : Splines derivatives in GAM}{\reset@font\mtcSSfont 60}{subsection.5.2.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Pointwise vs Simultaneous intervals}{\reset@font\mtcSSSfont 61}{section*.58}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Methodology}{\reset@font\mtcSSSfont 61}{equation.5.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode Final Results}{\reset@font\mtcSSSfont 63}{table.caption.63}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}Comments and Structure of the Analysis }{\reset@font\mtcSfont 63}{section.5.3}}
