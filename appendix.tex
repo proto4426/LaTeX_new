@@ -11,25 +11,28 @@
 The distribution of a random variable $X$ with distribution function $F$ is said 
 to have a \emph{heavy} right \emph{tail} if 
 \begin{equation}
-\displaystyle{\lim_{n \to \infty}} \ e^{\lambda x} \ \text{Pr}\{X>x\}=\displaystyle{\lim_{n 
+\displaystyle{\lim_{n \to \infty}} \ e^{\lambda x} \ \Pr\{X>x\}=\displaystyle{\lim_{n 
 \to \infty}} \ e^{\lambda x} \bar{F}(x)=\infty , \ \quad \forall \lambda>0.
 \end{equation}
 \end{definition}
 More generally, we can say that a random variable X has heavy tails if Pr$\{|X|>x\}\to 0$ at 
 a polynomial rate. In this case, note that some of the moments will be undefined.
 
+%\iffalse
 \begin{definition}[Fat-tails]
 The distribution of a random variable $X$ is said to have a \emph{fat} \emph{tail} if
 \begin{equation}
-\displaystyle{\lim_{x \to \infty}} \ \text{Pr}\{X>x\}=x^{-\alpha}.
+\displaystyle{\lim_{x \to \infty}} \ \Pr\{ X > x \}\cdot x^{\alpha} = c.
 \end{equation}
 \end{definition}
+%\fi
+
 
 \begin{definition}[Long-tails]
 The distribution of a random variable X with distribution function F is said to have a \emph{long} 
 right \emph{tail} if $\forall t > 0$,
 \begin{equation}
-\displaystyle{\lim_{x \to \infty}} \ \text{Pr}\{X>x+t|X>x\}=1 \ \Leftrightarrow \ 
+\displaystyle{\lim_{x \to \infty}} \ \Pr\{X>x+t|X>x\}=1 \ \Leftrightarrow \ 
 \bar{F}(x+t)\sim\bar{F}(x) \quad \text{as} \ x\to\infty.
 \end{equation}
 \end{definition}
@@ -38,7 +41,7 @@ right \emph{tail} if $\forall t > 0$,
 \begin{definition}[Light-tails]
 Conversely, we say that $X$ has \emph{light tails} or \emph{exponential tails} if its tails decay at an exponential rate, i.e. 
 \begin{equation}
-\displaystyle{\lim_{x \to \infty}} \ \text{Pr}\{|X|>x\}=e^{-x}
+\displaystyle{\lim_{x \to \infty}} \Pr\{|X|>x\} \cdot  e^x=b
 \end{equation}
 \end{definition}
 An intuitive example of a distribution with exponential tails such as the exponential distribution.
@@ -52,7 +55,7 @@ An intuitive example of a distribution with exponential tails such as the expone
 \begin{definition}[Convergence in distribution]
 We say that a sequence $X_n$ with df $F_n$ converges in distribution to $X$ with df $F$, if 
 \begin{equation}
-F_n(x):=\text{Pr}\big\{X_n\leq x\big\}\longrightarrow \text{Pr}\{X\leq x\}:=F(x),
+F_n(x):=\text{Pr}\big\{X_n\leq x\big\}\longrightarrow \Pr\{X\leq x\}:=F(x),
 \end{equation}
 at all continuity points of $F$. 
 \end{definition}
@@ -85,7 +88,7 @@ This is the type of stochastic convergence that is most similar to pointwise con
 \begin{definition}[Almost Sure convergence]
 We say that a sequence of random variables $X_n$ \emph{converges almost surely} (or with probability one) to $X$ if 
 \begin{equation}
-\text{Pr}\Big\{X_n=X\Big\}=1, \quad\qquad n\to\infty.
+ \Pr \Big\{ \lim_{n \to \infty} X_n = X \Big\} = 1.
 \end{equation}
 \end{definition}
 We can denote this by $X_n\stackrel{\text{a.s.}}{\rightarrow} X$. This means that the values of $X_n$ approach the value of $X$, in the sense that events for which $X_n$ does not converge to $X$ have probability 0.
@@ -104,7 +107,7 @@ We write it $\bar{F}\in R_{-\alpha}$.
 \end{definition}
 
 \begin{definition}[Slowly varying function]
-We say that a function $f$ is \textbf{slowly varying} with index $-\alpha$ if
+We say that a function $f$ is \textbf{slowly varying} if
 \begin{equation}
 \displaystyle{\lim_{x \to \infty}} \frac{f(t x)}{f(x)}=1, \qquad t>0. 
 \end{equation}
@@ -377,7 +380,7 @@ If all the have converged to the stationary distribution, they will share the sa
 \end{equation}
 Hence, \citet{gelman1992} suggested to compute 
 
-\begin{equation}
+\begin{equation}\label{eq:rhat}
 \hat{R}=\frac{\hat{V}(\theta|\boldsymbol{x})}{W},
 \end{equation}
 which is the factor by which one can expect to reduce $\hat{V}(\theta|\boldsymbol{x})$ if it were computed after convergence. 
@@ -417,9 +420,12 @@ At stationarity, i.e. when $\rho\in(0,1)$, the mean $\bar{\theta}$ of $n$ elemen
 and hence, the \emph{effective sample size} is 
 
 \begin{equation}\label{eq:neff}
-N_{eff} = N\cdot \bigg( \frac{1-r}{1+r}\bigg),
+\begin{aligned}
+N_{\text{eff}} = & \ N\cdot \bigg( \frac{1-\gamma(1)}{1+\gamma(1)}\bigg) \\
+= & \ N\cdot \Big(1+2\sum_k\gamma(k)\Big)^{-1}
+\end{aligned}
 \end{equation}
-where $r$ is the observed 1st order autocorrelation.
+following \citet{hartmann_bayesian_2016} for the second equality, where $\gamma(k)$ is the observed monotone $k$-th order autocorrelation.
 
 \paragraph*{Raftery and Lewis’s Diagnostics}
 The diagnostic of \citet{raftery1992}  is a run length control diagnostic based on a criterion of accuracy of estimation of a certain quantile, in order to inform whether the number of iterations is too small. The criterion is based on the autocorrelation inside the generated samples, and informs us about the minimum sample size required for a chain with no correlation between consecutive samples.
@@ -428,6 +434,50 @@ The diagnostic of \citet{raftery1992}  is a run length control diagnostic based 
 \paragraph*{Thinning} It is a method that aims at reducing the autocorrelation of a chain by only storing iteration $k$ only if $k\mod t_h$ is zero (and if $k$ greater than or equal to the burn-in B), where $t_h$ is called the thinning interval.
 The iterations that have been stored are assumed to be sampled from the target distribution of the original chain, but with reduced dependence within the chain.
 Following \citet{bay_thin_2012}, thinning will typically reduces the precision of posterior estimates since it reduces the number of kept samples, but it may still represent a necessary computational saving.
+
+
+
+\section{Additional Figures and Tables}\label{app:bayfig}
+
+
+\begin{figure}[!htb]
+	\centering	\includegraphics[width=1\linewidth]{mhgib.pdf}\caption{ Chains of the two usual Bayesian algorithms. Acceptance rate is $\approx0.21$ of the MH and individual acceptances rates all between $0.42$ and $0.50$ for the Gibbs sampler. We ran one single chain for both algorithms with the same starting values.}\label{fig:mhgibbs}
+\end{figure}
+
+
+\begin{figure}[!htb]
+	\centering	\includegraphics[width=0.7\linewidth]{gelmdiag.pdf}\caption{Gelman-Rubin diagnostic : $\hat{R}$ statistic computed by iterations, for each parameters. We refined the basic plot provided by \texttt{coda} in order to put the four graphs on the same $y$-scale, for comparison purposes.}\label{fig:gelmdiag}
+\end{figure}
+
+
+\begin{figure}[!htb]
+	\centering	\includegraphics[width=0.8\linewidth]{autocor.pdf}\caption{Autocorrelation function for each of the parameters' Markov chains provided by \texttt{coda}. }\label{fig:autocor}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering	\includegraphics[width=0.5\linewidth]{crosscorr.pdf}\caption{Cross-correlation between each of the parameters' Markov chains}\label{fig:crosscorr}
+\end{figure}
+
+
+\begin{figure}[!htb]
+	\centering	\includegraphics[width=0.7\linewidth]{geweke.pdf}\caption{Geweke diagnostic : compute several $20$ z-scores that test the equality of the means between $10\%$ and $50\%$ of the chains. Dotted horizontal lines are the confidence regions at $95\%$. }\label{fig:geweke}
+\end{figure}
+
+
+\begin{table}[!htb] \centering 
+	\caption{Raftery-Lewis diagnostic} 
+	\label{tab:raf} 
+	\begin{tabular}{@{\extracolsep{5pt}} c|cccc} 
+\toprule
+		& $B$ & $N_{\text{advised}}$ & $N_{\text{min}}$ & Dependence Factor \\ 
+\midrule
+$\mu_0$ & $17$ & $2189$ & $457$ & $4.790$ \\ 
+$\mu_1$ & $13$ & $1689$ & $457$ & $3.700$ \\ 
+$\log\sigma$ & $12$ & $1573$ & $457$ & $3.440$ \\ 
+$\xi$ & $16$ & $2110$ & $457$ & $4.620$ \\ 
+\bottomrule
+	\end{tabular} 
+\end{table} 
 
 
 \chapter{Other Figures and Tables}\label{app:fig}
@@ -560,48 +610,75 @@ MA(2)  & $6$ & $494.698$ & $511.219$ \\
 \fi 
 
 
-\chapter{Github Repository Structure}\label{appgit}
+\chapter{Github Repository : Structure}\label{appgit}
 
+From the huge amount of code needed to do the analysis, we decided to divide it so that it will be more conveniently used and read. It was also needed to create a R package to gather all the functions created.
 The Github \href{https://github.com/proto4426/PissoortThesis/}{repository} build for this thesis can be found on this address :
 
 \begin{center}
 \url{https://github.com/proto4426/PissoortThesis}
 \end{center}
-
-where the R package \textbf{\texttt{PissoortThesis}} is located. It has the following \textbf{structure} : 
-
-\begin{itemize}
-\item \textbf{/R/} : contains the scripts with all the functions that are made available through the package. The functions are located in the script by "category", i.e. 
-\begin{itemize}
-\item \textbf{1UsedFunc.R} : some functions created for the introduction, the stationary analysis of yearly maxima in GEV, analysis in POT, nonstationary analysis in GEV and POT,...
-\item \textbf{BayesFunc.R} : functions created for the Bayesian Analysis, e.g. the Metropolis-Hastings algorithm and Gibbs Sampler (both stationary and nonstationary).
-\item \textbf{BootstrapFunc.R} (not updated)
-\item \textbf{NeuralNetsFunc.R} : functions slightly refined from \citet{cannon_flexible_2010} to allow for better outputs for the nonstationary analysis with NN.
-\item \textbf{runExample.R} : contains the function allowing to run the Shiny applications directly through the package (put the name of the application in ' ' in the function to load the application). 
-\end{itemize} 
-
-The documentation of the functions are directly made through the package, by typing \texttt{?Function\_Name}. 
-\textbf{For time issues, we were not able to finish all the documentations (e.g. for Bayesian functions), and some functions have been left in the scripts.}
-\item \textbf{/Scripts-R/}
+where the R package \textbf{\texttt{PissoortThesis}} is located. The README file contains valuable information to install the package and provide an overview of the Shiny applications. It has the following structure, with \texttt{files} divided in \textbf{/folders/} : 
 
 \begin{itemize}
-\item \textbf{1GEV\_plots\_(chap1).R} and \textbf{1GEV\_ggplot\_(chap1).R} : contain the plots made for the chapter 1, but only te last latter scripts contain the code to construct the final plots (made with \texttt{ggplot2})
-\item\textbf{1intro\_stationary.R} introduction and preprocessing +  descriptive analysis, stationary analysis of yearly maxima in GEV, analysis in POT, analysis with other time scale and with minima, ...
-\item\textbf{1intro\_trends(splines).R} 
-\item\textbf{1intro\_stationary.R} 
-\item\textbf{1intro\_stationary.R} 
-\item\textbf{1intro\_stationary.R} 
-\item\textbf{1intro\_stationary.R} 
-\item\textbf{1intro\_stationary.R} 
-\item\textbf{1intro\_stationary.R} 
-\item\textbf{1intro\_stationary.R} 
+\item \textbf{/R/} : Folder containing the scripts with all the functions that have been build for this thesis a,d are made available through the package. 
+
+  \begin{itemize}
+\item[$\vartriangleright$] \texttt{1UsedFunc.R} : functions created for the first part, including  the stationary analysis of annual maxima in GEV, analysis in POT, nonstationary analysis in GEV and POT, etc.
+\item[$\vartriangleright$] \texttt{BayesFunc.R} : functions for the Bayesian Analysis, e.g. the Metropolis-Hastings and Gibbs Sampler, for both stationary and nonstationary). It includes information criteria, diagnostics with several plotting function, etc. \citet[chap.13]{dey_extreme_2016} gave most insights that helped us to build the functions.
+
+\item[$\vartriangleright$] \texttt{NeuralNetsFunc.R} : Refined functions from \citet{cannon_flexible_2010} to compute GEV-CDN models, in order to yield more convenient outputs for the nonstationary analysis with NN than those provided by the \texttt{GEVcdn} package, especially useful for our plots. 
+\item[$\vartriangleright$] \texttt{BootstrapFunc.R} : functions to compute (double) bootstrap confidence intervals \textbf{(not updated and not used in the text)}.
+\item[$\vartriangleright$] \texttt{runExample.R} : function allowing to run the Shiny applications directly through the package : by putting the name of the application in ' ' in the function, and it will run the application. 
+  \end{itemize} 
+
+The documentation of the functions are directly made through the \texttt{roxygen2} package infrastructure. You can then access the help of each functions as usual, by typing \texttt{?function\_name}. 
+\emph{We were not able to fully complete the documentations of every functions (e.g. for Bayesian functions). Furthermore, some functions have been left in the scripts.}
+\item \textbf{/Scripts-R/} : Folder containing scripts that allow to retrieve any analysis made during this text.
+
+  \begin{itemize}
+\item[$\vartriangleright$] \texttt{1GEV\_plots\_(chap1).R} and \texttt{1GEV\_ggplot\_(chap1).R} : code to compute the plots in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}}. Second script contains the code to construct the displayed plots, made with \texttt{ggplot2}.
+
+\item[$\vartriangleright$]\texttt{1POT\_ggplot.R} : script used to obtain Figure \ref{fig:pot_plot} from our data. 
+
+\item[$\vartriangleright$]\texttt{1intro\_stationary.R} : code that provides the introduction to the data (preprocessing + descriptive analysis ; see beginning of \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}}). It also yields the GEV stationary analysis (with a little part for POT) of  \hyperref[sec:xpstatio]{Section \textbf{\ref{sec:xpstatio}}}. It provides additional analysis by taking other block-lengths (months, 6months, etc) or by taking minima.
+
+\item[$\vartriangleright$]\texttt{1intro\_trends(splines).R} : code used to compute the trend analysis in \hyperref[sec:splines]{Section \textbf{\ref{sec:splines}}}, i.e. the splines analysis with GAM model ; the comparisons of simultaneous and pointwise intervals, coverage analysis, etc.
+
+\item[$\vartriangleright$]\texttt{2NeuralsNets.R} : code for the Neural Network's analysis by GEV-CDN made in \hyperref[sec:nnxp]{next Chapter \textbf{\ref{sec:nnxp}}} ; including selecting of the best model relying on information criteria, bagging, computing confidence intervals with bootstrap, etc. 
+
+\item[$\vartriangleright$]\texttt{2Nonstationary.R} : code for the parametric nonstationary analysis made in \hyperref[sec:xpnp]{Section \textbf{\ref{sec:xpnp}}}, but also with POT or point process.
+
+\item[$\vartriangleright$]\texttt{Bayes\_evdbayes.R} : code used for the Bayesian analysis with the \texttt{evdbayes} package ; stationary GEV and nonstationary GEV (did not converge), POT.
+
+\item[$\vartriangleright$]\texttt{Bayes\_own\_gev.R} : code that computes all the Bayesian analysis made with our own functions (in \texttt{BayesFunc.R} ). From the Gumbel model to more complex parametric nonstationary models, with model comparison, convergence analysis, inference and visual diagnostics, etc.
+
+\item[$\vartriangleright$]\texttt{Bayes\_stan.R} : code to execute the Bayesian GEV models written in \textbf{/stan/} with the \texttt{rstan} package, together with several visualizations and diagnostics.
+
+\item[$\vartriangleright$]\texttt{Funs\_introSplines.R} : code that contains all the functions used in the script \texttt{1intro\_trends(splines).R}. These functions are thus not included in the package (yet?) and we just sourced this script.
+
+\item[$\vartriangleright$]\texttt{Shiny\_stan\_test.R} : code to deploy the Shiny application provided by the \texttt{shinystan} package, from a Stan model executed through \texttt{rstan}
+
+  \end{itemize}
+
+
+\item \textbf{/Shiny\_app\_visu/} : one way to include Shiny applications inside the package\textbf{\underline{ (not updated)}}.
+
+
+\item \textbf{/data/} : Folder that only contains the annual maxima and minima data in Uccle in a .RData format. These data can be directly used inside the Shiny application, and hence these applications can be run in any local environment only having loaded the   \texttt{PissoortThesis} package.
+
+\item \textbf{/inst/} : Folder that contains the code that generates the \underline{Shiny applications}. This code is divided in sub-folders for each applications.  See \hyperref[sec:packa]{Section \textbf{\ref{sec:packa}}} for more information on the applications. 
+
+
+\item \textbf{/man/} : This folder contains automatically generated files by \texttt{roxygen2} that yields the documentation of each functions. These \texttt{.Rd} files are generated from the ' descriptor portion' of the functions contained in the files in \textbf{/R/}.
+
+\item \textbf{/stan/} : Folder that contains the STAN scripts, trying to have convergence to the stationary posterior distribution .... (to update)
+
+\item \textbf{/vignettes/} : Folder that contains two "vignettes" made for appointments with J.Segers during the academic year. It can be downloaded in \texttt{.html} from the compressed file. 
+
+\begin{itemize}
+	\item[$\vartriangleright$] \texttt{Summary1\_intro.Rmd} : introduction to the analysis, descriptive statistics, stationary GEV model, first nonstationary GEV analysis and model comparison, first try with GEV-CDN, first attempt with Bayesian analysis with \texttt{evdbayes}.
+		\item[$\vartriangleright$] \texttt{Summary\_Bayesian} : Bayesian analysis with Metropolis-Hastings and Gibbs Sampler ( for stationary GEV), and then complete Bayesian analysis for the nonstationary GEV model with a linear model on the location parameter ; all this computed with our "own" functions. 
 \end{itemize}
 
-
-\item \textbf{/Shiny\_app\_visu/} (not updated)
-\item \textbf{/data/}
-\item \textbf{/inst/}
-\item \textbf{/man/}
-\item \textbf{/stan/}
-\item \textbf{/vignettes/}  It can be downloaded in html from the compressed file in the same folder.
 \end{itemize}

@@ -1,5 +1,5 @@
-\addcontentsline{toc}{section}{Repository for the code : R Package}
-\section*{Repository for the code : R Package}
+%\addcontentsline{toc}{section}{Repository for the code : R Package}
+\section{Repository for the code : R Package}\label{sec:packa}
 
 The created \textbf{R package} can be easily downloaded from this \href{https://github.com/proto4426/PissoortThesis}{\textbf{repository}} :
 \begin{center}\label{xxx}
@@ -90,7 +90,7 @@ Below is the series of yearly maxima in Figure \ref{first_fig} where we introduc
 These different models give us insights on the process we will study throughout the rest of this thesis. We will not develop further the results of each model as this is not the aim of this thesis rather we are interested in assessing the trend and its statistical significance over time using more sophisticated methods.
 
 
-\subsection{Deeper Trend Analysis : Splines derivatives in GAM}\label{sec:splines}
+\subsection{Trend Analysis : Splines derivatives in GAM}\label{sec:splines}
 
 Apart from the significant pointwise increasing linear trend, we did not find concrete results. Additionally, we see in the series in Figure \ref{first_fig} that a linear trend to the entire series could be too restrictive. The LOESS or the broken-linear trend highlight that the trend is not constant over time.
 We would like here to assess more formally this difference in the slope of the trend over time. 
@@ -148,7 +148,7 @@ $50$ posterior draws are displayed in Figure \ref{fig:post_draws} %let in \hyper
 To highlight the inadequacy of the pointwise intervals, we computed posterior draws of the fitted GAM and we counted how many draws lied within each interval.
 
 \begin{table}[!htbp] \centering 
-  \caption{Proportion of the $M$ posterior simulations which are covered by the confidence intervals} \label{tab:cov} 
+  \caption{Proportion of the $M$ posterior simulations which are covered by the confidence intervals.} \label{tab:cov} 
 \begin{tabular}{@{\extracolsep{5pt}}lccccc} 
 \toprule	
 \vspace{-.1cm}\\[-1.8ex] 

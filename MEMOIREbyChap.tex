@@ -50,6 +50,18 @@
 	\secdef\@part\@spart}
 \makeatother
 
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\reallywidehat[1]{%
+	\savestack{\tmpbox}{\stretchto{%
+			\scaleto{%
+				\scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+				{\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+			}{\textheight}% 
+		}{0.5ex}}%
+	\stackon[1pt]{#1}{\tmpbox}%
+}
+
 \usepackage{newclude} % delete \newpage with \include*{}
 \usepackage{booktabs,multirow}% 
 
@@ -485,6 +497,13 @@ For convenience, we place a list of all the abbreviations we will use in the tex
 
 
 
+Dans l'introduction et dans la conclusion, ce serait bien de mieux préciser, de façon structurée :
+- la question ou les questions de recherche
+- les données
+- la méthodologie (bien motiver tes choix de méthodes)
+- les réponses trouvées aux questions énoncées initialement
+
+
 Unlike its counterparts ( see for example credit risk analysis, financial applications,...), the Extreme Value Theory (EVT) applied on broad environemental area such as meteorological data, has strong impacts on the people lives 
 
 An important question is still whether climate changes caused by anthropogenic activities will change the intensity and frequency of extreme events \cite{milly_climate_2008}.
@@ -607,7 +626,7 @@ This chapter is mostly based on \citet[chap.4 and 7]{coles_introduction_2001}, \
  \vspace{1cm}
  
 In most environmental applications, the independence assumption made in the first chapters is questionable and never completely fulfilled. From hydrological processes as stated in \citet{milly_climate_2008} to temperature data to demonstrate climate warming, such theoretical assumptions that have been previously made are not sustainable in practice. \hyperref[sec:statio]{Section \textbf{\ref{sec:statio}}} will provide tools that enable EV models to hold in presence of a limited long-range dependence.
-\hyperref[nstatio]{Section \textbf{\ref{nstatio}}} will allow EV modeling under nonstationary processes allowing us to study for instance the possible increasing behavior of the maximum temperatures. \hyperref[sec:returnlvlnstatio]{Section \textbf{\ref{sec:returnlvlnstatio}}} redefined return levels under those less restricted cases, and finally  \hyperref[sec:gevcdn]{Section \textbf{\ref{sec:gevcdn}}} will introduce a new flexible way to model nonstationary extremes under a redefined Multi Layer Perceptron framework with inferential techniques minimizing the risk of overfitting.
+\hyperref[nstatio]{Section \textbf{\ref{nstatio}}} will allow EV modeling under nonstationary processes that will enable us to study the possible increasing behavior of the maximum temperatures. \hyperref[sec:returnlvlnstatio]{Section \textbf{\ref{sec:returnlvlnstatio}}} will redefine return levels under those less restricted cases, and finally  \hyperref[sec:gevcdn]{Section \textbf{\ref{sec:gevcdn}}} will introduce a new flexible way to model nonstationary extremes under a redefined Multi Layer Perceptron framework with inferential techniques minimizing the risk of overfitting.
 
 
 This chapter is mostly based on \citet[chap.5-6]{coles_introduction_2001}, \citet[chap.10]{beirlant_statistics_2006} and \citet[chap.7]{reiss_statistical_2007}, and other relevant articles.
@@ -623,19 +642,19 @@ This chapter is mostly based on \citet[chap.5-6]{coles_introduction_2001}, \cite
  \vspace{0.1cm}
 
 
-Sometimes criticized by the community from the possible introduction of some subjectivity, the Bayesian paradigm is increasingly adopted by the practitioners for its benefits. In our case, it provides interesting tools when carrying out an EV analysis. We will then vastly explore this framework. This chapter only focuses on GEV analysis on annual maxima, but extension to POT or Point Processes is straightforward with tools provided in the text or in the code.
+Whilst sometimes criticized for the introduction of some subjectivity, the Bayesian paradigm is increasingly adopted by practitioners for its benefits. In this case, Bayesian inference is interesting to perform an EV analysis and to explore this framework. This chapter focuses on GEV analysis on annual maxima. Extension to POT or Point Processes is straightforward with tools provided in the text or in the code.
  %to provide the big picture to the reader  
 
-In \hyperref[sec:bayprelim]{Section \textbf{\ref{sec:bayprelim}}} we introduce the Bayesian paradigm and present its characteristics. \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}} presents an essential component of the Bayesian sphere, the priors that we will describe for GEV applications.
-\hyperref[sec:baymcmc]{Section \textbf{\ref{sec:baymcmc}}} discusses several Monte Carlo algorithms that can be used to obtain a sample from the posterior. Then, \hyperref[sec:convbay]{Section \textbf{\ref{sec:convbay}}} presents diagnostics to assess that convergence of the algorithms occurred, in order to check if the posterior's sample is reliable. If this is positive,
-\hyperref[sec:bayinf]{Section \textbf{\ref{sec:bayinf}}} presents the Bayesian inferential techniques that can be applied.
+\hyperref[sec:bayprelim]{Section \textbf{\ref{sec:bayprelim}}} introduces the Bayesian paradigm and presents its characteristics. \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}} presents an essential component of the Bayesian sphere, the priors that we will describe for GEV applications.
+\hyperref[sec:baymcmc]{Section \textbf{\ref{sec:baymcmc}}} discusses several Monte Carlo algorithms that can be used to obtain a sample from the posterior. Then, \hyperref[sec:convbay]{Section \textbf{\ref{sec:convbay}}} presents diagnostics to assess the convergence of the algorithms in order to check i the reliability of the posterior's sample. If this is positive,
+\hyperref[sec:bayinf]{Section \textbf{\ref{sec:bayinf}}} provides the Bayesian techniques to make inferences.
 \hyperref[sec:ppd]{Section \textbf{\ref{sec:ppd}}} presents the posterior predictive distribution thats allows to handle predictions. Then, 
 \hyperref[sec:modcompbay]{Section \textbf{\ref{sec:modcompbay}}} discusses tools for model's selection in a Bayesian setting. Finally,
 \hyperref[sec:predacur]{Section \textbf{\ref{sec:predacur}}} introduces tools to validate models through information criteria.
 Useful tools regarding basic Bayesian inference are left in \hyperref[appB]{Appendix \textbf{\ref{appB}}}.
 
 
-This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001},  \citet[chap.11]{beirlant_statistics_2006}, \cite[chap.13]{dey_extreme_2016} and \citet[chap.3]{ag_extremes_2013},  and other relevant articles.
+This chapter is mostly based on \citet[sec. 9.1]{coles_introduction_2001},  \citet[chap.11]{beirlant_statistics_2006}, \citet[chap.13]{dey_extreme_2016} and \citet[chap.3]{ag_extremes_2013},  and other relevant articles.
 
 \newpage
 \include*{chap4}
@@ -698,17 +717,12 @@ A strict Bayesian analysis will be made in \hyperref[sec:anabayes]{next Chapter 
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
  
-Bayesian analysis is more and more sused everywhere. For example,  \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} used a simulation-based Bayesian approach to compare coverage properties of pointwise and simultaneous confidence intervals, while \hyperref[sec:nnxp]{next Chapter \textbf{\ref{sec:nnxp}}} used priors to constraint the domain of the shape parameter or to penalize weights in a neural architecture.
+Bayesian analysis is more and more sused everywhere. For example,  \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} used a simulation-based Bayesian approach to compare coverage properties of pointwise and simultaneous confidence intervals, while \hyperref[sec:nnxp]{next Section \textbf{\ref{sec:nnxp}}} used priors to constraint the domain of the shape parameter or to penalize weights in a neural architecture.
 
-This analysis relies on all the codes which filenames start by "\texttt{Bayes}" from the \textbf{/Scripts-R/} folder of the \href{https://github.com/proto4426/PissoortThesis/}{repository}. All the functions created that are used and are also made available through the package are in /R/\texttt{BayesFunc.R}. Moreover,
-the \texttt{/vignettes/Summary\_Bayesian.html} file in the \href{https://github.com/proto4426/PissoortThesis/}{repository} present a big part of the analysis in details.
+After briefly presenting the stationary model in \hyperref[sec:baystatio]{Section \textbf{\ref{sec:baystatio}}} which will be used to compare the two leading algorithms at the moment for Bayesian's practitioners. Then, we will focus on nonstationary models with \hyperref[sec:baystatio]{Section \textbf{\ref{sec:baystatio}}}..
 
-"It is often the case that more than one model provides an adequate fit to the data. Sensitivity analysis determines by what extent posterior inferences change when alternative
-models are used"   book risk analysis other section pp.2.
-
-"The basic method of sensitivity analysis is to fit several models to
-the same problem. Posterior inferences from each model can then be compared."
-
+This analysis relies on all the codes which filenames start with "\texttt{Bayes\_}" from the \textbf{/Scripts-R/} folder of the \href{https://github.com/proto4426/PissoortThesis/}{repository}. All the functions created that are used and are also made available through the package are in /R/\texttt{BayesFunc.R}. Moreover,
+the \texttt{/vignettes/Summary\_Bayesian.html} file in the \href{https://github.com/proto4426/PissoortThesis/}{repository} presents the analysis in details.
 
 \newpage
 \include*{chap7}
@@ -720,7 +734,16 @@ the same problem. Posterior inferences from each model can then be compared."
 \chapter*{Conclusion}
 \thispagestyle{empty}
 
-During this thesis, we have statistically assessed the presence of a trend in the extreme temperatures in Uccle. We first detected that the trend is significative by the method of linear regression. We also discovered that the best fitted GEV model is the one with a linear trend in the location parameter.
+Dans l'introduction et dans la conclusion, ce serait bien de mieux préciser, de façon structurée :
+- la question ou les questions de recherche
+- les données
+- la méthodologie (bien motiver tes choix de méthodes)
+- les réponses trouvées aux questions énoncées initialement
+
+
+During this thesis, we have statistically assessed the presence of a trend in the extreme temperatures in Uccle. We first detected that the trend is significative by the method of linear regression. We discovered that the best and parsimonious parametric GEV model is the one with a linear trend on the location parameter. This was confirmed by the flexible GEV-CDN framework. Whilst simultaneous intervals on splines derivatives of the GAM Model in \hyperref[sec:splines]{Section \textbf{\ref{sec:splines}}} highlighted that the trend is not significant over time, pointwise intervals on these splines emphasized the accelerating trend of the annual maxima in the last $40$ years. This was confirmed in \hyperref[sec:xpbagg]{Section \textbf{\ref{sec:xpbagg}}} by a bootstrap aggregated neural network 
+
+From the pioneering thesis of \citet{Neal_1996_bay}, \emph{Bayesian Neural Networks} are now widely used for their deep flexibility. In our case and to make it simple, it would roughly means combining the GEV-CDN framework of \hyperref[sec:nnxp]{Sections \textbf{\ref{sec:nnxp}}} and \hyperref[sec:gevcdn]{ \textbf{\ref{sec:gevcdn}}} with the Bayesian analysis \hyperref[sec::bayesian]{ Chapters \textbf{\ref{sec::bayesian}}} and \textbf{\ref{sec:anabayes}}. Hence, it would be perfect to surpass the - rather restrictive- assumption of parametric models that we have made in the Bayesian analysis.
 
 "A key issue in applications is that inferences
 may be required well beyond the observed tail of

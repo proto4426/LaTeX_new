@@ -12,25 +12,29 @@
 \contentsline {xpart}{Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{57}{part.2}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Introduction to the Analysis}{57}{chapter.5}
-\contentsline {table}{\numberline {5.1}{\ignorespaces Proportion of the $M$ posterior simulations which are covered by the confidence intervals\relax }}{62}{table.caption.63}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Proportion of the $M$ posterior simulations which are covered by the confidence intervals.\relax }}{62}{table.caption.62}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Analysis in Block Maxima}{65}{chapter.6}
-\contentsline {table}{\numberline {6.1}{\ignorespaces MLE's of the three GEV parameters assuming a independent (stationary) context.\relax }}{66}{table.caption.70}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Stationary GEV parameters estimated by PWM.\relax }}{67}{table.caption.73}
-\contentsline {table}{\numberline {6.3}{\ignorespaces The $m$-year return level estimates and $95\%$ intervals. Last line computes the length's differences between the normal and the profile likelihood intervals.\relax }}{68}{table.caption.74}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Comparisons of nested GEV models with nonstationary parameters. Significant p-values at level $5\%$ are shown in bold.\relax }}{71}{table.caption.81}
-\contentsline {table}{\numberline {6.5}{\ignorespaces MLE's of the nonstationary GEV parameters of Model \ref {i:linear} with a linear trend on $\mu (t)=\beta _0+\beta _1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t$.\relax }}{71}{table.caption.83}
-\contentsline {table}{\numberline {6.6}{\ignorespaces Comparisons of nonstationary GEV-CDN models fitted by GML. Linear models have the identity activation function and the nonlinear models have the logistic sigmoid activation function. \relax }}{74}{table.caption.88}
-\contentsline {table}{\numberline {6.7}{\ignorespaces Estimation by GML of the nonstationary parameters from the GEV-CDN Model \ref {mod222} allowing a linear trend on the location $\mu (t)=\beta _0+\beta _1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t$.\relax }}{74}{table.caption.89}
+\contentsline {table}{\numberline {6.1}{\ignorespaces MLE's of the three GEV parameters assuming a independent (stationary) context.\relax }}{66}{table.caption.69}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Stationary GEV parameters estimated by PWM.\relax }}{67}{table.caption.72}
+\contentsline {table}{\numberline {6.3}{\ignorespaces The $m$-year return level estimates and $95\%$ intervals. Last line computes the length's differences between the normal and the profile likelihood intervals.\relax }}{68}{table.caption.73}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Comparisons of nested GEV models with nonstationary parameters. Significant p-values at level $5\%$ are shown in bold.\relax }}{71}{table.caption.80}
+\contentsline {table}{\numberline {6.5}{\ignorespaces MLE's of the nonstationary GEV parameters of Model \ref {i:linear} with a linear trend on $\mu (t)=\beta _0+\beta _1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t$.\relax }}{71}{table.caption.82}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Comparisons of nonstationary GEV-CDN models fitted by GML. Linear models have the identity activation function and the nonlinear models have the logistic sigmoid activation function. \relax }}{74}{table.caption.87}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Estimation by GML of the nonstationary parameters from the GEV-CDN Model \ref {mod222} allowing a linear trend on the location $\mu (t)=\beta _0+\beta _1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t$.\relax }}{74}{table.caption.88}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Bayesian Analysis in Block Maxima}{78}{chapter.7}
+\contentsline {table}{\numberline {7.1}{\ignorespaces Comparison of Bayesian algorithm with $N= 2000$ samples with a Burn-in period $B=500$ with the frequentist MLE for the stationary model. Parameters are estimated by the posterior mean of the chain and effective sample sizes $(N_{\text {eff}})$ (\ref {eq:neff}) for estimating the mean are displayed for Bayesian, and standard errors for the MLE. \relax }}{80}{table.caption.94}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Comparisons of nested GEV models with nonstationary parameters. Significant p-values at level $5\%$ are shown in bold.\relax }}{81}{table.caption.95}
+\contentsline {table}{\numberline {7.3}{\ignorespaces Starting values taken for the Gibbs sampler, from Algorithm \ref {algo:start} with $k=50$. \relax }}{82}{table.caption.98}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Statistical tools for Extreme Value Theory}{II}{appendix.A}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Bayesian Methods}{VII}{appendix.B}
+\contentsline {table}{\numberline {B.1}{\ignorespaces Raftery-Lewis diagnostic\relax }}{XII}{table.caption.130}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Other Figures and Tables}{XII}{appendix.C}
-\contentsline {table}{\numberline {C.1}{\ignorespaces Models' comparisons for the residuals of the GAM model based on AIC and BIC criterion. \relax }}{XIII}{table.caption.115}
-\contentsline {table}{\numberline {C.2}{\ignorespaces Estimation of the bootstrap aggregated GEV-CDN model with 2 hidden layers for $\sigma (t)$ and $\mu (t)$, and $M=500$ resamples. In red are denoted rough estimates of the nonstationary parameters as if the model were parametric for both parameters $\sigma (t)= \qopname \relax o{exp}(\alpha _0+\alpha _1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t)$ and $\mu (t)=\beta _0+\beta 1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t$. But this is actually not reliable since there are 2 hidden layers, and only the shape parameter can be reliably estimated.\relax }}{XVI}{table.caption.122}
+\contentsline {xchapter}{Other Figures and Tables}{XV}{appendix.C}
+\contentsline {table}{\numberline {C.1}{\ignorespaces Models' comparisons for the residuals of the GAM model based on AIC and BIC criterion. \relax }}{XVI}{table.caption.134}
+\contentsline {table}{\numberline {C.2}{\ignorespaces Estimation of the bootstrap aggregated GEV-CDN model with 2 hidden layers for $\sigma (t)$ and $\mu (t)$, and $M=500$ resamples. In red are denoted rough estimates of the nonstationary parameters as if the model were parametric for both parameters $\sigma (t)= \qopname \relax o{exp}(\alpha _0+\alpha _1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t)$ and $\mu (t)=\beta _0+\beta 1\tmspace +\thinmuskip {.1667em}\unhbox \voidb@x \hbox {\textperiodcentered }\tmspace +\thinmuskip {.1667em}t$. But this is actually not reliable since there are 2 hidden layers, and only the shape parameter can be reliably estimated.\relax }}{XIX}{table.caption.141}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Github Repository Structure}{XVIII}{appendix.D}
+\contentsline {xchapter}{Github Repository : Structure}{XXI}{appendix.D}

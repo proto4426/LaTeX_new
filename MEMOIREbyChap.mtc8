@@ -1,10 +1,13 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.1}Available Methods : \texttt {evdbayes}}{\reset@font\mtcSfont 79}{section.7.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.2}Stationary GEV}{\reset@font\mtcSfont 79}{section.7.2}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \numberline {7.2.0.0.1}Gibbs Sampler}{\reset@font\mtcPfont 79}{paragraph.7.2.0.0.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.3}Nonstationary GEV}{\reset@font\mtcSfont 80}{section.7.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.1}Available Methods and Discussion}{\reset@font\mtcSfont 79}{section.7.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.2}Stationary GEV Model}{\reset@font\mtcSfont 80}{section.7.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.2.1}Comparison Metropolis-Hastings and Gibbs Sampler}{\reset@font\mtcSSfont 80}{subsection.7.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.3}Nonstationary GEV : Model Comparisons}{\reset@font\mtcSfont 80}{section.7.3}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.3.1}Model Comparisons}{\reset@font\mtcSSfont 80}{subsection.7.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.3.2}Posterior Predictive Distribution}{\reset@font\mtcSSfont 80}{subsection.7.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.3.3}Diagnostics}{\reset@font\mtcSSfont 80}{subsection.7.3.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.4}Comparisons}{\reset@font\mtcSfont 80}{section.7.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.1}STAN}{\reset@font\mtcSSfont 81}{subsection.7.4.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.5}Comparison with frequentists results}{\reset@font\mtcSfont 82}{section.7.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.4}Comparisons}{\reset@font\mtcSfont 81}{section.7.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.1}Hamiltonian Monte Carlo : STAN}{\reset@font\mtcSSfont 81}{subsection.7.4.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.5}Nonstationary GEV with linear model on the Location}{\reset@font\mtcSfont 81}{section.7.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.5.1}Diagnostics}{\reset@font\mtcSSfont 83}{subsection.7.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.5.2}Inference}{\reset@font\mtcSSfont 85}{subsection.7.5.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.5.3}Posterior Predictive Distribution}{\reset@font\mtcSSfont 85}{subsection.7.5.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.5.4}Sensitivity Analysis}{\reset@font\mtcSSfont 85}{subsection.7.5.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.6}Comparison with frequentists results}{\reset@font\mtcSfont 86}{section.7.6}}

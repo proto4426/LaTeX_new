@@ -185,7 +185,7 @@ Our first approach will use the deviance statistic by sequentially comparing nes
 	\item \emph{linear in $\mu(t)$ and $\sigma(t)$} : same as Model \ref{i:linear} regarding the location but with nonstationary scale $\sigma(t)=\exp(\alpha_0+\alpha_1\cdot t)$. The use of the inverse link $b(\cdot)=\exp(\cdot)$ is to ensure positivity of $\sigma$ $\forall t$.
 	\item \emph{cubic in $\mu(t)$} : nonstationary location parameter with $\mu(t)=\beta_0+\beta_1\cdot t+\beta_2\cdot t^2+\beta_3\cdot t^3$. Note that computational singularities occurred for the likelihood computation of this model (or more complex ones). This came from a problem of solving the hessian to compute the covariance matrix of the parameters since there were too much linear dependencies in the hessian. We solved this by decreasing the tolerance, but this shows us that a linear model with so many polynomial terms is not recommended.
 \end{enumerate}
-\hyperref[nstatio]{Section \textbf{\ref{nstatio}}} explains that it is not recommended to model $\xi$ as a smooth function of time.
+\hyperref[nstatio]{Section \textbf{\ref{nstatio}}} explains that it is not recommended to model $\xi$ as a smooth function of time, since the data provides little information about the shape of the distribution relative to the location and the scale.
 The p-values from the sequential pairwise comparisons have been computed with respect to the best retained model. Results are shown in Table \ref{tab:comp_mod0}.
 
 \begin{table}[!htbp] 
@@ -358,15 +358,16 @@ This model does not use all the power of NN's, being more convenient to use. Non
  
  
  
- \subsection{Bagging}
+ \subsection{Bagging}\label{sec:xpbagg}
  
  A solution presented in \hyperref[sec:bagg]{Section \textbf{\ref{sec:bagg}}} to prevent overfitting is \emph{bagging}.
 Since the linear model is not complex enough to require bagging, and the support for the linear model was not straightforward
  when looking at the  $\text{AIC}_{\text{c}}$, we will now allow for nonlinearities that will be handled by the bagging process in order to limit overfitting. From Table \ref{tab:comp_mod}, we chose 2 hidden layers to keep the model relatively simple, and we only allowed the location and scale parameters to vary with time for the reasons above. 
  
- We made use of parallel computing through the \texttt{foreach} and \texttt{doParallel} framework. This method is computationally intensive and it is important to have a reliable number $M$ of boostrap resamples for the method to be effective. It decreased computation time by a factor of $\approx 2.5$ and allowed us to have $M=1000$ resamples in only $\approx 158$ seconds\footnote{All computations are made on a \texttt{i7-7700HQ 2.8GHz 20gb ddr4}.}. We tried to estimate the parameters in Table \ref{tab:estnnbag} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}}.
+ We made use of parallel computing through the \texttt{foreach} and \texttt{doParallel} framework. This method is computationally intensive and it is important to have a reliable number $M$ of boostrap resamples for the method to be effective. It decreased computation time by a factor of $\approx 2.5$ and allowed us to have $M=1000$ resamples in only $\approx 158$ seconds\footnote{All computations are made on a \texttt{i7-7700HQ 2.8GHz 20gb ddr4}.}.
  
- From the nonlinear relationships introduced in the model, it was not possible to accurately estimate the parameters $\mu(t)$ and $\sigma(t)$. Sensitivity analysis methods such as proposed by \citet{cannon_graph_2002} are recommended to yield more accurate estimates of the parameters.
+ We tried to estimate the parameters in Table \ref{tab:estnnbag} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}}.
+ But, from the nonlinear relationships introduced in the model, it was not possible to accurately estimate the parameters $\mu(t)$ and $\sigma(t)$. Sensitivity analysis methods such as proposed by \citet{cannon_graph_2002} are recommended to yield more accurate estimates of the parameters.
  We note that, the scale parameter is (slightly but) constantly decreasing with time, whilst we expected that the climate warming would lead to more variable extremes.
  
  Results of the generated quantiles are shown on the right plot of Figure \ref{fig:bag}. We also made available in Figure \ref{fig:bagv1} in  \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} a graph which gathers results to better visualize differences in quantiles. 

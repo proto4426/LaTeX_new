@@ -7,7 +7,7 @@ sequence of $n$ random variables sharing the same marginal df $F$ as the sequenc
 
 \begin{definition}[Stationary process] We say that the sequence $\{X_i\}$ of n random variables is (strongly) \emph{\textbf{stationary}} if, for $h\geq 0$ and $n\geq 1$, the distribution of the lagged random vector $(X_{1+h},\dots,X_{n+h})$ does not depend on h.
 \end{definition}
-It corresponds to physical processes whose stochastic properties are homogeneous but which may be dependent. Other formulations of \emph{stationarity} exist but we will use this general definition.  
+It corresponds to physical processes whose stochastic properties are homogeneous but which may be dependent. Typical ingredients that form lead define stationarity are trend and seasonality. In this text, we will be interested by the trend component.  Other formulations of \emph{stationarity} exist but we will use this general definition.  
 
 This dependence can take many forms and hence we need to relax the independence condition.
 Let $F_{i_1,\dots,i_p}(u_1,\dots,u_p):=\text{Pr}\{X_{i_1}\leq 
@@ -267,9 +267,9 @@ An extensive review of the MLP can be found for example in \citet{Hsieh_Tang_199
 
 
 \subsubsection*{Parametric or nonparametric ?}
-It is always a difficult task to state whether Neural Networks (NN) are parametric models or not. NN sit in the gray area between a \emph{parametric} and a \emph{nonparametric} model, in the sense that they assume a GEV distribution from the output layer defined by the three parameters of interest (see Figure \ref{NN} below), while it allows for great flexibility coming from the hidden layers which lead to think that these are rather nonparametric. 
+It is always a difficult task to state whether Neural Networks (NN) are parametric models or not. NN sit in the gray area between a \emph{parametric} and a \emph{nonparametric} model, in the sense that they assume a GEV distribution from the output layer defined by the three parameters of interest (see Figure \ref{NN} below), while they allows for great flexibility coming from the hidden layers which lead to think that these are rather nonparametric. 
 Note that all transformations applied inside the network are in general parametric and nonlinear.
-However, this terminological question is not very relevant and this will not impact the modeling.
+However, this terminological question is not very relevant and will not impact the modeling.
 
 \subsection{Generalized Maximum Likelihood}
 
@@ -286,7 +286,7 @@ in which $\xi$ is limited to the range $-0.5\leq\xi\leq 0.5$ to limit the search
 \text{GL}(\mu, \sigma,\xi|\boldsymbol{x})=L(\mu,\sigma,\xi|\boldsymbol{x})\cdot \pi(\xi),
 \end{equation}
 where $L(\cdot)$ can be the log-likelihood $\ell(\cdot)$ (\ref{eq:loglikgevnonstatio}).
-When dealing with nonstationnary processes \cite{el_adlouni_generalized_2007} have proven that GML estimators are likely to outperform the usual ML's. This method will be used in the GEV-CDN framework also because it is more flexible and will avoid issues of usual likelihood computations.
+When dealing with nonstationnary processes \cite{el_adlouni_generalized_2007} have proven that GML estimators are likely to outperform the usual MLE's. This method will be used in the GEV-CDN framework also because it is more flexible and will avoid issues of usual likelihood computations.
 
 
 \subsection{Architecture of the GEV-CDN Network}
@@ -329,13 +329,13 @@ The MLP architecture of the general GEV-CDN framework is pictured in Figure \ref
 				\node [neuron missing]  at (2,0.1) {};
 				
 				\foreach \m [count=\y] in {1}
-				\node [circle,fill=blue!50,minimum size=.7cm ] (output-\m) at (4,1.8-\y) {};
+				\node [circle,fill=cyan!50,minimum size=.7cm ] (output-\m) at (4,1.9-\y) {};
 				
 				\foreach \m [count=\y] in {2}
-				\node [circle,fill=blue!50,minimum size=.7cm ] (output-\m) at (4,1.05-\y) {};
+				\node [circle,fill=cyan!50,minimum size=.7cm ] (output-\m) at (4,1.15-\y) {};
 				
 				\foreach \m [count=\y] in {3}
-				\node [circle,fill=blue!50,minimum size=.7cm ] (output-\m) at (4,0.35-\y) {};
+				\node [circle,fill=cyan!50,minimum size=.7cm ] (output-\m) at (4,0.45-\y) {};
 				
 				\draw [<-] (input-1) -- ++(-1,0)
 				node [above, midway] {$x_1(t)$};
@@ -347,11 +347,17 @@ The MLP architecture of the general GEV-CDN framework is pictured in Figure \ref
 				\node [below] at (hidden-1.north) {$h_1$};
 				\node [below] at (hidden-2.north) {$h_J$};
 				
+				%%%%%
+				\node [below] at (output-1.north) {$o_1$};
+				\node [below] at (output-2.north) {$o_2$};
+				\node [below] at (output-3.north) {$o_3$};
+				%%%
+				
 				\draw [->] (output-1) -- ++(2.4,0)
 				node [above, midway] {$\boldsymbol{\mu(t)=o_1(t)}$};
 				\draw [->] (output-2) -- ++(2.4,0)
 				node [above, midway] {$\sigma(t)=\exp(o_2(t))$};
-				\draw [->] (output-3) -- ++(2.4,0)
+				\draw [->] (output-3) -- ++(2.6,0)
 				node [above, midway] {$\xi(t)=\xi^*\tanh(o_3(t))$};
 				
 				\foreach \i in {1,...,3}

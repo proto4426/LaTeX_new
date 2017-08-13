@@ -1,10 +1,10 @@
 \section{Preliminaries : Motivations}\label{sec:bayprelim}
 
 
-This chapter will rely on 	 multidimensional set of parameters $\theta$ of a GEV model, i.e. $\theta'=(\mu,\sigma,\xi)$ in a stationary context, and where $\nu=\log \sigma$ is often used instead of $\sigma$ to get rid of its positivity constraint.
+This chapter will rely on a	 multidimensional set of parameters $\theta$ of a GEV model, i.e. $\theta'=(\mu,\sigma,\xi)$ in a stationary context, where $\nu=\log \sigma$ is often used instead of $\sigma$ to eliminate the positivity constraint.
  Unless stated differently, we will write $\theta$ as this $3$D vector to facilitate readability.
  
-We already argued that likelihood-based methods have desirable properties for inference, and hence we have adopted in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} and \textbf{\ref{sec::3}} the methods of (generalized or penalized) maximum likelihood to compute our estimators. Bayesian inference introduces a flexible alternative that also relies on the likelihood. First, we present the most fundamental result for Bayesian inference which is a direct interpretation of the Bayes' Theorem.
+We already argued that likelihood-based methods have desirable properties for inference, and hence we have adopted in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} and \textbf{\ref{sec::3}} the methods of (generalized or penalized) maximum likelihood to compute our estimators. Bayesian inference introduces a flexible alternative that also relies on likelihood. First, we present the most fundamental result for Bayesian inference which is a direct interpretation of the Bayes' Theorem.
 
 \begin{definition}[Posterior distribution]
 	Let $\boldsymbol{x}=(x_1,\dots,x_n)$
@@ -16,32 +16,31 @@ We already argued that likelihood-based methods have desirable properties for in
 	\end{equation}
 	where $L(\theta|\boldsymbol{x})=\prod_i f(x_i|\theta)$ is the likelihood since the $x_i$'s are independent.
 \end{definition}
-This result (\ref{bayeseq}) provides the probabilistic framework to convert an initial set of beliefs about $\theta$, represented by the prior $\pi(\theta)$, into a posterior distribution that will be convenient to use for inference.
+This result (\ref{bayeseq}) provides a probabilistic framework to convert an initial set of beliefs about $\theta$, represented by the prior $\pi(\theta)$, into a posterior distribution that will be convenient to use for inference.
 Relying on the posterior distribution to compute an estimate $\hat{\theta}$ of $\theta$ provides interesting characteristics :
 \begin{itemize}
-	\item Whenever possible, it allows to introduce an other source of knowledge coming from the domain, by the elicitation of a prior (see \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}}). However, it also introduces subjectiveness and antagonists contend that, since different analysts would specify
+	\item Whenever possible, it introduces an other source of knowledge coming from the domain, by the elicitation of a prior (see \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}}). However, it also introduces subjectiveness and antagonists contend that, since different analysts would specify
 	different priors, all conclusions become meaninglessly subjective.
 	
-	\item\label{it2bayes} Accounting for  uncertainty is handled most easily in the
+	\item\label{it2bayes} Accounting for  uncertainty is handled easily in the
 	Bayesian paradigm relying on distribution's properties of $\pi(\theta|\boldsymbol{x})$, for example its variance. Now, the parameters are treated as random variables. %\cite[pp.106]{dey_extreme_2016}
-	 It also permits an elegant way of making future predictions, which is the most important issue in EVT.
+	 It also permits an elegant way of making future predictions, an important issue in EVT.
 	
 	\item Bayesian framework can overcome the regularity conditions of the likelihood inference
-	(see \hyperref[likgevintro]{Section \textbf{\ref{likgevintro}}}) by providing a viable alternative in cases when ML breaks down. Actually, we will see that the annual maximum temperatures we will consider are not far from the problematic cases ($\xi<-0.5$). 
-	Moreover, Bayesian confidence intervals (i.e. \emph{credible} intervals, see \hyperref[bayes_cred_int]{Section \textbf{\ref{bayes_cred_int}}}) require no more need to fall to asymptotic theory.
+	(see \hyperref[likgevintro]{Section \textbf{\ref{likgevintro}}}) by providing a viable alternative in cases when ML breaks down. We will see that the annual maximum temperatures  are not far from the problematic cases ($\xi<-0.5$). 
+	Moreover, Bayesian confidence intervals (i.e. \emph{credible} intervals, see \hyperref[bayes_cred_int]{Section \textbf{\ref{bayes_cred_int}}}) do not require asymptotic theory.
 \end{itemize}
 In EVT, Bayesian inference is a wide expanding domain that has nearly infinite possibilities.
-With strong probabilistic foundations, this method now mostly relies on computational capabilities (see \hyperref[sec:baymcmc]{Section \textbf{\ref{sec:baymcmc}}}).
+With strong probabilistic foundations, this method now strongly relies on computational capabilities (see \hyperref[sec:baymcmc]{Section \textbf{\ref{sec:baymcmc}}}).
 
 
 \section{Prior Elicitation}\label{sec:prior}
 
 
-Sometimes viewed as its greatest strength of Bayesian inference from the amount of information that can be retrieved, and sometimes viewed as its main pitfall due to the unquantifiable subjectivity that is introduced, the construction of the prior is at the center of Bayesian analysis.
-Priors are necessary in the Bayesian paradigm to compute (\ref{bayeseq}). It requires the legitimate statement of a domain's expert, to make this viewed as objective.
+The amount of information that can be retrieved from the prior is sometimes viewed as the greatest strength of Bayesian inference and this is also sometimes viewed as its main pitfall due to the unquantifiable subjectivity that is introduced. However, the construction of the prior is at the center of Bayesian analysis since they are necessary in the to compute (\ref{bayeseq}). To make this viewed as the least subjective, it requires the legitimate statement of an expert.
 
-Priors may not be of great importance if the number $n$ of observations is large. From (\ref{bayeseq}) we see that the amount of information contained in the data through $L(\theta|\boldsymbol{x})$ will be prominent compared to this contained in the prior $\pi(\theta)$.
-However, this configuration is rare in EVT where we are dealing with small constructed datasets. For this reason, incorporating external information through the prior should be (rigorously) studied. This type of prior is thus called \emph{informative priors}, while those who give most weight to data are called \emph{non-informative} (or \emph{objective}) \emph{priors}. We focus on priors that are widely applied in EVT.
+Priors may not be of importance if the number $n$ of observations is large. From (\ref{bayeseq}) we see that the amount of information contained in the data through $L(\theta|\boldsymbol{x})$ will be prominent compared to that contained in the prior $\pi(\theta)$.
+However, this configuration is rare in EVT where we are using small constructed datasets. For this reason, incorporating external information through the prior should be rigorously studied. This type of prior is called \emph{informative priors}, while those which give most weight to data are called \emph{non-informative} (or \emph{objective}) \emph{priors}. We focus on priors that are widely applied in EVT.
 
 
 
@@ -76,14 +75,13 @@ The differences $(\tilde{q}_{p_2},\tilde{q}_{p_3})$ only depend on $(\sigma,\xi)
 where $J(\theta)$ is the Jacobian of the transformation from $(q_{p_1},q_{p_2},q_{p_3})$ to $\theta$, i.e.
 
 \begin{equation}
-J(\theta)=\sigma\cdot\xi^{-2}\cdot\abs*{\sum_{\substack{i,j\in(1,2,3) \\ i<j}} (-1)^{i+j} (x_ix_j)^{-\xi} \log\big\{x_j\cdot x_i^{-1}\big\}}
+J(\theta)=\sigma\cdot\xi^{-2}\cdot\abs*{\sum_{\substack{i,j\in(1,2,3) \\ i<j}} (-1)^{i+j} (x_ix_j)^{-\xi} \log\big\{x_j\cdot x_i^{-1}\big\}},
 \end{equation}
 where $x_i=-\log(1-p_i)$ for $i=1,2,3$.
 
 \subsection{Beta Distributions for Probability Ratios}
 
-This method does the opposite of the last one. It constructs priors on the
-probability space, for fixed quantiles.
+This method is the opposite of the last one, in the sense that it constructs priors on the probability space, for fixed quantiles.
  Let $\text{Pr}(X>q)=p_q$, where $X\sim \text{GEV}(\theta)$ with $\theta=(\mu,\sigma,\xi)$. Then, 
 
 \begin{equation*}
@@ -111,12 +109,12 @@ Specific example to construct this prior in practice can be found in \citet[pp.2
 
 \subsection{Non-informative Priors}\label{sec:noninfoprior}
 
-Receive a correct and accepted advice from an expert is often difficult.
-So, in many cases, it is not possible to inject information through the prior. 
+To receive correct and acceptable advice from an expert is often difficult.
+In many cases, it is not possible to inject information through the prior. 
 Hence, priors must be constructed to represent this lack of knowledge and not influence posterior inferences. 
 
-Parameters of the prior distribution are often called \emph{tuning parameters} or \emph{hyperparameters} to emphasize that we can tune the amount of information provided through the prior. In practical applications with  Markov Chains (see \hyperref[sec:baymcmc]{Section \textbf{\ref{sec:baymcmc}}}), these values are often tuned to who maximize the convergence of the posterior to its stationary target distribution. However, adjustments of these priors must always be thought in practical applications since objectives can be multiple. For example, if we take $\pi(\theta)\sim\mathcal{N}(\mu,\sigma^2)$,  the hyperparameter $\sigma^2$ will be tuned to represent the amount of knowledge we want to incorporate. It will tend to infinity to be non-informative (vague prior). However, note that it can be a huge help with computation to have less diffuse priors, even
-if they're not informative enough to have a noticeable impact on the posterior.
+Parameters of the prior distribution are often called \emph{tuning parameters} or \emph{hyperparameters} to emphasize that it is possible to tune the amount of information provided through the prior. In practical applications with  Markov Chains (see \hyperref[sec:baymcmc]{Section \textbf{\ref{sec:baymcmc}}}), these values are often tuned to maximize the convergence of the posterior to its stationary target distribution. However, adjustments of these priors must always be thought of in practical applications since there can be multiple objectives. For example, if we take $\pi(\theta)\sim\mathcal{N}_d(\mu,\Sigma)$,  the hyperparameter $\Sigma$ will be tuned to represent the amount of knowledge we want to incorporate. It will tend to infinity to be non-informative (vague prior). However, note that it can be a huge help with computation to have less diffuse priors, even
+if they are not very informative and will not have a noticeable impact on the posterior.
 
 
 There exists a vast amount of uninformative priors in the literature (see e.g. \cite{yang_catalog_1996}, \cite{ni_noninformative_2003}, etc).
@@ -147,20 +145,19 @@ both Jeffrey and MDI priors give improper posterior when there are no truncation
 
 \subsubsection*{Vague priors}
 The preferred alternative is often to construct uninformative priors by using proper priors which are near flat, e.g. which are uniform or which exhibits very large variance.
-In GEV, we will often take independent normally distributed priors each with a large (tuned) variance. When these variances increase, we get at the limit
+Taking a trivariate normal distribution as prior as in \hyperref[sec:trivnorm]{Section \textbf{\ref{sec:trivnorm}}} is often difficult as it involves 9 hyperparameters in total ($\mu$, $\xi$ and $7$ in the $[3\times 3]$ symmetric matrix $\Sigma$).
+In GEV, we will often take univariate independent normally distributed priors each with a large (tuned) variance. When these variances increase, we get at the limit
 
-\begin{equation}
+\begin{equation}\label{eq:vagprior}
 \pi(\theta)=\pi(\mu,\nu,\xi)\stackrel{(\independent)}{=}\pi(\mu)\cdot\pi(\nu)\cdot\pi(\xi)\ \propto 1,
 \end{equation}
 where $\nu= \log\sigma$.
-Taking a trivariate normal distribution as prior as in \hyperref[sec:trivnorm]{Section \textbf{\ref{sec:trivnorm}}} is often difficult as it involves 9 hyperparameters in total ($\mu$, $\xi$ and $7$ in $\Sigma$).
-
 
 
 
 \section{Bayesian Computation : Markov Chains}\label{sec:baymcmc}
 
-The main difficulty of Bayesian inference has been the computation of the normalizing integral in the denominator of (\ref{bayeseq}), which is often intractable. The prior $\pi(\theta)$ could be chosen so that the integral could be evaluated analytically, but this is rather exceptional. Moreover, it is not possible in EV models since they involve distributions that are not within the exponential family. 
+The main difficulty of Bayesian inference has been the computation of the normalizing integral in the denominator of (\ref{bayeseq}), which is often intractable. The prior $\pi(\theta)$ could be chosen so that the integral could be evaluated analytically, but this is exceptional. Moreover, it is not possible in EV models since they involve distributions that are not within the exponential family. 
 More complex cases where the likelihood $L(\theta|\boldsymbol{x})$ is intractable can be dealt with approximate Bayesian computation (\citet{Beaumont2025}), but we will not consider this subject in this text.
 
 Hence, simulation-based methods have been developed to sample from an arbitrary posterior distributions $\pi(\theta|\boldsymbol{x})$. Simulations of $N$ iid samples $\theta_1,\theta_2,\dots,\theta_N$ from $\pi(\theta|\boldsymbol{x})$ can be used to estimate features of interest.
@@ -177,13 +174,13 @@ But simulating from $\pi(\theta|\boldsymbol{x})$ is usually not achievable and w
 	In other words, given $\theta_{t}$, we have that $\theta_{t+1}$ is independent of all the states prior to $t$.
 \end{definition} 
 This in one of the most important results that defines MCMC techniques (see \citet[section 2.2.3]{angelino_patterns_2016} for more results).
-We use this techniques it to simulate a Markov chain $\theta_1,\theta_2,\dots,\theta_N$ that converges to the target distribution $\pi(\theta|\boldsymbol{x})$.
+We use this techniques to simulate a Markov chain $\theta_1,\theta_2,\dots,\theta_N$ that converges to the target distribution $\pi(\theta|\boldsymbol{x})$.
 This means that, after some \emph{burn-in period} $B$, the chain $\theta_{B+1},\theta_{B+2},\ldots,\theta_N$ can be treated as random sample from $\pi(\theta|\boldsymbol{x})$ that has reached its target \textbf{stationary} distribution. 
 This will be achieved if the so-generated chain is
 
 \begin{enumerate}
 	\item \emph{aperiodic}, i.e. it does not have period $\eta$ for any $\eta>1$.
-	\item \emph{irreducible} or \emph{ergodic}, i.e. we can get from any state to any other states (possibly in several steps).
+	\item \emph{irreducible} or \emph{ergodic}, i.e. we can get from any state to any other state (possibly in several steps).
 \end{enumerate}
 
 
@@ -192,17 +189,17 @@ This will be achieved if the so-generated chain is
 \subsection{Metropolis–Hastings}
 
 Named after \citet{metropolis_1953} and  \cite{hastings_monte_1970} , the \emph{Metropolis–Hastings} algorithm is the pioneering MCMC algorithm for Bayesian analysis. It is a conceptually simply method with specific update proposals that are accepted or rejected according to an appropriate rule.
-Details on the algorithm are left in \hyperref[app:mh]{Appendix \textbf{\ref{app:mh}}}.
+Details on the algorithm are in \hyperref[app:mh]{Appendix \textbf{\ref{app:mh}}}.
 We can summarize the \emph{pros} and \emph{cons} of this algorithm :
 
 \begin{itemize}
-	\item \emph{PROS} : Very easy to program and works even for relatively complex densities.
-	\item \emph{CONS} : Can be very inefficient, in the sense that it will require lots of iterations before the stationary target distribution will be reached. 
+	\item \emph{PROS} : Very easy to program and works for relatively complex densities.
+	\item \emph{CONS} : Can be inefficient, in the sense that it will require many iterations before the stationary target distribution will be reached. 
 \end{itemize}
 This algorithm requires some tuning through the proposal distribution. 
 It is recommended to target an acceptance rate of $\approx 0.25$ since all components of $\theta$ are updated simultaneously, in order to facilitate convergence, following \citet{BEDARD20082198}.
 The idea is that if the variance of the proposal distribution is too large, most proposals will be rejected,	i.e. jumps through the chain will be too large, and the converse if the variance of the proposal distribution is too small.
-Both are harmful for the objective of an efficient visit of the whole parameter space. 
+%Both are harmful for the objective of an efficient visit of the whole parameter space. 
 
 
 \subsection{Gibbs Sampler}
@@ -218,7 +215,7 @@ We must also note the increase of complexity of this sampler compared to the Met
 \emph{pros} and \emph{cons} of this sampler : 
 
 \begin{itemize}
-	\item \emph{PROS} : Easy to program and, for some problems, it can be very efficient. Pleasant way to split multidimensional problems into simpler (i.e. typically univariate) densities.
+	\item \emph{PROS} : Easy to program and, for some problems, it can be very efficient. It is an easy way to split multidimensional problems into simpler (i.e. typically univariate) densities.
 	\item \emph{CONS} : Sometimes hard to compute the conditional distributions. Not all densities can be split into pleasant conditionals equations.
 \end{itemize}
 Note that it is possible to combine Gibbs sampling with some Metropolis steps as in \cite[chap.11]{Gelman95bayesiandata}, when a conditional distribution cannot be identified.
@@ -226,37 +223,36 @@ Note that it is possible to combine Gibbs sampling with some Metropolis steps as
 
 \subsection{Hamiltonian Monte Carlo}
 
-\citet{betancourt_diagnosing_2016} emphasizes that the performance of the  MCMC depends on  how effectively the Markov transition guides the Markov chain along the neighborhoods of high probability. If the exploration is slow, then the estimators will become computationally inefficient, and if the exploration is incomplete then the estimators will become biased. Moreover, \citet{betancourt_2017_con} said "guess-and-check strategy of Random Walk Metropolis is doomed to fail in
+\citet{betancourt_diagnosing_2016} emphasizes that the performance of the  MCMC depends on  how effectively the Markov transition guides the Markov chain along the neighborhoods of high probability. If the exploration is slow, then the estimators will become computationally inefficient, and if the exploration is incomplete then the estimators will become biased. \citet{betancourt_2017_con} said "guess-and-check strategy of Random Walk Metropolis is doomed to fail in
 high dimensional spaces where there are an exponential number of directions
 in which to guess but only a singular number of directions that stay within the
-typical set and pass the check ". This is a \emph{curse of dimensionality} issue since there are much more volume outside any given neighborhood than inside of it.
-In an EV framework where the sample size is limited and the dimension can easily increase with nonstationary models, we think necessary to consider other form of sampling to address computational efficiency. \cite{hartmann_bayesian_2016} have demonstrated in a GEV application that HMC  (and Riemann manifold HMC) are more computationally efficient than traditional MCMC algorithms such as MH. 
+typical set and pass the check (...)". This is the \emph{curse of dimensionality} issue since there is much more volume outside any given neighborhood than inside of it.
+In an EV framework where the sample size is limited and the dimension can easily increase with nonstationary models, it is necessary to consider other forms of sampling to address computational efficiency. \cite{hartmann_bayesian_2016} have demonstrated in a GEV application that HMC  (and Riemann manifold HMC) are more computationally efficient than traditional MCMC algorithms such as MH. 
 
 
-Following \citet[chap.33]{stan_development_team_stan_2012}, the \emph{Hamiltonian Monte Carlo} (HMC)
+Following \citet[chap.32]{stan_development_team_stan_2012}, the \emph{Hamiltonian Monte Carlo} (HMC)
 algorithm starts at specified or random initial values for $\theta$. Then, it uses derivatives of the density function being sampled to generate efficient transitions spanning the posterior. It uses an approximate Hamiltonian dynamics simulation based on numerical integration. 
 Finally, a Metropolis acceptance step is applied, and a decision is made whether to update to the new state or keep the existing state. 
 HMC permits to better exploit properties of
 the target distribution to make informed jumps through neighborhoods of high probability, while avoiding neighborhoods of low probability.  We leave interesting details of this algorithm in \hyperref[app:hmc]{Appendix \textbf{\ref{app:hmc}}}.
 
-However, this new MC method is build from differential geometry and topics such as \emph{Riemannian manifolds}, \emph{microcanonical Disintegration},\emph{ kinetic energy}, etc. Hence, we aim not at theoretically explaining all this algorithm. Moreover, lots of efforts have been spent, but we faced a difficulty when building the (nonstationary) GEV model with HMC in \href{http://mc-stan.org/}{STAN}\footnote{High level probabilistic programming language which incorporates HMC with Nuts.}. We would like to point out that this is probably due to a problem of misspelled constraints in the boundaries of the GEV distribution, but it is still an open issue... More information will come in \hyperref[sec:anabayes]{Section \textbf{\ref{sec:anabayes}}}.
-
-We summarize the \emph{pros} and \emph{cons} of this algorithm used within STAN : 
+This new MC method is build from differential geometry and topics such as \emph{Riemannian manifolds}, \emph{microcanonical Disintegration},\emph{ kinetic energy}, etc. Hence,this thesis does aim to theoretically explaining all this algorithm. In trying to implement it we faced difficulty to build the (nonstationary) GEV model in \href{http://mc-stan.org/}{STAN}\footnote{High level probabilistic programming language which incorporates HMC with Nuts.}. This was probably due to a problem of misspelled constraints in the boundaries of the GEV distribution, since these are function of parameters in the EV-Weibull family. More information is in \hyperref[sec:anabayes]{Section \textbf{\ref{sec:anabayes}}}.
+The \emph{pros} and \emph{cons} of this algorithm used within STAN are : 
 \begin{itemize}
-	\item \emph{PROS} : Easy to program as we just have to write down the model. Very efficient in general, and works for all types of problems.
-	\item \emph{CONS} : Need to learn how to use STAN, very difficult to understand the theory behind the mechanism, less control over the sampler (but maybe it is for the best?).
+	\item \emph{PROS} : Easy to program as we only have to write down the model. Very efficient in general, and works for all types of problems.
+	\item \emph{CONS} : Need to learn how to use STAN. The theory of which can be very difficult to understand. There is less control over the sampler (but maybe it is for the best?).
 \end{itemize}
-Pros and cons that are specific to compiled languages must also be noticed.
+Pros and cons that are specific to compiled languages must also be noted.
 
 
 \section{Convergence Diagnostics}\label{sec:convbay}
 
-When applying MCMC algorithms to estimate posterior distributions, it is vital to assess convergence of the algorithm to convince ourselves that we reached the stationary target distribution. We enumerate some of the key steps we must keep in mind when thinking about convergence, and hence obtaining reliable results.
+When applying MCMC algorithms to estimate posterior distributions, it is vital to assess convergence of the algorithm to be confident that we have reached the stationary target distribution. Below enumerates some key steps for the convergence in order to obtain reliable results.
 
 \begin{enumerate}
-	\item A sufficient \emph{burn-in period} $B<N$ must be chosen to ensure that the convergence to the stationary posterior distribution has occurred, as it will vanish the influence of starting values. For the same reason, a sufficient number of simulations $N$ is required to get accurate MCMC estimates.
-	\item Several dispersed starting values must have been simulated to ensure all the regions of high probability of the parameter space have been explored. This is particularly important when the target distribution is complex. The chains must then have good mixing properties. A common technique is to run different chains several times with different starting values, and then combine a proportion of each chain (typically $50\%$) to get the final chain. %This procedure wants to ensure a proper mixing behaviour. 
-	\item A good choice of the proposal distribution is crucial since a poorly chosen may drastically reduce the speed of the algorithm. To a certain extent, the proposal should be similar to the target distribution. Gaussian proposals have our preference for their convenience and are "easy-to-tune", but note that fat-tailed distributions could be interesting since they will occasionally generate a candidate far from the previous one, reducing the risk of being stuck in a local mode.
+	\item A sufficient \emph{burn-in period} $B<N$ must be chosen to ensure that the convergence to the stationary posterior distribution has occurred, as it will eliminate the influence of starting values. For the same reason, a sufficient number of simulations $N$ is required to ensure accurate MCMC estimates.
+	\item Several dispersed starting values must be simulated to ensure all the regions of high probability of the parameter space have been explored. This is particularly important when the target distribution is complex. The chains must then have good mixing properties. A common technique is to run different chains several times with different starting values, and then combine a proportion of each chain (typically $50\%$) to get the final chain. %This procedure wants to ensure a proper mixing behaviour. 
+	\item A good choice of the proposal is crucial since a poorly chosen distribution may drastically reduce the speed of the algorithm. To a certain extent, the proposal should be similar to the target distribution. Our preference is for Gaussian proposals for their convenience and because they are "easy-to-tune", but note that fat-tailed distributions could be interesting as they will occasionally generate a candidate far from the previous one, reducing the risk of being stuck in a local mode.
 	\item The \emph{autocorrelations} within single parameter's chains must be small to keep a good effective sample size.
     This is the same for \emph{cross-correlations}, i.e. the correlations between the chains of different parameters in the vector $\theta$.  Both impacts the speed of convergence of the algorithm.
 \end{enumerate}
@@ -279,7 +275,7 @@ When $F$ is GEV, the distribution of quantiles can be retrieved in the same mann
 
 The Bayesian \emph{credible intervals} are inherently different from the frequentist's confidence intervals. In the Bayesian intervals, the bounds are treated as fixed and the estimated parameter as a random variable, while in the frequentist's setting, bound are random variables and the parameter is a fixed value. A $95\%$ Bayesian credible intervals contains $95\%$ of the posterior probability for $\theta$.
 
-There exist mainly two kinds of credible interval in the Bayesian framework : 
+There exist two kinds of credible intervals in the Bayesian framework : 
 
 \begin{itemize}
 	\item The \emph{quantile-based} credible intervals or \emph{equal-tailed interval} picks an interval to ensure that the probability of being below this interval is as likely as of being above it. 
@@ -302,7 +298,7 @@ For symmetric densities, HPD and central interals are the same while HPD is shor
 Together with parameter estimation, prediction is the ultimate aim of inference in EVT, and it is neatly handled within the Bayesian paradigm. It permits a straightforward quantification of the uncertainty associated. It is made through the \emph{posterior predictive distribution}
 
 \begin{definition}[Posterior Predictive Density]
-	Let $\tilde{X}$ denotes a future observation (e.g. $n+1$) with density $f(\tilde{x}|\boldsymbol{\theta})$. We define the \textbf{posterior predictive density} of $\tilde{X}$ given $\boldsymbol{x}$ as 
+	Let $\tilde{X}$ denotes a future observation (e.g. $n+1$) with density $f(\tilde{x}|\theta)$. We define the \textbf{posterior predictive density} of $\tilde{X}$ given $\boldsymbol{x}$ as 
 	
 	\begin{equation}\label{eq:ppd}
 	\begin{aligned}
@@ -343,16 +339,16 @@ In a nonstationary GEV context, we would like to compare models in a similar way
 There may exist different nonstationary models for the location or for the scale, and we would like to assess which model is the most relevant to describe the data.
 Although the posterior distribution quantifies estimation uncertainties, it remains conditional on the modeling assumptions. And as in any other estimation approach, it is a vital task to select the best possible model and validate it, otherwise the underlying inferences could be drastically different. 
 
-Le assume that $M_1,\ldots,M_q$ is a set of $q$ candidate models to describe $\boldsymbol{x}$. Each $M_i$ uses a parameter vector $\theta^{M_j}$ whose dimension may differ across models. Let $\text{Pr}(M_1),\ldots,\text{Pr}(M_q)$ denote prior probabilities assigned to each model such that $\sum_{i=1}^q \text{Pr}(M_i)=1$.
+Let assume that $\mathcal{M}_1,\ldots,\mathcal{M}_q$ is a set of $q$ candidate models to describe $\boldsymbol{x}$. Each $\mathcal{M}_i$ uses a parameter vector $\theta^{\mathcal{M}_j}$ whose dimension may differ across models. Let $\text{Pr}(\mathcal{M}_1),\ldots,\text{Pr}(\mathcal{M}_q)$ denote prior probabilities assigned to each model such that $\sum_{i=1}^q \text{Pr}(\mathcal{M}_i)=1$.
 It is then possible to compute models' posterior probabilities given the observations, from the discrete form of the Bayes' Theorem : 
 
 \begin{equation}\label{eq:modpost}
-\text{Pr}(M_i|\boldsymbol{x})=\frac{\text{Pr}(\boldsymbol{x}|M_i)\cdot \text{Pr}(M_i)}{\sum_{j=1}^q \text{Pr}(\boldsymbol{x}|M_j)\cdot \text{Pr}(M_j)},
+\text{Pr}(\mathcal{M}_i|\boldsymbol{x})=\frac{\text{Pr}(\boldsymbol{x}|\mathcal{M}_i)\cdot \text{Pr}(\mathcal{M}_i)}{\sum_{j=1}^q \text{Pr}(\boldsymbol{x}|\mathcal{M}_j)\cdot \text{Pr}(\mathcal{M}_j)},
 \end{equation}
-where $\text{Pr}(\boldsymbol{x}|M_i)$ is the marginal likelihood of observations an can be computed as follows : 
+where $\text{Pr}(\boldsymbol{x}|\mathcal{M}_i)$ is the marginal likelihood of observations an can be computed as follows : 
 
 \begin{equation*}
-\text{Pr}(\boldsymbol{x}|M_i)=\int \text{Pr}(\boldsymbol{x}|\theta^{M_i},M_i)\cdot \text{Pr}(\theta^{M_i}|M_i)\cdot d\theta^{M_i}.
+\text{Pr}(\boldsymbol{x}|\mathcal{M}_i)=\int \text{Pr}(\boldsymbol{x}|\theta^{\mathcal{M}_i},\mathcal{M}_i)\cdot \text{Pr}(\theta^{\mathcal{M}_i}|\mathcal{M}_i)\cdot d\theta^{\mathcal{M}_i}.
 \end{equation*}
 However, computing the marginal likelihood is difficult and suffers from the curse of dimensionality. \citet{Bos2002} provides various methods to compute the marginal likelihood when the size of the parameter vector is moderate.
 Model posterior probabilities (\ref{eq:modpost}) can be used for model comparisons and predictions.
@@ -360,18 +356,18 @@ Model posterior probabilities (\ref{eq:modpost}) can be used for model compariso
 \subsubsection*{The Bayes Factor}
 
 One approach is to use the \emph{Bayes factor}
-to compare models. It measures the relevance of one model compared to another. For two models $M_i$ and $M_j$, it is defined as : 
+to compare models. It measures the relevance of one model compared to another. For two models $\mathcal{M}_i$ and $\mathcal{M}_j$, it is defined as : 
 
 \begin{equation}
-B_{i,j}=\frac{\text{Pr}(M_i|\boldsymbol{x})}{\text{Pr}(M_j|\boldsymbol{x})}\cdot \Bigg(\frac{\text{Pr}(M_i)}{\text{Pr}(M_j)}\Bigg)^{-1}= \frac{\text{Pr}(\boldsymbol{x}|M_i)}{\text{Pr}(\boldsymbol{x}|M_j)}.
+B_{i,j}=\frac{\text{Pr}(\mathcal{M}_i|\boldsymbol{x})}{\text{Pr}(\mathcal{M}_j|\boldsymbol{x})}\cdot \Bigg(\frac{\text{Pr}(\mathcal{M}_i)}{\text{Pr}(\mathcal{M}_j)}\Bigg)^{-1}= \frac{\text{Pr}(\boldsymbol{x}|\mathcal{M}_i)}{\text{Pr}(\boldsymbol{x}|\mathcal{M}_j)}.
 \end{equation}
-High values of $B_{i,j}$ give stronger confidence in model $M_i$. Formal guidelines have been developed (see e.g. \citet{robert_1995}). It is also possible to compare several models (e.g. stationary) with other several models (e.g. nonstationary) via a composite Bayes factor.
+High values of $B_{i,j}$ give stronger confidence in model $\mathcal{M}_i$. The Bayes factor balances quality of fit against model complexity. Formal guidelines have been developed (see e.g. \citet{robert_1995}). It is also possible to compare several models via a composite Bayes factor.
 
 
 \subsubsection*{Bayesian Model Averaging}
 
 Instead of choosing between models, it is also possible to perform multi-model predictions by computing a weighted average of individual model predictions weighted by the posterior model probabilities. 
-\emph{Bayesian model averaging} (BMA) accounts for model uncertainty. Interesting similarities can be found with bagging, method discussed in \hyperref[sec:bagg]{Chapter \textbf{\ref{sec:bagg}}} which makes an average of bootstrapped models to improve the prediction accuracy. Both relies on the same data but BMA will use different models, and hence correlations between predictions of the different models will be important. It is particularly useful when distinct models provide an acceptable description of the data, but yield different predictions.
+\emph{Bayesian model averaging} (BMA) accounts for model uncertainty. Interesting similarities can be found with the bagging ensemble method discussed in \hyperref[sec:bagg]{Chapter \textbf{\ref{sec:bagg}}} which makes an average of bootstrapped models to improve the prediction accuracy. Both rely on the same data but BMA uses different models, and hence correlations between predictions of the different models will be important. It is particularly useful when distinct models provide an acceptable description of the data, but yield different predictions.
 
 
 
@@ -387,12 +383,18 @@ For example, having $N$ draws $\theta_1,\theta_2,\dots,\theta_N$ from the poster
 \log\bigg[N^{-1}\sum_{t=1}^N f(x^*|\theta_t)\bigg],
 \end{equation*}
 and that can be summed for any value $x^*$ in $\boldsymbol{x}_{\text{test}}$. This can be used to compare models, with larger values indicating better models.
-However, we often do not have large amounts of data in an EVT context. Henceforth, we can rather use \emph{cross-validation} techniques, but it is a computationally demanding method. There exists several variants, and
+However, we often do not have large amounts of data in an EVT context. Henceforth, we can rather use \emph{cross-validation} techniques, but this is a computationally demanding method. There exists several variants, and
 \citet{Vehtari_practical_2016} provide an excellent summary.
 
-Or, one could rather prefer information criteria that avoid these computations. This approach is to use something on the form $\log f(\boldsymbol{x}|\bar{\theta})-p^*$ for $N$ draws $\theta_1,\dots,\theta_N$ from $\pi(\theta|\boldsymbol{x})$, where $p^*$ represents the effective number of parameters and $\bar{\theta}$ is the posterior mean. Since $\log f(\boldsymbol{x}|\bar{\theta})$ is the density of the observations given the posterior mean of the parameters, it indicates a good fit.  We will see two existing methods that use this idea.
+Or, one could rather prefer information criteria that avoid these computations. This approach is to use a penalized loss function of the form
 
-\subsubsection*{Deviance Information Criterion}
+\begin{equation}\label{penbay}
+\log f(\boldsymbol{x}|\bar{\theta})-p^*, \qquad \text{with} \ \theta_1,\dots,\theta_N \ \ \text{drawn from} \ \pi(\theta|\boldsymbol{x}),
+\end{equation}
+where $p^*$ represents the effective number of parameters and $\bar{\theta}$ is the posterior mean. Since $\log f(\boldsymbol{x}|\bar{\theta})$ is the density of the observations given the posterior mean of the parameters, it indicates a good fit.  We will see two existing methods that use this idea.
+
+\vspace{-0.3cm}
+\subsubsection*{1) Deviance Information Criterion}
 
 The \emph{Deviance Information Criterion}
 (DIC) was first proposed by \citet{Spiegelhalter_bayesian_2002} and use the following to compute the effective number of parameters :
@@ -404,10 +406,11 @@ Since the DIC is defined on the deviance scale, we have
 \begin{equation}
 \text{DIC}= 2\log f(\boldsymbol{x}|\bar{\theta}) - \frac{4}{N} \sum_{t=1}^N\log f(\boldsymbol{x}|\theta_t).
 \end{equation}
-Hence, smaller DIC values indicate better models. It can be computed simply by storing $f(\boldsymbol{x}|\theta_t) $ at the end of each iteration in the main loop of the MCMC algorithm.
+Hence, smaller DIC values indicate better models. It can be computed simply by storing $f(\boldsymbol{x}|\theta_t) $ at the end of each iteration in the main loop of the MCMC algorithm. DIC
+handles uncertainty in inferences within each model, whilst not depending on models' aspects that don’t affect inferences within each model. Despite a poor theoretical foundation, DIC is shown to be a good approximation of the penalized loss function (\ref{penbay}), and is valid only when the effective number of parameters in the model is much smaller than the number of independent observations.
 
 
-\subsubsection*{Widely Applicable Information Criterion}
+\subsubsection*{2) Widely Applicable Information Criterion}
 
 The \emph{Widely Applicable Information Criterion} (WAIC) is a more recent approach proposed by \citet{Watanabe_asymptotic_2010}, giving the criterion  
 
@@ -420,7 +423,7 @@ The \emph{Widely Applicable Information Criterion} (WAIC) is a more recent appro
 \end{equation}
 It can be calculated by computing $\log f(x_i|\theta_t)$ $\forall i=1,\ldots,N$ at the end of each iteration in the main loop of the MCMC algorithm.
 
-There exists quite other interesting methods, as proposed by \citet{gelman_understanding_2014} who give in-depth developments of the predictive information criteria.
+There exists other interesting methods, as proposed by \citet{gelman_understanding_2014} who give in-depth developments of the predictive information criteria.
 
  
 

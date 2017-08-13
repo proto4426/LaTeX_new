@@ -2,17 +2,17 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MEMOIREbyChap.aux
 The style file: abbrvnat.bst
-Illegal, another \bibstyle command---line 1429 of file MEMOIREbyChap.aux
+Illegal, another \bibstyle command---line 1449 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
 Database file #1: zotero1.bib
-I was expecting a `,' or a `}'---line 2410 of file zotero1.bib
+I was expecting a `,' or a `}'---line 2420 of file zotero1.bib
  :  
  :  title = {evmix: {An} {R} package for extreme value mixture modelling, threshold estimation and boundary corrected kernel density estimation},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3206 of file zotero1.bib
+I was expecting a `,' or a `}'---line 3216 of file zotero1.bib
  :  
  :  note = {Google-Books-ID: dfZecgAACAAJ},
 (Error may have been on previous line)
@@ -45,45 +45,45 @@ Warning--empty journal in leisch_creating_2008
 Warning--can't use both author and editor fields in resnick_extreme_1987
 Warning--empty journal in segers_generalized_2001
 Warning--empty publisher in stan_development_team_stan_2012
-You've used 100 entries,
+You've used 101 entries,
             2773 wiz_defined-function locations,
-            1360 strings with 27817 characters,
-and the built_in function-call counts, 46004 in all, are:
-= -- 4444
-> -- 2232
-< -- 80
-+ -- 766
-- -- 666
-* -- 3824
-:= -- 7239
-add.period$ -- 501
-call.type$ -- 100
-change.case$ -- 501
-chr.to.int$ -- 100
-cite$ -- 209
-duplicate$ -- 2063
-empty$ -- 3754
-format.name$ -- 842
-if$ -- 9636
+            1367 strings with 27956 characters,
+and the built_in function-call counts, 46313 in all, are:
+= -- 4470
+> -- 2242
+< -- 81
++ -- 770
+- -- 669
+* -- 3841
+:= -- 7291
+add.period$ -- 505
+call.type$ -- 101
+change.case$ -- 504
+chr.to.int$ -- 101
+cite$ -- 211
+duplicate$ -- 2083
+empty$ -- 3786
+format.name$ -- 846
+if$ -- 9701
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 121
-newline$ -- 703
-num.names$ -- 400
-pop$ -- 828
+missing$ -- 123
+newline$ -- 709
+num.names$ -- 404
+pop$ -- 838
 preamble$ -- 1
-purify$ -- 422
+purify$ -- 425
 quote$ -- 0
-skip$ -- 1493
+skip$ -- 1505
 stack$ -- 0
-substring$ -- 1777
-swap$ -- 201
+substring$ -- 1779
+swap$ -- 202
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 980
+type$ -- 986
 warning$ -- 9
-while$ -- 420
+while$ -- 423
 width$ -- 0
-write$ -- 1681
+write$ -- 1696
 (There were 11 error messages)
