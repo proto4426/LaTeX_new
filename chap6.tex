@@ -123,7 +123,7 @@ Both plots show points lying very close to the unit diagonal, showing that the e
 The right plot in Figure \ref{fig:rl_empdes} has a similar interpretation and leads to the same conclusion, although the fitted model has a higher peak.
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=.75\linewidth]{rl_empdes.pdf}\caption{(Left) Return level plot with red lines representing normal confidence intervals, and blue points the individual profile likelihood intervals for return levels. The horizontal dotted line represents the right endpoint of the	fitted model in green and the maximum of the series in black. (Right) kernel density in black compared with the density of the fitted model in green, with dotted lines representing the \textbf{endpoints} of the empirical distribution, and green doted lines still represent the same right endpoint of the fitted EV-Weibull.}\label{fig:rl_empdes}
+	\centering	\includegraphics[width=.75\linewidth]{rl_empdes.pdf}\caption{(Left) Return level plot with red lines representing normal confidence intervals, and blue points the individual profile likelihood intervals for return levels. The horizontal dotted line represents the right endpoint of the	fitted model in green and the maximum of the series in black. (Right) kernel density in black compared with the density of the fitted model in green, with dotted lines representing the \textbf{endpoints} of the empirical distribution, and green doted lines still represent the same right endpoint of the fitted EV-Weibull. A Gaussian kernel with a bandwidth calculated by the \citet[pp.48, (3.31)]{silverman_1986} "rule of thumb" has been used.}\label{fig:rl_empdes}
 \end{figure}
 
 
@@ -260,7 +260,7 @@ We appreciate that the fit seems accurate. Note that problems for large quantile
 
 
 
-\begin{wrapfigure}[17]{r}{0.45\textwidth}
+\begin{wrapfigure}[12]{r}{0.45\textwidth}
 	\centering
 	\includegraphics[width=0.42\textwidth]{rl_nsta.pdf} % 6.64x5.17 inches
 	\caption{Return levels (in blue) of the nonstationary GEV model allowing linear trend on $\mu(t)$. Dotted red line represent horizon after $n=116$ years and black lines represent the series $[1980-2016]$.  }
@@ -387,7 +387,7 @@ Note that the displayed values of the quantiles that are different for each year
  
 %\textbf{ Finish the shiny application !!!! }
  
-\subsection{Inference : Confidence intervals by Bootstrap }
+\subsection{Inference : Confidence intervals by Bootstrap }\label{sec:boot}
  
  
  

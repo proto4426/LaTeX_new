@@ -1,4 +1,4 @@
-\begin{thebibliography}{101}
+\begin{thebibliography}{102}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -761,6 +761,11 @@ J.~Segers.
 \newblock 2001.
 \newblock URL
   \url{http://citeseerx.ist.psu.edu/viewdoc/citations;jsessionid=0C9C7CAE3938CA7A9B280DEA739EFDA9?doi=10.1.1.7.1713}.
+
+\bibitem[Silverman(1986)]{silverman_1986}
+B.~W. Silverman.
+\newblock \emph{Density Estimation}.
+\newblock Chapman and Hall, London, 1986.
 
 \bibitem[Singh and Guo(1995)]{singh_parameter_1995}
 V.~P. Singh and H.~Guo.

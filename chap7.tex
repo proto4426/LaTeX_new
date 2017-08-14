@@ -1,5 +1,5 @@
 %\addcontentsline{toc}{subsection}{Note on the available R package : \texttt{evdbayes}}
-\section{Available Methods and Discussion}
+\section{Methods }
 
 The \texttt{evdbayes} package from \citet{ribatet_users_2006} is an old package and is still the only available on CRAN to do Bayesian inference in EVT with MCMC techniques to sample from the posterior. We have passed a long time trying to understand and make relevant analysis through this framework. However, as we had problems to "open black-box" and understand its structure, it was impossible to reach the stationary posterior distribution for one parameter for the nonstationary GEV model with linear trend on $\mu(t)$. Hence, we decided to develop our own methods. Following \citet{hartmann_bayesian_2016}, \texttt{evdbayes} only uses the Metropolis Hastings (MH) Algorithm \ref{algo:mh} (\hyperref[app:mh]{Appendix \textbf{\ref{app:mh}}}). We then decided to develop not only the MH but also the Gibbs sampler, and later the Hamiltonian Monte Carlo through the STAN interface. 
 
@@ -13,28 +13,23 @@ The different methods to compute the prior $\pi(\theta)$ discussed in \hyperref[
  We have considered several methods : 
  
  \begin{itemize}
- 	\item evdbayes package
- 	\item From Our Functions (R package)
- 	\item Ratio of Uniform : \texttt{revdbayes} package :
+ 	\item[$\blacktriangleright$] evdbayes package
+ 	\item[$\blacktriangleright$] From Our Functions (R package)
  	
- 	\url{https://cran.r-project.org/web/packages/revdbayes/vignettes/revdbayes-vignette.html}
- 	
- 	Helped with \texttt{rust}
- 	
- 	\item From HMC algorithm using STAN language :
+ 	\item[$\blacktriangleright$] From HMC algorithm using STAN language :
  	
  	The problem is maybe from \ref{likgevintro}. The parameter $\xi$ is relatively near the region that could be problematic, causing convergence issues. 
  	
+ 	 	\item[$\vartriangleright$] Ratio of Uniform : \texttt{revdbayes} package :
+ 	 	
+ 	 	\url{https://cran.r-project.org/web/packages/revdbayes/vignettes/revdbayes-vignette.html}
+ 	 	
+ 	 	Helped with \texttt{rust}
  \end{itemize}
 We will only present the results obtained by the functions we constructed. The methods we have computed for the MH algorithm and the Gibbs sampler are based on Algorithm \ref{algo:mh} and Algorithm \ref{algo:gib}.
 
 Although we could be based on the frequentist's analysis of the previous chapters to select some (subset of) models to analyze, we decide to adopt the same sequential methodology, by starting with the simplest model Gumbel model, to more complex parametric models. 
 Thence, we will be able to compare the results.
-
-
-\subsubsection*{Discussion on the Prior used}
-
-In all the analysis, we were not able to introduce knowledge through the specification of the prior. Hence, we will use non-informative priors (see \hyperref[sec:noninfoprior]{Section \textbf{\ref{sec:noninfoprior}}}), and in particular \emph{vague} (near-flat) independent normally distributed \emph{priors} (\ref{eq:vagprior}) for each parameter since this is the most convenient way to express our ignorance as showed by.
 
 
 \section{Stationary GEV Model}\label{sec:baystatio}
@@ -63,6 +58,8 @@ Note that for a terminological question, it should be named the \emph{Metropolis
 This is done by tuning the standard deviation $\sigma^{(j)}$ of the proposal $p_{t,j}\big(\theta_*^{(j)}|\theta_{t-1}^{(j)}\big)$. Although the $\theta^{(j)}$ are taken to be univariate in our case, it is difficult to tune each $\sigma^{(j)}$ to achieve average acceptance probabilities for all parameters. We will then use a \emph{trial-and-error} approach.
 
 
+
+\paragraph*{Hamiltonian Monte-Carlo}
 
 
 \begin{table}[!htbp] \centering 
@@ -97,20 +94,20 @@ Although the BIC informed us in \hyperref[chap:introana]{Chapter \textbf{\ref{ch
 
 
 \begin{table}[!htbp] 
-	\centering \caption{ Comparisons of nested GEV models with nonstationary parameters. Significant p-values at level $5\%$ are shown in bold.% Nonstationary linear (in the parameters) model in $\sigma(t)$ use the exponential link.
+	\centering \caption{ Comparisons of nested GEV models with nonstationary parameters computed by Gibbs sampler for $N=2000$
 	} 
 	\vspace{-.1cm}
 	\label{tab:comp_mod_bay} 
-	\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+	\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
 		\toprule
-		\textbf{Model} & DIC & WAIC & p-value \\
+		\textbf{Model} & DIC & WAIC & Bayes Factor & Computation Time \\
 		\midrule
-		Gumbel & $-256.84$  & $2$ & \\
-		stationary  & $-251.75$ & $3$  & \boldsymbol{$0.14\%$} \\
-		\textbf{linear in} \boldsymbol{$\mu(t)$} & $\boldsymbol{-241.81}$ & $\boldsymbol{4} $& \boldsymbol{$0.001\%$}  \\
-		quadratic in $\mu(t)$ & $-241.48$ & $5$ & $42\%$ \\
-		linear in $\mu(t)$ and $\sigma(t)$ & $-241.69$ & $5$ & $63\%$ \\
-		cubic in $\mu(t)$ & $-241.37$ & $6$ & $65\%$ \\
+		Gumbel & $-256.84$  & $2$ &  & \\
+		stationary  & $-251.75$ & $3$  & \boldsymbol{$0.14\%$}  & \\
+		\textbf{linear in} \boldsymbol{$\mu(t)$} & $\boldsymbol{-241.81}$ & $\boldsymbol{4} $& \boldsymbol{$0.001\%$}  &  \\
+		quadratic in $\mu(t)$ & $-241.48$ & $5$ & $42\%$ &  \\
+		linear in $\mu(t)$ and $\sigma(t)$ & $-241.69$ & $5$ & $63\%$ &  \\
+		cubic in $\mu(t)$ & $-241.37$ & $6$ & $65\%$ &  \\
 		\bottomrule
 	\end{tabular}
 	\vspace{-.15cm}
@@ -120,6 +117,11 @@ Although the BIC informed us in \hyperref[chap:introana]{Chapter \textbf{\ref{ch
 
 We willl compare the same parametric models as in \hyperref[sec:xpnp]{Section \textbf{\ref{sec:xpnp}}} but with Bayesian techniques coming from \hyperref[sec:modcompbay]{Section \textbf{\ref{sec:modcompbay}}}. It will be interesting to see whether there are differences in the selected model between the frequentist and the Bayesian frameworks.
 
+
+
+ \subsubsection*{Predictive Information Criteria}
+ 
+ For each generated chains with dispersed starting values, we evaluate separately the information criteria. The discrepancies between the chains are small (?), which is a good sign. 
  
  
  \section{Comparisons}
@@ -142,6 +144,8 @@ From (\ref{eq:neff})
  \end{itemize}
  
  
+ " For distributions like the GEV where the support depends on the parameter values, you have to be clever with the declarations in the parameters section. Otherwise, you get into a situation where what Stan thinks are valid parameter values have zero or undefined density values.  "
+ 
  
  "for time critical operations it may be nec-
  essary to use a compiled language either in preference to R or as a subroutine that
@@ -149,6 +153,9 @@ From (\ref{eq:neff})
  speed increase over optimized R code for iterative simulation algorithms of the type
  used in Markov chain Monte Carlo simulation."
  
+ 
+ Although this method is rather complex to implement, the STAN community offers its help and proposes lots of interesting tools that helps for the modeling. For example, to help monitoring the convergence, the package \texttt{rstan} together with \texttt{shinystan}
+ allows to deploy locally a complete Shiny application with a few lines of code, see \textbf{/Scripts-R/}\texttt{Shiny\_stan\_test.R} on the \href{https://github.com/proto4426/PissoortThesis/}{repository}. These applications provide an outstanding amount of information. We hosted an example of this application at the following \href{https://proto4426.shinyapps.io/ShinyStanGEV/}{URL}\footnote{\url{https://proto4426.shinyapps.io/ShinyStanGEV/}}.
  
 
 \section{Nonstationary GEV with linear model on the Location}\label{sec:bay_nonsta}
@@ -279,7 +286,7 @@ As expected, it is a bit more tedious for the shape parameter, but it is especia
 	\item The \textbf{autocorrelations} of each parameter's Markov chain in Figure \ref{fig:autocor} in \hyperref[app:bayfig]{Appendix \textbf{\ref{app:bayfig}}} show are quickly decreasing with the lag. Again, it seems more problematic for $\log\sigma$ and $\xi$.	
 	We have computed the effective sample size $N_{\text{eff}}$ from (\ref{eq:neff}), i.e. the sample size after correction for the autocorrelation in the chains :
 	\begin{equation}
-		N_{\text{eff}}^{(\mu_0)} = 389, \qquad 	N_{\text{eff}}^{(\mu_1)} = 436, \qquad 	N_{\text{eff}}^{(\log\sigma)} = 194, \qquad	N_{\text{eff}}^{(\xi)} = 217.
+		N_{\text{eff}}^{(\mu_0)} = 389, \qquad 	N_{\text{eff}}^{(\mu_1)} = 436, \qquad 	N_{\text{eff}}^{(\nu)} = 194, \qquad	N_{\text{eff}}^{(\xi)} = 217.
 	\end{equation}
 	We can see the link of these values with the autocorrelations in Figure \ref{fig:autocor}.
 	
@@ -306,20 +313,66 @@ One last diagnostic is from \citet{raftery1992} and provides interesting values 
 Relatively high autocorrelations in the chains are again highlighted here.
 
 
+
 \subsubsection*{Conclusion}
 
-From the high correlations in the chains, it would be recommended to increase the number of iterations $N$ (and maybe decrease the burn-in period) since the computational time is small. 
+From the above results, i.e. the relatively high correlations within and between chains, it is recommended to increase the number of iterations $N$. Since the computational time is not huge, it it would be easily feasible, but in order to keep the same chains as presented above, we just decrease the burn-in period to $25\%$ to be left with $N=3000$. 
 
 
-\subsection{Inference}
+\subsection{Inference}\label{sec:bayinfci}
 
+We present the results in Figure \ref{fig:postdens} with the Markov chains' Kernel posterior densities for each parameters, together with their $95\%$ Bayesian intervals. 
 
+\begin{figure}[!htb]
+	\centering	\includegraphics[width=0.8\linewidth]{postdens.pdf}\caption{Markov chains' Kernel posterior densities for the parameters. A Gaussian kernel with a bandwidth calculated by the \citet[pp.48, (3.31)]{silverman_1986} "rule of thumb" for each parameter has been used. Note that we did not make the back rescaling from $t^*$ to $t$, which explains the values of $\mu_1$.}\label{fig:postdens}
+\end{figure}
+
+We can see the differences between the two intervals when the densities are not symmetric. In this case, the highest-posterior density (HPD) intervals are slightly more precise.
+These results are summarized in Table \ref{tab:postq} 
+
+\begin{table}[!htbp] \centering 
+	\caption{Table of quantiles of the posterior samples and of the posterior \textbf{mean}. We transformed back $\mu_1$ from $t^*$ to $t$ in years for comparisons with frequentist results. } \label{tab:postq} 
+	\begin{tabular}{@{\extracolsep{5pt}} c|cccccc} 
+\toprule
+		& 2.5\% & 25\% & 50\% &  \textbf{mean} & 75\% & 97.5\% \\ 
+\midrule
+		$\mu_0$  & $30.276$ & $30.511$ & $30.632$ & $30.633$ & $30.754$ & $31.006$ \\ 
+		$\mu_1$ & $0.0136$ & $0.0214$ & $0.0245$ & $0.0248$ & $0.0282$ & $0.0367$ \\ 
+		$\log\sigma$ & $0.539$ & $0.617$ & $0.663$ &  $0.669$ &$0.717$ & $0.831$ \\ 
+		$\xi$ & $-0.323$ & $-0.266$ & $-0.232$ & $-0.230$ & $-0.195$ & $-0.127$ \\ 
+\bottomrule
+		\end{tabular} 
+\end{table} 
+		
+
+we see here that all the probability mass for the shape parameter is below $0$, i.e. $\Pr \Big\{\xi>0\Big\}=0$, reinforcing our confidence that we are under an EV-Weibull model. %without any doubts.
+
+		
 \subsection{Posterior Predictive Distribution} 
 
+The Posterior Predictive Distribution (PPD) 
+
+We expressely took $116$ years before as we know that it is not recommended to to make very long-term extrapolations. We first depict the results in Figure \ref{fig:ppd} where we represent the PPD with its $95\%$ credible intervals, together with the observed values from $1901$ to $2016$ and the values from $2016$ to $2131$ that have been simulated from the PPD.
+
+
  \begin{figure}[!htb]
-  	\centering	\includegraphics[width=0.8\linewidth]{predpred.pdf}\caption{ }\label{fig:post_pred}
+ 	\centering	\includegraphics[width=0.9\linewidth]{ppd.pdf}\caption{Black dots represent the observations while orange dots represented the simulated values from the PPD. The printed plot aims to conveniently display the differences between the upper and the lower bounds of the two credible intervals considered.}\label{fig:ppd}
+ \end{figure}
+ 
+ This Figure \ref{fig:ppd} clearly highlights that the PP intervals are not $95\%$ credible intervals for the observed values but rather intervals for the posterior predicted values. Indeed, coverage analysis shows that the PP intervals cover $95\%$ of the simulated values from the PPD as the number of simulations becomes very high, but only $\approx 50\%$ for the observed values.
+ 
+ 
+ The HPD and the quantile-based credible intervals are very similar here, for all the observations and simulations. 
+ We can clearly visualize the Posterior Predictive credibility intervals having an increasing length  
+ In fact, the evolution of the quantiles is linear in the range of data, and so is the PP median even beyond the range of the data. But, the 
+
+
+ \begin{figure}[!htb]
+  	\centering	\includegraphics[width=0.8\linewidth]{predpred.pdf}\caption{A Gaussian kernel with a joint bandwidth calculated by the \citet[pp.48, (3.31)]{silverman_1986} "rule of thumb" is picked for each densities.}\label{fig:post_pred}
  \end{figure}
   
+  We clearly see the linear trend with the temporal evolution of the quantiles...
+  And the uncertainty from their deviation  from the median
   
   We remark from this graph the increasing variance of the predictive posterior as far as we predict in the future. It can also be seen from the $5\%$ and $95\%$ quantiles which deviate from the median. 
   
@@ -327,10 +380,12 @@ From the high correlations in the chains, it would be recommended to increase th
 %\section{Ratio of Uniform : \texttt{revdbayes} package}\label{sec:bayes_ratio}
 
 
-\subsubsection*{Predictive Information Criteria}
+\subsection{Return Levels}
 
-For each generated chains with dispersed starting values, we evaluate separately the information criteria. The discrepancies between the chains are small (?), which is a good sign. 
 
+We remind that quantiles of the fitted distribution can be more conveniently interpreted in EVT terminology as returns levels. Hence, the  Here, it is different since we are under the fitted PP distribution and not the fitted distribution. Indeed, these quantiles are taking the uncertainty of future prediction into account and are thus not strictly linearly increasing, while we have seen in Figure \ref{fig:rl_nsta} that the increase of the return levels was strictly linear even beyond the range of the data, although it was the same nonstationary model but in a frequentist setting. These are commonly called \emph{predictive return levels}. For example the above red line in Figure \ref{fig:ppd} is the $40$-year predictive return levels.
+
+It is still also possible to compute the returns levels as in Figure \ref{fig:rl_nsta} by simply estimating the parameters (e.g. by their MC's posterior mean or median from Table \ref{tab:postq}). Then, the corresponding return levels can be computed relying on the values given to the parameters. Relying on the median, we verified that the return levels line is nearly the same for all points ; Bayesian return levels having a slightly higher intercept and slightly smaller slope compared to the line in Figure \ref{fig:rl_nsta}. 
 
 
 
@@ -356,10 +411,38 @@ The sensitivity of the marginal posterior density of the shape parameter $\xi$ i
 
 
 
-
-\section{Comparison with frequentists results}
+\section{Remarks and Comparison with Frequentist results}
 
 In this first analysis, we rely on 
 
 
+
+Comparing Table \ref{tab:postq} with Table 
+ these look very similar. We must notice that is natural and this is rather comforting as we used non-informative priors so far. ( →→ study behaviour if we introduce information through priors ? )
+
+The following Figure \ref{fig:cicomp} compares several intervals that have been computed during this thesis. 
+
+\begin{itemize}
+	\item The \emph{frequentist} confidence intervals computed in
+	\hyperref[sec:xpstatio]{Section \textbf{\ref{sec:xpstatio}}}, comprising those coming from the normal approximation of the MLE and the profiled likelihood intervals.
+	\item The \emph{bootstrap} confidence intervals computed in  \hyperref[sec:boot]{Section \textbf{\ref{sec:boot}}}, by the residual but also the parametric bootstrap. These intervals have not been computed for the location parameters since these were directly computed for $\mu(t)$ rather than $\mu_0$ and $\mu_1$. From the particular nature of these intervals which estimate parameters by GML and make use of prior distribution to compute the GEV-CDN weights, we will not consider these as truly "frequentist", but this is debatable.
+	\item The \emph{Bayesian} credible intervals seen  above in \hyperref[sec:bayinfci]{Section \textbf{\ref{sec:bayinfci}}}.
+\end{itemize}
+
+\begin{figure}[!htb]
+	\centering	\includegraphics[width=0.9\linewidth]{cicomp.pdf}\caption{The center of the interval is the MLE for the frequentist intervals and the median for the Bayesian intervals. Thicker lines indicate $50\%$ confidence (or credibility) while thinner lines indicate $95\%$ intervals.}\label{fig:cicomp}
+\end{figure}
+
+The large differences between the Bayesian and the frequentist intervals for the parameter $\mu_0$ are due to 
+
+
 By using objective priors (i.e. priors with very large variance), we should obtain the same results in the frequentist or in the Bayesian setting, which will be a prove of robustness of obtained results  
+
+We could have used Bayesian model averaging, but
+
+
+\subsubsection*{Discussion on the Prior used}
+
+In all the analysis, we were not able to introduce knowledge through the specification of the prior. Hence, we will use non-informative priors (see \hyperref[sec:noninfoprior]{Section \textbf{\ref{sec:noninfoprior}}}), and in particular \emph{vague} (near-flat) independent normally distributed \emph{priors} (\ref{eq:vagprior}) for each parameter since this is the most convenient way to express our ignorance as showed by.
+
+

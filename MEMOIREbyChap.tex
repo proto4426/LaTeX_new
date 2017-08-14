@@ -430,8 +430,12 @@ Regarding the computations, we took advantage of a high-level language (c++) to 
 	\newline
 	
 	\textit{A bit less usual, I would like to thank the open source community such as R or LaTeX can benefit. For me and for a number of student, it has been a nonnegligable source of ideas and the most efficient source of learning.  }
-			\newline
-	\textit{Finally, I want to thank my family and my friends, but also Bernadette for her support and all the time I have spent  writing in her room for my thesis but also during my whole academic studies.}
+	\newline
+	
+	\textit{A bit less usual, but I would like to thank in particular this thesis that permits me to acquire a vast knowledge on various subjects and to develop expertises in the R language. $25$ credits that are undoubtedly worth the hundred other for this master. }
+   	\newline
+   	
+	\textit{Finally, I want to thank my family and my friends, but also Bernadette and Michel for their support and all the time I have spent  writing in their house for my thesis but also during my whole academic studies.}
 	
 	\thispagestyle{empty}
 \end{acknowledgements}
@@ -475,6 +479,7 @@ For convenience, we place a list of all the abbreviations we will use in the tex
 	\item[ML] Maximum Likelihood 
 	\item[MLE] Maximum Likelihood Estimator
 	\item[NN] Neural Network
+	\item[PP(D)] Posterior Predictive (Distribution)
 	\item[TN] Temperature miNimum
 	\item[TX] Temperature maXimum
 	
@@ -578,7 +583,7 @@ Finally, we notice that this thesis will concentrate on the block-maxima (GEV) m
 
 
 \begin{center}
-\part{Theoretical Framework : Extreme Value Theory}
+\part{Theoretical Framework : Extreme Value Theory}\label{part1}
 \end{center}
 %\pagestyle{fancy}
 
@@ -589,7 +594,8 @@ Finally, we notice that this thesis will concentrate on the block-maxima (GEV) m
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
 
-This chapter introduce the basics of EVT by considering the \textit{block-maxima} approach. After defining useful concepts in 
+This chapter introduce the basics of EVT by considering the \textit{block-maxima} approach. This approach aims at modeling the extremes inside a predefined block. 
+After defining useful concepts in 
 \hyperref[sec::1.1]{Section \textbf{1.1}} to introduce the emergence of this theory, we will get into the leading theorem of EVT in \hyperref[sec:extrtypethm]{Section \textbf{\ref{sec:extrtypethm}}}. \hyperref[sec::appconcrete]{Section \textbf{\ref{sec::appconcrete}}} will present some mathematical applications and \hyperref[sec:mda]{Section \textbf{\ref{sec:mda}}} conditions  of this theorem in order to visualize the implications of the extremal theorem and the characterizations of the underlying distributions. \hyperref[rlgev]{Section \textbf{\ref{rlgev}}} will introduce key concepts of inference in EVT which will be presented in a general (and frequentist) way in  \hyperref[sec::gevinfernce]{Section \textbf{\ref{sec::gevinfernce}}}. Finally, \hyperref[sec:diag]{Section \textbf{\ref{sec:diag}}} provides some tools to assess the accuracy of the fitted model.
 
 This chapter is mostly based on \citet[chap.3]{coles_introduction_2001}, \citet[chap.2]{beirlant_statistics_2006} and \citet[chap.1-4]{reiss_statistical_2007}, and other relevant articles.
@@ -741,9 +747,22 @@ Dans l'introduction et dans la conclusion, ce serait bien de mieux préciser, de
 - les réponses trouvées aux questions énoncées initialement
 
 
-During this thesis, we have statistically assessed the presence of a trend in the extreme temperatures in Uccle. We first detected that the trend is significative by the method of linear regression. We discovered that the best and parsimonious parametric GEV model is the one with a linear trend on the location parameter. This was confirmed by the flexible GEV-CDN framework. Whilst simultaneous intervals on splines derivatives of the GAM Model in \hyperref[sec:splines]{Section \textbf{\ref{sec:splines}}} highlighted that the trend is not significant over time, pointwise intervals on these splines emphasized the accelerating trend of the annual maxima in the last $40$ years. This was confirmed in \hyperref[sec:xpbagg]{Section \textbf{\ref{sec:xpbagg}}} by a bootstrap aggregated neural network 
+This thesis aimed at statistically assessing the presence of nonstationary patterns, and in particular a positive trend, in a sequence of annual maximum temperatures in Uccle from $1901$ to $2016$ by hand of the Extreme Value Theory. The data were gratefully provided by an official institution in order to evaluate the effects of the climate warming.
+To this end, we have divided the text in two parts that makes a clear separation between the literature review (\hyperref[part1]{Part \textbf{\ref{part1}}}) and the application of the methods (\hyperref[part:xp]{Part \textbf{\ref{part:xp}}}).
+
+\hyperref[part1]{Part \textbf{\ref{part1}}} started by presenting the approach of block maxima in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} that models the extremes that occurs inside a block. It introduced the GEV distribution and its parameters that we will be the 
+The second useful approach of modeling extremes discussed in \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}} aims a modeling the extremes that exceed a certain threshold.
+Since we have decided to work with annual maxima to keep homogeneous text, we have put more emphasis on the first approach. In order to evaluate the nonstationarity of the sequence,
+\hyperref[sec::3]{Chapter \textbf{\ref{sec::3}}} delivered tools that permits to go beyond the restrictive independence assumption of the first two chapters. This provided us tools to consider the different parametric models for the GEV parameters that will form the basis of the nonstationary analysis. Moreover, a flexible approach using Neural Networks has been proposed to surpass  the restrictive parametric modeling.
+\hyperref[sec::bayesian]{Chapter \textbf{\ref{sec::bayesian}}} presented the Bayesian analysis applied to the world of extremes which provided us inferential methods that better account for the estimation uncertainty. 
+
+In \hyperref[part:xp]{Part \textbf{\ref{part:xp}}},  \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} introduced the analysis with some methods not from EVT to get first insights on the analysis of the trend. Although the trend is significant from a simple linear regression, simultaneous intervals based on splines derivatives of a Generalized Additive Model in highlighted that the trend is not significant over time, whilst pointwise intervals emphasized the accelerating trend of the annual maxima in the last $40$ years. This accelerating behavior of the annual maxima in the end of the sequence was confirmed in the end of \hyperref[sec:anagev]{Chapter \textbf{\ref{sec:anagev}}} by a bootstrap aggregated Neural Network. But, before that we discovered that the best and most parsimonious parametric GEV model had only a linear trend on the location parameter. This linear trend on the location was confirmed by the flexible modeling with Neural Networks, among a great great number of models.  
 
 From the pioneering thesis of \citet{Neal_1996_bay}, \emph{Bayesian Neural Networks} are now widely used for their deep flexibility. In our case and to make it simple, it would roughly means combining the GEV-CDN framework of \hyperref[sec:nnxp]{Sections \textbf{\ref{sec:nnxp}}} and \hyperref[sec:gevcdn]{ \textbf{\ref{sec:gevcdn}}} with the Bayesian analysis \hyperref[sec::bayesian]{ Chapters \textbf{\ref{sec::bayesian}}} and \textbf{\ref{sec:anabayes}}. Hence, it would be perfect to surpass the - rather restrictive- assumption of parametric models that we have made in the Bayesian analysis.
+
+
+Even if we were not able to execute some dangerous methods such as the Hamiltonian Monte Carlo or the computation of the Bayes factor for example, this thesis allowed to learn by doing 
+
 
 "A key issue in applications is that inferences
 may be required well beyond the observed tail of
@@ -756,6 +775,7 @@ extrapolation into the future more difficult, as one would need to extrapolate t
 covariate as well. No obvious climatological covariate comes to mind for the Red
 River application. " %[extremes in climate change p.111]
 
+A project to give analysis in time live could be implemented, with values being stocked each days/year !
 
 Timescale-uncertainty effects on extreme value analyses seem not to have been
 studied yet. For stationary models (Sect. 6.2), we anticipate sizable effects on block
@@ -764,23 +784,11 @@ procedure. For nonstationary models (Sect. 6.3), one may augment confidence band
 construction by inserting a timescale simulation step (after Step 4 in Algorithm 6.1) \citet[pp.262]{mudelsee_climate_2014}
 
 
-!!!!! not put too much references in the text !!!!!
 
-A project to give analysis in time live could be implemented, with values being stocked each days/year !
-
-be prudent that all "methods" are listed (numbered) in (each) ToC
-
-add square brackets [] for cite ? 
-
-Careful for boldsymbols, especiallyin bayesian
-
-PissoortThesis:: Behind our functions 
-
-[ MOTS DEXPLICATIONS SUR TTES LES FORMULES (domain atraction condition, etc...]
 
 \thispagestyle{empty}
 
-Finish (Bayesian) documentation in the package.
+%Finish (Bayesian) documentation in the package.
 
 
 %\clearpage

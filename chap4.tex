@@ -281,7 +281,7 @@ There exist two kinds of credible intervals in the Bayesian framework :
 	\item The \emph{quantile-based} credible intervals or \emph{equal-tailed interval} picks an interval to ensure that the probability of being below this interval is as likely as of being above it. 
 	For some posterior distribution which are not symmetric, this could be misleading, and is then not recommended in this case. 
 	The advantage is that they are easily obtained from a random sample of the posterior.
-	\item The \emph{Highest Probability Interval} (HPD) which is defined as the shortest interval containing $x\%$ of the posterior probability, e.g. if we want a $95\%$ HPD interval $(\xi_0,\xi_1)$ for $\xi$, we calculate :
+	\item The \emph{Highest Posterior Density} (HPD) interval which is defined as the shortest interval containing $x\%$ of the posterior probability, e.g. if we want a $95\%$ HPD interval $(\xi_0,\xi_1)$ for $\xi$, we calculate :
 		
 	\begin{equation} 
 	\int_{\xi_0}^{\xi_1}\pi(\xi|\boldsymbol{x})\cdot d\xi=0.95 \qquad\text{with}\qquad \pi(\xi_0|\boldsymbol{x})=\pi(\xi_1|\boldsymbol{x}).

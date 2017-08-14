@@ -2,23 +2,22 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MEMOIREbyChap.aux
 The style file: abbrvnat.bst
-Illegal, another \bibstyle command---line 1449 of file MEMOIREbyChap.aux
+Illegal, another \bibstyle command---line 1506 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
 Database file #1: zotero1.bib
-I was expecting a `,' or a `}'---line 2420 of file zotero1.bib
+I was expecting a `,' or a `}'---line 2429 of file zotero1.bib
  :  
  :  title = {evmix: {An} {R} package for extreme value mixture modelling, threshold estimation and boundary corrected kernel density estimation},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3216 of file zotero1.bib
+I was expecting a `,' or a `}'---line 3225 of file zotero1.bib
  :  
  :  note = {Google-Books-ID: dfZecgAACAAJ},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "kharin_changes_2006"
-Warning--I didn't find a database entry for "geyer__1992"
 Warning--I didn't find a database entry for "lafaye_understanding_2009"
 Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
 while executing---line 1347 of file abbrvnat.bst
@@ -45,45 +44,45 @@ Warning--empty journal in leisch_creating_2008
 Warning--can't use both author and editor fields in resnick_extreme_1987
 Warning--empty journal in segers_generalized_2001
 Warning--empty publisher in stan_development_team_stan_2012
-You've used 101 entries,
+You've used 102 entries,
             2773 wiz_defined-function locations,
-            1367 strings with 27956 characters,
-and the built_in function-call counts, 46313 in all, are:
-= -- 4470
-> -- 2242
-< -- 81
-+ -- 770
-- -- 669
-* -- 3841
-:= -- 7291
-add.period$ -- 505
-call.type$ -- 101
-change.case$ -- 504
-chr.to.int$ -- 101
-cite$ -- 211
-duplicate$ -- 2083
-empty$ -- 3786
-format.name$ -- 846
-if$ -- 9701
+            1370 strings with 28009 characters,
+and the built_in function-call counts, 46609 in all, are:
+= -- 4493
+> -- 2252
+< -- 82
++ -- 774
+- -- 672
+* -- 3857
+:= -- 7340
+add.period$ -- 508
+call.type$ -- 102
+change.case$ -- 507
+chr.to.int$ -- 102
+cite$ -- 213
+duplicate$ -- 2103
+empty$ -- 3818
+format.name$ -- 850
+if$ -- 9763
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 123
-newline$ -- 709
-num.names$ -- 404
-pop$ -- 838
+missing$ -- 125
+newline$ -- 714
+num.names$ -- 408
+pop$ -- 849
 preamble$ -- 1
-purify$ -- 425
+purify$ -- 428
 quote$ -- 0
-skip$ -- 1505
+skip$ -- 1517
 stack$ -- 0
-substring$ -- 1779
-swap$ -- 202
+substring$ -- 1781
+swap$ -- 203
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 986
+type$ -- 992
 warning$ -- 9
-while$ -- 423
+while$ -- 426
 width$ -- 0
-write$ -- 1696
+write$ -- 1709
 (There were 11 error messages)
