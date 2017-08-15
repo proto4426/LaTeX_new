@@ -1,45 +1,42 @@
 %\addcontentsline{toc}{subsection}{Note on the available R package : \texttt{evdbayes}}
 \section{Methods }
 
-The \texttt{evdbayes} package from \citet{ribatet_users_2006} is an old package and is still the only available on CRAN to do Bayesian inference in EVT with MCMC techniques to sample from the posterior. We have passed a long time trying to understand and make relevant analysis through this framework. However, as we had problems to "open black-box" and understand its structure, it was impossible to reach the stationary posterior distribution for one parameter for the nonstationary GEV model with linear trend on $\mu(t)$. Hence, we decided to develop our own methods. Following \citet{hartmann_bayesian_2016}, \texttt{evdbayes} only uses the Metropolis Hastings (MH) Algorithm \ref{algo:mh} (\hyperref[app:mh]{Appendix \textbf{\ref{app:mh}}}). We then decided to develop not only the MH but also the Gibbs sampler, and later the Hamiltonian Monte Carlo through the STAN interface. 
 
-The different methods to compute the prior $\pi(\theta)$ discussed in \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}} are available in the \texttt{evdbayes} package. Since we mostly rely on our functions and we have no experts' advices, we will rather use vague priors (see \hyperref[sec:noninfoprior]{Section \textbf{\ref{sec:noninfoprior}}}. 
+There exists a bunch of methods to make Bayesian inference, including different algorithms but also different implementations of these algorithms, i.e. different packages, programming interfaces or even languages. We have vastly looked for the methods that are the most suited for our nonstationary GEV analysis, which was not an easy task.
 
-
- Note that efforts should put to the new \texttt{revdbayes} R package which use the generalised ratio-of-uniforms method instead of the popular MCMC techniques, which is an other acceptance-rejection type of simulation algorithm. ( \hyperref[sec:bayes_ratio]{Section \textbf{\ref{sec:bayes_ratio}}}) ? )
- 
- 
- 
- We have considered several methods : 
+The pioneering and reference Bayesian R package in EVT is the \texttt{evdbayes} from \citet{ribatet_users_2006}. Launched more than years ago, it is still the only available package on CRAN to do Bayesian inference in EVT with MCMC techniques. We have passed a long time trying to understand and make relevant analysis through this framework. However, we had problems to "open black-box" and truly understand its structure. For example, it was not possible to tune correctly the algorithm in order to reach the target distribution for a nonstationary model. Moreover, \citet{hartmann_bayesian_2016}, \texttt{evdbayes} confirms that this package only implemented the Metropolis-Hastings (MH) (Algorithm \ref{algo:mh} in \hyperref[app:mh]{Appendix \textbf{\ref{app:mh}}}).
+Hence, we decided to develop our own methods in the developed R package. We decided to implemented not only the MH,  but also the Gibbs sampler (Algorithm \ref{algo:gib} in \hyperref[app:mh]{Appendix \textbf{\ref{app:mh}}}).
+ We give a brief summary of the methods we have used (or only considered) for this chapter : 
  
  \begin{itemize}
- 	\item[$\blacktriangleright$] evdbayes package
- 	\item[$\blacktriangleright$] From Our Functions (R package)
+ 	\item[$\blacktriangleright$] The \texttt{evdbayes} package discussed above. Although the documentation is complete, the methods are rather not intuitive nor very flexible. We can feel the evolution of the R language this last decade.
  	
- 	\item[$\blacktriangleright$] From HMC algorithm using STAN language :
+ 	\item[$\blacktriangleright$] From \emph{our functions} in the R package, where we implemented both the MH algorithm and the Gibbs sampler. This allowed us to have a thorough understanding of these algorithms. We used that e.g. to carefully tune the hyperparameters and obtain relevant and reliable results, that we could visually plot in the best manner.
  	
- 	The problem is maybe from \ref{likgevintro}. The parameter $\xi$ is relatively near the region that could be problematic, causing convergence issues. 
- 	
- 	 	\item[$\vartriangleright$] Ratio of Uniform : \texttt{revdbayes} package :
+ 	\item[$\blacktriangleright$] From \emph{HMC algorithm} using \emph{STAN language}, which is the most efficient but also the most complex to use. While offering state-of-the-art methods for both execution and diagnostic of the Markov chains, it also presents much technicalities, practical but also theoretical. This explains the limited amount of results we have been able to produce with this outstanding method.
  	 	
- 	 	\url{https://cran.r-project.org/web/packages/revdbayes/vignettes/revdbayes-vignette.html}
- 	 	
- 	 	Helped with \texttt{rust}
+ 	 \item[$\vartriangleright$] The \emph{Ratio of Uniform} method from the \texttt{\textbf{r}evdbayes} package (see \citet{northrop_2017_revd}), which internally makes use of the \texttt{rust} package to simulate a random sample from the required posterior distribution,  is an other acceptance-rejection type of simulation algorithm.
+   Even if this method is different from the traditional MCMC, the package also makes use of a low-level language (C++) to perform the most time-consuming tasks. Hence, in terms of efficiency, this method is worth studying for Bayesian inference with extreme values.   
  \end{itemize}
-We will only present the results obtained by the functions we constructed. The methods we have computed for the MH algorithm and the Gibbs sampler are based on Algorithm \ref{algo:mh} and Algorithm \ref{algo:gib}.
+ Using a compiled language either in preference to R or as a subroutine called from R typically results in a two-fold or three-fold
+ speed increase over optimized R code for iterative simulation algorithms such as in MCMC simulation, see e.g. \citet{stan_development_team_stan_2012}.
 
-Although we could be based on the frequentist's analysis of the previous chapters to select some (subset of) models to analyze, we decide to adopt the same sequential methodology, by starting with the simplest model Gumbel model, to more complex parametric models. 
-Thence, we will be able to compare the results.
+Regarding the prior $\pi(\theta)$, the different methods discussed in \hyperref[sec:prior]{Section \textbf{\ref{sec:prior}}} are available in the \texttt{evdbayes} framework. Since we will mostly rely on our functions and we have no experts' advices, we will rather use vague priors as in \hyperref[sec:noninfoprior]{Section \textbf{\ref{sec:noninfoprior}}}, and hence not implement all these priors in our package. 
+
+Since learning a new language (STAN) for such a complex task was very limiting, we will only present the results that we obtained for the selected nonstationary model (\hyperref[sec:baycomp]{Section \textbf{\ref{sec:baycomp}}}) with the functions we have constructed. However, we briefly present the results obtained with the three methods for the stationary model in the next section. 
 
 
 \section{Stationary GEV Model}\label{sec:baystatio}
 
 
-For the stationary model, the results are very similar to those obtained with the \texttt{evdbayes} framework. We empirically verified that this package uses the MH algorithm.
+We present in this section the results of the stationary GEV model in order 
+For this model, the results are very similar to those obtained with the \texttt{evdbayes} framework and are not shown here. Furthermore, we empirically verified that this package only uses the MH algorithm.
+Since this is not possible to evaluate analytically the complete posterior in (\ref{bayeseq}) for this model, we will use MCMC approximations. 
+
+\subsection{Comparison of the Methods}
 
 
-\subsection{Comparison Metropolis-Hastings and Gibbs Sampler}
-
+\subsubsection*{Metropolis-Hastings and Gibbs sampler}
 
 
 Figure \ref{fig:mhgibbs} in \hyperref[app:bayfig]{Appendix \textbf{\ref{app:bayfig}}}
@@ -55,81 +52,14 @@ Note that for a terminological question, it should be named the \emph{Metropolis
 
 \paragraph*{Gibbs Sampler}
 
-This is done by tuning the standard deviation $\sigma^{(j)}$ of the proposal $p_{t,j}\big(\theta_*^{(j)}|\theta_{t-1}^{(j)}\big)$. Although the $\theta^{(j)}$ are taken to be univariate in our case, it is difficult to tune each $\sigma^{(j)}$ to achieve average acceptance probabilities for all parameters. We will then use a \emph{trial-and-error} approach.
+This is done by tuning the standard deviation $\sigma^{(j)}$ of the proposal $p_{t,j}\big(\theta_*^{(j)}|\theta_{t-1}^{(j)}\big)$. Although the $\theta^{(j)}$ is univariate in our case, it is difficult to tune each $\sigma^{(j)}$ to achieve average acceptance probabilities for all parameters. We will then use a \emph{trial-and-error} approach.
 
 
 
 \paragraph*{Hamiltonian Monte-Carlo}
 
+The results of the Markov chains' posterior means obtained with the Hamiltonian Monte Carlo were very similar as those depicted in Table \ref{tab:mhgib}.
 
-\begin{table}[!htbp] \centering 
-	\caption{Comparison of Bayesian algorithm with $N= 2000$ samples with a Burn-in period $B=500$ with the frequentist MLE for the stationary model. Parameters are estimated by the posterior mean of the chain and  effective sample sizes $(N_{\text{eff}})$ (\ref{eq:neff}) for estimating the mean are displayed for Bayesian, and standard errors for the MLE. } 
-	\label{tab:mhgib} 
-	\begin{tabular}{@{\extracolsep{5pt}} cccc} 
-\toprule
-		& Bayesian MH $(N_{\text{eff}})$ & Bayesian Gibbs $(N_{\text{eff}})$ & Frequentist MLE (s.e.) \\ 
-\midrule
-		Location $\mu$  & $30.596\ (183)$ & $30.567\ (232)$ & $30.587\ (0.216)$ \\ 
-		Scale $\sigma$ & $2.101 \ (183)$ & $2.117\ (145)$ & $2.081\ (0.155)$ \\ 
-		Shape $\xi$ & $-0.2445\ (183)$ & $-0.2449\ (144)$ & $-0.254\ (0.067)$ \\ 
-\bottomrule
-	\end{tabular} 
-\end{table} 
-
-
-
-\section{Nonstationary GEV : Model Comparisons}
-
-
-
-To limit the influence of the (randomly) selected starting values, we take a burn-in period of length $B=N/....$ 
-This is probably too conservative, but it is relatively fast in our example (?) and therefore it is not much important.
-
-
-\subsection{Model Comparisons}
-
-
-Although the BIC informed us in \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} that the nonstationary model with a linear trend on the location parameter is highly recommended among all the parametric models for the location and scale parameters, we 
-
-
-
-\begin{table}[!htbp] 
-	\centering \caption{ Comparisons of nested GEV models with nonstationary parameters computed by Gibbs sampler for $N=2000$
-	} 
-	\vspace{-.1cm}
-	\label{tab:comp_mod_bay} 
-	\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
-		\toprule
-		\textbf{Model} & DIC & WAIC & Bayes Factor & Computation Time \\
-		\midrule
-		Gumbel & $-256.84$  & $2$ &  & \\
-		stationary  & $-251.75$ & $3$  & \boldsymbol{$0.14\%$}  & \\
-		\textbf{linear in} \boldsymbol{$\mu(t)$} & $\boldsymbol{-241.81}$ & $\boldsymbol{4} $& \boldsymbol{$0.001\%$}  &  \\
-		quadratic in $\mu(t)$ & $-241.48$ & $5$ & $42\%$ &  \\
-		linear in $\mu(t)$ and $\sigma(t)$ & $-241.69$ & $5$ & $63\%$ &  \\
-		cubic in $\mu(t)$ & $-241.37$ & $6$ & $65\%$ &  \\
-		\bottomrule
-	\end{tabular}
-	\vspace{-.15cm}
-\end{table} 
-
-
-
-We willl compare the same parametric models as in \hyperref[sec:xpnp]{Section \textbf{\ref{sec:xpnp}}} but with Bayesian techniques coming from \hyperref[sec:modcompbay]{Section \textbf{\ref{sec:modcompbay}}}. It will be interesting to see whether there are differences in the selected model between the frequentist and the Bayesian frameworks.
-
-
-
- \subsubsection*{Predictive Information Criteria}
- 
- For each generated chains with dispersed starting values, we evaluate separately the information criteria. The discrepancies between the chains are small (?), which is a good sign. 
- 
- 
- \section{Comparisons}
- 
-From (\ref{eq:neff})
- 
- \subsection{Hamiltonian Monte Carlo : STAN}
- 
  Benefits : 
  
  \begin{itemize}
@@ -147,15 +77,82 @@ From (\ref{eq:neff})
  " For distributions like the GEV where the support depends on the parameter values, you have to be clever with the declarations in the parameters section. Otherwise, you get into a situation where what Stan thinks are valid parameter values have zero or undefined density values.  "
  
  
- "for time critical operations it may be nec-
- essary to use a compiled language either in preference to R or as a subroutine that
- is called from R. In our experience this typically results in a two-fold or three-fold
- speed increase over optimized R code for iterative simulation algorithms of the type
- used in Markov chain Monte Carlo simulation."
- 
- 
  Although this method is rather complex to implement, the STAN community offers its help and proposes lots of interesting tools that helps for the modeling. For example, to help monitoring the convergence, the package \texttt{rstan} together with \texttt{shinystan}
- allows to deploy locally a complete Shiny application with a few lines of code, see \textbf{/Scripts-R/}\texttt{Shiny\_stan\_test.R} on the \href{https://github.com/proto4426/PissoortThesis/}{repository}. These applications provide an outstanding amount of information. We hosted an example of this application at the following \href{https://proto4426.shinyapps.io/ShinyStanGEV/}{URL}\footnote{\url{https://proto4426.shinyapps.io/ShinyStanGEV/}}.
+ allows to deploy locally a complete Shiny application with a few lines of code, see \textbf{/Scripts-R/}\texttt{Shiny\_stan\_test.R} on the \href{https://github.com/proto4426/PissoortThesis/}{repository}. These applications provide an outstanding amount of information. We hosted an example of this application at the following \href{https://proto4426.shinyapps.io/ShinyStanGEV/}{URL}\footnote{\url{https://proto4426.shinyapps.io/ShinyStanGEV/}}. This particular application shows a chain that has not reached the target stationary distribution. It can be seen for example with the high autocorrelation in the  (very) high autocorrelation in the generated chains. This application shows how these diagnostics can be useful to diagnose the convergence problem. This problem is linked to the  GEV model since the domain of the parameter $\mu$ is function of the other parameters, as we are under an EV-Weibull type, we have that $x_*=\mu-\sigma\cdot\xi^{-1}$ and $_*x=-\infty$.
+ The problem is also probably from \hyperref[likgevintro]{\textbf{\ref{likgevintro}}}. Since we have shown that we are under an EV-Weibull model, the parameter $\xi$ is relatively near the region that could be problematic, causing convergence issues. 
+ 
+\begin{table}[!htbp] \centering 
+	\caption{Comparison of Bayesian algorithm with $N= 2000$ samples with a Burn-in period $B=500$ with the frequentist MLE for the stationary model. Parameters are estimated by the posterior mean of the chain and  effective sample sizes $(N_{\text{\emph{eff}}})$ (\ref{eq:neff}) for estimating the mean are displayed for Bayesian, and standard errors for the MLE. } 
+	\label{tab:mhgib} 
+	\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+\toprule
+		& MH $(N_{\text{eff}})$ & Gibbs $(N_{\text{eff}})$ & HMC $(N_{\text{eff}})$ & MLE (s.e.) \\ 
+\midrule
+		Location $\mu$  & $30.596\ (183)$ & $30.567\ (232)$  & $30.559\ (212)$& $30.587\ (0.216)$ \\ 
+		Scale $\sigma$ & $2.101 \ (183)$ & $2.117\ (145)$ & $2.042\ (175)$ & $2.081\ (0.155)$ \\ 
+		Shape $\xi$ & $-0.2445\ (183)$ & $-0.2449\ (144)$ & $-0.2512 \ (184)$  & $-0.254\ (0.067)$ \\ 
+\bottomrule
+	\end{tabular} 
+\end{table} 
+
+
+
+\subsection{Final Results}
+
+
+
+\section{Nonstationary GEV : Model Comparisons}\label{sec:baycomp}
+
+
+Although we could be based on the frequentist's analysis of the previous chapters to select some (subset of) models to analyze, we decide to adopt the same sequential methodology, by starting with the simplest model Gumbel model, to more complex parametric models. 
+Thence, we will be able to compare the results.
+
+
+To limit the influence of the (randomly) selected starting values, we take a burn-in period of length $B=N/....$ 
+This is probably too conservative, but it is relatively fast in our example (?) and therefore it is not much important.
+
+
+\subsection{Model Comparisons}
+
+
+Although the BIC informed us in \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} that the nonstationary model with a linear trend on the location parameter is highly recommended among all the parametric models for the location and scale parameters, we 
+
+We did not find any ways to compute the marginal likelihood (\ref{eq:marglik}) which is an intractable 2 to 6-dimensional integral for the modles considered, which is necessary but often the issue when computing the Bayes factor in practice. 
+It was not possible for us to compute the it even with the efficient method proposed by \citet{chib_1995}.
+
+\begin{table}[!htbp] 
+	\centering \caption{ Comparisons of nested GEV models with nonstationary parameters computed by Gibbs sampler for $N=2000$ 
+	} 
+	\vspace{-.1cm}
+	\label{tab:comp_mod_bay} 
+	\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
+		\toprule
+		\textbf{Model} & DIC & WAIC  & Computation Time (sec.) \\
+		\midrule
+		stationary Gumbel & $517.4$  & $515.6$ &  $0.98$ \\
+		stationary GEV  & $576.6$ & $540.1$  &   $1.9$ \\
+		\textbf{linear in} \boldsymbol{$\mu(t)$} & $\boldsymbol{720.9}$ & $\boldsymbol{602.5}$&   $3.9$ \\
+		quadratic in $\mu(t)$ & $484.6$ & $483.9$ &  $4.9$ \\
+		linear in $\mu(t)$ and $\sigma(t)$ & $486.6$ & $485.1$  & $5.4$ \\
+		cubic in $\mu(t)$ & $450.3$ & $487.8$  & $7.8$ \\
+		\bottomrule
+	\end{tabular}
+	\vspace{-.15cm}
+\end{table} 
+
+We computed the DIC and WAIC for each of the four chains having different starting values to check that variability of the criteria is reassuringly very small between chains.
+Quite surprisingly, we observed much more variability in the criteria for the more simple models. The computation time is higher for models that have more parameters since each parameters require one update (see Algorithm \ref{algo:gib}).
+
+Since we were not able to compare models with the Bayes factor, one could argue that carefully using Bayesian model averaging could improve the results. We discuss this issue at the \hyperref[sec:bmaxp]{end of this Chapter}.
+
+We willl compare the same parametric models as in \hyperref[sec:xpnp]{Section \textbf{\ref{sec:xpnp}}} but with Bayesian techniques coming from \hyperref[sec:modcompbay]{Section \textbf{\ref{sec:modcompbay}}}. It will be interesting to see whether there are differences in the selected model between the frequentist and the Bayesian frameworks.
+
+
+
+ \subsubsection*{Predictive Information Criteria}
+ 
+ For each generated chains with dispersed starting values, we evaluate separately the information criteria. The discrepancies between the chains are small (?), which is a good sign. 
+ 
  
 
 \section{Nonstationary GEV with linear model on the Location}\label{sec:bay_nonsta}
@@ -183,9 +180,12 @@ For numerical reasons, will compute the unnormalized posterior on the log scale,
 \end{equation}
 in order to 
 
-\subsubsection*{Algorithm : Gibbs Sampler}
+\subsubsection*{MCMC Algorithm : Gibbs Sampler}
 
-We will use the Gibbs sampler (Algorithm \ref{algo:gib}) since it is the most efficient, especially in a nonstationary setting.
+Since this is not possible to evaluate analytically (\ref{bayeseq}) for this model, we will use the MCMC approximations. 
+
+We will use the Gibbs sampler (Algorithm \ref{algo:gib}) as it is the most efficient, especially in a nonstationary setting, i.e. when the number of parameters to evaluate is high.
+
 
 
 \subsubsection*{Starting Values}
@@ -389,27 +389,6 @@ It is still also possible to compute the returns levels as in Figure \ref{fig:rl
 
 
 
-\subsection{Sensitivity Analysis}
-
-\textbf{section 7.4} evdbayes pdf + suppplément risk book 
-
-"It is often the case that more than one model provides an adequate fit to the data. Sensitivity analysis determines by what extent posterior inferences change when alternative
-models are used"   book risk analysis other section pp.2.
-
-
-
-The basic sensitivity analysis works by fitting several models to
-the same problem. Posterior inferences can then be compared.
-The sensitivity of the
-marginal posterior density of the shape parameter $\xi$ is often of particular interest.
-
-
-The basic method of sensitivity analysis is to fit several models to the same problem.
- Posterior inferences from each model can then be compared. Posterior inferences
-will typically include marginal posterior distributions of the 3 parameters posterior distributions of GEV quantiles and posterior predictive distributions.
-The sensitivity of the marginal posterior density of the shape parameter $\xi$ is often of particular interest.
-
-
 
 \section{Remarks and Comparison with Frequentist results}
 
@@ -425,7 +404,7 @@ The following Figure \ref{fig:cicomp} compares several intervals that have been 
 \begin{itemize}
 	\item The \emph{frequentist} confidence intervals computed in
 	\hyperref[sec:xpstatio]{Section \textbf{\ref{sec:xpstatio}}}, comprising those coming from the normal approximation of the MLE and the profiled likelihood intervals.
-	\item The \emph{bootstrap} confidence intervals computed in  \hyperref[sec:boot]{Section \textbf{\ref{sec:boot}}}, by the residual but also the parametric bootstrap. These intervals have not been computed for the location parameters since these were directly computed for $\mu(t)$ rather than $\mu_0$ and $\mu_1$. From the particular nature of these intervals which estimate parameters by GML and make use of prior distribution to compute the GEV-CDN weights, we will not consider these as truly "frequentist", but this is debatable.
+	\item The \emph{bootstrap} confidence intervals computed in  \hyperref[sec:boot]{Section \textbf{\ref{sec:boot}}} for the nonstationary model with  a linear model on the location only. We show the residual but also the parametric bootstrap method. These intervals have not been computed for the location parameters since these were directly computed for $\mu(t)$ rather than $\mu_0$ and $\mu_1$. From the particular nature of these intervals which estimate parameters by GML and make use of prior distribution to compute the GEV-CDN weights, we will not consider these as truly "frequentist", but this is debatable.
 	\item The \emph{Bayesian} credible intervals seen  above in \hyperref[sec:bayinfci]{Section \textbf{\ref{sec:bayinfci}}}.
 \end{itemize}
 
@@ -441,8 +420,29 @@ By using objective priors (i.e. priors with very large variance), we should obta
 We could have used Bayesian model averaging, but
 
 
-\subsubsection*{Discussion on the Prior used}
+\subsubsection*{Discussion on the Prior : sensitivity analysis}
 
 In all the analysis, we were not able to introduce knowledge through the specification of the prior. Hence, we will use non-informative priors (see \hyperref[sec:noninfoprior]{Section \textbf{\ref{sec:noninfoprior}}}), and in particular \emph{vague} (near-flat) independent normally distributed \emph{priors} (\ref{eq:vagprior}) for each parameter since this is the most convenient way to express our ignorance as showed by.
 
 
+
+\textbf{section 7.4} evdbayes pdf + suppplément risk book 
+
+"It is often the case that more than one model provides an adequate fit to the data. Sensitivity analysis determines by what extent posterior inferences change when alternative
+models are used"   book risk analysis other section pp.2.
+
+The basic sensitivity analysis works by fitting several models to
+the same problem. Posterior inferences can then be compared.
+The sensitivity of the
+marginal posterior density of the shape parameter $\xi$ is often of particular interest.
+
+The basic method of sensitivity analysis is to fit several models to the same problem.
+Posterior inferences from each model can then be compared. Posterior inferences
+will typically include marginal posterior distributions of the 3 parameters posterior distributions of GEV quantiles and posterior predictive distributions.
+The sensitivity of the marginal posterior density of the shape parameter $\xi$ is often of particular interest.
+
+
+\subsubsection*{Bayesian Model Averaging}\label{sec:bmaxp}
+
+Since we were not able to select one model in a Bayesian fashion with the Bayes factor in 
+Another idea that follows the ensemble model such as bagging, used in \hyperref[sec:xpbagg]{Section \textbf{\ref{sec:xpbagg}}}. However, among the  we did not find 

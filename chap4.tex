@@ -347,9 +347,9 @@ It is then possible to compute models' posterior probabilities given the observa
 \end{equation}
 where $\text{Pr}(\boldsymbol{x}|\mathcal{M}_i)$ is the marginal likelihood of observations an can be computed as follows : 
 
-\begin{equation*}
+\begin{equation}\label{eq:marglik}
 \text{Pr}(\boldsymbol{x}|\mathcal{M}_i)=\int \text{Pr}(\boldsymbol{x}|\theta^{\mathcal{M}_i},\mathcal{M}_i)\cdot \text{Pr}(\theta^{\mathcal{M}_i}|\mathcal{M}_i)\cdot d\theta^{\mathcal{M}_i}.
-\end{equation*}
+\end{equation}
 However, computing the marginal likelihood is difficult and suffers from the curse of dimensionality. \citet{Bos2002} provides various methods to compute the marginal likelihood when the size of the parameter vector is moderate.
 Model posterior probabilities (\ref{eq:modpost}) can be used for model comparisons and predictions.
 
@@ -406,7 +406,7 @@ Since the DIC is defined on the deviance scale, we have
 \begin{equation}
 \text{DIC}= 2\log f(\boldsymbol{x}|\bar{\theta}) - \frac{4}{N} \sum_{t=1}^N\log f(\boldsymbol{x}|\theta_t).
 \end{equation}
-Hence, smaller DIC values indicate better models. It can be computed simply by storing $f(\boldsymbol{x}|\theta_t) $ at the end of each iteration in the main loop of the MCMC algorithm. DIC
+Hence, smaller DIC values indicate better predictive models. It can be computed simply by storing $f(\boldsymbol{x}|\theta_t) $ at the end of each iteration in the main loop of the MCMC algorithm. DIC
 handles uncertainty in inferences within each model, whilst not depending on models' aspects that don’t affect inferences within each model. Despite a poor theoretical foundation, DIC is shown to be a good approximation of the penalized loss function (\ref{penbay}), and is valid only when the effective number of parameters in the model is much smaller than the number of independent observations.
 
 
@@ -421,7 +421,7 @@ The \emph{Widely Applicable Information Criterion} (WAIC) is a more recent appro
 = &\sum_{i=1}^n\Bigg[2\log \bigg(N^{-1}\sum_{t=1}^N f(x_i|\theta_t)\bigg)-\frac{4}{N}\sum_{t=1}^N\log f(x_i|\theta_t)\Bigg].
 \end{aligned}
 \end{equation}
-It can be calculated by computing $\log f(x_i|\theta_t)$ $\forall i=1,\ldots,N$ at the end of each iteration in the main loop of the MCMC algorithm.
+As the DIC, smaller values indicate better predictive accuracy. It can be calculated by computing $\log f(x_i|\theta_t)$ $\forall i=1,\ldots,N$ at the end of each iteration in the main loop of the MCMC algorithm.
 
 There exists other interesting methods, as proposed by \citet{gelman_understanding_2014} who give in-depth developments of the predictive information criteria.
 

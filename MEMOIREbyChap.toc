@@ -93,21 +93,19 @@
 \contentsline {section}{\numberline {6.4}Comments and Comparisons with POT}{77}{section.6.4}
 \contentsline {chapter}{\numberline {7}Bayesian Analysis in Block Maxima}{78}{chapter.7}
 \contentsline {section}{\numberline {7.1}Methods }{79}{section.7.1}
-\contentsline {section}{\numberline {7.2}Stationary GEV Model}{79}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Comparison Metropolis-Hastings and Gibbs Sampler}{80}{subsection.7.2.1}
-\contentsline {section}{\numberline {7.3}Nonstationary GEV : Model Comparisons}{80}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Model Comparisons}{80}{subsection.7.3.1}
-\contentsline {section}{\numberline {7.4}Comparisons}{81}{section.7.4}
-\contentsline {subsection}{\numberline {7.4.1}Hamiltonian Monte Carlo : STAN}{81}{subsection.7.4.1}
-\contentsline {section}{\numberline {7.5}Nonstationary GEV with linear model on the Location}{82}{section.7.5}
-\contentsline {subsection}{\numberline {7.5.1}Diagnostics}{84}{subsection.7.5.1}
-\contentsline {subsection}{\numberline {7.5.2}Inference}{86}{subsection.7.5.2}
-\contentsline {subsection}{\numberline {7.5.3}Posterior Predictive Distribution}{87}{subsection.7.5.3}
-\contentsline {subsection}{\numberline {7.5.4}Return Levels}{87}{subsection.7.5.4}
-\contentsline {subsection}{\numberline {7.5.5}Sensitivity Analysis}{88}{subsection.7.5.5}
-\contentsline {section}{\numberline {7.6}Remarks and Comparison with Frequentist results}{89}{section.7.6}
-\contentsline {chapter}{Conclusion}{89}{section*.113}
-\contentsline {part}{Appendix}{92}{chapter*.114}
+\contentsline {section}{\numberline {7.2}Stationary GEV Model}{80}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Comparison of the Methods}{80}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Final Results}{81}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Nonstationary GEV : Model Comparisons}{81}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Model Comparisons}{81}{subsection.7.3.1}
+\contentsline {section}{\numberline {7.4}Nonstationary GEV with linear model on the Location}{82}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Diagnostics}{84}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Inference}{86}{subsection.7.4.2}
+\contentsline {subsection}{\numberline {7.4.3}Posterior Predictive Distribution}{87}{subsection.7.4.3}
+\contentsline {subsection}{\numberline {7.4.4}Return Levels}{89}{subsection.7.4.4}
+\contentsline {section}{\numberline {7.5}Remarks and Comparison with Frequentist results}{89}{section.7.5}
+\contentsline {chapter}{Conclusion}{90}{section*.115}
+\contentsline {part}{Appendix}{92}{chapter*.116}
 \partbegin 
 \contentsline {chapter}{\numberline {A}Statistical tools for Extreme Value Theory}{II}{appendix.A}
 \contentsline {section}{\numberline {A.1}Tails of the distributions}{II}{section.A.1}

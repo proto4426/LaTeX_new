@@ -1,4 +1,4 @@
-\begin{thebibliography}{102}
+\begin{thebibliography}{106}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -149,6 +149,15 @@ M.~Charras-Garrido and P.~Lezaud.
 \newblock \emph{{Journal de la Societe Fran{\c c}aise de Statistique}},
   154\penalty0 (2):\penalty0 pp 66--97, 2013.
 \newblock URL \url{https://hal-enac.archives-ouvertes.fr/hal-00917995}.
+
+\bibitem[Chib(1995)]{chib_1995}
+S.~Chib.
+\newblock Marginal likelihood from the gibbs output.
+\newblock \emph{Journal of the American Statistical Association}, 90\penalty0
+  (432):\penalty0 1313--1321, 1995.
+\newblock \doi{10.1080/01621459.1995.10476635}.
+\newblock URL
+  \url{http://www.tandfonline.com/doi/abs/10.1080/01621459.1995.10476635}.
 
 \bibitem[Coles(2001)]{coles_introduction_2001}
 S.~Coles.
@@ -501,6 +510,17 @@ V.~V. Kharin and F.~W. Zwiers.
 \newblock \doi{10.1175/JCLI3320.1}.
 \newblock URL \url{https://doi.org/10.1175/JCLI3320.1}.
 
+\bibitem[Kharin et~al.(2007)Kharin, Zwiers, Zhang, and
+  Hegerl]{kharin_changes_2007}
+V.~V. Kharin, F.~W. Zwiers, X.~Zhang, and G.~C. Hegerl.
+\newblock Changes in {Temperature} and {Precipitation} {Extremes} in the {IPCC}
+  {Ensemble} of {Global} {Coupled} {Model} {Simulations}.
+\newblock \emph{Journal of Climate}, 20\penalty0 (8):\penalty0 1419--1444, Apr.
+  2007.
+\newblock ISSN 0894-8755.
+\newblock \doi{10.1175/JCLI4066.1}.
+\newblock URL \url{http://journals.ametsoc.org/doi/full/10.1175/JCLI4066.1}.
+
 \bibitem[Klein~Tank and Wijngaard(2002)]{klein_tank_daily_2002}
 A.~M.~G. Klein~Tank and Wijngaard.
 \newblock Daily dataset of 20th-century surface air temperature and
@@ -630,6 +650,13 @@ M.~Mudelsee.
 \newblock ISBN 978-3-319-04449-1 978-3-319-04450-7.
 \newblock URL \url{http://link.springer.com/10.1007/978-3-319-04450-7}.
 
+\bibitem[Naveau et~al.(2017)Naveau, Zwiers, and Aza{\"i}s]{Ribes2017}
+R.~A. Naveau, Philippe, F.~W. Zwiers, and J.-M. Aza{\"i}s.
+\newblock A new statistical approach to climate change detection and
+  attribution.
+\newblock \emph{Climate Dynamics}, 48\penalty0 (1):\penalty0 367--386, Jan
+  2017.
+
 \bibitem[Neal(1996)]{Neal_1996_bay}
 R.~M. Neal.
 \newblock \emph{Bayesian Learning for Neural Networks}.
@@ -646,6 +673,13 @@ S.~Ni and D.~Sun.
 \newblock \doi{10.1016/S0304-4076(03)00099-X}.
 \newblock URL
   \url{http://www.sciencedirect.com/science/article/pii/S030440760300099X}.
+
+\bibitem[Northrop(2017)]{northrop_2017_revd}
+P.~Northrop.
+\newblock Revdbayes: Ratio-of-uniforms sampling for bayesian extreme value
+  analysis.
+\newblock 2017.
+\newblock URL \url{https://CRAN.R-project.org/package=revdbayes}.
 
 \bibitem[Northrop and Attalides(2016)]{northrop_posterior_2016}
 P.~J. Northrop and N.~Attalides.
