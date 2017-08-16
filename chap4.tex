@@ -221,7 +221,7 @@ We must also note the increase of complexity of this sampler compared to the Met
 Note that it is possible to combine Gibbs sampling with some Metropolis steps as in \cite[chap.11]{Gelman95bayesiandata}, when a conditional distribution cannot be identified.
 
 
-\subsection{Hamiltonian Monte Carlo}
+\subsection{Hamiltonian Monte Carlo}\label{sec:hmc}
 
 \citet{betancourt_diagnosing_2016} emphasizes that the performance of the  MCMC depends on  how effectively the Markov transition guides the Markov chain along the neighborhoods of high probability. If the exploration is slow, then the estimators will become computationally inefficient, and if the exploration is incomplete then the estimators will become biased. \citet{betancourt_2017_con} said "guess-and-check strategy of Random Walk Metropolis is doomed to fail in
 high dimensional spaces where there are an exponential number of directions
@@ -314,7 +314,7 @@ Uncertainty in the model is reflected through $\pi(\theta|\boldsymbol{x})$, and 
 
 \begin{definition}[Posterior Predictive Distribution]
 	The \textbf{posterior predictive distribution} of a future observation $\tilde{X}$ is
-	\begin{equation}
+	\begin{equation}\label{eq:ppddd}
 	\begin{aligned}
 	\text{\emph{Pr}}\{\tilde{X}<x\ | \ \boldsymbol{x}\}= &\int_{\Theta}\text{\emph{Pr}}\{\tilde{X}<x \ | \ \theta \} \cdot \pi(\theta|\boldsymbol{x})\cdot d\theta \\ 
 	= & \ \mathbb{E}_{\theta|\boldsymbol{x}}\big[\text{\emph{Pr}}(\tilde{X}<x \ | \ \theta)\big].
@@ -422,7 +422,18 @@ The \emph{Widely Applicable Information Criterion} (WAIC) is a more recent appro
 \end{aligned}
 \end{equation}
 As the DIC, smaller values indicate better predictive accuracy. It can be calculated by computing $\log f(x_i|\theta_t)$ $\forall i=1,\ldots,N$ at the end of each iteration in the main loop of the MCMC algorithm.
+\citet{watanabe_asymptotic_2010} argued that, asymptotically, the WAIC is equivalent to the leave-one-out predictive fit.
 
+Any predictive accuracy measure involves
+two definitions, following \citet{vehtari_practical_2016}: 
+\begin{itemize} 
+\item The choice of what part of the model to label as \emph{the likelihood}, which is directly
+connected to which potential replications are being considered for out-of-sample prediction.
+
+\item The factorization of the likelihood into \emph{data points}, which is reflected in the later calculations of
+expected log predictive density.
+\end{itemize}
+This involves some confusion and the real interpretations of the predictive criteria is still a bit unclear.
 There exists other interesting methods, as proposed by \citet{gelman_understanding_2014} who give in-depth developments of the predictive information criteria.
 
  

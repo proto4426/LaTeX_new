@@ -439,9 +439,19 @@ Following \citet{bay_thin_2012}, thinning will typically reduces the precision o
 
 \section{Additional Figures and Tables}\label{app:bayfig}
 
+\iffalse
+\begin{figure}[!htb]
+	    \centering
+	\subfloat[fig 1] {{ \includegraphics[width=5cm]{mhgib.pdf} } } \\
+	
+	\subfloat[fig 2]{{\includegraphics[width=5cm]{tracehmc.pdf} }}
+	\caption{ Chains of the two usual Bayesian algorithms. Acceptance rate is $\approx0.21$ of the MH and individual acceptances rates all between $0.42$ and $0.50$ for the Gibbs sampler. We ran one single chain for both algorithms with the same starting values.}\label{fig:mhgibbs}
+\end{figure}
+\fi 
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=1\linewidth]{mhgib.pdf}\caption{ Chains of the two usual Bayesian algorithms. Acceptance rate is $\approx0.21$ of the MH and individual acceptances rates all between $0.42$ and $0.50$ for the Gibbs sampler. We ran one single chain for both algorithms with the same starting values.}\label{fig:mhgibbs}
+	\centering	\includegraphics[width=1\linewidth]{traceall.pdf}	\caption{ Chains of the two usual Bayesian algorithms. Acceptance rate is $\approx0.21$ of the MH and individual acceptances rates all between $0.42$ and $0.50$ for the Gibbs sampler. In the HMC, $49$ iterations are divergent and the acceptance statistic is of $0.94$.
+	We ran one single chain for all algorithms with the same starting values.}\label{fig:mhgibhmc}
 \end{figure}
 
 
@@ -451,7 +461,7 @@ Following \citet{bay_thin_2012}, thinning will typically reduces the precision o
 
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=0.8\linewidth]{autocor.pdf}\caption{Autocorrelation function for each of the parameters' Markov chains provided by \texttt{coda}. }\label{fig:autocor}
+	\centering	\includegraphics[width=0.8\linewidth]{autocor.pdf}\caption{Autocorrelation functions for each of the parameters' Markov chains for a maximum lag of 25. Output provided by \texttt{coda}. }\label{fig:autocor}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -460,13 +470,11 @@ Following \citet{bay_thin_2012}, thinning will typically reduces the precision o
 
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=0.7\linewidth]{geweke.pdf}\caption{Geweke diagnostic : compute several $20$ z-scores that test the equality of the means between $10\%$ and $50\%$ of the chains. Dotted horizontal lines are the confidence regions at $95\%$. }\label{fig:geweke}
+	\centering	\includegraphics[width=0.7\linewidth]{geweke.pdf}\caption{Geweke diagnostic : compute $20$ z-scores that test the equality of the means between $10\%$ and $50\%$ of the chains. Dotted horizontal lines indicates the confidence regions at $95\%$. }\label{fig:geweke}
 \end{figure}
 
 
 \begin{table}[!htb] \centering 
-	\caption{Raftery-Lewis diagnostic} 
-	\label{tab:raf} 
 	\begin{tabular}{@{\extracolsep{5pt}} c|cccc} 
 \toprule
 		& $B$ & $N_{\text{advised}}$ & $N_{\text{min}}$ & Dependence Factor \\ 
@@ -477,6 +485,10 @@ $\log\sigma$ & $12$ & $1573$ & $457$ & $3.440$ \\
 $\xi$ & $16$ & $2110$ & $457$ & $4.620$ \\ 
 \bottomrule
 	\end{tabular} 
+		\caption{Raftery-Lewis diagnostic. "$B$" is the avdised number of iterations to be discarded at the beginning of each chain. "$N_{\text{advised}}$ " is the advised number of iterations. 
+			 "$N_{\text{min}}$" is the minimum sample size based on zero autocorrelation. 
+			 The "dependence factor" informs to which extent the autocorrelation in the chains inflates the required sample size, with values above 5 indicating a strong autocorrelation.  } 
+		\label{tab:raf} 
 \end{table} 
 
 

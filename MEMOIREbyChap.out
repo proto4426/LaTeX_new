@@ -90,31 +90,29 @@
 \BOOKMARK [1][-]{section.6.4}{Comments and Comparisons with POT}{chapter.6}% 90
 \BOOKMARK [0][-]{chapter.7}{Bayesian Analysis in Block Maxima}{part.2}% 91
 \BOOKMARK [1][-]{section.7.1}{Methods }{chapter.7}% 92
-\BOOKMARK [1][-]{section.7.2}{Stationary GEV Model}{chapter.7}% 93
+\BOOKMARK [1][-]{section.7.2}{Stationary GEV Model : Algorithms' Comparison}{chapter.7}% 93
 \BOOKMARK [2][-]{subsection.7.2.1}{Comparison of the Methods}{section.7.2}% 94
-\BOOKMARK [2][-]{subsection.7.2.2}{Final Results}{section.7.2}% 95
-\BOOKMARK [1][-]{section.7.3}{Nonstationary GEV : Model Comparisons}{chapter.7}% 96
-\BOOKMARK [2][-]{subsection.7.3.1}{Model Comparisons}{section.7.3}% 97
-\BOOKMARK [1][-]{section.7.4}{Nonstationary GEV with linear model on the Location}{chapter.7}% 98
-\BOOKMARK [2][-]{subsection.7.4.1}{Diagnostics}{section.7.4}% 99
-\BOOKMARK [2][-]{subsection.7.4.2}{Inference}{section.7.4}% 100
-\BOOKMARK [2][-]{subsection.7.4.3}{Posterior Predictive Distribution}{section.7.4}% 101
-\BOOKMARK [2][-]{subsection.7.4.4}{Return Levels}{section.7.4}% 102
-\BOOKMARK [1][-]{section.7.5}{Remarks and Comparison with Frequentist results}{chapter.7}% 103
-\BOOKMARK [0][-]{section*.115}{Conclusion}{part.2}% 104
-\BOOKMARK [-1][-]{chapter*.116}{Appendix}{}% 105
-\BOOKMARK [0][-]{appendix.A}{Statistical tools for Extreme Value Theory}{chapter*.116}% 106
-\BOOKMARK [1][-]{section.A.1}{Tails of the distributions}{appendix.A}% 107
-\BOOKMARK [1][-]{section.A.2}{Convergence concepts}{appendix.A}% 108
-\BOOKMARK [1][-]{section.A.3}{Varying functions}{appendix.A}% 109
-\BOOKMARK [1][-]{section.A.4}{Diagnostic Plots : Quantile and Probability Plots}{appendix.A}% 110
-\BOOKMARK [1][-]{section.A.5}{Estimators Based on Extreme Order Statistics for EVI}{appendix.A}% 111
-\BOOKMARK [0][-]{appendix.B}{Bayesian Methods}{chapter*.116}% 112
-\BOOKMARK [1][-]{section.B.1}{Algorithms}{appendix.B}% 113
-\BOOKMARK [2][-]{subsection.B.1.1}{Metropolis\205Hastings}{section.B.1}% 114
-\BOOKMARK [2][-]{subsection.B.1.2}{Gibbs Sampler}{section.B.1}% 115
-\BOOKMARK [2][-]{subsection.B.1.3}{Hamiltonian Monte Carlo}{section.B.1}% 116
-\BOOKMARK [1][-]{section.B.2}{Convergence Diagnostics}{appendix.B}% 117
-\BOOKMARK [1][-]{section.B.3}{Additional Figures and Tables}{appendix.B}% 118
-\BOOKMARK [0][-]{appendix.C}{Other Figures and Tables}{chapter*.116}% 119
-\BOOKMARK [0][-]{appendix.D}{Github Repository : Structure}{chapter*.116}% 120
+\BOOKMARK [1][-]{section.7.3}{Nonstationary GEV : Model Comparisons}{chapter.7}% 95
+\BOOKMARK [1][-]{section.7.4}{Nonstationary GEV with Linear Model on Location}{chapter.7}% 96
+\BOOKMARK [2][-]{subsection.7.4.1}{Diagnostics}{section.7.4}% 97
+\BOOKMARK [2][-]{subsection.7.4.2}{Inference}{section.7.4}% 98
+\BOOKMARK [2][-]{subsection.7.4.3}{Posterior Predictive Distribution}{section.7.4}% 99
+\BOOKMARK [2][-]{subsection.7.4.4}{Return Levels}{section.7.4}% 100
+\BOOKMARK [1][-]{section.7.5}{Remarks and Comparison with Frequentist results}{chapter.7}% 101
+\BOOKMARK [0][-]{section*.114}{Conclusion}{part.2}% 102
+\BOOKMARK [-1][-]{chapter*.115}{Appendix}{}% 103
+\BOOKMARK [0][-]{appendix.A}{Statistical tools for Extreme Value Theory}{chapter*.115}% 104
+\BOOKMARK [1][-]{section.A.1}{Tails of the distributions}{appendix.A}% 105
+\BOOKMARK [1][-]{section.A.2}{Convergence concepts}{appendix.A}% 106
+\BOOKMARK [1][-]{section.A.3}{Varying functions}{appendix.A}% 107
+\BOOKMARK [1][-]{section.A.4}{Diagnostic Plots : Quantile and Probability Plots}{appendix.A}% 108
+\BOOKMARK [1][-]{section.A.5}{Estimators Based on Extreme Order Statistics for EVI}{appendix.A}% 109
+\BOOKMARK [0][-]{appendix.B}{Bayesian Methods}{chapter*.115}% 110
+\BOOKMARK [1][-]{section.B.1}{Algorithms}{appendix.B}% 111
+\BOOKMARK [2][-]{subsection.B.1.1}{Metropolis\205Hastings}{section.B.1}% 112
+\BOOKMARK [2][-]{subsection.B.1.2}{Gibbs Sampler}{section.B.1}% 113
+\BOOKMARK [2][-]{subsection.B.1.3}{Hamiltonian Monte Carlo}{section.B.1}% 114
+\BOOKMARK [1][-]{section.B.2}{Convergence Diagnostics}{appendix.B}% 115
+\BOOKMARK [1][-]{section.B.3}{Additional Figures and Tables}{appendix.B}% 116
+\BOOKMARK [0][-]{appendix.C}{Other Figures and Tables}{chapter*.115}% 117
+\BOOKMARK [0][-]{appendix.D}{Github Repository : Structure}{chapter*.115}% 118

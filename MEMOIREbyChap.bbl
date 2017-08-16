@@ -1,4 +1,4 @@
-\begin{thebibliography}{106}
+\begin{thebibliography}{103}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -206,14 +206,6 @@ C.~Cunnane.
   {Library}, 1979.
 \newblock URL
   \url{http://onlinelibrary.wiley.com/doi/10.1029/WR015i002p00489/abstract}.
-
-\bibitem[Davison et~al.(2012)Davison, Padoan, and
-  Ribatet]{davison_statistical_2012}
-A.~C. Davison, S.~A. Padoan, and M.~Ribatet.
-\newblock Statistical {Modeling} of {Spatial} {Extremes}.
-\newblock \emph{Statistical Science}, 27\penalty0 (2):\penalty0 161--186, 2012.
-\newblock ISSN 0883-4237.
-\newblock URL \url{http://www.jstor.org/stable/41714789}.
 
 \bibitem[de~Haan(1970)]{de_haan_regular_1970}
 L.~de~Haan.
@@ -521,17 +513,6 @@ V.~V. Kharin, F.~W. Zwiers, X.~Zhang, and G.~C. Hegerl.
 \newblock \doi{10.1175/JCLI4066.1}.
 \newblock URL \url{http://journals.ametsoc.org/doi/full/10.1175/JCLI4066.1}.
 
-\bibitem[Klein~Tank and Wijngaard(2002)]{klein_tank_daily_2002}
-A.~M.~G. Klein~Tank and Wijngaard.
-\newblock Daily dataset of 20th-century surface air temperature and
-  precipitation series for the {European} {Climate} {Assessment}.
-\newblock \emph{International Journal of Climatology}, 22\penalty0
-  (12):\penalty0 1441--1453, Oct. 2002.
-\newblock ISSN 1097-0088.
-\newblock \doi{10.1002/joc.773}.
-\newblock URL
-  \url{http://onlinelibrary.wiley.com/doi/10.1002/joc.773/abstract}.
-
 \bibitem[Kolmogorov et~al.(1956)Kolmogorov, Morrison, and
   Bharucha-Reid]{kolmogorov_foundations_1956}
 A.~N. Kolmogorov, N.~Morrison, and A.~T. Bharucha-Reid.
@@ -641,14 +622,6 @@ P.~C.~D. Milly, J.~Betancourt, M.~Falkenmark, R.~M. Hirsch, Z.~W. Kundzewicz,
   573--574, Feb. 2008.
 \newblock ISSN 1095-9203.
 \newblock \doi{10.1126/science.1151915}.
-
-\bibitem[Mudelsee(2014)]{mudelsee_climate_2014}
-M.~Mudelsee.
-\newblock \emph{Climate {Time} {Series} {Analysis}}, volume~51 of
-  \emph{Atmospheric and {Oceanographic} {Sciences} {Library}}.
-\newblock Springer International Publishing, Cham, 2014.
-\newblock ISBN 978-3-319-04449-1 978-3-319-04450-7.
-\newblock URL \url{http://link.springer.com/10.1007/978-3-319-04450-7}.
 
 \bibitem[Naveau et~al.(2017)Naveau, Zwiers, and Aza{\"i}s]{Ribes2017}
 R.~A. Naveau, Philippe, F.~W. Zwiers, and J.-M. Aza{\"i}s.

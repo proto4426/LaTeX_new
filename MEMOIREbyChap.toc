@@ -61,51 +61,49 @@
 \contentsline {section}{\numberline {4.6}Posterior Predictive Distribution}{53}{section.4.6}
 \contentsline {section}{\numberline {4.7}Model Comparison}{53}{section.4.7}
 \contentsline {section}{\numberline {4.8}Bayesian Predictive Accuracy for Model Checking}{54}{section.4.8}
-\contentsline {part}{II\hspace {1em}Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{56}{part.2}
-\contentsline {xpart}{Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{57}{part.2}
-\contentsline {chapter}{\numberline {5}Introduction to the Analysis}{57}{chapter.5}
-\contentsline {section}{\numberline {5.1}Repository for the code : R Package}{58}{section.5.1}
-\contentsline {subsection}{Visualization Tool : Shiny Application}{58}{section*.52}
-\contentsline {section}{\numberline {5.2}Presentation of the Analysis : Temperatures from Uccle}{59}{section.5.2}
-\contentsline {section}{\numberline {5.3}First Analysis : Annual Maxima}{59}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Descriptive Analysis}{59}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}First visualization with simple models}{59}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Trend Analysis : Splines derivatives in GAM}{60}{subsection.5.3.3}
-\contentsline {subsubsection}{Pointwise vs Simultaneous intervals}{61}{section*.57}
-\contentsline {subsubsection}{Methodology}{61}{equation.5.3.2}
-\contentsline {subsubsection}{Final Results}{63}{table.caption.62}
-\contentsline {section}{\numberline {5.4}Comments and Structure of the Analysis }{63}{section.5.4}
-\contentsline {chapter}{\numberline {6}Analysis in Block Maxima}{65}{chapter.6}
-\contentsline {subsection}{Block-length}{66}{section*.65}
-\contentsline {subsection}{R packages for EVT}{66}{section*.66}
-\contentsline {section}{\numberline {6.1}Inference of the Stationary Model}{66}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Return Levels}{67}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Diagnostics}{68}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Stationary Analysis}{70}{subsection.6.1.3}
-\contentsline {subsubsection}{POT}{70}{section*.78}
-\contentsline {section}{\numberline {6.2}Parametric Nonstationary Analysis}{70}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Comparing Different Models}{70}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Selected Model : Diagnostics and Inference}{71}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Improvements with Neural Networks}{73}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Models and Results}{73}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Bagging}{75}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Inference : Confidence intervals by Bootstrap }{76}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Comments and Comparisons with POT}{77}{section.6.4}
-\contentsline {chapter}{\numberline {7}Bayesian Analysis in Block Maxima}{78}{chapter.7}
-\contentsline {section}{\numberline {7.1}Methods }{79}{section.7.1}
-\contentsline {section}{\numberline {7.2}Stationary GEV Model}{80}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Comparison of the Methods}{80}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Final Results}{81}{subsection.7.2.2}
-\contentsline {section}{\numberline {7.3}Nonstationary GEV : Model Comparisons}{81}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Model Comparisons}{81}{subsection.7.3.1}
-\contentsline {section}{\numberline {7.4}Nonstationary GEV with linear model on the Location}{82}{section.7.4}
-\contentsline {subsection}{\numberline {7.4.1}Diagnostics}{84}{subsection.7.4.1}
-\contentsline {subsection}{\numberline {7.4.2}Inference}{86}{subsection.7.4.2}
-\contentsline {subsection}{\numberline {7.4.3}Posterior Predictive Distribution}{87}{subsection.7.4.3}
-\contentsline {subsection}{\numberline {7.4.4}Return Levels}{89}{subsection.7.4.4}
-\contentsline {section}{\numberline {7.5}Remarks and Comparison with Frequentist results}{89}{section.7.5}
-\contentsline {chapter}{Conclusion}{90}{section*.115}
-\contentsline {part}{Appendix}{92}{chapter*.116}
+\contentsline {part}{II\hspace {1em}Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{57}{part.2}
+\contentsline {xpart}{Experimental Framework : Extreme Value Analysis of Maximum Temperatures}{58}{part.2}
+\contentsline {chapter}{\numberline {5}Introduction to the Analysis}{58}{chapter.5}
+\contentsline {section}{\numberline {5.1}Repository for the code : R Package}{59}{section.5.1}
+\contentsline {subsection}{Visualization Tool : Shiny Application}{59}{section*.52}
+\contentsline {section}{\numberline {5.2}Presentation of the Analysis : Temperatures from Uccle}{60}{section.5.2}
+\contentsline {section}{\numberline {5.3}First Analysis : Annual Maxima}{60}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Descriptive Analysis}{60}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}First visualization with simple models}{60}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Trend Analysis : Splines derivatives in GAM}{61}{subsection.5.3.3}
+\contentsline {subsubsection}{Pointwise vs Simultaneous intervals}{62}{section*.57}
+\contentsline {subsubsection}{Methodology}{62}{equation.5.3.2}
+\contentsline {subsubsection}{Final Results}{64}{table.caption.62}
+\contentsline {section}{\numberline {5.4}Comments and Structure of the Analysis }{64}{section.5.4}
+\contentsline {chapter}{\numberline {6}Analysis in Block Maxima}{66}{chapter.6}
+\contentsline {subsection}{Block-length}{67}{section*.65}
+\contentsline {subsection}{R packages for EVT}{67}{section*.66}
+\contentsline {section}{\numberline {6.1}Inference of the Stationary Model}{67}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Return Levels}{68}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Diagnostics}{69}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Stationary Analysis}{71}{subsection.6.1.3}
+\contentsline {subsubsection}{POT}{71}{section*.78}
+\contentsline {section}{\numberline {6.2}Parametric Nonstationary Analysis}{71}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Comparing Different Models}{71}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Selected Model : Diagnostics and Inference}{72}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Improvements with Neural Networks}{74}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Models and Results}{74}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Bagging}{76}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Inference : Confidence intervals by Bootstrap }{77}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Comments and Comparisons with POT}{78}{section.6.4}
+\contentsline {chapter}{\numberline {7}Bayesian Analysis in Block Maxima}{79}{chapter.7}
+\contentsline {section}{\numberline {7.1}Methods }{80}{section.7.1}
+\contentsline {section}{\numberline {7.2}Stationary GEV Model : Algorithms' Comparison}{81}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Comparison of the Methods}{81}{subsection.7.2.1}
+\contentsline {section}{\numberline {7.3}Nonstationary GEV : Model Comparisons}{83}{section.7.3}
+\contentsline {section}{\numberline {7.4}Nonstationary GEV with Linear Model on Location}{84}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Diagnostics}{86}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Inference}{88}{subsection.7.4.2}
+\contentsline {subsection}{\numberline {7.4.3}Posterior Predictive Distribution}{89}{subsection.7.4.3}
+\contentsline {subsection}{\numberline {7.4.4}Return Levels}{91}{subsection.7.4.4}
+\contentsline {section}{\numberline {7.5}Remarks and Comparison with Frequentist results}{92}{section.7.5}
+\contentsline {chapter}{Conclusion}{93}{section*.114}
+\contentsline {part}{Appendix}{95}{chapter*.115}
 \partbegin 
 \contentsline {chapter}{\numberline {A}Statistical tools for Extreme Value Theory}{II}{appendix.A}
 \contentsline {section}{\numberline {A.1}Tails of the distributions}{II}{section.A.1}

@@ -2,7 +2,17 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: MEMOIREbyChap.aux
 The style file: abbrvnat.bst
-Illegal, another \bibstyle command---line 1527 of file MEMOIREbyChap.aux
+Case mismatch error between cite keys watanabe_asymptotic_2010 and Watanabe_asymptotic_2010
+---line 687 of file MEMOIREbyChap.aux
+ : \citation{watanabe_asymptotic_2010
+ :                                   }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys vehtari_practical_2016 and Vehtari_practical_2016
+---line 688 of file MEMOIREbyChap.aux
+ : \citation{vehtari_practical_2016
+ :                                 }
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 1523 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
@@ -57,45 +67,45 @@ Warning--empty journal in northrop_2017_revd
 Warning--can't use both author and editor fields in resnick_extreme_1987
 Warning--empty journal in segers_generalized_2001
 Warning--empty publisher in stan_development_team_stan_2012
-You've used 106 entries,
+You've used 103 entries,
             2773 wiz_defined-function locations,
-            1394 strings with 28826 characters,
-and the built_in function-call counts, 48472 in all, are:
-= -- 4670
-> -- 2341
-< -- 84
-+ -- 805
-- -- 699
-* -- 4021
-:= -- 7631
-add.period$ -- 526
-call.type$ -- 106
-change.case$ -- 528
-chr.to.int$ -- 106
-cite$ -- 222
-duplicate$ -- 2184
-empty$ -- 3974
-format.name$ -- 881
-if$ -- 10149
+            1373 strings with 28155 characters,
+and the built_in function-call counts, 47081 in all, are:
+= -- 4533
+> -- 2280
+< -- 81
++ -- 784
+- -- 681
+* -- 3898
+:= -- 7413
+add.period$ -- 510
+call.type$ -- 103
+change.case$ -- 514
+chr.to.int$ -- 103
+cite$ -- 216
+duplicate$ -- 2122
+empty$ -- 3858
+format.name$ -- 858
+if$ -- 9859
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 129
-newline$ -- 740
-num.names$ -- 424
-pop$ -- 883
+missing$ -- 125
+newline$ -- 718
+num.names$ -- 412
+pop$ -- 862
 preamble$ -- 1
-purify$ -- 445
+purify$ -- 433
 quote$ -- 0
-skip$ -- 1572
+skip$ -- 1530
 stack$ -- 0
-substring$ -- 1872
-swap$ -- 208
-text.length$ -- 9
+substring$ -- 1810
+swap$ -- 202
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1036
+type$ -- 1008
 warning$ -- 10
-while$ -- 443
+while$ -- 430
 width$ -- 0
-write$ -- 1771
-(There were 16 error messages)
+write$ -- 1717
+(There were 18 error messages)

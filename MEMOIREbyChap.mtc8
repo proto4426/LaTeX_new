@@ -1,12 +1,10 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.1}Methods }{\reset@font\mtcSfont 79}{section.7.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.2}Stationary GEV Model}{\reset@font\mtcSfont 80}{section.7.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.2.1}Comparison of the Methods}{\reset@font\mtcSSfont 80}{subsection.7.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.2.2}Final Results}{\reset@font\mtcSSfont 81}{subsection.7.2.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.3}Nonstationary GEV : Model Comparisons}{\reset@font\mtcSfont 81}{section.7.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.3.1}Model Comparisons}{\reset@font\mtcSSfont 81}{subsection.7.3.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.4}Nonstationary GEV with linear model on the Location}{\reset@font\mtcSfont 82}{section.7.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.1}Diagnostics}{\reset@font\mtcSSfont 84}{subsection.7.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.2}Inference}{\reset@font\mtcSSfont 86}{subsection.7.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.3}Posterior Predictive Distribution}{\reset@font\mtcSSfont 87}{subsection.7.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.4}Return Levels}{\reset@font\mtcSSfont 89}{subsection.7.4.4}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.5}Remarks and Comparison with Frequentist results}{\reset@font\mtcSfont 89}{section.7.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.1}Methods }{\reset@font\mtcSfont 80}{section.7.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.2}Stationary GEV Model : Algorithms' Comparison}{\reset@font\mtcSfont 81}{section.7.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.2.1}Comparison of the Methods}{\reset@font\mtcSSfont 81}{subsection.7.2.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.3}Nonstationary GEV : Model Comparisons}{\reset@font\mtcSfont 83}{section.7.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.4}Nonstationary GEV with Linear Model on Location}{\reset@font\mtcSfont 84}{section.7.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.1}Diagnostics}{\reset@font\mtcSSfont 86}{subsection.7.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.2}Inference}{\reset@font\mtcSSfont 88}{subsection.7.4.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.3}Posterior Predictive Distribution}{\reset@font\mtcSSfont 89}{subsection.7.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {7.4.4}Return Levels}{\reset@font\mtcSSfont 91}{subsection.7.4.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.5}Remarks and Comparison with Frequentist results}{\reset@font\mtcSfont 92}{section.7.5}}
