@@ -12,7 +12,7 @@ Case mismatch error between cite keys vehtari_practical_2016 and Vehtari_practic
  : \citation{vehtari_practical_2016
  :                                 }
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 1523 of file MEMOIREbyChap.aux
+Illegal, another \bibstyle command---line 1524 of file MEMOIREbyChap.aux
  : \bibstyle
  :          {ieeetr}
 I'm skipping whatever remains of this command
@@ -32,7 +32,6 @@ I was expecting a `,' or a `}'---line 3277 of file zotero1.bib
  :  note = {Google-Books-ID: dfZecgAACAAJ},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "lafaye_understanding_2009"
 Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
 while executing---line 1347 of file abbrvnat.bst
 Too many commas in name 1 of "Amir AghaKouchak, David Easterling, Kuolin Hsu, Siegfried Schubert, Soroosh Sorooshian" for entry ag_extremes_2013
@@ -67,45 +66,45 @@ Warning--empty journal in northrop_2017_revd
 Warning--can't use both author and editor fields in resnick_extreme_1987
 Warning--empty journal in segers_generalized_2001
 Warning--empty publisher in stan_development_team_stan_2012
-You've used 103 entries,
+You've used 104 entries,
             2773 wiz_defined-function locations,
-            1373 strings with 28155 characters,
-and the built_in function-call counts, 47081 in all, are:
-= -- 4533
-> -- 2280
-< -- 81
-+ -- 784
-- -- 681
-* -- 3898
-:= -- 7413
-add.period$ -- 510
-call.type$ -- 103
-change.case$ -- 514
-chr.to.int$ -- 103
-cite$ -- 216
-duplicate$ -- 2122
-empty$ -- 3858
-format.name$ -- 858
-if$ -- 9859
+            1380 strings with 28403 characters,
+and the built_in function-call counts, 47551 in all, are:
+= -- 4580
+> -- 2301
+< -- 82
++ -- 791
+- -- 687
+* -- 3937
+:= -- 7484
+add.period$ -- 514
+call.type$ -- 104
+change.case$ -- 519
+chr.to.int$ -- 104
+cite$ -- 218
+duplicate$ -- 2142
+empty$ -- 3898
+format.name$ -- 867
+if$ -- 9958
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 125
-newline$ -- 718
-num.names$ -- 412
-pop$ -- 862
+missing$ -- 126
+newline$ -- 724
+num.names$ -- 416
+pop$ -- 869
 preamble$ -- 1
-purify$ -- 433
+purify$ -- 437
 quote$ -- 0
-skip$ -- 1530
+skip$ -- 1546
 stack$ -- 0
-substring$ -- 1810
-swap$ -- 202
+substring$ -- 1837
+swap$ -- 203
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1008
+type$ -- 1019
 warning$ -- 10
-while$ -- 430
+while$ -- 435
 width$ -- 0
-write$ -- 1717
+write$ -- 1732
 (There were 18 error messages)

@@ -37,10 +37,10 @@
 \contentsline {subsection}{\numberline {3.1.2}Modelling in Block Maxima}{35}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}Non-Stationary Extremes}{35}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Block-Maxima}{36}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Return Levels : New Definitions}{38}{section.3.3}
+\contentsline {section}{\numberline {3.3}Return Levels : Definitions}{38}{section.3.3}
 \contentsline {section}{\numberline {3.4}Neural Networks for Nonstationary Series : GEV-CDN}{39}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Generalized Maximum Likelihood}{40}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Architecture of the GEV-CDN Network}{40}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Architecture of the GEV-CDN Network}{41}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Prevent Overfitting : Bagging}{42}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Confidence Intervals : Bootstrapping Methods}{42}{subsection.3.4.4}
 \contentsline {chapter}{\numberline {4}Bayesian Extreme Value Theory}{44}{chapter.4}
@@ -100,7 +100,7 @@
 \contentsline {subsection}{\numberline {7.4.1}Diagnostics}{86}{subsection.7.4.1}
 \contentsline {subsection}{\numberline {7.4.2}Inference}{88}{subsection.7.4.2}
 \contentsline {subsection}{\numberline {7.4.3}Posterior Predictive Distribution}{89}{subsection.7.4.3}
-\contentsline {subsection}{\numberline {7.4.4}Return Levels}{91}{subsection.7.4.4}
+\contentsline {subsection}{\numberline {7.4.4}Return Levels}{90}{subsection.7.4.4}
 \contentsline {section}{\numberline {7.5}Remarks and Comparison with Frequentist results}{92}{section.7.5}
 \contentsline {chapter}{Conclusion}{93}{section*.114}
 \contentsline {part}{Appendix}{95}{chapter*.115}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{103}
+\begin{thebibliography}{104}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -519,6 +519,16 @@ A.~N. Kolmogorov, N.~Morrison, and A.~T. Bharucha-Reid.
 \newblock \emph{Foundations of the theory of probability}.
 \newblock Chelsea Publishing Company, New York, 1956.
 \newblock OCLC: 751236060.
+
+\bibitem[Lafaye~de Micheaux and
+  Liquet(2009)]{lafaye_de_micheaux_understanding_2009}
+P.~Lafaye~de Micheaux and B.~Liquet.
+\newblock Understanding convergence concepts: {A} visual-minded and graphical
+  simulation-based approach.
+\newblock \emph{The American Statistician}, 63\penalty0 (2):\penalty0 173--178,
+  2009.
+\newblock URL
+  \url{http://amstat.tandfonline.com/doi/abs/10.1198/tas.2009.0032}.
 
 \bibitem[Leadbetter(1974)]{leadbetter_extreme_1974}
 M.~R. Leadbetter.

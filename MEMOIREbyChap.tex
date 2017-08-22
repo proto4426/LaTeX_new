@@ -133,6 +133,8 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 	urlcolor=cyan,
 	citecolor=ForestGreen,
 }
+
+
 \usepackage{etoolbox}
 
 
@@ -388,7 +390,7 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 
 
 \begin{center}
-	{\large Juin 2017}
+	{\large Aout 2017}
 \end{center}
 \thispagestyle{empty}
 \newpage
@@ -400,8 +402,8 @@ colorlinks=true,linkcolor=blue,%citecolor=CornflowerBlue,naturalnames=true,hyper
 %\addcontentsline{toc}{chapter}{Abstract}%
 \section*{\centering Abstract}
 \begin{tcolorbox}%[colback=SeaGreen!75!white]
-This thesis provides an in-depth nonstationary analysis on recent official records of annual maximum temperatures in order to statistically evaluate global warming. Relying on various modeling techniques coming from the Extreme Value Theory, we have shown that a nonstationary extreme value Weibull model with a linear model on the location parameter is the preferred model to explain the data among a vast number of parametric and nonparametric models, according to various and carefully chosen information and predictive criteria. We have then proven that the scale is not significantly affected. While this lead us to consider that the global warming is linear in the location of the annual maximum temperatures, other modeling techniques implying splines's derivatives in a generalized additive model had previously shown that the trend on the annual maxima were not simultaneously significant over time.
-While developing theoretical backgrounds on these state-of-the-art methods, this thesis carefully presents the application of these methods that have been conveniently gathered into a repository and R package, enabling efficient automated analysis for the future.
+This thesis provides an in-depth nonstationary analysis of recent official records of annual maximum temperatures in order to statistically evaluate global warming. Relying on various modeling techniques based upon the Extreme Value Theory, this thesis demonstrates that a nonstationary extreme value Weibull model with a linear model on the location parameter is the preferred model to explain data within a vast number of parametric and nonparametric models. This thesis proves that the scale is not significantly affected. Whilst this lead  to consideration that global warming is linear in the location of the annual maximum temperatures, other modeling techniques using splines's derivatives in a generalized additive model have previously shown that the trend on the annual maxima are not simultaneously significant over time.
+While developing theoretical backgrounds on these state-of-the-art methods, this thesis carefully presents the application of these methods that are gathered into a repository and R package, enabling efficient automated analysis for the future.
 
 \thispagestyle{empty}
 \end{tcolorbox}
@@ -423,20 +425,20 @@ While developing theoretical backgrounds on these state-of-the-art methods, this
 {\vfill\null}
 %\addcontentsline{toc}{chapter}{Acknowledgements}%
 \begin{acknowledgements}
-	\textit{I would first like to thank my thesis supervisor Johan Segers for all his help and his guidance during this whole year. The repeated appointments we have had   }
+	\textit{I would first like to thank my thesis supervisor Johan Segers for all his help and his guidance during this whole year. These repeated appointments have made this thesis very interesting. }
 	\newline
 	
-	\textit{I also would like to thank the "Institut Royal de Météorologie" (IRM) of Belgium for his help and his guidance but also for his provided quality datasets.}
+	\textit{I also would like to thank the "Institut Royal de Météorologie" (IRM) of Belgium for his help and his guidance, but also for his provided quality datasets.}
 	\newline
 	
-	\textit{A bit less usual, I would like to thank the open source community such as R or LaTeX can benefit. For me and for a number of student, it has been a nonnegligable source of ideas and the most efficient source of learning.  }
+	\textit{A bit less usual, but I would like to thank the open source community such as R or LaTeX can benefit. For me and for a great number of students, it has been a non-negligible source of ideas and an effective practical source of learning.  }
 	\newline
 	
-	\textit{A bit less usual, but I would like to thank in particular this thesis that permits me to acquire a vast knowledge on various subjects and to develop expertises in the R language. %$25$ credits that are undoubtedly worth the hundred other for this master. 
+	\textit{Also quite less usual, but I would like to thank in particular this thesis that permits me to acquire a vast knowledge on various subjects and to develop expertises in the R language. %$25$ credits that are undoubtedly worth the hundred other for this master. 
 		}
    	\newline
    	
-	\textit{Finally, I want to thank my family and my friends, but also Bernadette and Michel for their support and all the time I have spent  writing in their house for my thesis but also during my whole academic studies.}
+	\textit{Finally, I want to thank my family and my friends, but also Bernadette and Michel for their support and all the time I have spent  writing in their house for my thesis, but also during my whole academic studies.}
 	
 	\thispagestyle{empty}
 \end{acknowledgements}
@@ -503,38 +505,37 @@ For convenience, we place a list of all the abbreviations we will use in the tex
 
 
 Extreme Value Theory (EVT) is concerned with the statistical characterization of \emph{extreme} events. 
-With various other applications such as risk analysis, finance or insurance, this thesis aims at applying the EVT on the broad environmental area, in particular with a meteorological application. Although the other applications can have strong impacts on people lives for example with financial crisis, environmental extremes can often have more dramatic consequences.
-Moreover, the increase in weather extremes in the past decade has brought again more importance to this subject.
+This thesis aims at applying the EVT on broad environmental data, in particular with a meteorological application. EVT could also be applied to other areas such as risk analysis, finance or insurance. Although these are relevant on people's lives, in terms of the number of persons impacted and lives lost.
+Moreover, the increase in weather extremes over the past decade has raised awareness of the importance of this subject.
 
-Think for instance at the major drought events that have been recorded in the past few years in Ethiopia, Australia, United Stated, Eurasia, etc. For example, Pakistan experienced the worst flooding in $80$ years resulting in over two thousands casualties and twenty million people affected. The $2003$ European heatwave killed approximately seventy thousands people, which is more than ten times the number of killed people in September 11 attacks. 
-
-
-Henceforth, the need for EVT in order to analyze these extreme events is compelling.
-Our application comes from an official dataset provided by the "Institut Royal of Météorologie" (IRM) of Uccle. 
-Since the problem facing climate change evidence is often the lack of reliable past data to compare with, we chose a homogeneous dataset with annual temperatures from $1901$ to $2016$. 
+There have been a number of major drought events recorded in the past few years in Ethiopia, Australia, United Stated, Eurasia, etc.  Pakistan, for example, experienced the worst flooding in $80$ years resulting in over two thousand casualties and twenty million people affected. The $2003$ European heat-wave killed approximately seventy thousand people, more than ten times the number of killed people in the September 11 attacks. 
 
 
-Following \citet{kharin_changes_2007}, we can anticipate that climate change affects the extreme weather. Aware of the existence of the temporal increase of the annual maxima but having no prior idea on the form of this evolution, we can summarize the research problem of this thesis as : 
+Hence, the need for EVT to analyze these extreme events is compelling.
+The data are provided by an official intitude, the "Institut Royal of Météorologie" (IRM) of Uccle. 
+As the problem facing climate change evidence is often the lack of reliable past data to compare with, this thesis is based upon a homogeneous dataset with annual temperatures from $1901$ to $2016$. 
+
+
+Following \citet{kharin_changes_2007}, this thesis anticipated that climate change affects extreme weather. Aware of the existence of the temporal increase of the annual maxima but having no prior idea on the form of this evolution, the research problem of this thesis can be summarized as : 
 \vspace{0.1cm}
 \begin{tcolorbox}%[colback=SeaGreen!75!white]
-	Statistically evaluating the nonstatonarity of the sequence of annual maxima in order to assess the climate warming and predict the extreme events associated. 
+	To statistically evaluate the nonstationarity of the sequence of annual maxima in order to assess climate warming and predict the extreme events associated with this climate warming. 
 \end{tcolorbox}
-To this end, we can model these \emph{extremes} with two different approaches : 
+To this end, we can model these \emph{extremes} using two different approaches : 
 
 \begin{itemize}
-	\item Either as maximum observations that occur inside nonoverlapping \emph{blocks} of equal size.
-	In \hyperref[sec::1]{Chapter \textbf{1}} we will present the method of \emph{block-maxima} and derive the Generalized Extreme Value (GEV) distribution.
-	\item Or as observations that \emph{exceed} a certain high \emph{threshold}. Often regarded as more efficient as it can use more observations, this method will be presented in  \hyperref[sec::2]{Chapter \textbf{2}} and is called the \emph{peaks-over-threshold} approach, from which is derived the Generalized Pareto Distribution.
+	\item as maximum observations that occur inside nonoverlapping \emph{blocks} of equal size.
+	In \hyperref[sec::1]{Chapter \textbf{1}}, this thesis presents the method of \emph{block-maxima} and derive the Generalized Extreme Value (GEV) distribution; or-
+	\item as observations that \emph{exceed} a certain high \emph{threshold}. This method, presented in  \hyperref[sec::2]{Chapter \textbf{2}}, is often regarded as more efficient as it can use more observations. It is called the \emph{peaks-over-threshold} approach, from which is derived the Generalized Pareto Distribution.
 \end{itemize}
-Since we deal with an annual sequence, i.e.  maxima over a block of 1 year, the first approach will be prominent.
-While the first chapters restricts the analysis to independent sequences, \hyperref[sec::3]{Chapter \textbf{3}} we will get into the heart of the matter by considering dependent sequences and present tools to model nonstationary sequences.
-Willing to go beyond the somewhat restrictive parametric inferential methods in EVT, we considered a novel flexible model relying on a Neural Networks framework, in order to assess the nonstationarity with a significantly higher number of possible models with an efficient method. 
-\hyperref[sec::bayesian]{Chapter \textbf{\ref{sec::bayesian}}} will present the Bayesian methods that can be applied for our purpose, and that will help us to better take the estimation and predictive uncertainty into account.
+Since this thesis deals with an annual sequence, i.e.  maxima over a block of 1 year, the first approach will be given more attention.
+While the first chapters restrict the analysis to independent sequences, in \hyperref[sec::3]{Chapter \textbf{3}} the thesis will consider dependent sequences and present tools to model nonstationary sequences.
+To go beyond the somewhat restrictive parametric inferential methods in EVT, \hyperref[sec::3]{Chapter \textbf{3}}  will also consider a novel flexible model relying on a Neural Networks framework, in order to assess the nonstationarity with a significantly higher number of possible models with a state-of-the-art method. 
+\hyperref[sec::bayesian]{Chapter \textbf{\ref{sec::bayesian}}} will present the Bayesian methods that can be applied for this purpose, and to take the estimation and predictive uncertainty into account.
 
-The second part will apply these methods on the annual maxima in Uccle. It will start by an in-depth introductory trend analysis on these maxima in \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} in order to strictly evaluate their evolution over time, both with pointwise and simultaneous confidence intervals. 
-\hyperref[sec:anagev]{Chapter \textbf{\ref{sec:anagev}}} will present the application of the EVT with the block-maxima approach with strong emphasis on methods to make a nonstationary GEV analysis.
-\hyperref[sec:anabayes]{Chapter \textbf{\ref{sec:anabayes}}} will conclude the analysis with Bayesian methods, bringing its flexibility by means of new implemented methods.
-
+The second part will apply these methods on the annual maxima in Uccle. \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} will start with an in-depth introductory trend analysis on the maxima  in order to strictly evaluate their evolution over time, both with pointwise and simultaneous confidence intervals. 
+\hyperref[sec:anagev]{Chapter \textbf{\ref{sec:anagev}}} will present the application of the EVT with the block-maxima approach with a strong emphasis on methods to make a nonstationary GEV analysis.
+\hyperref[sec:anabayes]{Chapter \textbf{\ref{sec:anabayes}}} will conclude the analysis using Bayesian methods, and using newly implemented methods to introduce flexibility to the model.
 \thispagestyle{empty}
 
 
@@ -680,14 +681,14 @@ A strict Bayesian analysis will be made in \hyperref[sec:anabayes]{next Chapter 
 \minitoc \thispagestyle{empty}
  \vspace{1cm}
  
-Bayesian analysis is more and more used everywhere. For example in this text,  \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} used a simulation-based Bayesian approach to compare coverage properties of pointwise and simultaneous confidence intervals, while \hyperref[sec:nnxp]{Section \textbf{\ref{sec:nnxp}}} used priors to constraint the domain of the shape parameter or to penalize weights in a neural network's architecture. %This chapter aims at presenting an other 
+Bayesian analysis is used more and more everywhere. For example in this text,  \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} used a simulation-based Bayesian approach to compare coverage properties of pointwise and simultaneous confidence intervals, while \hyperref[sec:nnxp]{Section \textbf{\ref{sec:nnxp}}} used priors to constrain the domain of the shape parameter or to penalize weights in a neural network's architecture. %This chapter aims at presenting an other 
 
-After briefly presenting the available methods in \hyperref[sec:meth]{Section \textbf{\ref{sec:meth}}} and discussing our choice, \hyperref[sec:baystatio]{Section \textbf{\ref{sec:baystatio}}} will briefly present the GEV stationary model in order to compare the three leading algorithms by Bayesian's practitioners for sampling with Markov Chain Monte Carlo. \hyperref[sec:baycomp]{Section \textbf{\ref{sec:baycomp}}} will focus on the comparison of nonstationary models with predictive accuracy criteria in order to select the model that will be carefully analyzed in 
-\hyperref[sec:bay_nonsta]{Section \textbf{\ref{sec:bay_nonsta}}}. Great importance of convergence issues will be given, with great visual demonstrations and comparisons with the results obtained in the last chapter. 
-\hyperref[sec:rem]{Section \textbf{\ref{sec:rem}}} will conclude the chapter by discussing other possibles techniques and will also provide a great summary of the credible (or confidence) intervals obtained for the parameters during this whole text.
+After briefly presenting the available methods in \hyperref[sec:meth]{Section \textbf{\ref{sec:meth}}} and discussing our choice, \hyperref[sec:baystatio]{Section \textbf{\ref{sec:baystatio}}} will present the GEV stationary model in order to compare the three leading algorithms by Bayesian's practitioners for sampling with Markov Chain Monte Carlo. \hyperref[sec:baycomp]{Section \textbf{\ref{sec:baycomp}}} will focus on the comparison of nonstationary models with predictive accuracy criteria in order to select the model that will be analyzed in 
+\hyperref[sec:bay_nonsta]{Section \textbf{\ref{sec:bay_nonsta}}}. Convergence issues will be addressed, with both quantitative criteria and visual demonstrations, and comparisons with the results obtained in the last chapter will be provided. 
+\hyperref[sec:rem]{Section \textbf{\ref{sec:rem}}} will conclude the chapter by discussing other possibles techniques and will also provide a visual summary of all the credible (or confidence) intervals obtained for the parameters during this whole text obtained during this thesis.
 
-This analysis relies on all the scripts with filenames starting with "\texttt{Bayes\_}" in the \textbf{/Scripts-R/} folder of the \href{https://github.com/proto4426/PissoortThesis/}{repository}. Especially \texttt{Bayes\_own\_gev.R} is useful to retrieve the outputs of the chapter.  All the functions created that are used and made available through the package are in /R/\texttt{BayesFunc.R}. Moreover,
-the \texttt{/vignettes/Summary\_Bayesian.html} file in the \href{https://github.com/proto4426/PissoortThesis/}{repository} presents the analysis in details.
+This analysis relies on all the scripts with filenames starting with "\texttt{Bayes\_}" in the \textbf{/Scripts-R/} folder of the \href{https://github.com/proto4426/PissoortThesis/}{repository}. \texttt{Bayes\_own\_gev.R} is especially useful to retrieve the outputs of the chapter.  All the created functions are used and made available in \textbf{/R/}\texttt{BayesFunc.R} and can be used from the package. Moreover,
+the \texttt{/vignettes/Summary\_Bayesian.html} file in the \href{https://github.com/proto4426/PissoortThesis/}{repository} presents the analysis in more details.
 
 \newpage
 \include*{chap7}
@@ -707,42 +708,42 @@ Dans l'introduction et dans la conclusion, ce serait bien de mieux préciser, de
 - les réponses trouvées aux questions énoncées initialement
 \fi
 
-This thesis aimed at statistically assessing the presence of a nonstationary model for a sequence of annual maximum temperatures in Uccle from $1901$ to $2016$ by hand of the Extreme Value Theory. The data were gratefully provided by an official institution in order to evaluate the effects of the climate warming.
-To this end, we have divided the text in two parts that makes a clear separation between the literature review (\hyperref[part1]{Part \textbf{\ref{part1}}}) and the application of the methods (\hyperref[part:xp]{Part \textbf{\ref{part:xp}}}).
+This thesis aimed at statistically assessing the presence of a nonstationary model using a sequence of annual maximum temperatures in Uccle from $1901$ to $2016$  and applying the Extreme Value Theory. Official data was used to evaluate the effects of climate warming.
+To this end, this thesis is divided into two parts to make a clear separation between the literature review (\hyperref[part1]{Part \textbf{\ref{part1}}}) and the application of the methods (\hyperref[part:xp]{Part \textbf{\ref{part:xp}}}).
 
-\hyperref[part1]{Part \textbf{\ref{part1}}} started by presenting the approach of block maxima in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} that models the extremes that occurs inside a block. It introduced the GEV distribution and its parameters that form at the basis of the nonstationary models.
-The second approach of modeling extremes discussed in \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}} aims a modeling the extremes that exceed a certain threshold.
-Since we have decided to work only with annual maxima due to space constraints, we have put more emphasis on the first approach. In order to evaluate the form of the nonstationarity in the sequence,
-\hyperref[sec::3]{Chapter \textbf{\ref{sec::3}}} delivered tools that permitted to go beyond the restrictive independence assumption of the first two chapters. This provided us tools to consider different parametric models for the GEV parameters that will form the basis of the nonstationary analysis, but also a flexible approach using Neural Networks to surpass  the restrictive parametric assumption.
-\hyperref[sec::bayesian]{Chapter \textbf{\ref{sec::bayesian}}} presented the Bayesian analysis applied to the world of extremes which provided us inferential methods that better account for both  estimation and prediction uncertainty. 
+\hyperref[part1]{Part \textbf{\ref{part1}}} stars by presenting the approach of block maxima in \hyperref[sec::1]{Chapter \textbf{\ref{sec::1}}} which models the extremes that occur inside a block. It introduces the GEV distribution and its parameters that form at the basis of the nonstationary models.
+The second approach of modeling extremes discussed in \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}} aims to model the extremes that exceed a certain threshold.
+Since it was decided to work only with annual maxima due to space constraints, this thesis puts more emphasis on the first approach. In order to evaluate the form of the nonstationarity in the sequence,
+\hyperref[sec::3]{Chapter \textbf{\ref{sec::3}}} delivers tools that allows the analysis to go beyond the restrictive independence assumption of the first two chapters. This provides the tools to consider different parametric models for the GEV parameters that will form the basis of the nonstationary analysis, as well as a flexible approach using Neural Networks to surpass  the restrictive parametric assumption.
+\hyperref[sec::bayesian]{Chapter \textbf{\ref{sec::bayesian}}} presents the Bayesian analysis applied to the world of extremes which provides us inferential methods that better account for both  estimation and prediction uncertainty. 
 
-In \hyperref[part:xp]{Part \textbf{\ref{part:xp}}},  \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} introduced the analysis with some methods not from EVT to get first insights on the analysis of the trend. Although the trend were found significant from a simple linear regression, simultaneous intervals based on splines derivatives of a Generalized dditive Model in highlighted that the trend is not significant over time, whilst pointwise intervals emphasized the accelerating trend of the annual maxima in the last $40$ years. This accelerating behavior of the annual maxima in the end of the sequence was confirmed in the end of \hyperref[sec:anagev]{Chapter \textbf{\ref{sec:anagev}}} by a bootstrap aggregated Neural Network which used a deep nonlinear model taking care of overfitting. But before that, we discovered that the best and most parsimonious parametric GEV model had only a linear trend on the location parameter. This was also the model selected by the flexible modeling with Neural Networks according to information criteria that also prevented overfitting, among a large number of models. \hyperref[sec:anabayes]{Chapter \textbf{\ref{sec:anabayes}}} finally confirmed  with predictive accuracy criteria that the nonstationary GEV model with a simple linear model on the location parameter was the best among some carefully chosen parametric models. Hence,
+In \hyperref[part:xp]{Part \textbf{\ref{part:xp}}},  \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} introduces the analysis with other methods not from EVT to provide initial insights on the analysis of the trend. Although the trend were significant from a simple linear regression, simultaneous intervals based on splines derivatives of a Generalized Additive Model highlighted that the trend is not significant over time, whilst pointwise intervals emphasized the accelerating trend of the annual maxima in the last $40$ years. This accelerating behavior of the annual maxima at the end of the sequence was confirmed at the end of \hyperref[sec:anagev]{Chapter \textbf{\ref{sec:anagev}}} by a bootstrap aggregated Neural Network which used a deep nonlinear model that address overfitting. However, prior to this, this thesis identifies that the best and most parsimonious parametric GEV model had only a linear trend on the location parameter. This is the same model selected by the flexible modeling with Neural Network, according to information criteria to prevent overfitting among a large number of models. \hyperref[sec:anabayes]{Chapter \textbf{\ref{sec:anabayes}}} finally confirms  with predictive accuracy criteria that the nonstationary GEV model with a simple linear model on the location parameter is the best among some carefully chosen parametric models. Hence,
 % \textbf{we can conclude with the support of three intrinsically different modeling techniques relying on the GEV distribution that there is a linear trend on the location of the annual maxima in Uccle.} %However, caution should always be put when extrapolating from
 \vspace{.2cm}
 \begin{tcolorbox}
-	we can conclude with the support of three intrinsically different modeling techniques relying on the GEV distribution that there is a linear trend on the location of the annual maxima in Uccle.
+	this thesis concludes, based upon the outcomes of three intrinsically different modeling techniques relying on the GEV distribution that there is a linear trend on the location of the annual maxima in Uccle.
 \end{tcolorbox}
-Nevertheless, a climatologist of the IRM made the important remark that an artificial warming is observed on cities' stations which were significantly less urbanized $100$ years ago, such as Uccle for example. Together with the limitations we specified during the whole \hyperref[part:xp]{Part \textbf{\ref{part:xp}}}, conclusions and interpretations that we can draw from this statistical fact should be tempered by great caution.
+It is important to highlight that a climatologist from IRM noted that artificial warming has been observed on cities' stations which were significantly less urbanized $100$ years ago, including Uccle. This,  with the limitations we specified in \hyperref[part:xp]{Part \textbf{\ref{part:xp}}}, means that the conclusions and interpretations drawn in this thesis should be tempered by great caution.
 \newline
 
-Time and space constraints now lead us to enumerate some methods and attempts for improvements that have not been studied in this thesis : 
+Time and space constraints did not allow this thesis to consider some methods : 
 
 \begin{itemize} 
-\item From the pioneering thesis of \citet{Neal_1996_bay}, \emph{Bayesian Neural Networks} are now widely used for their deep flexibility. In our case and to make it simple, it would roughly means combining the flexibility of the GEV-CDN framework (in the sense of being capable of modelling any relationships)  of \hyperref[sec:nnxp]{Sections \textbf{\ref{sec:nnxp}}} and \hyperref[sec:gevcdn]{ \textbf{\ref{sec:gevcdn}}} with the flexibility of the  Bayesian analysis (in the sense of being able to tune a vast amount of information) of \hyperref[sec::bayesian]{ Chapters \textbf{\ref{sec::bayesian}}} and \textbf{\ref{sec:anabayes}}. Hence, it would be perfect to surpass the restrictive assumption of parametric models that we have considered in the Bayesian chapters.
+\item The \emph{Bayesian Neural Networks}n from the pioneering thesis of \citet{Neal_1996_bay} : these are now widely used for their high level of flexibility. For this thesis and to make it simple, it would have meant roughly combining the flexibility of the GEV-CDN framework of \hyperref[sec:nnxp]{Sections \textbf{\ref{sec:nnxp}}} and \hyperref[sec:gevcdn]{ \textbf{\ref{sec:gevcdn}}} (in the sense of being capable of modeling any relationships)  with the flexibility of the  Bayesian analysis of \hyperref[sec::bayesian]{ Chapters \textbf{\ref{sec::bayesian}}} and \textbf{\ref{sec:anabayes}} (in the sense of being, for example, able to tune a vast amount of information). Hence, it would have been able to surpass the restrictive assumption of parametric models that have been considered in the Bayesian chapters.
 
 %Even if we were not able to execute some dangerous methods such as the Hamiltonian Monte Carlo or the computation of the Bayes factor for example, this thesis allowed to learn by doing 
 
-\item During this whole thesis we considered time as the sole covariate to explain the change in the extreme temperatures. Other covariates could have been included to improve the nonstationary analysis. To name a few : \emph{Southern Oscillation Index} (a proxy for El Niño), the $\text{CO}_2$ level, etc.
-However, most of these are (highly) time-dependent, and linking to a climatological covariate makes
+\item This thesis considers time as the sole covariate to explain the changes in the extreme temperatures. Other covariates could have been included to improve the nonstationary analysis. For example, the \emph{Southern Oscillation Index} (a proxy for El Niño), the $\text{CO}_2$ level, etc.
+However, these alternative covariates are (highly) time-dependent, and linking to a climatological covariate makes the
 extrapolation into the future more difficult as one would need to extrapolate the covariate as well. 
 
 \item Since the IRM is able to provide temperature measurements in real-time, it would be feasible to automate all the methods and the analysis by using similar tools (e.g. in the R package or in a Shiny application) in order to automatically take into account each new observations, providing live updates of the statistical models.
 
-\item \citet{Ribes2017} noticed that winter is becoming especially warmer in the context of climate warming.
-Computationally speaking, it would require only a few changes in order to provide the same analysis as done with maxima. Here again, an automated method would be very easy but really worth implementing.
+\item \citet{Ribes2017} noticed that winter is becoming warmer in the context of climate warming.
+Computationally speaking, it would require only a few changes in order to undertake the same analysis as was undertaken with maxima. Here again, an automated method would be very easy and worth implementing. These different analysis have been introduced a then end of \texttt{1intro\_stationary.R} and the beginning of \texttt{2nonstationary.R}, but we did not use all the methods on these new data.
 \end{itemize}
 
-Finally, we must notice this thesis analyzed the increasing behavior of extreme temperatures, but it did neither study the causality of this change nor made an extensive analysis of the anthropogenic nature of the global warming, which is often the big issue.
+Finally, this thesis analyzes the increasing behavior of extreme temperatures, but it does study the causality of this change nor make an extensive analysis of the anthropogenic nature of the global warming, which is often the big issue.
 
 \thispagestyle{empty}
 

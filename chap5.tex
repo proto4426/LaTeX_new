@@ -7,19 +7,19 @@ The created \textbf{R package} can be easily downloaded from this \href{https://
 \end{center}
 by following instructions in the README. It follows the standard structure of a usual R package (see e.g. \citet{leisch_creating_2008}) and makes use of the \texttt{roxygen2} package for the documentation.
 
-For the reader's convenience, an external folder has been created in the above repository containing all the scripts created during this thesis. It allows reproduction of the results often with more details, tables or plots. It is located in the \textbf{/Scripts-R/} folder of the repository. Each script will be mentionned in its corresponding section. Further details on the repository structure can be found in \hyperref[appgit]{Appendix \textbf{\ref{appgit}}}.
+For the reader's convenience, an external folder has been created in the above repository containing all the scripts created during this thesis. It allows reproduction of the results often with more details, tables or plots. It is located in the \textbf{/Scripts-R/} folder of the repository, but note that each script will be mentioned in its corresponding section. Further details on the repository structure can be found in \hyperref[appgit]{Appendix \textbf{\ref{appgit}}}.
 
 \addcontentsline{toc}{subsection}{Visualization Tool : Shiny Application}
 \subsection*{Visualization Tool : Shiny Application}
 
-Shiny applications that have been developed can be run directly through the R environment after loading the package in your environment, by executing 
+Shiny applications that have been developed can be run directly through the R environment after loading the package in your environment, by executing the following command
 
 \begin{center}
 \begin{lstlisting}[language=R]
 runExample()  # in the R console,
 \end{lstlisting}
 \end{center}
-choosing one applications's name between the displayed propositions and write it inside (' ').
+and by choosing one applications's name between the displayed propositions and write it inside (' ').
 So far, we have
 \begin{itemize}
 	\item[-]('GEV\_distributions') :  application based on Figure \ref{gevdens} smoothly displaying the GEV and the influence of its parameters.
@@ -140,7 +140,7 @@ $50$ posterior draws are displayed in Figure \ref{fig:post_draws} %let in \hyper
 \end{itemize}
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=.75\linewidth]{post_draws.pdf}\caption{Draws from the posterior distribution of the model. Notice the large uncertainty associated to the posterior draws (grey lines).  The coverages are calculated for $M=10^4$ simulations. }\label{fig:post_draws}
+	\centering	\includegraphics[width=.75\linewidth]{post_draws.pdf}\caption{Draws from the posterior distribution of the model (\ref{eq:gam}). Notice the large uncertainty associated to the posterior draws (grey lines).  The coverages are calculated for $M=10^4$ simulations. }\label{fig:post_draws}
 \end{figure}
 
 \subsubsection*{Coverage Analysis} 
@@ -161,7 +161,7 @@ To highlight the inadequacy of the pointwise intervals, we computed posterior dr
 \end{table}
 We can see that the coverages converge to the true value $95\%$ of the confidence level for the simultaneous intervals when $M$ becomes very large, while it converges to $\approx 60\%$ for the pointwise intervals.
 
-Shiny application has been build from this graph for better visualization of the impact of the number of simulations on the confidence intervals and how coverage varies, both visually and quantitatively.
+A Shiny application has been build from this graph for better visualization of the impact of the number of simulations on the confidence intervals and how coverage varies, both visually and quantitatively.
 Finally, note that the results are similar if we do the experiment on the first derivatives $f^{'}(\cdot)$ of the splines rather than on the splines themselves.
 
 

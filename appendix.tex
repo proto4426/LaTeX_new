@@ -30,7 +30,7 @@ The distribution of a random variable $X$ is said to have a \emph{fat} \emph{tai
 
 \begin{definition}[Long-tails]
 The distribution of a random variable X with distribution function F is said to have a \emph{long} 
-right \emph{tail} if $\forall t > 0$,
+right \emph{tail} if,  $\forall t > 0$,
 \begin{equation}
 \displaystyle{\lim_{x \to \infty}} \ \Pr\{X>x+t|X>x\}=1 \ \Leftrightarrow \ 
 \bar{F}(x+t)\sim\bar{F}(x) \quad \text{as} \ x\to\infty.
@@ -94,7 +94,7 @@ We say that a sequence of random variables $X_n$ \emph{converges almost surely} 
 We can denote this by $X_n\stackrel{\text{a.s.}}{\rightarrow} X$. This means that the values of $X_n$ approach the value of $X$, in the sense that events for which $X_n$ does not converge to $X$ have probability 0.
 
 
-Well other forms of convergence do exist, but these ones are the most important in regard to EVT. However, the reader may refer e.g. to \citet{lafaye_understanding_2009}  for more in-depth results.
+Well other forms of convergence do exist, but these ones are the most important in regard to EVT. However, the reader may refer e.g. to \citet{lafaye_de_micheaux_understanding_2009}  for more in-depth results.
 
 \section{Varying functions}\label{app:varying}
 
@@ -112,7 +112,7 @@ We say that a function $f$ is \textbf{slowly varying} if
 \displaystyle{\lim_{x \to \infty}} \frac{f(t x)}{f(x)}=1, \qquad t>0. 
 \end{equation}
 \end{definition}
-We remark that a slowly varying function is a regularly varying function with index 0.
+We notice that a slowly varying function is a regularly varying function with index 0.
 
 
 
@@ -121,14 +121,14 @@ We remark that a slowly varying function is a regularly varying function with in
 From \citet[pp.18-36]{beirlant_practical_1996}, together with the nice view of \citet[pp.36-37]{coles_introduction_2001}, we present two major diagnostic tools which aim at assessing the fit of a particular model (or distribution) against the real distribution coming from the data used to construct the model.
 These are called the \emph{quantile-quantile} plot (or \emph{qq}-plot) and the \emph{probability} plot (or \emph{pp}-plot). 
 
-These diagnostics are popular by their easy interpretation and by the fact that they can both have graphical (i.e. subjective, qualitative, quick) view but also a more precise (i.e. objective, quantitative, rigorous) analysis can be derived, for example from the theory of linear regression. 
+These diagnostics are popular by their easy interpretation and by the fact that they can both have graphical (i.e. subjective, qualitative, quick) view but also a more precise and objective analysis can be derived, for example from the theory of linear regression ; see e.g. \citet[chap.1]{beirlant_statistics_2006}. 
 \newline
-For these two diagnostic tools, we use the order statistics as seen (\ref{ordereds}) but now we rather consider an \textbf{ordered sample} of independent \textbf{observations} :
+We use the order statistics as seen (\ref{ordereds}) but now we rather consider an \textbf{ordered sample} of independent \textbf{observations} :
 
 \begin{equation} \label{ordersamp}
 x_{(1)}\leq x_{(2)}\leq\dots\leq x_{(n)}
 \end{equation}
-coming from a population from which we fit the estimated model (distribution) $\hat{F}$ and where $x_{(1)}$ (resp. $x_{(n)}$) is thus the minimum (resp. maximum) observation in the sample. We also define the \textbf{empirical distribution function}
+coming from a population from which we fit the estimated model (distribution) $\hat{F}$ and where $x_{(1)}$ (resp. $x_{(n)}$) is thus the minimum (resp. maximum) observation in the sample. We also define the \emph{empirical distribution function}
 \begin{equation}\label{eq:emprdist}
 \tilde{F}(x)=\frac{i}{n+1}, \qquad\quad x_{(i)}\leq x\leq x_{(i+1)}.
 \end{equation}
@@ -144,7 +144,7 @@ We used the continuity correction $\frac{i}{n+1}$ to prevent problems at the bor
 Note that a disadvantage of Q–Q plots is that the shape of the selected
 parametric distribution is no longer visible \citet[pp.63]{beirlant_statistics_2006}
 
-\subsubsection*{Probability plot} Given the same sample in (\ref{ordersamp}), a \emph{probability plot} consists of the locus of points 
+\subsubsection*{Probability plot} Given the ordered sample (\ref{ordersamp}), a \emph{probability plot} consists of the locus of points 
 
 \begin{equation}
 \Bigg\{\bigg(\hat{F}(x_{(i)})\ ,\ \frac{i}{n+1}\bigg) \ : \ i=1,\dots,n\Bigg\}.
@@ -156,7 +156,7 @@ From these two graphical diagnostic tools, the interpretation is the same and we
 Besides the fact that the probability and the quantile plots contain the same information, they are expressed in a different scale. That is, after changing the scale to probabilities or quantiles (with probability or quantile transforms), one can gain a better perception and both visualizations can sometimes lead contradictory conclusions, especially in the graphical inspection. Using both is thus preferable to make our model's diagnostic more robust.
 
 \section{Estimators Based on Extreme Order Statistics for EVI}\label{sec:infevi}
-The following estimators allow to estimate the EVI $\xi$. 
+The following estimators allow to estimate the EVI. 
 
 \subsection*{Pickands estimator}
 
@@ -166,18 +166,18 @@ First introduced by \cite{iii_statistical_1975-1}, this method can be applied $\
 \begin{equation}
 \hat{\xi}^P_{k}= \frac{1}{\ln 2}\ln \Bigg(\frac{X_{n-\lceil k/4\rceil +1,n}-X_{n-\lceil k/2\rceil+1,n}}{X_{n-\lceil k/2\rceil +1,n}-X_{n-k+1,n}}\Bigg),
 \end{equation}
-where we recall that $\lceil x\rceil$ denotes the integer (ceil) part of $x$.
+where we recall that $\lceil x\rceil$ denotes the integer ceil part of $x$.
 
 A condition for the consistency of this estimator is that $k$ must be chosen such that $k/n\rightarrow 0$ as $n\rightarrow \infty$. This condition will hold for the following estimators based on order statistics.
 
 A problem with this intuitive estimator is that its asymptotic variance is very large (see e.g. \cite{dekkers_estimation_1989}) and depends highly on the value of $k$. To improve this, we can quote the estimator of \cite{segers_generalized_2001} which is globally more efficient.%, depending on the value of an extra "parameter".
 
 
+\vspace{0.1cm}
+The following estimators are only valid for $\xi>0$. In general in EVT, this condition holds (rainfall data, finance, risk analysis, etc.) but in our application we know that $\xi$ is likely to be negative and hence, the following estimators cannot be used.
 
-The following estimators are only valid for $\xi>0$. In general in EVT, this condition should hold (rainfall data, finance, risk analysis,...) but in our application we know that $\xi$ is likely to be negative and hence, the following estimators cannot be used.
 
-
-\subsection*{Hill estimator}
+\subsection*{Hill estimator ($\xi>0$)}
 
 
 This is probably the most simple EVI estimator thanks to the intuition behind its construction. There exists plenty of interpretations to construct it (see e.g. \citet[pp.101-104]{beirlant_statistics_2006}). 
@@ -196,10 +196,10 @@ Following e.g. \cite{dehaan_asymp_1998}, this estimator is consistent under cert
 	\item Severe bias due to the heavy-tails of the distribution and thus the slowly varying component which influences negatively.
 	\item Inadequacy with shifted data.
 \end{itemize}
-Hence, this estimator should be carefully used.
+Hence, this estimator should be used with attention.
 
 
-\subsection*{Moment estimator}
+\subsection*{Moment estimator ($\xi>0$)}
 
 Introduced by \cite{dekkers_moment_1989}, this estimator is a direct generalization of the Hill estimator presented above. It is defined as
 
@@ -210,7 +210,7 @@ where
 \begin{equation*}
 \hat{\xi}^{H^{(2)}}_k=k^{-1}\sum_{i=1}^k\big(\ln X_{n-i+1,n}-\ln X_{n-k,n}\big)^2.
 \end{equation*}
-This estimator is also consistent.  
+This estimator is also consistent under certain conditions.  
 
 
 %\subsection*{Estimator based on generalized quantile plot}To overcome the lack of graphical interpretation of the usual moment estimator, 
@@ -223,7 +223,7 @@ This estimator is also consistent.
 
 \subsection{Metropolis–Hastings}\label{app:mh}
 
-This algorithm remains valid when $\pi$ is only proportional to a target density function and thus it can be used to approximate \ref{bayeseq}. 
+This algorithm remains valid when $\pi$ is only proportional to a target density function, and hence it can be used to approximate \ref{bayeseq}. 
 
 \begin{algorithm}[H]
 	\SetAlgoLined
@@ -231,7 +231,7 @@ This algorithm remains valid when $\pi$ is only proportional to a target density
 		\item Pick a starting point $\theta_0$ and fix some number $N$ of simulations.
 		\item \textbf{For} $t=1,\dots,N$ \quad \textbf{do}
 		\begin{itemize}
-			\item[(a)] Sample proposal $\theta_*$ from a proposal density $p_t(\theta_*|\theta_{t-1})$,
+			\item[(a)] Sample proposal $\theta_*$ coming from a proposal density $p_t(\theta_*|\theta_{t-1})$,
 			\item[(b)] Compute the ratio
 			\begin{equation*}
 			r = \frac{\pi(\theta_*|\boldsymbol{x})\cdot p_t(\theta_{t-1}|\theta_*)}{\pi(\theta_{t-1}|\boldsymbol{x})\cdot p_t(\theta_*|\theta_{t-1})} = \frac{\pi(\theta_*)\cdot \pi(\boldsymbol{x}|\theta_*)\cdot p_t(\theta_{t-1}|\theta_*)}{\pi(\theta_{t-1})\cdot \pi(\boldsymbol{x}|\theta_{t-1})\cdot p_t(\theta_*|\theta_{t-1})}.
@@ -246,8 +246,8 @@ This algorithm remains valid when $\pi$ is only proportional to a target density
 	\end{enumerate}
 	\caption{The Metropolis–Hastings Algorithm}\label{algo:mh}
 \end{algorithm}
-The complex integral in the denominator of (\ref{bayeseq}) cancels in $r$ and we are just left with the unnormalized density.
-Note that the proposal density is often chosen to be symmetric, so that we will sample under a "simple MH" algorithm where $r$ is simply the ratio of the posterior densities, i.e. 
+The complex integral in the denominator of (\ref{bayeseq}) cancels in $r$,  leaving us with the unnormalized density.
+Note that the proposal density is often chosen to be symmetric, so that we will sample under the "Metropolis" algorithm, where $r$ is simply the ratio of the posterior densities,
 
 \begin{equation} r=\frac{\pi(\theta_*|\boldsymbol{x}) }{\pi(\theta_{t-1}|\boldsymbol{x})}.
 \end{equation}
@@ -260,7 +260,7 @@ We defined the remaining subvectors at their current values $t-1$ when subvector
 \begin{equation*}
 \theta_{t-1}^{(-j)}=\Big(\theta_t^{(1)},\dots,\theta_t^{(j-1)},\theta_{t-1}^{(j+1)},\dots,\theta_{t-1}^{(d)}\Big),
 \end{equation*} 
-and each $\theta_t^{(j)}$ is sampled from $\pi\Big(\theta^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)$. 
+where each $\theta_t^{(j)}$ is sampled from $\pi\Big(\theta^{(j)}|\theta_{t-1}^{(-j)},\boldsymbol{x}\Big)$. 
 
 \begin{algorithm}[H]
 	\SetAlgoLined
@@ -269,7 +269,7 @@ and each $\theta_t^{(j)}$ is sampled from $\pi\Big(\theta^{(j)}|\theta_{t-1}^{(-
 		\item \textbf{For} $t=1,\dots,N$ \qquad \textbf{do} \\
 		\quad \textbf{For} $j=1,\dots,d$ \qquad \textbf{do}
 		\begin{itemize}
-			\item[(a)] Sample proposal $\theta_*$ from a proposal density $p_{t,j}(\theta^{(j)}_*|\theta^{(j)}_{t-1})$,
+			\item[(a)] Sample proposal $\theta_*$ from a proposal density $p_{t,j}\Big(\theta^{(j)}_*|\theta^{(j)}_{t-1}\Big)$,
 			\item[(b)] Compute the ratio
 			\begin{equation}\label{eq:gibalgo}
 			\begin{aligned}
@@ -307,10 +307,8 @@ but it cannot simplify (\ref{eq:gibalgo}). It is usually taken to be the univari
 
 \subsection{Hamiltonian Monte Carlo}\label{app:hmc}
 
-%\url{http://deeplearning.net/tutorial/hmc.html#hmc} \\
-
 \begin{definition}[Total energy of a closed system : Hamiltonian function]
-	For a certain particle; Let $\pi(\theta)$ be the posterior distribution and let $\boldsymbol{p}\in\mathbb{R}^d$ denote a vector of auxiliary parameters independent of $\theta$ and distributed as $\boldsymbol{p}\sim N(\boldsymbol{0},\boldsymbol{M})$. We can interpet $\theta$ as the position of the particle and $-\log\pi(\theta|\boldsymbol{x})$ describes its potential energy while $\boldsymbol{p}$ is the momentum with kinetic energy $\boldsymbol{p^{'}M^{-1}p}\cdot2^{-1}$. Then the total energy of a closed system is the Hamiltonian function 
+	For a certain particle; Let $\pi(\theta)$ be the posterior distribution and let $\boldsymbol{p}\in\mathbb{R}^d$ denote a vector of auxiliary parameters independent of $\theta$ and distributed as $\boldsymbol{p}\sim N(\boldsymbol{0},\boldsymbol{M})$. We can interpet $\theta$ as the position of the particle and $-\log\pi(\theta|\boldsymbol{x})$ describes its potential energy, while $\boldsymbol{p}$ is the momentum with kinetic energy $\boldsymbol{p^{'}M^{-1}p}\cdot2^{-1}$. Then the total energy of a closed system is the \textbf{Hamiltonian function }
 	\begin{equation}
 	\mathcal{H}(\theta,\boldsymbol{p})=-\mathcal{L}(\theta)+\boldsymbol{p'M^{-1}p}\cdot 2^{-1}, \qquad\text{\emph{where}}\qquad \mathcal{L}(\theta)=\log\pi(\theta).
 	\end{equation}
@@ -323,13 +321,13 @@ f(\theta,\boldsymbol{p})\propto \pi(\theta)\cdot\exp\{-\boldsymbol{p'M^{-1}p}\cd
 Following \cite{hartmann_bayesian_2016}, the idea is to use the Hamiltonian dynamics equations (not shown here) to model the evolution of a particle that keep the total energy constant.
 Introducing the auxiliary variables $\boldsymbol{p}$ and using gradients will lead to a more efficient exploration of the parameter space.
 
-These differential equations cannot be solved so numerical integrators are required, for instance the \emph{Störmer-Verlet} which will introduce discretization. A MH step is then required to correct the error and ensure convergence.  The new proposal $\mathcal{X}_*=(\theta_*,\boldsymbol{p}_*)$ will be accepted with probability 
+These differential equations cannot be solved so numerical integrators are required, for instance the \emph{Störmer-Verlet} which will introduce discretization. A MH acceptance step is then required to correct the error and ensure convergence.  The new proposal $\mathcal{X}_*=(\theta_*,\boldsymbol{p}_*)$ will be accepted with probability 
 
 \begin{equation}
 \alpha\big(\mathcal{X},\mathcal{X}_*\big)=\min\Bigg[\frac{f(\theta_*,\boldsymbol{p}_*)}{f(\theta,\boldsymbol{p})},1\Bigg]=\min\Big[\exp\big\{\mathcal{H}(\theta,\boldsymbol{p})-\mathcal{H}(\theta_*,\boldsymbol{p}_*)\big\}\ ,\ 1\Big].
 \end{equation}
-As $\boldsymbol{M}$ is symmetric positie definite, $\boldsymbol{M}=m\boldsymbol{I}_d$. 
-Then we can summarize the \hyperref[algo_hmc]{HMC algorithm} in its 'simplest' form :
+As $\boldsymbol{M}$ is symmetric positive definite, $\boldsymbol{M}=m\boldsymbol{I}_d$. 
+We can summarize the \hyperref[algo_hmc]{HMC algorithm} in its 'simplest' form :
 
 \begin{algorithm}[H]\label{algo_hmc}
 	\SetAlgoLined
@@ -368,12 +366,12 @@ Chains are expected to reach stationarity faster as it proposes moves to regions
 
 \subsubsection*{Gelman-Rubin diagnostic : the $\hat{R}$ statistic}
 
-Discussed in item \ref{convdiag4} in \hyperref[sec:convbay]{Section \textbf{\ref{sec:convbay}}}, it is important that the chains mix well. Having $J$ chains $\theta_{i,j}$ of same size $I$ each with different starting values, the goal is to estimate the Between and Within-sequences posterior variances
+Discussed in \hyperref[sec:convbay]{Section \textbf{\ref{sec:convbay}}}, it is important that the chains mix well. Having $J$ chains $\theta_{i,j}$ of same size $I$ each with different starting values, the goal is to estimate the Between and Within-sequences posterior variances
 
 \begin{equation*}
 B= \frac{I}{J-1}\sum_{j=1}^J\big(\bar{\theta}_{\cdot j} - \bar{\theta}_{\cdot \cdot}\big)^2 \quad \text{and}\quad W=\frac{1}{J}\sum_{j=1}^Js^2_j \quad \text{where} \ s^2_j=\frac{1}{I-1}\sum_{i=1}^I\big(\theta_{ij}-\bar{\theta}_{\cdot j}\big)^2.
 \end{equation*}
-If all the have converged to the stationary distribution, they will share the same limiting posterior variance, with $W$ and $B$ being unbiased estimates of the variance. An unbiased estimate of the overall variance is given by 
+If all the chains have converged to the stationary distribution, they will share the same limiting posterior variance, with $W$ and $B$ being unbiased estimates of the variance. An unbiased estimate of the overall variance is given by 
 
 \begin{equation}
 \hat{V}(\theta|\boldsymbol{x})=\frac{I-1}{I}\cdot W+ \frac{1}{I}\cdot B.
@@ -400,13 +398,13 @@ Practically, the procedure starts with the first half of the chain partitioned i
 
 \subsubsection*{The problem of auto- and cross-correlations in the chains}
 
-The \emph{within} or \emph{between} dependence influences the accuracy of the posterior estimates. As dependence becomes stronger, we must increase the run-length $N$ to achieve the same precision. 
-There exists exists 2 problems of correlations in the output delivered by a MC. 
+The \emph{within} or \emph{between} dependence in the generated chains influence the accuracy of the posterior estimates. As dependence becomes stronger, we must increase the run-length $N$ to achieve the same precision. 
+There exists two problems of correlations in the output delivered by a MC. 
 
 \begin{itemize}
-	\item \textbf{Autocorrelation} calculates the serial correlation within a single chain being monitored. High autocorrelations within chains indicate slow mixing and slow convergence, and perhaps a need for reparametrization.
+	\item \textbf{Autocorrelation} which calculates the serial correlation within a single chain being monitored. High autocorrelations within chains indicate slow mixing and slow convergence, and perhaps a need for reparametrization.
 	
-	\item \textbf{Cross-correlation} is the correlation between the monitored variables for each chain. High correlation among parameters also slower convergence and may indicate a need for reparametrization. 
+	\item \textbf{Cross-correlation} is the correlation between the monitored variables for each chain. High correlation among parameters also slower convergence and may also indicate a need for reparametrization. 
 \end{itemize}
 The dependence structure within a single chain can be approximated by an AR$(1)$, i.e. 
 
@@ -417,12 +415,12 @@ At stationarity, i.e. when $\rho\in(0,1)$, the mean $\bar{\theta}$ of $n$ elemen
 
 \begin{equation*} V(\bar{\theta})=\sigma^2\cdot \bigg(N\cdot \frac{1-\rho}{1+\rho}\bigg)^{-1},
 \end{equation*}
-and hence, the \emph{effective sample size} is 
+and hence, we can calculate the \emph{effective sample size} 
 
 \begin{equation}\label{eq:neff}
 \begin{aligned}
 N_{\text{eff}} = & \ N\cdot \bigg( \frac{1-\gamma(1)}{1+\gamma(1)}\bigg) \\
-= & \ N\cdot \Big(1+2\sum_k\gamma(k)\Big)^{-1}
+= & \ N\cdot \Big(1+2\sum_k\gamma(k)\Big)^{-1},
 \end{aligned}
 \end{equation}
 following \citet{hartmann_bayesian_2016} for the second equality, where $\gamma(k)$ is the observed monotone $k$-th order autocorrelation.
@@ -431,8 +429,8 @@ following \citet{hartmann_bayesian_2016} for the second equality, where $\gamma(
 The diagnostic of \citet{raftery1992}  is a run length control diagnostic based on a criterion of accuracy of estimation of a certain quantile, in order to inform whether the number of iterations is too small. The criterion is based on the autocorrelation inside the generated samples, and informs us about the minimum sample size required for a chain with no correlation between consecutive samples.
 
 
-\paragraph*{Thinning} It is a method that aims at reducing the autocorrelation of a chain by only storing iteration $k$ only if $k\mod t_h$ is zero (and if $k$ greater than or equal to the burn-in B), where $t_h$ is called the thinning interval.
-The iterations that have been stored are assumed to be sampled from the target distribution of the original chain, but with reduced dependence within the chain.
+\paragraph*{Thinning} It is a method that aims at reducing the autocorrelation of a chain by storing iteration $k$ only if $k\mod t_h$ is zero (and if $k$ greater than or equal to the burn-in B), where $t_h$ is called the thinning interval.
+The iterations that have been stored are assumed to be sampled from the same target distribution of the original chain, but with reduced dependence within the chain.
 Following \citet{bay_thin_2012}, thinning will typically reduces the precision of posterior estimates since it reduces the number of kept samples, but it may still represent a necessary computational saving.
 
 
@@ -450,13 +448,13 @@ Following \citet{bay_thin_2012}, thinning will typically reduces the precision o
 \fi 
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=1\linewidth]{traceall.pdf}	\caption{ Chains of the two usual Bayesian algorithms. Acceptance rate is $\approx0.21$ of the MH and individual acceptances rates all between $0.42$ and $0.50$ for the Gibbs sampler. In the HMC, $49$ iterations are divergent and the acceptance statistic is of $0.94$.
+	\centering	\includegraphics[width=1\linewidth]{traceall.pdf}	\caption{ Traceplots of the single chains chains generated by the three usual Bayesian algorithms considered. Acceptance rate is $\approx0.21$ of the MH and individual acceptances rates all between $42\%$ and $50\%$ for the Gibbs sampler. In the HMC, $49$ iterations are divergent and the acceptance rate statistic is of  $94\%$.
 	We ran one single chain for all algorithms with the same starting values.}\label{fig:mhgibhmc}
 \end{figure}
 
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=0.7\linewidth]{gelmdiag.pdf}\caption{Gelman-Rubin diagnostic : $\hat{R}$ statistic computed by iterations, for each parameters. We refined the basic plot provided by \texttt{coda} in order to put the four graphs on the same $y$-scale, for comparison purposes.}\label{fig:gelmdiag}
+	\centering	\includegraphics[width=0.7\linewidth]{gelmdiag.pdf}\caption{Gelman-Rubin diagnostic : $\hat{R}$ statistic computed by each repeating blocks of iterations, for each parameters. We refined the basic plot provided by \texttt{coda} in order to put the four graphs on the same $y$-scale, for comparison purposes.}\label{fig:gelmdiag}
 \end{figure}
 
 
@@ -465,7 +463,7 @@ Following \citet{bay_thin_2012}, thinning will typically reduces the precision o
 \end{figure}
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=0.5\linewidth]{crosscorr.pdf}\caption{Cross-correlation between each of the parameters' Markov chains}\label{fig:crosscorr}
+	\centering	\includegraphics[width=0.5\linewidth]{crosscorr.pdf}\caption{Cross-correlation between each of the parameters' Markov chains.}\label{fig:crosscorr}
 \end{figure}
 
 
@@ -508,7 +506,7 @@ Regarding our future application, that is maximum temperatures, it is relevant t
 
 
 \begin{figure}[!htb]
-	\includegraphics[width=1\linewidth]{violin_density.pdf}\caption{ Violin-plot and density plot for each seasons. (Right) vertical dotted lines represent the mean of each distribution.}\label{fig:violin_density}
+	\includegraphics[width=1\linewidth]{violin_density.pdf}\caption{ Violin-plot (left) and density plots (right) for each seasons. In the density plots, vertical dotted lines represent the mean of each distribution.}\label{fig:violin_density}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -561,7 +559,7 @@ MA(2)  & $6$ & $494.698$ & $511.219$ \\
 
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=.95\linewidth]{acf_gev.pdf}\caption{ACF and PACF for the series of annual maxima.}\label{fig:acf_gev}
+	\centering	\includegraphics[width=.95\linewidth]{acf_gev.pdf}\caption{Autocorrelation functions for the series of annual maxima.}\label{fig:acf_gev}
 \end{figure}
 
 
@@ -575,8 +573,6 @@ MA(2)  & $6$ & $494.698$ & $511.219$ \\
 
  \begin{table}[!htbp]
  	\centering 
- 	\caption{Estimation of the bootstrap aggregated GEV-CDN model with 2 hidden layers for $\sigma(t)$ and $\mu(t)$, and $M=500$ resamples. In red are denoted rough estimates of the nonstationary parameters as if the model were parametric for both parameters $\sigma(t)= \exp (\alpha_0+\alpha_1\cdot t)$ and $\mu(t)=\beta_0+\beta1\cdot t$. But this is actually not reliable since there are 2 hidden layers, and only the shape parameter can be reliably estimated.} 
- 	\label{tab:estnnbag} 
  	\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
  		\toprule
  		& Location $\beta_0$ & Location $\beta_1$ & Scale $\alpha_0$ & Scale $\alpha_1$ &  Shape $\xi$ \\ 
@@ -584,6 +580,8 @@ MA(2)  & $6$ & $494.698$ & $511.219$ \\
  		Estimates& $\textcolor{red}{29.19}$& $\textcolor{red}{0.0242}$ & $\textcolor{red}{0.686}$  &  $\textcolor{red}{-0.0012}$ & $-0.199$ \\ 
  		\bottomrule
  	\end{tabular} 
+ 	 	\caption{Estimation of the bootstrap aggregated GEV-CDN model with 2 hidden layers for $\sigma(t)$ and $\mu(t)$, and $M=500$ resamples. In red are denoted rough estimates of the nonstationary parameters as if the model were parametric for both parameters $\sigma(t)= \exp (\alpha_0+\alpha_1\cdot t)$ and $\mu(t)=\beta_0+\beta1\cdot t$. But this is actually not reliable since there are 2 hidden layers, and only the shape parameter can be reliably estimated.} 
+ 	 	\label{tab:estnnbag} 
  \end{table} 
  
  
@@ -624,7 +622,7 @@ MA(2)  & $6$ & $494.698$ & $511.219$ \\
 
 \chapter{Github Repository : Structure}\label{appgit}
 
-From the huge amount of code needed to do the analysis, we decided to divide it so that it will be more conveniently used and read. It was also needed to create a R package to gather all the functions created.
+From the huge amount of code needed for the analysis, we decided to divide it so that it will be more conveniently used and read. It was also preferred to create a R package to gather all the functions created.
 The Github \href{https://github.com/proto4426/PissoortThesis/}{repository} build for this thesis can be found on this address :
 
 \begin{center}
@@ -633,7 +631,7 @@ The Github \href{https://github.com/proto4426/PissoortThesis/}{repository} build
 where the R package \textbf{\texttt{PissoortThesis}} is located. The README file contains valuable information to install the package and provide an overview of the Shiny applications. It has the following structure, with \texttt{files} divided in \textbf{/folders/} : 
 
 \begin{itemize}
-\item \textbf{/R/} : Folder containing the scripts with all the functions that have been build for this thesis a,d are made available through the package. 
+\item \textbf{/R/} : Folder containing the scripts with all the functions that have been build for this thesis and are made available through the package. 
 
   \begin{itemize}
 \item[$\vartriangleright$] \texttt{1UsedFunc.R} : functions created for the first part, including  the stationary analysis of annual maxima in GEV, analysis in POT, nonstationary analysis in GEV and POT, etc.
@@ -644,7 +642,7 @@ where the R package \textbf{\texttt{PissoortThesis}} is located. The README file
 \item[$\vartriangleright$] \texttt{runExample.R} : function allowing to run the Shiny applications directly through the package : by putting the name of the application in ' ' in the function, and it will run the application. 
   \end{itemize} 
 
-The documentation of the functions are directly made through the \texttt{roxygen2} package infrastructure. You can then access the help of each functions as usual, by typing \texttt{?function\_name}. 
+The documentation of the functions are directly made through the \texttt{roxygen2} package infrastructure. You can then access the help of each functions as usual in R, by typing \texttt{?function's\_name}. 
 \emph{We were not able to fully complete the documentations of every functions (e.g. for Bayesian functions). Furthermore, some functions have been left in the scripts.}
 \item \textbf{/Scripts-R/} : Folder containing scripts that allow to retrieve any analysis made during this text.
 
@@ -677,14 +675,14 @@ The documentation of the functions are directly made through the \texttt{roxygen
 \item \textbf{/Shiny\_app\_visu/} : one way to include Shiny applications inside the package\textbf{\underline{ (not updated)}}.
 
 
-\item \textbf{/data/} : Folder that only contains the annual maxima and minima data in Uccle in a .RData format. These data can be directly used inside the Shiny application, and hence these applications can be run in any local environment only having loaded the   \texttt{PissoortThesis} package.
+\item \textbf{/data/} : Folder that only contains the annual maxima and minima data in Uccle in a .RData format. These data can be directly used inside the Shiny application, and hence these applications can be run in any local environment only having loaded the   \texttt{PissoortThesis} package. We were not able to provide all the data used during this thesis since the IRM wanted keep it confidential.
 
 \item \textbf{/inst/} : Folder that contains the code that generates the \underline{Shiny applications}. This code is divided in sub-folders for each applications.  See \hyperref[sec:packa]{Section \textbf{\ref{sec:packa}}} for more information on the applications. 
 
 
-\item \textbf{/man/} : This folder contains automatically generated files by \texttt{roxygen2} that yields the documentation of each functions. These \texttt{.Rd} files are generated from the ' descriptor portion' of the functions contained in the files in \textbf{/R/}.
+\item \textbf{/man/} : This folder contains automatically generated files by \texttt{roxygen2} that yields the documentation of each functions. These \texttt{.Rd} files are generated from the ' descriptor portion' that are above the functions contained in the files in \textbf{/R/}.
 
-\item \textbf{/stan/} : Folder that contains the STAN scripts, trying to have convergence to the stationary posterior distribution .... (to update)
+\item \textbf{/stan/} : Folder that contains the STAN scripts, trying to have convergence to the stationary posterior distribution ....% (to update)
 
 \item \textbf{/vignettes/} : Folder that contains two "vignettes" made for appointments with J.Segers during the academic year. It can be downloaded in \texttt{.html} from the compressed file. 
 

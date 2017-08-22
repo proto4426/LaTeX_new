@@ -15,7 +15,7 @@
 \contentsline {table}{\numberline {5.1}{\ignorespaces Proportion of the $M$ posterior simulations which are covered by the confidence intervals.\relax }}{63}{table.caption.62}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Analysis in Block Maxima}{66}{chapter.6}
-\contentsline {table}{\numberline {6.1}{\ignorespaces MLE's of the three GEV parameters assuming a independent (stationary) context.\relax }}{67}{table.caption.69}
+\contentsline {table}{\numberline {6.1}{\ignorespaces MLE's of the three GEV parameters assuming an independent (or rather stationary) context.\relax }}{67}{table.caption.69}
 \contentsline {table}{\numberline {6.2}{\ignorespaces Stationary GEV parameters estimated by PWM.\relax }}{68}{table.caption.72}
 \contentsline {table}{\numberline {6.3}{\ignorespaces The $m$-year return level estimates and $95\%$ intervals. Last line computes the length's differences between the normal and the profile likelihood intervals.\relax }}{69}{table.caption.73}
 \contentsline {table}{\numberline {6.4}{\ignorespaces Comparisons of nested GEV models with nonstationary parameters. Significant p-values at level $5\%$ are shown in bold.\relax }}{72}{table.caption.80}
@@ -25,14 +25,14 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Bayesian Analysis in Block Maxima}{79}{chapter.7}
 \contentsline {table}{\numberline {7.1}{\ignorespaces Comparison of three Bayesian MCMC algorithms with $N= 2000$ samples with a Burn-in period $B=500$ with the frequentist MLE for the stationary model. Parameters are estimated by their posterior mean, effective sample sizes $(N_{\text {\emph {eff}}})$ (\ref {eq:neff}) for estimating the mean are displayed for Bayesians, and standard errors for frequentist. \relax }}{81}{table.caption.91}
-\contentsline {table}{\numberline {7.2}{\ignorespaces Comparisons of nested GEV models with nonstationary parameters computed by Gibbs sampler for $N=2000$ by means of predictive accuracy criteria.\relax }}{84}{table.caption.96}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Comparisons of nested (non)stationary GEV models computed by the Gibbs sampler for $N=2000$, by means of predictive accuracy criteria.\relax }}{84}{table.caption.96}
 \contentsline {table}{\numberline {7.3}{\ignorespaces Starting values taken for the Gibbs sampler, from Algorithm \ref {algo:start} with $k=50$. \relax }}{86}{table.caption.99}
-\contentsline {table}{\numberline {7.4}{\ignorespaces Table of quantiles and \textbf {mean} of $\pi (\theta |\bm {x})$. Here, we transformed back $\mu _1$ from $t^*$ to $t$ in years for comparisons with frequentist results. \relax }}{89}{table.caption.109}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Table of quantiles and \textbf {mean} of $\pi (\theta |\bm {x})$. Here, we transformed back $\mu _1$ from $t^*$ to $t$ in years for convenient comparisons with frequentist results. \relax }}{89}{table.caption.109}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Statistical tools for Extreme Value Theory}{II}{appendix.A}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Bayesian Methods}{VII}{appendix.B}
-\contentsline {table}{\numberline {B.1}{\ignorespaces Raftery-Lewis diagnostic. "$B$" is the avdised number of iterations to be discarded at the beginning of each chain. "$N_{\text {advised}}$ " is the advised number of iterations. "$N_{\text {min}}$" is the minimum sample size based on zero autocorrelation. The "dependence factor" informs to which extent the autocorrelation in the chains inflates the required sample size, with values above 5 indicating a strong autocorrelation. \relax }}{XII}{table.caption.136}
+\contentsline {table}{\numberline {B.1}{\ignorespaces Raftery-Lewis diagnostic. "$B$" is the avdised number of iterations to be discarded at the beginning of each chain. "$N_{\text {advised}}$ " is the advised number of iterations. "$N_{\text {min}}$" is the minimum sample size based on zero autocorrelation. The "dependence factor" informs to which extent the autocorrelation in the chains inflates the required sample size, with values above 5 indicating a strong autocorrelation. \relax }}{XIV}{table.caption.136}
 \addvspace {10\p@ }
 \contentsline {xchapter}{Other Figures and Tables}{XV}{appendix.C}
 \contentsline {table}{\numberline {C.1}{\ignorespaces Models' comparisons for the residuals of the GAM model based on AIC and BIC criterion. \relax }}{XVI}{table.caption.140}

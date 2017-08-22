@@ -27,7 +27,7 @@ We estimate the MLE's relying on packages cited above, but also by checking it m
 Estimates and standard errors are shown in Table \ref{tab:estlik}.
 
 \begin{table}[!htbp] \centering 
-	\caption{MLE's of the three GEV parameters assuming a independent (stationary) context.} 
+	\caption{MLE's of the three GEV parameters assuming an independent (or rather stationary) context.} 
 		\vspace{-.1cm}
 	\label{tab:estlik} 
 	\begin{tabular}{@{\extracolsep{5pt}} cccc} 
@@ -123,7 +123,7 @@ Both plots show points lying very close to the unit diagonal, showing that the e
 The right plot in Figure \ref{fig:rl_empdes} has a similar interpretation and leads to the same conclusion, although the fitted model has a higher peak.
 
 \begin{figure}[!htb]
-	\centering	\includegraphics[width=.75\linewidth]{rl_empdes.pdf}\caption{(Left) Return level plot with red lines representing normal confidence intervals, and blue points the individual profile likelihood intervals for return levels. The horizontal dotted line represents the right endpoint of the	fitted model in green and the maximum of the series in black. (Right) kernel density in black compared with the density of the fitted model in green, with dotted lines representing the \textbf{endpoints} of the empirical distribution, and green doted lines still represent the same right endpoint of the fitted EV-Weibull. A Gaussian kernel with a bandwidth calculated by the \citet[pp.48, (3.31)]{silverman_1986} "rule of thumb" has been used.}\label{fig:rl_empdes}
+	\centering	\includegraphics[width=.75\linewidth]{rl_empdes.pdf}\caption{(Left) Return level plot with red lines representing normal confidence intervals, and blue points the individual profile likelihood intervals for return levels. The horizontal dotted line represents the right endpoint of the	fitted model in green and the maximum of the series in black. (Right) kernel density in black compared with the density of the fitted model in green, with black dotted lines representing the \textbf{endpoints} of the empirical distribution, and green doted lines still represent the same right endpoint of the fitted EV-Weibull. A Gaussian kernel with a bandwidth calculated by the \citet[pp.48, (3.31)]{silverman_1986} "rule of thumb" has been used.}\label{fig:rl_empdes}
 \end{figure}
 
 
@@ -240,7 +240,7 @@ Table \ref{tab:estliknsta} shows the parameters and standard errors for the sele
 	\end{tabular} 
 \end{table} 
 
-We notice that $\xi$ is in the same range as previous stationary model. The parameter $\beta_1$ says that the location parameter $\mu(t)$ is expected to increase by $0.025$ each year, starting at $\beta_0=29.13$ until $29.13+0.025\cdot 116=32.07$ where $116$ is the number of years of data. Extrapolation, say in year $2050$ for example, would then lead to a distribution GEV($32.93,1.87,-0.21$), other parameters being held constant.
+We notice that $\xi$ is in the same range as thr previous stationary model. The parameter $\beta_1$ says that the location parameter $\mu(t)$ is expected to increase by $0.025$ each year, starting at $\beta_0=29.13$ until $29.13+0.025\cdot 116=32.07$ where $116$ is the number of years of data. Extrapolation, say in year $2050$ for example, would then lead to a distribution GEV($32.93,1.87,-0.21$), other parameters being held constant.
 
 
 \subsubsection*{Diagnostics}

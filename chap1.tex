@@ -227,7 +227,7 @@ $\xi\to 0$ & $g(z)= \sigma^{-1}\exp\bigg\{-\bigg(\frac{z-\mu}{\sigma}\bigg)\bigg
 \end{tabular}
 \end{table}
 
-We can now try to visually represent these three families. The following Figure \ref{gevdens} depicts the GEV, defined with respect to the value of the shape parameter $\xi$. 
+We can now try to visually represent these three families. The following Figure \ref{gevdens} depicts the density distribution of the GEV, defined with respect to the value of the shape parameter $\xi$. 
 
 \begin{figure}[!htb]
 	\centering\includegraphics[width=0.8\linewidth]{gev3.pdf}\caption{GEV distribution with the normal as benchmark (dotted lines) and a zoom on the parts of interest to better visualize the behaviour in the tails. In green, we retrieve the Gumbel distribution ($\xi=0$). In red, we retrieve the Weibull-type ($\xi<0$) while in blue, we get the Fréchet-type ($\xi>0$). The endpoints for the Weibull and the Fréchet are denoted by the red and blue filled circles respectively. }\label{gevdens}
@@ -236,7 +236,7 @@ We can now try to visually represent these three families. The following Figure 
 
 It is important to point out that the location parameter $\mu$ does not represent
 the mean as in the classic statistical view rather it represents the “center” of the distribution; and the scale parameter
-$\sigma$ is not the standard deviation but does govern the “size” of the deviations around $\mu$. This can be visualized in Figure \ref{fig:gevdif} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} where we show the variation of the GEV distribution when we vary these parameters\footnote{Moreover, a Shiny application has been built through the R package to visualize in the best way the influence of the parameters on this distribution. See intro of \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} for an explanation on its use.}. We notice that the location parameter only implies a horizontal shift of the distribution, without changing its shape, and w see the influence of the scale parameter on the spread of the distribution around $\mu$. For example if $\sigma \nearrow$, then the density will appear more flat.  
+$\sigma$ is not the standard deviation but does govern the “size” of the deviations around $\mu$. This can be visualized in Figure \ref{fig:gevdif} in \hyperref[app:fig]{Appendix \textbf{\ref{app:fig}}} where we show the variation of the GEV distribution when we vary these parameters\footnote{Moreover, a Shiny application has been built through the R package to visualize in the best way the influence of the parameters on this distribution. See intro of \hyperref[chap:introana]{Chapter \textbf{\ref{chap:introana}}} for an explanation on its use.}. We notice that the location parameter only implies a horizontal shift of the distribution, without changing its shape, and w see the influence of the scale parameter on the spread of the distribution around $\mu$. For example if $\sigma$ increases, then the density will appear more flat.  
 
 In the following, we define the \emph{left} and the \emph{right} \emph{endpoint} of a particular df $F$ as respectively $_*x$ and $x_*$, by :
 \begin{equation}\label{eq:endpoints}
@@ -285,11 +285,10 @@ Hence, by choosing  the sequences $a_n=\lambda^{-1}$ and $b_n=\lambda^{-1}\log n
 we find the so-called standard \emph{Gumbel} distribution in the limit. 
 Note that the same can be retrieved with $X_j\stackrel{iid}{\sim}N(0,1)$ and with sequences $a_n=-\Phi^{-1}(1/n)$ and $b_n=1/a_n$. 
 
-\vspace{.2cm}
 Typically unbounded distributions, for example the Exponential and Normal, whose tails fall off exponentially or faster, will have the Gumbel limiting distribution for the maxima. They will have medians (and other quantiles) that grow as $n\rightarrow\infty$ at the rate
 of some power of $\log n$. This is a typical example of light-tailed distribution (i.e., whose tails decay exponentially, as defined in \hyperref[app:tails]{Appendix \textbf{\ref{app:tails}}}).
 
-\vspace{-.3cm}
+
 \subsection*{Convergence to Fréchet distribution}
 
 The \textbf{Type}  $\boxed{\textbf{\text{II}}}$ or \textbf{Fréchet type} (or \emph{Fréchet-Pareto}) distribution $G_2(x)$ has strong relations with the Pareto distribution and also the Generalized Pareto Distribution that will be presented in \hyperref[sec::2]{Chapter \textbf{\ref{sec::2}}}. These are distributions which are typically heavy- or fat-tailed (see \hyperref[app:tails]{Appendix \textbf{\ref{app:tails}}}).

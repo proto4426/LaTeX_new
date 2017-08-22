@@ -50,7 +50,7 @@ However, this configuration is rare in EVT where we are using small constructed 
 The trivariate normal prior distribution on $\theta'=(\mu, \nu,\xi)$ leads to the following prior density :
 
 \begin{equation}
-\pi(\theta) \propto \sigma^{-1}\cdot \exp\bigg\{-\frac{1}{2}(\theta'-\boldsymbol{m})'\Sigma^{-1}(\theta'-\boldsymbol{m})\bigg\},
+\pi(\theta) \propto \sigma^{-1}\cdot \exp\bigg\{-\frac{1}{2}(\theta-\boldsymbol{m})'\Sigma^{-1}(\theta-\boldsymbol{m})\bigg\},
 \end{equation}
 where the mean vector $\boldsymbol{m}$ and the symmetric positive definite $[3\times 3]$ covariance matrix $\Sigma$ must be specified. This approach was used by \citet{coles_1996_bay} but other parametrizations exist. For example, changing $\mu$ to $\log \mu$ can be useful if a physical lower bound for this parameter must be specified.
 
@@ -263,7 +263,7 @@ However, a combined use of several relevant diagnostics will be required to incr
 
 \section{Bayesian Inference}\label{sec:bayinf}
 
-Assuming the posterior has been correctly explored using a MCMC algorithm, leaving us with $N$ realizations $\theta_1,\ldots,\theta_N$ from the posterior. Since $\theta$ is $d$-variate, marginal estimates are simply obtained by considering the realizations $\theta_1^{(i)},\ldots,\theta_N^{(i)}$  from the marginal posterior of the parameter $\theta^{(i)}$. It is possible to obtain point-estimates from the posterior, for example by computing the marginal mean or other quantiles from  $\theta_1^{(i)},\ldots,\theta_N^{(i)}$. It is also possible to derive a modal estimate by selecting the parameter vector corresponding to the largest posterior value.
+Assuming the posterior has been correctly explored using a MCMC algorithm, leaving us with $N$ realizations $\theta_1,\ldots,\theta_N$ from the posterior. Since $\theta$ is $d$-variate, marginal estimates are simply obtained by considering the realizations $\theta_1^{(j)},\ldots,\theta_N^{(j)}$  from the marginal posterior of the parameter $\theta^{(j)}$. It is possible to obtain point-estimates from the posterior, for example by computing the marginal mean or other quantiles from  $\theta_1^{(j)},\ldots,\theta_N^{(j)}$. It is also possible to derive a modal estimate by selecting the parameter vector corresponding to the largest posterior value.
 
 \subsection{Distribution of Quantiles : Return Levels}
 
@@ -339,7 +339,7 @@ In a nonstationary GEV context, we would like to compare models in a similar way
 There may exist different nonstationary models for the location or for the scale, and we would like to assess which model is the most relevant to describe the data.
 Although the posterior distribution quantifies estimation uncertainties, it remains conditional on the modeling assumptions. And as in any other estimation approach, it is a vital task to select the best possible model and validate it, otherwise the underlying inferences could be drastically different. 
 
-Let assume that $\mathcal{M}_1,\ldots,\mathcal{M}_q$ is a set of $q$ candidate models to describe $\boldsymbol{x}$. Each $\mathcal{M}_i$ uses a parameter vector $\theta^{\mathcal{M}_j}$ whose dimension may differ across models. Let $\text{Pr}(\mathcal{M}_1),\ldots,\text{Pr}(\mathcal{M}_q)$ denote prior probabilities assigned to each model such that $\sum_{i=1}^q \text{Pr}(\mathcal{M}_i)=1$.
+Let assume that $\mathcal{M}_1,\ldots,\mathcal{M}_q$ is a set of $q$ candidate models to describe $\boldsymbol{x}$. Each $\mathcal{M}_i$ uses a parameter vector $\theta^{\mathcal{M}_i}$ whose dimension may differ across models. Let $\text{Pr}(\mathcal{M}_1),\ldots,\text{Pr}(\mathcal{M}_q)$ denote prior probabilities assigned to each model such that $\sum_{i=1}^q \text{Pr}(\mathcal{M}_i)=1$.
 It is then possible to compute models' posterior probabilities given the observations, from the discrete form of the Bayes' Theorem : 
 
 \begin{equation}\label{eq:modpost}
